@@ -4274,10 +4274,29 @@ public class CodeHelperServer extends ActionAware {
 					logger.info("用户归属省份=" + province);
 				}
 			}
-			if (province == null || province.length() <= 0) {
-				province = IPtest.getInstance().queryProvince(ip);
-				logger.info("根据IP查询省份=" + province);
+			if (province == null) {
+				MobileInfo mobileInfo = getProvinceByPhone(mobile);
+				if (mobileInfo != null) {
+					province = mobileInfo.getProvince();
+					String city = mobileInfo.getCity();
+					String corp = mobileInfo.getCorp();
+					if ("中国移动".equals(corp)) {
+						phoneType = 1;
+						logger.info("移动用户phone：" + mobile);
+					} else if ("中国联通".equals(corp)) {
+						phoneType = 2;
+						logger.info("联通用户phone：" + mobile);
+					} else {
+						phoneType = 3;
+						logger.info("电信用户phone：" + mobile);
+					}
+					logger.info("根据phone查询省份地市：" + province + "_" + city);
+				}
 			}
+//			if (province == null || province.length() <= 0) {
+//				province = IPtest.getInstance().queryProvince(ip);
+//				logger.info("根据IP查询省份=" + province);
+//			}
 		}
 		
 		OrderReqInfo reqInfo = new OrderReqInfo();
