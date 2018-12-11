@@ -1,0 +1,258 @@
+[7;31m2017-11-03 00:40:39,262 - ERROR [Xmemcached-Reactor-2:MemcachedHandler@138] - XMemcached network layout exception
+[mjava.io.IOException: 远程主机强迫关闭了一个现有的连接。
+	at sun.nio.ch.SocketDispatcher.read0(Native Method)
+	at sun.nio.ch.SocketDispatcher.read(Unknown Source)
+	at sun.nio.ch.IOUtil.readIntoNativeBuffer(Unknown Source)
+	at sun.nio.ch.IOUtil.read(Unknown Source)
+	at sun.nio.ch.SocketChannelImpl.read(Unknown Source)
+	at com.google.code.yanf4j.nio.impl.NioTCPSession.readFromBuffer(NioTCPSession.java:203)
+	at com.google.code.yanf4j.nio.impl.AbstractNioSession.onRead(AbstractNioSession.java:196)
+	at com.google.code.yanf4j.nio.impl.AbstractNioSession.onEvent(AbstractNioSession.java:341)
+	at com.google.code.yanf4j.nio.impl.SocketChannelController.dispatchReadEvent(SocketChannelController.java:56)
+	at com.google.code.yanf4j.nio.impl.NioController.onRead(NioController.java:157)
+	at com.google.code.yanf4j.nio.impl.Reactor.dispatchEvent(Reactor.java:295)
+	at com.google.code.yanf4j.nio.impl.Reactor.run(Reactor.java:142)
+[2;35m2017-11-03 00:40:39,289 - WARN  [Xmemcached-Reactor-2:MemcachedConnector@365] - Remove a session: 127.0.0.1:11211
+[m[2;35m2017-11-03 00:40:41,292 - WARN  [Heal-Session-Thread:MemcachedConnector$SessionMonitor@125] - Trying to connect to 127.0.0.1:11211 for 1 times
+[m[7;31m2017-11-03 00:40:42,295 - ERROR [Xmemcached-Reactor-0:MemcachedConnector$InnerControllerStateListener@558] - Exception occured in controller
+[mjava.io.IOException: Connect to 127.0.0.1:11211 fail,Connection refused: no further information
+	at net.rubyeye.xmemcached.impl.MemcachedConnector.onConnect(MemcachedConnector.java:423)
+	at com.google.code.yanf4j.nio.impl.Reactor.dispatchEvent(Reactor.java:303)
+	at com.google.code.yanf4j.nio.impl.Reactor.run(Reactor.java:142)
+[7;31m2017-11-03 00:40:42,296 - ERROR [Xmemcached-Reactor-0:Reactor@325] - Reactor dispatch events error
+[mjava.io.IOException: Connect to 127.0.0.1:11211 fail,Connection refused: no further information
+	at net.rubyeye.xmemcached.impl.MemcachedConnector.onConnect(MemcachedConnector.java:423)
+	at com.google.code.yanf4j.nio.impl.Reactor.dispatchEvent(Reactor.java:303)
+	at com.google.code.yanf4j.nio.impl.Reactor.run(Reactor.java:142)
+[7;31m2017-11-03 00:40:42,295 - ERROR [Heal-Session-Thread:MemcachedConnector$SessionMonitor@169] - Reconnect to 127.0.0.1:11211 fail
+[m[2;32m2017-11-03 14:51:27,713 - INFO  [main:ServerBootstrap@99] - connect to database:jdbc:mysql://119.23.172.103:3306/actual?useUnicode=true&characterEncoding=UTF-8
+[m[2;32m2017-11-03 14:51:29,277 - INFO  [main:ServerBootstrap@125] - Configuration Server bootstrap params.......
+[m[2;32m2017-11-03 14:51:29,277 - INFO  [main:ServerBootstrap@126] - Server protocol:	socket
+[m[2;32m2017-11-03 14:51:29,277 - INFO  [main:ServerBootstrap@127] - Server port:	9912
+[m[2;35m2017-11-03 14:51:29,571 - WARN  [main:XMemcachedClient@727] - XMemcachedClient use Binary protocol
+[m[2;32m2017-11-03 14:51:29,591 - INFO  [main:SelectorManager@37] - Creating 16 reactors...
+[m[2;35m2017-11-03 14:51:29,602 - WARN  [main:AbstractController@372] - The Controller started at localhost/127.0.0.1:0 ...
+[m[2;35m2017-11-03 14:51:29,610 - WARN  [Xmemcached-Reactor-0:MemcachedConnector@251] - Add a session: 127.0.0.1:11211
+[m[2;32m2017-11-03 14:51:29,611 - INFO  [main:Application@25] - 初始化AO...
+[m[2;32m2017-11-03 14:51:29,633 - INFO  [main:ServerBootstrap@150] - Application PID:	15708
+[m[2;35m2017-11-03 14:52:31,199 - WARN  [Thread-156:JuiceThreadPool$JuiceWorkThread@108] - RPC method start time :47, action:com.klw.fastfun.pay.common.action.CommonAction, method:getOtherPayCodes
+[m[2;35m2017-11-03 14:52:31,219 - WARN  [Thread-82:JuiceThreadPool$JuiceWorkThread@108] - RPC method start time :11, action:com.klw.fastfun.pay.common.action.CommonAction, method:queryOtherFilterBySpid
+[m[7;31m2017-11-03 14:55:04,236 - ERROR [JUICE-SERVER-Handler-4-2-thread:ConnectionException@22] - uncaughtException :
+[mcom.juice.orange.game.exception.JuiceException: 远程主机强迫关闭了一个现有的连接。 on [id: 0xf4220da4, /127.0.0.1:58462 => /127.0.0.1:9912]
+	at com.juice.orange.game.exception.JuiceException.fromException(JuiceException.java:38)
+	at com.juice.orange.game.exception.JuiceException.fromExceptionEvent(JuiceException.java:32)
+	at com.juice.orange.game.util.ConnectionHelper$2.run(ConnectionHelper.java:56)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: java.io.IOException: 远程主机强迫关闭了一个现有的连接。
+	at sun.nio.ch.SocketDispatcher.read0(Native Method)
+	at sun.nio.ch.SocketDispatcher.read(Unknown Source)
+	at sun.nio.ch.IOUtil.readIntoNativeBuffer(Unknown Source)
+	at sun.nio.ch.IOUtil.read(Unknown Source)
+	at sun.nio.ch.SocketChannelImpl.read(Unknown Source)
+	at org.jboss.netty.channel.socket.nio.NioWorker.read(NioWorker.java:64)
+	at org.jboss.netty.channel.socket.nio.AbstractNioWorker.process(AbstractNioWorker.java:107)
+	at org.jboss.netty.channel.socket.nio.AbstractNioSelector.run(AbstractNioSelector.java:312)
+	at org.jboss.netty.channel.socket.nio.AbstractNioWorker.run(AbstractNioWorker.java:88)
+	at org.jboss.netty.channel.socket.nio.NioWorker.run(NioWorker.java:178)
+	... 3 more
+[7;31m2017-11-03 14:55:04,244 - ERROR [JUICE-SERVER-Handler-4-3-thread:ConnectionException@22] - uncaughtException :
+[mcom.juice.orange.game.exception.JuiceException: 远程主机强迫关闭了一个现有的连接。 on [id: 0x30e9aecb, /127.0.0.1:58461 => /127.0.0.1:9912]
+	at com.juice.orange.game.exception.JuiceException.fromException(JuiceException.java:38)
+	at com.juice.orange.game.exception.JuiceException.fromExceptionEvent(JuiceException.java:32)
+	at com.juice.orange.game.util.ConnectionHelper$2.run(ConnectionHelper.java:56)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: java.io.IOException: 远程主机强迫关闭了一个现有的连接。
+	at sun.nio.ch.SocketDispatcher.read0(Native Method)
+	at sun.nio.ch.SocketDispatcher.read(Unknown Source)
+	at sun.nio.ch.IOUtil.readIntoNativeBuffer(Unknown Source)
+	at sun.nio.ch.IOUtil.read(Unknown Source)
+	at sun.nio.ch.SocketChannelImpl.read(Unknown Source)
+	at org.jboss.netty.channel.socket.nio.NioWorker.read(NioWorker.java:64)
+	at org.jboss.netty.channel.socket.nio.AbstractNioWorker.process(AbstractNioWorker.java:107)
+	at org.jboss.netty.channel.socket.nio.AbstractNioSelector.run(AbstractNioSelector.java:312)
+	at org.jboss.netty.channel.socket.nio.AbstractNioWorker.run(AbstractNioWorker.java:88)
+	at org.jboss.netty.channel.socket.nio.NioWorker.run(NioWorker.java:178)
+	... 3 more
+[7;31m2017-11-03 14:55:04,240 - ERROR [JUICE-SERVER-Handler-4-2-thread:ConnectionException@22] - uncaughtException :
+[mcom.juice.orange.game.exception.JuiceException: 远程主机强迫关闭了一个现有的连接。 on [id: 0x7454b24c, /127.0.0.1:58460 => /127.0.0.1:9912]
+	at com.juice.orange.game.exception.JuiceException.fromException(JuiceException.java:38)
+	at com.juice.orange.game.exception.JuiceException.fromExceptionEvent(JuiceException.java:32)
+	at com.juice.orange.game.util.ConnectionHelper$2.run(ConnectionHelper.java:56)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: java.io.IOException: 远程主机强迫关闭了一个现有的连接。
+	at sun.nio.ch.SocketDispatcher.read0(Native Method)
+	at sun.nio.ch.SocketDispatcher.read(Unknown Source)
+	at sun.nio.ch.IOUtil.readIntoNativeBuffer(Unknown Source)
+	at sun.nio.ch.IOUtil.read(Unknown Source)
+	at sun.nio.ch.SocketChannelImpl.read(Unknown Source)
+	at org.jboss.netty.channel.socket.nio.NioWorker.read(NioWorker.java:64)
+	at org.jboss.netty.channel.socket.nio.AbstractNioWorker.process(AbstractNioWorker.java:107)
+	at org.jboss.netty.channel.socket.nio.AbstractNioSelector.run(AbstractNioSelector.java:312)
+	at org.jboss.netty.channel.socket.nio.AbstractNioWorker.run(AbstractNioWorker.java:88)
+	at org.jboss.netty.channel.socket.nio.NioWorker.run(NioWorker.java:178)
+	... 3 more
+[2;32m2017-11-03 14:55:32,694 - INFO  [main:ServerBootstrap@99] - connect to database:jdbc:mysql://119.23.172.103:3306/actual?useUnicode=true&characterEncoding=UTF-8
+[m[2;32m2017-11-03 14:55:33,485 - INFO  [main:ServerBootstrap@125] - Configuration Server bootstrap params.......
+[m[2;32m2017-11-03 14:55:33,486 - INFO  [main:ServerBootstrap@126] - Server protocol:	socket
+[m[2;32m2017-11-03 14:55:33,486 - INFO  [main:ServerBootstrap@127] - Server port:	9912
+[m[2;35m2017-11-03 14:55:33,758 - WARN  [main:XMemcachedClient@727] - XMemcachedClient use Binary protocol
+[m[2;32m2017-11-03 14:55:33,778 - INFO  [main:SelectorManager@37] - Creating 16 reactors...
+[m[2;35m2017-11-03 14:55:33,787 - WARN  [main:AbstractController@372] - The Controller started at localhost/127.0.0.1:0 ...
+[m[2;35m2017-11-03 14:55:33,793 - WARN  [Xmemcached-Reactor-0:MemcachedConnector@251] - Add a session: 127.0.0.1:11211
+[m[2;32m2017-11-03 14:55:33,794 - INFO  [main:Application@25] - 初始化AO...
+[m[2;32m2017-11-03 14:55:33,804 - INFO  [main:ServerBootstrap@150] - Application PID:	7456
+[m[2;35m2017-11-03 14:55:37,759 - WARN  [Thread-92:JuiceThreadPool$JuiceWorkThread@108] - RPC method start time :25, action:com.klw.fastfun.pay.common.action.CommonAction, method:getOtherPayCodes
+[m[2;35m2017-11-03 14:55:37,768 - WARN  [Thread-52:JuiceThreadPool$JuiceWorkThread@108] - RPC method start time :1, action:com.klw.fastfun.pay.common.action.CommonAction, method:queryOtherFilterBySpid
+[m[2;35m2017-11-03 14:56:58,571 - WARN  [Thread-22:JuiceThreadPool$JuiceWorkThread@108] - RPC method start time :22, action:com.klw.fastfun.pay.common.action.CommonAction, method:addOrderReqInfo
+[m[7;31m2017-11-03 14:57:01,702 - ERROR [JUICE-SERVER-Handler-4-3-thread:ConnectionException@22] - uncaughtException :
+[mcom.juice.orange.game.exception.JuiceException: 远程主机强迫关闭了一个现有的连接。 on [id: 0xb6a2bffc, /127.0.0.1:58698 => /127.0.0.1:9912]
+	at com.juice.orange.game.exception.JuiceException.fromException(JuiceException.java:38)
+	at com.juice.orange.game.exception.JuiceException.fromExceptionEvent(JuiceException.java:32)
+	at com.juice.orange.game.util.ConnectionHelper$2.run(ConnectionHelper.java:56)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: java.io.IOException: 远程主机强迫关闭了一个现有的连接。
+	at sun.nio.ch.SocketDispatcher.read0(Native Method)
+	at sun.nio.ch.SocketDispatcher.read(Unknown Source)
+	at sun.nio.ch.IOUtil.readIntoNativeBuffer(Unknown Source)
+	at sun.nio.ch.IOUtil.read(Unknown Source)
+	at sun.nio.ch.SocketChannelImpl.read(Unknown Source)
+	at org.jboss.netty.channel.socket.nio.NioWorker.read(NioWorker.java:64)
+	at org.jboss.netty.channel.socket.nio.AbstractNioWorker.process(AbstractNioWorker.java:107)
+	at org.jboss.netty.channel.socket.nio.AbstractNioSelector.run(AbstractNioSelector.java:312)
+	at org.jboss.netty.channel.socket.nio.AbstractNioWorker.run(AbstractNioWorker.java:88)
+	at org.jboss.netty.channel.socket.nio.NioWorker.run(NioWorker.java:178)
+	... 3 more
+[7;31m2017-11-03 14:57:01,703 - ERROR [JUICE-SERVER-Handler-4-2-thread:ConnectionException@22] - uncaughtException :
+[mcom.juice.orange.game.exception.JuiceException: 远程主机强迫关闭了一个现有的连接。 on [id: 0x8a62f87f, /127.0.0.1:58699 => /127.0.0.1:9912]
+	at com.juice.orange.game.exception.JuiceException.fromException(JuiceException.java:38)
+	at com.juice.orange.game.exception.JuiceException.fromExceptionEvent(JuiceException.java:32)
+	at com.juice.orange.game.util.ConnectionHelper$2.run(ConnectionHelper.java:56)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: java.io.IOException: 远程主机强迫关闭了一个现有的连接。
+	at sun.nio.ch.SocketDispatcher.read0(Native Method)
+	at sun.nio.ch.SocketDispatcher.read(Unknown Source)
+	at sun.nio.ch.IOUtil.readIntoNativeBuffer(Unknown Source)
+	at sun.nio.ch.IOUtil.read(Unknown Source)
+	at sun.nio.ch.SocketChannelImpl.read(Unknown Source)
+	at org.jboss.netty.channel.socket.nio.NioWorker.read(NioWorker.java:64)
+	at org.jboss.netty.channel.socket.nio.AbstractNioWorker.process(AbstractNioWorker.java:107)
+	at org.jboss.netty.channel.socket.nio.AbstractNioSelector.run(AbstractNioSelector.java:312)
+	at org.jboss.netty.channel.socket.nio.AbstractNioWorker.run(AbstractNioWorker.java:88)
+	at org.jboss.netty.channel.socket.nio.NioWorker.run(NioWorker.java:178)
+	... 3 more
+[7;31m2017-11-03 14:57:01,703 - ERROR [JUICE-SERVER-Handler-4-2-thread:ConnectionException@22] - uncaughtException :
+[mcom.juice.orange.game.exception.JuiceException: 远程主机强迫关闭了一个现有的连接。 on [id: 0x2a73f0f0, /127.0.0.1:58697 => /127.0.0.1:9912]
+	at com.juice.orange.game.exception.JuiceException.fromException(JuiceException.java:38)
+	at com.juice.orange.game.exception.JuiceException.fromExceptionEvent(JuiceException.java:32)
+	at com.juice.orange.game.util.ConnectionHelper$2.run(ConnectionHelper.java:56)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: java.io.IOException: 远程主机强迫关闭了一个现有的连接。
+	at sun.nio.ch.SocketDispatcher.read0(Native Method)
+	at sun.nio.ch.SocketDispatcher.read(Unknown Source)
+	at sun.nio.ch.IOUtil.readIntoNativeBuffer(Unknown Source)
+	at sun.nio.ch.IOUtil.read(Unknown Source)
+	at sun.nio.ch.SocketChannelImpl.read(Unknown Source)
+	at org.jboss.netty.channel.socket.nio.NioWorker.read(NioWorker.java:64)
+	at org.jboss.netty.channel.socket.nio.AbstractNioWorker.process(AbstractNioWorker.java:107)
+	at org.jboss.netty.channel.socket.nio.AbstractNioSelector.run(AbstractNioSelector.java:312)
+	at org.jboss.netty.channel.socket.nio.AbstractNioWorker.run(AbstractNioWorker.java:88)
+	at org.jboss.netty.channel.socket.nio.NioWorker.run(NioWorker.java:178)
+	... 3 more
+[2;32m2017-11-03 14:57:31,707 - INFO  [main:ServerBootstrap@99] - connect to database:jdbc:mysql://119.23.172.103:3306/actual?useUnicode=true&characterEncoding=UTF-8
+[m[2;32m2017-11-03 14:57:32,434 - INFO  [main:ServerBootstrap@125] - Configuration Server bootstrap params.......
+[m[2;32m2017-11-03 14:57:32,434 - INFO  [main:ServerBootstrap@126] - Server protocol:	socket
+[m[2;32m2017-11-03 14:57:32,435 - INFO  [main:ServerBootstrap@127] - Server port:	9912
+[m[2;35m2017-11-03 14:57:32,631 - WARN  [main:XMemcachedClient@727] - XMemcachedClient use Binary protocol
+[m[2;32m2017-11-03 14:57:32,719 - INFO  [main:SelectorManager@37] - Creating 16 reactors...
+[m[2;35m2017-11-03 14:57:32,729 - WARN  [main:AbstractController@372] - The Controller started at localhost/127.0.0.1:0 ...
+[m[2;35m2017-11-03 14:57:32,735 - WARN  [Xmemcached-Reactor-0:MemcachedConnector@251] - Add a session: 127.0.0.1:11211
+[m[2;32m2017-11-03 14:57:32,736 - INFO  [main:Application@25] - 初始化AO...
+[m[2;32m2017-11-03 14:57:32,747 - INFO  [main:ServerBootstrap@150] - Application PID:	15812
+[m[2;35m2017-11-03 14:57:37,942 - WARN  [Thread-32:JuiceThreadPool$JuiceWorkThread@108] - RPC method start time :14, action:com.klw.fastfun.pay.common.action.CommonAction, method:getOtherPayCodes
+[m[2;35m2017-11-03 14:57:37,952 - WARN  [Thread-42:JuiceThreadPool$JuiceWorkThread@108] - RPC method start time :1, action:com.klw.fastfun.pay.common.action.CommonAction, method:queryOtherFilterBySpid
+[m[2;35m2017-11-03 14:57:45,648 - WARN  [Thread-112:JuiceThreadPool$JuiceWorkThread@108] - RPC method start time :30, action:com.klw.fastfun.pay.common.action.CommonAction, method:addOrderReqInfo
+[m[7;31m2017-11-03 14:59:29,024 - ERROR [JUICE-SERVER-Handler-4-2-thread:ConnectionException@22] - uncaughtException :
+[mcom.juice.orange.game.exception.JuiceException: 远程主机强迫关闭了一个现有的连接。 on [id: 0xf2a67763, /127.0.0.1:58911 => /127.0.0.1:9912]
+	at com.juice.orange.game.exception.JuiceException.fromException(JuiceException.java:38)
+	at com.juice.orange.game.exception.JuiceException.fromExceptionEvent(JuiceException.java:32)
+	at com.juice.orange.game.util.ConnectionHelper$2.run(ConnectionHelper.java:56)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: java.io.IOException: 远程主机强迫关闭了一个现有的连接。
+	at sun.nio.ch.SocketDispatcher.read0(Native Method)
+	at sun.nio.ch.SocketDispatcher.read(Unknown Source)
+	at sun.nio.ch.IOUtil.readIntoNativeBuffer(Unknown Source)
+	at sun.nio.ch.IOUtil.read(Unknown Source)
+	at sun.nio.ch.SocketChannelImpl.read(Unknown Source)
+	at org.jboss.netty.channel.socket.nio.NioWorker.read(NioWorker.java:64)
+	at org.jboss.netty.channel.socket.nio.AbstractNioWorker.process(AbstractNioWorker.java:107)
+	at org.jboss.netty.channel.socket.nio.AbstractNioSelector.run(AbstractNioSelector.java:312)
+	at org.jboss.netty.channel.socket.nio.AbstractNioWorker.run(AbstractNioWorker.java:88)
+	at org.jboss.netty.channel.socket.nio.NioWorker.run(NioWorker.java:178)
+	... 3 more
+[7;31m2017-11-03 14:59:29,033 - ERROR [JUICE-SERVER-Handler-4-2-thread:ConnectionException@22] - uncaughtException :
+[mcom.juice.orange.game.exception.JuiceException: 远程主机强迫关闭了一个现有的连接。 on [id: 0x0e3f7574, /127.0.0.1:58912 => /127.0.0.1:9912]
+	at com.juice.orange.game.exception.JuiceException.fromException(JuiceException.java:38)
+	at com.juice.orange.game.exception.JuiceException.fromExceptionEvent(JuiceException.java:32)
+	at com.juice.orange.game.util.ConnectionHelper$2.run(ConnectionHelper.java:56)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: java.io.IOException: 远程主机强迫关闭了一个现有的连接。
+	at sun.nio.ch.SocketDispatcher.read0(Native Method)
+	at sun.nio.ch.SocketDispatcher.read(Unknown Source)
+	at sun.nio.ch.IOUtil.readIntoNativeBuffer(Unknown Source)
+	at sun.nio.ch.IOUtil.read(Unknown Source)
+	at sun.nio.ch.SocketChannelImpl.read(Unknown Source)
+	at org.jboss.netty.channel.socket.nio.NioWorker.read(NioWorker.java:64)
+	at org.jboss.netty.channel.socket.nio.AbstractNioWorker.process(AbstractNioWorker.java:107)
+	at org.jboss.netty.channel.socket.nio.AbstractNioSelector.run(AbstractNioSelector.java:312)
+	at org.jboss.netty.channel.socket.nio.AbstractNioWorker.run(AbstractNioWorker.java:88)
+	at org.jboss.netty.channel.socket.nio.NioWorker.run(NioWorker.java:178)
+	... 3 more
+[7;31m2017-11-03 14:59:29,025 - ERROR [JUICE-SERVER-Handler-4-3-thread:ConnectionException@22] - uncaughtException :
+[mcom.juice.orange.game.exception.JuiceException: 远程主机强迫关闭了一个现有的连接。 on [id: 0x5c0747ce, /127.0.0.1:58913 => /127.0.0.1:9912]
+	at com.juice.orange.game.exception.JuiceException.fromException(JuiceException.java:38)
+	at com.juice.orange.game.exception.JuiceException.fromExceptionEvent(JuiceException.java:32)
+	at com.juice.orange.game.util.ConnectionHelper$2.run(ConnectionHelper.java:56)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: java.io.IOException: 远程主机强迫关闭了一个现有的连接。
+	at sun.nio.ch.SocketDispatcher.read0(Native Method)
+	at sun.nio.ch.SocketDispatcher.read(Unknown Source)
+	at sun.nio.ch.IOUtil.readIntoNativeBuffer(Unknown Source)
+	at sun.nio.ch.IOUtil.read(Unknown Source)
+	at sun.nio.ch.SocketChannelImpl.read(Unknown Source)
+	at org.jboss.netty.channel.socket.nio.NioWorker.read(NioWorker.java:64)
+	at org.jboss.netty.channel.socket.nio.AbstractNioWorker.process(AbstractNioWorker.java:107)
+	at org.jboss.netty.channel.socket.nio.AbstractNioSelector.run(AbstractNioSelector.java:312)
+	at org.jboss.netty.channel.socket.nio.AbstractNioWorker.run(AbstractNioWorker.java:88)
+	at org.jboss.netty.channel.socket.nio.NioWorker.run(NioWorker.java:178)
+	... 3 more
+[2;32m2017-11-03 22:49:25,048 - INFO  [main:ServerBootstrap@99] - connect to database:jdbc:mysql://119.23.172.103:3306/actual?useUnicode=true&characterEncoding=UTF-8
+[m[2;32m2017-11-03 22:49:27,381 - INFO  [main:ServerBootstrap@125] - Configuration Server bootstrap params.......
+[m[2;32m2017-11-03 22:49:27,381 - INFO  [main:ServerBootstrap@126] - Server protocol:	socket
+[m[2;32m2017-11-03 22:49:27,381 - INFO  [main:ServerBootstrap@127] - Server port:	9912
+[m[2;35m2017-11-03 22:49:27,637 - WARN  [main:XMemcachedClient@727] - XMemcachedClient use Binary protocol
+[m[2;32m2017-11-03 22:49:27,658 - INFO  [main:SelectorManager@37] - Creating 16 reactors...
+[m[2;35m2017-11-03 22:49:27,669 - WARN  [main:AbstractController@372] - The Controller started at localhost/127.0.0.1:0 ...
+[m[2;35m2017-11-03 22:49:27,678 - WARN  [Xmemcached-Reactor-0:MemcachedConnector@251] - Add a session: 127.0.0.1:11211
+[m[2;32m2017-11-03 22:49:27,679 - INFO  [main:Application@25] - 初始化AO...
+[m[2;32m2017-11-03 22:49:27,691 - INFO  [main:ServerBootstrap@150] - Application PID:	7420
+[m[2;35m2017-11-03 22:49:56,412 - WARN  [Thread-45:JuiceThreadPool$JuiceWorkThread@108] - RPC method start time :261, action:com.klw.fastfun.pay.common.action.CommonAction, method:queryFeeBySpid
+[m[2;35m2017-11-03 22:50:32,495 - WARN  [Thread-123:JuiceThreadPool$JuiceWorkThread@108] - RPC method start time :70, action:com.klw.fastfun.pay.common.action.CommonAction, method:queryCodeInfoBySpid
+[m

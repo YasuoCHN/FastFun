@@ -1,0 +1,81 @@
+[2;32m2018-04-27 15:11:37,636 - INFO  [main:ServerBootstrap@95] - Configuration Server bootstrap params.......
+[m[2;32m2018-04-27 15:11:37,639 - INFO  [main:ServerBootstrap@96] - Server protocol:	http
+[m[2;32m2018-04-27 15:11:37,639 - INFO  [main:ServerBootstrap@97] - Server port:	9911
+[m[2;32m2018-04-27 15:11:37,846 - INFO  [main:ServerBootstrap@106] - Configuration Remote Server.......
+[m[2;32m2018-04-27 15:11:37,846 - INFO  [main:ServerBootstrap@108] - Add Remote Server - Name:FastFunSystem;Address:localhost;Port:9912
+[m[2;35m2018-04-27 15:11:37,894 - WARN  [main:XMemcachedClient@727] - XMemcachedClient use Binary protocol
+[m[2;32m2018-04-27 15:11:37,918 - INFO  [main:SelectorManager@37] - Creating 16 reactors...
+[m[2;35m2018-04-27 15:11:37,926 - WARN  [main:AbstractController@372] - The Controller started at localhost/127.0.0.1:0 ...
+[m[7;31m2018-04-27 15:11:38,936 - ERROR [main:XMemcachedClient@593] - connect to 127.0.0.1:11211 error
+[mjava.util.concurrent.ExecutionException: java.net.ConnectException: Connection refused: no further information
+	at com.google.code.yanf4j.core.impl.FutureImpl.get(FutureImpl.java:145)
+	at net.rubyeye.xmemcached.XMemcachedClient.connect(XMemcachedClient.java:582)
+	at net.rubyeye.xmemcached.XMemcachedClient.<init>(XMemcachedClient.java:870)
+	at net.rubyeye.xmemcached.XMemcachedClientBuilder.build(XMemcachedClientBuilder.java:340)
+	at com.juice.orange.game.cached.MemcachedResource.buildMemcached(MemcachedResource.java:34)
+	at com.klw.fastfun.pay.view.app.ServerBootstrap.main(ServerBootstrap.java:78)
+Caused by: java.net.ConnectException: Connection refused: no further information
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(Unknown Source)
+	at net.rubyeye.xmemcached.impl.MemcachedConnector.onConnect(MemcachedConnector.java:404)
+	at com.google.code.yanf4j.nio.impl.Reactor.dispatchEvent(Reactor.java:303)
+	at com.google.code.yanf4j.nio.impl.Reactor.run(Reactor.java:142)
+[7;31m2018-04-27 15:11:38,937 - ERROR [Xmemcached-Reactor-0:MemcachedConnector$InnerControllerStateListener@558] - Exception occured in controller
+[mjava.io.IOException: Connect to 127.0.0.1:11211 fail,Connection refused: no further information
+	at net.rubyeye.xmemcached.impl.MemcachedConnector.onConnect(MemcachedConnector.java:423)
+	at com.google.code.yanf4j.nio.impl.Reactor.dispatchEvent(Reactor.java:303)
+	at com.google.code.yanf4j.nio.impl.Reactor.run(Reactor.java:142)
+[7;31m2018-04-27 15:11:38,941 - ERROR [Xmemcached-Reactor-0:Reactor@325] - Reactor dispatch events error
+[mjava.io.IOException: Connect to 127.0.0.1:11211 fail,Connection refused: no further information
+	at net.rubyeye.xmemcached.impl.MemcachedConnector.onConnect(MemcachedConnector.java:423)
+	at com.google.code.yanf4j.nio.impl.Reactor.dispatchEvent(Reactor.java:303)
+	at com.google.code.yanf4j.nio.impl.Reactor.run(Reactor.java:142)
+[7;31m2018-04-27 15:11:38,941 - ERROR [main:XMemcachedClient@627] - Connect to 127.0.0.1:11211 fail
+[mjava.util.concurrent.ExecutionException: java.net.ConnectException: Connection refused: no further information
+	at com.google.code.yanf4j.core.impl.FutureImpl.get(FutureImpl.java:145)
+	at net.rubyeye.xmemcached.XMemcachedClient.connect(XMemcachedClient.java:582)
+	at net.rubyeye.xmemcached.XMemcachedClient.<init>(XMemcachedClient.java:870)
+	at net.rubyeye.xmemcached.XMemcachedClientBuilder.build(XMemcachedClientBuilder.java:340)
+	at com.juice.orange.game.cached.MemcachedResource.buildMemcached(MemcachedResource.java:34)
+	at com.klw.fastfun.pay.view.app.ServerBootstrap.main(ServerBootstrap.java:78)
+Caused by: java.net.ConnectException: Connection refused: no further information
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(Unknown Source)
+	at net.rubyeye.xmemcached.impl.MemcachedConnector.onConnect(MemcachedConnector.java:404)
+	at com.google.code.yanf4j.nio.impl.Reactor.dispatchEvent(Reactor.java:303)
+	at com.google.code.yanf4j.nio.impl.Reactor.run(Reactor.java:142)
+[2;32m2018-04-27 15:11:38,942 - INFO  [main:Application@25] - Init servers......
+[m[2;32m2018-04-27 15:11:39,026 - INFO  [main:ServerBootstrap@120] - Application PID:	15884
+[m[2;35m2018-04-27 15:11:40,942 - WARN  [Heal-Session-Thread:MemcachedConnector$SessionMonitor@125] - Trying to connect to 127.0.0.1:11211 for 1 times
+[m[2;35m2018-04-27 15:11:40,960 - WARN  [Xmemcached-Reactor-0:MemcachedConnector@251] - Add a session: 127.0.0.1:11211
+[m[2;32m2018-04-27 15:12:24,554 - INFO  [Thread-71:CodeHelperServer@1346] - commitCode请求header信息：[Host=127.0.0.1:9911, Connection=keep-alive, Upgrade-Insecure-Requests=1, User-Agent=Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36, Accept=text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8, Accept-Encoding=gzip, deflate, br, Accept-Language=zh-CN,zh;q=0.9,en;q=0.8]
+[m[2;32m2018-04-27 15:12:40,664 - INFO  [Thread-71:HttpTool@774] - 指令url:http://39.108.227.202:8888/api/receive_vcode_1001
+[m[2;32m2018-04-27 15:12:40,665 - INFO  [Thread-71:HttpTool@775] - 同步内容:id=66&token=8db3831316&mobile=15960556744&vcode=475883
+[m[2;32m2018-04-27 15:12:40,728 - INFO  [Thread-71:CodeCommitReqHelper@400] - sd21请求结果:OK
+[m[2;32m2018-04-27 15:12:47,291 - INFO  [Thread-71:CodeHelperServer@1391] - 合作方:szyd05
+通道方:sd28
+省份:北京
+计费点:0
+订单号:041596055674420180426
+指令内容:OK
+[m[2;35m2018-04-27 15:13:07,397 - WARN  [Thread-71:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :42845, uri:/code/commitCode?cpid=szyd05&code=475883&orderid=041596055674420180426&traid=1
+[m[7;31m2018-04-27 15:13:07,438 - ERROR [Thread-1:DefaultJuiceHandler@90] - java.lang.ArrayIndexOutOfBoundsException: 2
+[m[7;31m2018-04-27 15:13:07,440 - ERROR [Thread-1:DefaultJuiceHandler@91] - com.juice.orange.game.exception.JuiceException: handler request error,path:/favicon.ico;param:null
+[m[2;35m2018-04-27 15:13:07,440 - WARN  [Thread-1:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :2, uri:/favicon.ico
+[m[2;32m2018-04-27 15:14:23,433 - INFO  [Thread-31:CodeHelperServer@1346] - commitCode请求header信息：[Host=127.0.0.1:9911, Connection=keep-alive, Cache-Control=max-age=0, Upgrade-Insecure-Requests=1, User-Agent=Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36, Accept=text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8, Accept-Encoding=gzip, deflate, br, Accept-Language=zh-CN,zh;q=0.9,en;q=0.8]
+[m[2;32m2018-04-27 15:14:26,231 - INFO  [Thread-31:HttpTool@774] - 指令url:http://39.108.227.202:8888/api/receive_vcode_1001
+[m[2;32m2018-04-27 15:14:26,232 - INFO  [Thread-31:HttpTool@775] - 同步内容:id=66&token=8db3831316&mobile=15960556744&vcode=475883
+[m[2;32m2018-04-27 15:14:26,254 - INFO  [Thread-31:CodeCommitReqHelper@400] - sd21请求结果:OK
+[m[2;32m2018-04-27 15:14:26,255 - INFO  [Thread-31:CodeHelperServer@1391] - 合作方:szyd05
+通道方:sd28
+省份:北京
+计费点:0
+订单号:041596055674420180426
+指令内容:OK
+[m[7;31m2018-04-27 15:14:36,257 - ERROR [Thread-31:JuiceInvocationHandler@61] - Latch request time out..
+[m[7;31m2018-04-27 15:14:36,257 - ERROR [Thread-31:CodeHelperServer@1410] - 
+[m[2;35m2018-04-27 15:14:36,260 - WARN  [Thread-31:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :12827, uri:/code/commitCode?cpid=szyd05&code=475883&orderid=041596055674420180426&traid=1
+[m[7;31m2018-04-27 15:14:36,285 - ERROR [Thread-151:DefaultJuiceHandler@90] - java.lang.ArrayIndexOutOfBoundsException: 2
+[m[7;31m2018-04-27 15:14:36,286 - ERROR [Thread-151:DefaultJuiceHandler@91] - com.juice.orange.game.exception.JuiceException: handler request error,path:/favicon.ico;param:null
+[m[2;35m2018-04-27 15:14:36,286 - WARN  [Thread-151:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :1, uri:/favicon.ico
+[m

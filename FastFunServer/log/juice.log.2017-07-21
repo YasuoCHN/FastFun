@@ -1,0 +1,246 @@
+[2;32m2017-07-21 21:28:30,176 - INFO  [main:ServerBootstrap@74] - Configuration Server bootstrap params.......
+[m[2;32m2017-07-21 21:28:30,181 - INFO  [main:ServerBootstrap@75] - Server protocol:	http
+[m[2;32m2017-07-21 21:28:30,181 - INFO  [main:ServerBootstrap@76] - Server port:	9911
+[m[2;32m2017-07-21 21:28:30,357 - INFO  [main:ServerBootstrap@85] - Configuration Remote Server.......
+[m[2;32m2017-07-21 21:28:30,357 - INFO  [main:ServerBootstrap@87] - Add Remote Server - Name:FastFunSystem;Address:localhost;Port:9912
+[m[2;35m2017-07-21 21:28:30,386 - WARN  [main:XMemcachedClient@727] - XMemcachedClient use Binary protocol
+[m[2;32m2017-07-21 21:28:30,409 - INFO  [main:SelectorManager@37] - Creating 16 reactors...
+[m[2;35m2017-07-21 21:28:30,418 - WARN  [main:AbstractController@372] - The Controller started at localhost/127.0.0.1:0 ...
+[m[7;31m2017-07-21 21:28:31,415 - ERROR [main:XMemcachedClient@593] - connect to 127.0.0.1:11211 error
+[mjava.util.concurrent.ExecutionException: java.net.ConnectException: Connection refused: no further information
+	at com.google.code.yanf4j.core.impl.FutureImpl.get(FutureImpl.java:145)
+	at net.rubyeye.xmemcached.XMemcachedClient.connect(XMemcachedClient.java:582)
+	at net.rubyeye.xmemcached.XMemcachedClient.<init>(XMemcachedClient.java:870)
+	at net.rubyeye.xmemcached.XMemcachedClientBuilder.build(XMemcachedClientBuilder.java:340)
+	at com.juice.orange.game.cached.MemcachedResource.buildMemcached(MemcachedResource.java:34)
+	at com.klw.fastfun.pay.view.app.ServerBootstrap.main(ServerBootstrap.java:64)
+Caused by: java.net.ConnectException: Connection refused: no further information
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(Unknown Source)
+	at net.rubyeye.xmemcached.impl.MemcachedConnector.onConnect(MemcachedConnector.java:404)
+	at com.google.code.yanf4j.nio.impl.Reactor.dispatchEvent(Reactor.java:303)
+	at com.google.code.yanf4j.nio.impl.Reactor.run(Reactor.java:142)
+[7;31m2017-07-21 21:28:31,417 - ERROR [Xmemcached-Reactor-0:MemcachedConnector$InnerControllerStateListener@558] - Exception occured in controller
+[mjava.io.IOException: Connect to 127.0.0.1:11211 fail,Connection refused: no further information
+	at net.rubyeye.xmemcached.impl.MemcachedConnector.onConnect(MemcachedConnector.java:423)
+	at com.google.code.yanf4j.nio.impl.Reactor.dispatchEvent(Reactor.java:303)
+	at com.google.code.yanf4j.nio.impl.Reactor.run(Reactor.java:142)
+[7;31m2017-07-21 21:28:31,422 - ERROR [Xmemcached-Reactor-0:Reactor@325] - Reactor dispatch events error
+[mjava.io.IOException: Connect to 127.0.0.1:11211 fail,Connection refused: no further information
+	at net.rubyeye.xmemcached.impl.MemcachedConnector.onConnect(MemcachedConnector.java:423)
+	at com.google.code.yanf4j.nio.impl.Reactor.dispatchEvent(Reactor.java:303)
+	at com.google.code.yanf4j.nio.impl.Reactor.run(Reactor.java:142)
+[7;31m2017-07-21 21:28:31,422 - ERROR [main:XMemcachedClient@627] - Connect to 127.0.0.1:11211 fail
+[mjava.util.concurrent.ExecutionException: java.net.ConnectException: Connection refused: no further information
+	at com.google.code.yanf4j.core.impl.FutureImpl.get(FutureImpl.java:145)
+	at net.rubyeye.xmemcached.XMemcachedClient.connect(XMemcachedClient.java:582)
+	at net.rubyeye.xmemcached.XMemcachedClient.<init>(XMemcachedClient.java:870)
+	at net.rubyeye.xmemcached.XMemcachedClientBuilder.build(XMemcachedClientBuilder.java:340)
+	at com.juice.orange.game.cached.MemcachedResource.buildMemcached(MemcachedResource.java:34)
+	at com.klw.fastfun.pay.view.app.ServerBootstrap.main(ServerBootstrap.java:64)
+Caused by: java.net.ConnectException: Connection refused: no further information
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(Unknown Source)
+	at net.rubyeye.xmemcached.impl.MemcachedConnector.onConnect(MemcachedConnector.java:404)
+	at com.google.code.yanf4j.nio.impl.Reactor.dispatchEvent(Reactor.java:303)
+	at com.google.code.yanf4j.nio.impl.Reactor.run(Reactor.java:142)
+[2;32m2017-07-21 21:28:31,425 - INFO  [main:Application@24] - Init servers......
+[m[2;32m2017-07-21 21:28:31,475 - INFO  [main:ServerBootstrap@99] - Application PID:	7296
+[m[2;35m2017-07-21 21:28:33,423 - WARN  [Heal-Session-Thread:MemcachedConnector$SessionMonitor@125] - Trying to connect to 127.0.0.1:11211 for 1 times
+[m[2;35m2017-07-21 21:28:33,932 - WARN  [Xmemcached-Reactor-0:MemcachedConnector@251] - Add a session: 127.0.0.1:11211
+[m[2;32m2017-07-21 21:29:03,839 - INFO  [Thread-151:CodeHelperServer@4375] - reqXSCodeSDKtest请求header信息：[Host=127.0.0.1:9911, Connection=keep-alive, Upgrade-Insecure-Requests=1, User-Agent=Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36, Accept=text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8, Accept-Encoding=gzip, deflate, br, Accept-Language=zh-CN,zh;q=0.8,en;q=0.6]
+[m[2;32m2017-07-21 21:29:03,986 - INFO  [Thread-151:HttpTool@343] - 指令url=http://127.0.0.1:9911/code/reqXSCodeSDK
+[m[2;32m2017-07-21 21:29:03,986 - INFO  [Thread-151:HttpTool@344] - 同步内容=5AD702B7F44AC6CC246C806A1841BBF503FEC908228EEBD105CD7837752AAC367027B54A372C283ED3B525C0BAE851665B3F60CBCA9E4321512A4EE1B3C3DB5F96ADCE6AAF5CDA1C17FED72BE781D280DD1FEC014969F1F472AFDDF2738232D2A767AD069464E46330776554C71C12CA53AADACE231DC4BC9866401CD20EBE47BAE1BB019A78675DDDC39999564947BA1A79FA4CA7EAD4436ABE18AC95967B8207oow29051506351
+[m[2;32m2017-07-21 21:29:03,993 - INFO  [Thread-121:CodeHelperServer@4232] - reqXSCodeSDK请求header信息：[accept=*/*, user-agent=Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1;SV1), Host=127.0.0.1:9911, Connection=keep-alive, Content-type=application/x-www-form-urlencoded, Content-Length=336]
+[m[2;32m2017-07-21 21:29:03,993 - INFO  [Thread-121:CodeHelperServer@1624] - 请求SDKAES加密信息：5AD702B7F44AC6CC246C806A1841BBF503FEC908228EEBD105CD7837752AAC367027B54A372C283ED3B525C0BAE851665B3F60CBCA9E4321512A4EE1B3C3DB5F96ADCE6AAF5CDA1C17FED72BE781D280DD1FEC014969F1F472AFDDF2738232D2A767AD069464E46330776554C71C12CA53AADACE231DC4BC9866401CD20EBE47BAE1BB019A78675DDDC39999564947BA1A79FA4CA7EAD4436ABE18AC95967B8207oow29051506351
+[m[2;32m2017-07-21 21:29:03,995 - INFO  [Thread-121:CodeHelperServer@1632] - 请求SDKAES解密后信息：{"cpid":"sdk01","cpparam":"klwtest","fee":"1000","iccid":"89860041191504691049","imei":"867609020232930","imsi":"460023129529560","phone":"15012937395"}
+[m[2;32m2017-07-21 21:29:04,015 - INFO  [Thread-121:CodeHelperServer@1655] - 用户访问IP=127.0.0.1
+[m[2;32m2017-07-21 21:29:04,015 - INFO  [Thread-121:CodeHelperServer@1669] - 移动用户依据iccid判定:89860041191504691049归属于：广东
+[m[2;32m2017-07-21 21:29:04,173 - INFO  [Thread-121:HttpTool@132] - 指令url=http://smspay.xushihudong.com/mmcode/req3110MMCode?serVer=11&imsi=460023129529560&imei=867609020232930&iccid=89860041191504691049&fee=1000&pmodel=xs&osversion=null&nwtype=null&ffid=07ycv67549873128&count=0&province=%E5%B9%BF%E4%B8%9C
+[m[2;32m2017-07-21 21:29:04,425 - INFO  [Thread-121:HttpTool@170] - 指令结果=error
+[m[2;32m2017-07-21 21:29:04,507 - INFO  [Thread-121:CodeHelperServer@4285] - 合作方:sdk01
+通道方:yc20
+订单号:07ycv67549873128
+指令内容:{"msg":"failed to obtain sms","smsfilter":[{"day_limit":5000,"isreply":"0","isscreen":"1","keyport":"10086","keyword":"中移互联网","month_limit":20000,"pay_limit_open":0},{"day_limit":5000,"isreply":"0","isscreen":"1","keyport":"1065","keyword":"成功购买","month_limit":20000,"pay_limit_open":0}],"status":"1"}
+[m[2;35m2017-07-21 21:29:04,521 - WARN  [Thread-121:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :528, uri:/code/reqXSCodeSDK
+[m[2;35m2017-07-21 21:29:04,525 - WARN  [Thread-151:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :687, uri:/code/reqXSCodeSDKtest?cpid=sdk01&imsi=460023129529560&imei=867609020232930&iccid=89860041191504691049&cpparam=klwtest&fee=1000&ip=211.139.146.117&phone=15012937395
+[m[7;31m2017-07-21 21:29:04,552 - ERROR [Thread-122:DefaultJuiceHandler@90] - java.lang.ArrayIndexOutOfBoundsException: 2
+[m[7;31m2017-07-21 21:29:04,553 - ERROR [Thread-122:DefaultJuiceHandler@91] - com.juice.orange.game.exception.JuiceException: handler request error,path:/favicon.ico;param:null
+[m[2;35m2017-07-21 21:29:04,553 - WARN  [Thread-122:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :1, uri:/favicon.ico
+[m[7;31m2017-07-21 21:32:19,567 - ERROR [Xmemcached-Reactor-2:MemcachedHandler@138] - XMemcached network layout exception
+[mjava.io.IOException: 远程主机强迫关闭了一个现有的连接。
+	at sun.nio.ch.SocketDispatcher.read0(Native Method)
+	at sun.nio.ch.SocketDispatcher.read(Unknown Source)
+	at sun.nio.ch.IOUtil.readIntoNativeBuffer(Unknown Source)
+	at sun.nio.ch.IOUtil.read(Unknown Source)
+	at sun.nio.ch.SocketChannelImpl.read(Unknown Source)
+	at com.google.code.yanf4j.nio.impl.NioTCPSession.readFromBuffer(NioTCPSession.java:203)
+	at com.google.code.yanf4j.nio.impl.AbstractNioSession.onRead(AbstractNioSession.java:196)
+	at com.google.code.yanf4j.nio.impl.AbstractNioSession.onEvent(AbstractNioSession.java:341)
+	at com.google.code.yanf4j.nio.impl.SocketChannelController.dispatchReadEvent(SocketChannelController.java:56)
+	at com.google.code.yanf4j.nio.impl.NioController.onRead(NioController.java:157)
+	at com.google.code.yanf4j.nio.impl.Reactor.dispatchEvent(Reactor.java:295)
+	at com.google.code.yanf4j.nio.impl.Reactor.run(Reactor.java:142)
+[2;35m2017-07-21 21:32:19,593 - WARN  [Xmemcached-Reactor-2:MemcachedConnector@365] - Remove a session: 127.0.0.1:11211
+[m[2;35m2017-07-21 21:32:21,595 - WARN  [Heal-Session-Thread:MemcachedConnector$SessionMonitor@125] - Trying to connect to 127.0.0.1:11211 for 1 times
+[m[2;35m2017-07-21 21:32:21,600 - WARN  [Xmemcached-Reactor-0:MemcachedConnector@251] - Add a session: 127.0.0.1:11211
+[m[2;32m2017-07-21 21:32:24,272 - INFO  [Thread-61:CodeHelperServer@4375] - reqXSCodeSDKtest请求header信息：[Host=127.0.0.1:9911, Connection=keep-alive, Cache-Control=max-age=0, Upgrade-Insecure-Requests=1, User-Agent=Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36, Accept=text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8, Accept-Encoding=gzip, deflate, br, Accept-Language=zh-CN,zh;q=0.8,en;q=0.6]
+[m[2;32m2017-07-21 21:32:24,276 - INFO  [Thread-61:HttpTool@343] - 指令url=http://127.0.0.1:9911/code/reqXSCodeSDK
+[m[2;32m2017-07-21 21:32:24,276 - INFO  [Thread-61:HttpTool@344] - 同步内容=098B87E1FF806809BCA1A530C1C6F263A4B3AAF7BAF20A24806C8B5638775F28F1D1D272D73D8EC5C450C1CC540939024CCF3D078ECBF72797352B477BE5167C35A4A47C22803B3DB7E7BFDA2E70A77213DBAC136FEA0E5890C07FAB7BFFF71213F99A85A9F1DE7C26E9C06FF3F6DB0CA9B580E15A1F42D62CF7ED0D8BCD393083D6C3AE4B97BC6B320AAA54A6096C562DCC13DB787630BC3C3A4B3ABD06588C07ooi63431025486
+[m[2;32m2017-07-21 21:32:24,279 - INFO  [Thread-11:CodeHelperServer@4232] - reqXSCodeSDK请求header信息：[accept=*/*, user-agent=Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1;SV1), Host=127.0.0.1:9911, Connection=keep-alive, Content-type=application/x-www-form-urlencoded, Content-Length=336]
+[m[2;32m2017-07-21 21:32:24,280 - INFO  [Thread-11:CodeHelperServer@1624] - 请求SDKAES加密信息：098B87E1FF806809BCA1A530C1C6F263A4B3AAF7BAF20A24806C8B5638775F28F1D1D272D73D8EC5C450C1CC540939024CCF3D078ECBF72797352B477BE5167C35A4A47C22803B3DB7E7BFDA2E70A77213DBAC136FEA0E5890C07FAB7BFFF71213F99A85A9F1DE7C26E9C06FF3F6DB0CA9B580E15A1F42D62CF7ED0D8BCD393083D6C3AE4B97BC6B320AAA54A6096C562DCC13DB787630BC3C3A4B3ABD06588C07ooi63431025486
+[m[2;32m2017-07-21 21:32:24,282 - INFO  [Thread-11:CodeHelperServer@1632] - 请求SDKAES解密后信息：{"cpid":"sdk01","cpparam":"klwtest","fee":"1000","iccid":"89860041191504691049","imei":"867609020232930","imsi":"460023129529560","phone":"15012937395"}
+[m[2;32m2017-07-21 21:32:24,282 - INFO  [Thread-11:CodeHelperServer@1655] - 用户访问IP=127.0.0.1
+[m[2;32m2017-07-21 21:32:24,282 - INFO  [Thread-11:CodeHelperServer@1669] - 移动用户依据iccid判定:89860041191504691049归属于：广东
+[m[2;32m2017-07-21 21:32:24,308 - INFO  [Thread-11:HttpTool@132] - 指令url=http://smspay.xushihudong.com/mmcode/req3110MMCode?serVer=11&imsi=460023129529560&imei=867609020232930&iccid=89860041191504691049&fee=1000&pmodel=xs&osversion=null&nwtype=null&ffid=07ycz90830980167&count=0&province=%E5%B9%BF%E4%B8%9C
+[m[2;32m2017-07-21 21:32:24,924 - INFO  [Thread-11:HttpTool@170] - 指令结果={"msg":"6ZhMVsNSQTHiE0m1GkE0pUwIRVqXNhhOqUzKsE4ctDrDYmXKabBZDSaP1CUuRh3r0Vlye5g9J5/zqZPYvtHHdvMUTTXbmE7yi0hfFq/icjrexqpjuTcMdyaWoW14No48Ju9NYlA/xwan6XuvB7vlx/ocDDeD5XCwmO0G","returnCode":"0","send_type":"1","smsNumber":"1065842455","tradeId":"E69754C40A"}
+[m[2;32m2017-07-21 21:32:24,950 - INFO  [Thread-11:CodeHelperServer@4285] - 合作方:sdk01
+通道方:yc20
+订单号:07ycz90830980167
+指令内容:{"isreply":"0","isscreen":"1","keyport":"1065#10086","keyword":"成功购买#中移互联网","msg":"success","orderid":"07ycz90830980167","sendport1":"0","sendtype1":"1","sendtype2":"0","sms1":"6ZhMVsNSQTHiE0m1GkE0pUwIRVqXNhhOqUzKsE4ctDrDYmXKabBZDSaP1CUuRh3r0Vlye5g9J5/zqZPYvtHHdvMUTTXbmE7yi0hfFq/icjrexqpjuTcMdyaWoW14No48Ju9NYlA/xwan6XuvB7vlx/ocDDeD5XCwmO0G","smsfilter":[{"day_limit":5000,"isreply":"0","isscreen":"1","keyport":"10086","keyword":"中移互联网","month_limit":20000,"pay_limit_open":0},{"day_limit":5000,"isreply":"0","isscreen":"1","keyport":"1065","keyword":"成功购买","month_limit":20000,"pay_limit_open":0}],"smsport1":"1065842455","status":"0","url":"http://smspay.xushihudong.com/code/reqXSCodeSDKRes?orderid=07ycz90830980167"}
+[m[2;35m2017-07-21 21:32:24,966 - WARN  [Thread-11:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :687, uri:/code/reqXSCodeSDK
+[m[2;35m2017-07-21 21:32:24,967 - WARN  [Thread-61:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :696, uri:/code/reqXSCodeSDKtest?cpid=sdk01&imsi=460023129529560&imei=867609020232930&iccid=89860041191504691049&cpparam=klwtest&fee=1000&ip=211.139.146.117&phone=15012937395
+[m[7;31m2017-07-21 21:32:24,978 - ERROR [Thread-12:DefaultJuiceHandler@90] - java.lang.ArrayIndexOutOfBoundsException: 2
+[m[7;31m2017-07-21 21:32:24,978 - ERROR [Thread-12:DefaultJuiceHandler@91] - com.juice.orange.game.exception.JuiceException: handler request error,path:/favicon.ico;param:null
+[m[2;35m2017-07-21 21:32:24,978 - WARN  [Thread-12:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :0, uri:/favicon.ico
+[m[2;32m2017-07-21 21:33:44,954 - INFO  [Thread-41:CodeHelperServer@4375] - reqXSCodeSDKtest请求header信息：[Host=127.0.0.1:9911, Connection=keep-alive, Cache-Control=max-age=0, Upgrade-Insecure-Requests=1, User-Agent=Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36, Accept=text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8, Accept-Encoding=gzip, deflate, br, Accept-Language=zh-CN,zh;q=0.8,en;q=0.6]
+[m[2;32m2017-07-21 21:33:44,956 - INFO  [Thread-41:HttpTool@343] - 指令url=http://127.0.0.1:9911/code/reqXSCodeSDK
+[m[2;32m2017-07-21 21:33:44,957 - INFO  [Thread-41:HttpTool@344] - 同步内容=9DF84852618039AFECA72721B51DAE721058D20CF8477E22EDD55253ACF9F11BD791D700DBE119D99670AA9D1B514569906609A06C60471D2515B3836985041D2408BFAB571ED99314C762D9E5C4B31FC9CE1189BB7E0C47C08D28ED3464BE2C0412B7A2504319E58D82A8EFF1DD03C5445A2D89879DAA817B629C433B9EAEB061DCFE733F556D6A57706F779C960213DF6088ED2E18D0DF18B654AED7F136DF07oon44109707441
+[m[2;32m2017-07-21 21:33:44,963 - INFO  [Thread-141:CodeHelperServer@4232] - reqXSCodeSDK请求header信息：[accept=*/*, user-agent=Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1;SV1), Host=127.0.0.1:9911, Connection=keep-alive, Content-type=application/x-www-form-urlencoded, Content-Length=336]
+[m[2;32m2017-07-21 21:33:44,963 - INFO  [Thread-141:CodeHelperServer@1624] - 请求SDKAES加密信息：9DF84852618039AFECA72721B51DAE721058D20CF8477E22EDD55253ACF9F11BD791D700DBE119D99670AA9D1B514569906609A06C60471D2515B3836985041D2408BFAB571ED99314C762D9E5C4B31FC9CE1189BB7E0C47C08D28ED3464BE2C0412B7A2504319E58D82A8EFF1DD03C5445A2D89879DAA817B629C433B9EAEB061DCFE733F556D6A57706F779C960213DF6088ED2E18D0DF18B654AED7F136DF07oon44109707441
+[m[2;32m2017-07-21 21:33:44,965 - INFO  [Thread-141:CodeHelperServer@1632] - 请求SDKAES解密后信息：{"cpid":"sdk01","cpparam":"klwtest","fee":"1000","iccid":"89860041191504691049","imei":"867609020232930","imsi":"460023129529560","phone":"15012937395"}
+[m[2;32m2017-07-21 21:33:44,965 - INFO  [Thread-141:CodeHelperServer@1655] - 用户访问IP=127.0.0.1
+[m[2;32m2017-07-21 21:33:44,966 - INFO  [Thread-141:CodeHelperServer@1669] - 移动用户依据iccid判定:89860041191504691049归属于：广东
+[m[2;32m2017-07-21 21:33:44,975 - INFO  [Thread-141:HttpTool@132] - 指令url=http://smspay.xushihudong.com/mmcode/req3110MMCode?serVer=11&imsi=460023129529560&imei=867609020232930&iccid=89860041191504691049&fee=1000&pmodel=xs&osversion=null&nwtype=null&ffid=07ycx53538482407&count=0&province=%E5%B9%BF%E4%B8%9C
+[m[2;32m2017-07-21 21:33:45,534 - INFO  [Thread-141:HttpTool@170] - 指令结果={"msg":"6ZhMVsNSQTHiE0m1GkE0pUwIRVqXNhhOqUzKsE4ctDrDYmXNWLBZDSaP1CUulo3D7rX7OH1Gm8dmHPlYjuduObv6qCfWhrX7KwxNzsNoffmJhkOL91f2bJ6vmmoyWZxW3+9NYnB2dVap5XuvB7vlx/jarDbD0XAyGuwG","returnCode":"0","send_type":"1","smsNumber":"1065842455","tradeId":"1EC13C0263"}
+[m[2;32m2017-07-21 21:33:45,549 - INFO  [Thread-141:CodeHelperServer@4285] - 合作方:sdk01
+通道方:yc20
+订单号:07ycx53538482407
+指令内容:{"isreply":"0","isscreen":"1","keyport":"1065#10086","keyword":"成功购买#中移互联网","msg":"success","orderid":"07ycx53538482407","sendport1":"0","sendtype1":"1","sendtype2":"0","sms1":"6ZhMVsNSQTHiE0m1GkE0pUwIRVqXNhhOqUzKsE4ctDrDYmXNWLBZDSaP1CUulo3D7rX7OH1Gm8dmHPlYjuduObv6qCfWhrX7KwxNzsNoffmJhkOL91f2bJ6vmmoyWZxW3+9NYnB2dVap5XuvB7vlx/jarDbD0XAyGuwG","smsfilter":[{"day_limit":5000,"isreply":"0","isscreen":"1","keyport":"10086","keyword":"中移互联网","month_limit":20000,"pay_limit_open":0},{"day_limit":5000,"isreply":"0","isscreen":"1","keyport":"1065","keyword":"成功购买","month_limit":20000,"pay_limit_open":0}],"smsport1":"1065842455","status":"0","url":"http://smspay.xushihudong.com/code/reqXSCodeSDKRes?orderid=07ycx53538482407"}
+[m[2;35m2017-07-21 21:33:45,569 - WARN  [Thread-141:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :606, uri:/code/reqXSCodeSDK
+[m[2;35m2017-07-21 21:33:45,571 - WARN  [Thread-41:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :617, uri:/code/reqXSCodeSDKtest?cpid=sdk01&imsi=460023129529560&imei=867609020232930&iccid=89860041191504691049&cpparam=klwtest&fee=1000&ip=211.139.146.117&phone=15012937395
+[m[7;31m2017-07-21 21:33:45,583 - ERROR [Thread-1:DefaultJuiceHandler@90] - java.lang.ArrayIndexOutOfBoundsException: 2
+[m[7;31m2017-07-21 21:33:45,583 - ERROR [Thread-1:DefaultJuiceHandler@91] - com.juice.orange.game.exception.JuiceException: handler request error,path:/favicon.ico;param:null
+[m[2;35m2017-07-21 21:33:45,583 - WARN  [Thread-1:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :0, uri:/favicon.ico
+[m[2;32m2017-07-21 21:37:02,585 - INFO  [main:ServerBootstrap@74] - Configuration Server bootstrap params.......
+[m[2;32m2017-07-21 21:37:02,586 - INFO  [main:ServerBootstrap@75] - Server protocol:	http
+[m[2;32m2017-07-21 21:37:02,586 - INFO  [main:ServerBootstrap@76] - Server port:	9911
+[m[2;32m2017-07-21 21:37:02,742 - INFO  [main:ServerBootstrap@85] - Configuration Remote Server.......
+[m[2;32m2017-07-21 21:37:02,742 - INFO  [main:ServerBootstrap@87] - Add Remote Server - Name:FastFunSystem;Address:localhost;Port:9912
+[m[2;35m2017-07-21 21:37:02,776 - WARN  [main:XMemcachedClient@727] - XMemcachedClient use Binary protocol
+[m[2;32m2017-07-21 21:37:02,795 - INFO  [main:SelectorManager@37] - Creating 16 reactors...
+[m[2;35m2017-07-21 21:37:02,805 - WARN  [main:AbstractController@372] - The Controller started at localhost/127.0.0.1:0 ...
+[m[2;35m2017-07-21 21:37:02,811 - WARN  [Xmemcached-Reactor-0:MemcachedConnector@251] - Add a session: 127.0.0.1:11211
+[m[2;32m2017-07-21 21:37:02,811 - INFO  [main:Application@24] - Init servers......
+[m[2;32m2017-07-21 21:37:02,831 - INFO  [main:ServerBootstrap@99] - Application PID:	8780
+[m[2;32m2017-07-21 21:37:23,832 - INFO  [Thread-131:CodeHelperServer@4375] - reqXSCodeSDKtest请求header信息：[Host=127.0.0.1:9911, Connection=keep-alive, Cache-Control=max-age=0, Upgrade-Insecure-Requests=1, User-Agent=Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36, Accept=text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8, Accept-Encoding=gzip, deflate, br, Accept-Language=zh-CN,zh;q=0.8,en;q=0.6]
+[m[2;32m2017-07-21 21:37:23,963 - INFO  [Thread-131:HttpTool@343] - 指令url=http://127.0.0.1:9911/code/reqXSCodeSDK
+[m[2;32m2017-07-21 21:37:23,963 - INFO  [Thread-131:HttpTool@344] - 同步内容=CB21FF785A907DE90B28DB29ABBA7E71F9560C3917C0120F49D47D0C9E8BAFE387BC2CBADF758BF21C92F0E02A90AFE766E4F4F5F66B4895E201BE49E1AF62EFE0B6891DC50D5D6950E3E09EFB298A23CFCFC6C85BA439E9DF80F3B2C84B5278851B4FECB3536504535A904CB86417BB886AE91D3118D367A54DB8B01730ADBB92EF5659F9FF3337B19F1FD42AE2B5395C22BDC4F6DB654459FCBE82CAB1412E07ooz62377370735
+[m[2;32m2017-07-21 21:37:23,969 - INFO  [Thread-61:CodeHelperServer@4232] - reqXSCodeSDK请求header信息：[accept=*/*, user-agent=Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1;SV1), Host=127.0.0.1:9911, Connection=keep-alive, Content-type=application/x-www-form-urlencoded, Content-Length=336]
+[m[2;32m2017-07-21 21:37:23,969 - INFO  [Thread-61:CodeHelperServer@1624] - 请求SDKAES加密信息：CB21FF785A907DE90B28DB29ABBA7E71F9560C3917C0120F49D47D0C9E8BAFE387BC2CBADF758BF21C92F0E02A90AFE766E4F4F5F66B4895E201BE49E1AF62EFE0B6891DC50D5D6950E3E09EFB298A23CFCFC6C85BA439E9DF80F3B2C84B5278851B4FECB3536504535A904CB86417BB886AE91D3118D367A54DB8B01730ADBB92EF5659F9FF3337B19F1FD42AE2B5395C22BDC4F6DB654459FCBE82CAB1412E07ooz62377370735
+[m[2;32m2017-07-21 21:37:23,972 - INFO  [Thread-61:CodeHelperServer@1632] - 请求SDKAES解密后信息：{"cpid":"sdk01","cpparam":"klwtest","fee":"1000","iccid":"89860041191504691049","imei":"867609020232930","imsi":"460023129529560","phone":"15012937395"}
+[m[2;32m2017-07-21 21:37:23,991 - INFO  [Thread-61:CodeHelperServer@1655] - 用户访问IP=127.0.0.1
+[m[2;32m2017-07-21 21:37:23,991 - INFO  [Thread-61:CodeHelperServer@1669] - 移动用户依据iccid判定:89860041191504691049归属于：广东
+[m[7;31m2017-07-21 21:37:31,970 - ERROR [Thread-131:HttpTool@373] - Read timed out
+[m[2;35m2017-07-21 21:37:31,976 - WARN  [Thread-131:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :8145, uri:/code/reqXSCodeSDKtest?cpid=sdk01&imsi=460023129529560&imei=867609020232930&iccid=89860041191504691049&cpparam=klwtest&fee=1000&ip=211.139.146.117&phone=15012937395
+[m[7;31m2017-07-21 21:37:31,998 - ERROR [Thread-141:DefaultJuiceHandler@90] - java.lang.ArrayIndexOutOfBoundsException: 2
+[m[7;31m2017-07-21 21:37:31,998 - ERROR [Thread-141:DefaultJuiceHandler@91] - com.juice.orange.game.exception.JuiceException: handler request error,path:/favicon.ico;param:null
+[m[2;35m2017-07-21 21:37:31,999 - WARN  [Thread-141:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :3, uri:/favicon.ico
+[m[7;31m2017-07-21 21:37:34,065 - ERROR [Thread-61:JuiceInvocationHandler@63] - Latch request time out..
+[m[7;31m2017-07-21 21:37:34,066 - ERROR [Thread-61:CodeHelperServer@4292] - 
+[m[2;35m2017-07-21 21:37:34,079 - WARN  [Thread-61:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :10110, uri:/code/reqXSCodeSDK
+[m[2;32m2017-07-21 21:37:43,657 - INFO  [main:ServerBootstrap@74] - Configuration Server bootstrap params.......
+[m[2;32m2017-07-21 21:37:43,659 - INFO  [main:ServerBootstrap@75] - Server protocol:	http
+[m[2;32m2017-07-21 21:37:43,659 - INFO  [main:ServerBootstrap@76] - Server port:	9911
+[m[2;32m2017-07-21 21:37:43,818 - INFO  [main:ServerBootstrap@85] - Configuration Remote Server.......
+[m[2;32m2017-07-21 21:37:43,819 - INFO  [main:ServerBootstrap@87] - Add Remote Server - Name:FastFunSystem;Address:localhost;Port:9912
+[m[2;35m2017-07-21 21:37:43,848 - WARN  [main:XMemcachedClient@727] - XMemcachedClient use Binary protocol
+[m[2;32m2017-07-21 21:37:43,866 - INFO  [main:SelectorManager@37] - Creating 16 reactors...
+[m[2;35m2017-07-21 21:37:43,875 - WARN  [main:AbstractController@372] - The Controller started at localhost/127.0.0.1:0 ...
+[m[2;35m2017-07-21 21:37:43,881 - WARN  [Xmemcached-Reactor-0:MemcachedConnector@251] - Add a session: 127.0.0.1:11211
+[m[2;32m2017-07-21 21:37:43,882 - INFO  [main:Application@24] - Init servers......
+[m[2;32m2017-07-21 21:37:43,903 - INFO  [main:ServerBootstrap@99] - Application PID:	6740
+[m[2;32m2017-07-21 21:38:22,479 - INFO  [Thread-141:CodeHelperServer@4375] - reqXSCodeSDKtest请求header信息：[Host=127.0.0.1:9911, Connection=keep-alive, Cache-Control=max-age=0, Upgrade-Insecure-Requests=1, User-Agent=Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36, Accept=text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8, Accept-Encoding=gzip, deflate, br, Accept-Language=zh-CN,zh;q=0.8,en;q=0.6]
+[m[2;32m2017-07-21 21:38:22,604 - INFO  [Thread-141:HttpTool@343] - 指令url=http://127.0.0.1:9911/code/reqXSCodeSDK
+[m[2;32m2017-07-21 21:38:22,604 - INFO  [Thread-141:HttpTool@344] - 同步内容=E050CEDF6A658D5DB14AEF996DE209B1435346F3A416E3A4318277C26E267D7528CDC3A9B03FF64186E8E8E1C044C3512541E937A73623E5995A0280F3A34F273FAB7F05ADBF3B83DE8B8D48B20BC25FD5D2C3CE724B106843371B74A1305A8EBEF63733D8B8322ED4999F6F92E7B6A2DE927A54574DA80F6EB2C6EC1386F15C91201E94657DEAE01613FEB78202AE3C43A29CB13F86333AFBF6B24B0BC0366007ooz22382071271
+[m[2;32m2017-07-21 21:38:22,610 - INFO  [Thread-151:CodeHelperServer@4232] - reqXSCodeSDK请求header信息：[accept=*/*, user-agent=Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1;SV1), Host=127.0.0.1:9911, Connection=keep-alive, Content-type=application/x-www-form-urlencoded, Content-Length=336]
+[m[2;32m2017-07-21 21:38:22,611 - INFO  [Thread-151:CodeHelperServer@1624] - 请求SDKAES加密信息：E050CEDF6A658D5DB14AEF996DE209B1435346F3A416E3A4318277C26E267D7528CDC3A9B03FF64186E8E8E1C044C3512541E937A73623E5995A0280F3A34F273FAB7F05ADBF3B83DE8B8D48B20BC25FD5D2C3CE724B106843371B74A1305A8EBEF63733D8B8322ED4999F6F92E7B6A2DE927A54574DA80F6EB2C6EC1386F15C91201E94657DEAE01613FEB78202AE3C43A29CB13F86333AFBF6B24B0BC0366007ooz22382071271
+[m[2;32m2017-07-21 21:38:22,614 - INFO  [Thread-151:CodeHelperServer@1632] - 请求SDKAES解密后信息：{"cpid":"sdk01","cpparam":"klwtest","fee":"1000","iccid":"89860041191504691049","imei":"867609020232930","imsi":"460023129529560","phone":"15012937395"}
+[m[2;32m2017-07-21 21:38:22,633 - INFO  [Thread-151:CodeHelperServer@1655] - 用户访问IP=127.0.0.1
+[m[2;32m2017-07-21 21:38:22,633 - INFO  [Thread-151:CodeHelperServer@1669] - 移动用户依据iccid判定:89860041191504691049归属于：广东
+[m[2;32m2017-07-21 21:38:22,797 - INFO  [Thread-151:HttpTool@132] - 指令url=http://smspay.xushihudong.com/mmcode/req3110MMCode?serVer=11&imsi=460023129529560&imei=867609020232930&iccid=89860041191504691049&fee=1000&pmodel=xs&osversion=null&nwtype=null&ffid=07yce16388009653&count=0&province=%E5%B9%BF%E4%B8%9C
+[m[2;32m2017-07-21 21:38:23,304 - INFO  [Thread-151:HttpTool@170] - 指令结果={"msg":"6ZhMVsNSQTHiE0m1GkE0pUwIRVqXNhhOqUzKsE4ctDrDYmVUabBZDSaP1CUulpuv20esemy1k+22phx9hQ/r5LHZipOlYfMxvj6fE8vCKtL5dmrVK/yqioafY7BmsQaVZe9NYvCOt+mx2WivB7vlx+WYbYbDwWA5W20G","returnCode":"0","send_type":"1","smsNumber":"1065842455","tradeId":"A996552C05"}
+[m[2;32m2017-07-21 21:38:23,379 - INFO  [Thread-151:CodeHelperServer@4285] - 合作方:sdk01
+通道方:yc20
+订单号:07yce16388009653
+指令内容:{"isreply":"0","isscreen":"1","keyport":"1065#10086","keyword":"成功购买#中移互联网","msg":"success","orderid":"07yce16388009653","sendport1":"0","sendtype1":"1","sendtype2":"0","sms1":"6ZhMVsNSQTHiE0m1GkE0pUwIRVqXNhhOqUzKsE4ctDrDYmVUabBZDSaP1CUulpuv20esemy1k+22phx9hQ/r5LHZipOlYfMxvj6fE8vCKtL5dmrVK/yqioafY7BmsQaVZe9NYvCOt+mx2WivB7vlx+WYbYbDwWA5W20G","smsfilter":[{"day_limit":5000,"isreply":"0","isscreen":"1","keyport":"10086","keyword":"中移互联网","month_limit":20000,"pay_limit_open":0},{"day_limit":5000,"isreply":"0","isscreen":"1","keyport":"1065","keyword":"成功购买","month_limit":20000,"pay_limit_open":0}],"smsport1":"1065842455","status":"0","url":"http://smspay.xushihudong.com/code/reqXSCodeSDKRes?orderid=07yce16388009653"}
+[m[2;35m2017-07-21 21:38:23,396 - WARN  [Thread-151:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :786, uri:/code/reqXSCodeSDK
+[m[2;35m2017-07-21 21:38:23,401 - WARN  [Thread-141:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :923, uri:/code/reqXSCodeSDKtest?cpid=sdk01&imsi=460023129529560&imei=867609020232930&iccid=89860041191504691049&cpparam=klwtest&fee=1000&ip=211.139.146.117&phone=15012937395
+[m[7;31m2017-07-21 21:38:23,411 - ERROR [Thread-152:DefaultJuiceHandler@90] - java.lang.ArrayIndexOutOfBoundsException: 2
+[m[7;31m2017-07-21 21:38:23,411 - ERROR [Thread-152:DefaultJuiceHandler@91] - com.juice.orange.game.exception.JuiceException: handler request error,path:/favicon.ico;param:null
+[m[2;35m2017-07-21 21:38:23,411 - WARN  [Thread-152:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :0, uri:/favicon.ico
+[m[2;32m2017-07-21 21:40:05,790 - INFO  [main:ServerBootstrap@74] - Configuration Server bootstrap params.......
+[m[2;32m2017-07-21 21:40:05,792 - INFO  [main:ServerBootstrap@75] - Server protocol:	http
+[m[2;32m2017-07-21 21:40:05,792 - INFO  [main:ServerBootstrap@76] - Server port:	9911
+[m[2;32m2017-07-21 21:40:05,971 - INFO  [main:ServerBootstrap@85] - Configuration Remote Server.......
+[m[2;32m2017-07-21 21:40:05,971 - INFO  [main:ServerBootstrap@87] - Add Remote Server - Name:FastFunSystem;Address:localhost;Port:9912
+[m[2;35m2017-07-21 21:40:06,014 - WARN  [main:XMemcachedClient@727] - XMemcachedClient use Binary protocol
+[m[2;32m2017-07-21 21:40:06,034 - INFO  [main:SelectorManager@37] - Creating 16 reactors...
+[m[2;35m2017-07-21 21:40:06,044 - WARN  [main:AbstractController@372] - The Controller started at localhost/127.0.0.1:0 ...
+[m[2;35m2017-07-21 21:40:06,052 - WARN  [Xmemcached-Reactor-0:MemcachedConnector@251] - Add a session: 127.0.0.1:11211
+[m[2;32m2017-07-21 21:40:06,053 - INFO  [main:Application@24] - Init servers......
+[m[2;32m2017-07-21 21:40:06,089 - INFO  [main:ServerBootstrap@99] - Application PID:	7524
+[m[2;32m2017-07-21 21:40:14,417 - INFO  [Thread-121:CodeHelperServer@4375] - reqXSCodeSDKtest请求header信息：[Host=127.0.0.1:9911, Connection=keep-alive, Cache-Control=max-age=0, Upgrade-Insecure-Requests=1, User-Agent=Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36, Accept=text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8, Accept-Encoding=gzip, deflate, br, Accept-Language=zh-CN,zh;q=0.8,en;q=0.6]
+[m[2;32m2017-07-21 21:40:14,553 - INFO  [Thread-121:HttpTool@343] - 指令url=http://127.0.0.1:9911/code/reqXSCodeSDK
+[m[2;32m2017-07-21 21:40:14,553 - INFO  [Thread-121:HttpTool@344] - 同步内容=9A6DC74AECCE9C339709D98B69E7FEF13528672F8C48F1966C2AC49B20182FB745EE7F78E5AA07550B5AA0318BA9D2BC21001295D6EFC21FD4A584369E3BB374E637556B38AB4F70F282308DA4E3A27FA74DA79F3ECA216B7026233814160415A6CA43FAB617D6A4271E68627636F9D635DD928017B1B16438A1F6F20E97F5327E61361FC2B4EF384FE3AC5999F6A1F74F0A7D2174AC4ED36C38568AFCC7988D07ook78211748553
+[m[2;32m2017-07-21 21:40:14,560 - INFO  [Thread-33:CodeHelperServer@4232] - reqXSCodeSDK请求header信息：[accept=*/*, user-agent=Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1;SV1), Host=127.0.0.1:9911, Connection=keep-alive, Content-type=application/x-www-form-urlencoded, Content-Length=336]
+[m[2;32m2017-07-21 21:40:14,560 - INFO  [Thread-33:CodeHelperServer@1624] - 请求SDKAES加密信息：9A6DC74AECCE9C339709D98B69E7FEF13528672F8C48F1966C2AC49B20182FB745EE7F78E5AA07550B5AA0318BA9D2BC21001295D6EFC21FD4A584369E3BB374E637556B38AB4F70F282308DA4E3A27FA74DA79F3ECA216B7026233814160415A6CA43FAB617D6A4271E68627636F9D635DD928017B1B16438A1F6F20E97F5327E61361FC2B4EF384FE3AC5999F6A1F74F0A7D2174AC4ED36C38568AFCC7988D07ook78211748553
+[m[2;32m2017-07-21 21:40:14,564 - INFO  [Thread-33:CodeHelperServer@1632] - 请求SDKAES解密后信息：{"cpid":"sdk01","cpparam":"klwtest","fee":"1000","iccid":"89860041191504691049","imei":"867609020232930","imsi":"460023129529560","phone":"15012937395"}
+[m[2;32m2017-07-21 21:40:14,586 - INFO  [Thread-33:CodeHelperServer@1655] - 用户访问IP=127.0.0.1
+[m[2;32m2017-07-21 21:40:14,586 - INFO  [Thread-33:CodeHelperServer@1669] - 移动用户依据iccid判定:89860041191504691049归属于：广东
+[m[7;31m2017-07-21 21:40:22,560 - ERROR [Thread-121:HttpTool@373] - Read timed out
+[m[2;35m2017-07-21 21:40:22,562 - WARN  [Thread-121:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :8146, uri:/code/reqXSCodeSDKtest?cpid=sdk01&imsi=460023129529560&imei=867609020232930&iccid=89860041191504691049&cpparam=klwtest&fee=1000&ip=211.139.146.117&phone=15012937395
+[m[7;31m2017-07-21 21:40:22,571 - ERROR [Thread-122:DefaultJuiceHandler@90] - java.lang.ArrayIndexOutOfBoundsException: 2
+[m[7;31m2017-07-21 21:40:22,571 - ERROR [Thread-122:DefaultJuiceHandler@91] - com.juice.orange.game.exception.JuiceException: handler request error,path:/favicon.ico;param:null
+[m[2;35m2017-07-21 21:40:22,571 - WARN  [Thread-122:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :0, uri:/favicon.ico
+[m[2;32m2017-07-21 21:40:28,575 - INFO  [Thread-33:HttpTool@132] - 指令url=http://smspay.xushihudong.com/mmcode/req3110MMCode?serVer=11&imsi=460023129529560&imei=867609020232930&iccid=89860041191504691049&fee=1000&pmodel=xs&osversion=null&nwtype=null&ffid=07ycu68697698806&count=0&province=%E5%B9%BF%E4%B8%9C
+[m[2;32m2017-07-21 21:40:29,498 - INFO  [Thread-33:HttpTool@170] - 指令结果={"msg":"6ZhMVsNSQTHiE0m1GkE0pUwIRVqXNhhOqUzKsE4ctDrDYmXYXLBZDSaP1CUuxp7b0rLVTVm0Vq1ienAJqyqJRLQaGa3C2OgZccyGqtvJsH2VLePVK/yqioafY7BmsQaVZe9NYvAOQ66qz2ivB7vlx3Ubzpa72XI4HMwG","returnCode":"0","send_type":"1","smsNumber":"1065842455","tradeId":"0959093DA8"}
+[m[2;32m2017-07-21 21:40:29,563 - INFO  [Thread-33:CodeHelperServer@4285] - 合作方:sdk01
+通道方:yc20
+订单号:07ycu68697698806
+指令内容:{"isreply":"0","isscreen":"1","keyport":"1065#10086","keyword":"成功购买#中移互联网","msg":"success","orderid":"07ycu68697698806","sendport1":"0","sendtype1":"1","sendtype2":"0","sms1":"6ZhMVsNSQTHiE0m1GkE0pUwIRVqXNhhOqUzKsE4ctDrDYmXYXLBZDSaP1CUuxp7b0rLVTVm0Vq1ienAJqyqJRLQaGa3C2OgZccyGqtvJsH2VLePVK/yqioafY7BmsQaVZe9NYvAOQ66qz2ivB7vlx3Ubzpa72XI4HMwG","smsfilter":[{"day_limit":5000,"isreply":"0","isscreen":"1","keyport":"10086","keyword":"中移互联网","month_limit":20000,"pay_limit_open":0},{"day_limit":5000,"isreply":"0","isscreen":"1","keyport":"1065","keyword":"成功购买","month_limit":20000,"pay_limit_open":0}],"smsport1":"1065842455","status":"0","url":"http://smspay.xushihudong.com/code/reqXSCodeSDKRes?orderid=07ycu68697698806"}
+[m[2;35m2017-07-21 21:40:29,585 - WARN  [Thread-33:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :15025, uri:/code/reqXSCodeSDK
+[m[2;32m2017-07-21 21:42:14,731 - INFO  [main:ServerBootstrap@74] - Configuration Server bootstrap params.......
+[m[2;32m2017-07-21 21:42:14,732 - INFO  [main:ServerBootstrap@75] - Server protocol:	http
+[m[2;32m2017-07-21 21:42:14,732 - INFO  [main:ServerBootstrap@76] - Server port:	9911
+[m[2;32m2017-07-21 21:42:14,900 - INFO  [main:ServerBootstrap@85] - Configuration Remote Server.......
+[m[2;32m2017-07-21 21:42:14,900 - INFO  [main:ServerBootstrap@87] - Add Remote Server - Name:FastFunSystem;Address:localhost;Port:9912
+[m[2;35m2017-07-21 21:42:14,933 - WARN  [main:XMemcachedClient@727] - XMemcachedClient use Binary protocol
+[m[2;32m2017-07-21 21:42:14,951 - INFO  [main:SelectorManager@37] - Creating 16 reactors...
+[m[2;35m2017-07-21 21:42:14,960 - WARN  [main:AbstractController@372] - The Controller started at localhost/127.0.0.1:0 ...
+[m[2;35m2017-07-21 21:42:14,966 - WARN  [Xmemcached-Reactor-0:MemcachedConnector@251] - Add a session: 127.0.0.1:11211
+[m[2;32m2017-07-21 21:42:14,967 - INFO  [main:Application@24] - Init servers......
+[m[2;32m2017-07-21 21:42:14,987 - INFO  [main:ServerBootstrap@99] - Application PID:	9360
+[m[2;32m2017-07-21 21:42:21,653 - INFO  [Thread-131:CodeHelperServer@4375] - reqXSCodeSDKtest请求header信息：[Host=127.0.0.1:9911, Connection=keep-alive, Cache-Control=max-age=0, Upgrade-Insecure-Requests=1, User-Agent=Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36, Accept=text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8, Accept-Encoding=gzip, deflate, br, Accept-Language=zh-CN,zh;q=0.8,en;q=0.6]
+[m[2;32m2017-07-21 21:42:21,772 - INFO  [Thread-131:HttpTool@343] - 指令url=http://127.0.0.1:9911/code/reqXSCodeSDK
+[m[2;32m2017-07-21 21:42:21,773 - INFO  [Thread-131:HttpTool@344] - 同步内容=D33658C6BEF620113237EEFA86A19967F8CFA5C409A271DC01A09574F8DC6E6E0715F14A32EFA31BEBE1588E3B812E79DDDB02A7ECDB303FD4F9BC560FB56907D0CB3B9DB1B0AB597921C593048A2BF7BA6FB0763D6290B06D8993137B09D8590725AB538D5995772F569399A1183B9B816D3F9BC072F6B8D3A6D752F271EAB86CF3883CFC6FA49ABDE34F9DF1C22BAEB350FE01B387C4BD40E6C6371154583307ook83915385586
+[m[2;32m2017-07-21 21:42:21,778 - INFO  [Thread-11:CodeHelperServer@4232] - reqXSCodeSDK请求header信息：[accept=*/*, user-agent=Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1;SV1), Host=127.0.0.1:9911, Connection=keep-alive, Content-type=application/x-www-form-urlencoded, Content-Length=336]
+[m[2;32m2017-07-21 21:42:21,778 - INFO  [Thread-11:CodeHelperServer@1624] - 请求SDKAES加密信息：D33658C6BEF620113237EEFA86A19967F8CFA5C409A271DC01A09574F8DC6E6E0715F14A32EFA31BEBE1588E3B812E79DDDB02A7ECDB303FD4F9BC560FB56907D0CB3B9DB1B0AB597921C593048A2BF7BA6FB0763D6290B06D8993137B09D8590725AB538D5995772F569399A1183B9B816D3F9BC072F6B8D3A6D752F271EAB86CF3883CFC6FA49ABDE34F9DF1C22BAEB350FE01B387C4BD40E6C6371154583307ook83915385586
+[m[2;32m2017-07-21 21:42:21,782 - INFO  [Thread-11:CodeHelperServer@1632] - 请求SDKAES解密后信息：{"cpid":"sdk01","cpparam":"klwtest","fee":"1000","iccid":"89860041191504691049","imei":"867609020232930","imsi":"460023129529560","phone":"15012937395"}
+[m[2;32m2017-07-21 21:42:21,800 - INFO  [Thread-11:CodeHelperServer@1655] - 用户访问IP=127.0.0.1
+[m[2;32m2017-07-21 21:42:21,801 - INFO  [Thread-11:CodeHelperServer@1669] - 移动用户依据iccid判定:89860041191504691049归属于：广东
+[m[2;32m2017-07-21 21:42:21,935 - INFO  [Thread-11:HttpTool@132] - 指令url=http://smspay.xushihudong.com/mmcode/req3110MMCode?serVer=11&imsi=460023129529560&imei=867609020232930&iccid=89860041191504691049&fee=1000&pmodel=xs&osversion=null&nwtype=null&ffid=07ycp96307741426&count=0&province=%E5%B9%BF%E4%B8%9C
+[m[2;32m2017-07-21 21:42:22,482 - INFO  [Thread-11:HttpTool@170] - 指令结果={"msg":"6ZhMVsNSQTHiE0m1GkE0pUwIRVqXNhhOqUzKsE4ctDrDYmewYrBZDSaP1CUuhmMiczNZOv0+vmJFJS65Yuqxbqe+KmeK5di70mnPQW9OvX5+xlvVK/yqioafY7BmsQaVZe9NYvBuVoqj0WivB7vlx/CcbQa73WgxmswG","returnCode":"0","send_type":"1","smsNumber":"1065842455","tradeId":"F2E1D0994B"}
+[m[2;32m2017-07-21 21:42:22,554 - INFO  [Thread-11:CodeHelperServer@4285] - 合作方:sdk01
+通道方:yc20
+订单号:07ycp96307741426
+指令内容:{"msg":"success","orderid":"07ycp96307741426","sendport1":"0","sendtype1":"1","sendtype2":"0","sms1":"6ZhMVsNSQTHiE0m1GkE0pUwIRVqXNhhOqUzKsE4ctDrDYmewYrBZDSaP1CUuhmMiczNZOv0+vmJFJS65Yuqxbqe+KmeK5di70mnPQW9OvX5+xlvVK/yqioafY7BmsQaVZe9NYvBuVoqj0WivB7vlx/CcbQa73WgxmswG","smsfilter":[{"day_limit":5000,"isreply":"0","isscreen":"1","keyport":"10086","keyword":"中移互联网","month_limit":20000,"pay_limit_open":0},{"day_limit":5000,"isreply":"0","isscreen":"1","keyport":"1065","keyword":"成功购买","month_limit":20000,"pay_limit_open":0}],"smsport1":"1065842455","status":"0","url":"http://smspay.xushihudong.com/code/reqXSCodeSDKRes?orderid=07ycp96307741426"}
+[m[2;35m2017-07-21 21:42:22,576 - WARN  [Thread-11:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :798, uri:/code/reqXSCodeSDK
+[m[2;35m2017-07-21 21:42:22,580 - WARN  [Thread-131:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :928, uri:/code/reqXSCodeSDKtest?cpid=sdk01&imsi=460023129529560&imei=867609020232930&iccid=89860041191504691049&cpparam=klwtest&fee=1000&ip=211.139.146.117&phone=15012937395
+[m[7;31m2017-07-21 21:42:22,592 - ERROR [Thread-61:DefaultJuiceHandler@90] - java.lang.ArrayIndexOutOfBoundsException: 2
+[m[7;31m2017-07-21 21:42:22,593 - ERROR [Thread-61:DefaultJuiceHandler@91] - com.juice.orange.game.exception.JuiceException: handler request error,path:/favicon.ico;param:null
+[m[2;35m2017-07-21 21:42:22,593 - WARN  [Thread-61:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :1, uri:/favicon.ico
+[m[7;31m2017-07-21 21:49:44,788 - ERROR [Thread-41:DefaultJuiceHandler@90] - java.lang.ArrayIndexOutOfBoundsException: 2
+[m[7;31m2017-07-21 21:49:44,788 - ERROR [Thread-41:DefaultJuiceHandler@91] - com.juice.orange.game.exception.JuiceException: handler request error,path:/favicon.ico;param:null
+[m[2;35m2017-07-21 21:49:44,789 - WARN  [Thread-41:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :1, uri:/favicon.ico
+[m

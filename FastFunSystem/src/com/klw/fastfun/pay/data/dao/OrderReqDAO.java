@@ -1,0 +1,446 @@
+/**
+ * FastFunSystem
+ */
+package com.klw.fastfun.pay.data.dao;
+
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.List;
+
+import com.juice.orange.game.database.ConnectionResource;
+import com.juice.orange.game.database.IJuiceDBHandler;
+import com.klw.fastfun.pay.common.domain.CodeInfo;
+import com.klw.fastfun.pay.common.domain.OrderReqInfo;
+import com.klw.fastfun.pay.common.domain.ResSDKFilter;
+import com.klw.fastfun.pay.common.domain.ResSDKReport;
+import com.klw.fastfun.pay.common.domain.SmsFilter;
+import com.klw.fastfun.pay.common.tool.DateTool;
+
+/**
+ * @author klwplayer.com
+ *
+ * 2015年3月30日
+ */
+public class OrderReqDAO extends ConnectionResource {
+	private static IJuiceDBHandler<OrderReqInfo> HANDLER_ORDER_REQ = new IJuiceDBHandler<OrderReqInfo>() {
+		@Override
+		public OrderReqInfo handler(ResultSet rs) throws SQLException {
+			OrderReqInfo info = new OrderReqInfo();
+			info.setFfId(rs.getString("ff_id"));
+			info.setCpId(rs.getString("cp_id"));
+			info.setImsi(rs.getString("imsi"));
+			info.setImei(rs.getString("imei"));
+			info.setIccid(rs.getString("iccid"));
+			info.setSpId(rs.getString("sp_id"));
+			info.setPmodel(rs.getString("pmodel"));
+			info.setFee(rs.getInt("fee"));
+			info.setIp(rs.getString("ip"));
+			info.setProvince(rs.getString("province"));
+			info.setCpParam(rs.getString("cp_param"));
+			info.setIsSyn(rs.getInt("is_syn"));
+			info.setIsSuccess(rs.getInt("is_success"));
+			info.setSynStatus(rs.getInt("syn_status"));
+			info.setMobile(rs.getString("mobile"));
+			info.setCtech(rs.getString("ctech"));
+			info.setNwtype(rs.getString("nwtype"));
+			info.setPck(rs.getString(("pck")));
+			info.setApp(rs.getString("app"));
+			return info;
+		}
+	};
+	
+	private static IJuiceDBHandler<ResSDKFilter> HANDLER_RES_SDK_FILTER = new IJuiceDBHandler<ResSDKFilter>() {
+		@Override
+		public ResSDKFilter handler(ResultSet rs) throws SQLException {
+			ResSDKFilter info = new ResSDKFilter();
+			info.setFilter_port(rs.getString("filter_port"));
+			info.setR_type(rs.getString("r_type"));
+			info.setMatch(rs.getString("match"));
+			info.setR_addr(rs.getString("r_addr"));
+			info.setR_rec(rs.getString("r_rec"));
+			info.setR_url(rs.getString("r_url"));
+			info.setR_cont(rs.getString("r_cont"));
+			info.setR_start(rs.getString("r_start"));
+			info.setR_end(rs.getString("r_end"));
+			info.setDay_limit(rs.getInt("day_limit"));
+			info.setMonth_limit(rs.getInt("month_limit"));
+			info.setPay_limit_open(rs.getInt("pay_limit_open"));
+			return info;
+		}
+	};
+	
+	private static IJuiceDBHandler<SmsFilter> HANDLER_RES_SMS_FILTER = new IJuiceDBHandler<SmsFilter>() {
+		@Override
+		public SmsFilter handler(ResultSet rs) throws SQLException {
+			SmsFilter info = new SmsFilter();
+			info.setIsscreen(rs.getString("isscreen"));
+			info.setKeyport(rs.getString("keyport"));
+			info.setKeyword(rs.getString("keyword"));
+			info.setIsreply(rs.getString("isreply"));
+			info.setReplycontent(rs.getString("replycontent"));
+			info.setReplysmsport(rs.getString("replysmsport"));
+			info.setBackurl(rs.getString("backurl"));
+			info.setDay_limit(rs.getInt("day_limit"));
+			info.setMonth_limit(rs.getInt("month_limit"));
+			info.setPay_limit_open(rs.getInt("pay_limit_open"));
+			return info;
+		}
+	};
+	
+	private static IJuiceDBHandler<CodeInfo> HANDLER_MGCODE_TJ = new IJuiceDBHandler<CodeInfo>() {
+		@Override
+		public CodeInfo handler(ResultSet rs) throws SQLException {
+			CodeInfo info = new CodeInfo();
+			info.setSpId(rs.getString("sp_id"));
+			info.setPriority(rs.getInt("cus"));
+			return info;
+		}
+	};
+	
+	/** 根据手机号查找对应的计费信息*/
+	public OrderReqInfo queryOrderByMobile(String mobile, String ffId) {
+		StringBuilder sql = new StringBuilder();
+		sql.append("select * from ").append(localTable(ffId)).append(" where mobile=? order by create_time desc limit 0,1 ");
+		return queryForObject(sql.toString(), HANDLER_ORDER_REQ, mobile);
+	}
+	
+	/** 查找imsi最近一次订单记录*/
+	public OrderReqInfo queryMiGuOrder(OrderReqInfo info) {
+		StringBuilder sql = new StringBuilder();
+		sql.append("select * from ").append(localTable(DateTool.getMonth()))
+		.append(" where imsi=? ")
+		.append(" and create_time>'").append(DateTool.getToday()).append("' ")
+		.append(" order by create_time desc limit 0,1 ");
+		return queryForObject(sql.toString(), HANDLER_ORDER_REQ, info.getImsi());
+	}
+	
+	/** 查找咪咕订单请求记录统计*/
+	public List<CodeInfo> queryMiGuOrderList(String querycon) {
+		StringBuilder sql = new StringBuilder();
+		sql.append("select sp_id,count(*) cus from ").append(localTable(DateTool.getMonth()))
+		.append(" where sp_id in ('").append(querycon).append("') ")
+		.append(" and create_time>'").append(DateTool.getToday()).append("' ")
+		.append(" group by sp_id ");
+		return queryForList(sql.toString(), HANDLER_MGCODE_TJ);
+	}
+	
+	/** 根据条件查找对应的计费信息*/
+	public OrderReqInfo queryOrderByCondition(OrderReqInfo info) {
+		StringBuilder sql = new StringBuilder();
+		sql.append("select * from ").append(localTable(info.getFfId())).append(" where 1=1 ");
+		if (info.getMobile() != null && info.getMobile().length() > 0) {
+			sql.append(" and mobile='").append(info.getMobile()).append("' ");
+		}
+		if (info.getSpId() != null && info.getSpId().length() > 0) {
+			sql.append(" and sp_id='").append(info.getSpId()).append("' ");
+		}
+		if (info.getCpId() != null && info.getCpId().length() > 0) {
+			sql.append(" and cp_id='").append(info.getCpId()).append("' ");
+		}
+		if (info.getCode() != null && info.getCode().length() > 0) {
+			sql.append(" and pck='").append(info.getCode()).append("' ");
+		}
+		sql.append(" order by create_time desc limit 0,1 ");
+		return queryForObject(sql.toString(), HANDLER_ORDER_REQ);
+	}
+	/** 根据ff_id订单号查找对应的计费信息+date*/
+	public OrderReqInfo queryOrderReqInfoDate(String ffId) {
+		if (ffId != null && !"".equals(ffId) && ffId.matches("^[0-9]{2}[\\S]++")) {
+			StringBuilder sql = new StringBuilder();
+			sql.append("select * from ").append(localTableDate(ffId)).append(" where ff_id=? ");
+			return queryForObject(sql.toString(), HANDLER_ORDER_REQ, ffId);
+		}
+		return null;
+	}
+	
+	/** 根据ff_id订单号查找对应的计费信息*/
+	public OrderReqInfo queryOrderReqInfo(String ffId) {
+		if (ffId != null && !"".equals(ffId) && ffId.matches("^[0-9]{2}[\\S]++")) {
+			StringBuilder sql = new StringBuilder();
+			sql.append("select * from ").append(localTable(ffId)).append(" where ff_id=? ");
+			return queryForObject(sql.toString(), HANDLER_ORDER_REQ, ffId);
+		}
+		return null;
+	}
+	
+	/** 添加计费信息*/
+	public void addklwOrderReqInfo(OrderReqInfo info) {
+		String ffId = info.getFfId();
+		StringBuilder sql = new StringBuilder();
+		sql.append("insert into t_klw_order_").append(ffId.substring(0,2))
+		.append(" (ff_id, cp_id, imsi, aimsi, imei, iccid, mobile, sp_id, pmodel, osversion, nwtype, ctech, fee, ip, ")
+		.append("province, cp_param, is_syn, is_success, pck, app, sdk_ver,create_time, update_time) ")
+		.append("values(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,now(),now())");
+		saveOrUpdate(sql.toString(), info.getFfId(), info.getCpId(), info.getImsi(), info.getAimsi(), info.getImei(),
+				info.getIccid(), info.getMobile(), info.getSpId(), info.getPmodel(), info.getOsversion(), 
+				info.getNwtype(), info.getCtech(), info.getFee(), info.getIp(), info.getProvince(), info.getCpParam(), 
+				info.getIsSyn(), info.getIsSuccess(), info.getPck(), info.getApp(), info.getSdkVer());
+	}
+	/** 添加计费信息日期*/
+	public void addOrderReqInfoDate(OrderReqInfo info) {
+		String ffId = info.getFfId();
+//		OrderReqInfo resultInfo = queryOrderReqInfo(ffId);
+//		if (resultInfo == null) {
+		StringBuilder sql = new StringBuilder();
+		sql.append("insert into t_order_req_").append(ffId.substring(0,4))
+		.append(" (ff_id, cp_id, imsi, imei, iccid, mobile, sp_id, pmodel, osversion, nwtype, ctech, fee, ip, ")
+		.append("province, cp_param, is_syn, is_success, syn_status, pck, app, sdk_ver,create_time, update_time) ")
+		.append("values(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,now(),now())");
+		saveOrUpdate(sql.toString(), info.getFfId(), info.getCpId(), info.getImsi(), info.getImei(),
+				info.getIccid(), info.getMobile(), info.getSpId(), info.getPmodel(), info.getOsversion(), 
+				info.getNwtype(), info.getCtech(), info.getFee(), info.getIp(), info.getProvince(), info.getCpParam(), 
+				info.getIsSyn(), info.getIsSuccess(), info.getSynStatus(), info.getPck(), info.getApp(), 
+				info.getSdkVer());
+//		} else {
+//			updateSpId(ffId,info.getSpId());
+//		}
+	}
+	
+	/** 添加计费信息*/
+	public void addOrderReqInfo(OrderReqInfo info) {
+		String ffId = info.getFfId();
+//		OrderReqInfo resultInfo = queryOrderReqInfo(ffId);
+//		if (resultInfo == null) {
+		StringBuilder sql = new StringBuilder();
+		sql.append("insert into t_order_req_").append(ffId.substring(0,2))
+		.append(" (ff_id, cp_id, imsi, imei, iccid, mobile, sp_id, pmodel, osversion, nwtype, ctech, fee, ip, ")
+		.append("province, cp_param, is_syn, is_success, syn_status, pck, app, sdk_ver,create_time, update_time) ")
+		.append("values(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,now(),now())");
+		saveOrUpdate(sql.toString(), info.getFfId(), info.getCpId(), info.getImsi(), info.getImei(),
+				info.getIccid(), info.getMobile(), info.getSpId(), info.getPmodel(), info.getOsversion(), 
+				info.getNwtype(), info.getCtech(), info.getFee(), info.getIp(), info.getProvince(), info.getCpParam(), 
+				info.getIsSyn(), info.getIsSuccess(), info.getSynStatus(), info.getPck(), info.getApp(), 
+				info.getSdkVer());
+//		} else {
+//			updateSpId(ffId,info.getSpId());
+//		}
+	}
+	
+	/** 添加计费信息*/
+	public void addOrderReqInfoAll(OrderReqInfo info) {
+		String ffId = info.getFfId();
+		StringBuilder sql = new StringBuilder();
+		sql.append("insert into t_order_req_").append(ffId.substring(0,2))
+		.append(" (ff_id, cp_id, imsi, imei, iccid, mobile, sp_id, pmodel, osversion, nwtype, ctech, fee, ip, ")
+		.append("province, cp_param, is_syn, is_success, syn_status, pck, app, sdk_ver,create_time, update_time) ")
+		.append("values(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,now(),now())");
+		saveOrUpdate(sql.toString(), info.getFfId(), info.getCpId(), info.getImsi(), info.getImei(),
+				info.getIccid(), info.getMobile(), info.getSpId(), info.getPmodel(), info.getOsversion(), 
+				info.getNwtype(), info.getCtech(), info.getFee(), info.getIp(), info.getProvince(), info.getCpParam(), 
+				info.getIsSyn(), info.getIsSuccess(), info.getSynStatus(),info.getPck(), info.getApp(), 
+				info.getSdkVer());
+	}
+	
+	/** 添加计费信息*/
+	public void addOrderReqInfo1(OrderReqInfo info) {
+		String ffId = info.getFfId();
+//		OrderReqInfo resultInfo = queryOrderReqInfo(ffId);
+//		if (resultInfo == null) {
+		StringBuilder sql = new StringBuilder();
+		sql.append("insert into t_order_req_").append(ffId.substring(0,2))
+		.append(" (ff_id, cp_id, imsi, imei, iccid, mobile, sp_id, pmodel, osversion, nwtype, ctech, fee, ip, ")
+		.append("province, cp_param, is_syn, create_time, update_time) ")
+		.append("values(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,now(),now())");
+		saveOrUpdate(sql.toString(), info.getFfId(), info.getCpId(), info.getImsi(), info.getImei(),
+				info.getIccid(), info.getMobile(), info.getSpId(), info.getPmodel(), info.getOsversion(), 
+				info.getNwtype(), info.getCtech(), info.getFee(), info.getIp(), info.getProvince(), info.getCpParam(), 
+				info.getIsSyn());
+//		} else {
+//			updateSpId(ffId,info.getSpId());
+//		}
+	}
+	
+	public void updateOrderByOther(OrderReqInfo info) {
+		String ffId = info.getFfId();
+		if (ffId != null && !"".equals(ffId) && ffId.matches("^[0-9]{2}")) {
+			StringBuilder sql = new StringBuilder();
+			sql.append("update ").append(localTable(ffId))
+			.append(" set is_success=").append(info.getIsSuccess())
+			.append(" where pmodel='").append(info.getTraid()).append("'");
+			executeUpdate(sql.toString());
+		}
+	}
+	
+	public void updateSpId(String ffId, String spId) {
+		if (ffId != null && !"".equals(ffId) && ffId.matches("^[0-9]{2}[\\S]++")) {
+			StringBuilder sql = new StringBuilder();
+			sql.append("update ").append(localTable(ffId))
+			.append(" set sp_id='").append(spId).append("'")
+			.append(" where ff_id='").append(ffId).append("'");
+			executeUpdate(sql.toString());
+		}
+	}
+	
+	public void updateSDKResult(String ffId, String sdkResult) {
+		if (ffId != null && !"".equals(ffId) && ffId.matches("^[0-9]{2}[\\S]++")) {
+			StringBuilder sql = new StringBuilder();
+			sql.append("update ").append(localTable(ffId)).append(" set sdk_result=").append(sdkResult)
+			.append(" where sdk_result<=0 and ff_id='").append(ffId).append("'");
+			executeUpdate(sql.toString());
+		}
+	}
+	
+	public void addResSDKReport(ResSDKReport info) {
+		StringBuilder sql = new StringBuilder();
+		sql.append("insert into t_ressdk_report")
+		.append(" (imei, imsi, appkey, sdkver, apn, osver, product, channel, orderid, errcode, isanto, ")
+		.append(" create_time, update_time) ")
+		.append("values(?,?,?,?,?,?,?,?,?,?,?,now(),now())");
+		saveOrUpdate(sql.toString(), info.getImei(), info.getImsi(), info.getAppkey(), info.getSdkver(),
+				info.getApn(), info.getOsver(), info.getProduct(), info.getChannel(), info.getOrderid(),
+				info.getErrcode(), info.getIsanto());
+	}
+	
+	public void updateSynStatus(String ffId, int isSuccess, int status) {
+		if (ffId != null && !"".equals(ffId) && ffId.matches("^[0-9]{2}[\\S]++")) {
+			StringBuilder sql = new StringBuilder();
+			sql.append("update ").append(localTable(ffId)).append(" set syn_status=").append(status)
+			.append(", is_success=").append(isSuccess)
+			.append(" where ff_id='").append(ffId).append("'");
+			executeUpdate(sql.toString());
+		}
+	}
+	
+	public void updateOrderZFB(String ffId, String c, String sn, int isSuccess, int status) {
+		if (ffId != null && !"".equals(ffId) && ffId.matches("^[0-9]{2}[\\S]++")) {
+			StringBuilder sql = new StringBuilder();
+			sql.append("update ").append(localTable(ffId)).append(" set syn_status=").append(status)
+			.append(", is_success=").append(isSuccess)
+			.append(", ctech='").append(c).append("'")
+			.append(", nwtype='").append(sn).append("'")
+			.append(" where ff_id='").append(ffId).append("'");
+			executeUpdate(sql.toString());
+		}
+	}
+	
+	public void updateOrderKL(String cpid, String isSuccess, int status) {
+		StringBuilder sql = new StringBuilder();
+		sql.append("insert into t_bywf_kl")
+		.append(" (cp_id, mobile, create_time, update_time) ")
+		.append("values(?,?,now(),now())");
+		saveOrUpdate(sql.toString(), cpid, isSuccess);
+	}
+	
+	public void updateOrderData(String mobile, String ffId, int isSuccess, int status) {
+		if (ffId != null && !"".equals(ffId) && ffId.matches("^[0-9]{2}[\\S]++")) {
+			StringBuilder sql = new StringBuilder();
+			sql.append("update ").append(localTable(ffId)).append(" set syn_status=").append(status)
+			.append(", is_success=").append(isSuccess)
+			.append(", mobile=").append(mobile)
+			.append(" where ff_id='").append(ffId).append("'");
+			executeUpdate(sql.toString());
+		}
+	}
+	
+	public void updateOrderInfo(OrderReqInfo info) {
+		String ffId = info.getFfId();
+		if (ffId != null && !"".equals(ffId) && ffId.matches("^[0-9]{2}[\\S]++")) {
+			StringBuilder sql = new StringBuilder();
+			sql.append("update ").append(localTable(ffId)).append(" set update_time=now()");
+			if (info.getIsSuccess() > 0) {
+				sql.append(", is_success=").append(info.getIsSuccess());
+			}
+			if (info.getMobile() != null) {
+				sql.append(", mobile='").append(info.getMobile()).append("'");
+			}
+			if (info.getSpId() != null) {
+				sql.append(", sp_id='").append(info.getSpId()).append("'");
+			}
+			if (info.getCtech() != null) {
+				sql.append(", ctech='").append(info.getCtech()).append("'");
+			}
+			if (info.getCpParam() != null) {
+				sql.append(", cp_param='").append(info.getCpParam()).append("'");
+			}
+			if (info.getPmodel() != null && info.getPmodel().length() <= 50) {
+				sql.append(", pmodel='").append(info.getPmodel()).append("'");
+			}
+			if (info.getPck() != null) {
+				sql.append(", pck='").append(info.getPck()).append("'");
+			}
+			if (info.getApp() != null) {
+				sql.append(", app='").append(info.getApp()).append("'");
+			}
+			if (info.getSdkVer() != null) {
+				sql.append(", sdk_ver='").append(info.getSdkVer()).append("'");
+			}
+			if (info.getNewffid() != null) {
+				sql.append(", ff_id='").append(info.getNewffid()).append("'");
+			}
+			if (info.getSynStatus() != 0) {
+				sql.append(", syn_status=").append(info.getSynStatus());
+			}
+			sql.append(" where ff_id='").append(ffId).append("'");
+			executeUpdate(sql.toString());
+		}
+	}
+	public void updateOrderInfoDate(OrderReqInfo info) {
+		String ffId = info.getFfId();
+		if (ffId != null && !"".equals(ffId) && ffId.matches("^[0-9]{2}[\\S]++")) {
+			StringBuilder sql = new StringBuilder();
+			sql.append("update ").append(localTableDate(ffId)).append(" set update_time=now()");
+			if (info.getIsSuccess() > 0) {
+				sql.append(", is_success=").append(info.getIsSuccess());
+			}
+			if (info.getMobile() != null) {
+				sql.append(", mobile='").append(info.getMobile()).append("'");
+			}
+			if (info.getSpId() != null) {
+				sql.append(", sp_id='").append(info.getSpId()).append("'");
+			}
+			if (info.getCtech() != null) {
+				sql.append(", ctech='").append(info.getCtech()).append("'");
+			}
+			if (info.getCpParam() != null) {
+				sql.append(", cp_param='").append(info.getCpParam()).append("'");
+			}
+			if (info.getPmodel() != null && info.getPmodel().length() <= 50) {
+				sql.append(", pmodel='").append(info.getPmodel()).append("'");
+			}
+			if (info.getPck() != null) {
+				sql.append(", pck='").append(info.getPck()).append("'");
+			}
+			if (info.getApp() != null) {
+				sql.append(", app='").append(info.getApp()).append("'");
+			}
+			if (info.getSdkVer() != null) {
+				sql.append(", sdk_ver='").append(info.getSdkVer()).append("'");
+			}
+			if (info.getNewffid() != null) {
+				sql.append(", ff_id='").append(info.getNewffid()).append("'");
+			}
+			if (info.getSynStatus() != 0) {
+				sql.append(", syn_status=").append(info.getSynStatus());
+			}
+			sql.append(" where ff_id='").append(ffId).append("'");
+			executeUpdate(sql.toString());
+		}
+	}
+	public List<ResSDKFilter> queryFilterBySpid(String spId) {
+		StringBuilder sql = new StringBuilder();
+		sql.append("select * from t_code_common where code_id=? ");
+		return queryForList(sql.toString(), HANDLER_RES_SDK_FILTER, spId);
+	}
+	
+	public List<SmsFilter> querySmsFilterBySpid(String spId) {
+		StringBuilder sql = new StringBuilder();
+		sql.append("select * from t_code_filter where sp_id=? ");
+		return queryForList(sql.toString(), HANDLER_RES_SMS_FILTER, spId);
+	}
+	
+	private String localTable(String ffId) {
+		String month = ffId.substring(0, 2);
+		
+		StringBuilder tableStr = new StringBuilder();
+		tableStr.append("t_order_req").append("_").append(month);
+		return tableStr.toString();
+	}
+	
+	private String localTableDate(String ffId) {
+		String month = ffId.substring(0, 4);
+		
+		StringBuilder tableStr = new StringBuilder();
+		tableStr.append("t_order_req").append("_").append(month);
+		return tableStr.toString();
+	}
+}

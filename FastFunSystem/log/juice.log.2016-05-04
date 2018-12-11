@@ -1,0 +1,30 @@
+[2;32m2016-05-04 15:51:11,896 - INFO  [main:ServerBootstrap@78] - connect to database:jdbc:mysql://120.24.88.90:3306/fastfun?useUnicode=true&characterEncoding=UTF-8
+[m[2;32m2016-05-04 15:51:12,641 - INFO  [main:ServerBootstrap@104] - Configuration Server bootstrap params.......
+[m[2;32m2016-05-04 15:51:12,641 - INFO  [main:ServerBootstrap@105] - Server protocol:	socket
+[m[2;32m2016-05-04 15:51:12,641 - INFO  [main:ServerBootstrap@106] - Server port:	9912
+[m[2;35m2016-05-04 15:51:13,247 - WARN  [main:XMemcachedClient@727] - XMemcachedClient use Binary protocol
+[m[2;32m2016-05-04 15:51:13,311 - INFO  [main:SelectorManager@37] - Creating 4 reactors...
+[m[2;35m2016-05-04 15:51:13,330 - WARN  [main:AbstractController@372] - The Controller started at localhost/127.0.0.1:0 ...
+[m[2;35m2016-05-04 15:51:13,361 - WARN  [Xmemcached-Reactor-0:MemcachedConnector@251] - Add a session: 127.0.0.1:11211
+[m[2;32m2016-05-04 15:51:13,379 - INFO  [main:Application@25] - 初始化AO...
+[m[2;32m2016-05-04 15:51:13,447 - INFO  [main:ServerBootstrap@129] - Application PID:	1368
+[m[2;35m2016-05-04 15:51:28,768 - WARN  [Thread-32:JuiceThreadPool$JuiceWorkThread@108] - RPC method start time :131, action:com.klw.fastfun.pay.common.action.CommonAction, method:getPayCodes
+[m[2;35m2016-05-04 15:52:04,540 - WARN  [Thread-12:JuiceThreadPool$JuiceWorkThread@108] - RPC method start time :88, action:com.klw.fastfun.pay.common.action.CommonAction, method:getCustomInfo
+[m[2;35m2016-05-04 15:52:59,916 - WARN  [Thread-34:JuiceThreadPool$JuiceWorkThread@108] - RPC method start time :82, action:com.klw.fastfun.pay.common.action.CommonAction, method:queryFilterBySpid
+[m[2;35m2016-05-04 15:54:07,651 - WARN  [Thread-22:JuiceThreadPool$JuiceWorkThread@108] - RPC method start time :11, action:com.klw.fastfun.pay.common.action.CommonAction, method:addOrderReqInfo
+[m[7;31m2016-05-04 15:59:18,499 - ERROR [Xmemcached-Reactor-2:MemcachedHandler@138] - XMemcached network layout exception
+[mjava.io.IOException: 远程主机强迫关闭了一个现有的连接。
+	at sun.nio.ch.SocketDispatcher.read0(Native Method)
+	at sun.nio.ch.SocketDispatcher.read(Unknown Source)
+	at sun.nio.ch.IOUtil.readIntoNativeBuffer(Unknown Source)
+	at sun.nio.ch.IOUtil.read(Unknown Source)
+	at sun.nio.ch.SocketChannelImpl.read(Unknown Source)
+	at com.google.code.yanf4j.nio.impl.NioTCPSession.readFromBuffer(NioTCPSession.java:203)
+	at com.google.code.yanf4j.nio.impl.AbstractNioSession.onRead(AbstractNioSession.java:196)
+	at com.google.code.yanf4j.nio.impl.AbstractNioSession.onEvent(AbstractNioSession.java:341)
+	at com.google.code.yanf4j.nio.impl.SocketChannelController.dispatchReadEvent(SocketChannelController.java:56)
+	at com.google.code.yanf4j.nio.impl.NioController.onRead(NioController.java:157)
+	at com.google.code.yanf4j.nio.impl.Reactor.dispatchEvent(Reactor.java:295)
+	at com.google.code.yanf4j.nio.impl.Reactor.run(Reactor.java:142)
+[2;35m2016-05-04 15:59:18,552 - WARN  [Xmemcached-Reactor-2:MemcachedConnector@365] - Remove a session: 127.0.0.1:11211
+[m

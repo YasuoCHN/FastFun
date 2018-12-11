@@ -1,0 +1,23 @@
+import com.juice.orange.game.bootstrap.*;
+import com.juice.orange.game.rmi.RemoteConfig;
+
+
+// loading bootstrap configuration
+BootstrapProperties bootstrap = new BootstrapProperties();
+bootstrap.protocol="http"; // http or socket
+bootstrap.port=9911;
+
+
+// loading remote resource
+remotes = new RemoteConfig[]{
+new RemoteConfig("FastFunSystem","localhost",9912),
+};
+
+// build memcached
+//CachedProperties cached = new CachedProperties();
+//cached.memcachedUrl="127.0.0.1:11211";
+cacheds = new CachedProperties[]{
+	new CachedProperties("memcache", "127.0.0.1", 11211),
+//	new CachedProperties("redis", "127.0.0.1", 6379),
+};
+

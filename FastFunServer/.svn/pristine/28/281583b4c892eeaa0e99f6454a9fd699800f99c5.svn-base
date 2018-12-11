@@ -1,0 +1,377 @@
+package com.klw.fastfun.pay.view.app.http;
+
+import java.net.URLEncoder;
+import java.util.HashMap;
+import java.util.Map;
+
+import org.apache.log4j.Logger;
+
+import com.alibaba.fastjson.JSONObject;
+import com.juice.orange.game.log.LoggerFactory;
+import com.klw.fastfun.pay.common.domain.OrderReqInfo;
+import com.klw.fastfun.pay.common.tool.ConstantDefine;
+import com.klw.fastfun.pay.common.tool.HttpTool;
+
+/**
+ * 退款
+ * @author ouyangsu
+ *
+ */
+public class CodeCommitReqHelper {
+	
+	private static Logger logger = LoggerFactory.getLogger(CodeCommitReqHelper.class);
+	
+	
+	public static String commitCodeResult(OrderReqInfo info) {
+		switch (info.getUrlNo()) {
+		case ConstantDefine.URL_NO_YY05_JSON:
+			return getOnlineSMS46(info);
+		case ConstantDefine.URL_NO_SD08_JSON:
+			return getOnlineSMS49(info);
+		case ConstantDefine.URL_NO_DM12_JSON:
+			return getOnlineSMS82(info);
+		case ConstantDefine.URL_NO_DM15_JSON:
+			return getOnlineSMS83(info);
+		case ConstantDefine.URL_NO_LT07_JSON:
+			return getOnlineSMS96(info);
+		case ConstantDefine.URL_NO_LT08_JSON:
+			return getOnlineSMS100(info);
+		case ConstantDefine.URL_NO_LT09_JSON:
+			return getOnlineSMS105(info);
+		case ConstantDefine.URL_NO_YY09_JSON:
+			return getOnlineSMS109(info);
+		case ConstantDefine.URL_NO_YY10_JSON:
+			return getOnlineSMS112(info);
+		case ConstantDefine.URL_NO_SD62_JSON:
+			return getOnlineSMS121(info);
+		default:
+			break;
+		}
+		return null;
+	}
+	
+	
+	public static void main(String[] args) {
+		String smscontent = "本次短信验证码：915345（如非本人操作，请忽略本短信）【中国移动　咪咕动漫】";
+		String[] arr = smscontent.split("（如非本人");
+		String[] arr1 = arr[0].split("验证码：");
+		System.out.println(arr1[1]);
+	}
+	
+	private static String getOnlineSMS121(OrderReqInfo info) {
+		String result = "error";
+		try  {
+			
+			String url = info.getUrl();
+			String matchRegex = info.getMatchRegex();
+			
+			StringBuilder param = new StringBuilder();
+			param.append(matchRegex)
+			.append("&mobile=").append(info.getMobile())
+			.append("&msg=").append(URLEncoder.encode(info.getSmscontent(), "utf-8"));
+			
+			String reqResult = HttpTool.sendPost(url, param.toString(), "3000");
+			logger.info("京东注册sd62请求结果："+reqResult);
+			if (reqResult == null || reqResult.length() <= 0) {
+				Map<String, Object> resultMap = new HashMap<String, Object>();
+				resultMap.put("status", "2");
+				resultMap.put("orderid", info.getFfId());
+				resultMap.put("msg", "服务器超时请勿重复提交成功会有同步数据");
+				
+				reqResult = JSONObject.toJSONString(resultMap);
+			} else {
+				if ("success".equals(reqResult)) {
+					reqResult = "ok";
+				}
+			}
+			
+			result = reqResult;
+			
+		} catch (Exception e) {
+			logger.error("京东注册sd62指令失败!");
+			logger.error(e.getMessage(), e.getCause());
+		}
+		
+		return result;
+		
+	}
+	
+	private static String getOnlineSMS112(OrderReqInfo info) {
+		String result = "error";
+		try  {
+			String url = info.getCtech();
+			String smscontent = info.getSmscontent();
+			if (smscontent == null) return result;
+			String[] codestr = smscontent.split("（移动统一");
+			String[] codestr1 = codestr[0].split("验证码：");
+			String code = codestr1[1];
+			
+			String[] tmp = url.split("\\?");
+			if (tmp.length == 2) {
+				url = tmp[0];
+				String param = tmp[1] + code;
+				String reqResult = HttpTool.sendGetSetTimeout(url, param,"1000");
+				logger.info("yy10验证码提交结果:"+reqResult);
+				result = "ok";
+			}
+			
+		} catch (Exception e) {
+			logger.error("yy10指令失败!");
+			logger.error(e.getMessage(), e.getCause());
+		}
+		
+		return result;
+	}
+	
+	private static String getOnlineSMS109(OrderReqInfo info) {
+		String result = "error";
+		try  {
+			String url = info.getCtech();
+			String smscontent = info.getSmscontent();
+			String code = info.getCode();
+			if (code == null) {
+				if (smscontent == null) return result;
+				String[] codestr = smscontent.split("，仅用于");
+				String[] codestr1 = codestr[0].split("验证码");
+				code = codestr1[1];
+			}
+			
+			String[] tmp = url.split("\\?");
+			if (tmp.length == 2) {
+				url = tmp[0];
+				String param = tmp[1] + code;
+				String reqResult = HttpTool.sendGetSetTimeout(url, param,"1000");
+				logger.info("yy09验证码提交结果:"+reqResult);
+				result = "ok";
+			}
+			
+		} catch (Exception e) {
+			logger.error("yy09指令失败!");
+			logger.error(e.getMessage(), e.getCause());
+		}
+		
+		return result;
+	}
+	
+	private static String getOnlineSMS105(OrderReqInfo info) {
+		String result = "error";
+		try  {
+			String matchRegex = info.getMatchRegex();
+			String[] tmp = matchRegex.split("##");
+			String url = tmp[1];
+			
+			StringBuilder param = new StringBuilder();
+			param.append("imsi=").append(info.getImsi())
+			.append("&vcode=").append(info.getSmscontent());
+			String sms = HttpTool.sendGetSetTimeout(url, param.toString(), "5000");
+			logger.info("lt09提交验证码结果:" + sms);
+			result = "ok";
+		} catch (Exception e) {
+			logger.error("lt09提交验证码失败!");
+			logger.error(e.getMessage(), e.getCause());
+		}
+		return result;
+	}
+	
+	private static String getOnlineSMS100(OrderReqInfo info) {
+		String result = "error";
+		try  {
+//			String url = info.getUrl();
+			String keyword = info.getKeyword();
+			String matchRegex = info.getMatchRegex();
+			String[] tmp = matchRegex.split("##");
+			
+			String url = tmp[1];
+			
+			String smscontent = info.getSmscontent();
+			if (smscontent == null) return result;
+			
+			String[] arr = smscontent.split("，请填到");
+			String[] arr1 = arr[0].split("验证码为");
+			
+			
+			StringBuilder param = new StringBuilder();
+			param.append(keyword)
+			.append("&paymentUser=").append(info.getMobile())
+			.append("&price=").append(info.getFee())
+			.append("&paymentcodesms=").append(arr1[1])
+			.append("&outTradeNo=").append(info.getCtech());
+			String sms = HttpTool.sendGetSetTimeout(url, param.toString(), "5000");
+			logger.info("稻香lt08提交验证码结果:" + sms);
+			result = "ok";
+		} catch (Exception e) {
+			logger.error("稻香lt08提交验证码失败!");
+			logger.error(e.getMessage(), e.getCause());
+		}
+		return result;
+	}
+	
+	private static String getOnlineSMS96(OrderReqInfo info) {
+		String result = "error";
+		try  {
+//			String url = info.getUrl();
+//			String keyword = info.getKeyword();
+			String matchRegex = info.getMatchRegex();
+			
+			String url = matchRegex;
+			
+			StringBuilder param = new StringBuilder();
+			param.append("pid=645&orderid=").append(info.getTraid())
+			.append("&verifyCode=").append(info.getCode());
+			String sms = HttpTool.sendGetSetTimeout(url, param.toString(), "5000");
+			logger.info("lt07提交验证码结果:" + sms);
+			result = "ok";
+		} catch (Exception e) {
+			logger.error("lt07提交验证码失败!");
+			logger.error(e.getMessage(), e.getCause());
+		}
+		return result;
+	}
+	
+	private static String getOnlineSMS83(OrderReqInfo info) {
+		String result = "error";
+		try  {
+			
+			String url = info.getCtech();
+			String smscontent = info.getSmscontent();
+			if (smscontent == null) return result;
+			String[] codestr = smscontent.split("（如非本人");
+			String[] codestr1 = codestr[0].split("验证码：");
+			String code = codestr1[1];
+			
+			String[] tmp = url.split("\\?");
+			if (tmp.length == 2) {
+				url = tmp[0];
+				String param = tmp[1] + code;
+				String reqResult = HttpTool.sendGetSetTimeout(url, param,"1000");
+				logger.info("dm15验证码提交结果:"+reqResult);
+				result = "ok";
+			}
+			
+		} catch (Exception e) {
+			logger.error("dm15指令失败!");
+			logger.error(e.getMessage(), e.getCause());
+		}
+		
+		return result;
+		
+	}
+	
+	private static String getOnlineSMS82(OrderReqInfo info) {
+		String result = "error";
+		try  {
+			
+			String url = info.getCtech();
+			String smscontent = info.getSmscontent();
+			if (smscontent == null) return result;
+			
+			String code = smscontent;
+			
+			String[] tmp = url.split("\\?");
+			if (tmp.length == 2) {
+				url = tmp[0];
+				String param = tmp[1] + code;
+				String reqResult = HttpTool.sendGetSetTimeout(url, param,"3000");
+				logger.info("dm15验证码提交结果:"+reqResult);
+				result = "ok";
+			}
+			
+		} catch (Exception e) {
+			logger.error("dm12指令失败!");
+			logger.error(e.getMessage(), e.getCause());
+		}
+		
+		return result;
+		
+	}
+	
+	private static String getOnlineSMS49(OrderReqInfo info) {
+		String result = "error";
+		try  {
+			
+			String url = info.getUrl();
+			String reqNum = info.getNum();
+			String matchRegex = info.getMatchRegex();
+			
+			
+			
+			StringBuilder param = new StringBuilder();
+			param.append(matchRegex)
+			.append("&ccpara=").append(info.getFfId())
+			.append("&mobile=").append(info.getMobile());
+			if ("1".equals(reqNum)) {
+				param.append("&smsContent=").append(info.getCode());
+			} else if ("2".equals(reqNum)) {
+				param.append("&smsContent2=").append(info.getCode());
+			}
+			
+			String reqResult = HttpTool.sendGetSetTimeout(url, param.toString(),"5000");
+			logger.info("sd08请求结果=>"+reqResult);
+			
+			if (reqResult != null && "ok".equals(reqResult.toLowerCase())) {
+				result = "ok";
+			}
+			
+			
+		} catch (Exception e) {
+			logger.error("sd08指令失败!");
+			logger.error(e.getMessage(), e.getCause());
+		}
+		
+		return result;
+		
+	}
+	
+	private static String getOnlineSMS46(OrderReqInfo info) {
+		String result = "error";
+		try  {
+			
+			String code = info.getCode();
+			String smscontent = info.getSmscontent();
+			String requrl = info.getCtech();
+			
+			if (smscontent != null && smscontent.length() > 0 && smscontent.contains("验证码")) {
+				String[] codestr = smscontent.split("（如非本人操作");
+				String[] codestr1 = codestr[0].split("验证码：");
+				code = codestr1[1];
+			}
+			
+			if (requrl != null && requrl.startsWith("http")) {
+				requrl = requrl.replace("[key]", code);
+				String reqResult = HttpTool.sendGetSetTime(requrl, "5000");
+				logger.info("苏州乐麟yy05请求结果:"+reqResult);
+				result = reqResult;
+			}
+			
+		} catch (Exception e) {
+			logger.error("苏州乐麟yy05指令失败!");
+			logger.error(e.getMessage(), e.getCause());
+		}
+		
+		return result;
+		
+	}
+	
+	
+	
+	
+	/*private static String parseHTML(String url, OrderReqInfo info) throws Exception {
+		StringBuilder sb = new StringBuilder();
+		sb.append("<!doctype html>");
+		sb.append("<html lang=\"en\">");
+		sb.append("<head>");
+		sb.append("<meta charset=\"UTF-8\">");
+		sb.append("<meta name=\"Generator\" content=\"EditPlus?\">");
+		sb.append("<meta name=\"Author\" content=\"\">");
+		sb.append("<meta name=\"Keywords\" content=\"\">");
+		sb.append("<meta name=\"Description\" content=\"\">");
+		sb.append("<title>微信支付</title>");
+		sb.append("<script language=\"javascript\" type=\"text/javascript\">");
+		sb.append("window.location='").append(url).append("'");
+		sb.append("</script>");
+		sb.append("</head><body> </body></html>");
+		
+		return sb.toString();
+	}*/
+
+}

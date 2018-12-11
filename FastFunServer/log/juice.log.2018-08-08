@@ -1,0 +1,95 @@
+[2;32m2018-08-08 14:31:54,684 - INFO  [main:ServerBootstrap@95] - Configuration Server bootstrap params.......
+[m[2;32m2018-08-08 14:31:54,686 - INFO  [main:ServerBootstrap@96] - Server protocol:	http
+[m[2;32m2018-08-08 14:31:54,686 - INFO  [main:ServerBootstrap@97] - Server port:	9911
+[m[2;32m2018-08-08 14:31:54,990 - INFO  [main:ServerBootstrap@106] - Configuration Remote Server.......
+[m[2;32m2018-08-08 14:31:54,990 - INFO  [main:ServerBootstrap@108] - Add Remote Server - Name:FastFunSystem;Address:localhost;Port:9912
+[m[2;35m2018-08-08 14:31:55,029 - WARN  [main:XMemcachedClient@727] - XMemcachedClient use Binary protocol
+[m[2;32m2018-08-08 14:31:55,046 - INFO  [main:SelectorManager@37] - Creating 16 reactors...
+[m[2;35m2018-08-08 14:31:55,054 - WARN  [main:AbstractController@372] - The Controller started at localhost/127.0.0.1:0 ...
+[m[7;31m2018-08-08 14:31:56,058 - ERROR [main:XMemcachedClient@593] - connect to 127.0.0.1:11211 error
+[mjava.util.concurrent.ExecutionException: java.net.ConnectException: Connection refused: no further information
+	at com.google.code.yanf4j.core.impl.FutureImpl.get(FutureImpl.java:145)
+	at net.rubyeye.xmemcached.XMemcachedClient.connect(XMemcachedClient.java:582)
+	at net.rubyeye.xmemcached.XMemcachedClient.<init>(XMemcachedClient.java:870)
+	at net.rubyeye.xmemcached.XMemcachedClientBuilder.build(XMemcachedClientBuilder.java:340)
+	at com.juice.orange.game.cached.MemcachedResource.buildMemcached(MemcachedResource.java:34)
+	at com.klw.fastfun.pay.view.app.ServerBootstrap.main(ServerBootstrap.java:78)
+Caused by: java.net.ConnectException: Connection refused: no further information
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(Unknown Source)
+	at net.rubyeye.xmemcached.impl.MemcachedConnector.onConnect(MemcachedConnector.java:404)
+	at com.google.code.yanf4j.nio.impl.Reactor.dispatchEvent(Reactor.java:303)
+	at com.google.code.yanf4j.nio.impl.Reactor.run(Reactor.java:142)
+[7;31m2018-08-08 14:31:56,059 - ERROR [Xmemcached-Reactor-0:MemcachedConnector$InnerControllerStateListener@558] - Exception occured in controller
+[mjava.io.IOException: Connect to 127.0.0.1:11211 fail,Connection refused: no further information
+	at net.rubyeye.xmemcached.impl.MemcachedConnector.onConnect(MemcachedConnector.java:423)
+	at com.google.code.yanf4j.nio.impl.Reactor.dispatchEvent(Reactor.java:303)
+	at com.google.code.yanf4j.nio.impl.Reactor.run(Reactor.java:142)
+[7;31m2018-08-08 14:31:56,061 - ERROR [Xmemcached-Reactor-0:Reactor@325] - Reactor dispatch events error
+[mjava.io.IOException: Connect to 127.0.0.1:11211 fail,Connection refused: no further information
+	at net.rubyeye.xmemcached.impl.MemcachedConnector.onConnect(MemcachedConnector.java:423)
+	at com.google.code.yanf4j.nio.impl.Reactor.dispatchEvent(Reactor.java:303)
+	at com.google.code.yanf4j.nio.impl.Reactor.run(Reactor.java:142)
+[7;31m2018-08-08 14:31:56,061 - ERROR [main:XMemcachedClient@627] - Connect to 127.0.0.1:11211 fail
+[mjava.util.concurrent.ExecutionException: java.net.ConnectException: Connection refused: no further information
+	at com.google.code.yanf4j.core.impl.FutureImpl.get(FutureImpl.java:145)
+	at net.rubyeye.xmemcached.XMemcachedClient.connect(XMemcachedClient.java:582)
+	at net.rubyeye.xmemcached.XMemcachedClient.<init>(XMemcachedClient.java:870)
+	at net.rubyeye.xmemcached.XMemcachedClientBuilder.build(XMemcachedClientBuilder.java:340)
+	at com.juice.orange.game.cached.MemcachedResource.buildMemcached(MemcachedResource.java:34)
+	at com.klw.fastfun.pay.view.app.ServerBootstrap.main(ServerBootstrap.java:78)
+Caused by: java.net.ConnectException: Connection refused: no further information
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(Unknown Source)
+	at net.rubyeye.xmemcached.impl.MemcachedConnector.onConnect(MemcachedConnector.java:404)
+	at com.google.code.yanf4j.nio.impl.Reactor.dispatchEvent(Reactor.java:303)
+	at com.google.code.yanf4j.nio.impl.Reactor.run(Reactor.java:142)
+[2;32m2018-08-08 14:31:56,062 - INFO  [main:Application@25] - Init servers......
+[m[2;32m2018-08-08 14:31:56,094 - INFO  [main:ServerBootstrap@120] - Application PID:	13344
+[m[2;35m2018-08-08 14:31:58,062 - WARN  [Heal-Session-Thread:MemcachedConnector$SessionMonitor@125] - Trying to connect to 127.0.0.1:11211 for 1 times
+[m[7;31m2018-08-08 14:31:59,063 - ERROR [Xmemcached-Reactor-0:MemcachedConnector$InnerControllerStateListener@558] - Exception occured in controller
+[mjava.io.IOException: Connect to 127.0.0.1:11211 fail,Connection refused: no further information
+	at net.rubyeye.xmemcached.impl.MemcachedConnector.onConnect(MemcachedConnector.java:423)
+	at com.google.code.yanf4j.nio.impl.Reactor.dispatchEvent(Reactor.java:303)
+	at com.google.code.yanf4j.nio.impl.Reactor.run(Reactor.java:142)
+[7;31m2018-08-08 14:31:59,068 - ERROR [Xmemcached-Reactor-0:Reactor@325] - Reactor dispatch events error
+[mjava.io.IOException: Connect to 127.0.0.1:11211 fail,Connection refused: no further information
+	at net.rubyeye.xmemcached.impl.MemcachedConnector.onConnect(MemcachedConnector.java:423)
+	at com.google.code.yanf4j.nio.impl.Reactor.dispatchEvent(Reactor.java:303)
+	at com.google.code.yanf4j.nio.impl.Reactor.run(Reactor.java:142)
+[7;31m2018-08-08 14:31:59,063 - ERROR [Heal-Session-Thread:MemcachedConnector$SessionMonitor@169] - Reconnect to 127.0.0.1:11211 fail
+[m[2;32m2018-08-08 14:32:13,241 - INFO  [main:ServerBootstrap@95] - Configuration Server bootstrap params.......
+[m[2;32m2018-08-08 14:32:13,244 - INFO  [main:ServerBootstrap@96] - Server protocol:	http
+[m[2;32m2018-08-08 14:32:13,244 - INFO  [main:ServerBootstrap@97] - Server port:	9911
+[m[2;32m2018-08-08 14:32:13,407 - INFO  [main:ServerBootstrap@106] - Configuration Remote Server.......
+[m[2;32m2018-08-08 14:32:13,407 - INFO  [main:ServerBootstrap@108] - Add Remote Server - Name:FastFunSystem;Address:localhost;Port:9912
+[m[2;35m2018-08-08 14:32:13,435 - WARN  [main:XMemcachedClient@727] - XMemcachedClient use Binary protocol
+[m[2;32m2018-08-08 14:32:13,450 - INFO  [main:SelectorManager@37] - Creating 16 reactors...
+[m[2;35m2018-08-08 14:32:13,457 - WARN  [main:AbstractController@372] - The Controller started at localhost/127.0.0.1:0 ...
+[m[2;35m2018-08-08 14:32:13,462 - WARN  [Xmemcached-Reactor-0:MemcachedConnector@251] - Add a session: 127.0.0.1:11211
+[m[2;32m2018-08-08 14:32:13,462 - INFO  [main:Application@25] - Init servers......
+[m[2;32m2018-08-08 14:32:13,490 - INFO  [main:ServerBootstrap@120] - Application PID:	2900
+[m[2;32m2018-08-08 14:33:06,639 - INFO  [Thread-1:CodeHelperServer@1667] - registerWebqqPhone请求header信息：[Host=localhost:9911, Connection=keep-alive, Accept=*/*, User-Agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.75 Safari/537.36, Accept-Encoding=gzip, deflate, br, Accept-Language=zh-CN,zh;q=0.9]
+[m[2;32m2018-08-08 14:33:06,640 - INFO  [Thread-1:CodeHelperServer@3072] - 用户访问IP=0
+[m[7;31m2018-08-08 14:33:06,645 - ERROR [Thread-1:DefaultJuiceHandler@84] - String index out of range: 2
+[mjava.lang.StringIndexOutOfBoundsException: String index out of range: 2
+	at java.lang.String.substring(Unknown Source)
+	at com.klw.fastfun.pay.common.tool.ip.IPtest.queryProvince(IPtest.java:34)
+	at com.klw.fastfun.pay.view.app.service.CodeHelperServer.reqEasyParamConver(CodeHelperServer.java:3101)
+	at com.klw.fastfun.pay.view.app.service.CodeHelperServer.registerWebqqPhone(CodeHelperServer.java:1669)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at com.juice.orange.game.handler.DefaultJuiceHandler.handleHttpRequest(DefaultJuiceHandler.java:81)
+	at com.juice.orange.game.handler.DefaultJuiceHandler.handlerRequest(DefaultJuiceHandler.java:35)
+	at com.juice.orange.game.handler.JuiceHttpControl.nextHandler(JuiceHttpControl.java:84)
+	at com.juice.orange.game.handler.JuiceHttpControl.nextHandler(JuiceHttpControl.java:67)
+	at com.juice.orange.game.util.threadpool.JuiceThreadPool$JuiceWorkThread.run(JuiceThreadPool.java:70)
+[2;35m2018-08-08 14:33:06,647 - WARN  [Thread-1:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :23, uri:/code/registerWebqqPhone?cpid=xly04&phone=18485658809&cpparam=100015611
+[m[2;32m2018-08-08 14:33:59,702 - INFO  [Thread-51:CodeHelperServer@1667] - registerWebqqPhone请求header信息：[Host=192.168.0.106:9911, Connection=keep-alive, Accept=*/*, User-Agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.75 Safari/537.36, Accept-Encoding=gzip, deflate, Accept-Language=zh-CN,zh;q=0.9]
+[m[2;32m2018-08-08 14:33:59,703 - INFO  [Thread-51:CodeHelperServer@3072] - 用户访问IP=192.168.0.106
+[m[2;32m2018-08-08 14:33:59,707 - INFO  [Thread-51:CodeHelperServer@3102] - 根据IP查询省份=局域
+[m[2;35m2018-08-08 14:33:59,955 - WARN  [Thread-51:CodeHelperServer@1741] - registerWebqqPhone号码已经被提交过，phone18485658809
+[m[2;35m2018-08-08 14:33:59,985 - WARN  [Thread-51:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :283, uri:/code/registerWebqqPhone?cpid=xly04&phone=18485658809&cpparam=100015611
+[m

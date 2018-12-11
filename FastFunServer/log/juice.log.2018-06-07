@@ -1,0 +1,188 @@
+[2;32m2018-06-07 11:31:05,763 - INFO  [main:ServerBootstrap@95] - Configuration Server bootstrap params.......
+[m[2;32m2018-06-07 11:31:05,767 - INFO  [main:ServerBootstrap@96] - Server protocol:	http
+[m[2;32m2018-06-07 11:31:05,767 - INFO  [main:ServerBootstrap@97] - Server port:	9911
+[m[2;32m2018-06-07 11:31:05,977 - INFO  [main:ServerBootstrap@106] - Configuration Remote Server.......
+[m[2;32m2018-06-07 11:31:05,978 - INFO  [main:ServerBootstrap@108] - Add Remote Server - Name:FastFunSystem;Address:localhost;Port:9912
+[m[2;35m2018-06-07 11:31:06,039 - WARN  [main:XMemcachedClient@727] - XMemcachedClient use Binary protocol
+[m[2;32m2018-06-07 11:31:06,068 - INFO  [main:SelectorManager@37] - Creating 8 reactors...
+[m[2;35m2018-06-07 11:31:06,075 - WARN  [main:AbstractController@372] - The Controller started at localhost/127.0.0.1:0 ...
+[m[7;31m2018-06-07 11:31:07,086 - ERROR [main:XMemcachedClient@593] - connect to 127.0.0.1:11211 error
+[mjava.util.concurrent.ExecutionException: java.net.ConnectException: Connection refused: no further information
+	at com.google.code.yanf4j.core.impl.FutureImpl.get(FutureImpl.java:145)
+	at net.rubyeye.xmemcached.XMemcachedClient.connect(XMemcachedClient.java:582)
+	at net.rubyeye.xmemcached.XMemcachedClient.<init>(XMemcachedClient.java:870)
+	at net.rubyeye.xmemcached.XMemcachedClientBuilder.build(XMemcachedClientBuilder.java:340)
+	at com.juice.orange.game.cached.MemcachedResource.buildMemcached(MemcachedResource.java:34)
+	at com.klw.fastfun.pay.view.app.ServerBootstrap.main(ServerBootstrap.java:78)
+Caused by: java.net.ConnectException: Connection refused: no further information
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(Unknown Source)
+	at net.rubyeye.xmemcached.impl.MemcachedConnector.onConnect(MemcachedConnector.java:404)
+	at com.google.code.yanf4j.nio.impl.Reactor.dispatchEvent(Reactor.java:303)
+	at com.google.code.yanf4j.nio.impl.Reactor.run(Reactor.java:142)
+[7;31m2018-06-07 11:31:07,087 - ERROR [Xmemcached-Reactor-0:MemcachedConnector$InnerControllerStateListener@558] - Exception occured in controller
+[mjava.io.IOException: Connect to 127.0.0.1:11211 fail,Connection refused: no further information
+	at net.rubyeye.xmemcached.impl.MemcachedConnector.onConnect(MemcachedConnector.java:423)
+	at com.google.code.yanf4j.nio.impl.Reactor.dispatchEvent(Reactor.java:303)
+	at com.google.code.yanf4j.nio.impl.Reactor.run(Reactor.java:142)
+[7;31m2018-06-07 11:31:07,089 - ERROR [Xmemcached-Reactor-0:Reactor@325] - Reactor dispatch events error
+[mjava.io.IOException: Connect to 127.0.0.1:11211 fail,Connection refused: no further information
+	at net.rubyeye.xmemcached.impl.MemcachedConnector.onConnect(MemcachedConnector.java:423)
+	at com.google.code.yanf4j.nio.impl.Reactor.dispatchEvent(Reactor.java:303)
+	at com.google.code.yanf4j.nio.impl.Reactor.run(Reactor.java:142)
+[7;31m2018-06-07 11:31:07,089 - ERROR [main:XMemcachedClient@627] - Connect to 127.0.0.1:11211 fail
+[mjava.util.concurrent.ExecutionException: java.net.ConnectException: Connection refused: no further information
+	at com.google.code.yanf4j.core.impl.FutureImpl.get(FutureImpl.java:145)
+	at net.rubyeye.xmemcached.XMemcachedClient.connect(XMemcachedClient.java:582)
+	at net.rubyeye.xmemcached.XMemcachedClient.<init>(XMemcachedClient.java:870)
+	at net.rubyeye.xmemcached.XMemcachedClientBuilder.build(XMemcachedClientBuilder.java:340)
+	at com.juice.orange.game.cached.MemcachedResource.buildMemcached(MemcachedResource.java:34)
+	at com.klw.fastfun.pay.view.app.ServerBootstrap.main(ServerBootstrap.java:78)
+Caused by: java.net.ConnectException: Connection refused: no further information
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(Unknown Source)
+	at net.rubyeye.xmemcached.impl.MemcachedConnector.onConnect(MemcachedConnector.java:404)
+	at com.google.code.yanf4j.nio.impl.Reactor.dispatchEvent(Reactor.java:303)
+	at com.google.code.yanf4j.nio.impl.Reactor.run(Reactor.java:142)
+[2;32m2018-06-07 11:31:07,091 - INFO  [main:Application@25] - Init servers......
+[m[2;32m2018-06-07 11:31:07,137 - INFO  [main:ServerBootstrap@120] - Application PID:	9500
+[m[2;35m2018-06-07 11:31:09,094 - WARN  [Heal-Session-Thread:MemcachedConnector$SessionMonitor@125] - Trying to connect to 127.0.0.1:11211 for 1 times
+[m[2;32m2018-06-07 11:31:23,788 - INFO  [main:ServerBootstrap@95] - Configuration Server bootstrap params.......
+[m[2;32m2018-06-07 11:31:23,790 - INFO  [main:ServerBootstrap@96] - Server protocol:	http
+[m[2;32m2018-06-07 11:31:23,790 - INFO  [main:ServerBootstrap@97] - Server port:	9911
+[m[2;32m2018-06-07 11:31:23,978 - INFO  [main:ServerBootstrap@106] - Configuration Remote Server.......
+[m[2;32m2018-06-07 11:31:23,979 - INFO  [main:ServerBootstrap@108] - Add Remote Server - Name:FastFunSystem;Address:localhost;Port:9912
+[m[2;35m2018-06-07 11:31:24,029 - WARN  [main:XMemcachedClient@727] - XMemcachedClient use Binary protocol
+[m[2;32m2018-06-07 11:31:24,059 - INFO  [main:SelectorManager@37] - Creating 8 reactors...
+[m[2;35m2018-06-07 11:31:24,070 - WARN  [main:AbstractController@372] - The Controller started at localhost/127.0.0.1:0 ...
+[m[2;35m2018-06-07 11:31:24,081 - WARN  [Xmemcached-Reactor-0:MemcachedConnector@251] - Add a session: 127.0.0.1:11211
+[m[2;32m2018-06-07 11:31:24,081 - INFO  [main:Application@25] - Init servers......
+[m[2;32m2018-06-07 11:31:24,122 - INFO  [main:ServerBootstrap@120] - Application PID:	9404
+[m[2;32m2018-06-07 11:34:15,496 - INFO  [Thread-21:CodeHelperServer@119] - registerKSPhone请求header信息：[Host=192.168.1.53:9911, Connection=keep-alive, Accept=*/*, User-Agent=Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.139 Safari/537.36, Accept-Encoding=gzip, deflate, Accept-Language=zh-CN,zh;q=0.9]
+[m[2;32m2018-06-07 11:34:15,497 - INFO  [Thread-21:CodeHelperServer@2531] - 用户访问IP=192.168.1.53
+[m[2;32m2018-06-07 11:34:15,509 - INFO  [Thread-21:CodeHelperServer@2561] - 根据IP查询省份=局域
+[m[2;32m2018-06-07 11:34:15,684 - INFO  [Thread-21:HttpTool@774] - 指令url:http://anyuese.gz01.bdysite.com/phone.php
+[m[2;32m2018-06-07 11:34:15,684 - INFO  [Thread-21:HttpTool@775] - 同步内容:phone=18098920964
+[m[2;32m2018-06-07 11:34:15,947 - INFO  [Thread-21:CodeReqHelper@565] - sd34请求结果:success!
+[m[2;32m2018-06-07 11:34:16,073 - INFO  [Thread-21:CodeHelperServer@197] - 合作方:test001
+通道方:sd34
+订单号:06sd3418098920964
+指令内容:{"msg":"success","orderid":"06sd3418098920964","status":"0"}
+[m[2;35m2018-06-07 11:34:16,093 - WARN  [Thread-21:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :600, uri:/code/registerKSPhone?cpid=test001&phone=18098920964&cpparam=120406225845
+[m[2;32m2018-06-07 11:37:09,151 - INFO  [Thread-51:CodeHelperServer@214] - commitCode请求header信息：[Host=192.168.1.53:9911, Connection=keep-alive, Accept=*/*, User-Agent=Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.139 Safari/537.36, Accept-Encoding=gzip, deflate, Accept-Language=zh-CN,zh;q=0.9]
+[m[2;32m2018-06-07 11:37:09,166 - INFO  [Thread-51:HttpTool@774] - 指令url:http://anyuese.gz01.bdysite.com/phone_vcode.php
+[m[2;32m2018-06-07 11:37:09,167 - INFO  [Thread-51:HttpTool@775] - 同步内容:phone=18098920964&vcode=980678
+[m[2;32m2018-06-07 11:37:09,423 - INFO  [Thread-51:CodeCommitReqHelper@109] - sd34请求结果:success!
+[m[2;32m2018-06-07 11:37:09,423 - INFO  [Thread-51:CodeHelperServer@259] - 合作方:test001
+通道方:sd34
+省份:局域
+计费点:0
+订单号:06sd3418098920964
+指令内容:ok
+[m[2;35m2018-06-07 11:37:09,430 - WARN  [Thread-51:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :280, uri:/code/commitCodeKS?cpid=test001&code=980678&orderid=06sd3418098920964&traid=1
+[m[2;32m2018-06-07 11:50:59,247 - INFO  [Thread-71:CodeHelperServer@214] - commitCode请求header信息：[Host=192.168.1.53:9911, Connection=keep-alive, Accept=*/*, User-Agent=Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.139 Safari/537.36, Accept-Encoding=gzip, deflate, Accept-Language=zh-CN,zh;q=0.9]
+[m[2;32m2018-06-07 11:50:59,261 - INFO  [Thread-71:HttpTool@774] - 指令url:http://anyuese.gz01.bdysite.com/phone_vcode.php
+[m[2;32m2018-06-07 11:50:59,261 - INFO  [Thread-71:HttpTool@775] - 同步内容:phone=18098920964&vcode=980678
+[m[2;32m2018-06-07 11:50:59,492 - INFO  [Thread-71:CodeCommitReqHelper@109] - sd34请求结果:success!
+[m[2;32m2018-06-07 11:50:59,492 - INFO  [Thread-71:CodeHelperServer@259] - 合作方:test001
+通道方:sd34
+省份:局域
+计费点:0
+订单号:06sd3418098920964
+指令内容:ok
+[m[2;35m2018-06-07 11:50:59,498 - WARN  [Thread-71:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :252, uri:/code/commitCodeKS?cpid=test001&code=980678&orderid=06sd3418098920964&traid=1
+[m[2;32m2018-06-07 11:51:22,514 - INFO  [Thread-72:CodeHelperServer@214] - commitCode请求header信息：[Host=192.168.1.53:9911, Connection=keep-alive, Accept=*/*, User-Agent=Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.139 Safari/537.36, Accept-Encoding=gzip, deflate, Accept-Language=zh-CN,zh;q=0.9]
+[m[2;35m2018-06-07 11:51:22,519 - WARN  [Thread-72:CodeHelperServer@273] - ffid：06sd3418098920963 没有找到该订单
+[m[2;35m2018-06-07 11:51:22,520 - WARN  [Thread-72:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :6, uri:/code/commitCodeKS?cpid=test001&code=980678&orderid=06sd3418098920963&traid=1
+[m[2;32m2018-06-07 11:51:40,021 - INFO  [Thread-31:CodeHelperServer@214] - commitCode请求header信息：[Host=192.168.1.53:9911, Connection=keep-alive, Accept=*/*, User-Agent=Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.139 Safari/537.36, Accept-Encoding=gzip, deflate, Accept-Language=zh-CN,zh;q=0.9]
+[m[2;32m2018-06-07 11:51:40,042 - INFO  [Thread-31:HttpTool@774] - 指令url:http://anyuese.gz01.bdysite.com/phone_vcode.php
+[m[2;32m2018-06-07 11:51:40,042 - INFO  [Thread-31:HttpTool@775] - 同步内容:phone=18098920964&vcode=98067
+[m[2;32m2018-06-07 11:51:40,253 - INFO  [Thread-31:CodeCommitReqHelper@109] - sd34请求结果:success!
+[m[2;32m2018-06-07 11:51:40,253 - INFO  [Thread-31:CodeHelperServer@259] - 合作方:test001
+通道方:sd34
+省份:局域
+计费点:0
+订单号:06sd3418098920964
+指令内容:ok
+[m[2;35m2018-06-07 11:51:40,260 - WARN  [Thread-31:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :239, uri:/code/commitCodeKS?cpid=test001&code=98067&orderid=06sd3418098920964&traid=1
+[m[2;32m2018-06-07 16:10:25,243 - INFO  [Thread-53:CodeHelperServer@119] - registerKSPhone请求header信息：[Host=192.168.1.53:9911, Connection=keep-alive, User-Agent=Mozilla/5.0 (iPhone; CPU iPhone OS 11_3 like Mac OS X; zh-CN) AppleWebKit/537.51.1 (KHTML, like Gecko) Mobile/15E216 UCBrowser/11.8.0.1042 Mobile  AliApp(TUnionSDK/0.1.20), Upgrade-Insecure-Requests=1, Accept=text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8, X-UCBrowser-UA=dv(iPh8,1);pr(UCBrowser/11.8.0.1042);ov(11_3);ss(0x0);bt(UC);pm(0);bv(0);nm(0);im(0);nt(1);, Accept-Language=zh-cn, Accept-Encoding=gzip, deflate]
+[m[2;32m2018-06-07 16:10:25,244 - INFO  [Thread-53:CodeHelperServer@2531] - 用户访问IP=192.168.1.9
+[m[2;32m2018-06-07 16:10:25,245 - INFO  [Thread-53:CodeHelperServer@2561] - 根据IP查询省份=局域
+[m[2;32m2018-06-07 16:10:25,288 - INFO  [Thread-53:HttpTool@774] - 指令url:http://anyuese.gz01.bdysite.com/phone.php
+[m[2;32m2018-06-07 16:10:25,289 - INFO  [Thread-53:HttpTool@775] - 同步内容:phone=15862370903
+[m[2;32m2018-06-07 16:10:25,532 - INFO  [Thread-53:CodeReqHelper@565] - sd34请求结果:success!
+[m[2;32m2018-06-07 16:10:25,548 - INFO  [Thread-53:CodeHelperServer@197] - 合作方:test001
+通道方:sd34
+订单号:06sd3415862370903
+指令内容:{"msg":"success","orderid":"06sd3415862370903","status":"0"}
+[m[2;35m2018-06-07 16:10:25,564 - WARN  [Thread-53:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :322, uri:/code/registerKSPhone?cpid=test001&phone=15862370903&cpparam=120406225845
+[m[7;31m2018-06-07 16:10:25,773 - ERROR [Thread-52:DefaultJuiceHandler@90] - java.lang.ArrayIndexOutOfBoundsException: 2
+[m[7;31m2018-06-07 16:10:25,775 - ERROR [Thread-52:DefaultJuiceHandler@91] - com.juice.orange.game.exception.JuiceException: handler request error,path:/favicon.ico;param:null
+[m[2;35m2018-06-07 16:10:25,775 - WARN  [Thread-52:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :2, uri:/favicon.ico
+[m[2;32m2018-06-07 16:13:53,742 - INFO  [Thread-11:CodeHelperServer@119] - registerKSPhone请求header信息：[Host=192.168.1.53:9911, Connection=keep-alive, User-Agent=Mozilla/5.0 (iPhone; CPU iPhone OS 11_3 like Mac OS X; zh-CN) AppleWebKit/537.51.1 (KHTML, like Gecko) Mobile/15E216 UCBrowser/11.8.0.1042 Mobile  AliApp(TUnionSDK/0.1.20), Upgrade-Insecure-Requests=1, Accept=text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8, X-UCBrowser-UA=dv(iPh8,1);pr(UCBrowser/11.8.0.1042);ov(11_3);ss(0x0);bt(UC);pm(0);bv(0);nm(0);im(0);nt(1);, Accept-Language=zh-cn, Accept-Encoding=gzip, deflate]
+[m[2;32m2018-06-07 16:13:53,743 - INFO  [Thread-11:CodeHelperServer@2531] - 用户访问IP=192.168.1.9
+[m[2;32m2018-06-07 16:13:53,745 - INFO  [Thread-11:CodeHelperServer@2561] - 根据IP查询省份=局域
+[m[2;32m2018-06-07 16:13:53,799 - INFO  [Thread-11:HttpTool@774] - 指令url:http://anyuese.gz01.bdysite.com/phone.php
+[m[2;32m2018-06-07 16:13:53,799 - INFO  [Thread-11:HttpTool@775] - 同步内容:phone=15862370903
+[m[2;32m2018-06-07 16:13:54,034 - INFO  [Thread-11:CodeReqHelper@565] - sd34请求结果:success!
+[m[2;32m2018-06-07 16:13:54,044 - INFO  [Thread-11:CodeHelperServer@197] - 合作方:test001
+通道方:sd34
+订单号:06sd3415862370903
+指令内容:{"msg":"success","orderid":"06sd3415862370903","status":"0"}
+[m[2;35m2018-06-07 16:13:54,074 - WARN  [Thread-11:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :333, uri:/code/registerKSPhone?cpid=test001&phone=15862370903&cpparam=120406225845
+[m[2;32m2018-06-07 16:15:18,382 - INFO  [Thread-61:CodeHelperServer@214] - commitCode请求header信息：[Host=192.168.1.53:9911, Connection=keep-alive, Accept=*/*, User-Agent=Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.139 Safari/537.36, Accept-Encoding=gzip, deflate, Accept-Language=zh-CN,zh;q=0.9]
+[m[2;32m2018-06-07 16:15:18,392 - INFO  [Thread-61:HttpTool@774] - 指令url:http://anyuese.gz01.bdysite.com/phone_vcode.php
+[m[2;32m2018-06-07 16:15:18,392 - INFO  [Thread-61:HttpTool@775] - 同步内容:phone=15862370903&vcode=1234
+[m[2;32m2018-06-07 16:15:18,619 - INFO  [Thread-61:CodeCommitReqHelper@109] - sd34请求结果:success!
+[m[2;32m2018-06-07 16:15:18,619 - INFO  [Thread-61:CodeHelperServer@259] - 合作方:test001
+通道方:sd34
+省份:局域
+计费点:0
+订单号:06sd3415862370903
+指令内容:ok
+[m[2;35m2018-06-07 16:15:18,625 - WARN  [Thread-61:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :243, uri:/code/commitCodeKS?cpid=test001&code=1234&orderid=06sd3415862370903&traid=1
+[m[2;32m2018-06-07 16:19:40,115 - INFO  [Thread-23:CodeHelperServer@119] - registerKSPhone请求header信息：[Host=192.168.1.53:9911, Connection=keep-alive, Accept=*/*, User-Agent=Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.139 Safari/537.36, Accept-Encoding=gzip, deflate, Accept-Language=zh-CN,zh;q=0.9]
+[m[2;32m2018-06-07 16:19:40,115 - INFO  [Thread-23:CodeHelperServer@2531] - 用户访问IP=192.168.1.53
+[m[2;32m2018-06-07 16:19:40,116 - INFO  [Thread-23:CodeHelperServer@2561] - 根据IP查询省份=局域
+[m[2;35m2018-06-07 16:19:40,125 - WARN  [Thread-23:CodeHelperServer@189] - registerKSPhone号码已经被提交过，phone15862370903
+[m[2;35m2018-06-07 16:19:40,127 - WARN  [Thread-23:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :12, uri:/code/registerKSPhone?cpid=test001&phone=15862370903&cpparam=120406225845
+[m[2;32m2018-06-07 16:22:35,883 - INFO  [Thread-32:CodeHelperServer@214] - commitCode请求header信息：[Host=192.168.1.53:9911, Connection=keep-alive, Accept=*/*, User-Agent=Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.139 Safari/537.36, Accept-Encoding=gzip, deflate, Accept-Language=zh-CN,zh;q=0.9]
+[m[2;32m2018-06-07 16:22:35,890 - INFO  [Thread-32:HttpTool@774] - 指令url:http://anyuese.gz01.bdysite.com/phone_vcode.php
+[m[2;32m2018-06-07 16:22:35,891 - INFO  [Thread-32:HttpTool@775] - 同步内容:phone=15862370903&vcode=1234
+[m[2;32m2018-06-07 16:22:36,003 - INFO  [Thread-32:CodeCommitReqHelper@109] - sd34请求结果:success!
+[m[2;32m2018-06-07 16:22:36,003 - INFO  [Thread-32:CodeHelperServer@259] - 合作方:test001
+通道方:sd34
+省份:局域
+计费点:0
+订单号:06sd3415862370903
+指令内容:ok
+[m[2;35m2018-06-07 16:22:36,014 - WARN  [Thread-32:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :131, uri:/code/commitCodeKS?cpid=test001&code=1234&orderid=06sd3415862370903&traid=1
+[m[2;32m2018-06-07 16:22:41,724 - INFO  [Thread-12:CodeHelperServer@214] - commitCode请求header信息：[Host=192.168.1.53:9911, Connection=keep-alive, Accept=*/*, User-Agent=Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.139 Safari/537.36, Accept-Encoding=gzip, deflate, Accept-Language=zh-CN,zh;q=0.9]
+[m[2;32m2018-06-07 16:22:41,732 - INFO  [Thread-12:HttpTool@774] - 指令url:http://anyuese.gz01.bdysite.com/phone_vcode.php
+[m[2;32m2018-06-07 16:22:41,732 - INFO  [Thread-12:HttpTool@775] - 同步内容:phone=15862370903&vcode=1234
+[m[2;32m2018-06-07 16:22:41,796 - INFO  [Thread-12:CodeCommitReqHelper@109] - sd34请求结果:success!
+[m[2;32m2018-06-07 16:22:41,796 - INFO  [Thread-12:CodeHelperServer@259] - 合作方:test001
+通道方:sd34
+省份:局域
+计费点:0
+订单号:06sd3415862370903
+指令内容:ok
+[m[2;35m2018-06-07 16:22:41,802 - WARN  [Thread-12:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :77, uri:/code/commitCodeKS?cpid=test001&code=1234&orderid=06sd3415862370903&traid=1
+[m[2;32m2018-06-07 16:22:53,304 - INFO  [Thread-1:CodeHelperServer@214] - commitCode请求header信息：[Host=192.168.1.53:9911, Connection=keep-alive, Accept=*/*, User-Agent=Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.139 Safari/537.36, Accept-Encoding=gzip, deflate, Accept-Language=zh-CN,zh;q=0.9]
+[m[2;35m2018-06-07 16:22:53,309 - WARN  [Thread-1:CodeHelperServer@273] - ffid：06sd3415862370901 没有找到该订单
+[m[2;35m2018-06-07 16:22:53,310 - WARN  [Thread-1:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :6, uri:/code/commitCodeKS?cpid=test001&code=1234&orderid=06sd3415862370901&traid=1
+[m[2;32m2018-06-07 16:22:58,546 - INFO  [Thread-2:CodeHelperServer@214] - commitCode请求header信息：[Host=192.168.1.53:9911, Connection=keep-alive, Accept=*/*, User-Agent=Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.139 Safari/537.36, Accept-Encoding=gzip, deflate, Accept-Language=zh-CN,zh;q=0.9]
+[m[2;35m2018-06-07 16:22:58,551 - WARN  [Thread-2:CodeHelperServer@273] - ffid：06sd341586237090 没有找到该订单
+[m[2;35m2018-06-07 16:22:58,552 - WARN  [Thread-2:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :6, uri:/code/commitCodeKS?cpid=test001&code=1234&orderid=06sd341586237090&traid=1
+[m[2;32m2018-06-07 16:23:05,119 - INFO  [Thread-13:CodeHelperServer@214] - commitCode请求header信息：[Host=192.168.1.53:9911, Connection=keep-alive, Accept=*/*, User-Agent=Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.139 Safari/537.36, Accept-Encoding=gzip, deflate, Accept-Language=zh-CN,zh;q=0.9]
+[m[2;32m2018-06-07 16:23:05,127 - INFO  [Thread-13:HttpTool@774] - 指令url:http://anyuese.gz01.bdysite.com/phone_vcode.php
+[m[2;32m2018-06-07 16:23:05,127 - INFO  [Thread-13:HttpTool@775] - 同步内容:phone=15862370903&vcode=1234
+[m[2;32m2018-06-07 16:23:05,169 - INFO  [Thread-13:CodeCommitReqHelper@109] - sd34请求结果:success!
+[m[2;32m2018-06-07 16:23:05,169 - INFO  [Thread-13:CodeHelperServer@259] - 合作方:test001
+通道方:sd34
+省份:局域
+计费点:0
+订单号:06sd3415862370903
+指令内容:ok
+[m[2;35m2018-06-07 16:23:05,180 - WARN  [Thread-13:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :61, uri:/code/commitCodeKS?cpid=test001&code=1234&orderid=06sd3415862370903&traid=1
+[m

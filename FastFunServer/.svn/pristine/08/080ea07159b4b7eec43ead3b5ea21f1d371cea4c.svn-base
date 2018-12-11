@@ -1,0 +1,41 @@
+[2;32m2017-04-28 10:59:07,609 - INFO  [main:ServerBootstrap@67] - Configuration Server bootstrap params.......
+[m[2;32m2017-04-28 10:59:07,630 - INFO  [main:ServerBootstrap@68] - Server protocol:	http
+[m[2;32m2017-04-28 10:59:07,631 - INFO  [main:ServerBootstrap@69] - Server port:	9911
+[m[2;32m2017-04-28 10:59:08,033 - INFO  [main:ServerBootstrap@78] - Configuration Remote Server.......
+[m[2;32m2017-04-28 10:59:08,033 - INFO  [main:ServerBootstrap@80] - Add Remote Server - Name:FastFunSystem;Address:localhost;Port:9912
+[m[2;32m2017-04-28 10:59:08,049 - INFO  [main:Application@25] - Init servers......
+[m[2;32m2017-04-28 10:59:08,213 - INFO  [main:ServerBootstrap@92] - Application PID:	7432
+[m[2;32m2017-04-28 10:59:25,640 - INFO  [Thread-25:CodeHelperServer@443] - reqRegister请求header信息：[Host=127.0.0.1:9911, Connection=keep-alive, Accept=text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8, User-Agent=Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.71 Safari/537.36, Accept-Encoding=gzip, deflate, sdch, Accept-Language=zh-CN,zh;q=0.8, Cookie=Hm_lvt_babfd903cf7f9b8cdbdc317eba1cb1af=1490240584]
+[m[2;32m2017-04-28 10:59:25,644 - INFO  [Thread-25:CodeHelperServer@1425] - 用户访问IP=127.0.0.1
+[m[2;32m2017-04-28 10:59:25,662 - INFO  [Thread-25:CodeHelperServer@1455] - 根据IP查询省份=IA
+[m[2;32m2017-04-28 11:00:22,138 - INFO  [Thread-25:CodeHelperServer@484] - 合作方:sdk01
+通道方:sd15
+订单号:04sdw63072211867
+指令内容:null04sdw63072211867
+[m[2;32m2017-04-28 11:00:22,220 - INFO  [Thread-25:HttpTool@84] - sendKLWPost指令url=null
+[m[2;32m2017-04-28 11:00:22,221 - INFO  [Thread-25:HttpTool@85] - sendKLWPost指令param={"cpParam":"abcd","fee":0,"ffId":"04sdw63072211867","imei":"99000505743066","imsi":"0000","ip":"127.0.0.1","phone":"18938632075"}
+[m[7;31m2017-04-28 11:00:22,223 - ERROR [Thread-25:HttpTool@121] - 
+[mjava.lang.NullPointerException
+	at java.net.URL.<init>(Unknown Source)
+	at java.net.URL.<init>(Unknown Source)
+	at java.net.URL.<init>(Unknown Source)
+	at com.klw.fastfun.pay.common.tool.HttpTool.sendKLWPost(HttpTool.java:89)
+	at com.klw.fastfun.pay.view.app.service.CodeHelperServer.notityResult(CodeHelperServer.java:3098)
+	at com.klw.fastfun.pay.view.app.service.CodeHelperServer.processOrder(CodeHelperServer.java:3068)
+	at com.klw.fastfun.pay.view.app.service.CodeHelperServer.reqRegister(CodeHelperServer.java:491)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at com.juice.orange.game.handler.DefaultJuiceHandler.handleHttpRequest(DefaultJuiceHandler.java:81)
+	at com.juice.orange.game.handler.DefaultJuiceHandler.handlerRequest(DefaultJuiceHandler.java:35)
+	at com.juice.orange.game.handler.JuiceHttpControl.nextHandler(JuiceHttpControl.java:84)
+	at com.juice.orange.game.handler.JuiceHttpControl.nextHandler(JuiceHttpControl.java:67)
+	at com.juice.orange.game.util.threadpool.JuiceThreadPool$JuiceWorkThread.run(JuiceThreadPool.java:70)
+[2;32m2017-04-28 11:00:22,247 - INFO  [Thread-25:HttpTool@123] - 指令结果=
+[m[2;32m2017-04-28 11:00:22,247 - INFO  [Thread-25:CodeHelperServer@3070] - 给CP的同步结果：
+[m[2;35m2017-04-28 11:00:22,421 - WARN  [Thread-25:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :56785, uri:/code/reqRegister?cpparam=abcd&osversion=5.0.2&iccid=&imei=99000505743066&cpid=sdk01&phone=18938632075&manufacturer=Xiaomi&num=0&imsi=0000&model=MI+2SC
+[m[7;31m2017-04-28 11:00:22,485 - ERROR [Thread-2:DefaultJuiceHandler@90] - java.lang.ArrayIndexOutOfBoundsException: 2
+[m[7;31m2017-04-28 11:00:22,485 - ERROR [Thread-2:DefaultJuiceHandler@91] - com.juice.orange.game.exception.JuiceException: handler request error,path:/favicon.ico;param:null
+[m[2;35m2017-04-28 11:00:22,485 - WARN  [Thread-2:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :1, uri:/favicon.ico
+[m

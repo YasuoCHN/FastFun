@@ -1,0 +1,173 @@
+/**
+ * FastFunCommon
+ */
+package com.klw.fastfun.pay.common.action;
+
+import java.util.List;
+
+import com.klw.fastfun.pay.common.domain.BaseStationInfo;
+import com.klw.fastfun.pay.common.domain.CPFeeInfo;
+import com.klw.fastfun.pay.common.domain.CPInfo;
+import com.klw.fastfun.pay.common.domain.CodeInfo;
+import com.klw.fastfun.pay.common.domain.CodeOnlyInfo;
+import com.klw.fastfun.pay.common.domain.CustomInfo;
+import com.klw.fastfun.pay.common.domain.MMFeeInfo;
+import com.klw.fastfun.pay.common.domain.MMPayInfo;
+import com.klw.fastfun.pay.common.domain.MobileInfo;
+import com.klw.fastfun.pay.common.domain.OrderReqInfo;
+import com.klw.fastfun.pay.common.domain.PayReqInfo;
+import com.klw.fastfun.pay.common.domain.QQInfo;
+import com.klw.fastfun.pay.common.domain.ResSDKFilter;
+import com.klw.fastfun.pay.common.domain.ResSDKReport;
+import com.klw.fastfun.pay.common.domain.SDKUpdateInfo;
+import com.klw.fastfun.pay.common.domain.SmsFilter;
+import com.klw.fastfun.pay.common.transport.CodeT;
+import com.klw.fastfun.pay.common.transport.OrderT;
+
+/**
+ * @author klwplayer.com
+ *
+ * 2015年3月30日
+ */
+public interface CommonAction {
+	
+	String getNewPayCode(PayReqInfo info);
+	
+	List<ResSDKFilter> queryFilterBySpid(OrderReqInfo reqInfo);
+	
+	List<ResSDKFilter> queryOtherFilterBySpid(OrderReqInfo reqInfo);
+	
+	List<SmsFilter> querySmsFilterBySpid(OrderReqInfo reqInfo);
+	
+	void addklwOrderReqInfo(OrderReqInfo reqInfo);
+	
+	void addxsOrderReqInfo(OrderReqInfo reqInfo);
+	
+	void addOrderReqInfo(CodeT ct, OrderReqInfo reqInfo);
+	
+	void addMobile12306(MobileInfo info);
+	
+	void addOtherOrderReqInfo(OrderReqInfo reqInfo);
+	
+	void addPollOrderReqInfo(OrderReqInfo reqInfo);
+	
+	void addMiGuOrderReqInfo(OrderReqInfo reqInfo);
+	
+	void addOrderReqInfoAll(OrderReqInfo reqInfo);
+	
+	QQInfo queryQQInfo(OrderReqInfo reqInfo);
+	
+	CPInfo getCPInfo(OrderReqInfo reqInfo);
+	
+	CodeT getPayCode(OrderReqInfo reqInfo);
+	
+	CodeT getPayCodes(OrderReqInfo reqInfo);
+	
+	CodeT getMiGuPayCodes(OrderReqInfo reqInfo);
+	
+	CodeT getSdkPayCodes(OrderReqInfo reqInfo);
+	
+	CodeT getklwPayCodes(OrderReqInfo reqInfo);
+	
+	BaseStationInfo getBaseStation(OrderReqInfo reqInfo);
+	
+	CodeT getOtherPayCodes(OrderReqInfo reqInfo);
+	
+	CodeT getPollOtherPayCodes(OrderReqInfo reqInfo);
+	
+	CodeT pollOtherPayCodes(OrderReqInfo reqInfo);
+	
+	CodeT getPointPayCodes(OrderReqInfo reqInfo);
+	
+	MobileInfo query12306commit(String mobile);
+	
+	CodeT getCodes(String cpId, String ip, String province, String fee, 
+			String imei, String imsi, String iccid, String mobile,String cpparam, String pmodel, 
+			String osversion, String nwtype, String ctech);
+	
+	CodeT getCode(String cpId, String ip, String province, String fee, 
+			String imei, String imsi, String iccid, String mobile,String cpparam, String pmodel, 
+			String osversion, String nwtype, String ctech, int serVer, String sdkVer);
+	
+	CodeT getSpecifyCode(String cpId, String ip, String province, String fee, 
+			String imei, String imsi, String iccid, String mobile,String cpparam, String pmodel, 
+			String osversion, String nwtype, String ctech, int serVer, String specify);
+	
+	String getMobile(OrderReqInfo reqInfo);
+	
+	void addMMPayInfo(MMPayInfo info);
+	
+	void saveExt(String ext);
+	
+	void reqForward(String json);
+	
+	CPInfo queryCP(String cpId);
+	
+	String queryExt(String ffid);
+	
+	OrderT queryOrderT(String ffId);
+	
+	void updateCp(CPInfo info);
+	
+	void updateOrderInfo(OrderReqInfo info);
+	
+	void updateSDKResult(String ffId, String sdkResult);
+	
+	void updateOrderZFB(String ffId, String ctech, String sn, int isSuc, int synStatus);
+	
+	void updateOrder(String ffId, boolean isSuc, int synStatus);
+	
+	void updateOrderKL(String cpid, String isSuc, int synStatus);
+	
+	void updateOrderData(String mobile, String ffId, boolean isSuc, int synStatus);
+	
+	void addResSDKReport(ResSDKReport info);
+	
+	MMFeeInfo queryFeeByAppId(String appId, String createTime);
+	
+	MMFeeInfo queryFeeByCon(String appId, String createTime, String channel);
+	
+	MMFeeInfo queryFeeBySpid(String spId, String createTime);
+	
+	List<CPFeeInfo> queryFeeByCpid(String cpId, String createTime);
+	
+	MMFeeInfo queryCountBySpid(String spId, String createTime);
+	
+	List<CPFeeInfo> queryCountByCpid(String cpId, String createTime);
+	
+	void addCustomInfo(CustomInfo info);
+	
+	String getCpid(String pid);
+	
+	CPInfo getCpByPid(String pid);
+	
+	void refreshCache();
+	
+	CustomInfo getCustomInfo(CustomInfo info);
+	
+	CustomInfo checkCustomerInfo(String imsi);
+	
+	SDKUpdateInfo getSDKUpdateParam(SDKUpdateInfo info);
+	
+	public List<ResSDKFilter> queryFilterBySpid(String spId);
+	
+	CodeOnlyInfo queryCodeOnlyBySpid(String spId);
+	
+	void addOnlyOrder(OrderReqInfo info);
+	
+	OrderReqInfo queryOrderByMobile(String mobile, String ffId);
+	
+	OrderReqInfo queryOrderReqInfo(String ffId);
+	
+	void updateOrderByOther(OrderReqInfo info);
+	
+	OrderReqInfo queryOrderByCondition(OrderReqInfo info);
+	
+	CodeInfo queryCodeInfoBySpid(String spId);
+	
+	void updateCodeInfo(CodeInfo info);
+	
+	MobileInfo getProvinceByPhone(int mobile);
+	
+	void removeMemcached(String key);
+}

@@ -1,0 +1,67 @@
+[2;32m2017-08-08 15:46:02,497 - INFO  [main:ServerBootstrap@74] - Configuration Server bootstrap params.......
+[m[2;32m2017-08-08 15:46:02,499 - INFO  [main:ServerBootstrap@75] - Server protocol:	http
+[m[2;32m2017-08-08 15:46:02,499 - INFO  [main:ServerBootstrap@76] - Server port:	9911
+[m[2;32m2017-08-08 15:46:02,757 - INFO  [main:ServerBootstrap@85] - Configuration Remote Server.......
+[m[2;32m2017-08-08 15:46:02,757 - INFO  [main:ServerBootstrap@87] - Add Remote Server - Name:FastFunSystem;Address:localhost;Port:9912
+[m[2;35m2017-08-08 15:46:02,815 - WARN  [main:XMemcachedClient@727] - XMemcachedClient use Binary protocol
+[m[2;32m2017-08-08 15:46:02,839 - INFO  [main:SelectorManager@37] - Creating 16 reactors...
+[m[2;35m2017-08-08 15:46:02,851 - WARN  [main:AbstractController@372] - The Controller started at localhost/127.0.0.1:0 ...
+[m[7;31m2017-08-08 15:46:03,860 - ERROR [main:XMemcachedClient@593] - connect to 127.0.0.1:11211 error
+[mjava.util.concurrent.ExecutionException: java.net.ConnectException: Connection refused: no further information
+	at com.google.code.yanf4j.core.impl.FutureImpl.get(FutureImpl.java:145)
+	at net.rubyeye.xmemcached.XMemcachedClient.connect(XMemcachedClient.java:582)
+	at net.rubyeye.xmemcached.XMemcachedClient.<init>(XMemcachedClient.java:870)
+	at net.rubyeye.xmemcached.XMemcachedClientBuilder.build(XMemcachedClientBuilder.java:340)
+	at com.juice.orange.game.cached.MemcachedResource.buildMemcached(MemcachedResource.java:34)
+	at com.klw.fastfun.pay.view.app.ServerBootstrap.main(ServerBootstrap.java:64)
+Caused by: java.net.ConnectException: Connection refused: no further information
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(Unknown Source)
+	at net.rubyeye.xmemcached.impl.MemcachedConnector.onConnect(MemcachedConnector.java:404)
+	at com.google.code.yanf4j.nio.impl.Reactor.dispatchEvent(Reactor.java:303)
+	at com.google.code.yanf4j.nio.impl.Reactor.run(Reactor.java:142)
+[7;31m2017-08-08 15:46:03,862 - ERROR [Xmemcached-Reactor-0:MemcachedConnector$InnerControllerStateListener@558] - Exception occured in controller
+[mjava.io.IOException: Connect to 127.0.0.1:11211 fail,Connection refused: no further information
+	at net.rubyeye.xmemcached.impl.MemcachedConnector.onConnect(MemcachedConnector.java:423)
+	at com.google.code.yanf4j.nio.impl.Reactor.dispatchEvent(Reactor.java:303)
+	at com.google.code.yanf4j.nio.impl.Reactor.run(Reactor.java:142)
+[7;31m2017-08-08 15:46:03,870 - ERROR [Xmemcached-Reactor-0:Reactor@325] - Reactor dispatch events error
+[mjava.io.IOException: Connect to 127.0.0.1:11211 fail,Connection refused: no further information
+	at net.rubyeye.xmemcached.impl.MemcachedConnector.onConnect(MemcachedConnector.java:423)
+	at com.google.code.yanf4j.nio.impl.Reactor.dispatchEvent(Reactor.java:303)
+	at com.google.code.yanf4j.nio.impl.Reactor.run(Reactor.java:142)
+[7;31m2017-08-08 15:46:03,871 - ERROR [main:XMemcachedClient@627] - Connect to 127.0.0.1:11211 fail
+[mjava.util.concurrent.ExecutionException: java.net.ConnectException: Connection refused: no further information
+	at com.google.code.yanf4j.core.impl.FutureImpl.get(FutureImpl.java:145)
+	at net.rubyeye.xmemcached.XMemcachedClient.connect(XMemcachedClient.java:582)
+	at net.rubyeye.xmemcached.XMemcachedClient.<init>(XMemcachedClient.java:870)
+	at net.rubyeye.xmemcached.XMemcachedClientBuilder.build(XMemcachedClientBuilder.java:340)
+	at com.juice.orange.game.cached.MemcachedResource.buildMemcached(MemcachedResource.java:34)
+	at com.klw.fastfun.pay.view.app.ServerBootstrap.main(ServerBootstrap.java:64)
+Caused by: java.net.ConnectException: Connection refused: no further information
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(Unknown Source)
+	at net.rubyeye.xmemcached.impl.MemcachedConnector.onConnect(MemcachedConnector.java:404)
+	at com.google.code.yanf4j.nio.impl.Reactor.dispatchEvent(Reactor.java:303)
+	at com.google.code.yanf4j.nio.impl.Reactor.run(Reactor.java:142)
+[2;32m2017-08-08 15:46:03,874 - INFO  [main:Application@24] - Init servers......
+[m[2;32m2017-08-08 15:46:03,928 - INFO  [main:ServerBootstrap@99] - Application PID:	6448
+[m[2;35m2017-08-08 15:46:05,873 - WARN  [Heal-Session-Thread:MemcachedConnector$SessionMonitor@125] - Trying to connect to 127.0.0.1:11211 for 1 times
+[m[2;35m2017-08-08 15:46:06,909 - WARN  [Xmemcached-Reactor-0:MemcachedConnector@251] - Add a session: 127.0.0.1:11211
+[m[2;32m2017-08-08 15:46:18,228 - INFO  [Thread-82:CodeHelperServer@4237] - reqXSCodeSDK请求header信息：[Accept=*/*, Host=127.0.0.1:9911, Content-Length=528, Connection=Keep-Alive, Cache-Control=no-cache]
+[m[2;32m2017-08-08 15:46:18,353 - INFO  [Thread-82:CodeHelperServer@1629] - 请求SDKAES加密信息：6000043A8F12E5C3AFF8D00D910EE2DCD7FE31348A214965D3D231543E7BC45CDF6EE66D0FAD3198FD58E94CF7C80F4B97090D7E15FB1107052F0258B3321BB4226592BAB6B235FA9DF01462F5714C43A149B8A25727AC7FE363D7A298419C377F90896D2A33B2E83550012A55250905DA6F897B8FDEAAC406ED462DF465D894B354C11F7D899FC2E45CD9F347C8FB08C578A906DCEEF6886BBEA319F25DBCB8445EB5F61530713DA29B70D3E9BBE2E431870C2E6BE782232622802873431F7EEDA8EF4958FA6EAEB52FD270461DC7E20E55CC8C04EECF03CCD9948E1A0279D48883EAB2730224FD0036D710BAC1425DAFAB9C41CDEE75EDCAB1AA59AC2AF511cVSixpec073922s8
+[m[2;32m2017-08-08 15:46:18,354 - INFO  [Thread-82:CodeHelperServer@1637] - 请求SDKAES解密后信息：{"cpid":"sdk01","fee":"10","imei":"867695023239501","imsi":"460021252580564","phone":"","cpparam":"test#channel","iccid":"89860032248672505645","pmodel":"ZUK Z1","osversion":"5.1.1","nwtype":"WIFI","pck":"com.soulgame.sdk","app":"MagicDemo"}
+[m[2;32m2017-08-08 15:46:18,399 - INFO  [Thread-82:CodeHelperServer@1660] - 用户访问IP=127.0.0.1
+[m[2;32m2017-08-08 15:46:18,399 - INFO  [Thread-82:CodeHelperServer@1674] - 移动用户依据iccid判定:89860032248672505645归属于：云南
+[m[2;32m2017-08-08 15:46:18,746 - INFO  [Thread-82:CodeHelperServer@4299] - spid:dm18，reqXSCodeSDK获取指令失败，尝试从下一个通道获取！
+[m[2;32m2017-08-08 15:46:18,746 - INFO  [Thread-82:CodeHelperServer@4304] - 
+[m[2;35m2017-08-08 15:46:18,763 - WARN  [Thread-82:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :537, uri:/code/reqXSCodeSDK
+[m[2;32m2017-08-08 15:47:22,877 - INFO  [Thread-11:CodeHelperServer@4237] - reqXSCodeSDK请求header信息：[Accept=*/*, Host=127.0.0.1:9911, Content-Length=528, Connection=Keep-Alive, Cache-Control=no-cache]
+[m[2;32m2017-08-08 15:47:29,099 - INFO  [Thread-11:CodeHelperServer@1629] - 请求SDKAES加密信息：6000043A8F12E5C3AFF8D00D910EE2DCD7FE31348A214965D3D231543E7BC45CDF6EE66D0FAD3198FD58E94CF7C80F4B97090D7E15FB1107052F0258B3321BB4226592BAB6B235FA9DF01462F5714C43A149B8A25727AC7FE363D7A298419C377F90896D2A33B2E83550012A55250905DA6F897B8FDEAAC406ED462DF465D894B354C11F7D899FC2E45CD9F347C8FB08C578A906DCEEF6886BBEA319F25DBCB8445EB5F61530713DA29B70D3E9BBE2E431870C2E6BE782232622802873431F7EEDA8EF4958FA6EAEB52FD270461DC7E20E55CC8C04EECF03CCD9948E1A0279D48883EAB2730224FD0036D710BAC1425DAFAB9C41CDEE75EDCAB1AA59AC2AF511cVSixpec073922s8
+[m[2;32m2017-08-08 15:47:29,113 - INFO  [Thread-11:CodeHelperServer@1637] - 请求SDKAES解密后信息：{"cpid":"sdk01","fee":"10","imei":"867695023239501","imsi":"460021252580564","phone":"","cpparam":"test#channel","iccid":"89860032248672505645","pmodel":"ZUK Z1","osversion":"5.1.1","nwtype":"WIFI","pck":"com.soulgame.sdk","app":"MagicDemo"}
+[m[2;32m2017-08-08 15:47:29,116 - INFO  [Thread-11:CodeHelperServer@1660] - 用户访问IP=127.0.0.1
+[m[2;32m2017-08-08 15:47:29,117 - INFO  [Thread-11:CodeHelperServer@1674] - 移动用户依据iccid判定:89860032248672505645归属于：云南
+[m[2;32m2017-08-08 15:48:54,142 - INFO  [Thread-11:CodeHelperServer@4299] - spid:dm18，reqXSCodeSDK获取指令失败，尝试从下一个通道获取！
+[m[2;32m2017-08-08 15:48:54,142 - INFO  [Thread-11:CodeHelperServer@4304] - 
+[m[2;35m2017-08-08 15:48:54,168 - WARN  [Thread-11:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :91292, uri:/code/reqXSCodeSDK
+[m

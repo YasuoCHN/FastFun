@@ -1,0 +1,194 @@
+[2;32m2017-05-01 18:36:34,125 - INFO  [main:ServerBootstrap@67] - Configuration Server bootstrap params.......
+[m[2;32m2017-05-01 18:36:34,125 - INFO  [main:ServerBootstrap@68] - Server protocol:	http
+[m[2;32m2017-05-01 18:36:34,135 - INFO  [main:ServerBootstrap@69] - Server port:	9911
+[m[2;32m2017-05-01 18:36:34,535 - INFO  [main:ServerBootstrap@78] - Configuration Remote Server.......
+[m[2;32m2017-05-01 18:36:34,545 - INFO  [main:ServerBootstrap@80] - Add Remote Server - Name:FastFunSystem;Address:localhost;Port:9912
+[m[2;32m2017-05-01 18:36:34,545 - INFO  [main:Application@25] - Init servers......
+[m[2;32m2017-05-01 18:36:34,626 - INFO  [main:ServerBootstrap@92] - Application PID:	4768
+[m[2;32m2017-05-01 18:39:25,608 - INFO  [Thread-41:CodeHelperServer@445] - reqRegister请求header信息：[Charsert=utf-8, Content-Type=application/json, Cache-Control=no-cache, Pragma=no-cache, User-Agent=Java/1.8.0_25, Host=127.0.0.1:9911, Accept=text/html, image/gif, image/jpeg, *; q=.2, */*; q=.2, Connection=keep-alive, Content-Length=400]
+[m[2;32m2017-05-01 18:39:25,608 - INFO  [Thread-41:CodeHelperServer@1415] - 请求AES加密信息：6BA9964B2EEF742FEF85208ADDD8B770F2EEB491214A6726DB3FD7811976C552F6F6FC87D34E2B150010338FDAB9834032862BA01CB6D65FF40137FBCA8A04EC5ABC85B9C61525A8D1CBB261D45CF39EB7D8DCB0515F0DB570EE0FF1A4FE0032662213118DF794C35BACD861CE73F6CFF6EB9AB046929C0F59273F991BD73A14C28AF42C801D176C0D73DC1AE037C736FAF4DFFB0C52EAFCBD092A506167571B4E1FE024288DEAF9CAE72C4B3AE457CAA7B065C0D0AC3FC941D7B91E354080722Th83R3E07Z90s65
+[m[2;32m2017-05-01 18:39:25,989 - INFO  [Thread-41:CodeHelperServer@1452] - 用户访问IP=127.0.0.1
+[m[2;32m2017-05-01 18:39:26,059 - INFO  [Thread-41:CodeHelperServer@1482] - 根据IP查询省份=IA
+[m[7;31m2017-05-01 18:40:46,942 - ERROR [Thread-41:CodeHelperServer@497] - 
+[m[2;35m2017-05-01 18:40:46,962 - WARN  [Thread-41:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :81364, uri:/code/reqRegister
+[m[2;32m2017-05-01 18:41:12,100 - INFO  [Thread-111:CodeHelperServer@445] - reqRegister请求header信息：[Charsert=utf-8, Content-Type=application/json, Cache-Control=no-cache, Pragma=no-cache, User-Agent=Java/1.8.0_25, Host=127.0.0.1:9911, Accept=text/html, image/gif, image/jpeg, *; q=.2, */*; q=.2, Connection=keep-alive, Content-Length=400]
+[m[2;32m2017-05-01 18:41:12,100 - INFO  [Thread-111:CodeHelperServer@1415] - 请求AES加密信息：6BA9964B2EEF742FEF85208ADDD8B770F2EEB491214A6726DB3FD7811976C552F6F6FC87D34E2B150010338FDAB9834032862BA01CB6D65FF40137FBCA8A04EC5ABC85B9C61525A8D1CBB261D45CF39EB7D8DCB0515F0DB570EE0FF1A4FE0032662213118DF794C35BACD861CE73F6CFF6EB9AB046929C0F59273F991BD73A14C28AF42C801D176C0D73DC1AE037C736FAF4DFFB0C52EAFCBD092A506167571B4E1FE024288DEAF9CAE72C4B3AE457CAA7B065C0D0AC3FC941D7B91E354080722Th83R3E07Z90s65
+[m[2;32m2017-05-01 18:41:12,110 - INFO  [Thread-111:CodeHelperServer@1452] - 用户访问IP=127.0.0.1
+[m[2;32m2017-05-01 18:41:12,110 - INFO  [Thread-111:CodeHelperServer@1482] - 根据IP查询省份=IA
+[m[7;31m2017-05-01 18:41:12,161 - ERROR [Thread-111:CodeHelperServer@497] - 
+[m[2;35m2017-05-01 18:41:12,161 - WARN  [Thread-111:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :61, uri:/code/reqRegister
+[m[7;31m2017-05-01 18:41:12,252 - ERROR [JUICE-SERVER-Handler-4-1-thread:ConnectionException@22] - uncaughtException :
+[mcom.juice.orange.game.exception.JuiceException: 远程主机强迫关闭了一个现有的连接。 on [id: 0x9dd7cf64, /127.0.0.1:50762 => /127.0.0.1:9911]
+	at com.juice.orange.game.exception.JuiceException.fromException(JuiceException.java:38)
+	at com.juice.orange.game.exception.JuiceException.fromExceptionEvent(JuiceException.java:32)
+	at com.juice.orange.game.util.ConnectionHelper$2.run(ConnectionHelper.java:56)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: java.io.IOException: 远程主机强迫关闭了一个现有的连接。
+	at sun.nio.ch.SocketDispatcher.read0(Native Method)
+	at sun.nio.ch.SocketDispatcher.read(Unknown Source)
+	at sun.nio.ch.IOUtil.readIntoNativeBuffer(Unknown Source)
+	at sun.nio.ch.IOUtil.read(Unknown Source)
+	at sun.nio.ch.SocketChannelImpl.read(Unknown Source)
+	at org.jboss.netty.channel.socket.nio.NioWorker.read(NioWorker.java:64)
+	at org.jboss.netty.channel.socket.nio.AbstractNioWorker.process(AbstractNioWorker.java:107)
+	at org.jboss.netty.channel.socket.nio.AbstractNioSelector.run(AbstractNioSelector.java:312)
+	at org.jboss.netty.channel.socket.nio.AbstractNioWorker.run(AbstractNioWorker.java:88)
+	at org.jboss.netty.channel.socket.nio.NioWorker.run(NioWorker.java:178)
+	... 3 more
+[2;32m2017-05-01 18:41:35,189 - INFO  [Thread-61:CodeHelperServer@445] - reqRegister请求header信息：[Charsert=utf-8, Content-Type=application/json, Cache-Control=no-cache, Pragma=no-cache, User-Agent=Java/1.8.0_25, Host=127.0.0.1:9911, Accept=text/html, image/gif, image/jpeg, *; q=.2, */*; q=.2, Connection=keep-alive, Content-Length=400]
+[m[2;32m2017-05-01 18:41:35,189 - INFO  [Thread-61:CodeHelperServer@1415] - 请求AES加密信息：6BA9964B2EEF742FEF85208ADDD8B770F2EEB491214A6726DB3FD7811976C552F6F6FC87D34E2B150010338FDAB9834032862BA01CB6D65FF40137FBCA8A04EC5ABC85B9C61525A8D1CBB261D45CF39EB7D8DCB0515F0DB570EE0FF1A4FE0032662213118DF794C35BACD861CE73F6CFF6EB9AB046929C0F59273F991BD73A14C28AF42C801D176C0D73DC1AE037C736FAF4DFFB0C52EAFCBD092A506167571B4E1FE024288DEAF9CAE72C4B3AE457CAA7B065C0D0AC3FC941D7B91E354080722Th83R3E07Z90s65
+[m[2;32m2017-05-01 18:41:35,189 - INFO  [Thread-61:CodeHelperServer@1452] - 用户访问IP=127.0.0.1
+[m[2;32m2017-05-01 18:41:35,189 - INFO  [Thread-61:CodeHelperServer@1482] - 根据IP查询省份=IA
+[m[2;32m2017-05-01 18:48:34,513 - INFO  [main:ServerBootstrap@67] - Configuration Server bootstrap params.......
+[m[2;32m2017-05-01 18:48:34,523 - INFO  [main:ServerBootstrap@68] - Server protocol:	http
+[m[2;32m2017-05-01 18:48:34,523 - INFO  [main:ServerBootstrap@69] - Server port:	9911
+[m[2;32m2017-05-01 18:48:34,903 - INFO  [main:ServerBootstrap@78] - Configuration Remote Server.......
+[m[2;32m2017-05-01 18:48:34,904 - INFO  [main:ServerBootstrap@80] - Add Remote Server - Name:FastFunSystem;Address:localhost;Port:9912
+[m[2;32m2017-05-01 18:48:34,906 - INFO  [main:Application@25] - Init servers......
+[m[2;32m2017-05-01 18:48:35,016 - INFO  [main:ServerBootstrap@92] - Application PID:	6300
+[m[2;32m2017-05-01 18:48:54,766 - INFO  [Thread-82:CodeHelperServer@445] - reqRegister请求header信息：[Charsert=utf-8, Content-Type=application/json, Cache-Control=no-cache, Pragma=no-cache, User-Agent=Java/1.8.0_25, Host=127.0.0.1:9911, Accept=text/html, image/gif, image/jpeg, *; q=.2, */*; q=.2, Connection=keep-alive, Content-Length=400]
+[m[2;32m2017-05-01 18:48:54,766 - INFO  [Thread-82:CodeHelperServer@1415] - 请求AES加密信息：6BA9964B2EEF742FEF85208ADDD8B770F2EEB491214A6726DB3FD7811976C552F6F6FC87D34E2B150010338FDAB9834032862BA01CB6D65FF40137FBCA8A04EC5ABC85B9C61525A8D1CBB261D45CF39EB7D8DCB0515F0DB570EE0FF1A4FE0032662213118DF794C35BACD861CE73F6CFF6EB9AB046929C0F59273F991BD73A14C28AF42C801D176C0D73DC1AE037C736FAF4DFFB0C52EAFCBD092A506167571B4E1FE024288DEAF9CAE72C4B3AE457CAA7B065C0D0AC3FC941D7B91E354080722Th83R3E07Z90s65
+[m[2;32m2017-05-01 18:48:55,017 - INFO  [Thread-82:CodeHelperServer@1452] - 用户访问IP=127.0.0.1
+[m[2;32m2017-05-01 18:48:55,027 - INFO  [Thread-82:CodeHelperServer@1482] - 根据IP查询省份=IA
+[m[2;32m2017-05-01 18:49:05,074 - INFO  [Thread-82:CodeHelperServer@489] - 合作方:sdk01
+通道方:sd15
+订单号:05sdn41129102705
+指令内容:null
+[m[2;35m2017-05-01 18:49:22,215 - WARN  [Thread-82:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :27459, uri:/code/reqRegister
+[m[7;31m2017-05-01 18:49:22,232 - ERROR [JUICE-SERVER-Handler-4-1-thread:ConnectionException@22] - uncaughtException :
+[mcom.juice.orange.game.exception.JuiceException: 远程主机强迫关闭了一个现有的连接。 on [id: 0xce40691e, /127.0.0.1:50890 => /127.0.0.1:9911]
+	at com.juice.orange.game.exception.JuiceException.fromException(JuiceException.java:38)
+	at com.juice.orange.game.exception.JuiceException.fromExceptionEvent(JuiceException.java:32)
+	at com.juice.orange.game.util.ConnectionHelper$2.run(ConnectionHelper.java:56)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: java.io.IOException: 远程主机强迫关闭了一个现有的连接。
+	at sun.nio.ch.SocketDispatcher.read0(Native Method)
+	at sun.nio.ch.SocketDispatcher.read(Unknown Source)
+	at sun.nio.ch.IOUtil.readIntoNativeBuffer(Unknown Source)
+	at sun.nio.ch.IOUtil.read(Unknown Source)
+	at sun.nio.ch.SocketChannelImpl.read(Unknown Source)
+	at org.jboss.netty.channel.socket.nio.NioWorker.read(NioWorker.java:64)
+	at org.jboss.netty.channel.socket.nio.AbstractNioWorker.process(AbstractNioWorker.java:107)
+	at org.jboss.netty.channel.socket.nio.AbstractNioSelector.run(AbstractNioSelector.java:312)
+	at org.jboss.netty.channel.socket.nio.AbstractNioWorker.run(AbstractNioWorker.java:88)
+	at org.jboss.netty.channel.socket.nio.NioWorker.run(NioWorker.java:178)
+	... 3 more
+[2;32m2017-05-01 18:49:59,587 - INFO  [Thread-41:CodeHelperServer@445] - reqRegister请求header信息：[Charsert=utf-8, Content-Type=application/json, Cache-Control=no-cache, Pragma=no-cache, User-Agent=Java/1.8.0_25, Host=127.0.0.1:9911, Accept=text/html, image/gif, image/jpeg, *; q=.2, */*; q=.2, Connection=keep-alive, Content-Length=400]
+[m[2;32m2017-05-01 18:49:59,587 - INFO  [Thread-41:CodeHelperServer@1415] - 请求AES加密信息：6BA9964B2EEF742FEF85208ADDD8B770F2EEB491214A6726DB3FD7811976C552F6F6FC87D34E2B150010338FDAB9834032862BA01CB6D65FF40137FBCA8A04EC5ABC85B9C61525A8D1CBB261D45CF39EB7D8DCB0515F0DB570EE0FF1A4FE0032662213118DF794C35BACD861CE73F6CFF6EB9AB046929C0F59273F991BD73A14C28AF42C801D176C0D73DC1AE037C736FAF4DFFB0C52EAFCBD092A506167571B4E1FE024288DEAF9CAE72C4B3AE457CAA7B065C0D0AC3FC941D7B91E354080722Th83R3E07Z90s65
+[m[2;32m2017-05-01 18:49:59,587 - INFO  [Thread-41:CodeHelperServer@1452] - 用户访问IP=127.0.0.1
+[m[2;32m2017-05-01 18:49:59,587 - INFO  [Thread-41:CodeHelperServer@1482] - 根据IP查询省份=IA
+[m[2;32m2017-05-01 18:52:26,691 - INFO  [Thread-41:CodeHelperServer@489] - 合作方:sdk01
+通道方:sd15
+订单号:05sdu18933122014
+指令内容:null
+[m[2;35m2017-05-01 18:52:26,806 - WARN  [Thread-41:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :147219, uri:/code/reqRegister
+[m[2;32m2017-05-01 18:52:31,666 - INFO  [Thread-111:CodeHelperServer@445] - reqRegister请求header信息：[Charsert=utf-8, Content-Type=application/json, Cache-Control=no-cache, Pragma=no-cache, User-Agent=Java/1.8.0_25, Host=127.0.0.1:9911, Accept=text/html, image/gif, image/jpeg, *; q=.2, */*; q=.2, Connection=keep-alive, Content-Length=400]
+[m[2;32m2017-05-01 18:52:31,666 - INFO  [Thread-111:CodeHelperServer@1415] - 请求AES加密信息：6BA9964B2EEF742FEF85208ADDD8B770F2EEB491214A6726DB3FD7811976C552F6F6FC87D34E2B150010338FDAB9834032862BA01CB6D65FF40137FBCA8A04EC5ABC85B9C61525A8D1CBB261D45CF39EB7D8DCB0515F0DB570EE0FF1A4FE0032662213118DF794C35BACD861CE73F6CFF6EB9AB046929C0F59273F991BD73A14C28AF42C801D176C0D73DC1AE037C736FAF4DFFB0C52EAFCBD092A506167571B4E1FE024288DEAF9CAE72C4B3AE457CAA7B065C0D0AC3FC941D7B91E354080722Th83R3E07Z90s65
+[m[2;32m2017-05-01 18:52:31,666 - INFO  [Thread-111:CodeHelperServer@1452] - 用户访问IP=127.0.0.1
+[m[2;32m2017-05-01 18:52:31,666 - INFO  [Thread-111:CodeHelperServer@1482] - 根据IP查询省份=IA
+[m[2;32m2017-05-01 18:53:11,408 - INFO  [Thread-111:CodeHelperServer@489] - 合作方:sdk01
+通道方:sd15
+订单号:05sdc05096673089
+指令内容:null
+[m[2;35m2017-05-01 18:53:11,499 - WARN  [Thread-111:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :39833, uri:/code/reqRegister
+[m[7;31m2017-05-01 18:53:11,520 - ERROR [JUICE-SERVER-Handler-4-2-thread:ConnectionException@22] - uncaughtException :
+[mcom.juice.orange.game.exception.JuiceException: 远程主机强迫关闭了一个现有的连接。 on [id: 0x72e37724, /127.0.0.1:50933 => /127.0.0.1:9911]
+	at com.juice.orange.game.exception.JuiceException.fromException(JuiceException.java:38)
+	at com.juice.orange.game.exception.JuiceException.fromExceptionEvent(JuiceException.java:32)
+	at com.juice.orange.game.util.ConnectionHelper$2.run(ConnectionHelper.java:56)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: java.io.IOException: 远程主机强迫关闭了一个现有的连接。
+	at sun.nio.ch.SocketDispatcher.read0(Native Method)
+	at sun.nio.ch.SocketDispatcher.read(Unknown Source)
+	at sun.nio.ch.IOUtil.readIntoNativeBuffer(Unknown Source)
+	at sun.nio.ch.IOUtil.read(Unknown Source)
+	at sun.nio.ch.SocketChannelImpl.read(Unknown Source)
+	at org.jboss.netty.channel.socket.nio.NioWorker.read(NioWorker.java:64)
+	at org.jboss.netty.channel.socket.nio.AbstractNioWorker.process(AbstractNioWorker.java:107)
+	at org.jboss.netty.channel.socket.nio.AbstractNioSelector.run(AbstractNioSelector.java:312)
+	at org.jboss.netty.channel.socket.nio.AbstractNioWorker.run(AbstractNioWorker.java:88)
+	at org.jboss.netty.channel.socket.nio.NioWorker.run(NioWorker.java:178)
+	... 3 more
+[2;32m2017-05-01 21:19:31,826 - INFO  [main:ServerBootstrap@67] - Configuration Server bootstrap params.......
+[m[2;32m2017-05-01 21:19:31,836 - INFO  [main:ServerBootstrap@68] - Server protocol:	http
+[m[2;32m2017-05-01 21:19:31,836 - INFO  [main:ServerBootstrap@69] - Server port:	9911
+[m[2;32m2017-05-01 21:19:32,209 - INFO  [main:ServerBootstrap@78] - Configuration Remote Server.......
+[m[2;32m2017-05-01 21:19:32,209 - INFO  [main:ServerBootstrap@80] - Add Remote Server - Name:FastFunSystem;Address:localhost;Port:9912
+[m[2;32m2017-05-01 21:19:32,209 - INFO  [main:Application@25] - Init servers......
+[m[2;32m2017-05-01 21:19:32,289 - INFO  [main:ServerBootstrap@92] - Application PID:	6800
+[m[2;32m2017-05-01 21:19:47,869 - INFO  [Thread-61:CodeHelperServer@580] - commitRegister请求header信息：[Charsert=utf-8, Content-Type=application/json, Cache-Control=no-cache, Pragma=no-cache, User-Agent=Java/1.8.0_25, Host=127.0.0.1:9911, Accept=text/html, image/gif, image/jpeg, *; q=.2, */*; q=.2, Connection=keep-alive, Content-Length=688]
+[m[2;32m2017-05-01 21:19:47,869 - INFO  [Thread-61:CodeHelperServer@1416] - 请求AES加密信息：348A6A4E580A74D41A04A2FD01AC067B072A764D72970EBD6F453DDDC1C6EB60497937430BEDE0F37629A64109958157BBEB669DA83D683C1BF84D3C8DBA2B720FCA363CC476C07BED6DB411EDE3BB8E836E62972C084294447498C3BB5B9A1957A778145FF68EF322C1B8F8391F5A56A2B891DC7B49A39B34E0F17EBBC4FE95DFE810CB318E3A00926C4207BA045C08BBAD0F9A033E37CD551661704567AF24190F110D70B9CBE415E3DC6AFE5075005DD749E02F413F0F1D97E883E741B83F55A1B49A5655244A5BD5A7F0DF59E364B6861F5C3B0A2AB6EDA8B5BFFFB791265134751E4DC2BB8384084EC6CBE0B1BF7CF20EF00C139015DA01806BA71EC5060EBE40DF27110236A56F45544101309FF60F330D8C0A9E71FB719B819098A00E5C5C51A4D5D4794538DA37C48DFCB8190204E1A665755EF2C8DCBA85771DE78882D5A9574BF225DC78B449FF855A54DBMj366Q92e68YfI84
+[m[2;32m2017-05-01 21:19:48,080 - INFO  [Thread-61:CodeHelperServer@1424] - 请求AES解密后信息：{"cpid":"sdk01","num":"1","phone":"18938632075","cpparam":"abcd","orderid":"05sdf89015628188","smscontent":"您获得QQ号3521073848,密码jmrjpgc6。已开通密保手机,详见http:\/\/aq.qq.com\/sj。注册后，可登录QQ手机版，随时随地的聊天，马上点击下载：http:\/\/url.cn\/LigUc7【腾讯科技】"}
+[m[2;32m2017-05-01 21:19:48,150 - INFO  [Thread-61:CodeHelperServer@1455] - 用户访问IP=127.0.0.1
+[m[2;32m2017-05-01 21:19:48,150 - INFO  [Thread-61:CodeHelperServer@1485] - 根据IP查询省份=IA
+[m[2;32m2017-05-01 21:19:53,471 - INFO  [Thread-61:CodeHelperServer@624] - 合作方:sdk01
+通道方:sd15
+订单号:05sdf89015628188
+指令内容:{"delaytime":"1","isscreen":"0","orderid":"05sdf89015628188","sendtype":"2","status":"0"}
+[m[2;32m2017-05-01 21:19:53,481 - INFO  [Thread-61:HttpTool@83] - sendKLWPost指令url=http://120.24.88.90/mmcode/test
+[m[2;32m2017-05-01 21:19:53,481 - INFO  [Thread-61:HttpTool@84] - sendKLWPost指令param={"cpParam":"abcd","fee":0,"ffId":"05sdf89015628188","ip":"127.0.0.1","phone":"18938632075"}
+[m[7;31m2017-05-01 21:19:54,013 - ERROR [Thread-61:HttpTool@120] - Read timed out
+[m[2;32m2017-05-01 21:19:54,013 - INFO  [Thread-61:HttpTool@122] - 指令结果=
+[m[2;32m2017-05-01 21:19:54,013 - INFO  [Thread-61:CodeHelperServer@3187] - 给CP的同步结果：
+[m[7;31m2017-05-01 21:20:04,024 - ERROR [Thread-61:JuiceInvocationHandler@63] - Latch request time out..
+[m[7;31m2017-05-01 21:20:04,024 - ERROR [Thread-61:CodeHelperServer@641] - 
+[m[2;35m2017-05-01 21:20:04,034 - WARN  [Thread-61:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :16165, uri:/code/commitRegister
+[m[7;31m2017-05-01 21:20:04,066 - ERROR [JUICE-SERVER-Handler-4-1-thread:ConnectionException@22] - uncaughtException :
+[mcom.juice.orange.game.exception.JuiceException: 远程主机强迫关闭了一个现有的连接。 on [id: 0x91a840ba, /127.0.0.1:52214 => /127.0.0.1:9911]
+	at com.juice.orange.game.exception.JuiceException.fromException(JuiceException.java:38)
+	at com.juice.orange.game.exception.JuiceException.fromExceptionEvent(JuiceException.java:32)
+	at com.juice.orange.game.util.ConnectionHelper$2.run(ConnectionHelper.java:56)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: java.io.IOException: 远程主机强迫关闭了一个现有的连接。
+	at sun.nio.ch.SocketDispatcher.read0(Native Method)
+	at sun.nio.ch.SocketDispatcher.read(Unknown Source)
+	at sun.nio.ch.IOUtil.readIntoNativeBuffer(Unknown Source)
+	at sun.nio.ch.IOUtil.read(Unknown Source)
+	at sun.nio.ch.SocketChannelImpl.read(Unknown Source)
+	at org.jboss.netty.channel.socket.nio.NioWorker.read(NioWorker.java:64)
+	at org.jboss.netty.channel.socket.nio.AbstractNioWorker.process(AbstractNioWorker.java:107)
+	at org.jboss.netty.channel.socket.nio.AbstractNioSelector.run(AbstractNioSelector.java:312)
+	at org.jboss.netty.channel.socket.nio.AbstractNioWorker.run(AbstractNioWorker.java:88)
+	at org.jboss.netty.channel.socket.nio.NioWorker.run(NioWorker.java:178)
+	... 3 more
+[2;32m2017-05-01 21:20:52,097 - INFO  [Thread-92:CodeHelperServer@580] - commitRegister请求header信息：[Charsert=utf-8, Content-Type=application/json, Cache-Control=no-cache, Pragma=no-cache, User-Agent=Java/1.8.0_25, Host=127.0.0.1:9911, Accept=text/html, image/gif, image/jpeg, *; q=.2, */*; q=.2, Connection=keep-alive, Content-Length=688]
+[m[2;32m2017-05-01 21:20:52,097 - INFO  [Thread-92:CodeHelperServer@1416] - 请求AES加密信息：348A6A4E580A74D41A04A2FD01AC067B072A764D72970EBD6F453DDDC1C6EB60497937430BEDE0F37629A64109958157BBEB669DA83D683C1BF84D3C8DBA2B720FCA363CC476C07BED6DB411EDE3BB8E836E62972C084294447498C3BB5B9A1957A778145FF68EF322C1B8F8391F5A56A2B891DC7B49A39B34E0F17EBBC4FE95DFE810CB318E3A00926C4207BA045C08BBAD0F9A033E37CD551661704567AF24190F110D70B9CBE415E3DC6AFE5075005DD749E02F413F0F1D97E883E741B83F55A1B49A5655244A5BD5A7F0DF59E364B6861F5C3B0A2AB6EDA8B5BFFFB791265134751E4DC2BB8384084EC6CBE0B1BF7CF20EF00C139015DA01806BA71EC5060EBE40DF27110236A56F45544101309FF60F330D8C0A9E71FB719B819098A00E5C5C51A4D5D4794538DA37C48DFCB8190204E1A665755EF2C8DCBA85771DE78882D5A9574BF225DC78B449FF855A54DBMj366Q92e68YfI84
+[m[2;32m2017-05-01 21:20:52,107 - INFO  [Thread-92:CodeHelperServer@1424] - 请求AES解密后信息：{"cpid":"sdk01","num":"1","phone":"18938632075","cpparam":"abcd","orderid":"05sdf89015628188","smscontent":"您获得QQ号3521073848,密码jmrjpgc6。已开通密保手机,详见http:\/\/aq.qq.com\/sj。注册后，可登录QQ手机版，随时随地的聊天，马上点击下载：http:\/\/url.cn\/LigUc7【腾讯科技】"}
+[m[2;32m2017-05-01 21:20:52,107 - INFO  [Thread-92:CodeHelperServer@1455] - 用户访问IP=127.0.0.1
+[m[2;32m2017-05-01 21:20:52,107 - INFO  [Thread-92:CodeHelperServer@1485] - 根据IP查询省份=IA
+[m[2;32m2017-05-01 21:20:52,158 - INFO  [Thread-92:CodeHelperServer@624] - 合作方:sdk01
+通道方:sd15
+订单号:05sdf89015628188
+指令内容:{"delaytime":"1","isscreen":"0","orderid":"05sdf89015628188","sendtype":"2","status":"0"}
+[m[2;32m2017-05-01 21:21:12,336 - INFO  [Thread-92:HttpTool@83] - sendKLWPost指令url=http://120.24.88.90/mmcode/test
+[m[2;32m2017-05-01 21:21:12,336 - INFO  [Thread-92:HttpTool@84] - sendKLWPost指令param={"cpParam":"abcd","fee":0,"ffId":"05sdf89015628188","ip":"127.0.0.1","phone":"18938632075"}
+[m[7;31m2017-05-01 21:21:12,857 - ERROR [Thread-92:HttpTool@120] - Read timed out
+[m[2;32m2017-05-01 21:21:12,857 - INFO  [Thread-92:HttpTool@122] - 指令结果=
+[m[2;32m2017-05-01 21:21:12,857 - INFO  [Thread-92:CodeHelperServer@3187] - 给CP的同步结果：
+[m[7;31m2017-05-01 21:21:56,215 - ERROR [Thread-92:JuiceInvocationHandler@63] - Latch request time out..
+[m[7;31m2017-05-01 21:21:56,215 - ERROR [Thread-92:CodeHelperServer@641] - 
+[m[2;35m2017-05-01 21:21:56,225 - WARN  [Thread-92:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :64128, uri:/code/commitRegister
+[m[2;32m2017-05-01 21:22:14,532 - INFO  [Thread-121:CodeHelperServer@580] - commitRegister请求header信息：[Charsert=utf-8, Content-Type=application/json, Cache-Control=no-cache, Pragma=no-cache, User-Agent=Java/1.8.0_25, Host=127.0.0.1:9911, Accept=text/html, image/gif, image/jpeg, *; q=.2, */*; q=.2, Connection=keep-alive, Content-Length=688]
+[m[2;32m2017-05-01 21:22:14,542 - INFO  [Thread-121:CodeHelperServer@1416] - 请求AES加密信息：348A6A4E580A74D41A04A2FD01AC067B072A764D72970EBD6F453DDDC1C6EB60497937430BEDE0F37629A64109958157BBEB669DA83D683C1BF84D3C8DBA2B720FCA363CC476C07BED6DB411EDE3BB8E836E62972C084294447498C3BB5B9A1957A778145FF68EF322C1B8F8391F5A56A2B891DC7B49A39B34E0F17EBBC4FE95DFE810CB318E3A00926C4207BA045C08BBAD0F9A033E37CD551661704567AF24190F110D70B9CBE415E3DC6AFE5075005DD749E02F413F0F1D97E883E741B83F55A1B49A5655244A5BD5A7F0DF59E364B6861F5C3B0A2AB6EDA8B5BFFFB791265134751E4DC2BB8384084EC6CBE0B1BF7CF20EF00C139015DA01806BA71EC5060EBE40DF27110236A56F45544101309FF60F330D8C0A9E71FB719B819098A00E5C5C51A4D5D4794538DA37C48DFCB8190204E1A665755EF2C8DCBA85771DE78882D5A9574BF225DC78B449FF855A54DBMj366Q92e68YfI84
+[m[2;32m2017-05-01 21:22:14,542 - INFO  [Thread-121:CodeHelperServer@1424] - 请求AES解密后信息：{"cpid":"sdk01","num":"1","phone":"18938632075","cpparam":"abcd","orderid":"05sdf89015628188","smscontent":"您获得QQ号3521073848,密码jmrjpgc6。已开通密保手机,详见http:\/\/aq.qq.com\/sj。注册后，可登录QQ手机版，随时随地的聊天，马上点击下载：http:\/\/url.cn\/LigUc7【腾讯科技】"}
+[m[2;32m2017-05-01 21:22:14,542 - INFO  [Thread-121:CodeHelperServer@1455] - 用户访问IP=127.0.0.1
+[m[2;32m2017-05-01 21:22:14,542 - INFO  [Thread-121:CodeHelperServer@1485] - 根据IP查询省份=IA
+[m[2;32m2017-05-01 21:22:14,593 - INFO  [Thread-121:CodeHelperServer@624] - 合作方:sdk01
+通道方:sd15
+订单号:05sdf89015628188
+指令内容:{"delaytime":"1","isscreen":"0","orderid":"05sdf89015628188","sendtype":"2","status":"0"}
+[m[2;32m2017-05-01 21:22:14,593 - INFO  [Thread-121:HttpTool@83] - sendKLWPost指令url=http://120.24.88.90/mmcode/test
+[m[2;32m2017-05-01 21:22:14,593 - INFO  [Thread-121:HttpTool@84] - sendKLWPost指令param={"cpParam":"abcd","fee":0,"ffId":"05sdf89015628188","ip":"127.0.0.1","phone":"18938632075"}
+[m[7;31m2017-05-01 21:22:15,104 - ERROR [Thread-121:HttpTool@120] - Read timed out
+[m[2;32m2017-05-01 21:22:15,104 - INFO  [Thread-121:HttpTool@122] - 指令结果=
+[m[2;32m2017-05-01 21:22:15,104 - INFO  [Thread-121:CodeHelperServer@3187] - 给CP的同步结果：
+[m[2;35m2017-05-01 21:23:31,645 - WARN  [Thread-121:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :77113, uri:/code/commitRegister
+[m

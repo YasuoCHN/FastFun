@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<project name="FastFunCommon" default="build" basedir=".">
+	<path id="source">
+		<pathelement location="src/"/>
+	</path>
+
+	<property name="commomdir" value="d:/templib/lewangame"/>
+	<property name="jarname" value="fastfuncommon"/>
+	<path id="lib">
+		<fileset dir="lib" includes="**/*.jar" />
+		<fileset dir="${commomdir}" includes="**/*.jar" />
+	</path>
+
+	<target name="javac" depends="clean" description="Compile java source to bytecode">
+		<mkdir dir="${commomdir}/classes" />
+		<javac srcdir="src" includes="**" encoding="utf-8" destdir="${commomdir}/classes" source="1.6" target="1.6" nowarn="true" debug="true" debuglevel="lines,vars,source" includeAntRuntime="false">
+			<classpath refid="lib" />
+		</javac>
+		<copy todir="${commomdir}/classes">
+			<fileset dir="src" excludes="**/*.java" />
+		</copy>
+	</target>
+
+	<target name="build"  depends="javac" description="Create a jar file">
+		<zip destfile="${commomdir}/${jarname}.jar" basedir="${commomdir}/classes" />
+	</target>
+
+	<target name="clean" description="Cleans this project">
+		<delete dir="bin" failonerror="false" />
+		<delete dir="${commomdir}/classes" failonerror="false" />
+		<delete file="${commomdir}/${jarname}.jar" failonerror="false"/>
+	</target>
+</project>

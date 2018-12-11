@@ -1,0 +1,125 @@
+[2;32m2015-10-22 11:46:08,295 - INFO  [main:ServerBootstrap@78] - connect to database:jdbc:mysql://120.24.88.90:3306/fastfun?useUnicode=true&characterEncoding=UTF-8
+[m[2;32m2015-10-22 11:46:09,234 - INFO  [main:ServerBootstrap@104] - Configuration Server bootstrap params.......
+[m[2;32m2015-10-22 11:46:09,234 - INFO  [main:ServerBootstrap@105] - Server protocol:	socket
+[m[2;32m2015-10-22 11:46:09,234 - INFO  [main:ServerBootstrap@106] - Server port:	9912
+[m[2;35m2015-10-22 11:46:09,932 - WARN  [main:XMemcachedClient@727] - XMemcachedClient use Binary protocol
+[m[2;32m2015-10-22 11:46:10,069 - INFO  [main:SelectorManager@37] - Creating 4 reactors...
+[m[2;35m2015-10-22 11:46:10,084 - WARN  [main:AbstractController@372] - The Controller started at localhost/127.0.0.1:0 ...
+[m[2;35m2015-10-22 11:46:10,106 - WARN  [Xmemcached-Reactor-0:MemcachedConnector@251] - Add a session: 127.0.0.1:11211
+[m[2;32m2015-10-22 11:46:10,110 - INFO  [main:Application@25] - 初始化AO...
+[m[2;32m2015-10-22 11:46:10,130 - INFO  [main:ServerBootstrap@129] - Application PID:	5276
+[m[7;31m2015-10-22 11:47:01,751 - ERROR [Thread-33:ConnectionResource@65] - select * from t_black_customer where imsi=? 
+[mjava.sql.SQLException: Column 'city' not found.
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:910)
+	at com.mysql.jdbc.ResultSet.findColumn(ResultSet.java:987)
+	at com.mysql.jdbc.ResultSet.getString(ResultSet.java:5584)
+	at com.klw.fastfun.pay.data.dao.CommonDAO$1.handler(CommonDAO.java:17)
+	at com.klw.fastfun.pay.data.dao.CommonDAO$1.handler(CommonDAO.java:1)
+	at com.juice.orange.game.database.ConnectionResource.queryForObject(ConnectionResource.java:62)
+	at com.klw.fastfun.pay.data.dao.CommonDAO.checkCustomerInfo(CommonDAO.java:54)
+	at com.klw.fastfun.pay.data.ao.CommonAO.checkCustomerInfo(CommonAO.java:16)
+	at com.klw.fastfun.pay.common.action.impl.CommonActionImpl.checkCustomerInfo(CommonActionImpl.java:167)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at com.juice.orange.game.rmi.control.RPCServerControl.nextHandler(RPCServerControl.java:57)
+	at com.juice.orange.game.util.threadpool.JuiceThreadPool$JuiceWorkThread.run(JuiceThreadPool.java:70)
+[2;35m2015-10-22 11:47:01,768 - WARN  [Thread-33:JuiceThreadPool$JuiceWorkThread@108] - RPC method start time :252, action:com.klw.fastfun.pay.common.action.CommonAction, method:checkCustomerInfo
+[m[7;31m2015-10-22 11:47:26,100 - ERROR [Thread-35:ConnectionResource@65] - select * from t_black_customer where imsi=? 
+[mjava.sql.SQLException: Column 'city' not found.
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:910)
+	at com.mysql.jdbc.ResultSet.findColumn(ResultSet.java:987)
+	at com.mysql.jdbc.ResultSet.getString(ResultSet.java:5584)
+	at com.klw.fastfun.pay.data.dao.CommonDAO$1.handler(CommonDAO.java:17)
+	at com.klw.fastfun.pay.data.dao.CommonDAO$1.handler(CommonDAO.java:1)
+	at com.juice.orange.game.database.ConnectionResource.queryForObject(ConnectionResource.java:62)
+	at com.klw.fastfun.pay.data.dao.CommonDAO.checkCustomerInfo(CommonDAO.java:54)
+	at com.klw.fastfun.pay.data.ao.CommonAO.checkCustomerInfo(CommonAO.java:16)
+	at com.klw.fastfun.pay.common.action.impl.CommonActionImpl.checkCustomerInfo(CommonActionImpl.java:167)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at com.juice.orange.game.rmi.control.RPCServerControl.nextHandler(RPCServerControl.java:57)
+	at com.juice.orange.game.util.threadpool.JuiceThreadPool$JuiceWorkThread.run(JuiceThreadPool.java:70)
+[2;35m2015-10-22 11:47:26,103 - WARN  [Thread-35:JuiceThreadPool$JuiceWorkThread@108] - RPC method start time :10, action:com.klw.fastfun.pay.common.action.CommonAction, method:checkCustomerInfo
+[m[2;35m2015-10-22 11:47:36,445 - WARN  [Thread-23:JuiceThreadPool$JuiceWorkThread@108] - RPC method start time :1, action:com.klw.fastfun.pay.common.action.CommonAction, method:toString
+[m[7;31m2015-10-22 11:48:15,745 - ERROR [Thread-37:ConnectionResource@65] - select * from t_black_customer where imsi=? 
+[mjava.sql.SQLException: Column 'city' not found.
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:910)
+	at com.mysql.jdbc.ResultSet.findColumn(ResultSet.java:987)
+	at com.mysql.jdbc.ResultSet.getString(ResultSet.java:5584)
+	at com.klw.fastfun.pay.data.dao.CommonDAO$1.handler(CommonDAO.java:17)
+	at com.klw.fastfun.pay.data.dao.CommonDAO$1.handler(CommonDAO.java:1)
+	at com.juice.orange.game.database.ConnectionResource.queryForObject(ConnectionResource.java:62)
+	at com.klw.fastfun.pay.data.dao.CommonDAO.checkCustomerInfo(CommonDAO.java:54)
+	at com.klw.fastfun.pay.data.ao.CommonAO.checkCustomerInfo(CommonAO.java:16)
+	at com.klw.fastfun.pay.common.action.impl.CommonActionImpl.checkCustomerInfo(CommonActionImpl.java:167)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at com.juice.orange.game.rmi.control.RPCServerControl.nextHandler(RPCServerControl.java:57)
+	at com.juice.orange.game.util.threadpool.JuiceThreadPool$JuiceWorkThread.run(JuiceThreadPool.java:70)
+[2;35m2015-10-22 11:48:15,754 - WARN  [Thread-37:JuiceThreadPool$JuiceWorkThread@108] - RPC method start time :22067, action:com.klw.fastfun.pay.common.action.CommonAction, method:checkCustomerInfo
+[m[7;31m2015-10-22 11:52:00,228 - ERROR [JUICE-SERVER-Handler-4-2-thread:ConnectionException@22] - uncaughtException :
+[mcom.juice.orange.game.exception.JuiceException: 远程主机强迫关闭了一个现有的连接。 on [id: 0xab020d9e, /127.0.0.1:52249 => /127.0.0.1:9912]
+	at com.juice.orange.game.exception.JuiceException.fromException(JuiceException.java:38)
+	at com.juice.orange.game.exception.JuiceException.fromExceptionEvent(JuiceException.java:32)
+	at com.juice.orange.game.util.ConnectionHelper$2.run(ConnectionHelper.java:56)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: java.io.IOException: 远程主机强迫关闭了一个现有的连接。
+	at sun.nio.ch.SocketDispatcher.read0(Native Method)
+	at sun.nio.ch.SocketDispatcher.read(Unknown Source)
+	at sun.nio.ch.IOUtil.readIntoNativeBuffer(Unknown Source)
+	at sun.nio.ch.IOUtil.read(Unknown Source)
+	at sun.nio.ch.SocketChannelImpl.read(Unknown Source)
+	at org.jboss.netty.channel.socket.nio.NioWorker.read(NioWorker.java:64)
+	at org.jboss.netty.channel.socket.nio.AbstractNioWorker.process(AbstractNioWorker.java:107)
+	at org.jboss.netty.channel.socket.nio.AbstractNioSelector.run(AbstractNioSelector.java:312)
+	at org.jboss.netty.channel.socket.nio.AbstractNioWorker.run(AbstractNioWorker.java:88)
+	at org.jboss.netty.channel.socket.nio.NioWorker.run(NioWorker.java:178)
+	... 3 more
+[7;31m2015-10-22 11:52:00,230 - ERROR [JUICE-SERVER-Handler-4-1-thread:ConnectionException@22] - uncaughtException :
+[mcom.juice.orange.game.exception.JuiceException: 远程主机强迫关闭了一个现有的连接。 on [id: 0x096ba1d4, /127.0.0.1:52250 => /127.0.0.1:9912]
+	at com.juice.orange.game.exception.JuiceException.fromException(JuiceException.java:38)
+	at com.juice.orange.game.exception.JuiceException.fromExceptionEvent(JuiceException.java:32)
+	at com.juice.orange.game.util.ConnectionHelper$2.run(ConnectionHelper.java:56)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: java.io.IOException: 远程主机强迫关闭了一个现有的连接。
+	at sun.nio.ch.SocketDispatcher.read0(Native Method)
+	at sun.nio.ch.SocketDispatcher.read(Unknown Source)
+	at sun.nio.ch.IOUtil.readIntoNativeBuffer(Unknown Source)
+	at sun.nio.ch.IOUtil.read(Unknown Source)
+	at sun.nio.ch.SocketChannelImpl.read(Unknown Source)
+	at org.jboss.netty.channel.socket.nio.NioWorker.read(NioWorker.java:64)
+	at org.jboss.netty.channel.socket.nio.AbstractNioWorker.process(AbstractNioWorker.java:107)
+	at org.jboss.netty.channel.socket.nio.AbstractNioSelector.run(AbstractNioSelector.java:312)
+	at org.jboss.netty.channel.socket.nio.AbstractNioWorker.run(AbstractNioWorker.java:88)
+	at org.jboss.netty.channel.socket.nio.NioWorker.run(NioWorker.java:178)
+	... 3 more
+[7;31m2015-10-22 11:52:00,242 - ERROR [JUICE-SERVER-Handler-4-3-thread:ConnectionException@22] - uncaughtException :
+[mcom.juice.orange.game.exception.JuiceException: 远程主机强迫关闭了一个现有的连接。 on [id: 0x20c5bef2, /127.0.0.1:52251 => /127.0.0.1:9912]
+	at com.juice.orange.game.exception.JuiceException.fromException(JuiceException.java:38)
+	at com.juice.orange.game.exception.JuiceException.fromExceptionEvent(JuiceException.java:32)
+	at com.juice.orange.game.util.ConnectionHelper$2.run(ConnectionHelper.java:56)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: java.io.IOException: 远程主机强迫关闭了一个现有的连接。
+	at sun.nio.ch.SocketDispatcher.read0(Native Method)
+	at sun.nio.ch.SocketDispatcher.read(Unknown Source)
+	at sun.nio.ch.IOUtil.readIntoNativeBuffer(Unknown Source)
+	at sun.nio.ch.IOUtil.read(Unknown Source)
+	at sun.nio.ch.SocketChannelImpl.read(Unknown Source)
+	at org.jboss.netty.channel.socket.nio.NioWorker.read(NioWorker.java:64)
+	at org.jboss.netty.channel.socket.nio.AbstractNioWorker.process(AbstractNioWorker.java:107)
+	at org.jboss.netty.channel.socket.nio.AbstractNioSelector.run(AbstractNioSelector.java:312)
+	at org.jboss.netty.channel.socket.nio.AbstractNioWorker.run(AbstractNioWorker.java:88)
+	at org.jboss.netty.channel.socket.nio.NioWorker.run(NioWorker.java:178)
+	... 3 more

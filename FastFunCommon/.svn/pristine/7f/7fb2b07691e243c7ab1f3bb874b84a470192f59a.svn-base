@@ -1,0 +1,522 @@
+/**
+ * FastFunCommon
+ */
+package com.klw.fastfun.pay.common.tool;
+
+
+/**
+ * @author klwplayer.com
+ *
+ * 2015年3月30日
+ */
+public class ConstantDefine {
+	
+	
+	/** 咪咕优先级*/
+	public static final int CODE_PRIORITY = 30;
+	
+	/** 移动*/
+	public static final int CODE_TYPE_MOBILE = 1;
+	/** 联通*/
+	public static final int CODE_TYPE_UNICOM = 2;
+	/** 电信*/
+	public static final int CODE_TYPE_TELNET = 3;
+	
+	/** 根据屏蔽省份选择*/
+	public static final int USE_TYPE_HIDE = 1;
+	/** 根据开通省份选择*/
+	public static final int USE_TYPE_OPEN = 2;
+	
+	/** 同步*/
+	public static final int SYN_TRUE = 1;
+	/** 不同步*/
+	public static final int SYN_FALSE = -1;
+	
+	/** 不设定同步*/
+	public static final int SYN_STATUS_DEFAULT = 0;
+	/** 同步成功*/
+	public static final int SYN_STATUS_TRUE = 1;
+	/** 同步失败*/
+	public static final int SYN_STATUS_FALSE = -1;
+	/** 可再次同步*/
+	public static final int SYN_STATUS_RESTART = -2;
+	/** 扣量*/
+	public static final int SYN_STATUS_Buckle = 4;
+	
+	
+	public static final String CODE_TYPE_LOGIN = "login";
+	public static final String CODE_TYPE_CHARGE = "charge";
+	
+	
+	public static final String SUCCESS = "success";
+	public static final String FAIL = "fail";
+	
+	
+	/** 快乐玩*/
+	public static final int URL_NO_KLW = 1;
+	/** 吴旭*/
+	public static final int URL_NO_WX = 2;
+	/** 动漫皇美*/
+	public static final int URL_NO_DMHM = 3;
+	/** 明天动力*/
+	public static final int URL_NO_SWMTDL = 4;
+	/** 朗天电信*/
+	public static final int URL_NO_LDDX = 5;
+	/** PC页游(群星互动)*/
+	public static final int URL_NO_QXHD = 6;
+	/** 易简联通*/
+	public static final int URL_NO_YJLT = 7;
+	/** MM3.1.8自破击方式*/
+	public static final int URL_NO_YCDX_JSON = 8;
+	/** 二次请求代码(万贝使用)*/
+	public static final int URL_NO_EC02_JSON = 9;
+	/** 二次请求代码*/
+	public static final int URL_NO_EC01_JSON = 10;
+	/** 广州力聚sdk*/
+	public static final int URL_NO_SD01_JSON = 11;
+	/** 朗天电信通道*/
+	public static final int URL_NO_DX02_JSON = 12;
+	/** 易简联通一次短信*/
+	public static final int URL_NO_LT02_JSON = 13;
+	/** 群星互动小额支付*/
+	public static final int URL_NO_QX01_JSON = 14;
+	/** 测试DDO计费*/
+	public static final int URL_NO_QX02_JSON = 15;
+	/** 翔通北京*/
+	public static final int URL_NO_QX03_JSON = 16;
+	/** 自破解通道*/
+	public static final int URL_NO_YC09_JSON = 17;
+	/** 泡泡通道*/
+	public static final int URL_NO_YC10_JSON = 18;
+	/** 掌维RDO*/
+	public static final int URL_NO_QX04_JSON = 19;
+	/** 明日空间*/
+	public static final int URL_NO_EC03_JSON = 20;
+	/** 支付宝*/
+	public static final int URL_NO_SD02_JSON = 21;
+	/** 群星互动小额代码*/
+	public static final int URL_NO_QX05_JSON = 22;
+	/** 火星H5*/
+	public static final int URL_NO_QX06_JSON = 23;
+	/** 米粒RDO*/
+	public static final int URL_NO_QX07_JSON = 24;
+	/** 验证码*/
+	public static final int URL_NO_QX08_JSON = 25;
+	/** 6元包月*/
+	public static final int URL_NO_EC05_JSON = 26;
+	/** 考拉动漫*/
+	public static final int URL_NO_DM02_JSON = 27;
+	/** 米粒DDO*/
+	public static final int URL_NO_QX09_JSON = 28;
+	/** 乐朋包月*/
+	public static final int URL_NO_EC06_JSON = 29;
+	/** 雅卓科技*/
+	public static final int URL_NO_EC07_JSON = 30;
+	/** 音乐点播*/
+	public static final int URL_NO_YY02_JSON = 31;
+	/** 四季无边*/
+	public static final int URL_NO_QX10_JSON = 32;
+	/** 杭州龙焰*/
+	public static final int URL_NO_QX11_JSON = 33;
+	/** 锋启汇信*/
+	public static final int URL_NO_YY03_JSON = 34;
+	/** 杭州龙焰动漫代码*/
+	public static final int URL_NO_DM04_JSON = 35;
+	/** 杭州龙焰视频代码*/
+	public static final int URL_NO_YY04_JSON = 36;
+	/** 支付宝支付*/
+	public static final int URL_NO_YC13_JSON = 37;
+	/** 苏州乐米*/
+	public static final int URL_NO_YC14_JSON = 38;
+	/** 3.1.10豪斯破解(sdk)*/
+	public static final int URL_NO_YC15_JSON = 39;
+	/** 电信包月代码*/
+	public static final int URL_NO_EC09_JSON = 40;
+	/** 3.1.10豪斯破解(裸代)*/
+	public static final int URL_NO_YC16_JSON = 41;
+	/** 高汇通*/
+	public static final int URL_NO_SD05_JSON = 42;
+	/** 电信5元点播*/
+	public static final int URL_NO_DX03_JSON = 43;
+	/** 电信北京翼联多计费点点播*/
+	public static final int URL_NO_DX04_JSON = 44;
+	/** 美联互动第三方支付*/
+	public static final int URL_NO_SD06_JSON = 45;
+	/** 苏州乐麟(RDO)*/
+	public static final int URL_NO_YY05_JSON = 46;
+	/** 苏州宝象15元包月*/
+	public static final int URL_NO_DX08_JSON = 47;
+	/** 注册QQ*/
+	public static final int URL_NO_SD07_JSON = 48;
+	/** 京东注册*/
+	public static final int URL_NO_SD08_JSON = 49;
+	/** 掌中飞扬RDO*/
+	public static final int URL_NO_EC10_JSON = 50;
+	/** 啊呦喂*/
+	public static final int URL_NO_EC11_JSON = 51;
+	/** 无名国内业务（微信注册）*/
+	public static final int URL_NO_SD09_JSON = 52;
+	/** 文本QQ注册*/
+	public static final int URL_NO_SD15_JSON = 53;
+	/** 杭州龙焰联通*/
+	public static final int URL_NO_LT04_JSON = 54;
+	/** 12306注册*/
+	public static final int URL_NO_SD17_JSON = 55;
+	/** 动漫10元包月*/
+	public static final int URL_NO_DM05_JSON = 56;
+	/** 徐威微信注册*/
+	public static final int URL_NO_SD18_JSON = 57;
+	/** 森荣微信注册*/
+	public static final int URL_NO_SD19_JSON = 58;
+	/** 奉天微信注册*/
+	public static final int URL_NO_SD20_JSON = 59;
+	/** 12306注册小荆*/
+	public static final int URL_NO_SD21_JSON = 60;
+	/** 润土QQ注册*/
+	public static final int URL_NO_SD23_JSON = 61;
+	/** 润土12306注册*/
+	public static final int URL_NO_SD24_JSON = 62;
+	/** 朗天微信H5*/
+	public static final int URL_NO_SD25_JSON = 63;
+	/** 点之行rdo*/
+	public static final int URL_NO_YY06_JSON = 64;
+	/** 点之行rdo*/
+	public static final int URL_NO_YY07_JSON = 65;
+	/** 朗天电信包月*/
+	public static final int URL_NO_DX09_JSON = 66;
+	/** 上海池乐视频*/
+	public static final int URL_NO_DM06_JSON = 67;
+	/** 上海弘龙动漫单应用*/
+	public static final int URL_NO_DM07_JSON = 68;
+	/** 电盈灵光钱包*/
+	public static final int URL_NO_YC19_JSON = 69;
+	/** 自家MM融合api通道*/
+	public static final int URL_NO_YC20_JSON = 70;
+	/** 苏州乐米MM通道*/
+	public static final int URL_NO_YC21_JSON = 71;
+	/** 啊呦喂*/
+	public static final int URL_NO_EC13_JSON = 72;
+	/** 自家APP微信支付 */
+	public static final int URL_NO_SD26_JSON = 73;
+	/** 乐米咪咕游戏基地 */
+	public static final int URL_NO_DM08_JSON = 74;
+	/** 快乐玩苹果支付 */
+	public static final int URL_NO_SD27_JSON = 75;
+	/** 苏州全真（动漫） */
+	public static final int URL_NO_DM09_JSON = 76;
+	/** 苏州乐米（动漫包月） */
+	public static final int URL_NO_DM10_JSON = 77;
+	/** 点点通联通包月 */
+	public static final int URL_NO_LT05_JSON = 78;
+	/** 微信公众号支付 */
+	public static final int URL_NO_SD28_JSON = 79;
+	/** 乐米MM */
+	public static final int URL_NO_YC23_JSON = 80;
+	/** 3110虚实MM */
+	public static final int URL_NO_YC24_JSON = 81;
+	/** 范范咪咕 */
+	public static final int URL_NO_DM11_JSON = 82;
+	/** 范范咪咕api */
+	public static final int URL_NO_DM12_JSON = 82;
+	/** 范范咪咕api */
+	public static final int URL_NO_DM15_JSON = 83;
+	/** 香蕉公众号支付 */
+	public static final int URL_NO_SD29_JSON = 84;
+	/** 海南公众号支付 */
+	public static final int URL_NO_SD31_JSON = 85;
+	/** 香蕉互娱H5 */
+	public static final int URL_NO_SD32_JSON = 86;
+	/** xshd公众号 */
+	public static final int URL_NO_SD33_JSON = 87;
+	/** 范范联通包月 */
+	public static final int URL_NO_LT06_JSON = 88;
+	/** 乐米支付宝H5 */
+	public static final int URL_NO_SD34_JSON = 89;
+	/** 摩宝视频10元包月 */
+	public static final int URL_NO_DM16_JSON = 90;
+	/** 第七10元点播 */
+	public static final int URL_NO_DM17_JSON = 91;
+	/** 润土视频包月 */
+	public static final int URL_NO_YY08_JSON = 92;
+	/** 海南支付宝H5 */
+	public static final int URL_NO_SD44_JSON = 93;
+	/** Mr支付宝扫码 */
+	public static final int URL_NO_SD45_JSON = 94;
+	/** 炫乐MM */
+	public static final int URL_NO_YC26_JSON = 95;
+	/** 兆荣联通 */
+	public static final int URL_NO_LT07_JSON = 96;
+	/** 短信包月 */
+	public static final int URL_NO_WT01_JSON = 97;
+	/** 家医MM */
+	public static final int URL_NO_YC28_JSON = 98;
+	/** 北京翼联电信 */
+	public static final int URL_NO_DX10_JSON = 99;
+	/** 稻香联通 */
+	public static final int URL_NO_LT08_JSON = 100;
+	/** 讯鸿咪咕 */
+	public static final int URL_NO_DM18_JSON = 101;
+	/** 易周文化 */
+	public static final int URL_NO_DM19_JSON = 102;
+	/** 酷客联合会员 */
+	public static final int URL_NO_DM20_JSON = 103;
+	/** 竹语MM */
+	public static final int URL_NO_YC29_JSON = 104;
+	/** 兆荣联通 */
+	public static final int URL_NO_LT09_JSON = 105;
+	/** 竹语微信H5 */
+	public static final int URL_NO_SD47_JSON = 106;
+	/** 云支付wap */
+	public static final int URL_NO_SD48_JSON = 107;
+	/** 乐米微信H5 */
+	public static final int URL_NO_SD49_JSON = 108;
+	/** 南京贝桥咪咕+ */
+	public static final int URL_NO_YY09_JSON = 109;
+	/** 玉品天成联动优势 */
+	public static final int URL_NO_YC31_JSON = 110;
+	/** 玉厦门扬顺动漫单应用 */
+	public static final int URL_NO_YC32_JSON = 111;
+	/** 广州友趣  */
+	public static final int URL_NO_YY10_JSON = 112;
+	/** 烧烤动漫  */
+	public static final int URL_NO_YC33_JSON = 113;
+	/** 加冕加支付宝扫码  */
+	public static final int URL_NO_SD50_JSON = 114;
+	/** 加冕加微信H5  */
+	public static final int URL_NO_SD52_JSON = 115;
+	/** 讯鸿支付宝H5  */
+	public static final int URL_NO_SD54_JSON = 116;
+	/** 我赞三方支付  */
+	public static final int URL_NO_SD55_JSON = 117;
+	/** 微博解封  */
+	public static final int URL_NO_SD57_JSON = 118;
+	/** 12306注册  */
+	public static final int URL_NO_SD59_JSON = 119;
+	/** 云墨信息12306  */
+	public static final int URL_NO_SD61_JSON = 120;
+	/** 朵朵京东注册  */
+	public static final int URL_NO_SD62_JSON = 121;
+	/** 加冕加QQ钱包D0  */
+	public static final int URL_NO_SD63_JSON = 122;
+	/** 我赞免ip第三方支付  */
+	public static final int URL_NO_SD64_JSON = 123;
+	/** 微信注册安安  */
+	public static final int URL_NO_SD66_JSON = 124;
+	/** 卓翌MM  */
+	public static final int URL_NO_YC35_JSON = 125;
+	/** 金海哲第三方D0  */
+	public static final int URL_NO_SD68_JSON = 126;
+	/** 1387第三方支付  */
+	public static final int URL_NO_SD69_JSON = 127;
+	/** 普石MM  */
+	public static final int URL_NO_YC36_JSON = 128;
+	/** 固定指令  */
+	public static final int URL_NO_WT30_JSON = 129;
+	/** 全名点游三方支付  */
+	public static final int URL_NO_SD75_JSON = 130;
+	/** 全真一次短信兼容MM  */
+	public static final int URL_NO_DM35_JSON = 131;
+	/** 我赞新平台  */
+	public static final int URL_NO_SD77_JSON = 132;
+	/** 赵飞微信  */
+	public static final int URL_NO_SD79_JSON = 133;
+	/** 聚合富支付宝  */
+	public static final int URL_NO_SD80_JSON = 134;
+	/** 鸿游微信H5  */
+	public static final int URL_NO_SD82_JSON = 135;
+	/** 盈华迅方微信H5  */
+	public static final int URL_NO_SD83_JSON = 136;
+	/** 微信H5  */
+	public static final int URL_NO_SD84_JSON = 137;
+	/** 数娱付转发微信H5  */
+	public static final int URL_NO_SD81_JSON = 138;
+	/** 金海哲微信H5  */
+	public static final int URL_NO_SD85_JSON = 139;
+	/** 金海哲微信H5  */
+	public static final int URL_NO_SD87_JSON = 140;
+	/** 亿联微信H5  */
+	public static final int URL_NO_SD90_JSON = 141;
+	/** 付易通微信H5  */
+	public static final int URL_NO_SD91_JSON = 142;
+	/** 联通迅鸿  */
+	public static final int URL_NO_LT11_JSON = 143;
+	/** 聚成支付  */
+	public static final int URL_NO_SD93_JSON = 144;
+	/** 朱云MM  */
+	public static final int URL_NO_YC37_JSON = 145;
+	/** 游发MM破解  */
+	public static final int URL_NO_YC38_JSON = 146;
+	/** 破晓MM  */
+	public static final int URL_NO_YC39_JSON = 147;
+	/** 阿信第三方  */
+	public static final int URL_NO_SD94_JSON = 148;
+	/** 掌上时代MDO  */
+	public static final int URL_NO_YY11_JSON = 149;
+	/** QQ钱包  */
+	public static final int URL_NO_SD95_JSON = 150;
+	/** QQ钱包  */
+	public static final int URL_NO_SD96_JSON = 151;
+	/** 云贝支付-微信wap  */
+	public static final int URL_NO_SD97_JSON = 152;
+	/** 迅捷聚合支付QQ钱包  */
+	public static final int URL_NO_SD100_JSON = 153;
+	/** 通用指令请求  */
+	public static final int URL_NO_999_JSON = 999; 
+	/** 结果代码，0为成功*/
+	public static final String RES_CODE = "code";
+	/** 结果代码中文描述*/
+	public static final String RES_CODE_EXPLAIN = "code_explain";
+	/** 短代内容JSONArray，可以包含多个不同支付*/
+	public static final String RES_CONTENT = "content";
+	
+	/** 支付类型*/
+	public static final String RES_CON_PAY_TYPE = "pay_type";
+	/** 唯一订单号*/
+	public static final String RES_CON_ORDERID = "order_id";
+	/** 延迟毫秒*/
+	public static final String RES_CON_DELAYED = "delayed";
+	/** 返回具体支付内容*/
+	public static final String RES_CON_PAY_CONTENT = "pay_content";
+	/** 屏蔽关键字，多个关键字用英文逗号,分隔*/
+	public static final String RES_CON_FILTER = "filter";
+	/** 自动回复，JSONArray*/
+	public static final String RES_CON_REPLY = "reply";
+	
+	/** 下行地址*/
+	public static final String RES_CON_REP_re_addr = "re_addr";
+	/** 发送地址*/
+	public static final String RES_CON_REP_se_addr = "se_addr";
+	/** 回复正则表达式，回复内容为空，则调用正则表达式*/
+	public static final String RES_CON_REP_regular = "regular";
+	
+	/** pay_type普通短代*/
+	public static final String RES_CON_PAY_TYPE_1001 = "1001";
+	/** pay_type普通短代 二次短信*/
+	public static final String RES_CON_PAY_TYPE_1002 = "1002";
+	/** Wap1，支持DDO*/
+	public static final String RES_CON_PAY_TYPE_1003 = "1003";
+	/** 不等待回复二次请求短信*/
+	public static final String RES_CON_PAY_TYPE_1004 = "1004";
+	/** 不等待回复，替换验证码，设定请求方式的二次请求短信*/
+	public static final String RES_CON_PAY_TYPE_1005 = "1005";
+	/** pay_type317破解*/
+	public static final String RES_CON_PAY_TYPE_2001 = "2001";
+	/** pay_type318破解*/
+	public static final String RES_CON_PAY_TYPE_2002 = "2002";
+	/** pay_type318破解(自破解)*/
+	public static final String RES_CON_PAY_TYPE_2003 = "2003";
+	/** pay_type3110破解(豪斯破解)*/
+	public static final String RES_CON_PAY_TYPE_2004 = "2004";
+	/** pay_type3110破解(威搜游破解)*/
+	public static final String RES_CON_PAY_TYPE_2005 = "2005";
+	/** sdk调用*/
+	public static final String RES_CON_PAY_TYPE_3001 = "3001";
+	/** 支付宝调用*/
+	public static final String RES_CON_PAY_TYPE_4001 = "4001";
+	
+	/** 获取指令成功*/
+	public static final String RES_SUCCESS = "0";
+	/** 获取指令成功*/
+	public static final String RES_SUCCESS_MSG = "获取指令成功";
+	
+	/** 没有开通计费权限*/
+	public static final String ERROR_9001 = "9001";
+	/** 省份屏蔽或没有该计费点*/
+	public static final String ERROR_9002 = "9002";
+	/** 超过用户计费日月限*/
+	public static final String ERROR_9003 = "9003";
+	/** 基站屏蔽 */
+	public static final String ERROR_9004 = "9004";
+	/** 没有开通注册通道 */
+	public static final String ERROR_9005 = "9005";
+	/** 渠道省份到量或省份没开通 */
+	public static final String ERROR_9006 = "9006";
+	/** 无需做任何操作*/
+	public static final String ERROR_9999 = "9999";
+	
+	/** 没有开通计费权限*/
+	public static final String ERROR_9001_MSG = "没有开通权限";
+	/** 省份屏蔽、没有该计费点或号码运营商与通道不匹配*/
+	public static final String ERROR_9002_MSG = "省份屏蔽、没有该计费点或号码运营商与通道不匹配";
+	/** 没有配置下行屏蔽或超过用户计费日月限*/
+	public static final String ERROR_9003_MSG = "没有配置下行屏蔽或超过用户计费日月限";
+	/** 基站屏蔽*/
+	public static final String ERROR_9004_MSG = "没有开通计费";
+	/** 没有开通注册通道*/
+	public static final String ERROR_9005_MSG = "没有开通注册通道";
+	/** 渠道省份到量或省份没开通*/
+	public static final String ERROR_9006_MSG = "渠道省份到量或省份没开通";
+	/** 无需做任何操作*/
+	public static final String ERROR_9999_MSG = "无需做任何操作";
+	
+	
+	/** 力聚渠道号*/
+	public static final String RES_LIJU_CHANNEL = "klwlj01";
+	
+	/** 企讯通端口号*/
+	public static final String RES_QXT_PORT = "12114000496718";
+	/** 企讯通内容*/
+	public static final String RES_QXT_SMS = "豪斯#激活#";
+	
+	/** 通用请求计费url*/
+	public static final String RES_COM_URL = "http://120.24.88.90/code/pay";
+	/** 通用请求计费url*/
+	public static final String RES_COM_URL1 = "http://120.24.88.90/code/getklwcode";
+	
+	
+	
+	/** 代码配置码 0:成功*/
+	public static final int CODE_MATCH_0_NUM = 0;
+	/** 成功*/
+	public static final String CODE_MATCH_0_MSG = "成功";
+	/** 代码配置码 1:cpid配置开关关闭*/
+	public static final int CODE_MATCH_1_NUM = 1;
+	/** cpid配置开关关闭*/
+	public static final String CODE_MATCH_1_MSG = "cpid配置开关关闭";
+	/** 代码配置码 2:配置的计费通道无法计费*/
+	public static final int CODE_MATCH_2_NUM = 2;
+	/** 配置的计费通道无法计费*/
+	public static final String CODE_MATCH_2_MSG = "配置的计费通道无法计费";
+	/** close*/
+	public static final String CODE_CLOSE = "close";
+	/** open*/
+	public static final String CODE_OPEN = "open";
+	/** 朗天H5微信支付key*/
+	public static final String LTH5WX_PAY_KEY = "26d4d67e4a16b1b5ae05c8d8c8ae0353";
+	/** 微信APP支付key*/
+	public static final String APPH5WX_PAY_KEY = "f64cfd97d3e162c816a95ca8ouyangsu";
+	/** 刘文微信公众号支付key*/
+	public static final String LW_GZHWX_PAY_KEY = "225CC8A5904344348845E0FE45045A78";
+	/**  支付宝私钥key*/
+	public static final String APPV_KEY = "MIICdgIBADANBgkqhkiG9w0BAQEFAASCAmAwggJcAgEAAoGBAIjR+FcWvWZta+LDhsIZQg4fYq4H7ay3venORfMSH266p6qyjrb3v9mLNr6OALIiqnM7YeBDLapupKo7zV02f8pLxXze4ldv2d08zVOK5AxNKbcIAa44nBV799xtVFGG2qufH9UM6fU9ad8yNr3VXoOM/U73KjpLashXJTXu6dgjAgMBAAECgYA1kEYyChQCGopnD3cdW/gRQVZHnZD90j1GYFvgKlMl7Wsgl6Dpnpp8F1VKSpuZIZsrW68YthQVqhVLE/h1KpXiTtNKQkhGZIO+SWbIqE8uuT21Kpot0HG9bMuef21Ee1jR6r3mWHUgirVLMeUGcSCxRD8dxwZhKEfGCseS/lHJEQJBAOArVwEzxmqE+U3ZBUUUsvNQjMFoOb1OG8JT4CfUqJrWGBDnS/TzljiXq6Wqtppl+PhRPQvRhQaZKsnrVqzLvesCQQCcP3Ly1uZiA42vGxQuXR9+3JBBb/4/qW7jkRg1dOy3AL4GfrA+LC5tvTgTuUtJjAyIMjN7sYxnOQ/XdvA7RmipAkBgiynYcbT1cTlxhpLXcpezZLCKJ1oepoIcCkWSweqvbJ9GwGadIz9CNkgNfF1SV7KHN22kJmM1OUgNWFam6sRrAkBkiI61oYBq4E5xtMKvckupnNFUyXKWE7a9xcYF303QEjIyi6Fq35KgGXfTeQ3wLKSDnYlytTLZ1+VRhb3c5djBAkEAoy9JoH2gK3WIpMB7u53xQiBmwRcLALlxz4mBbODn/039u1GapwWzC7GXufe7uRnK/FxkZMYwIuJqhOijvUm+vQ==";
+	/**  支付宝公钥key*/
+	public static final String APPP_KEY = "MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCI0fhXFr1mbWviw4bCGUIOH2KuB+2st73pzkXzEh9uuqeqso6297/Ziza+jgCyIqpzO2HgQy2qbqSqO81dNn/KS8V83uJXb9ndPM1TiuQMTSm3CAGuOJwVe/fcbVRRhtqrnx/VDOn1PWnfMja91V6DjP1O9yo6S2rIVyU17unYIwIDAQAB";
+	/**  金海哲私钥key*/
+	public static final String JHZ_V_KEY = "MIICdgIBADANBgkqhkiG9w0BAQEFAASCAmAwggJcAgEAAoGBAICkPy/sNLuPAC8q8LEydu4163dHeMW9WBHX+A1D7iR1/pZA3m7zy5w34Fg4px+qbWy2q7NrG2N5HI+sncgS0ZeQ8KY7Uj2Jkozr5SSw8QJWLaCgyYHZ7F9TyUNf6gtDhBGfc6pwvfbieCpILtaDuckdr3/mgbYdMwEkQARnEa1tAgMBAAECgYBsO8T+KRplA/f/t30zWWY/HhazEOtIU/qZaMBHSPRAsRY2jPWZHH4fPdP/5gqW1emjIj5sgp1UoD2rlGxcPZkhXfN1yH52Z+D1J67FNnDzLa8Gqfk67ICNe/tMUb70y/FZrO+J2u3mvkIfhSZHITgHffi3I4Kqo1/vVXU5nSzigQJBAMg+HhVPP3fG5why8jCGYLddQ5Bw7A7bvITVT6RhnbFD21f5txwKsIBv46P1LT9bI1nN3+wMJm0rVazrR05DlikCQQCkdjI4mZuO/CaB8vt9LNagynATaSVuYUe784YHgod7mlkDx56i1ElHfY/CMLowAFdUtwShs1Fyb9cLrD/E7V2lAkBV4a5tXUvPR1OXYBVXkoqwmiN8M7JKvRuhrQs3aVaEzKGqncNXF46Tx2lOzLzXS3Nh9NZxGtTwRYG9ZDt06a/hAkBqvexKoCg+3ZmArlxcGkYThlDHyG7q/Wi5rI1JQob8ymkL8vwbYv1M0UoFF+tATHhiG4d+DAzI4Z4JjXq2LfmhAkEAoMT+wpXNh4zlBySb0LZZrTUL0xG4qM9vAfY9KSM9259txy9QuqfVYaD5x933gy8QT9JkodSxs3+Llw7udU1TEA==";
+	/**  金海哲公钥key*/
+	public static final String JHZ_P_KEY = "MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCL4nMv6qK7Lt1MzfK20LrVd/0g0pXIvV281sT16s4xIWEg/Hfv0su0MHdbTobZfHcziyO/xdmItCzkcJOIIskuC3QukNrWnt7kf1wZ1OmIMWAcS5s9wnMd0QcpDpcyfZfJvlZgFDtgJtApXvCBBVIEX65W1FnmlZ7wccO3Ca+J8QIDAQAB";
+	/** 虚实sdk计费结果请求连接*/
+	public static final String XSPAY_RES_URL = "http://smspay.xushihudong.com/code/reqXSCodeSDKRes";
+	/** 虚实sdk计费结果请求连接*/
+//	public static final String MD5_KEY = "89bde1d4ef4b2aadcde34f17ee685cRd";
+	/** 虚实sdk计费结果请求连接*/
+	public static final String MD5_KEY1 = "8b2de685acc4ef";
+	/** 虚实sdk计费结果请求连接*/
+	public static final String MD5_KEY2 = "3f147eaded49bd";
+	
+	/**
+	 * 正则表达式：验证手机号
+	 */
+	public static final String REGEX_NUM = "^[0-9]*$";
+	
+	/**
+	 * 正则表达式：验证手机号
+	 */
+	public static final String REGEX_MOBILE = "^((17[0-9])|(14[0-9])|(13[0-9])|(15[^4,\\D])|(18[0-9]))\\d{8}$";
+	
+	/**
+	 * 145 147 170 171
+     * 正则表达式：验证手机号
+     */
+    public static final String REGEX_MOBILE_12306 = "^((17[2-9])|(14([0-4]|[6]|[8-9]))|(13[0-9])|(15[^4,\\D])|(18[0-9]))\\d{8}$";
+}

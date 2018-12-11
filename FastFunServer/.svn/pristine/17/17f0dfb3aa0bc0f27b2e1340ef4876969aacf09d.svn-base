@@ -1,0 +1,329 @@
+[2;32m2016-10-27 19:29:26,862 - INFO  [main:ServerBootstrap@67] - Configuration Server bootstrap params.......
+[m[2;32m2016-10-27 19:29:26,872 - INFO  [main:ServerBootstrap@68] - Server protocol:	http
+[m[2;32m2016-10-27 19:29:26,872 - INFO  [main:ServerBootstrap@69] - Server port:	9911
+[m[2;32m2016-10-27 19:29:27,208 - INFO  [main:ServerBootstrap@78] - Configuration Remote Server.......
+[m[2;32m2016-10-27 19:29:27,208 - INFO  [main:ServerBootstrap@80] - Add Remote Server - Name:FastFunSystem;Address:localhost;Port:9912
+[m[2;32m2016-10-27 19:29:27,212 - INFO  [main:Application@24] - Init servers......
+[m[2;32m2016-10-27 19:29:27,252 - INFO  [main:ServerBootstrap@92] - Application PID:	6688
+[m[2;32m2016-10-27 19:36:21,151 - INFO  [Thread-1:CodeHelperServer@175] - 请求header信息：[Host=127.0.0.1:9911, Connection=keep-alive, Accept=text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8, User-Agent=Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.71 Safari/537.36, Accept-Encoding=gzip, deflate, sdch, Accept-Language=zh-CN,zh;q=0.8, Cookie=Hm_lvt_2fb6850c2dc8b36d451b5a97886724b7=1459320534; Hm_lvt_babfd903cf7f9b8cdbdc317eba1cb1af=1459320161]
+[m[7;31m2016-10-27 19:36:21,153 - ERROR [Thread-1:DefaultJuiceHandler@84] - 
+[mjava.lang.NullPointerException
+	at java.net.URLDecoder.decode(Unknown Source)
+	at com.klw.fastfun.pay.view.app.service.CodeHelperServer.reqParamConver(CodeHelperServer.java:86)
+	at com.klw.fastfun.pay.view.app.service.CodeHelperServer.xsgetcode(CodeHelperServer.java:176)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at com.juice.orange.game.handler.DefaultJuiceHandler.handleHttpRequest(DefaultJuiceHandler.java:81)
+	at com.juice.orange.game.handler.DefaultJuiceHandler.handlerRequest(DefaultJuiceHandler.java:35)
+	at com.juice.orange.game.handler.JuiceHttpControl.nextHandler(JuiceHttpControl.java:84)
+	at com.juice.orange.game.handler.JuiceHttpControl.nextHandler(JuiceHttpControl.java:67)
+	at com.juice.orange.game.util.threadpool.JuiceThreadPool$JuiceWorkThread.run(JuiceThreadPool.java:70)
+[2;35m2016-10-27 19:36:21,158 - WARN  [Thread-1:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :12, uri:/code/xsgetcode?cpid=xs01&fee=1000&pck=pokge&app=eedgej&imsi&imsi=460006344157213&imei=865773029997034&iccid=898600910915F3013164&mobile=&ip=110.96.0.0&cpparam=dfdfegkj
+[m[2;32m2016-10-27 19:38:26,538 - INFO  [main:ServerBootstrap@67] - Configuration Server bootstrap params.......
+[m[2;32m2016-10-27 19:38:26,550 - INFO  [main:ServerBootstrap@68] - Server protocol:	http
+[m[2;32m2016-10-27 19:38:26,551 - INFO  [main:ServerBootstrap@69] - Server port:	9911
+[m[2;32m2016-10-27 19:38:27,004 - INFO  [main:ServerBootstrap@78] - Configuration Remote Server.......
+[m[2;32m2016-10-27 19:38:27,004 - INFO  [main:ServerBootstrap@80] - Add Remote Server - Name:FastFunSystem;Address:localhost;Port:9912
+[m[2;32m2016-10-27 19:38:27,010 - INFO  [main:Application@24] - Init servers......
+[m[2;32m2016-10-27 19:38:27,066 - INFO  [main:ServerBootstrap@92] - Application PID:	6040
+[m[2;32m2016-10-27 19:38:34,257 - INFO  [Thread-21:CodeHelperServer@179] - 请求header信息：[Host=127.0.0.1:9911, Connection=keep-alive, Cache-Control=max-age=0, Accept=text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8, User-Agent=Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.71 Safari/537.36, Accept-Encoding=gzip, deflate, sdch, Accept-Language=zh-CN,zh;q=0.8, Cookie=Hm_lvt_2fb6850c2dc8b36d451b5a97886724b7=1459320534; Hm_lvt_babfd903cf7f9b8cdbdc317eba1cb1af=1459320161]
+[m[2;32m2016-10-27 19:38:34,260 - INFO  [Thread-21:CodeHelperServer@105] - 用户访问iccid=898600910915F3013164
+[m[2;32m2016-10-27 19:38:34,260 - INFO  [Thread-21:CodeHelperServer@117] - 用户归属省份=上海
+[m[2;32m2016-10-27 19:38:34,262 - INFO  [Thread-21:CodeHelperServer@127] - 用户访问IP=110.96.0.0
+[m[2;35m2016-10-27 19:38:34,661 - WARN  [Thread-21:CodeHelperServer@191] - CPID=xs01 匹配不到合适省份=上海 计费点=1000 的指令！
+[m[2;35m2016-10-27 19:38:34,747 - WARN  [Thread-21:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :493, uri:/code/xsgetcode?cpid=xs01&fee=1000&pck=pokge&app=eedgej&imsi&imsi=460006344157213&imei=865773029997034&iccid=898600910915F3013164&mobile=&ip=110.96.0.0&cpparam=dfdfegkj
+[m[7;31m2016-10-27 19:38:34,810 - ERROR [Thread-31:DefaultJuiceHandler@90] - java.lang.ArrayIndexOutOfBoundsException: 2
+[m[7;31m2016-10-27 19:38:34,810 - ERROR [Thread-31:DefaultJuiceHandler@91] - com.juice.orange.game.exception.JuiceException: handler request error,path:/favicon.ico;param:null
+[m[2;35m2016-10-27 19:38:34,811 - WARN  [Thread-31:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :2, uri:/favicon.ico
+[m[2;32m2016-10-27 19:39:50,744 - INFO  [main:ServerBootstrap@67] - Configuration Server bootstrap params.......
+[m[2;32m2016-10-27 19:39:50,749 - INFO  [main:ServerBootstrap@68] - Server protocol:	http
+[m[2;32m2016-10-27 19:39:50,750 - INFO  [main:ServerBootstrap@69] - Server port:	9911
+[m[2;32m2016-10-27 19:39:51,254 - INFO  [main:ServerBootstrap@78] - Configuration Remote Server.......
+[m[2;32m2016-10-27 19:39:51,254 - INFO  [main:ServerBootstrap@80] - Add Remote Server - Name:FastFunSystem;Address:localhost;Port:9912
+[m[2;32m2016-10-27 19:39:51,416 - INFO  [main:Application@24] - Init servers......
+[m[2;32m2016-10-27 19:39:55,404 - INFO  [main:ServerBootstrap@92] - Application PID:	6956
+[m[2;32m2016-10-27 19:40:04,871 - INFO  [Thread-35:CodeHelperServer@179] - 请求header信息：[Host=127.0.0.1:9911, Connection=keep-alive, Cache-Control=max-age=0, Accept=text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8, User-Agent=Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.71 Safari/537.36, Accept-Encoding=gzip, deflate, sdch, Accept-Language=zh-CN,zh;q=0.8, Cookie=Hm_lvt_2fb6850c2dc8b36d451b5a97886724b7=1459320534; Hm_lvt_babfd903cf7f9b8cdbdc317eba1cb1af=1459320161]
+[m[2;32m2016-10-27 19:40:04,874 - INFO  [Thread-35:CodeHelperServer@105] - 用户访问iccid=898600910915F3013164
+[m[2;32m2016-10-27 19:40:04,876 - INFO  [Thread-35:CodeHelperServer@117] - 用户归属省份=上海
+[m[2;32m2016-10-27 19:40:04,876 - INFO  [Thread-35:CodeHelperServer@127] - 用户访问IP=110.96.0.0
+[m[7;31m2016-10-27 19:40:14,956 - ERROR [Thread-35:JuiceInvocationHandler@63] - Latch request time out..
+[m[7;31m2016-10-27 19:40:14,957 - ERROR [Thread-35:CodeHelperServer@230] - 
+[m[2;35m2016-10-27 19:40:14,996 - WARN  [Thread-35:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :10131, uri:/code/xsgetcode?cpid=xs01&fee=1000&pck=pokge&app=eedgej&imsi&imsi=460006344157213&imei=865773029997034&iccid=898600910915F3013164&mobile=&ip=110.96.0.0&cpparam=dfdfegkj
+[m[7;31m2016-10-27 19:40:15,065 - ERROR [Thread-28:DefaultJuiceHandler@90] - java.lang.ArrayIndexOutOfBoundsException: 2
+[m[7;31m2016-10-27 19:40:15,190 - ERROR [Thread-28:DefaultJuiceHandler@91] - com.juice.orange.game.exception.JuiceException: handler request error,path:/favicon.ico;param:null
+[m[2;35m2016-10-27 19:40:15,195 - WARN  [Thread-28:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :130, uri:/favicon.ico
+[m[2;32m2016-10-27 19:43:11,945 - INFO  [main:ServerBootstrap@67] - Configuration Server bootstrap params.......
+[m[2;32m2016-10-27 19:43:11,949 - INFO  [main:ServerBootstrap@68] - Server protocol:	http
+[m[2;32m2016-10-27 19:43:11,949 - INFO  [main:ServerBootstrap@69] - Server port:	9911
+[m[2;32m2016-10-27 19:43:12,342 - INFO  [main:ServerBootstrap@78] - Configuration Remote Server.......
+[m[2;32m2016-10-27 19:43:12,342 - INFO  [main:ServerBootstrap@80] - Add Remote Server - Name:FastFunSystem;Address:localhost;Port:9912
+[m[2;32m2016-10-27 19:43:12,346 - INFO  [main:Application@24] - Init servers......
+[m[2;32m2016-10-27 19:43:12,388 - INFO  [main:ServerBootstrap@92] - Application PID:	5988
+[m[2;32m2016-10-27 19:43:17,915 - INFO  [Thread-21:CodeHelperServer@179] - 请求header信息：[Host=127.0.0.1:9911, Connection=keep-alive, Cache-Control=max-age=0, Accept=text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8, User-Agent=Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.71 Safari/537.36, Accept-Encoding=gzip, deflate, sdch, Accept-Language=zh-CN,zh;q=0.8, Cookie=Hm_lvt_2fb6850c2dc8b36d451b5a97886724b7=1459320534; Hm_lvt_babfd903cf7f9b8cdbdc317eba1cb1af=1459320161]
+[m[2;32m2016-10-27 19:43:17,917 - INFO  [Thread-21:CodeHelperServer@105] - 用户访问iccid=898600910915F3013164
+[m[2;32m2016-10-27 19:43:17,918 - INFO  [Thread-21:CodeHelperServer@117] - 用户归属省份=上海
+[m[2;32m2016-10-27 19:43:17,918 - INFO  [Thread-21:CodeHelperServer@127] - 用户访问IP=110.96.0.0
+[m[2;32m2016-10-27 19:43:18,354 - INFO  [Thread-21:HttpTool@132] - 指令url=http://api.173ttl.com/v2/order/jszfb?appid=ZF0054&type=1&payid=1000&nextfee=1000&productId=pokge&productName=eedgej&imei=865773029997034&imsi=null&mobile=null&iccid=898600910915F3013164&ip=110.96.0.0&extra=10ycl54895916205
+[m[2;32m2016-10-27 19:43:18,467 - INFO  [Thread-21:HttpTool@170] - 指令结果={"state":102,"msg":"imsi错误","sn":"75X3dt9g4"}
+[m[2;32m2016-10-27 19:43:18,467 - INFO  [Thread-21:CodeReqHelper@178] - 支付宝支付yc13请求url=>http://api.173ttl.com/v2/order/jszfb
+[m[2;32m2016-10-27 19:43:18,468 - INFO  [Thread-21:CodeReqHelper@179] - 支付宝支付yc13请求结果=>{"state":102,"msg":"imsi错误","sn":"75X3dt9g4"}
+[m[2;32m2016-10-27 19:43:18,468 - INFO  [Thread-21:CodeHelperServer@227] - 合作方:虚实
+通道方:null
+省份:上海
+计费点:1000
+订单号:10ool30000070241
+指令内容:{"state":102,"msg":"imsi错误","sn":"75X3dt9g4"}
+[m[2;35m2016-10-27 19:43:18,570 - WARN  [Thread-21:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :667, uri:/code/xsgetcode?cpid=xs01&fee=1000&pck=pokge&app=eedgej&imsi&imsi=460006344157213&imei=865773029997034&iccid=898600910915F3013164&mobile=&ip=110.96.0.0&cpparam=dfdfegkj
+[m[7;31m2016-10-27 19:43:18,722 - ERROR [Thread-31:DefaultJuiceHandler@90] - java.lang.ArrayIndexOutOfBoundsException: 2
+[m[7;31m2016-10-27 19:43:18,728 - ERROR [Thread-31:DefaultJuiceHandler@91] - com.juice.orange.game.exception.JuiceException: handler request error,path:/favicon.ico;param:null
+[m[2;35m2016-10-27 19:43:18,729 - WARN  [Thread-31:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :8, uri:/favicon.ico
+[m[2;32m2016-10-27 19:45:55,599 - INFO  [main:ServerBootstrap@67] - Configuration Server bootstrap params.......
+[m[2;32m2016-10-27 19:45:55,603 - INFO  [main:ServerBootstrap@68] - Server protocol:	http
+[m[2;32m2016-10-27 19:45:55,603 - INFO  [main:ServerBootstrap@69] - Server port:	9911
+[m[2;32m2016-10-27 19:45:56,002 - INFO  [main:ServerBootstrap@78] - Configuration Remote Server.......
+[m[2;32m2016-10-27 19:45:56,003 - INFO  [main:ServerBootstrap@80] - Add Remote Server - Name:FastFunSystem;Address:localhost;Port:9912
+[m[2;32m2016-10-27 19:45:56,006 - INFO  [main:Application@24] - Init servers......
+[m[2;32m2016-10-27 19:45:56,039 - INFO  [main:ServerBootstrap@92] - Application PID:	6000
+[m[2;32m2016-10-27 19:46:00,699 - INFO  [Thread-11:CodeHelperServer@179] - 请求header信息：[Host=127.0.0.1:9911, Connection=keep-alive, Accept=text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8, User-Agent=Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.71 Safari/537.36, Accept-Encoding=gzip, deflate, sdch, Accept-Language=zh-CN,zh;q=0.8, Cookie=Hm_lvt_2fb6850c2dc8b36d451b5a97886724b7=1459320534; Hm_lvt_babfd903cf7f9b8cdbdc317eba1cb1af=1459320161]
+[m[2;32m2016-10-27 19:46:00,702 - INFO  [Thread-11:CodeHelperServer@105] - 用户访问iccid=898600910915F3013164
+[m[2;32m2016-10-27 19:46:00,703 - INFO  [Thread-11:CodeHelperServer@117] - 用户归属省份=上海
+[m[2;32m2016-10-27 19:46:00,703 - INFO  [Thread-11:CodeHelperServer@127] - 用户访问IP=110.96.0.0
+[m[2;32m2016-10-27 19:46:01,071 - INFO  [Thread-11:HttpTool@132] - 指令url=http://api.173ttl.com/v2/order/jszfb?appid=ZF0054&type=1&payid=1000&nextfee=1000&productId=pokge&productName=eedgej&imei=865773029997034&imsi=null&mobile=null&iccid=898600910915F3013164&ip=110.96.0.0&extra=10ycr11024078381
+[m[2;32m2016-10-27 19:46:01,193 - INFO  [Thread-11:HttpTool@170] - 指令结果={"state":102,"msg":"imsi错误","sn":"75X3p0Ut5"}
+[m[2;32m2016-10-27 19:46:01,193 - INFO  [Thread-11:CodeReqHelper@178] - 支付宝支付yc13请求url=>http://api.173ttl.com/v2/order/jszfb
+[m[2;32m2016-10-27 19:46:01,193 - INFO  [Thread-11:CodeReqHelper@179] - 支付宝支付yc13请求结果=>{"state":102,"msg":"imsi错误","sn":"75X3p0Ut5"}
+[m[2;32m2016-10-27 19:46:01,194 - INFO  [Thread-11:CodeHelperServer@229] - 合作方:虚实
+通道方:null
+省份:上海
+计费点:1000
+订单号:10ool30000070241
+指令内容:{"state":102,"msg":"imsi错误","sn":"75X3p0Ut5"}
+[m[2;35m2016-10-27 19:46:01,301 - WARN  [Thread-11:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :609, uri:/code/xsgetcode?cpid=xs01&fee=1000&pck=pokge&app=eedgej&imsi&imsi=460006344157215&imei=865773029997034&iccid=898600910915F3013164&mobile=&ip=110.96.0.0&cpparam=dfdfegkj
+[m[7;31m2016-10-27 19:46:01,343 - ERROR [Thread-31:DefaultJuiceHandler@90] - java.lang.ArrayIndexOutOfBoundsException: 2
+[m[7;31m2016-10-27 19:46:01,344 - ERROR [Thread-31:DefaultJuiceHandler@91] - com.juice.orange.game.exception.JuiceException: handler request error,path:/favicon.ico;param:null
+[m[2;35m2016-10-27 19:46:01,349 - WARN  [Thread-31:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :7, uri:/favicon.ico
+[m[2;32m2016-10-27 19:49:33,318 - INFO  [main:ServerBootstrap@67] - Configuration Server bootstrap params.......
+[m[2;32m2016-10-27 19:49:33,322 - INFO  [main:ServerBootstrap@68] - Server protocol:	http
+[m[2;32m2016-10-27 19:49:33,322 - INFO  [main:ServerBootstrap@69] - Server port:	9911
+[m[2;32m2016-10-27 19:49:33,838 - INFO  [main:ServerBootstrap@78] - Configuration Remote Server.......
+[m[2;32m2016-10-27 19:49:33,838 - INFO  [main:ServerBootstrap@80] - Add Remote Server - Name:FastFunSystem;Address:localhost;Port:9912
+[m[2;32m2016-10-27 19:49:33,842 - INFO  [main:Application@24] - Init servers......
+[m[2;32m2016-10-27 19:49:33,906 - INFO  [main:ServerBootstrap@92] - Application PID:	2596
+[m[2;32m2016-10-27 19:49:49,063 - INFO  [Thread-23:CodeHelperServer@179] - 请求header信息：[Host=127.0.0.1:9911, Connection=keep-alive, Accept=text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8, User-Agent=Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.71 Safari/537.36, Accept-Encoding=gzip, deflate, sdch, Accept-Language=zh-CN,zh;q=0.8, Cookie=Hm_lvt_2fb6850c2dc8b36d451b5a97886724b7=1459320534; Hm_lvt_babfd903cf7f9b8cdbdc317eba1cb1af=1459320161]
+[m[2;32m2016-10-27 19:49:49,065 - INFO  [Thread-23:CodeHelperServer@105] - 用户访问iccid=898600910915F3013164
+[m[2;32m2016-10-27 19:49:49,066 - INFO  [Thread-23:CodeHelperServer@117] - 用户归属省份=上海
+[m[2;32m2016-10-27 19:49:49,078 - INFO  [Thread-23:CodeHelperServer@127] - 用户访问IP=110.96.0.0
+[m[2;32m2016-10-27 19:49:49,465 - INFO  [Thread-23:HttpTool@132] - 指令url=http://api.173ttl.com/v2/order/jszfb?appid=ZF0054&type=1&payid=1000&nextfee=1000&productId=pokge&productName=eedgej&imei=865773029997034&imsi=460006344157215&mobile=null&iccid=898600910915F3013164&ip=110.96.0.0&extra=10ycx47357188086
+[m[2;32m2016-10-27 19:49:49,786 - INFO  [Thread-23:HttpTool@170] - 指令结果={"state":0,"errcode":"0","msg":"OK","sn":"75X3FdUdE","uri":"alipays:\/\/platformapi\/startapp?appId=20000067&url=https%3A%2F%2Fmapi.alipay.com%2Fgateway.do%3F_input_charset%3Dutf-8%26agreement_sign_parameters%3D%7B%22productCode%22%3A%22GENERAL_WITHHOLDING_P%22%2C%22signValidityPeriod%22%3A%2212m%22%2C%22notifyUrl%22%3A%22http%3A%2F%2F120.24.177.7%3A9090%2Fapi%2Falipay%2FsignFromAlipay%22%7D%26externalAgreementNo%3Dgipexpayalipay2017%26integration_type%3DALIAPP%26notify_url%3Dhttp%3A%2F%2F120.24.177.7%3A9090%2Fapi%2Falipay%2FalipaySync%26out_trade_no%3D20161027194952391422%26partner%3D2088421728696843%26product_code%3DGENERAL_WITHHOLDING%26scene%3DINDUSTRY%7CDIGITAL_MEDIA%26seller_id%3D2088421728696843%26service%3Dalipay.acquire.page.createandpay%26subject%3D100%26total_fee%3D10%26sign%3D7c13f8f936e9f9e31d08e66d486a2fbe%26sign_type%3DMD5"}
+[m[2;32m2016-10-27 19:49:49,786 - INFO  [Thread-23:CodeReqHelper@178] - 支付宝支付yc13请求url=>http://api.173ttl.com/v2/order/jszfb
+[m[2;32m2016-10-27 19:49:49,787 - INFO  [Thread-23:CodeReqHelper@179] - 支付宝支付yc13请求结果=>{"state":0,"errcode":"0","msg":"OK","sn":"75X3FdUdE","uri":"alipays:\/\/platformapi\/startapp?appId=20000067&url=https%3A%2F%2Fmapi.alipay.com%2Fgateway.do%3F_input_charset%3Dutf-8%26agreement_sign_parameters%3D%7B%22productCode%22%3A%22GENERAL_WITHHOLDING_P%22%2C%22signValidityPeriod%22%3A%2212m%22%2C%22notifyUrl%22%3A%22http%3A%2F%2F120.24.177.7%3A9090%2Fapi%2Falipay%2FsignFromAlipay%22%7D%26externalAgreementNo%3Dgipexpayalipay2017%26integration_type%3DALIAPP%26notify_url%3Dhttp%3A%2F%2F120.24.177.7%3A9090%2Fapi%2Falipay%2FalipaySync%26out_trade_no%3D20161027194952391422%26partner%3D2088421728696843%26product_code%3DGENERAL_WITHHOLDING%26scene%3DINDUSTRY%7CDIGITAL_MEDIA%26seller_id%3D2088421728696843%26service%3Dalipay.acquire.page.createandpay%26subject%3D100%26total_fee%3D10%26sign%3D7c13f8f936e9f9e31d08e66d486a2fbe%26sign_type%3DMD5"}
+[m[2;32m2016-10-27 19:49:49,787 - INFO  [Thread-23:CodeHelperServer@229] - 合作方:虚实
+通道方:null
+省份:上海
+计费点:1000
+订单号:10ool30000070241
+指令内容:{"state":0,"errcode":"0","msg":"OK","sn":"75X3FdUdE","uri":"alipays:\/\/platformapi\/startapp?appId=20000067&url=https%3A%2F%2Fmapi.alipay.com%2Fgateway.do%3F_input_charset%3Dutf-8%26agreement_sign_parameters%3D%7B%22productCode%22%3A%22GENERAL_WITHHOLDING_P%22%2C%22signValidityPeriod%22%3A%2212m%22%2C%22notifyUrl%22%3A%22http%3A%2F%2F120.24.177.7%3A9090%2Fapi%2Falipay%2FsignFromAlipay%22%7D%26externalAgreementNo%3Dgipexpayalipay2017%26integration_type%3DALIAPP%26notify_url%3Dhttp%3A%2F%2F120.24.177.7%3A9090%2Fapi%2Falipay%2FalipaySync%26out_trade_no%3D20161027194952391422%26partner%3D2088421728696843%26product_code%3DGENERAL_WITHHOLDING%26scene%3DINDUSTRY%7CDIGITAL_MEDIA%26seller_id%3D2088421728696843%26service%3Dalipay.acquire.page.createandpay%26subject%3D100%26total_fee%3D10%26sign%3D7c13f8f936e9f9e31d08e66d486a2fbe%26sign_type%3DMD5"}
+[m[2;35m2016-10-27 19:49:49,827 - WARN  [Thread-23:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :767, uri:/code/xsgetcode?cpid=xs01&fee=1000&pck=pokge&app=eedgej&imsi=460006344157215&imei=865773029997034&iccid=898600910915F3013164&mobile=&ip=110.96.0.0&cpparam=dfdfegkj
+[m[7;31m2016-10-27 19:49:49,868 - ERROR [Thread-1:DefaultJuiceHandler@90] - java.lang.ArrayIndexOutOfBoundsException: 2
+[m[7;31m2016-10-27 19:49:49,871 - ERROR [Thread-1:DefaultJuiceHandler@91] - com.juice.orange.game.exception.JuiceException: handler request error,path:/favicon.ico;param:null
+[m[2;35m2016-10-27 19:49:49,871 - WARN  [Thread-1:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :3, uri:/favicon.ico
+[m[2;32m2016-10-27 19:52:27,117 - INFO  [main:ServerBootstrap@67] - Configuration Server bootstrap params.......
+[m[2;32m2016-10-27 19:52:27,121 - INFO  [main:ServerBootstrap@68] - Server protocol:	http
+[m[2;32m2016-10-27 19:52:27,122 - INFO  [main:ServerBootstrap@69] - Server port:	9911
+[m[2;32m2016-10-27 19:52:27,576 - INFO  [main:ServerBootstrap@78] - Configuration Remote Server.......
+[m[2;32m2016-10-27 19:52:27,577 - INFO  [main:ServerBootstrap@80] - Add Remote Server - Name:FastFunSystem;Address:localhost;Port:9912
+[m[2;32m2016-10-27 19:52:27,589 - INFO  [main:Application@24] - Init servers......
+[m[2;32m2016-10-27 19:52:27,654 - INFO  [main:ServerBootstrap@92] - Application PID:	6112
+[m[2;32m2016-10-27 19:52:41,761 - INFO  [Thread-21:CodeHelperServer@179] - 请求header信息：[Host=127.0.0.1:9911, Connection=keep-alive, Cache-Control=max-age=0, Accept=text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8, User-Agent=Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.71 Safari/537.36, Accept-Encoding=gzip, deflate, sdch, Accept-Language=zh-CN,zh;q=0.8, Cookie=Hm_lvt_2fb6850c2dc8b36d451b5a97886724b7=1459320534; Hm_lvt_babfd903cf7f9b8cdbdc317eba1cb1af=1459320161]
+[m[2;32m2016-10-27 19:52:41,764 - INFO  [Thread-21:CodeHelperServer@105] - 用户访问iccid=898600910915F3013164
+[m[2;32m2016-10-27 19:52:41,764 - INFO  [Thread-21:CodeHelperServer@117] - 用户归属省份=上海
+[m[2;32m2016-10-27 19:52:41,764 - INFO  [Thread-21:CodeHelperServer@127] - 用户访问IP=110.96.0.0
+[m[2;32m2016-10-27 19:52:42,080 - INFO  [Thread-21:HttpTool@132] - 指令url=http://api.173ttl.com/v2/order/jszfb?appid=ZF0054&type=1&payid=1000&nextfee=1000&productId=pokge&productName=eedgej&imei=865773029997034&imsi=460006344157215&mobile=null&iccid=898600910915F3013164&ip=110.96.0.0&extra=10ycw37297798503
+[m[2;32m2016-10-27 19:52:42,446 - INFO  [Thread-21:HttpTool@170] - 指令结果={"state":0,"errcode":"0","msg":"OK","sn":"75X3Rtri0","uri":"alipays:\/\/platformapi\/startapp?appId=20000067&url=https%3A%2F%2Fmapi.alipay.com%2Fgateway.do%3F_input_charset%3Dutf-8%26agreement_sign_parameters%3D%7B%22productCode%22%3A%22GENERAL_WITHHOLDING_P%22%2C%22signValidityPeriod%22%3A%2212m%22%2C%22notifyUrl%22%3A%22http%3A%2F%2F120.24.177.7%3A9090%2Fapi%2Falipay%2FsignFromAlipay%22%7D%26externalAgreementNo%3Dgipexpayalipay2017%26integration_type%3DALIAPP%26notify_url%3Dhttp%3A%2F%2F120.24.177.7%3A9090%2Fapi%2Falipay%2FalipaySync%26out_trade_no%3D20161027195245050423%26partner%3D2088421728696843%26product_code%3DGENERAL_WITHHOLDING%26scene%3DINDUSTRY%7CDIGITAL_MEDIA%26seller_id%3D2088421728696843%26service%3Dalipay.acquire.page.createandpay%26subject%3D100%26total_fee%3D10%26sign%3Dbf664a68df2f9ce9f032a7b5f5c7df3d%26sign_type%3DMD5"}
+[m[2;32m2016-10-27 19:52:42,447 - INFO  [Thread-21:CodeReqHelper@178] - 支付宝支付yc13请求url=>http://api.173ttl.com/v2/order/jszfb
+[m[2;32m2016-10-27 19:52:42,447 - INFO  [Thread-21:CodeReqHelper@179] - 支付宝支付yc13请求结果=>{"state":0,"errcode":"0","msg":"OK","sn":"75X3Rtri0","uri":"alipays:\/\/platformapi\/startapp?appId=20000067&url=https%3A%2F%2Fmapi.alipay.com%2Fgateway.do%3F_input_charset%3Dutf-8%26agreement_sign_parameters%3D%7B%22productCode%22%3A%22GENERAL_WITHHOLDING_P%22%2C%22signValidityPeriod%22%3A%2212m%22%2C%22notifyUrl%22%3A%22http%3A%2F%2F120.24.177.7%3A9090%2Fapi%2Falipay%2FsignFromAlipay%22%7D%26externalAgreementNo%3Dgipexpayalipay2017%26integration_type%3DALIAPP%26notify_url%3Dhttp%3A%2F%2F120.24.177.7%3A9090%2Fapi%2Falipay%2FalipaySync%26out_trade_no%3D20161027195245050423%26partner%3D2088421728696843%26product_code%3DGENERAL_WITHHOLDING%26scene%3DINDUSTRY%7CDIGITAL_MEDIA%26seller_id%3D2088421728696843%26service%3Dalipay.acquire.page.createandpay%26subject%3D100%26total_fee%3D10%26sign%3Dbf664a68df2f9ce9f032a7b5f5c7df3d%26sign_type%3DMD5"}
+[m[2;32m2016-10-27 19:52:42,448 - INFO  [Thread-21:CodeHelperServer@229] - 合作方:虚实
+通道方:null
+省份:上海
+计费点:1000
+订单号:10ycw37297798503
+指令内容:{"state":0,"errcode":"0","msg":"OK","sn":"75X3Rtri0","uri":"alipays:\/\/platformapi\/startapp?appId=20000067&url=https%3A%2F%2Fmapi.alipay.com%2Fgateway.do%3F_input_charset%3Dutf-8%26agreement_sign_parameters%3D%7B%22productCode%22%3A%22GENERAL_WITHHOLDING_P%22%2C%22signValidityPeriod%22%3A%2212m%22%2C%22notifyUrl%22%3A%22http%3A%2F%2F120.24.177.7%3A9090%2Fapi%2Falipay%2FsignFromAlipay%22%7D%26externalAgreementNo%3Dgipexpayalipay2017%26integration_type%3DALIAPP%26notify_url%3Dhttp%3A%2F%2F120.24.177.7%3A9090%2Fapi%2Falipay%2FalipaySync%26out_trade_no%3D20161027195245050423%26partner%3D2088421728696843%26product_code%3DGENERAL_WITHHOLDING%26scene%3DINDUSTRY%7CDIGITAL_MEDIA%26seller_id%3D2088421728696843%26service%3Dalipay.acquire.page.createandpay%26subject%3D100%26total_fee%3D10%26sign%3Dbf664a68df2f9ce9f032a7b5f5c7df3d%26sign_type%3DMD5"}
+[m[2;35m2016-10-27 19:52:42,549 - WARN  [Thread-21:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :796, uri:/code/xsgetcode?cpid=xs01&fee=1000&pck=pokge&app=eedgej&imsi=460006344157215&imei=865773029997034&iccid=898600910915F3013164&mobile=&ip=110.96.0.0&cpparam=dfdfegkj
+[m[7;31m2016-10-27 19:52:42,616 - ERROR [Thread-23:DefaultJuiceHandler@90] - java.lang.ArrayIndexOutOfBoundsException: 2
+[m[7;31m2016-10-27 19:52:42,623 - ERROR [Thread-23:DefaultJuiceHandler@91] - com.juice.orange.game.exception.JuiceException: handler request error,path:/favicon.ico;param:null
+[m[2;35m2016-10-27 19:52:42,628 - WARN  [Thread-23:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :14, uri:/favicon.ico
+[m[2;32m2016-10-27 19:54:51,211 - INFO  [main:ServerBootstrap@67] - Configuration Server bootstrap params.......
+[m[2;32m2016-10-27 19:54:51,218 - INFO  [main:ServerBootstrap@68] - Server protocol:	http
+[m[2;32m2016-10-27 19:54:51,219 - INFO  [main:ServerBootstrap@69] - Server port:	9911
+[m[2;32m2016-10-27 19:54:51,810 - INFO  [main:ServerBootstrap@78] - Configuration Remote Server.......
+[m[2;32m2016-10-27 19:54:51,811 - INFO  [main:ServerBootstrap@80] - Add Remote Server - Name:FastFunSystem;Address:localhost;Port:9912
+[m[2;32m2016-10-27 19:54:51,980 - INFO  [main:Application@24] - Init servers......
+[m[2;32m2016-10-27 19:54:57,993 - INFO  [main:ServerBootstrap@92] - Application PID:	3444
+[m[2;32m2016-10-27 19:55:09,768 - INFO  [Thread-21:CodeHelperServer@179] - 请求header信息：[Host=127.0.0.1:9911, Connection=keep-alive, Cache-Control=max-age=0, Accept=text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8, User-Agent=Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.71 Safari/537.36, Accept-Encoding=gzip, deflate, sdch, Accept-Language=zh-CN,zh;q=0.8, Cookie=Hm_lvt_2fb6850c2dc8b36d451b5a97886724b7=1459320534; Hm_lvt_babfd903cf7f9b8cdbdc317eba1cb1af=1459320161]
+[m[2;32m2016-10-27 19:55:09,772 - INFO  [Thread-21:CodeHelperServer@105] - 用户访问iccid=898600910915F3013164
+[m[2;32m2016-10-27 19:55:09,772 - INFO  [Thread-21:CodeHelperServer@117] - 用户归属省份=上海
+[m[2;32m2016-10-27 19:55:09,772 - INFO  [Thread-21:CodeHelperServer@127] - 用户访问IP=110.96.0.0
+[m[2;32m2016-10-27 19:55:10,365 - INFO  [Thread-21:HttpTool@132] - 指令url=http://api.173ttl.com/v2/order/jszfb?appid=ZF0054&type=1&payid=1000&nextfee=1000&productId=pokge&productName=eedgej&imei=865773029997034&imsi=460006344157215&mobile=null&iccid=898600910915F3013164&ip=110.96.0.0&extra=10ycb35684931309
+[m[2;32m2016-10-27 19:55:10,864 - INFO  [Thread-21:HttpTool@170] - 指令结果={"state":0,"errcode":"0","msg":"OK","sn":"75X4209WP","uri":"alipays:\/\/platformapi\/startapp?appId=20000067&url=https%3A%2F%2Fmapi.alipay.com%2Fgateway.do%3F_input_charset%3Dutf-8%26agreement_sign_parameters%3D%7B%22productCode%22%3A%22GENERAL_WITHHOLDING_P%22%2C%22signValidityPeriod%22%3A%2212m%22%2C%22notifyUrl%22%3A%22http%3A%2F%2F120.24.177.7%3A9090%2Fapi%2Falipay%2FsignFromAlipay%22%7D%26externalAgreementNo%3Dgipexpayalipay2017%26integration_type%3DALIAPP%26notify_url%3Dhttp%3A%2F%2F120.24.177.7%3A9090%2Fapi%2Falipay%2FalipaySync%26out_trade_no%3D20161027195513453424%26partner%3D2088421728696843%26product_code%3DGENERAL_WITHHOLDING%26scene%3DINDUSTRY%7CDIGITAL_MEDIA%26seller_id%3D2088421728696843%26service%3Dalipay.acquire.page.createandpay%26subject%3D100%26total_fee%3D10%26sign%3D9ac8c7523809996d69bdda841a2bed72%26sign_type%3DMD5"}
+[m[2;32m2016-10-27 19:55:10,864 - INFO  [Thread-21:CodeReqHelper@178] - 支付宝支付yc13请求url=>http://api.173ttl.com/v2/order/jszfb
+[m[2;32m2016-10-27 19:55:10,865 - INFO  [Thread-21:CodeReqHelper@179] - 支付宝支付yc13请求结果=>{"state":0,"errcode":"0","msg":"OK","sn":"75X4209WP","uri":"alipays:\/\/platformapi\/startapp?appId=20000067&url=https%3A%2F%2Fmapi.alipay.com%2Fgateway.do%3F_input_charset%3Dutf-8%26agreement_sign_parameters%3D%7B%22productCode%22%3A%22GENERAL_WITHHOLDING_P%22%2C%22signValidityPeriod%22%3A%2212m%22%2C%22notifyUrl%22%3A%22http%3A%2F%2F120.24.177.7%3A9090%2Fapi%2Falipay%2FsignFromAlipay%22%7D%26externalAgreementNo%3Dgipexpayalipay2017%26integration_type%3DALIAPP%26notify_url%3Dhttp%3A%2F%2F120.24.177.7%3A9090%2Fapi%2Falipay%2FalipaySync%26out_trade_no%3D20161027195513453424%26partner%3D2088421728696843%26product_code%3DGENERAL_WITHHOLDING%26scene%3DINDUSTRY%7CDIGITAL_MEDIA%26seller_id%3D2088421728696843%26service%3Dalipay.acquire.page.createandpay%26subject%3D100%26total_fee%3D10%26sign%3D9ac8c7523809996d69bdda841a2bed72%26sign_type%3DMD5"}
+[m[2;32m2016-10-27 19:55:10,866 - INFO  [Thread-21:CodeHelperServer@226] - 合作方:虚实
+通道方:null
+省份:上海
+计费点:1000
+订单号:10ycb35684931309
+指令内容:{"state":0,"errcode":"0","msg":"OK","sn":"75X4209WP","uri":"alipays:\/\/platformapi\/startapp?appId=20000067&url=https%3A%2F%2Fmapi.alipay.com%2Fgateway.do%3F_input_charset%3Dutf-8%26agreement_sign_parameters%3D%7B%22productCode%22%3A%22GENERAL_WITHHOLDING_P%22%2C%22signValidityPeriod%22%3A%2212m%22%2C%22notifyUrl%22%3A%22http%3A%2F%2F120.24.177.7%3A9090%2Fapi%2Falipay%2FsignFromAlipay%22%7D%26externalAgreementNo%3Dgipexpayalipay2017%26integration_type%3DALIAPP%26notify_url%3Dhttp%3A%2F%2F120.24.177.7%3A9090%2Fapi%2Falipay%2FalipaySync%26out_trade_no%3D20161027195513453424%26partner%3D2088421728696843%26product_code%3DGENERAL_WITHHOLDING%26scene%3DINDUSTRY%7CDIGITAL_MEDIA%26seller_id%3D2088421728696843%26service%3Dalipay.acquire.page.createandpay%26subject%3D100%26total_fee%3D10%26sign%3D9ac8c7523809996d69bdda841a2bed72%26sign_type%3DMD5"}
+[m[2;35m2016-10-27 19:55:26,465 - WARN  [Thread-21:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :16702, uri:/code/xsgetcode?cpid=xs01&fee=1000&pck=pokge&app=eedgej&imsi=460006344157215&imei=865773029997034&iccid=898600910915F3013164&mobile=&ip=110.96.0.0&cpparam=dfdfegkj
+[m[7;31m2016-10-27 19:55:26,553 - ERROR [Thread-40:DefaultJuiceHandler@90] - java.lang.ArrayIndexOutOfBoundsException: 2
+[m[7;31m2016-10-27 19:55:26,564 - ERROR [Thread-40:DefaultJuiceHandler@91] - com.juice.orange.game.exception.JuiceException: handler request error,path:/favicon.ico;param:null
+[m[2;35m2016-10-27 19:55:26,564 - WARN  [Thread-40:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :11, uri:/favicon.ico
+[m[2;32m2016-10-27 19:58:57,230 - INFO  [main:ServerBootstrap@67] - Configuration Server bootstrap params.......
+[m[2;32m2016-10-27 19:58:57,235 - INFO  [main:ServerBootstrap@68] - Server protocol:	http
+[m[2;32m2016-10-27 19:58:57,236 - INFO  [main:ServerBootstrap@69] - Server port:	9911
+[m[2;32m2016-10-27 19:58:57,793 - INFO  [main:ServerBootstrap@78] - Configuration Remote Server.......
+[m[2;32m2016-10-27 19:58:57,794 - INFO  [main:ServerBootstrap@80] - Add Remote Server - Name:FastFunSystem;Address:localhost;Port:9912
+[m[2;32m2016-10-27 19:58:57,868 - INFO  [main:Application@24] - Init servers......
+[m[2;32m2016-10-27 19:59:01,356 - INFO  [main:ServerBootstrap@92] - Application PID:	8084
+[m[2;32m2016-10-27 19:59:05,890 - INFO  [Thread-12:CodeHelperServer@179] - 请求header信息：[Host=127.0.0.1:9911, Connection=keep-alive, Cache-Control=max-age=0, Accept=text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8, User-Agent=Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.71 Safari/537.36, Accept-Encoding=gzip, deflate, sdch, Accept-Language=zh-CN,zh;q=0.8, Cookie=Hm_lvt_2fb6850c2dc8b36d451b5a97886724b7=1459320534; Hm_lvt_babfd903cf7f9b8cdbdc317eba1cb1af=1459320161]
+[m[2;32m2016-10-27 19:59:05,893 - INFO  [Thread-12:CodeHelperServer@105] - 用户访问iccid=898600910915F3013164
+[m[2;32m2016-10-27 19:59:05,893 - INFO  [Thread-12:CodeHelperServer@117] - 用户归属省份=上海
+[m[2;32m2016-10-27 19:59:05,893 - INFO  [Thread-12:CodeHelperServer@127] - 用户访问IP=110.96.0.0
+[m[2;32m2016-10-27 19:59:06,394 - INFO  [Thread-12:HttpTool@132] - 指令url=http://api.173ttl.com/v2/order/jszfb?appid=ZF0054&type=1&payid=1000&nextfee=1000&productId=pokge&productName=eedgej&imei=865773029997034&imsi=460006344157215&mobile=null&iccid=898600910915F3013164&ip=110.96.0.0&extra=10ycb73056953603
+[m[2;32m2016-10-27 19:59:06,736 - INFO  [Thread-12:HttpTool@170] - 指令结果={"state":0,"errcode":"0","msg":"OK","sn":"75X4iKorx","uri":"alipays:\/\/platformapi\/startapp?appId=20000067&url=https%3A%2F%2Fmapi.alipay.com%2Fgateway.do%3F_input_charset%3Dutf-8%26agreement_sign_parameters%3D%7B%22productCode%22%3A%22GENERAL_WITHHOLDING_P%22%2C%22signValidityPeriod%22%3A%2212m%22%2C%22notifyUrl%22%3A%22http%3A%2F%2F120.24.177.7%3A9090%2Fapi%2Falipay%2FsignFromAlipay%22%7D%26externalAgreementNo%3Dgipexpayalipay2017%26integration_type%3DALIAPP%26notify_url%3Dhttp%3A%2F%2F120.24.177.7%3A9090%2Fapi%2Falipay%2FalipaySync%26out_trade_no%3D20161027195909344425%26partner%3D2088421728696843%26product_code%3DGENERAL_WITHHOLDING%26scene%3DINDUSTRY%7CDIGITAL_MEDIA%26seller_id%3D2088421728696843%26service%3Dalipay.acquire.page.createandpay%26subject%3D100%26total_fee%3D10%26sign%3D1c88fa46c5fc178e19297b94b83c726b%26sign_type%3DMD5"}
+[m[2;32m2016-10-27 19:59:06,736 - INFO  [Thread-12:CodeReqHelper@178] - 支付宝支付yc13请求url=>http://api.173ttl.com/v2/order/jszfb
+[m[2;32m2016-10-27 19:59:06,737 - INFO  [Thread-12:CodeReqHelper@179] - 支付宝支付yc13请求结果=>{"state":0,"errcode":"0","msg":"OK","sn":"75X4iKorx","uri":"alipays:\/\/platformapi\/startapp?appId=20000067&url=https%3A%2F%2Fmapi.alipay.com%2Fgateway.do%3F_input_charset%3Dutf-8%26agreement_sign_parameters%3D%7B%22productCode%22%3A%22GENERAL_WITHHOLDING_P%22%2C%22signValidityPeriod%22%3A%2212m%22%2C%22notifyUrl%22%3A%22http%3A%2F%2F120.24.177.7%3A9090%2Fapi%2Falipay%2FsignFromAlipay%22%7D%26externalAgreementNo%3Dgipexpayalipay2017%26integration_type%3DALIAPP%26notify_url%3Dhttp%3A%2F%2F120.24.177.7%3A9090%2Fapi%2Falipay%2FalipaySync%26out_trade_no%3D20161027195909344425%26partner%3D2088421728696843%26product_code%3DGENERAL_WITHHOLDING%26scene%3DINDUSTRY%7CDIGITAL_MEDIA%26seller_id%3D2088421728696843%26service%3Dalipay.acquire.page.createandpay%26subject%3D100%26total_fee%3D10%26sign%3D1c88fa46c5fc178e19297b94b83c726b%26sign_type%3DMD5"}
+[m[2;32m2016-10-27 19:59:06,737 - INFO  [Thread-12:CodeHelperServer@224] - 合作方:虚实
+通道方:null
+省份:上海
+计费点:1000
+订单号:10ycb73056953603
+指令内容:{"state":0,"errcode":"0","msg":"OK","sn":"75X4iKorx","uri":"alipays:\/\/platformapi\/startapp?appId=20000067&url=https%3A%2F%2Fmapi.alipay.com%2Fgateway.do%3F_input_charset%3Dutf-8%26agreement_sign_parameters%3D%7B%22productCode%22%3A%22GENERAL_WITHHOLDING_P%22%2C%22signValidityPeriod%22%3A%2212m%22%2C%22notifyUrl%22%3A%22http%3A%2F%2F120.24.177.7%3A9090%2Fapi%2Falipay%2FsignFromAlipay%22%7D%26externalAgreementNo%3Dgipexpayalipay2017%26integration_type%3DALIAPP%26notify_url%3Dhttp%3A%2F%2F120.24.177.7%3A9090%2Fapi%2Falipay%2FalipaySync%26out_trade_no%3D20161027195909344425%26partner%3D2088421728696843%26product_code%3DGENERAL_WITHHOLDING%26scene%3DINDUSTRY%7CDIGITAL_MEDIA%26seller_id%3D2088421728696843%26service%3Dalipay.acquire.page.createandpay%26subject%3D100%26total_fee%3D10%26sign%3D1c88fa46c5fc178e19297b94b83c726b%26sign_type%3DMD5"}
+[m[2;35m2016-10-27 19:59:17,330 - WARN  [Thread-12:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :11446, uri:/code/xsgetcode?cpid=xs01&fee=1000&pck=pokge&app=eedgej&imsi=460006344157215&imei=865773029997034&iccid=898600910915F3013164&mobile=&ip=110.96.0.0&cpparam=dfdfegkj
+[m[7;31m2016-10-27 19:59:17,418 - ERROR [Thread-14:DefaultJuiceHandler@90] - java.lang.ArrayIndexOutOfBoundsException: 2
+[m[7;31m2016-10-27 19:59:17,419 - ERROR [Thread-14:DefaultJuiceHandler@91] - com.juice.orange.game.exception.JuiceException: handler request error,path:/favicon.ico;param:null
+[m[2;35m2016-10-27 19:59:17,419 - WARN  [Thread-14:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :2, uri:/favicon.ico
+[m[2;32m2016-10-27 20:01:33,384 - INFO  [main:ServerBootstrap@67] - Configuration Server bootstrap params.......
+[m[2;32m2016-10-27 20:01:33,390 - INFO  [main:ServerBootstrap@68] - Server protocol:	http
+[m[2;32m2016-10-27 20:01:33,392 - INFO  [main:ServerBootstrap@69] - Server port:	9911
+[m[2;32m2016-10-27 20:01:33,854 - INFO  [main:ServerBootstrap@78] - Configuration Remote Server.......
+[m[2;32m2016-10-27 20:01:33,854 - INFO  [main:ServerBootstrap@80] - Add Remote Server - Name:FastFunSystem;Address:localhost;Port:9912
+[m[2;32m2016-10-27 20:01:33,857 - INFO  [main:Application@24] - Init servers......
+[m[2;32m2016-10-27 20:01:33,904 - INFO  [main:ServerBootstrap@92] - Application PID:	7176
+[m[2;32m2016-10-27 20:01:41,207 - INFO  [Thread-21:CodeHelperServer@179] - 请求header信息：[Host=127.0.0.1:9911, Connection=keep-alive, Cache-Control=max-age=0, Accept=text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8, User-Agent=Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.71 Safari/537.36, Accept-Encoding=gzip, deflate, sdch, Accept-Language=zh-CN,zh;q=0.8, Cookie=Hm_lvt_2fb6850c2dc8b36d451b5a97886724b7=1459320534; Hm_lvt_babfd903cf7f9b8cdbdc317eba1cb1af=1459320161]
+[m[2;32m2016-10-27 20:01:41,209 - INFO  [Thread-21:CodeHelperServer@105] - 用户访问iccid=898600910915F3013164
+[m[2;32m2016-10-27 20:01:41,209 - INFO  [Thread-21:CodeHelperServer@117] - 用户归属省份=上海
+[m[2;32m2016-10-27 20:01:41,209 - INFO  [Thread-21:CodeHelperServer@127] - 用户访问IP=110.96.0.0
+[m[2;32m2016-10-27 20:01:41,593 - INFO  [Thread-21:HttpTool@132] - 指令url=http://api.173ttl.com/v2/order/jszfb?appid=ZF0054&type=1&payid=1000&nextfee=1000&productId=pokge&productName=eedgej&imei=865773029997034&imsi=460006344157215&mobile=null&iccid=898600910915F3013164&ip=110.96.0.0&extra=10ycc36375926916
+[m[2;32m2016-10-27 20:01:41,898 - INFO  [Thread-21:HttpTool@170] - 指令结果={"state":0,"errcode":"0","msg":"OK","sn":"75X4tL3Ko","uri":"alipays:\/\/platformapi\/startapp?appId=20000067&url=https%3A%2F%2Fmapi.alipay.com%2Fgateway.do%3F_input_charset%3Dutf-8%26agreement_sign_parameters%3D%7B%22productCode%22%3A%22GENERAL_WITHHOLDING_P%22%2C%22signValidityPeriod%22%3A%2212m%22%2C%22notifyUrl%22%3A%22http%3A%2F%2F120.24.177.7%3A9090%2Fapi%2Falipay%2FsignFromAlipay%22%7D%26externalAgreementNo%3Dgipexpayalipay2017%26integration_type%3DALIAPP%26notify_url%3Dhttp%3A%2F%2F120.24.177.7%3A9090%2Fapi%2Falipay%2FalipaySync%26out_trade_no%3D20161027200144513426%26partner%3D2088421728696843%26product_code%3DGENERAL_WITHHOLDING%26scene%3DINDUSTRY%7CDIGITAL_MEDIA%26seller_id%3D2088421728696843%26service%3Dalipay.acquire.page.createandpay%26subject%3D100%26total_fee%3D10%26sign%3D6b39bedcfe13cfc2b3476b392ec7e0b2%26sign_type%3DMD5"}
+[m[2;32m2016-10-27 20:01:41,899 - INFO  [Thread-21:CodeReqHelper@178] - 支付宝支付yc13请求url=>http://api.173ttl.com/v2/order/jszfb
+[m[2;32m2016-10-27 20:01:41,899 - INFO  [Thread-21:CodeReqHelper@179] - 支付宝支付yc13请求结果=>{"state":0,"errcode":"0","msg":"OK","sn":"75X4tL3Ko","uri":"alipays:\/\/platformapi\/startapp?appId=20000067&url=https%3A%2F%2Fmapi.alipay.com%2Fgateway.do%3F_input_charset%3Dutf-8%26agreement_sign_parameters%3D%7B%22productCode%22%3A%22GENERAL_WITHHOLDING_P%22%2C%22signValidityPeriod%22%3A%2212m%22%2C%22notifyUrl%22%3A%22http%3A%2F%2F120.24.177.7%3A9090%2Fapi%2Falipay%2FsignFromAlipay%22%7D%26externalAgreementNo%3Dgipexpayalipay2017%26integration_type%3DALIAPP%26notify_url%3Dhttp%3A%2F%2F120.24.177.7%3A9090%2Fapi%2Falipay%2FalipaySync%26out_trade_no%3D20161027200144513426%26partner%3D2088421728696843%26product_code%3DGENERAL_WITHHOLDING%26scene%3DINDUSTRY%7CDIGITAL_MEDIA%26seller_id%3D2088421728696843%26service%3Dalipay.acquire.page.createandpay%26subject%3D100%26total_fee%3D10%26sign%3D6b39bedcfe13cfc2b3476b392ec7e0b2%26sign_type%3DMD5"}
+[m[2;32m2016-10-27 20:01:41,900 - INFO  [Thread-21:CodeHelperServer@224] - 合作方:虚实
+通道方:null
+省份:上海
+计费点:1000
+订单号:10ycc36375926916
+指令内容:{"state":0,"errcode":"0","msg":"OK","sn":"75X4tL3Ko","uri":"alipays:\/\/platformapi\/startapp?appId=20000067&url=https%3A%2F%2Fmapi.alipay.com%2Fgateway.do%3F_input_charset%3Dutf-8%26agreement_sign_parameters%3D%7B%22productCode%22%3A%22GENERAL_WITHHOLDING_P%22%2C%22signValidityPeriod%22%3A%2212m%22%2C%22notifyUrl%22%3A%22http%3A%2F%2F120.24.177.7%3A9090%2Fapi%2Falipay%2FsignFromAlipay%22%7D%26externalAgreementNo%3Dgipexpayalipay2017%26integration_type%3DALIAPP%26notify_url%3Dhttp%3A%2F%2F120.24.177.7%3A9090%2Fapi%2Falipay%2FalipaySync%26out_trade_no%3D20161027200144513426%26partner%3D2088421728696843%26product_code%3DGENERAL_WITHHOLDING%26scene%3DINDUSTRY%7CDIGITAL_MEDIA%26seller_id%3D2088421728696843%26service%3Dalipay.acquire.page.createandpay%26subject%3D100%26total_fee%3D10%26sign%3D6b39bedcfe13cfc2b3476b392ec7e0b2%26sign_type%3DMD5"}
+[m[2;35m2016-10-27 20:01:41,995 - WARN  [Thread-21:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :791, uri:/code/xsgetcode?cpid=xs01&fee=1000&pck=pokge&app=eedgej&imsi=460006344157215&imei=865773029997034&iccid=898600910915F3013164&mobile=&ip=110.96.0.0&cpparam=dfdfegkj
+[m[7;31m2016-10-27 20:01:42,030 - ERROR [Thread-11:DefaultJuiceHandler@90] - java.lang.ArrayIndexOutOfBoundsException: 2
+[m[7;31m2016-10-27 20:01:42,031 - ERROR [Thread-11:DefaultJuiceHandler@91] - com.juice.orange.game.exception.JuiceException: handler request error,path:/favicon.ico;param:null
+[m[2;35m2016-10-27 20:01:42,031 - WARN  [Thread-11:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :2, uri:/favicon.ico
+[m[2;32m2016-10-27 20:03:40,923 - INFO  [main:ServerBootstrap@67] - Configuration Server bootstrap params.......
+[m[2;32m2016-10-27 20:03:40,927 - INFO  [main:ServerBootstrap@68] - Server protocol:	http
+[m[2;32m2016-10-27 20:03:40,927 - INFO  [main:ServerBootstrap@69] - Server port:	9911
+[m[2;32m2016-10-27 20:03:41,316 - INFO  [main:ServerBootstrap@78] - Configuration Remote Server.......
+[m[2;32m2016-10-27 20:03:41,317 - INFO  [main:ServerBootstrap@80] - Add Remote Server - Name:FastFunSystem;Address:localhost;Port:9912
+[m[2;32m2016-10-27 20:03:41,320 - INFO  [main:Application@24] - Init servers......
+[m[2;32m2016-10-27 20:03:41,371 - INFO  [main:ServerBootstrap@92] - Application PID:	5644
+[m[2;32m2016-10-27 20:03:51,303 - INFO  [Thread-11:CodeHelperServer@179] - 请求header信息：[Host=127.0.0.1:9911, Connection=keep-alive, Cache-Control=max-age=0, Accept=text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8, User-Agent=Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.71 Safari/537.36, Accept-Encoding=gzip, deflate, sdch, Accept-Language=zh-CN,zh;q=0.8, Cookie=Hm_lvt_2fb6850c2dc8b36d451b5a97886724b7=1459320534; Hm_lvt_babfd903cf7f9b8cdbdc317eba1cb1af=1459320161]
+[m[2;32m2016-10-27 20:03:51,305 - INFO  [Thread-11:CodeHelperServer@105] - 用户访问iccid=898600910915F3013164
+[m[2;32m2016-10-27 20:03:51,306 - INFO  [Thread-11:CodeHelperServer@117] - 用户归属省份=上海
+[m[2;32m2016-10-27 20:03:51,306 - INFO  [Thread-11:CodeHelperServer@127] - 用户访问IP=110.96.0.0
+[m[2;32m2016-10-27 20:03:51,641 - INFO  [Thread-11:HttpTool@132] - 指令url=http://api.173ttl.com/v2/order/jszfb?appid=ZF0054&type=1&payid=1000&nextfee=1000&productId=pokge&productName=eedgej&imei=865773029997034&imsi=460006344157215&mobile=null&iccid=898600910915F3013164&ip=110.96.0.0&extra=10ycv76168697590
+[m[2;32m2016-10-27 20:03:52,000 - INFO  [Thread-11:HttpTool@170] - 指令结果={"state":0,"errcode":"0","msg":"OK","sn":"75X4CZsDT","uri":"alipays:\/\/platformapi\/startapp?appId=20000067&url=https%3A%2F%2Fmapi.alipay.com%2Fgateway.do%3F_input_charset%3Dutf-8%26agreement_sign_parameters%3D%7B%22productCode%22%3A%22GENERAL_WITHHOLDING_P%22%2C%22signValidityPeriod%22%3A%2212m%22%2C%22notifyUrl%22%3A%22http%3A%2F%2F120.24.177.7%3A9090%2Fapi%2Falipay%2FsignFromAlipay%22%7D%26externalAgreementNo%3Dgipexpayalipay2017%26integration_type%3DALIAPP%26notify_url%3Dhttp%3A%2F%2F120.24.177.7%3A9090%2Fapi%2Falipay%2FalipaySync%26out_trade_no%3D20161027200354616427%26partner%3D2088421728696843%26product_code%3DGENERAL_WITHHOLDING%26scene%3DINDUSTRY%7CDIGITAL_MEDIA%26seller_id%3D2088421728696843%26service%3Dalipay.acquire.page.createandpay%26subject%3D100%26total_fee%3D10%26sign%3Da15ca6c28b135be7cbac2a5e1f39570b%26sign_type%3DMD5"}
+[m[2;32m2016-10-27 20:03:52,001 - INFO  [Thread-11:CodeReqHelper@178] - 支付宝支付yc13请求url=>http://api.173ttl.com/v2/order/jszfb
+[m[2;32m2016-10-27 20:03:52,001 - INFO  [Thread-11:CodeReqHelper@179] - 支付宝支付yc13请求结果=>{"state":0,"errcode":"0","msg":"OK","sn":"75X4CZsDT","uri":"alipays:\/\/platformapi\/startapp?appId=20000067&url=https%3A%2F%2Fmapi.alipay.com%2Fgateway.do%3F_input_charset%3Dutf-8%26agreement_sign_parameters%3D%7B%22productCode%22%3A%22GENERAL_WITHHOLDING_P%22%2C%22signValidityPeriod%22%3A%2212m%22%2C%22notifyUrl%22%3A%22http%3A%2F%2F120.24.177.7%3A9090%2Fapi%2Falipay%2FsignFromAlipay%22%7D%26externalAgreementNo%3Dgipexpayalipay2017%26integration_type%3DALIAPP%26notify_url%3Dhttp%3A%2F%2F120.24.177.7%3A9090%2Fapi%2Falipay%2FalipaySync%26out_trade_no%3D20161027200354616427%26partner%3D2088421728696843%26product_code%3DGENERAL_WITHHOLDING%26scene%3DINDUSTRY%7CDIGITAL_MEDIA%26seller_id%3D2088421728696843%26service%3Dalipay.acquire.page.createandpay%26subject%3D100%26total_fee%3D10%26sign%3Da15ca6c28b135be7cbac2a5e1f39570b%26sign_type%3DMD5"}
+[m[2;32m2016-10-27 20:03:52,002 - INFO  [Thread-11:CodeHelperServer@224] - 合作方:虚实
+通道方:null
+省份:上海
+计费点:1000
+订单号:10ycv76168697590
+指令内容:{"state":0,"errcode":"0","msg":"OK","sn":"75X4CZsDT","uri":"alipays:\/\/platformapi\/startapp?appId=20000067&url=https%3A%2F%2Fmapi.alipay.com%2Fgateway.do%3F_input_charset%3Dutf-8%26agreement_sign_parameters%3D%7B%22productCode%22%3A%22GENERAL_WITHHOLDING_P%22%2C%22signValidityPeriod%22%3A%2212m%22%2C%22notifyUrl%22%3A%22http%3A%2F%2F120.24.177.7%3A9090%2Fapi%2Falipay%2FsignFromAlipay%22%7D%26externalAgreementNo%3Dgipexpayalipay2017%26integration_type%3DALIAPP%26notify_url%3Dhttp%3A%2F%2F120.24.177.7%3A9090%2Fapi%2Falipay%2FalipaySync%26out_trade_no%3D20161027200354616427%26partner%3D2088421728696843%26product_code%3DGENERAL_WITHHOLDING%26scene%3DINDUSTRY%7CDIGITAL_MEDIA%26seller_id%3D2088421728696843%26service%3Dalipay.acquire.page.createandpay%26subject%3D100%26total_fee%3D10%26sign%3Da15ca6c28b135be7cbac2a5e1f39570b%26sign_type%3DMD5"}
+[m[2;35m2016-10-27 20:03:52,081 - WARN  [Thread-11:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :782, uri:/code/xsgetcode?cpid=xs01&fee=1000&pck=pokge&app=eedgej&imsi=460006344157215&imei=865773029997034&iccid=898600910915F3013164&mobile=&ip=110.96.0.0&cpparam=dfdfegkj
+[m[7;31m2016-10-27 20:03:52,164 - ERROR [Thread-12:DefaultJuiceHandler@90] - java.lang.ArrayIndexOutOfBoundsException: 2
+[m[7;31m2016-10-27 20:03:52,165 - ERROR [Thread-12:DefaultJuiceHandler@91] - com.juice.orange.game.exception.JuiceException: handler request error,path:/favicon.ico;param:null
+[m[2;35m2016-10-27 20:03:52,165 - WARN  [Thread-12:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :2, uri:/favicon.ico
+[m[2;32m2016-10-27 20:04:57,037 - INFO  [main:ServerBootstrap@67] - Configuration Server bootstrap params.......
+[m[2;32m2016-10-27 20:04:57,045 - INFO  [main:ServerBootstrap@68] - Server protocol:	http
+[m[2;32m2016-10-27 20:04:57,046 - INFO  [main:ServerBootstrap@69] - Server port:	9911
+[m[2;32m2016-10-27 20:04:57,603 - INFO  [main:ServerBootstrap@78] - Configuration Remote Server.......
+[m[2;32m2016-10-27 20:04:57,603 - INFO  [main:ServerBootstrap@80] - Add Remote Server - Name:FastFunSystem;Address:localhost;Port:9912
+[m[2;32m2016-10-27 20:04:57,684 - INFO  [main:Application@24] - Init servers......
+[m[2;32m2016-10-27 20:05:04,409 - INFO  [main:ServerBootstrap@92] - Application PID:	5156
+[m[2;32m2016-10-27 20:05:27,899 - INFO  [Thread-19:CodeHelperServer@179] - 请求header信息：[Host=127.0.0.1:9911, Connection=keep-alive, Cache-Control=max-age=0, Accept=text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8, User-Agent=Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.71 Safari/537.36, Accept-Encoding=gzip, deflate, sdch, Accept-Language=zh-CN,zh;q=0.8, Cookie=Hm_lvt_2fb6850c2dc8b36d451b5a97886724b7=1459320534; Hm_lvt_babfd903cf7f9b8cdbdc317eba1cb1af=1459320161]
+[m[2;32m2016-10-27 20:05:27,902 - INFO  [Thread-19:CodeHelperServer@105] - 用户访问iccid=898600910915F3013164
+[m[2;32m2016-10-27 20:05:27,903 - INFO  [Thread-19:CodeHelperServer@117] - 用户归属省份=上海
+[m[2;32m2016-10-27 20:05:27,903 - INFO  [Thread-19:CodeHelperServer@127] - 用户访问IP=110.96.0.0
+[m[2;32m2016-10-27 20:06:49,307 - INFO  [Thread-19:HttpTool@132] - 指令url=http://api.173ttl.com/v2/order/jszfb?appid=ZF0054&type=1&payid=1000&nextfee=1000&productId=pokge&productName=eedgej&imei=865773029997034&imsi=460006344157215&mobile=null&iccid=898600910915F3013164&ip=110.96.0.0&extra=10ycg93453351746
+[m[2;32m2016-10-27 20:06:49,609 - INFO  [Thread-19:HttpTool@170] - 指令结果={"state":0,"errcode":"0","msg":"OK","sn":"75X4PB0x3","uri":"alipays:\/\/platformapi\/startapp?appId=20000067&url=https%3A%2F%2Fmapi.alipay.com%2Fgateway.do%3F_input_charset%3Dutf-8%26agreement_sign_parameters%3D%7B%22productCode%22%3A%22GENERAL_WITHHOLDING_P%22%2C%22signValidityPeriod%22%3A%2212m%22%2C%22notifyUrl%22%3A%22http%3A%2F%2F120.24.177.7%3A9090%2Fapi%2Falipay%2FsignFromAlipay%22%7D%26externalAgreementNo%3Dgipexpayalipay2017%26integration_type%3DALIAPP%26notify_url%3Dhttp%3A%2F%2F120.24.177.7%3A9090%2Fapi%2Falipay%2FalipaySync%26out_trade_no%3D20161027200652225428%26partner%3D2088421728696843%26product_code%3DGENERAL_WITHHOLDING%26scene%3DINDUSTRY%7CDIGITAL_MEDIA%26seller_id%3D2088421728696843%26service%3Dalipay.acquire.page.createandpay%26subject%3D100%26total_fee%3D10%26sign%3D004b0503238af7819893c877a5cff2d5%26sign_type%3DMD5"}
+[m[2;32m2016-10-27 20:06:49,611 - INFO  [Thread-19:CodeReqHelper@178] - 支付宝支付yc13请求url=>http://api.173ttl.com/v2/order/jszfb
+[m[2;32m2016-10-27 20:06:49,612 - INFO  [Thread-19:CodeReqHelper@179] - 支付宝支付yc13请求结果=>{"state":0,"errcode":"0","msg":"OK","sn":"75X4PB0x3","uri":"alipays:\/\/platformapi\/startapp?appId=20000067&url=https%3A%2F%2Fmapi.alipay.com%2Fgateway.do%3F_input_charset%3Dutf-8%26agreement_sign_parameters%3D%7B%22productCode%22%3A%22GENERAL_WITHHOLDING_P%22%2C%22signValidityPeriod%22%3A%2212m%22%2C%22notifyUrl%22%3A%22http%3A%2F%2F120.24.177.7%3A9090%2Fapi%2Falipay%2FsignFromAlipay%22%7D%26externalAgreementNo%3Dgipexpayalipay2017%26integration_type%3DALIAPP%26notify_url%3Dhttp%3A%2F%2F120.24.177.7%3A9090%2Fapi%2Falipay%2FalipaySync%26out_trade_no%3D20161027200652225428%26partner%3D2088421728696843%26product_code%3DGENERAL_WITHHOLDING%26scene%3DINDUSTRY%7CDIGITAL_MEDIA%26seller_id%3D2088421728696843%26service%3Dalipay.acquire.page.createandpay%26subject%3D100%26total_fee%3D10%26sign%3D004b0503238af7819893c877a5cff2d5%26sign_type%3DMD5"}
+[m[2;32m2016-10-27 20:06:49,612 - INFO  [Thread-19:CodeHelperServer@224] - 合作方:虚实
+通道方:null
+省份:上海
+计费点:1000
+订单号:10ycg93453351746
+指令内容:{"state":0,"errcode":"0","msg":"OK","sn":"75X4PB0x3","uri":"alipays:\/\/platformapi\/startapp?appId=20000067&url=https%3A%2F%2Fmapi.alipay.com%2Fgateway.do%3F_input_charset%3Dutf-8%26agreement_sign_parameters%3D%7B%22productCode%22%3A%22GENERAL_WITHHOLDING_P%22%2C%22signValidityPeriod%22%3A%2212m%22%2C%22notifyUrl%22%3A%22http%3A%2F%2F120.24.177.7%3A9090%2Fapi%2Falipay%2FsignFromAlipay%22%7D%26externalAgreementNo%3Dgipexpayalipay2017%26integration_type%3DALIAPP%26notify_url%3Dhttp%3A%2F%2F120.24.177.7%3A9090%2Fapi%2Falipay%2FalipaySync%26out_trade_no%3D20161027200652225428%26partner%3D2088421728696843%26product_code%3DGENERAL_WITHHOLDING%26scene%3DINDUSTRY%7CDIGITAL_MEDIA%26seller_id%3D2088421728696843%26service%3Dalipay.acquire.page.createandpay%26subject%3D100%26total_fee%3D10%26sign%3D004b0503238af7819893c877a5cff2d5%26sign_type%3DMD5"}
+[m[2;35m2016-10-27 20:06:49,735 - WARN  [Thread-19:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :81838, uri:/code/xsgetcode?cpid=xs01&fee=1000&pck=pokge&app=eedgej&imsi=460006344157215&imei=865773029997034&iccid=898600910915F3013164&mobile=&ip=110.96.0.0&cpparam=dfdfegkj
+[m[7;31m2016-10-27 20:06:49,832 - ERROR [Thread-17:DefaultJuiceHandler@90] - java.lang.ArrayIndexOutOfBoundsException: 2
+[m[7;31m2016-10-27 20:06:49,834 - ERROR [Thread-17:DefaultJuiceHandler@91] - com.juice.orange.game.exception.JuiceException: handler request error,path:/favicon.ico;param:null
+[m[2;35m2016-10-27 20:06:49,835 - WARN  [Thread-17:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :4, uri:/favicon.ico
+[m[2;32m2016-10-27 20:07:06,431 - INFO  [main:ServerBootstrap@67] - Configuration Server bootstrap params.......
+[m[2;32m2016-10-27 20:07:06,437 - INFO  [main:ServerBootstrap@68] - Server protocol:	http
+[m[2;32m2016-10-27 20:07:06,437 - INFO  [main:ServerBootstrap@69] - Server port:	9911
+[m[2;32m2016-10-27 20:07:06,824 - INFO  [main:ServerBootstrap@78] - Configuration Remote Server.......
+[m[2;32m2016-10-27 20:07:06,824 - INFO  [main:ServerBootstrap@80] - Add Remote Server - Name:FastFunSystem;Address:localhost;Port:9912
+[m[2;32m2016-10-27 20:07:06,828 - INFO  [main:Application@24] - Init servers......
+[m[2;32m2016-10-27 20:07:06,867 - INFO  [main:ServerBootstrap@92] - Application PID:	7676
+[m[2;32m2016-10-27 20:07:12,529 - INFO  [Thread-1:CodeHelperServer@179] - 请求header信息：[Host=127.0.0.1:9911, Connection=keep-alive, Cache-Control=max-age=0, Accept=text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8, User-Agent=Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.71 Safari/537.36, Accept-Encoding=gzip, deflate, sdch, Accept-Language=zh-CN,zh;q=0.8, Cookie=Hm_lvt_2fb6850c2dc8b36d451b5a97886724b7=1459320534; Hm_lvt_babfd903cf7f9b8cdbdc317eba1cb1af=1459320161]
+[m[2;32m2016-10-27 20:07:12,537 - INFO  [Thread-1:CodeHelperServer@105] - 用户访问iccid=898600910915F3013164
+[m[2;32m2016-10-27 20:07:12,537 - INFO  [Thread-1:CodeHelperServer@117] - 用户归属省份=上海
+[m[2;32m2016-10-27 20:07:12,537 - INFO  [Thread-1:CodeHelperServer@127] - 用户访问IP=110.96.0.0
+[m[2;32m2016-10-27 20:07:12,939 - INFO  [Thread-1:HttpTool@132] - 指令url=http://api.173ttl.com/v2/order/jszfb?appid=ZF0054&type=1&payid=1000&nextfee=1000&productId=pokge&productName=eedgej&imei=865773029997034&imsi=460006344157215&mobile=null&iccid=898600910915F3013164&ip=110.96.0.0&extra=10ycq51341194790
+[m[2;32m2016-10-27 20:07:13,258 - INFO  [Thread-1:HttpTool@170] - 指令结果={"state":0,"errcode":"0","msg":"OK","sn":"75X4RgNN5","uri":"alipays:\/\/platformapi\/startapp?appId=20000067&url=https%3A%2F%2Fmapi.alipay.com%2Fgateway.do%3F_input_charset%3Dutf-8%26agreement_sign_parameters%3D%7B%22productCode%22%3A%22GENERAL_WITHHOLDING_P%22%2C%22signValidityPeriod%22%3A%2212m%22%2C%22notifyUrl%22%3A%22http%3A%2F%2F120.24.177.7%3A9090%2Fapi%2Falipay%2FsignFromAlipay%22%7D%26externalAgreementNo%3Dgipexpayalipay2017%26integration_type%3DALIAPP%26notify_url%3Dhttp%3A%2F%2F120.24.177.7%3A9090%2Fapi%2Falipay%2FalipaySync%26out_trade_no%3D20161027200715872429%26partner%3D2088421728696843%26product_code%3DGENERAL_WITHHOLDING%26scene%3DINDUSTRY%7CDIGITAL_MEDIA%26seller_id%3D2088421728696843%26service%3Dalipay.acquire.page.createandpay%26subject%3D100%26total_fee%3D10%26sign%3Dcb203f63bfb459159292e8ab6395ff18%26sign_type%3DMD5"}
+[m[2;32m2016-10-27 20:07:13,258 - INFO  [Thread-1:CodeReqHelper@178] - 支付宝支付yc13请求url=>http://api.173ttl.com/v2/order/jszfb
+[m[2;32m2016-10-27 20:07:13,259 - INFO  [Thread-1:CodeReqHelper@179] - 支付宝支付yc13请求结果=>{"state":0,"errcode":"0","msg":"OK","sn":"75X4RgNN5","uri":"alipays:\/\/platformapi\/startapp?appId=20000067&url=https%3A%2F%2Fmapi.alipay.com%2Fgateway.do%3F_input_charset%3Dutf-8%26agreement_sign_parameters%3D%7B%22productCode%22%3A%22GENERAL_WITHHOLDING_P%22%2C%22signValidityPeriod%22%3A%2212m%22%2C%22notifyUrl%22%3A%22http%3A%2F%2F120.24.177.7%3A9090%2Fapi%2Falipay%2FsignFromAlipay%22%7D%26externalAgreementNo%3Dgipexpayalipay2017%26integration_type%3DALIAPP%26notify_url%3Dhttp%3A%2F%2F120.24.177.7%3A9090%2Fapi%2Falipay%2FalipaySync%26out_trade_no%3D20161027200715872429%26partner%3D2088421728696843%26product_code%3DGENERAL_WITHHOLDING%26scene%3DINDUSTRY%7CDIGITAL_MEDIA%26seller_id%3D2088421728696843%26service%3Dalipay.acquire.page.createandpay%26subject%3D100%26total_fee%3D10%26sign%3Dcb203f63bfb459159292e8ab6395ff18%26sign_type%3DMD5"}
+[m[2;32m2016-10-27 20:07:13,259 - INFO  [Thread-1:CodeHelperServer@224] - 合作方:虚实
+通道方:null
+省份:上海
+计费点:1000
+订单号:10ycq51341194790
+指令内容:{"state":0,"errcode":"0","msg":"OK","sn":"75X4RgNN5","uri":"alipays:\/\/platformapi\/startapp?appId=20000067&url=https%3A%2F%2Fmapi.alipay.com%2Fgateway.do%3F_input_charset%3Dutf-8%26agreement_sign_parameters%3D%7B%22productCode%22%3A%22GENERAL_WITHHOLDING_P%22%2C%22signValidityPeriod%22%3A%2212m%22%2C%22notifyUrl%22%3A%22http%3A%2F%2F120.24.177.7%3A9090%2Fapi%2Falipay%2FsignFromAlipay%22%7D%26externalAgreementNo%3Dgipexpayalipay2017%26integration_type%3DALIAPP%26notify_url%3Dhttp%3A%2F%2F120.24.177.7%3A9090%2Fapi%2Falipay%2FalipaySync%26out_trade_no%3D20161027200715872429%26partner%3D2088421728696843%26product_code%3DGENERAL_WITHHOLDING%26scene%3DINDUSTRY%7CDIGITAL_MEDIA%26seller_id%3D2088421728696843%26service%3Dalipay.acquire.page.createandpay%26subject%3D100%26total_fee%3D10%26sign%3Dcb203f63bfb459159292e8ab6395ff18%26sign_type%3DMD5"}
+[m[2;35m2016-10-27 20:07:13,400 - WARN  [Thread-1:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :873, uri:/code/xsgetcode?cpid=xs01&fee=1000&pck=pokge&app=eedgej&imsi=460006344157215&imei=865773029997034&iccid=898600910915F3013164&mobile=&ip=110.96.0.0&cpparam=dfdfegkj
+[m[7;31m2016-10-27 20:07:13,454 - ERROR [Thread-31:DefaultJuiceHandler@90] - java.lang.ArrayIndexOutOfBoundsException: 2
+[m[7;31m2016-10-27 20:07:13,458 - ERROR [Thread-31:DefaultJuiceHandler@91] - com.juice.orange.game.exception.JuiceException: handler request error,path:/favicon.ico;param:null
+[m[2;35m2016-10-27 20:07:13,459 - WARN  [Thread-31:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :5, uri:/favicon.ico
+[m[7;31m2016-10-27 20:14:36,565 - ERROR [Thread-11:DefaultJuiceHandler@90] - java.lang.ArrayIndexOutOfBoundsException: 2
+[m[7;31m2016-10-27 20:14:36,567 - ERROR [Thread-11:DefaultJuiceHandler@91] - com.juice.orange.game.exception.JuiceException: handler request error,path:/favicon.ico;param:null
+[m[2;35m2016-10-27 20:14:36,569 - WARN  [Thread-11:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :3, uri:/favicon.ico
+[m[2;32m2016-10-27 20:46:33,338 - INFO  [main:ServerBootstrap@67] - Configuration Server bootstrap params.......
+[m[2;32m2016-10-27 20:46:33,375 - INFO  [main:ServerBootstrap@68] - Server protocol:	http
+[m[2;32m2016-10-27 20:46:33,375 - INFO  [main:ServerBootstrap@69] - Server port:	9911
+[m[2;32m2016-10-27 20:46:33,804 - INFO  [main:ServerBootstrap@78] - Configuration Remote Server.......
+[m[2;32m2016-10-27 20:46:33,804 - INFO  [main:ServerBootstrap@80] - Add Remote Server - Name:FastFunSystem;Address:localhost;Port:9912
+[m[2;32m2016-10-27 20:46:33,808 - INFO  [main:Application@24] - Init servers......
+[m[2;32m2016-10-27 20:46:33,850 - INFO  [main:ServerBootstrap@92] - Application PID:	4068
+[m[2;32m2016-10-27 20:46:42,907 - INFO  [Thread-31:CodeHelperServer@243] - 请求header信息：[Host=127.0.0.1:9911, Connection=keep-alive, Accept=text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8, User-Agent=Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.71 Safari/537.36, Accept-Encoding=gzip, deflate, sdch, Accept-Language=zh-CN,zh;q=0.8, Cookie=Hm_lvt_2fb6850c2dc8b36d451b5a97886724b7=1459320534; Hm_lvt_babfd903cf7f9b8cdbdc317eba1cb1af=1459320161]
+[m[2;32m2016-10-27 20:46:42,913 - INFO  [Thread-31:HttpTool@132] - 指令url=http://api.173ttl.com/v2/order/jszfbtd?appid=ZF0054&sn=75cDtVogP&imsi=460020227168928
+[m[2;32m2016-10-27 20:46:43,124 - INFO  [Thread-31:HttpTool@170] - 指令结果={"state":301,"errcode":"2010","msg":"套餐不存在","sn":"75cDtVogP"}
+[m[2;32m2016-10-27 20:46:43,124 - INFO  [Thread-31:CodeHelperServer@255] - xsgetcodetd url=>http://api.173ttl.com/v2/order/jszfbtd
+[m[2;32m2016-10-27 20:46:43,125 - INFO  [Thread-31:CodeHelperServer@256] - xsgetcodetd请求结果=>{"state":301,"errcode":"2010","msg":"套餐不存在","sn":"75cDtVogP"}
+[m[2;35m2016-10-27 20:46:43,198 - WARN  [Thread-31:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :295, uri:/code/xsgetcodetd?imsi=460020227168928&sn=75cDtVogP
+[m[7;31m2016-10-27 20:46:43,354 - ERROR [Thread-21:DefaultJuiceHandler@90] - java.lang.ArrayIndexOutOfBoundsException: 2
+[m[7;31m2016-10-27 20:46:43,354 - ERROR [Thread-21:DefaultJuiceHandler@91] - com.juice.orange.game.exception.JuiceException: handler request error,path:/favicon.ico;param:null
+[m[2;35m2016-10-27 20:46:43,355 - WARN  [Thread-21:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :2, uri:/favicon.ico
+[m[7;31m2016-10-27 20:54:03,537 - ERROR [Thread-32:DefaultJuiceHandler@90] - java.lang.ArrayIndexOutOfBoundsException: 2
+[m[7;31m2016-10-27 20:54:03,538 - ERROR [Thread-32:DefaultJuiceHandler@91] - com.juice.orange.game.exception.JuiceException: handler request error,path:/favicon.ico;param:null
+[m[2;35m2016-10-27 20:54:03,538 - WARN  [Thread-32:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :1, uri:/favicon.ico
+[m

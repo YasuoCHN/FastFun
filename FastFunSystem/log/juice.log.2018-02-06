@@ -1,0 +1,108 @@
+[2;32m2018-02-06 00:15:25,558 - INFO  [main:ServerBootstrap@99] - connect to database:jdbc:mysql://119.23.172.103:3306/actual?useUnicode=true&characterEncoding=UTF-8
+[m[2;32m2018-02-06 00:15:26,271 - INFO  [main:ServerBootstrap@125] - Configuration Server bootstrap params.......
+[m[2;32m2018-02-06 00:15:26,271 - INFO  [main:ServerBootstrap@126] - Server protocol:	socket
+[m[2;32m2018-02-06 00:15:26,272 - INFO  [main:ServerBootstrap@127] - Server port:	9912
+[m[2;35m2018-02-06 00:15:26,489 - WARN  [main:XMemcachedClient@727] - XMemcachedClient use Binary protocol
+[m[2;32m2018-02-06 00:15:26,512 - INFO  [main:SelectorManager@37] - Creating 16 reactors...
+[m[2;35m2018-02-06 00:15:26,522 - WARN  [main:AbstractController@372] - The Controller started at localhost/127.0.0.1:0 ...
+[m[2;35m2018-02-06 00:15:26,531 - WARN  [Xmemcached-Reactor-0:MemcachedConnector@251] - Add a session: 127.0.0.1:11211
+[m[2;32m2018-02-06 00:15:26,532 - INFO  [main:Application@25] - 初始化AO...
+[m[2;32m2018-02-06 00:15:26,543 - INFO  [main:ServerBootstrap@150] - Application PID:	13272
+[m[2;35m2018-02-06 00:15:35,278 - WARN  [Thread-112:JuiceThreadPool$JuiceWorkThread@108] - RPC method start time :19, action:com.klw.fastfun.pay.common.action.CommonAction, method:getPollOtherPayCodes
+[m[7;31m2018-02-06 00:16:44,264 - ERROR [JUICE-SERVER-Handler-4-2-thread:ConnectionException@22] - uncaughtException :
+[mcom.juice.orange.game.exception.JuiceException: 远程主机强迫关闭了一个现有的连接。 on [id: 0x4b5ee81a, /127.0.0.1:50226 => /127.0.0.1:9912]
+	at com.juice.orange.game.exception.JuiceException.fromException(JuiceException.java:38)
+	at com.juice.orange.game.exception.JuiceException.fromExceptionEvent(JuiceException.java:32)
+	at com.juice.orange.game.util.ConnectionHelper$2.run(ConnectionHelper.java:56)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: java.io.IOException: 远程主机强迫关闭了一个现有的连接。
+	at sun.nio.ch.SocketDispatcher.read0(Native Method)
+	at sun.nio.ch.SocketDispatcher.read(Unknown Source)
+	at sun.nio.ch.IOUtil.readIntoNativeBuffer(Unknown Source)
+	at sun.nio.ch.IOUtil.read(Unknown Source)
+	at sun.nio.ch.SocketChannelImpl.read(Unknown Source)
+	at org.jboss.netty.channel.socket.nio.NioWorker.read(NioWorker.java:64)
+	at org.jboss.netty.channel.socket.nio.AbstractNioWorker.process(AbstractNioWorker.java:107)
+	at org.jboss.netty.channel.socket.nio.AbstractNioSelector.run(AbstractNioSelector.java:312)
+	at org.jboss.netty.channel.socket.nio.AbstractNioWorker.run(AbstractNioWorker.java:88)
+	at org.jboss.netty.channel.socket.nio.NioWorker.run(NioWorker.java:178)
+	... 3 more
+[7;31m2018-02-06 00:16:44,267 - ERROR [JUICE-SERVER-Handler-4-2-thread:ConnectionException@22] - uncaughtException :
+[mcom.juice.orange.game.exception.JuiceException: 远程主机强迫关闭了一个现有的连接。 on [id: 0x545a78d8, /127.0.0.1:50228 => /127.0.0.1:9912]
+	at com.juice.orange.game.exception.JuiceException.fromException(JuiceException.java:38)
+	at com.juice.orange.game.exception.JuiceException.fromExceptionEvent(JuiceException.java:32)
+	at com.juice.orange.game.util.ConnectionHelper$2.run(ConnectionHelper.java:56)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: java.io.IOException: 远程主机强迫关闭了一个现有的连接。
+	at sun.nio.ch.SocketDispatcher.read0(Native Method)
+	at sun.nio.ch.SocketDispatcher.read(Unknown Source)
+	at sun.nio.ch.IOUtil.readIntoNativeBuffer(Unknown Source)
+	at sun.nio.ch.IOUtil.read(Unknown Source)
+	at sun.nio.ch.SocketChannelImpl.read(Unknown Source)
+	at org.jboss.netty.channel.socket.nio.NioWorker.read(NioWorker.java:64)
+	at org.jboss.netty.channel.socket.nio.AbstractNioWorker.process(AbstractNioWorker.java:107)
+	at org.jboss.netty.channel.socket.nio.AbstractNioSelector.run(AbstractNioSelector.java:312)
+	at org.jboss.netty.channel.socket.nio.AbstractNioWorker.run(AbstractNioWorker.java:88)
+	at org.jboss.netty.channel.socket.nio.NioWorker.run(NioWorker.java:178)
+	... 3 more
+[7;31m2018-02-06 00:16:44,267 - ERROR [JUICE-SERVER-Handler-4-3-thread:ConnectionException@22] - uncaughtException :
+[mcom.juice.orange.game.exception.JuiceException: 远程主机强迫关闭了一个现有的连接。 on [id: 0x21d066ec, /127.0.0.1:50227 => /127.0.0.1:9912]
+	at com.juice.orange.game.exception.JuiceException.fromException(JuiceException.java:38)
+	at com.juice.orange.game.exception.JuiceException.fromExceptionEvent(JuiceException.java:32)
+	at com.juice.orange.game.util.ConnectionHelper$2.run(ConnectionHelper.java:56)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: java.io.IOException: 远程主机强迫关闭了一个现有的连接。
+	at sun.nio.ch.SocketDispatcher.read0(Native Method)
+	at sun.nio.ch.SocketDispatcher.read(Unknown Source)
+	at sun.nio.ch.IOUtil.readIntoNativeBuffer(Unknown Source)
+	at sun.nio.ch.IOUtil.read(Unknown Source)
+	at sun.nio.ch.SocketChannelImpl.read(Unknown Source)
+	at org.jboss.netty.channel.socket.nio.NioWorker.read(NioWorker.java:64)
+	at org.jboss.netty.channel.socket.nio.AbstractNioWorker.process(AbstractNioWorker.java:107)
+	at org.jboss.netty.channel.socket.nio.AbstractNioSelector.run(AbstractNioSelector.java:312)
+	at org.jboss.netty.channel.socket.nio.AbstractNioWorker.run(AbstractNioWorker.java:88)
+	at org.jboss.netty.channel.socket.nio.NioWorker.run(NioWorker.java:178)
+	... 3 more
+[2;32m2018-02-06 00:17:38,931 - INFO  [main:ServerBootstrap@99] - connect to database:jdbc:mysql://119.23.172.103:3306/actual?useUnicode=true&characterEncoding=UTF-8
+[m[2;32m2018-02-06 00:17:39,426 - INFO  [main:ServerBootstrap@125] - Configuration Server bootstrap params.......
+[m[2;32m2018-02-06 00:17:39,426 - INFO  [main:ServerBootstrap@126] - Server protocol:	socket
+[m[2;32m2018-02-06 00:17:39,426 - INFO  [main:ServerBootstrap@127] - Server port:	9912
+[m[2;35m2018-02-06 00:17:39,661 - WARN  [main:XMemcachedClient@727] - XMemcachedClient use Binary protocol
+[m[2;32m2018-02-06 00:17:39,678 - INFO  [main:SelectorManager@37] - Creating 16 reactors...
+[m[2;35m2018-02-06 00:17:39,688 - WARN  [main:AbstractController@372] - The Controller started at localhost/127.0.0.1:0 ...
+[m[2;35m2018-02-06 00:17:39,696 - WARN  [Xmemcached-Reactor-0:MemcachedConnector@251] - Add a session: 127.0.0.1:11211
+[m[2;32m2018-02-06 00:17:39,697 - INFO  [main:Application@25] - 初始化AO...
+[m[2;32m2018-02-06 00:17:39,706 - INFO  [main:ServerBootstrap@150] - Application PID:	392
+[m[2;35m2018-02-06 00:17:42,791 - WARN  [Thread-152:JuiceThreadPool$JuiceWorkThread@108] - RPC method start time :24, action:com.klw.fastfun.pay.common.action.CommonAction, method:getPollOtherPayCodes
+[m[2;35m2018-02-06 00:17:42,887 - WARN  [Thread-82:JuiceThreadPool$JuiceWorkThread@108] - RPC method start time :19, action:com.klw.fastfun.pay.common.action.CommonAction, method:addOtherOrderReqInfo
+[m[2;32m2018-02-06 00:23:21,158 - INFO  [main:ServerBootstrap@99] - connect to database:jdbc:mysql://119.23.172.103:3306/actual?useUnicode=true&characterEncoding=UTF-8
+[m[2;32m2018-02-06 00:23:21,546 - INFO  [main:ServerBootstrap@125] - Configuration Server bootstrap params.......
+[m[2;32m2018-02-06 00:23:21,546 - INFO  [main:ServerBootstrap@126] - Server protocol:	socket
+[m[2;32m2018-02-06 00:23:21,546 - INFO  [main:ServerBootstrap@127] - Server port:	9912
+[m[2;35m2018-02-06 00:23:21,784 - WARN  [main:XMemcachedClient@727] - XMemcachedClient use Binary protocol
+[m[2;32m2018-02-06 00:23:21,800 - INFO  [main:SelectorManager@37] - Creating 16 reactors...
+[m[2;35m2018-02-06 00:23:21,808 - WARN  [main:AbstractController@372] - The Controller started at localhost/127.0.0.1:0 ...
+[m[2;35m2018-02-06 00:23:21,815 - WARN  [Xmemcached-Reactor-0:MemcachedConnector@251] - Add a session: 127.0.0.1:11211
+[m[2;32m2018-02-06 00:23:21,815 - INFO  [main:Application@25] - 初始化AO...
+[m[2;32m2018-02-06 00:23:21,823 - INFO  [main:ServerBootstrap@150] - Application PID:	10168
+[m[2;35m2018-02-06 00:23:25,109 - WARN  [Thread-32:JuiceThreadPool$JuiceWorkThread@108] - RPC method start time :24, action:com.klw.fastfun.pay.common.action.CommonAction, method:getPollOtherPayCodes
+[m[2;35m2018-02-06 00:23:25,193 - WARN  [Thread-142:JuiceThreadPool$JuiceWorkThread@108] - RPC method start time :18, action:com.klw.fastfun.pay.common.action.CommonAction, method:addOtherOrderReqInfo
+[m[2;32m2018-02-06 00:25:27,225 - INFO  [main:ServerBootstrap@99] - connect to database:jdbc:mysql://119.23.172.103:3306/actual?useUnicode=true&characterEncoding=UTF-8
+[m[2;32m2018-02-06 00:25:27,646 - INFO  [main:ServerBootstrap@125] - Configuration Server bootstrap params.......
+[m[2;32m2018-02-06 00:25:27,646 - INFO  [main:ServerBootstrap@126] - Server protocol:	socket
+[m[2;32m2018-02-06 00:25:27,646 - INFO  [main:ServerBootstrap@127] - Server port:	9912
+[m[2;35m2018-02-06 00:25:27,877 - WARN  [main:XMemcachedClient@727] - XMemcachedClient use Binary protocol
+[m[2;32m2018-02-06 00:25:27,894 - INFO  [main:SelectorManager@37] - Creating 16 reactors...
+[m[2;35m2018-02-06 00:25:27,902 - WARN  [main:AbstractController@372] - The Controller started at localhost/127.0.0.1:0 ...
+[m[2;35m2018-02-06 00:25:27,908 - WARN  [Xmemcached-Reactor-0:MemcachedConnector@251] - Add a session: 127.0.0.1:11211
+[m[2;32m2018-02-06 00:25:27,909 - INFO  [main:Application@25] - 初始化AO...
+[m[2;32m2018-02-06 00:25:27,917 - INFO  [main:ServerBootstrap@150] - Application PID:	10868
+[m[2;35m2018-02-06 00:25:31,236 - WARN  [Thread-102:JuiceThreadPool$JuiceWorkThread@108] - RPC method start time :30, action:com.klw.fastfun.pay.common.action.CommonAction, method:getPollOtherPayCodes
+[m[2;35m2018-02-06 00:25:31,314 - WARN  [Thread-2:JuiceThreadPool$JuiceWorkThread@108] - RPC method start time :15, action:com.klw.fastfun.pay.common.action.CommonAction, method:addOtherOrderReqInfo
+[m

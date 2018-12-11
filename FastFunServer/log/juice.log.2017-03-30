@@ -1,0 +1,144 @@
+[2;32m2017-03-30 13:52:53,990 - INFO  [main:ServerBootstrap@67] - Configuration Server bootstrap params.......
+[m[2;32m2017-03-30 13:52:54,005 - INFO  [main:ServerBootstrap@68] - Server protocol:	http
+[m[2;32m2017-03-30 13:52:54,005 - INFO  [main:ServerBootstrap@69] - Server port:	9911
+[m[2;32m2017-03-30 13:52:54,786 - INFO  [main:ServerBootstrap@78] - Configuration Remote Server.......
+[m[2;32m2017-03-30 13:52:54,786 - INFO  [main:ServerBootstrap@80] - Add Remote Server - Name:FastFunSystem;Address:localhost;Port:9912
+[m[2;32m2017-03-30 13:52:54,802 - INFO  [main:Application@25] - Init servers......
+[m[2;32m2017-03-30 13:52:54,943 - INFO  [main:ServerBootstrap@92] - Application PID:	9388
+[m[2;32m2017-03-30 13:57:12,593 - INFO  [Thread-12:CodeHelperServer@436] - registerUser请求header信息：[Host=127.0.0.1:9911, Connection=keep-alive, Accept=text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8, User-Agent=Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.71 Safari/537.36, Accept-Encoding=gzip, deflate, sdch, Accept-Language=zh-CN,zh;q=0.8, Cookie=Hm_lvt_2fb6850c2dc8b36d451b5a97886724b7=1459320534; Hm_lvt_babfd903cf7f9b8cdbdc317eba1cb1af=1490240584]
+[m[2;32m2017-03-30 13:57:12,595 - INFO  [Thread-12:CodeHelperServer@1145] - 用户访问IP=127.0.0.1
+[m[2;32m2017-03-30 13:57:12,613 - INFO  [Thread-12:CodeHelperServer@1149] - 根据IP查询省份=IA
+[m[7;31m2017-03-30 13:57:12,616 - ERROR [Thread-12:CommonTool@111] - 根据IMSI获取手机号码类型错误
+[m[2;35m2017-03-30 13:57:13,462 - WARN  [Thread-12:CodeHelperServer@451] - 没有注册通道
+[m[2;35m2017-03-30 13:57:13,504 - WARN  [Thread-12:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :915, uri:/code/registerUser?cpid=test08&username=19059444&password=a12953542&phone=13762143362&cpparm=12345
+[m[7;31m2017-03-30 13:57:13,526 - ERROR [JUICE-SERVER-Handler-4-1-thread:ConnectionException@22] - uncaughtException :
+[mcom.juice.orange.game.exception.JuiceException: cannot send more responses than requests on [id: 0x8ed2b2c7, /127.0.0.1:58496 => /127.0.0.1:9911]
+	at com.juice.orange.game.exception.JuiceException.fromException(JuiceException.java:38)
+	at com.juice.orange.game.exception.JuiceException.fromExceptionEvent(JuiceException.java:32)
+	at com.juice.orange.game.util.ConnectionHelper$2.run(ConnectionHelper.java:56)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: java.lang.IllegalStateException: cannot send more responses than requests
+	at org.jboss.netty.handler.codec.http.HttpContentEncoder.writeRequested(HttpContentEncoder.java:100)
+	at org.jboss.netty.channel.Channels.write(Channels.java:704)
+	at org.jboss.netty.channel.Channels.write(Channels.java:671)
+	at org.jboss.netty.channel.AbstractChannel.write(AbstractChannel.java:248)
+	at com.juice.orange.game.handler.JuiceHttpResponse.write(JuiceHttpResponse.java:136)
+	at com.juice.orange.game.handler.JuiceHttpResponse.flushResponse(JuiceHttpResponse.java:169)
+	at com.juice.orange.game.handler.JuiceHttpResponse.end(JuiceHttpResponse.java:181)
+	at com.klw.fastfun.pay.view.app.service.CodeHelperServer.registerUser(CodeHelperServer.java:489)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at com.juice.orange.game.handler.DefaultJuiceHandler.handleHttpRequest(DefaultJuiceHandler.java:81)
+	at com.juice.orange.game.handler.DefaultJuiceHandler.handlerRequest(DefaultJuiceHandler.java:35)
+	at com.juice.orange.game.handler.JuiceHttpControl.nextHandler(JuiceHttpControl.java:84)
+	at com.juice.orange.game.handler.JuiceHttpControl.nextHandler(JuiceHttpControl.java:67)
+	at com.juice.orange.game.util.threadpool.JuiceThreadPool$JuiceWorkThread.run(JuiceThreadPool.java:70)
+[7;31m2017-03-30 13:57:13,583 - ERROR [Thread-14:DefaultJuiceHandler@90] - java.lang.ArrayIndexOutOfBoundsException: 2
+[m[7;31m2017-03-30 13:57:13,585 - ERROR [Thread-14:DefaultJuiceHandler@91] - com.juice.orange.game.exception.JuiceException: handler request error,path:/favicon.ico;param:null
+[m[2;35m2017-03-30 13:57:13,592 - WARN  [Thread-14:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :11, uri:/favicon.ico
+[m[2;32m2017-03-30 13:58:15,104 - INFO  [main:ServerBootstrap@67] - Configuration Server bootstrap params.......
+[m[2;32m2017-03-30 13:58:15,104 - INFO  [main:ServerBootstrap@68] - Server protocol:	http
+[m[2;32m2017-03-30 13:58:15,104 - INFO  [main:ServerBootstrap@69] - Server port:	9911
+[m[2;32m2017-03-30 13:58:15,650 - INFO  [main:ServerBootstrap@78] - Configuration Remote Server.......
+[m[2;32m2017-03-30 13:58:15,650 - INFO  [main:ServerBootstrap@80] - Add Remote Server - Name:FastFunSystem;Address:localhost;Port:9912
+[m[2;32m2017-03-30 13:58:15,650 - INFO  [main:Application@25] - Init servers......
+[m[2;32m2017-03-30 13:58:15,720 - INFO  [main:ServerBootstrap@92] - Application PID:	10868
+[m[2;32m2017-03-30 13:58:46,145 - INFO  [Thread-21:CodeHelperServer@436] - registerUser请求header信息：[Host=127.0.0.1:9911, Connection=keep-alive, Cache-Control=max-age=0, Accept=text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8, User-Agent=Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.71 Safari/537.36, Accept-Encoding=gzip, deflate, sdch, Accept-Language=zh-CN,zh;q=0.8, Cookie=Hm_lvt_2fb6850c2dc8b36d451b5a97886724b7=1459320534; Hm_lvt_babfd903cf7f9b8cdbdc317eba1cb1af=1490240584]
+[m[2;32m2017-03-30 13:58:46,153 - INFO  [Thread-21:CodeHelperServer@1143] - 用户访问IP=127.0.0.1
+[m[2;32m2017-03-30 13:58:46,171 - INFO  [Thread-21:CodeHelperServer@1147] - 根据IP查询省份=IA
+[m[2;35m2017-03-30 13:58:47,018 - WARN  [Thread-21:CodeHelperServer@449] - 没有注册通道
+[m[2;35m2017-03-30 13:58:47,170 - WARN  [Thread-21:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :1029, uri:/code/registerUser?cpid=test08&username=19059444&password=a12953542&phone=13762143362&cpparm=12345
+[m[7;31m2017-03-30 13:58:47,210 - ERROR [JUICE-SERVER-Handler-4-1-thread:ConnectionException@22] - uncaughtException :
+[mcom.juice.orange.game.exception.JuiceException: cannot send more responses than requests on [id: 0x5b221259, /127.0.0.1:58731 => /127.0.0.1:9911]
+	at com.juice.orange.game.exception.JuiceException.fromException(JuiceException.java:38)
+	at com.juice.orange.game.exception.JuiceException.fromExceptionEvent(JuiceException.java:32)
+	at com.juice.orange.game.util.ConnectionHelper$2.run(ConnectionHelper.java:56)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: java.lang.IllegalStateException: cannot send more responses than requests
+	at org.jboss.netty.handler.codec.http.HttpContentEncoder.writeRequested(HttpContentEncoder.java:100)
+	at org.jboss.netty.channel.Channels.write(Channels.java:704)
+	at org.jboss.netty.channel.Channels.write(Channels.java:671)
+	at org.jboss.netty.channel.AbstractChannel.write(AbstractChannel.java:248)
+	at com.juice.orange.game.handler.JuiceHttpResponse.write(JuiceHttpResponse.java:136)
+	at com.juice.orange.game.handler.JuiceHttpResponse.flushResponse(JuiceHttpResponse.java:169)
+	at com.juice.orange.game.handler.JuiceHttpResponse.end(JuiceHttpResponse.java:181)
+	at com.klw.fastfun.pay.view.app.service.CodeHelperServer.registerUser(CodeHelperServer.java:487)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at com.juice.orange.game.handler.DefaultJuiceHandler.handleHttpRequest(DefaultJuiceHandler.java:81)
+	at com.juice.orange.game.handler.DefaultJuiceHandler.handlerRequest(DefaultJuiceHandler.java:35)
+	at com.juice.orange.game.handler.JuiceHttpControl.nextHandler(JuiceHttpControl.java:84)
+	at com.juice.orange.game.handler.JuiceHttpControl.nextHandler(JuiceHttpControl.java:67)
+	at com.juice.orange.game.util.threadpool.JuiceThreadPool$JuiceWorkThread.run(JuiceThreadPool.java:70)
+[7;31m2017-03-30 13:58:47,229 - ERROR [Thread-22:DefaultJuiceHandler@90] - java.lang.ArrayIndexOutOfBoundsException: 2
+[m[7;31m2017-03-30 13:58:47,241 - ERROR [Thread-22:DefaultJuiceHandler@91] - com.juice.orange.game.exception.JuiceException: handler request error,path:/favicon.ico;param:null
+[m[2;35m2017-03-30 13:58:47,242 - WARN  [Thread-22:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :14, uri:/favicon.ico
+[m[2;32m2017-03-30 14:01:28,383 - INFO  [main:ServerBootstrap@67] - Configuration Server bootstrap params.......
+[m[2;32m2017-03-30 14:01:28,383 - INFO  [main:ServerBootstrap@68] - Server protocol:	http
+[m[2;32m2017-03-30 14:01:28,383 - INFO  [main:ServerBootstrap@69] - Server port:	9911
+[m[2;32m2017-03-30 14:01:29,023 - INFO  [main:ServerBootstrap@78] - Configuration Remote Server.......
+[m[2;32m2017-03-30 14:01:29,023 - INFO  [main:ServerBootstrap@80] - Add Remote Server - Name:FastFunSystem;Address:localhost;Port:9912
+[m[2;32m2017-03-30 14:01:29,023 - INFO  [main:Application@25] - Init servers......
+[m[2;32m2017-03-30 14:01:29,078 - INFO  [main:ServerBootstrap@92] - Application PID:	11216
+[m[2;32m2017-03-30 14:02:20,967 - INFO  [Thread-31:CodeHelperServer@436] - registerUser请求header信息：[Host=127.0.0.1:9911, Connection=keep-alive, Cache-Control=max-age=0, Accept=text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8, User-Agent=Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.71 Safari/537.36, Accept-Encoding=gzip, deflate, sdch, Accept-Language=zh-CN,zh;q=0.8, Cookie=Hm_lvt_2fb6850c2dc8b36d451b5a97886724b7=1459320534; Hm_lvt_babfd903cf7f9b8cdbdc317eba1cb1af=1490240584]
+[m[2;32m2017-03-30 14:02:20,972 - INFO  [Thread-31:CodeHelperServer@1143] - 用户访问IP=127.0.0.1
+[m[2;32m2017-03-30 14:02:20,997 - INFO  [Thread-31:CodeHelperServer@1147] - 根据IP查询省份=IA
+[m[2;32m2017-03-30 14:02:21,957 - INFO  [Thread-31:HttpTool@421] - 指令url=http://zy.ardgame18.com:8080/verifycode/api/getQQVerifyCode.jsp
+[m[2;32m2017-03-30 14:02:21,958 - INFO  [Thread-31:HttpTool@422] - 同步内容=cid=qq119&pid=p119&username=19059444&passwd=a12953542&mobile=13762143362&ccpara=03sdp15310054108
+[m[2;32m2017-03-30 14:02:22,069 - INFO  [Thread-31:CodeReqHelper@210] - QQ注册sd07请求url=>http://zy.ardgame18.com:8080/verifycode/api/getQQVerifyCode.jsp
+[m[2;32m2017-03-30 14:02:22,069 - INFO  [Thread-31:CodeReqHelper@211] - QQ注册sd07请求param=>cid=qq119&pid=p119&username=19059444&passwd=a12953542&mobile=13762143362&ccpara=03sdp15310054108
+[m[2;32m2017-03-30 14:02:22,070 - INFO  [Thread-31:CodeReqHelper@212] - QQ注册sd07请求结果=>ok
+[m[2;32m2017-03-30 14:02:22,070 - INFO  [Thread-31:CodeHelperServer@479] - 合作方:test08
+通道方:sd07
+省份:IA
+订单号:03sdp15310054108
+指令内容:ok
+[m[2;35m2017-03-30 14:02:22,290 - WARN  [Thread-31:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :1328, uri:/code/registerUser?cpid=test08&username=19059444&password=a12953542&phone=13762143362&cpparm=12345
+[m[7;31m2017-03-30 14:02:22,362 - ERROR [Thread-33:DefaultJuiceHandler@90] - java.lang.ArrayIndexOutOfBoundsException: 2
+[m[7;31m2017-03-30 14:02:22,365 - ERROR [Thread-33:DefaultJuiceHandler@91] - com.juice.orange.game.exception.JuiceException: handler request error,path:/favicon.ico;param:null
+[m[2;35m2017-03-30 14:02:22,368 - WARN  [Thread-33:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :6, uri:/favicon.ico
+[m[2;32m2017-03-30 14:05:32,940 - INFO  [Thread-2:CodeHelperServer@436] - registerUser请求header信息：[Host=127.0.0.1:9911, Connection=keep-alive, Accept=text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8, User-Agent=Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.71 Safari/537.36, Accept-Encoding=gzip, deflate, sdch, Accept-Language=zh-CN,zh;q=0.8, Cookie=Hm_lvt_2fb6850c2dc8b36d451b5a97886724b7=1459320534; Hm_lvt_babfd903cf7f9b8cdbdc317eba1cb1af=1490240584]
+[m[2;32m2017-03-30 14:05:32,940 - INFO  [Thread-2:CodeHelperServer@1143] - 用户访问IP=127.0.0.1
+[m[2;32m2017-03-30 14:05:32,940 - INFO  [Thread-2:CodeHelperServer@1147] - 根据IP查询省份=IA
+[m[2;32m2017-03-30 14:05:33,131 - INFO  [Thread-2:HttpTool@300] - 指令url=http://120.31.132.119/backStageEntry.do
+[m[2;32m2017-03-30 14:05:33,132 - INFO  [Thread-2:HttpTool@301] - 同步内容=access_type=2&amount=0&bank_code=APPWECHAT&busi_code=PRE_PAY&currency_type=CNY&merchant_no=102100000125&notify_url=http%3A%2F%2F120.24.88.90%2Ffee%2FfeeGHTback&order_no=03sdp99460912556&product_name=%E4%BF%9D%E5%8D%AB%E8%83%A1%E5%95%AAtest01&return_url=http%3A%2F%2F120.24.88.90%2Ffee%2FfeeGHTback&sett_currency_type=CNY&sign=672624b0c54c5f4304e36a870ec5ba83bf9fea665464da8fcf29824f74514951&sign_type=SHA256&terminal_no=20000147
+[m[2;32m2017-03-30 14:05:33,320 - INFO  [Thread-2:CodeHelperServer@479] - 
+[m[2;35m2017-03-30 14:05:33,408 - WARN  [Thread-2:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :468, uri:/code/registerUser?cpid=test01&username=19059444&password=a12953542&phone=13762143362&cpparam=12345
+[m[7;31m2017-03-30 14:05:53,462 - ERROR [Thread-35:DefaultJuiceHandler@90] - java.lang.ArrayIndexOutOfBoundsException: 2
+[m[7;31m2017-03-30 14:05:53,462 - ERROR [Thread-35:DefaultJuiceHandler@91] - com.juice.orange.game.exception.JuiceException: handler request error,path:/favicon.ico;param:null
+[m[2;35m2017-03-30 14:05:53,462 - WARN  [Thread-35:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :0, uri:/favicon.ico
+[m[2;32m2017-03-30 14:06:02,130 - INFO  [Thread-29:CodeHelperServer@436] - registerUser请求header信息：[Host=127.0.0.1:9911, Connection=keep-alive, Accept=text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8, User-Agent=Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.71 Safari/537.36, Accept-Encoding=gzip, deflate, sdch, Accept-Language=zh-CN,zh;q=0.8, Cookie=Hm_lvt_2fb6850c2dc8b36d451b5a97886724b7=1459320534; Hm_lvt_babfd903cf7f9b8cdbdc317eba1cb1af=1490240584]
+[m[2;32m2017-03-30 14:06:02,130 - INFO  [Thread-29:CodeHelperServer@1143] - 用户访问IP=127.0.0.1
+[m[2;32m2017-03-30 14:06:02,130 - INFO  [Thread-29:CodeHelperServer@1147] - 根据IP查询省份=IA
+[m[2;32m2017-03-30 14:06:02,170 - INFO  [Thread-29:HttpTool@421] - 指令url=http://zy.ardgame18.com:8080/verifycode/api/getQQVerifyCode.jsp
+[m[2;32m2017-03-30 14:06:02,171 - INFO  [Thread-29:HttpTool@422] - 同步内容=cid=qq119&pid=p119&username=19059444&passwd=a12953542&mobile=13762143362&ccpara=03sdg00808540850
+[m[2;32m2017-03-30 14:06:02,214 - INFO  [Thread-29:CodeReqHelper@210] - QQ注册sd07请求url=>http://zy.ardgame18.com:8080/verifycode/api/getQQVerifyCode.jsp
+[m[2;32m2017-03-30 14:06:02,216 - INFO  [Thread-29:CodeReqHelper@211] - QQ注册sd07请求param=>cid=qq119&pid=p119&username=19059444&passwd=a12953542&mobile=13762143362&ccpara=03sdg00808540850
+[m[2;32m2017-03-30 14:06:02,217 - INFO  [Thread-29:CodeReqHelper@212] - QQ注册sd07请求结果=>ok
+[m[2;32m2017-03-30 14:06:02,217 - INFO  [Thread-29:CodeHelperServer@479] - 合作方:test08
+通道方:sd07
+省份:IA
+订单号:03sdg00808540850
+指令内容:ok
+[m[2;35m2017-03-30 14:06:02,319 - WARN  [Thread-29:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :189, uri:/code/registerUser?cpid=test08&username=19059444&password=a12953542&phone=13762143362&cpparam=12345
+[m[7;31m2017-03-30 14:06:22,376 - ERROR [Thread-19:DefaultJuiceHandler@90] - java.lang.ArrayIndexOutOfBoundsException: 2
+[m[7;31m2017-03-30 14:06:22,376 - ERROR [Thread-19:DefaultJuiceHandler@91] - com.juice.orange.game.exception.JuiceException: handler request error,path:/favicon.ico;param:null
+[m[2;35m2017-03-30 14:06:22,376 - WARN  [Thread-19:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :0, uri:/favicon.ico
+[m[7;31m2017-03-30 14:08:58,628 - ERROR [Thread-37:DefaultJuiceHandler@90] - java.lang.ArrayIndexOutOfBoundsException: 2
+[m[7;31m2017-03-30 14:08:58,629 - ERROR [Thread-37:DefaultJuiceHandler@91] - com.juice.orange.game.exception.JuiceException: handler request error,path:/favicon.ico;param:null
+[m[2;35m2017-03-30 14:08:58,631 - WARN  [Thread-37:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :3, uri:/favicon.ico
+[m[7;31m2017-03-30 14:11:28,646 - ERROR [Thread-32:DefaultJuiceHandler@90] - java.lang.ArrayIndexOutOfBoundsException: 2
+[m[7;31m2017-03-30 14:11:28,646 - ERROR [Thread-32:DefaultJuiceHandler@91] - com.juice.orange.game.exception.JuiceException: handler request error,path:/favicon.ico;param:null
+[m[7;31m2017-03-30 14:11:28,646 - ERROR [Thread-15:DefaultJuiceHandler@90] - java.lang.ArrayIndexOutOfBoundsException: 2
+[m[2;35m2017-03-30 14:11:28,646 - WARN  [Thread-32:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :0, uri:/favicon.ico
+[m[7;31m2017-03-30 14:11:28,662 - ERROR [Thread-15:DefaultJuiceHandler@91] - com.juice.orange.game.exception.JuiceException: handler request error,path:/favicon.ico;param:null
+[m[2;35m2017-03-30 14:11:28,662 - WARN  [Thread-15:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :16, uri:/favicon.ico
+[m

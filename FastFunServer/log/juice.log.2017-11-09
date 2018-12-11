@@ -1,0 +1,299 @@
+[2;32m2017-11-09 10:50:32,694 - INFO  [main:ServerBootstrap@95] - Configuration Server bootstrap params.......
+[m[2;32m2017-11-09 10:50:32,696 - INFO  [main:ServerBootstrap@96] - Server protocol:	http
+[m[2;32m2017-11-09 10:50:32,696 - INFO  [main:ServerBootstrap@97] - Server port:	9911
+[m[2;32m2017-11-09 10:50:32,890 - INFO  [main:ServerBootstrap@106] - Configuration Remote Server.......
+[m[2;32m2017-11-09 10:50:32,891 - INFO  [main:ServerBootstrap@108] - Add Remote Server - Name:FastFunSystem;Address:localhost;Port:9912
+[m[2;35m2017-11-09 10:50:32,931 - WARN  [main:XMemcachedClient@727] - XMemcachedClient use Binary protocol
+[m[2;32m2017-11-09 10:50:32,954 - INFO  [main:SelectorManager@37] - Creating 16 reactors...
+[m[2;35m2017-11-09 10:50:32,963 - WARN  [main:AbstractController@372] - The Controller started at localhost/127.0.0.1:0 ...
+[m[2;35m2017-11-09 10:50:32,970 - WARN  [Xmemcached-Reactor-0:MemcachedConnector@251] - Add a session: 127.0.0.1:11211
+[m[2;32m2017-11-09 10:50:32,971 - INFO  [main:Application@25] - Init servers......
+[m[2;32m2017-11-09 10:50:33,028 - INFO  [main:ServerBootstrap@120] - Application PID:	2956
+[m[7;31m2017-11-09 10:50:35,123 - ERROR [Xmemcached-Reactor-2:MemcachedHandler@138] - XMemcached network layout exception
+[mjava.io.IOException: 远程主机强迫关闭了一个现有的连接。
+	at sun.nio.ch.SocketDispatcher.read0(Native Method)
+	at sun.nio.ch.SocketDispatcher.read(Unknown Source)
+	at sun.nio.ch.IOUtil.readIntoNativeBuffer(Unknown Source)
+	at sun.nio.ch.IOUtil.read(Unknown Source)
+	at sun.nio.ch.SocketChannelImpl.read(Unknown Source)
+	at com.google.code.yanf4j.nio.impl.NioTCPSession.readFromBuffer(NioTCPSession.java:203)
+	at com.google.code.yanf4j.nio.impl.AbstractNioSession.onRead(AbstractNioSession.java:196)
+	at com.google.code.yanf4j.nio.impl.AbstractNioSession.onEvent(AbstractNioSession.java:341)
+	at com.google.code.yanf4j.nio.impl.SocketChannelController.dispatchReadEvent(SocketChannelController.java:56)
+	at com.google.code.yanf4j.nio.impl.NioController.onRead(NioController.java:157)
+	at com.google.code.yanf4j.nio.impl.Reactor.dispatchEvent(Reactor.java:295)
+	at com.google.code.yanf4j.nio.impl.Reactor.run(Reactor.java:142)
+[2;35m2017-11-09 10:50:35,134 - WARN  [Xmemcached-Reactor-2:MemcachedConnector@365] - Remove a session: 127.0.0.1:11211
+[m[2;35m2017-11-09 10:50:37,137 - WARN  [Heal-Session-Thread:MemcachedConnector$SessionMonitor@125] - Trying to connect to 127.0.0.1:11211 for 1 times
+[m[2;35m2017-11-09 10:50:37,140 - WARN  [Xmemcached-Reactor-0:MemcachedConnector@251] - Add a session: 127.0.0.1:11211
+[m[2;32m2017-11-09 10:51:58,174 - INFO  [Thread-121:CodeHelperServer@2678] - reqPayOtherWY请求header信息：[Host=127.0.0.1:9911, Connection=keep-alive, User-Agent=Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36, Upgrade-Insecure-Requests=1, Accept=text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8, Accept-Encoding=gzip, deflate, br, Accept-Language=zh-CN,zh;q=0.8,en;q=0.6]
+[m[2;32m2017-11-09 10:51:58,177 - INFO  [Thread-121:CodeHelperServer@2716] - 用户访问IP=112.124.10.89
+[m[2;32m2017-11-09 10:51:58,453 - INFO  [Thread-121:HttpTool@388] - 指令url=http://www.womaishop.com/pay/wx/pay.php
+[m[2;32m2017-11-09 10:51:58,453 - INFO  [Thread-121:HttpTool@389] - 同步内容=body=icon&clientIp=112.124.10.89&notifyUrl=http%3A%2F%2Fotherpay.xushihudong.com%2Ffee%2Ffeexszfbsmback&orderid=11sdv73266730346&paytype=wxwap&returnUrl=http%253A%252F%252Fwww.xushihudong.com%252Fbackurl.htm&total_fee=1&userid=1387&sign=d7760258515917e1c82cdc55fb03e59f
+[m[2;32m2017-11-09 10:56:16,445 - INFO  [Thread-121:CodeReqHelper@537] - 1387sd69请求结果:fail !
+[m[2;32m2017-11-09 10:56:16,529 - INFO  [Thread-121:CodeReqHelper@547] - 1387sd69生成json:{"orderid":"11sdv73266730346","spid":"sd69","status":"0","url":"fail !"}
+[m[2;32m2017-11-09 10:56:16,557 - INFO  [Thread-121:CodeHelperServer@2796] - 合作方:test03
+通道方:sd69
+省份:
+计费点:1
+订单号:11sdv73266730346
+指令内容:{"orderid":"11sdv73266730346","spid":"sd69","status":"0","url":"fail !"}
+[m[2;35m2017-11-09 10:56:16,584 - WARN  [Thread-121:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :258412, uri:/code/reqPayOtherWY?cpid=test03&imei=357806046192158&cpparam=klwtest&fee=1&ip=112.124.10.89&goodsname=%E6%B5%8B%E8%AF%95&app=%E6%B5%8B%E8%AF%95app&playerid=abc123
+[m[7;31m2017-11-09 10:56:16,619 - ERROR [Thread-32:DefaultJuiceHandler@90] - java.lang.ArrayIndexOutOfBoundsException: 2
+[m[7;31m2017-11-09 10:56:16,620 - ERROR [Thread-32:DefaultJuiceHandler@91] - com.juice.orange.game.exception.JuiceException: handler request error,path:/favicon.ico;param:null
+[m[2;35m2017-11-09 10:56:16,620 - WARN  [Thread-32:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :2, uri:/favicon.ico
+[m[2;32m2017-11-09 10:56:23,638 - INFO  [Thread-122:CodeHelperServer@2678] - reqPayOtherWY请求header信息：[Host=127.0.0.1:9911, Connection=keep-alive, Cache-Control=max-age=0, User-Agent=Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36, Upgrade-Insecure-Requests=1, Accept=text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8, Accept-Encoding=gzip, deflate, br, Accept-Language=zh-CN,zh;q=0.8,en;q=0.6]
+[m[2;32m2017-11-09 10:56:23,639 - INFO  [Thread-122:CodeHelperServer@2716] - 用户访问IP=112.124.10.89
+[m[2;32m2017-11-09 10:56:23,656 - INFO  [Thread-122:HttpTool@388] - 指令url=http://www.womaishop.com/pay/wx/pay.php
+[m[2;32m2017-11-09 10:56:23,657 - INFO  [Thread-122:HttpTool@389] - 同步内容=body=icon&clientIp=112.124.10.89&notifyUrl=http%3A%2F%2Fotherpay.xushihudong.com%2Ffee%2Ffeexszfbsmback&orderid=11sdi66765980980&paytype=wxwap&returnUrl=http%253A%252F%252Fwww.xushihudong.com%252Fbackurl.htm&total_fee=1&userid=1387&sign=25b59274bc45a89e0f7fd848291d2223
+[m[2;32m2017-11-09 10:57:09,461 - INFO  [Thread-122:CodeReqHelper@537] - 1387sd69请求结果:fail !
+[m[2;32m2017-11-09 10:57:09,462 - INFO  [Thread-122:CodeReqHelper@547] - 1387sd69生成json:{"orderid":"11sdi66765980980","spid":"sd69","status":"0","url":"fail !"}
+[m[2;32m2017-11-09 10:57:09,463 - INFO  [Thread-122:CodeHelperServer@2796] - 合作方:test03
+通道方:sd69
+省份:
+计费点:1
+订单号:11sdi66765980980
+指令内容:{"orderid":"11sdi66765980980","spid":"sd69","status":"0","url":"fail !"}
+[m[2;35m2017-11-09 10:57:09,480 - WARN  [Thread-122:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :45842, uri:/code/reqPayOtherWY?cpid=test03&imei=357806046192158&cpparam=klwtest&fee=1&ip=112.124.10.89&goodsname=%E6%B5%8B%E8%AF%95&app=%E6%B5%8B%E8%AF%95app&playerid=abc123
+[m[7;31m2017-11-09 10:57:09,500 - ERROR [Thread-123:DefaultJuiceHandler@90] - java.lang.ArrayIndexOutOfBoundsException: 2
+[m[7;31m2017-11-09 10:57:09,501 - ERROR [Thread-123:DefaultJuiceHandler@91] - com.juice.orange.game.exception.JuiceException: handler request error,path:/favicon.ico;param:null
+[m[2;35m2017-11-09 10:57:09,502 - WARN  [Thread-123:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :3, uri:/favicon.ico
+[m[2;32m2017-11-09 10:59:00,171 - INFO  [Thread-21:CodeHelperServer@2678] - reqPayOtherWY请求header信息：[Host=127.0.0.1:9911, Connection=keep-alive, Cache-Control=max-age=0, User-Agent=Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36, Upgrade-Insecure-Requests=1, Accept=text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8, Accept-Encoding=gzip, deflate, br, Accept-Language=zh-CN,zh;q=0.8,en;q=0.6]
+[m[2;32m2017-11-09 10:59:00,173 - INFO  [Thread-21:CodeHelperServer@2716] - 用户访问IP=112.124.10.89
+[m[2;32m2017-11-09 10:59:00,200 - INFO  [Thread-21:HttpTool@388] - 指令url=http://www.womaishop.com/pay/wx/pay.php
+[m[2;32m2017-11-09 10:59:00,200 - INFO  [Thread-21:HttpTool@389] - 同步内容=body=icon&clientIp=112.124.10.89&notifyUrl=http%3A%2F%2Fotherpay.xushihudong.com%2Ffee%2Ffeexszfbsmback&orderid=11sdv58655757064&paytype=wxwap&returnUrl=http%253A%252F%252Fwww.xushihudong.com%252Fbackurl.htm&total_fee=1&userid=1387&sign=a61c4895c42090359522c768e53612e9
+[m[2;32m2017-11-09 11:00:17,957 - INFO  [Thread-21:CodeReqHelper@537] - 1387sd69请求结果:fail !
+[m[2;32m2017-11-09 11:00:17,958 - INFO  [Thread-21:CodeReqHelper@547] - 1387sd69生成json:{"orderid":"11sdv58655757064","spid":"sd69","status":"0","url":"fail !"}
+[m[2;32m2017-11-09 11:00:17,959 - INFO  [Thread-21:CodeHelperServer@2796] - 合作方:test03
+通道方:sd69
+省份:
+计费点:1
+订单号:11sdv58655757064
+指令内容:{"orderid":"11sdv58655757064","spid":"sd69","status":"0","url":"fail !"}
+[m[2;35m2017-11-09 11:00:17,982 - WARN  [Thread-21:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :77812, uri:/code/reqPayOtherWY?cpid=test03&imei=357806046192158&cpparam=klwtest&fee=1&ip=112.124.10.89&goodsname=%E6%B5%8B%E8%AF%95&app=%E6%B5%8B%E8%AF%95app&playerid=abc123
+[m[7;31m2017-11-09 11:00:17,997 - ERROR [Thread-124:DefaultJuiceHandler@90] - java.lang.ArrayIndexOutOfBoundsException: 2
+[m[7;31m2017-11-09 11:00:17,998 - ERROR [Thread-124:DefaultJuiceHandler@91] - com.juice.orange.game.exception.JuiceException: handler request error,path:/favicon.ico;param:null
+[m[2;35m2017-11-09 11:00:17,998 - WARN  [Thread-124:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :1, uri:/favicon.ico
+[m[2;32m2017-11-09 11:02:43,342 - INFO  [main:ServerBootstrap@95] - Configuration Server bootstrap params.......
+[m[2;32m2017-11-09 11:02:43,343 - INFO  [main:ServerBootstrap@96] - Server protocol:	http
+[m[2;32m2017-11-09 11:02:43,344 - INFO  [main:ServerBootstrap@97] - Server port:	9911
+[m[2;32m2017-11-09 11:02:43,523 - INFO  [main:ServerBootstrap@106] - Configuration Remote Server.......
+[m[2;32m2017-11-09 11:02:43,523 - INFO  [main:ServerBootstrap@108] - Add Remote Server - Name:FastFunSystem;Address:localhost;Port:9912
+[m[2;35m2017-11-09 11:02:43,559 - WARN  [main:XMemcachedClient@727] - XMemcachedClient use Binary protocol
+[m[2;32m2017-11-09 11:02:43,581 - INFO  [main:SelectorManager@37] - Creating 16 reactors...
+[m[2;35m2017-11-09 11:02:43,590 - WARN  [main:AbstractController@372] - The Controller started at localhost/127.0.0.1:0 ...
+[m[2;35m2017-11-09 11:02:43,598 - WARN  [Xmemcached-Reactor-0:MemcachedConnector@251] - Add a session: 127.0.0.1:11211
+[m[2;32m2017-11-09 11:02:43,599 - INFO  [main:Application@25] - Init servers......
+[m[2;32m2017-11-09 11:02:43,648 - INFO  [main:ServerBootstrap@120] - Application PID:	8840
+[m[2;32m2017-11-09 11:03:04,423 - INFO  [Thread-121:CodeHelperServer@2678] - reqPayOtherWY请求header信息：[Host=127.0.0.1:9911, Connection=keep-alive, Cache-Control=max-age=0, User-Agent=Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36, Upgrade-Insecure-Requests=1, Accept=text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8, Accept-Encoding=gzip, deflate, br, Accept-Language=zh-CN,zh;q=0.8,en;q=0.6]
+[m[2;32m2017-11-09 11:03:04,424 - INFO  [Thread-121:CodeHelperServer@2716] - 用户访问IP=112.124.10.89
+[m[2;32m2017-11-09 11:03:04,647 - INFO  [Thread-121:HttpTool@388] - 指令url=http://www.womaishop.com/pay/wx/pay.php
+[m[2;32m2017-11-09 11:03:04,647 - INFO  [Thread-121:HttpTool@389] - 同步内容=body=icon&clientIp=112.124.10.89&notifyUrl=http://otherpay.xushihudong.com/fee/feexszfbsmback&orderid=11sdq75293881101&paytype=wxwap&returnUrl=http%3A%2F%2Fwww.xushihudong.com%2Fbackurl.htm&total_fee=1&userid=1387&sign=a27b5fb43132a6ea204b12851fdaff41
+[m[2;32m2017-11-09 11:45:40,620 - INFO  [Thread-121:CodeReqHelper@537] - 1387sd69请求结果:<pre>Array(    [body] => icon    [clientIp] => 112.124.10.89    [notifyUrl] => http://otherpay.xushihudong.com/fee/feexszfbsmback    [orderid] => 11sdq75293881101    [paytype] => wxwap    [returnUrl] => http://www.xushihudong.com/backurl.htm    [sign] => a27b5fb43132a6ea204b12851fdaff41    [total_fee] => 1    [userid] => 1387)签名前字符串：body=icon&clientIp=112.124.10.89&notifyUrl=http%3A%2F%2Fotherpay.xushihudong.com%2Ffee%2Ffeexszfbsmback&orderid=11sdq75293881101&paytype=wxwap&returnUrl=http%3A%2F%2Fwww.xushihudong.com%2Fbackurl.htm&total_fee=1&userid=1387&key=9e6f63dd42e229097df18f4bffaa9b5cf8b73e8f<br>我方签名：82a2ffe78140d6f2b7563be930f0aa74<br>签名错误！
+[m[2;32m2017-11-09 11:45:40,686 - INFO  [Thread-121:CodeReqHelper@547] - 1387sd69生成json:{"orderid":"11sdq75293881101","spid":"sd69","status":"0","url":"<pre>Array(    [body] => icon    [clientIp] => 112.124.10.89    [notifyUrl] => http://otherpay.xushihudong.com/fee/feexszfbsmback    [orderid] => 11sdq75293881101    [paytype] => wxwap    [returnUrl] => http://www.xushihudong.com/backurl.htm    [sign] => a27b5fb43132a6ea204b12851fdaff41    [total_fee] => 1    [userid] => 1387)签名前字符串：body=icon&clientIp=112.124.10.89&notifyUrl=http%3A%2F%2Fotherpay.xushihudong.com%2Ffee%2Ffeexszfbsmback&orderid=11sdq75293881101&paytype=wxwap&returnUrl=http%3A%2F%2Fwww.xushihudong.com%2Fbackurl.htm&total_fee=1&userid=1387&key=9e6f63dd42e229097df18f4bffaa9b5cf8b73e8f<br>我方签名：82a2ffe78140d6f2b7563be930f0aa74<br>签名错误！"}
+[m[2;32m2017-11-09 11:45:40,710 - INFO  [Thread-121:CodeHelperServer@2796] - 合作方:test03
+通道方:sd69
+省份:
+计费点:1
+订单号:11sdq75293881101
+指令内容:{"orderid":"11sdq75293881101","spid":"sd69","status":"0","url":"<pre>Array(    [body] => icon    [clientIp] => 112.124.10.89    [notifyUrl] => http://otherpay.xushihudong.com/fee/feexszfbsmback    [orderid] => 11sdq75293881101    [paytype] => wxwap    [returnUrl] => http://www.xushihudong.com/backurl.htm    [sign] => a27b5fb43132a6ea204b12851fdaff41    [total_fee] => 1    [userid] => 1387)签名前字符串：body=icon&clientIp=112.124.10.89&notifyUrl=http%3A%2F%2Fotherpay.xushihudong.com%2Ffee%2Ffeexszfbsmback&orderid=11sdq75293881101&paytype=wxwap&returnUrl=http%3A%2F%2Fwww.xushihudong.com%2Fbackurl.htm&total_fee=1&userid=1387&key=9e6f63dd42e229097df18f4bffaa9b5cf8b73e8f<br>我方签名：82a2ffe78140d6f2b7563be930f0aa74<br>签名错误！"}
+[m[2;35m2017-11-09 11:45:40,743 - WARN  [Thread-121:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :2556323, uri:/code/reqPayOtherWY?cpid=test03&imei=357806046192158&cpparam=klwtest&fee=1&ip=112.124.10.89&goodsname=%E6%B5%8B%E8%AF%95&app=%E6%B5%8B%E8%AF%95app&playerid=abc123
+[m[2;32m2017-11-09 18:13:42,078 - INFO  [main:ServerBootstrap@95] - Configuration Server bootstrap params.......
+[m[2;32m2017-11-09 18:13:42,079 - INFO  [main:ServerBootstrap@96] - Server protocol:	http
+[m[2;32m2017-11-09 18:13:42,079 - INFO  [main:ServerBootstrap@97] - Server port:	9911
+[m[2;32m2017-11-09 18:13:42,257 - INFO  [main:ServerBootstrap@106] - Configuration Remote Server.......
+[m[2;32m2017-11-09 18:13:42,257 - INFO  [main:ServerBootstrap@108] - Add Remote Server - Name:FastFunSystem;Address:localhost;Port:9912
+[m[2;35m2017-11-09 18:13:42,296 - WARN  [main:XMemcachedClient@727] - XMemcachedClient use Binary protocol
+[m[2;32m2017-11-09 18:13:42,319 - INFO  [main:SelectorManager@37] - Creating 16 reactors...
+[m[2;35m2017-11-09 18:13:42,329 - WARN  [main:AbstractController@372] - The Controller started at localhost/127.0.0.1:0 ...
+[m[2;35m2017-11-09 18:13:42,338 - WARN  [Xmemcached-Reactor-0:MemcachedConnector@251] - Add a session: 127.0.0.1:11211
+[m[2;32m2017-11-09 18:13:42,339 - INFO  [main:Application@25] - Init servers......
+[m[2;32m2017-11-09 18:13:42,402 - INFO  [main:ServerBootstrap@120] - Application PID:	19916
+[m[2;32m2017-11-09 18:13:55,175 - INFO  [Thread-111:CodeHelperServer@3854] - reqSpecialMixCode5请求header信息：[Host=127.0.0.1:9911, Connection=keep-alive, User-Agent=Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36, Upgrade-Insecure-Requests=1, Accept=text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8, Accept-Encoding=gzip, deflate, br, Accept-Language=zh-CN,zh;q=0.8,en;q=0.6]
+[m[2;32m2017-11-09 18:13:55,176 - INFO  [Thread-111:CodeHelperServer@5205] - 用户访问phone=15031753744
+[m[2;32m2017-11-09 18:13:55,359 - INFO  [Thread-111:CodeHelperServer@5218] - 移动用户phone：15031753744
+[m[2;32m2017-11-09 18:13:55,359 - INFO  [Thread-111:CodeHelperServer@5226] - 根据phone查询省份地市：河北_沧州
+[m[2;32m2017-11-09 18:13:55,359 - INFO  [Thread-111:CodeHelperServer@5250] - 用户访问IP=223.104.101.16
+[m[2;35m2017-11-09 18:13:55,386 - WARN  [Thread-111:CodeHelperServer@3901] - CPID=test04 匹配不到合适省份=河北 计费点=1000 的指令！
+[m[2;35m2017-11-09 18:13:55,394 - WARN  [Thread-111:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :221, uri:/code/reqSpecialMixCode5?cpid=test04&fee=1000&cpparam=X0613188&phone=15031753744&imei=863361020775674&imsi=460023319973628&iccid=89860023031560389731&ip=223.104.101.16
+[m[7;31m2017-11-09 18:13:55,411 - ERROR [Thread-61:DefaultJuiceHandler@90] - java.lang.ArrayIndexOutOfBoundsException: 2
+[m[7;31m2017-11-09 18:13:55,411 - ERROR [Thread-61:DefaultJuiceHandler@91] - com.juice.orange.game.exception.JuiceException: handler request error,path:/favicon.ico;param:null
+[m[2;35m2017-11-09 18:13:55,411 - WARN  [Thread-61:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :1, uri:/favicon.ico
+[m[2;32m2017-11-09 18:40:06,417 - INFO  [main:ServerBootstrap@95] - Configuration Server bootstrap params.......
+[m[2;32m2017-11-09 18:40:06,421 - INFO  [main:ServerBootstrap@96] - Server protocol:	http
+[m[2;32m2017-11-09 18:40:06,422 - INFO  [main:ServerBootstrap@97] - Server port:	9911
+[m[2;32m2017-11-09 18:40:06,616 - INFO  [main:ServerBootstrap@106] - Configuration Remote Server.......
+[m[2;32m2017-11-09 18:40:06,616 - INFO  [main:ServerBootstrap@108] - Add Remote Server - Name:FastFunSystem;Address:localhost;Port:9912
+[m[2;35m2017-11-09 18:40:06,661 - WARN  [main:XMemcachedClient@727] - XMemcachedClient use Binary protocol
+[m[2;32m2017-11-09 18:40:06,683 - INFO  [main:SelectorManager@37] - Creating 16 reactors...
+[m[2;35m2017-11-09 18:40:06,693 - WARN  [main:AbstractController@372] - The Controller started at localhost/127.0.0.1:0 ...
+[m[2;35m2017-11-09 18:40:06,700 - WARN  [Xmemcached-Reactor-0:MemcachedConnector@251] - Add a session: 127.0.0.1:11211
+[m[2;32m2017-11-09 18:40:06,701 - INFO  [main:Application@25] - Init servers......
+[m[2;32m2017-11-09 18:40:06,761 - INFO  [main:ServerBootstrap@120] - Application PID:	19260
+[m[2;32m2017-11-09 18:40:15,083 - INFO  [Thread-12:CodeHelperServer@3854] - reqSpecialMixCode5请求header信息：[Host=127.0.0.1:9911, Connection=keep-alive, Cache-Control=max-age=0, User-Agent=Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36, Upgrade-Insecure-Requests=1, Accept=text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8, Accept-Encoding=gzip, deflate, br, Accept-Language=zh-CN,zh;q=0.8,en;q=0.6]
+[m[2;32m2017-11-09 18:40:15,084 - INFO  [Thread-12:CodeHelperServer@5205] - 用户访问phone=15031753744
+[m[2;32m2017-11-09 18:40:15,285 - INFO  [Thread-12:CodeHelperServer@5218] - 移动用户phone：15031753744
+[m[2;32m2017-11-09 18:40:15,285 - INFO  [Thread-12:CodeHelperServer@5226] - 根据phone查询省份地市：河北_沧州
+[m[2;32m2017-11-09 18:40:15,285 - INFO  [Thread-12:CodeHelperServer@5250] - 用户访问IP=223.104.101.16
+[m[2;35m2017-11-09 18:40:15,299 - WARN  [Thread-12:CodeHelperServer@3901] - CPID=test04 匹配不到合适省份=河北 计费点=1000 的指令！
+[m[2;35m2017-11-09 18:40:15,308 - WARN  [Thread-12:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :227, uri:/code/reqSpecialMixCode5?cpid=test04&fee=1000&cpparam=X0613188&phone=15031753744&imei=863361020775674&imsi=460023319973628&iccid=89860023031560389731&ip=223.104.101.16
+[m[7;31m2017-11-09 18:40:15,321 - ERROR [Thread-151:DefaultJuiceHandler@90] - java.lang.ArrayIndexOutOfBoundsException: 2
+[m[7;31m2017-11-09 18:40:15,321 - ERROR [Thread-151:DefaultJuiceHandler@91] - com.juice.orange.game.exception.JuiceException: handler request error,path:/favicon.ico;param:null
+[m[2;35m2017-11-09 18:40:15,321 - WARN  [Thread-151:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :1, uri:/favicon.ico
+[m[2;32m2017-11-09 18:59:07,851 - INFO  [Thread-111:CodeHelperServer@3854] - reqSpecialMixCode5请求header信息：[Host=127.0.0.1:9911, Connection=keep-alive, User-Agent=Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36, Upgrade-Insecure-Requests=1, Accept=text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8, Accept-Encoding=gzip, deflate, br, Accept-Language=zh-CN,zh;q=0.8,en;q=0.6]
+[m[2;32m2017-11-09 18:59:07,852 - INFO  [Thread-111:CodeHelperServer@5205] - 用户访问phone=15031753744
+[m[2;32m2017-11-09 18:59:07,867 - INFO  [Thread-111:CodeHelperServer@5218] - 移动用户phone：15031753744
+[m[2;32m2017-11-09 18:59:07,868 - INFO  [Thread-111:CodeHelperServer@5226] - 根据phone查询省份地市：河北_沧州
+[m[2;32m2017-11-09 18:59:07,868 - INFO  [Thread-111:CodeHelperServer@5250] - 用户访问IP=163.179.56.13
+[m[2;35m2017-11-09 18:59:07,880 - WARN  [Thread-111:CodeHelperServer@3901] - CPID=test04 匹配不到合适省份=河北 计费点=1000 的指令！
+[m[2;35m2017-11-09 18:59:07,881 - WARN  [Thread-111:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :32, uri:/code/reqSpecialMixCode5?cpid=test04&fee=1000&cpparam=X0613188&phone=15031753744&imei=866843034794954&imsi=460003830466923&iccid=89860041191552745443&ip=163.179.56.13
+[m[7;31m2017-11-09 18:59:07,894 - ERROR [Thread-21:DefaultJuiceHandler@90] - java.lang.ArrayIndexOutOfBoundsException: 2
+[m[7;31m2017-11-09 18:59:07,895 - ERROR [Thread-21:DefaultJuiceHandler@91] - com.juice.orange.game.exception.JuiceException: handler request error,path:/favicon.ico;param:null
+[m[2;35m2017-11-09 18:59:07,895 - WARN  [Thread-21:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :1, uri:/favicon.ico
+[m[7;31m2017-11-09 18:59:40,820 - ERROR [Xmemcached-Reactor-2:MemcachedHandler@138] - XMemcached network layout exception
+[mjava.io.IOException: 远程主机强迫关闭了一个现有的连接。
+	at sun.nio.ch.SocketDispatcher.read0(Native Method)
+	at sun.nio.ch.SocketDispatcher.read(Unknown Source)
+	at sun.nio.ch.IOUtil.readIntoNativeBuffer(Unknown Source)
+	at sun.nio.ch.IOUtil.read(Unknown Source)
+	at sun.nio.ch.SocketChannelImpl.read(Unknown Source)
+	at com.google.code.yanf4j.nio.impl.NioTCPSession.readFromBuffer(NioTCPSession.java:203)
+	at com.google.code.yanf4j.nio.impl.AbstractNioSession.onRead(AbstractNioSession.java:196)
+	at com.google.code.yanf4j.nio.impl.AbstractNioSession.onEvent(AbstractNioSession.java:341)
+	at com.google.code.yanf4j.nio.impl.SocketChannelController.dispatchReadEvent(SocketChannelController.java:56)
+	at com.google.code.yanf4j.nio.impl.NioController.onRead(NioController.java:157)
+	at com.google.code.yanf4j.nio.impl.Reactor.dispatchEvent(Reactor.java:295)
+	at com.google.code.yanf4j.nio.impl.Reactor.run(Reactor.java:142)
+[2;35m2017-11-09 18:59:40,851 - WARN  [Xmemcached-Reactor-2:MemcachedConnector@365] - Remove a session: 127.0.0.1:11211
+[m[2;35m2017-11-09 18:59:42,855 - WARN  [Heal-Session-Thread:MemcachedConnector$SessionMonitor@125] - Trying to connect to 127.0.0.1:11211 for 1 times
+[m[2;35m2017-11-09 18:59:42,857 - WARN  [Xmemcached-Reactor-0:MemcachedConnector@251] - Add a session: 127.0.0.1:11211
+[m[2;32m2017-11-09 19:00:00,415 - INFO  [main:ServerBootstrap@95] - Configuration Server bootstrap params.......
+[m[2;32m2017-11-09 19:00:00,417 - INFO  [main:ServerBootstrap@96] - Server protocol:	http
+[m[2;32m2017-11-09 19:00:00,417 - INFO  [main:ServerBootstrap@97] - Server port:	9911
+[m[2;32m2017-11-09 19:00:00,608 - INFO  [main:ServerBootstrap@106] - Configuration Remote Server.......
+[m[2;32m2017-11-09 19:00:00,608 - INFO  [main:ServerBootstrap@108] - Add Remote Server - Name:FastFunSystem;Address:localhost;Port:9912
+[m[2;35m2017-11-09 19:00:00,647 - WARN  [main:XMemcachedClient@727] - XMemcachedClient use Binary protocol
+[m[2;32m2017-11-09 19:00:00,670 - INFO  [main:SelectorManager@37] - Creating 16 reactors...
+[m[2;35m2017-11-09 19:00:00,680 - WARN  [main:AbstractController@372] - The Controller started at localhost/127.0.0.1:0 ...
+[m[2;35m2017-11-09 19:00:00,687 - WARN  [Xmemcached-Reactor-0:MemcachedConnector@251] - Add a session: 127.0.0.1:11211
+[m[2;32m2017-11-09 19:00:00,688 - INFO  [main:Application@25] - Init servers......
+[m[2;32m2017-11-09 19:00:00,742 - INFO  [main:ServerBootstrap@120] - Application PID:	20148
+[m[2;32m2017-11-09 19:00:05,574 - INFO  [Thread-141:CodeHelperServer@3854] - reqSpecialMixCode5请求header信息：[Host=127.0.0.1:9911, Connection=keep-alive, Cache-Control=max-age=0, User-Agent=Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36, Upgrade-Insecure-Requests=1, Accept=text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8, Accept-Encoding=gzip, deflate, br, Accept-Language=zh-CN,zh;q=0.8,en;q=0.6]
+[m[2;32m2017-11-09 19:00:05,575 - INFO  [Thread-141:CodeHelperServer@5205] - 用户访问phone=15031753744
+[m[2;32m2017-11-09 19:00:05,770 - INFO  [Thread-141:CodeHelperServer@5218] - 移动用户phone：15031753744
+[m[2;32m2017-11-09 19:00:05,770 - INFO  [Thread-141:CodeHelperServer@5226] - 根据phone查询省份地市：河北_沧州
+[m[2;32m2017-11-09 19:00:05,770 - INFO  [Thread-141:CodeHelperServer@5250] - 用户访问IP=163.179.56.13
+[m[2;35m2017-11-09 19:00:05,797 - WARN  [Thread-141:CodeHelperServer@3901] - CPID=test04 匹配不到合适省份=河北 计费点=1000 的指令！
+[m[2;35m2017-11-09 19:00:05,805 - WARN  [Thread-141:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :233, uri:/code/reqSpecialMixCode5?cpid=test04&fee=1000&cpparam=X0613188&phone=15031753744&imei=866843034794954&imsi=460003830466923&iccid=89860041191552745443&ip=163.179.56.13
+[m[7;31m2017-11-09 19:00:05,811 - ERROR [Thread-121:DefaultJuiceHandler@90] - java.lang.ArrayIndexOutOfBoundsException: 2
+[m[7;31m2017-11-09 19:00:05,811 - ERROR [Thread-121:DefaultJuiceHandler@91] - com.juice.orange.game.exception.JuiceException: handler request error,path:/favicon.ico;param:null
+[m[2;35m2017-11-09 19:00:05,811 - WARN  [Thread-121:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :1, uri:/favicon.ico
+[m[2;32m2017-11-09 19:00:21,162 - INFO  [Thread-131:CodeHelperServer@3854] - reqSpecialMixCode5请求header信息：[Host=127.0.0.1:9911, Connection=keep-alive, User-Agent=Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36, Upgrade-Insecure-Requests=1, Accept=text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8, Accept-Encoding=gzip, deflate, br, Accept-Language=zh-CN,zh;q=0.8,en;q=0.6]
+[m[2;32m2017-11-09 19:00:21,163 - INFO  [Thread-131:CodeHelperServer@5205] - 用户访问phone=null
+[m[2;32m2017-11-09 19:00:21,164 - INFO  [Thread-131:CodeHelperServer@5208] - 用户访问imsi:460003830466923,反推手机号前面7位：1354383
+[m[2;32m2017-11-09 19:00:21,179 - INFO  [Thread-131:CodeHelperServer@5218] - 移动用户phone：1354383
+[m[2;32m2017-11-09 19:00:21,179 - INFO  [Thread-131:CodeHelperServer@5226] - 根据phone查询省份地市：广东_中山
+[m[2;32m2017-11-09 19:00:21,179 - INFO  [Thread-131:CodeHelperServer@5250] - 用户访问IP=163.179.56.13
+[m[2;32m2017-11-09 19:00:21,238 - INFO  [Thread-131:HttpTool@626] - 指令url:http://dev.pushyx.com/mvc/strong_proxy_pay/order
+[m[2;32m2017-11-09 19:00:21,238 - INFO  [Thread-131:HttpTool@627] - 同步内容:cid=-1&lcaid=-1&cpid=5289&paycode=001&fee=1000&iccid=89860041191552745443&ipaddr=163.179.56.13&imsi=460003830466923&imei=866843034794954&extension=11ycq47590147315
+[m[2;32m2017-11-09 19:00:21,653 - INFO  [Thread-131:CodeReqHelper@430] - 普石yc36请求结果=>{"mo":"NDQwMDYyODY2MDAyMDg2MCNaVjFROHZrakVEUmNCTTN1VkJmMVVRPT0=","retCode":"1","smsdest":"80","retMsg":"success","called":"1065890010","smstype":"2","orderid":"skwjsN295B296P5"}
+[m[2;32m2017-11-09 19:01:58,395 - INFO  [Thread-131:HttpTool@626] - 指令url:http://dev.pushyx.com/mvc/strong_proxy_pay/order
+[m[2;32m2017-11-09 19:01:58,396 - INFO  [Thread-131:HttpTool@627] - 同步内容:cid=-1&lcaid=-1&cpid=5289&paycode=001&fee=1000&iccid=89860041191552745443&ipaddr=163.179.56.13&imsi=460003830466923&imei=866843034794954&extension=11ycq47590147315
+[m[2;32m2017-11-09 19:01:58,686 - INFO  [Thread-131:CodeReqHelper@430] - 普石yc36请求结果=>{"retCode":"dm-9","retMsg":"method:DaimaPayServiceImpl.dmPay#cpid:5289#sessionid:345511332e7448#errorCode:dm-9#errorMsg:dm fail!"}
+[m[2;32m2017-11-09 19:02:21,716 - INFO  [Thread-131:CodeReqHelper@465] - 普石yc36返回结果：error
+[m[2;32m2017-11-09 19:02:21,716 - INFO  [Thread-131:CodeHelperServer@3942] - 
+[m[2;35m2017-11-09 19:02:21,728 - WARN  [Thread-131:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :120567, uri:/code/reqSpecialMixCode5?cpid=test04&fee=1000&cpparam=X0613188&imei=866843034794954&imsi=460003830466923&iccid=89860041191552745443&ip=163.179.56.13
+[m[7;31m2017-11-09 19:02:21,742 - ERROR [Thread-81:DefaultJuiceHandler@90] - java.lang.ArrayIndexOutOfBoundsException: 2
+[m[7;31m2017-11-09 19:02:21,742 - ERROR [Thread-81:DefaultJuiceHandler@91] - com.juice.orange.game.exception.JuiceException: handler request error,path:/favicon.ico;param:null
+[m[2;35m2017-11-09 19:02:21,742 - WARN  [Thread-81:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :1, uri:/favicon.ico
+[m[2;32m2017-11-09 19:59:04,147 - INFO  [main:ServerBootstrap@95] - Configuration Server bootstrap params.......
+[m[2;32m2017-11-09 19:59:04,148 - INFO  [main:ServerBootstrap@96] - Server protocol:	http
+[m[2;32m2017-11-09 19:59:04,148 - INFO  [main:ServerBootstrap@97] - Server port:	9911
+[m[2;32m2017-11-09 19:59:04,316 - INFO  [main:ServerBootstrap@106] - Configuration Remote Server.......
+[m[2;32m2017-11-09 19:59:04,317 - INFO  [main:ServerBootstrap@108] - Add Remote Server - Name:FastFunSystem;Address:localhost;Port:9912
+[m[2;35m2017-11-09 19:59:04,356 - WARN  [main:XMemcachedClient@727] - XMemcachedClient use Binary protocol
+[m[2;32m2017-11-09 19:59:04,378 - INFO  [main:SelectorManager@37] - Creating 16 reactors...
+[m[2;35m2017-11-09 19:59:04,388 - WARN  [main:AbstractController@372] - The Controller started at localhost/127.0.0.1:0 ...
+[m[2;35m2017-11-09 19:59:04,396 - WARN  [Xmemcached-Reactor-0:MemcachedConnector@251] - Add a session: 127.0.0.1:11211
+[m[2;32m2017-11-09 19:59:04,396 - INFO  [main:Application@25] - Init servers......
+[m[2;32m2017-11-09 19:59:04,449 - INFO  [main:ServerBootstrap@120] - Application PID:	11740
+[m[2;32m2017-11-09 19:59:38,416 - INFO  [Thread-93:CodeHelperServer@2678] - reqPayOtherWY请求header信息：[Host=127.0.0.1:9911, Connection=keep-alive, User-Agent=Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36, Upgrade-Insecure-Requests=1, Accept=text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8, Accept-Encoding=gzip, deflate, br, Accept-Language=zh-CN,zh;q=0.8,en;q=0.6]
+[m[2;32m2017-11-09 19:59:38,417 - INFO  [Thread-93:CodeHelperServer@2716] - 用户访问IP=112.124.10.89
+[m[2;32m2017-11-09 19:59:38,647 - INFO  [Thread-93:HttpTool@388] - 指令url=http://www.womaishop.com/pay/wx/pay.php
+[m[2;32m2017-11-09 19:59:38,647 - INFO  [Thread-93:HttpTool@389] - 同步内容=body=icon&clientIp=112.124.10.89&notifyUrl=http://otherpay.xushihudong.com/fee/feexszfbsmback&orderid=11sdb92070472049&paytype=wxwap&returnUrl=http%3A%2F%2Fwww.xushihudong.com%2Fbackurl.htm&total_fee=1&userid=1387&sign=8856af21913e2b579f4b0f13fda2cbdf
+[m[2;32m2017-11-09 20:00:43,727 - INFO  [main:ServerBootstrap@95] - Configuration Server bootstrap params.......
+[m[2;32m2017-11-09 20:00:43,728 - INFO  [main:ServerBootstrap@96] - Server protocol:	http
+[m[2;32m2017-11-09 20:00:43,729 - INFO  [main:ServerBootstrap@97] - Server port:	9911
+[m[2;32m2017-11-09 20:00:43,892 - INFO  [main:ServerBootstrap@106] - Configuration Remote Server.......
+[m[2;32m2017-11-09 20:00:43,892 - INFO  [main:ServerBootstrap@108] - Add Remote Server - Name:FastFunSystem;Address:localhost;Port:9912
+[m[2;35m2017-11-09 20:00:43,930 - WARN  [main:XMemcachedClient@727] - XMemcachedClient use Binary protocol
+[m[2;32m2017-11-09 20:00:43,951 - INFO  [main:SelectorManager@37] - Creating 16 reactors...
+[m[2;35m2017-11-09 20:00:43,960 - WARN  [main:AbstractController@372] - The Controller started at localhost/127.0.0.1:0 ...
+[m[2;35m2017-11-09 20:00:43,967 - WARN  [Xmemcached-Reactor-0:MemcachedConnector@251] - Add a session: 127.0.0.1:11211
+[m[2;32m2017-11-09 20:00:43,968 - INFO  [main:Application@25] - Init servers......
+[m[2;32m2017-11-09 20:00:44,015 - INFO  [main:ServerBootstrap@120] - Application PID:	18552
+[m[2;32m2017-11-09 20:00:44,549 - INFO  [Thread-101:CodeHelperServer@2678] - reqPayOtherWY请求header信息：[Host=127.0.0.1:9911, Connection=keep-alive, Cache-Control=max-age=0, Upgrade-Insecure-Requests=1, User-Agent=Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36, Accept=text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8, Accept-Encoding=gzip, deflate, br, Accept-Language=zh-CN,zh;q=0.8,en;q=0.6]
+[m[2;32m2017-11-09 20:00:44,551 - INFO  [Thread-101:CodeHelperServer@2716] - 用户访问IP=112.124.10.89
+[m[2;32m2017-11-09 20:00:44,709 - INFO  [Thread-101:HttpTool@388] - 指令url=http://www.womaishop.com/pay/wx/pay.php
+[m[2;32m2017-11-09 20:00:44,709 - INFO  [Thread-101:HttpTool@389] - 同步内容=body=icon&clientIp=112.124.10.89&notifyUrl=http://otherpay.xushihudong.com/fee/feexszfbsmback&orderid=11sda79896127059&paytype=wxwap&returnUrl=http://www.xushihudong.com/backurl.htm&total_fee=1&userid=1387&sign=5c34bc425c7741de15ad64d0cbf69ad4
+[m[2;32m2017-11-09 20:00:51,169 - INFO  [Thread-1:CodeHelperServer@2678] - reqPayOtherWY请求header信息：[Host=127.0.0.1:9911, Connection=keep-alive, Cache-Control=max-age=0, User-Agent=Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36, Upgrade-Insecure-Requests=1, Accept=text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8, Accept-Encoding=gzip, deflate, br, Accept-Language=zh-CN,zh;q=0.8,en;q=0.6]
+[m[2;32m2017-11-09 20:00:51,171 - INFO  [Thread-1:CodeHelperServer@2716] - 用户访问IP=112.124.10.89
+[m[2;32m2017-11-09 20:00:51,187 - INFO  [Thread-1:HttpTool@388] - 指令url=http://www.womaishop.com/pay/wx/pay.php
+[m[2;32m2017-11-09 20:00:51,187 - INFO  [Thread-1:HttpTool@389] - 同步内容=body=icon&clientIp=112.124.10.89&notifyUrl=http://otherpay.xushihudong.com/fee/feexszfbsmback&orderid=11sdo45855264913&paytype=wxwap&returnUrl=http://www.xushihudong.com/backurl.htm&total_fee=1&userid=1387&sign=2750b3694aeba1be2cde4ca8af87c4d6
+[m[2;32m2017-11-09 20:01:29,371 - INFO  [Thread-101:CodeReqHelper@546] - 1387sd69请求结果:fail !
+[m[2;32m2017-11-09 20:01:29,446 - INFO  [Thread-101:CodeReqHelper@556] - 1387sd69生成json:{"orderid":"11sda79896127059","spid":"sd69","status":"0","url":"fail !"}
+[m[2;32m2017-11-09 20:01:29,470 - INFO  [Thread-101:CodeHelperServer@2796] - 合作方:test11
+通道方:sd69
+省份:
+计费点:1
+订单号:11sda79896127059
+指令内容:{"orderid":"11sda79896127059","spid":"sd69","status":"0","url":"fail !"}
+[m[2;35m2017-11-09 20:01:29,495 - WARN  [Thread-101:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :44947, uri:/code/reqPayOtherWY?cpid=test11&imei=357806046192158&cpparam=klwtest&fee=1&ip=112.124.10.89&goodsname=%E6%B5%8B%E8%AF%95&app=%E6%B5%8B%E8%AF%95app&playerid=abc123
+[m[2;32m2017-11-09 20:01:34,738 - INFO  [Thread-1:CodeReqHelper@546] - 1387sd69请求结果:fail !
+[m[2;32m2017-11-09 20:01:34,739 - INFO  [Thread-1:CodeReqHelper@556] - 1387sd69生成json:{"orderid":"11sdo45855264913","spid":"sd69","status":"0","url":"fail !"}
+[m[2;32m2017-11-09 20:01:34,740 - INFO  [Thread-1:CodeHelperServer@2796] - 合作方:test11
+通道方:sd69
+省份:
+计费点:1
+订单号:11sdo45855264913
+指令内容:{"orderid":"11sdo45855264913","spid":"sd69","status":"0","url":"fail !"}
+[m[2;35m2017-11-09 20:01:34,789 - WARN  [Thread-1:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :43621, uri:/code/reqPayOtherWY?cpid=test11&imei=357806046192158&cpparam=klwtest&fee=1&ip=112.124.10.89&goodsname=%E6%B5%8B%E8%AF%95&app=%E6%B5%8B%E8%AF%95app&playerid=abc123
+[m[7;31m2017-11-09 20:01:34,803 - ERROR [Thread-2:DefaultJuiceHandler@90] - java.lang.ArrayIndexOutOfBoundsException: 2
+[m[7;31m2017-11-09 20:01:34,804 - ERROR [Thread-2:DefaultJuiceHandler@91] - com.juice.orange.game.exception.JuiceException: handler request error,path:/favicon.ico;param:null
+[m[2;35m2017-11-09 20:01:34,804 - WARN  [Thread-2:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :1, uri:/favicon.ico
+[m[2;32m2017-11-09 20:01:56,052 - INFO  [Thread-151:CodeHelperServer@2678] - reqPayOtherWY请求header信息：[Host=127.0.0.1:9911, Connection=keep-alive, User-Agent=Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36, Upgrade-Insecure-Requests=1, Accept=text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8, Accept-Encoding=gzip, deflate, br, Accept-Language=zh-CN,zh;q=0.8,en;q=0.6]
+[m[2;32m2017-11-09 20:01:56,052 - INFO  [Thread-151:CodeHelperServer@2716] - 用户访问IP=112.124.10.89
+[m[2;32m2017-11-09 20:01:56,074 - INFO  [Thread-151:HttpTool@388] - 指令url=http://www.womaishop.com/pay/wx/pay.php
+[m[2;32m2017-11-09 20:01:56,075 - INFO  [Thread-151:HttpTool@389] - 同步内容=body=icon&clientIp=112.124.10.89&notifyUrl=http://otherpay.xushihudong.com/fee/feexszfbsmback&orderid=11sdu05076179390&paytype=wxwap&returnUrl=http://www.xushihudong.com/backurl.htm&total_fee=100&userid=1387&sign=6637fd968f53ad9031b1c19a88d2a1c2
+[m[2;32m2017-11-09 20:05:04,102 - INFO  [Thread-151:CodeReqHelper@546] - 1387sd69请求结果:fail !
+[m[2;32m2017-11-09 20:05:04,103 - INFO  [Thread-151:CodeReqHelper@556] - 1387sd69生成json:{"orderid":"11sdu05076179390","spid":"sd69","status":"0","url":"fail !"}
+[m[2;32m2017-11-09 20:05:04,104 - INFO  [Thread-151:CodeHelperServer@2796] - 合作方:test11
+通道方:sd69
+省份:
+计费点:100
+订单号:11sdu05076179390
+指令内容:{"orderid":"11sdu05076179390","spid":"sd69","status":"0","url":"fail !"}
+[m[2;35m2017-11-09 20:05:04,126 - WARN  [Thread-151:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :188076, uri:/code/reqPayOtherWY?cpid=test11&imei=357806046192158&cpparam=klwtest&fee=100&ip=112.124.10.89&goodsname=%E6%B5%8B%E8%AF%95&app=%E6%B5%8B%E8%AF%95app&playerid=abc123
+[m[7;31m2017-11-09 20:05:04,232 - ERROR [Thread-71:DefaultJuiceHandler@90] - java.lang.ArrayIndexOutOfBoundsException: 2
+[m[7;31m2017-11-09 20:05:04,233 - ERROR [Thread-71:DefaultJuiceHandler@91] - com.juice.orange.game.exception.JuiceException: handler request error,path:/favicon.ico;param:null
+[m[2;35m2017-11-09 20:05:04,233 - WARN  [Thread-71:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :2, uri:/favicon.ico
+[m[2;32m2017-11-09 20:05:07,247 - INFO  [Thread-81:CodeHelperServer@2678] - reqPayOtherWY请求header信息：[Host=127.0.0.1:9911, Connection=keep-alive, Cache-Control=max-age=0, User-Agent=Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36, Upgrade-Insecure-Requests=1, Accept=text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8, Accept-Encoding=gzip, deflate, br, Accept-Language=zh-CN,zh;q=0.8,en;q=0.6]
+[m[2;32m2017-11-09 20:05:07,248 - INFO  [Thread-81:CodeHelperServer@2716] - 用户访问IP=112.124.10.89
+[m[2;32m2017-11-09 20:05:07,258 - INFO  [Thread-81:HttpTool@388] - 指令url=http://www.womaishop.com/pay/wx/pay.php
+[m[2;32m2017-11-09 20:05:07,258 - INFO  [Thread-81:HttpTool@389] - 同步内容=body=icon&clientIp=112.124.10.89&notifyUrl=http://otherpay.xushihudong.com/fee/feexszfbsmback&orderid=11sdp41813453768&paytype=wxwap&returnUrl=http://www.xushihudong.com/backurl.htm&total_fee=100&userid=1387&sign=01b2e3ed811eefd02d8d5a6561cad97d
+[m[2;32m2017-11-09 20:16:26,291 - INFO  [Thread-81:CodeReqHelper@546] - 1387sd69请求结果:fail !
+[m[2;32m2017-11-09 20:16:26,292 - INFO  [Thread-81:CodeReqHelper@556] - 1387sd69生成json:{"orderid":"11sdp41813453768","spid":"sd69","status":"0","url":"fail !"}
+[m[2;32m2017-11-09 20:16:26,292 - INFO  [Thread-81:CodeHelperServer@2796] - 合作方:test11
+通道方:sd69
+省份:
+计费点:100
+订单号:11sdp41813453768
+指令内容:{"orderid":"11sdp41813453768","spid":"sd69","status":"0","url":"fail !"}
+[m[2;35m2017-11-09 20:16:26,309 - WARN  [Thread-81:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :679063, uri:/code/reqPayOtherWY?cpid=test11&imei=357806046192158&cpparam=klwtest&fee=100&ip=112.124.10.89&goodsname=%E6%B5%8B%E8%AF%95&app=%E6%B5%8B%E8%AF%95app&playerid=abc123
+[m[7;31m2017-11-09 20:16:26,335 - ERROR [Thread-131:DefaultJuiceHandler@90] - java.lang.ArrayIndexOutOfBoundsException: 2
+[m[7;31m2017-11-09 20:16:26,335 - ERROR [Thread-131:DefaultJuiceHandler@91] - com.juice.orange.game.exception.JuiceException: handler request error,path:/favicon.ico;param:null
+[m[2;35m2017-11-09 20:16:26,335 - WARN  [Thread-131:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :0, uri:/favicon.ico
+[m[7;31m2017-11-09 21:00:43,954 - ERROR [Thread-72:DefaultJuiceHandler@90] - java.lang.ArrayIndexOutOfBoundsException: 2
+[m[7;31m2017-11-09 21:00:43,955 - ERROR [Thread-72:DefaultJuiceHandler@91] - com.juice.orange.game.exception.JuiceException: handler request error,path:/favicon.ico;param:null
+[m[2;35m2017-11-09 21:00:43,955 - WARN  [Thread-72:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :1, uri:/favicon.ico
+[m

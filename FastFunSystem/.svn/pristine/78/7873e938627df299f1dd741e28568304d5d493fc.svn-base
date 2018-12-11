@@ -1,0 +1,98 @@
+[2;32m2017-01-13 10:20:38,587 - INFO  [main:ServerBootstrap@78] - connect to database:jdbc:mysql://120.24.88.90:3306/fastfun?useUnicode=true&characterEncoding=UTF-8
+[m[2;32m2017-01-13 10:20:39,873 - INFO  [main:ServerBootstrap@104] - Configuration Server bootstrap params.......
+[m[2;32m2017-01-13 10:20:39,873 - INFO  [main:ServerBootstrap@105] - Server protocol:	socket
+[m[2;32m2017-01-13 10:20:39,873 - INFO  [main:ServerBootstrap@106] - Server port:	9912
+[m[2;35m2017-01-13 10:20:40,435 - WARN  [main:XMemcachedClient@727] - XMemcachedClient use Binary protocol
+[m[2;32m2017-01-13 10:20:40,485 - INFO  [main:SelectorManager@37] - Creating 4 reactors...
+[m[2;35m2017-01-13 10:20:40,499 - WARN  [main:AbstractController@372] - The Controller started at localhost/127.0.0.1:0 ...
+[m[2;35m2017-01-13 10:20:40,529 - WARN  [Xmemcached-Reactor-0:MemcachedConnector@251] - Add a session: 120.24.88.90:11211
+[m[2;32m2017-01-13 10:20:40,534 - INFO  [main:Application@25] - 初始化AO...
+[m[2;32m2017-01-13 10:20:40,581 - INFO  [main:ServerBootstrap@129] - Application PID:	4020
+[m[2;35m2017-01-13 10:20:58,118 - WARN  [Thread-22:JuiceThreadPool$JuiceWorkThread@108] - RPC method start time :61, action:com.klw.fastfun.pay.common.action.CommonAction, method:getPointPayCodes
+[m[2;35m2017-01-13 10:20:59,506 - WARN  [Thread-24:JuiceThreadPool$JuiceWorkThread@108] - RPC method start time :32, action:com.klw.fastfun.pay.common.action.CommonAction, method:addOrderReqInfo
+[m[2;32m2017-01-13 10:21:37,456 - INFO  [main:ServerBootstrap@78] - connect to database:jdbc:mysql://120.24.88.90:3306/fastfun?useUnicode=true&characterEncoding=UTF-8
+[m[2;32m2017-01-13 10:21:38,192 - INFO  [main:ServerBootstrap@104] - Configuration Server bootstrap params.......
+[m[2;32m2017-01-13 10:21:38,192 - INFO  [main:ServerBootstrap@105] - Server protocol:	socket
+[m[2;32m2017-01-13 10:21:38,192 - INFO  [main:ServerBootstrap@106] - Server port:	9912
+[m[2;35m2017-01-13 10:21:38,661 - WARN  [main:XMemcachedClient@727] - XMemcachedClient use Binary protocol
+[m[2;32m2017-01-13 10:21:38,740 - INFO  [main:SelectorManager@37] - Creating 4 reactors...
+[m[2;35m2017-01-13 10:21:38,763 - WARN  [main:AbstractController@372] - The Controller started at localhost/127.0.0.1:0 ...
+[m[2;35m2017-01-13 10:21:38,797 - WARN  [Xmemcached-Reactor-0:MemcachedConnector@251] - Add a session: 120.24.88.90:11211
+[m[2;32m2017-01-13 10:21:38,800 - INFO  [main:Application@25] - 初始化AO...
+[m[2;32m2017-01-13 10:21:38,823 - INFO  [main:ServerBootstrap@129] - Application PID:	7000
+[m[2;35m2017-01-13 10:22:09,051 - WARN  [Thread-33:JuiceThreadPool$JuiceWorkThread@108] - RPC method start time :51, action:com.klw.fastfun.pay.common.action.CommonAction, method:getPointPayCodes
+[m[2;35m2017-01-13 10:22:11,524 - WARN  [Thread-13:JuiceThreadPool$JuiceWorkThread@108] - RPC method start time :34, action:com.klw.fastfun.pay.common.action.CommonAction, method:addOrderReqInfo
+[m[2;35m2017-01-13 10:22:54,440 - WARN  [Thread-22:JuiceThreadPool$JuiceWorkThread@108] - RPC method start time :12, action:com.klw.fastfun.pay.common.action.CommonAction, method:getPointPayCodes
+[m[2;35m2017-01-13 10:23:45,883 - WARN  [Thread-15:JuiceThreadPool$JuiceWorkThread@108] - RPC method start time :50081, action:com.klw.fastfun.pay.common.action.CommonAction, method:addOrderReqInfo
+[m[2;35m2017-01-13 10:24:53,185 - WARN  [Thread-20:JuiceThreadPool$JuiceWorkThread@108] - RPC method start time :22, action:com.klw.fastfun.pay.common.action.CommonAction, method:getPointPayCodes
+[m[7;31m2017-01-13 10:30:53,211 - ERROR [Thread-24:ConnectionHandle@297] - Database access problem. Killing off all remaining connections in the connection pool. SQL State = 08S01
+[m[7;31m2017-01-13 10:30:53,214 - ERROR [Thread-24:ConnectionResource@40] - insert into t_order_req_01 (ff_id, cp_id, imsi, imei, iccid, mobile, sp_id, pmodel, osversion, nwtype, ctech, fee, ip, province, cp_param, is_syn, is_success, pck, app, sdk_ver,create_time, update_time) values(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,now(),now())
+[mcom.mysql.jdbc.CommunicationsException: Communications link failure due to underlying exception: 
+
+** BEGIN NESTED EXCEPTION ** 
+
+java.net.SocketTimeoutException
+MESSAGE: Read timed out
+
+STACKTRACE:
+
+java.net.SocketTimeoutException: Read timed out
+	at java.net.SocketInputStream.socketRead0(Native Method)
+	at java.net.SocketInputStream.read(SocketInputStream.java:150)
+	at java.net.SocketInputStream.read(SocketInputStream.java:121)
+	at com.mysql.jdbc.util.ReadAheadInputStream.fill(ReadAheadInputStream.java:113)
+	at com.mysql.jdbc.util.ReadAheadInputStream.readFromUnderlyingStreamIfNecessary(ReadAheadInputStream.java:160)
+	at com.mysql.jdbc.util.ReadAheadInputStream.read(ReadAheadInputStream.java:188)
+	at com.mysql.jdbc.MysqlIO.readFully(MysqlIO.java:1994)
+	at com.mysql.jdbc.MysqlIO.reuseAndReadPacket(MysqlIO.java:2411)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:2916)
+	at com.mysql.jdbc.MysqlIO.sendCommand(MysqlIO.java:1631)
+	at com.mysql.jdbc.MysqlIO.sqlQueryDirect(MysqlIO.java:1723)
+	at com.mysql.jdbc.Connection.execSQL(Connection.java:3256)
+	at com.mysql.jdbc.PreparedStatement.executeInternal(PreparedStatement.java:1313)
+	at com.mysql.jdbc.PreparedStatement.executeUpdate(PreparedStatement.java:1585)
+	at com.mysql.jdbc.PreparedStatement.executeUpdate(PreparedStatement.java:1500)
+	at com.mysql.jdbc.PreparedStatement.executeUpdate(PreparedStatement.java:1485)
+	at com.jolbox.bonecp.PreparedStatementHandle.executeUpdate(PreparedStatementHandle.java:203)
+	at com.juice.orange.game.database.ConnectionResource.saveOrUpdate(ConnectionResource.java:38)
+	at com.klw.fastfun.pay.data.dao.OrderReqDAO.addOrderReqInfo(OrderReqDAO.java:98)
+	at com.klw.fastfun.pay.data.ao.OrderReqAO.addOrderReqInfo(OrderReqAO.java:34)
+	at com.klw.fastfun.pay.common.action.impl.CommonActionImpl.addOrderReqInfo(CommonActionImpl.java:92)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:601)
+	at com.juice.orange.game.rmi.control.RPCServerControl.nextHandler(RPCServerControl.java:57)
+	at com.juice.orange.game.util.threadpool.JuiceThreadPool$JuiceWorkThread.run(JuiceThreadPool.java:70)
+
+
+** END NESTED EXCEPTION **
+
+
+
+Last packet sent to the server was 21329 ms ago.
+	at com.mysql.jdbc.MysqlIO.reuseAndReadPacket(MysqlIO.java:2622)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:2916)
+	at com.mysql.jdbc.MysqlIO.sendCommand(MysqlIO.java:1631)
+	at com.mysql.jdbc.MysqlIO.sqlQueryDirect(MysqlIO.java:1723)
+	at com.mysql.jdbc.Connection.execSQL(Connection.java:3256)
+	at com.mysql.jdbc.PreparedStatement.executeInternal(PreparedStatement.java:1313)
+	at com.mysql.jdbc.PreparedStatement.executeUpdate(PreparedStatement.java:1585)
+	at com.mysql.jdbc.PreparedStatement.executeUpdate(PreparedStatement.java:1500)
+	at com.mysql.jdbc.PreparedStatement.executeUpdate(PreparedStatement.java:1485)
+	at com.jolbox.bonecp.PreparedStatementHandle.executeUpdate(PreparedStatementHandle.java:203)
+	at com.juice.orange.game.database.ConnectionResource.saveOrUpdate(ConnectionResource.java:38)
+	at com.klw.fastfun.pay.data.dao.OrderReqDAO.addOrderReqInfo(OrderReqDAO.java:98)
+	at com.klw.fastfun.pay.data.ao.OrderReqAO.addOrderReqInfo(OrderReqAO.java:34)
+	at com.klw.fastfun.pay.common.action.impl.CommonActionImpl.addOrderReqInfo(CommonActionImpl.java:92)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:601)
+	at com.juice.orange.game.rmi.control.RPCServerControl.nextHandler(RPCServerControl.java:57)
+	at com.juice.orange.game.util.threadpool.JuiceThreadPool$JuiceWorkThread.run(JuiceThreadPool.java:70)
+[2;35m2017-01-13 10:30:53,230 - WARN  [Thread-24:JuiceThreadPool$JuiceWorkThread@108] - RPC method start time :358699, action:com.klw.fastfun.pay.common.action.CommonAction, method:addOrderReqInfo
+[m[2;35m2017-01-13 10:31:41,929 - WARN  [Thread-26:JuiceThreadPool$JuiceWorkThread@108] - RPC method start time :12, action:com.klw.fastfun.pay.common.action.CommonAction, method:getPointPayCodes
+[m[2;35m2017-01-13 10:35:07,278 - WARN  [Thread-18:JuiceThreadPool$JuiceWorkThread@108] - RPC method start time :25, action:com.klw.fastfun.pay.common.action.CommonAction, method:getPointPayCodes
+[m[2;35m2017-01-13 10:35:10,412 - WARN  [Thread-40:JuiceThreadPool$JuiceWorkThread@108] - RPC method start time :359, action:com.klw.fastfun.pay.common.action.CommonAction, method:getPointPayCodes
+[m

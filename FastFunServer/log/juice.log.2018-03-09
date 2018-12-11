@@ -1,0 +1,676 @@
+[2;32m2018-03-09 00:12:10,811 - INFO  [main:ServerBootstrap@95] - Configuration Server bootstrap params.......
+[m[2;32m2018-03-09 00:12:10,816 - INFO  [main:ServerBootstrap@96] - Server protocol:	http
+[m[2;32m2018-03-09 00:12:10,816 - INFO  [main:ServerBootstrap@97] - Server port:	9911
+[m[2;32m2018-03-09 00:12:11,078 - INFO  [main:ServerBootstrap@106] - Configuration Remote Server.......
+[m[2;32m2018-03-09 00:12:11,078 - INFO  [main:ServerBootstrap@108] - Add Remote Server - Name:FastFunSystem;Address:localhost;Port:9912
+[m[2;35m2018-03-09 00:12:11,145 - WARN  [main:XMemcachedClient@727] - XMemcachedClient use Binary protocol
+[m[2;32m2018-03-09 00:12:11,175 - INFO  [main:SelectorManager@37] - Creating 16 reactors...
+[m[2;35m2018-03-09 00:12:11,190 - WARN  [main:AbstractController@372] - The Controller started at localhost/127.0.0.1:0 ...
+[m[7;31m2018-03-09 00:12:12,205 - ERROR [main:XMemcachedClient@593] - connect to 127.0.0.1:11211 error
+[mjava.util.concurrent.ExecutionException: java.net.ConnectException: Connection refused: no further information
+	at com.google.code.yanf4j.core.impl.FutureImpl.get(FutureImpl.java:145)
+	at net.rubyeye.xmemcached.XMemcachedClient.connect(XMemcachedClient.java:582)
+	at net.rubyeye.xmemcached.XMemcachedClient.<init>(XMemcachedClient.java:870)
+	at net.rubyeye.xmemcached.XMemcachedClientBuilder.build(XMemcachedClientBuilder.java:340)
+	at com.juice.orange.game.cached.MemcachedResource.buildMemcached(MemcachedResource.java:34)
+	at com.klw.fastfun.pay.view.app.ServerBootstrap.main(ServerBootstrap.java:78)
+Caused by: java.net.ConnectException: Connection refused: no further information
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(Unknown Source)
+	at net.rubyeye.xmemcached.impl.MemcachedConnector.onConnect(MemcachedConnector.java:404)
+	at com.google.code.yanf4j.nio.impl.Reactor.dispatchEvent(Reactor.java:303)
+	at com.google.code.yanf4j.nio.impl.Reactor.run(Reactor.java:142)
+[7;31m2018-03-09 00:12:12,207 - ERROR [Xmemcached-Reactor-0:MemcachedConnector$InnerControllerStateListener@558] - Exception occured in controller
+[mjava.io.IOException: Connect to 127.0.0.1:11211 fail,Connection refused: no further information
+	at net.rubyeye.xmemcached.impl.MemcachedConnector.onConnect(MemcachedConnector.java:423)
+	at com.google.code.yanf4j.nio.impl.Reactor.dispatchEvent(Reactor.java:303)
+	at com.google.code.yanf4j.nio.impl.Reactor.run(Reactor.java:142)
+[7;31m2018-03-09 00:12:12,212 - ERROR [Xmemcached-Reactor-0:Reactor@325] - Reactor dispatch events error
+[mjava.io.IOException: Connect to 127.0.0.1:11211 fail,Connection refused: no further information
+	at net.rubyeye.xmemcached.impl.MemcachedConnector.onConnect(MemcachedConnector.java:423)
+	at com.google.code.yanf4j.nio.impl.Reactor.dispatchEvent(Reactor.java:303)
+	at com.google.code.yanf4j.nio.impl.Reactor.run(Reactor.java:142)
+[7;31m2018-03-09 00:12:12,212 - ERROR [main:XMemcachedClient@627] - Connect to 127.0.0.1:11211 fail
+[mjava.util.concurrent.ExecutionException: java.net.ConnectException: Connection refused: no further information
+	at com.google.code.yanf4j.core.impl.FutureImpl.get(FutureImpl.java:145)
+	at net.rubyeye.xmemcached.XMemcachedClient.connect(XMemcachedClient.java:582)
+	at net.rubyeye.xmemcached.XMemcachedClient.<init>(XMemcachedClient.java:870)
+	at net.rubyeye.xmemcached.XMemcachedClientBuilder.build(XMemcachedClientBuilder.java:340)
+	at com.juice.orange.game.cached.MemcachedResource.buildMemcached(MemcachedResource.java:34)
+	at com.klw.fastfun.pay.view.app.ServerBootstrap.main(ServerBootstrap.java:78)
+Caused by: java.net.ConnectException: Connection refused: no further information
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(Unknown Source)
+	at net.rubyeye.xmemcached.impl.MemcachedConnector.onConnect(MemcachedConnector.java:404)
+	at com.google.code.yanf4j.nio.impl.Reactor.dispatchEvent(Reactor.java:303)
+	at com.google.code.yanf4j.nio.impl.Reactor.run(Reactor.java:142)
+[2;32m2018-03-09 00:12:12,214 - INFO  [main:Application@25] - Init servers......
+[m[2;32m2018-03-09 00:12:12,300 - INFO  [main:ServerBootstrap@120] - Application PID:	11128
+[m[2;35m2018-03-09 00:12:14,213 - WARN  [Heal-Session-Thread:MemcachedConnector$SessionMonitor@125] - Trying to connect to 127.0.0.1:11211 for 1 times
+[m[7;31m2018-03-09 00:12:15,213 - ERROR [Xmemcached-Reactor-0:MemcachedConnector$InnerControllerStateListener@558] - Exception occured in controller
+[mjava.io.IOException: Connect to 127.0.0.1:11211 fail,Connection refused: no further information
+	at net.rubyeye.xmemcached.impl.MemcachedConnector.onConnect(MemcachedConnector.java:423)
+	at com.google.code.yanf4j.nio.impl.Reactor.dispatchEvent(Reactor.java:303)
+	at com.google.code.yanf4j.nio.impl.Reactor.run(Reactor.java:142)
+[7;31m2018-03-09 00:12:15,216 - ERROR [Xmemcached-Reactor-0:Reactor@325] - Reactor dispatch events error
+[mjava.io.IOException: Connect to 127.0.0.1:11211 fail,Connection refused: no further information
+	at net.rubyeye.xmemcached.impl.MemcachedConnector.onConnect(MemcachedConnector.java:423)
+	at com.google.code.yanf4j.nio.impl.Reactor.dispatchEvent(Reactor.java:303)
+	at com.google.code.yanf4j.nio.impl.Reactor.run(Reactor.java:142)
+[7;31m2018-03-09 00:12:15,215 - ERROR [Heal-Session-Thread:MemcachedConnector$SessionMonitor@169] - Reconnect to 127.0.0.1:11211 fail
+[m[2;35m2018-03-09 00:12:17,214 - WARN  [Heal-Session-Thread:MemcachedConnector$SessionMonitor@125] - Trying to connect to 127.0.0.1:11211 for 2 times
+[m[2;35m2018-03-09 00:12:17,225 - WARN  [Xmemcached-Reactor-0:MemcachedConnector@251] - Add a session: 127.0.0.1:11211
+[m[2;32m2018-03-09 00:13:33,773 - INFO  [Thread-132:FeeBack@1660] - feexsjmback加冕-QQ扫码请求header信息：[Accept=*/*, Host=127.0.0.1:9911, Content-Length=265, Connection=Keep-Alive, Cache-Control=no-cache]
+[m[2;32m2018-03-09 00:13:34,879 - INFO  [Thread-132:FeeBack@1662] - feexsjmback请求body信息：orderNo=sd9003sdm94421907087&orderAmount=498.98&orderTime=20180308221701&payTime=20180308221716&noise=KY8UMIcWy54WUB2inWozr2f8RDPQDHTx&sign=675FF8E4410FAF0676F970B0EF57C982&mid=822017122669578&flowNo=ZF20180308221701862553&succAmount=498.98&type=QQwallet&status=1
+
+[m[7;31m2018-03-09 00:13:47,708 - ERROR [Thread-132:JuiceInvocationHandler@61] - Latch request time out..
+[m[7;31m2018-03-09 00:15:15,041 - ERROR [Thread-132:FeeBack@1686] - class: com.juice.orange.game.rmi.JuiceInvocationHandler; method: invoke; line: 67;  Exception: 
+class: com.sun.proxy.$Proxy0; method: queryCodeInfoBySpid; line: -1;  Exception: 
+class: com.klw.fastfun.pay.view.app.service.FeeBack; method: feexsjmback; line: 1667;  Exception: 
+class: sun.reflect.NativeMethodAccessorImpl; method: invoke0; line: -2;  Exception: 
+class: sun.reflect.NativeMethodAccessorImpl; method: invoke; line: -1;  Exception: 
+class: sun.reflect.DelegatingMethodAccessorImpl; method: invoke; line: -1;  Exception: 
+class: java.lang.reflect.Method; method: invoke; line: -1;  Exception: 
+class: com.juice.orange.game.handler.DefaultJuiceHandler; method: handleHttpRequest; line: 81;  Exception: 
+class: com.juice.orange.game.handler.DefaultJuiceHandler; method: handlerRequest; line: 35;  Exception: 
+class: com.juice.orange.game.handler.JuiceHttpControl; method: nextHandler; line: 84;  Exception: 
+class: com.juice.orange.game.handler.JuiceHttpControl; method: nextHandler; line: 67;  Exception: 
+class: com.juice.orange.game.util.threadpool.JuiceThreadPool$JuiceWorkThread; method: run; line: 70;  Exception: 
+java.lang.NullPointerException
+[m[2;35m2018-03-09 00:15:15,048 - WARN  [Thread-132:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :103730, uri:/fee/feexsjmback
+[m[2;32m2018-03-09 00:15:23,847 - INFO  [Thread-71:FeeBack@1660] - feexsjmback加冕-QQ扫码请求header信息：[Accept=*/*, Host=127.0.0.1:9911, Content-Length=265, Connection=Keep-Alive, Cache-Control=no-cache]
+[m[2;32m2018-03-09 00:15:24,558 - INFO  [Thread-71:FeeBack@1662] - feexsjmback请求body信息：orderNo=sd9003sdm94421907087&orderAmount=498.98&orderTime=20180308221701&payTime=20180308221716&noise=KY8UMIcWy54WUB2inWozr2f8RDPQDHTx&sign=675FF8E4410FAF0676F970B0EF57C982&mid=822017122669578&flowNo=ZF20180308221701862553&succAmount=498.98&type=QQwallet&status=1
+
+[m[7;31m2018-03-09 00:15:38,532 - ERROR [Thread-71:JuiceInvocationHandler@61] - Latch request time out..
+[m[2;32m2018-03-09 00:16:33,221 - INFO  [main:ServerBootstrap@95] - Configuration Server bootstrap params.......
+[m[2;32m2018-03-09 00:16:33,222 - INFO  [main:ServerBootstrap@96] - Server protocol:	http
+[m[2;32m2018-03-09 00:16:33,222 - INFO  [main:ServerBootstrap@97] - Server port:	9911
+[m[2;32m2018-03-09 00:16:33,420 - INFO  [main:ServerBootstrap@106] - Configuration Remote Server.......
+[m[2;32m2018-03-09 00:16:33,420 - INFO  [main:ServerBootstrap@108] - Add Remote Server - Name:FastFunSystem;Address:localhost;Port:9912
+[m[2;35m2018-03-09 00:16:33,474 - WARN  [main:XMemcachedClient@727] - XMemcachedClient use Binary protocol
+[m[2;32m2018-03-09 00:16:33,507 - INFO  [main:SelectorManager@37] - Creating 16 reactors...
+[m[2;35m2018-03-09 00:16:33,522 - WARN  [main:AbstractController@372] - The Controller started at localhost/127.0.0.1:0 ...
+[m[2;35m2018-03-09 00:16:33,537 - WARN  [Xmemcached-Reactor-0:MemcachedConnector@251] - Add a session: 127.0.0.1:11211
+[m[2;32m2018-03-09 00:16:33,538 - INFO  [main:Application@25] - Init servers......
+[m[2;32m2018-03-09 00:16:33,601 - INFO  [main:ServerBootstrap@120] - Application PID:	12292
+[m[2;32m2018-03-09 00:16:45,729 - INFO  [Thread-99:FeeBack@1660] - feexsjmback加冕-QQ扫码请求header信息：[Accept=*/*, Host=127.0.0.1:9911, Content-Length=265, Connection=Keep-Alive, Cache-Control=no-cache]
+[m[2;32m2018-03-09 00:16:46,422 - INFO  [Thread-99:FeeBack@1662] - feexsjmback请求body信息：orderNo=sd9003sdm94421907087&orderAmount=498.98&orderTime=20180308221701&payTime=20180308221716&noise=KY8UMIcWy54WUB2inWozr2f8RDPQDHTx&sign=675FF8E4410FAF0676F970B0EF57C982&mid=822017122669578&flowNo=ZF20180308221701862553&succAmount=498.98&type=QQwallet&status=1
+
+[m[7;31m2018-03-09 00:16:58,498 - ERROR [Thread-99:JuiceInvocationHandler@61] - Latch request time out..
+[m[7;31m2018-03-09 00:17:47,758 - ERROR [Thread-99:FeeBack@1686] - class: com.juice.orange.game.rmi.JuiceInvocationHandler; method: invoke; line: 67;  Exception: 
+class: com.sun.proxy.$Proxy0; method: queryCodeInfoBySpid; line: -1;  Exception: 
+class: com.klw.fastfun.pay.view.app.service.FeeBack; method: feexsjmback; line: 1667;  Exception: 
+class: sun.reflect.NativeMethodAccessorImpl; method: invoke0; line: -2;  Exception: 
+class: sun.reflect.NativeMethodAccessorImpl; method: invoke; line: -1;  Exception: 
+class: sun.reflect.DelegatingMethodAccessorImpl; method: invoke; line: -1;  Exception: 
+class: java.lang.reflect.Method; method: invoke; line: -1;  Exception: 
+class: com.juice.orange.game.handler.DefaultJuiceHandler; method: handleHttpRequest; line: 81;  Exception: 
+class: com.juice.orange.game.handler.DefaultJuiceHandler; method: handlerRequest; line: 35;  Exception: 
+class: com.juice.orange.game.handler.JuiceHttpControl; method: nextHandler; line: 84;  Exception: 
+class: com.juice.orange.game.handler.JuiceHttpControl; method: nextHandler; line: 67;  Exception: 
+class: com.juice.orange.game.util.threadpool.JuiceThreadPool$JuiceWorkThread; method: run; line: 70;  Exception: 
+java.lang.NullPointerException
+[m[2;35m2018-03-09 00:17:47,770 - WARN  [Thread-99:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :64074, uri:/fee/feexsjmback
+[m[2;32m2018-03-09 00:20:00,467 - INFO  [Thread-111:FeeBack@1660] - feexsjmback加冕-QQ扫码请求header信息：[Accept=*/*, Host=127.0.0.1:9911, Content-Length=265, Connection=Keep-Alive, Cache-Control=no-cache]
+[m[2;32m2018-03-09 00:20:00,469 - INFO  [Thread-111:FeeBack@1662] - feexsjmback请求body信息：orderNo=sd9003sdm94421907087&orderAmount=498.98&orderTime=20180308221701&payTime=20180308221716&noise=KY8UMIcWy54WUB2inWozr2f8RDPQDHTx&sign=675FF8E4410FAF0676F970B0EF57C982&mid=822017122669578&flowNo=ZF20180308221701862553&succAmount=498.98&type=QQwallet&status=1
+
+[m[7;31m2018-03-09 00:20:10,471 - ERROR [Thread-111:JuiceInvocationHandler@61] - Latch request time out..
+[m[7;31m2018-03-09 00:20:10,471 - ERROR [Thread-111:FeeBack@1686] - class: com.juice.orange.game.rmi.JuiceInvocationHandler; method: invoke; line: 67;  Exception: 
+class: com.sun.proxy.$Proxy0; method: queryCodeInfoBySpid; line: -1;  Exception: 
+class: com.klw.fastfun.pay.view.app.service.FeeBack; method: feexsjmback; line: 1667;  Exception: 
+class: sun.reflect.NativeMethodAccessorImpl; method: invoke0; line: -2;  Exception: 
+class: sun.reflect.NativeMethodAccessorImpl; method: invoke; line: -1;  Exception: 
+class: sun.reflect.DelegatingMethodAccessorImpl; method: invoke; line: -1;  Exception: 
+class: java.lang.reflect.Method; method: invoke; line: -1;  Exception: 
+class: com.juice.orange.game.handler.DefaultJuiceHandler; method: handleHttpRequest; line: 81;  Exception: 
+class: com.juice.orange.game.handler.DefaultJuiceHandler; method: handlerRequest; line: 35;  Exception: 
+class: com.juice.orange.game.handler.JuiceHttpControl; method: nextHandler; line: 84;  Exception: 
+class: com.juice.orange.game.handler.JuiceHttpControl; method: nextHandler; line: 67;  Exception: 
+class: com.juice.orange.game.util.threadpool.JuiceThreadPool$JuiceWorkThread; method: run; line: 70;  Exception: 
+java.lang.NullPointerException
+[m[2;35m2018-03-09 00:20:10,473 - WARN  [Thread-111:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :10006, uri:/fee/feexsjmback
+[m[2;32m2018-03-09 00:21:08,682 - INFO  [Thread-31:FeeBack@1660] - feexsjmback加冕-QQ扫码请求header信息：[Accept=*/*, Host=127.0.0.1:9911, Content-Length=265, Connection=Keep-Alive, Cache-Control=no-cache]
+[m[2;32m2018-03-09 00:21:08,684 - INFO  [Thread-31:FeeBack@1662] - feexsjmback请求body信息：orderNo=sd9003sdm94421907087&orderAmount=498.98&orderTime=20180308221701&payTime=20180308221716&noise=KY8UMIcWy54WUB2inWozr2f8RDPQDHTx&sign=675FF8E4410FAF0676F970B0EF57C982&mid=822017122669578&flowNo=ZF20180308221701862553&succAmount=498.98&type=QQwallet&status=1
+
+[m[2;35m2018-03-09 00:21:19,639 - WARN  [Thread-31:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :10957, uri:/fee/feexsjmback
+[m[2;32m2018-03-09 00:21:28,344 - INFO  [Thread-121:FeeBack@1660] - feexsjmback加冕-QQ扫码请求header信息：[Accept=*/*, Host=127.0.0.1:9911, Content-Length=265, Connection=Keep-Alive, Cache-Control=no-cache]
+[m[2;32m2018-03-09 00:21:28,344 - INFO  [Thread-121:FeeBack@1662] - feexsjmback请求body信息：orderNo=sd9003sdm94421907087&orderAmount=498.98&orderTime=20180308221701&payTime=20180308221716&noise=KY8UMIcWy54WUB2inWozr2f8RDPQDHTx&sign=675FF8E4410FAF0676F970B0EF57C982&mid=822017122669578&flowNo=ZF20180308221701862553&succAmount=498.98&type=QQwallet&status=1
+
+[m[2;35m2018-03-09 00:21:55,083 - WARN  [Thread-121:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :26740, uri:/fee/feexsjmback
+[m[2;32m2018-03-09 00:21:58,202 - INFO  [Thread-1:FeeBack@1660] - feexsjmback加冕-QQ扫码请求header信息：[Accept=*/*, Host=127.0.0.1:9911, Content-Length=265, Connection=Keep-Alive, Cache-Control=no-cache]
+[m[2;32m2018-03-09 00:21:58,203 - INFO  [Thread-1:FeeBack@1662] - feexsjmback请求body信息：orderNo=sd9003sdm94421907087&orderAmount=498.98&orderTime=20180308221701&payTime=20180308221716&noise=KY8UMIcWy54WUB2inWozr2f8RDPQDHTx&sign=675FF8E4410FAF0676F970B0EF57C982&mid=822017122669578&flowNo=ZF20180308221701862553&succAmount=498.98&type=QQwallet&status=1
+
+[m[2;35m2018-03-09 00:24:34,326 - WARN  [Thread-1:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :156124, uri:/fee/feexsjmback
+[m[2;32m2018-03-09 00:27:22,141 - INFO  [Thread-92:FeeBack@1660] - feexsjmback加冕-QQ扫码请求header信息：[Accept=*/*, Host=127.0.0.1:9911, Content-Length=263, Connection=Keep-Alive, Cache-Control=no-cache]
+[m[2;32m2018-03-09 00:27:22,141 - INFO  [Thread-92:FeeBack@1662] - feexsjmback请求body信息：orderNo=sd9003sdn70804912039&orderAmount=199.95&orderTime=20180308222124&payTime=20180308222139&noise=NWOhhYTLjdy1JJmDwt4g4nVoDBRZbmDG&sign=2FD157AF88FAA0382CB6B9D12234878F&mid=822017122669578&flowNo=ZF20180308222124863075&succAmount=199.95&type=QQwallet&status=1
+[m[7;31m2018-03-09 00:27:43,242 - ERROR [Thread-92:FeeBack@4527] - class: java.net.AbstractPlainSocketImpl; method: connect; line: -1;  Exception: 
+class: java.net.PlainSocketImpl; method: connect; line: -1;  Exception: 
+class: java.net.SocksSocketImpl; method: connect; line: -1;  Exception: 
+class: java.net.Socket; method: connect; line: -1;  Exception: 
+class: sun.security.ssl.SSLSocketImpl; method: connect; line: -1;  Exception: 
+class: sun.net.NetworkClient; method: doConnect; line: -1;  Exception: 
+class: sun.net.www.http.HttpClient; method: openServer; line: -1;  Exception: 
+class: sun.net.www.http.HttpClient; method: openServer; line: -1;  Exception: 
+class: sun.net.www.protocol.https.HttpsClient; method: <init>; line: -1;  Exception: 
+class: sun.net.www.protocol.https.HttpsClient; method: New; line: -1;  Exception: 
+class: sun.net.www.protocol.https.AbstractDelegateHttpsURLConnection; method: getNewHttpClient; line: -1;  Exception: 
+class: sun.net.www.protocol.http.HttpURLConnection; method: plainConnect0; line: -1;  Exception: 
+class: sun.net.www.protocol.http.HttpURLConnection; method: plainConnect; line: -1;  Exception: 
+class: sun.net.www.protocol.https.AbstractDelegateHttpsURLConnection; method: connect; line: -1;  Exception: 
+class: sun.net.www.protocol.https.HttpsURLConnectionImpl; method: connect; line: -1;  Exception: 
+class: com.klw.fastfun.pay.common.tool.HttpsTool; method: sendGet; line: 204;  Exception: 
+class: com.klw.fastfun.pay.view.app.service.FeeBack; method: notityOtherResult; line: 4520;  Exception: 
+class: com.klw.fastfun.pay.view.app.service.FeeBack; method: processOtherOrder; line: 4052;  Exception: 
+class: com.klw.fastfun.pay.view.app.service.FeeBack; method: feexsjmback; line: 1681;  Exception: 
+class: sun.reflect.NativeMethodAccessorImpl; method: invoke0; line: -2;  Exception: 
+class: sun.reflect.NativeMethodAccessorImpl; method: invoke; line: -1;  Exception: 
+class: sun.reflect.DelegatingMethodAccessorImpl; method: invoke; line: -1;  Exception: 
+class: java.lang.reflect.Method; method: invoke; line: -1;  Exception: 
+class: com.juice.orange.game.handler.DefaultJuiceHandler; method: handleHttpRequest; line: 81;  Exception: 
+class: com.juice.orange.game.handler.DefaultJuiceHandler; method: handlerRequest; line: 35;  Exception: 
+class: com.juice.orange.game.handler.JuiceHttpControl; method: nextHandler; line: 84;  Exception: 
+class: com.juice.orange.game.handler.JuiceHttpControl; method: nextHandler; line: 67;  Exception: 
+class: com.juice.orange.game.util.threadpool.JuiceThreadPool$JuiceWorkThread; method: run; line: 70;  Exception: 
+java.net.UnknownHostException
+[m[2;32m2018-03-09 00:27:43,242 - INFO  [Thread-92:FeeBack@4055] - 给CP的同步结果：
+[m[7;31m2018-03-09 00:27:46,243 - ERROR [Thread-92:FeeBack@4527] - class: java.net.AbstractPlainSocketImpl; method: connect; line: -1;  Exception: 
+class: java.net.PlainSocketImpl; method: connect; line: -1;  Exception: 
+class: java.net.SocksSocketImpl; method: connect; line: -1;  Exception: 
+class: java.net.Socket; method: connect; line: -1;  Exception: 
+class: sun.security.ssl.SSLSocketImpl; method: connect; line: -1;  Exception: 
+class: sun.net.NetworkClient; method: doConnect; line: -1;  Exception: 
+class: sun.net.www.http.HttpClient; method: openServer; line: -1;  Exception: 
+class: sun.net.www.http.HttpClient; method: openServer; line: -1;  Exception: 
+class: sun.net.www.protocol.https.HttpsClient; method: <init>; line: -1;  Exception: 
+class: sun.net.www.protocol.https.HttpsClient; method: New; line: -1;  Exception: 
+class: sun.net.www.protocol.https.AbstractDelegateHttpsURLConnection; method: getNewHttpClient; line: -1;  Exception: 
+class: sun.net.www.protocol.http.HttpURLConnection; method: plainConnect0; line: -1;  Exception: 
+class: sun.net.www.protocol.http.HttpURLConnection; method: plainConnect; line: -1;  Exception: 
+class: sun.net.www.protocol.https.AbstractDelegateHttpsURLConnection; method: connect; line: -1;  Exception: 
+class: sun.net.www.protocol.https.HttpsURLConnectionImpl; method: connect; line: -1;  Exception: 
+class: com.klw.fastfun.pay.common.tool.HttpsTool; method: sendGet; line: 204;  Exception: 
+class: com.klw.fastfun.pay.view.app.service.FeeBack; method: notityOtherResult; line: 4520;  Exception: 
+class: com.klw.fastfun.pay.view.app.service.FeeBack; method: processOtherOrder; line: 4063;  Exception: 
+class: com.klw.fastfun.pay.view.app.service.FeeBack; method: feexsjmback; line: 1681;  Exception: 
+class: sun.reflect.NativeMethodAccessorImpl; method: invoke0; line: -2;  Exception: 
+class: sun.reflect.NativeMethodAccessorImpl; method: invoke; line: -1;  Exception: 
+class: sun.reflect.DelegatingMethodAccessorImpl; method: invoke; line: -1;  Exception: 
+class: java.lang.reflect.Method; method: invoke; line: -1;  Exception: 
+class: com.juice.orange.game.handler.DefaultJuiceHandler; method: handleHttpRequest; line: 81;  Exception: 
+class: com.juice.orange.game.handler.DefaultJuiceHandler; method: handlerRequest; line: 35;  Exception: 
+class: com.juice.orange.game.handler.JuiceHttpControl; method: nextHandler; line: 84;  Exception: 
+class: com.juice.orange.game.handler.JuiceHttpControl; method: nextHandler; line: 67;  Exception: 
+class: com.juice.orange.game.util.threadpool.JuiceThreadPool$JuiceWorkThread; method: run; line: 70;  Exception: 
+java.net.UnknownHostException
+[m[7;31m2018-03-09 00:27:46,243 - ERROR [Thread-92:FeeBack@4065] - 03sdn70804912039订单第2次同步
+[m[7;31m2018-03-09 00:27:49,246 - ERROR [Thread-92:FeeBack@4527] - class: java.net.AbstractPlainSocketImpl; method: connect; line: -1;  Exception: 
+class: java.net.PlainSocketImpl; method: connect; line: -1;  Exception: 
+class: java.net.SocksSocketImpl; method: connect; line: -1;  Exception: 
+class: java.net.Socket; method: connect; line: -1;  Exception: 
+class: sun.security.ssl.SSLSocketImpl; method: connect; line: -1;  Exception: 
+class: sun.net.NetworkClient; method: doConnect; line: -1;  Exception: 
+class: sun.net.www.http.HttpClient; method: openServer; line: -1;  Exception: 
+class: sun.net.www.http.HttpClient; method: openServer; line: -1;  Exception: 
+class: sun.net.www.protocol.https.HttpsClient; method: <init>; line: -1;  Exception: 
+class: sun.net.www.protocol.https.HttpsClient; method: New; line: -1;  Exception: 
+class: sun.net.www.protocol.https.AbstractDelegateHttpsURLConnection; method: getNewHttpClient; line: -1;  Exception: 
+class: sun.net.www.protocol.http.HttpURLConnection; method: plainConnect0; line: -1;  Exception: 
+class: sun.net.www.protocol.http.HttpURLConnection; method: plainConnect; line: -1;  Exception: 
+class: sun.net.www.protocol.https.AbstractDelegateHttpsURLConnection; method: connect; line: -1;  Exception: 
+class: sun.net.www.protocol.https.HttpsURLConnectionImpl; method: connect; line: -1;  Exception: 
+class: com.klw.fastfun.pay.common.tool.HttpsTool; method: sendGet; line: 204;  Exception: 
+class: com.klw.fastfun.pay.view.app.service.FeeBack; method: notityOtherResult; line: 4520;  Exception: 
+class: com.klw.fastfun.pay.view.app.service.FeeBack; method: processOtherOrder; line: 4063;  Exception: 
+class: com.klw.fastfun.pay.view.app.service.FeeBack; method: feexsjmback; line: 1681;  Exception: 
+class: sun.reflect.NativeMethodAccessorImpl; method: invoke0; line: -2;  Exception: 
+class: sun.reflect.NativeMethodAccessorImpl; method: invoke; line: -1;  Exception: 
+class: sun.reflect.DelegatingMethodAccessorImpl; method: invoke; line: -1;  Exception: 
+class: java.lang.reflect.Method; method: invoke; line: -1;  Exception: 
+class: com.juice.orange.game.handler.DefaultJuiceHandler; method: handleHttpRequest; line: 81;  Exception: 
+class: com.juice.orange.game.handler.DefaultJuiceHandler; method: handlerRequest; line: 35;  Exception: 
+class: com.juice.orange.game.handler.JuiceHttpControl; method: nextHandler; line: 84;  Exception: 
+class: com.juice.orange.game.handler.JuiceHttpControl; method: nextHandler; line: 67;  Exception: 
+class: com.juice.orange.game.util.threadpool.JuiceThreadPool$JuiceWorkThread; method: run; line: 70;  Exception: 
+java.net.UnknownHostException
+[m[7;31m2018-03-09 00:27:49,247 - ERROR [Thread-92:FeeBack@4065] - 03sdn70804912039订单第3次同步
+[m[7;31m2018-03-09 00:27:52,248 - ERROR [Thread-92:FeeBack@4527] - class: java.net.AbstractPlainSocketImpl; method: connect; line: -1;  Exception: 
+class: java.net.PlainSocketImpl; method: connect; line: -1;  Exception: 
+class: java.net.SocksSocketImpl; method: connect; line: -1;  Exception: 
+class: java.net.Socket; method: connect; line: -1;  Exception: 
+class: sun.security.ssl.SSLSocketImpl; method: connect; line: -1;  Exception: 
+class: sun.net.NetworkClient; method: doConnect; line: -1;  Exception: 
+class: sun.net.www.http.HttpClient; method: openServer; line: -1;  Exception: 
+class: sun.net.www.http.HttpClient; method: openServer; line: -1;  Exception: 
+class: sun.net.www.protocol.https.HttpsClient; method: <init>; line: -1;  Exception: 
+class: sun.net.www.protocol.https.HttpsClient; method: New; line: -1;  Exception: 
+class: sun.net.www.protocol.https.AbstractDelegateHttpsURLConnection; method: getNewHttpClient; line: -1;  Exception: 
+class: sun.net.www.protocol.http.HttpURLConnection; method: plainConnect0; line: -1;  Exception: 
+class: sun.net.www.protocol.http.HttpURLConnection; method: plainConnect; line: -1;  Exception: 
+class: sun.net.www.protocol.https.AbstractDelegateHttpsURLConnection; method: connect; line: -1;  Exception: 
+class: sun.net.www.protocol.https.HttpsURLConnectionImpl; method: connect; line: -1;  Exception: 
+class: com.klw.fastfun.pay.common.tool.HttpsTool; method: sendGet; line: 204;  Exception: 
+class: com.klw.fastfun.pay.view.app.service.FeeBack; method: notityOtherResult; line: 4520;  Exception: 
+class: com.klw.fastfun.pay.view.app.service.FeeBack; method: processOtherOrder; line: 4063;  Exception: 
+class: com.klw.fastfun.pay.view.app.service.FeeBack; method: feexsjmback; line: 1681;  Exception: 
+class: sun.reflect.NativeMethodAccessorImpl; method: invoke0; line: -2;  Exception: 
+class: sun.reflect.NativeMethodAccessorImpl; method: invoke; line: -1;  Exception: 
+class: sun.reflect.DelegatingMethodAccessorImpl; method: invoke; line: -1;  Exception: 
+class: java.lang.reflect.Method; method: invoke; line: -1;  Exception: 
+class: com.juice.orange.game.handler.DefaultJuiceHandler; method: handleHttpRequest; line: 81;  Exception: 
+class: com.juice.orange.game.handler.DefaultJuiceHandler; method: handlerRequest; line: 35;  Exception: 
+class: com.juice.orange.game.handler.JuiceHttpControl; method: nextHandler; line: 84;  Exception: 
+class: com.juice.orange.game.handler.JuiceHttpControl; method: nextHandler; line: 67;  Exception: 
+class: com.juice.orange.game.util.threadpool.JuiceThreadPool$JuiceWorkThread; method: run; line: 70;  Exception: 
+java.net.UnknownHostException
+[m[7;31m2018-03-09 00:27:52,249 - ERROR [Thread-92:FeeBack@4065] - 03sdn70804912039订单第4次同步
+[m[7;31m2018-03-09 00:28:01,275 - ERROR [Thread-92:FeeBack@4527] - class: java.net.AbstractPlainSocketImpl; method: connect; line: -1;  Exception: 
+class: java.net.PlainSocketImpl; method: connect; line: -1;  Exception: 
+class: java.net.SocksSocketImpl; method: connect; line: -1;  Exception: 
+class: java.net.Socket; method: connect; line: -1;  Exception: 
+class: sun.security.ssl.SSLSocketImpl; method: connect; line: -1;  Exception: 
+class: sun.net.NetworkClient; method: doConnect; line: -1;  Exception: 
+class: sun.net.www.http.HttpClient; method: openServer; line: -1;  Exception: 
+class: sun.net.www.http.HttpClient; method: openServer; line: -1;  Exception: 
+class: sun.net.www.protocol.https.HttpsClient; method: <init>; line: -1;  Exception: 
+class: sun.net.www.protocol.https.HttpsClient; method: New; line: -1;  Exception: 
+class: sun.net.www.protocol.https.AbstractDelegateHttpsURLConnection; method: getNewHttpClient; line: -1;  Exception: 
+class: sun.net.www.protocol.http.HttpURLConnection; method: plainConnect0; line: -1;  Exception: 
+class: sun.net.www.protocol.http.HttpURLConnection; method: plainConnect; line: -1;  Exception: 
+class: sun.net.www.protocol.https.AbstractDelegateHttpsURLConnection; method: connect; line: -1;  Exception: 
+class: sun.net.www.protocol.https.HttpsURLConnectionImpl; method: connect; line: -1;  Exception: 
+class: com.klw.fastfun.pay.common.tool.HttpsTool; method: sendGet; line: 204;  Exception: 
+class: com.klw.fastfun.pay.view.app.service.FeeBack; method: notityOtherResult; line: 4520;  Exception: 
+class: com.klw.fastfun.pay.view.app.service.FeeBack; method: processOtherOrder; line: 4063;  Exception: 
+class: com.klw.fastfun.pay.view.app.service.FeeBack; method: feexsjmback; line: 1681;  Exception: 
+class: sun.reflect.NativeMethodAccessorImpl; method: invoke0; line: -2;  Exception: 
+class: sun.reflect.NativeMethodAccessorImpl; method: invoke; line: -1;  Exception: 
+class: sun.reflect.DelegatingMethodAccessorImpl; method: invoke; line: -1;  Exception: 
+class: java.lang.reflect.Method; method: invoke; line: -1;  Exception: 
+class: com.juice.orange.game.handler.DefaultJuiceHandler; method: handleHttpRequest; line: 81;  Exception: 
+class: com.juice.orange.game.handler.DefaultJuiceHandler; method: handlerRequest; line: 35;  Exception: 
+class: com.juice.orange.game.handler.JuiceHttpControl; method: nextHandler; line: 84;  Exception: 
+class: com.juice.orange.game.handler.JuiceHttpControl; method: nextHandler; line: 67;  Exception: 
+class: com.juice.orange.game.util.threadpool.JuiceThreadPool$JuiceWorkThread; method: run; line: 70;  Exception: 
+java.net.UnknownHostException
+[m[7;31m2018-03-09 00:28:01,275 - ERROR [Thread-92:FeeBack@4065] - 03sdn70804912039订单第5次同步
+[m[2;35m2018-03-09 00:28:01,295 - WARN  [Thread-92:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :39154, uri:/fee/feexsjmback
+[m[2;32m2018-03-09 00:28:06,328 - INFO  [Thread-151:FeeBack@1660] - feexsjmback加冕-QQ扫码请求header信息：[Accept=*/*, Host=127.0.0.1:9911, Content-Length=263, Connection=Keep-Alive, Cache-Control=no-cache]
+[m[2;32m2018-03-09 00:28:06,332 - INFO  [Thread-151:FeeBack@1662] - feexsjmback请求body信息：orderNo=sd9003sdm94421907087&orderAmount=498.98&orderTime=20180308221701&payTime=20180308221716&noise=KY8UMIcWy54WUB2inWozr2f8RDPQDHTx&sign=675FF8E4410FAF0676F970B0EF57C982&mid=822017122669578&flowNo=ZF20180308221701862553&succAmount=498.98&type=QQwallet&status=1
+[m[7;31m2018-03-09 00:28:24,299 - ERROR [Thread-151:FeeBack@4527] - class: java.net.AbstractPlainSocketImpl; method: connect; line: -1;  Exception: 
+class: java.net.PlainSocketImpl; method: connect; line: -1;  Exception: 
+class: java.net.SocksSocketImpl; method: connect; line: -1;  Exception: 
+class: java.net.Socket; method: connect; line: -1;  Exception: 
+class: sun.security.ssl.SSLSocketImpl; method: connect; line: -1;  Exception: 
+class: sun.net.NetworkClient; method: doConnect; line: -1;  Exception: 
+class: sun.net.www.http.HttpClient; method: openServer; line: -1;  Exception: 
+class: sun.net.www.http.HttpClient; method: openServer; line: -1;  Exception: 
+class: sun.net.www.protocol.https.HttpsClient; method: <init>; line: -1;  Exception: 
+class: sun.net.www.protocol.https.HttpsClient; method: New; line: -1;  Exception: 
+class: sun.net.www.protocol.https.AbstractDelegateHttpsURLConnection; method: getNewHttpClient; line: -1;  Exception: 
+class: sun.net.www.protocol.http.HttpURLConnection; method: plainConnect0; line: -1;  Exception: 
+class: sun.net.www.protocol.http.HttpURLConnection; method: plainConnect; line: -1;  Exception: 
+class: sun.net.www.protocol.https.AbstractDelegateHttpsURLConnection; method: connect; line: -1;  Exception: 
+class: sun.net.www.protocol.https.HttpsURLConnectionImpl; method: connect; line: -1;  Exception: 
+class: com.klw.fastfun.pay.common.tool.HttpsTool; method: sendGet; line: 204;  Exception: 
+class: com.klw.fastfun.pay.view.app.service.FeeBack; method: notityOtherResult; line: 4520;  Exception: 
+class: com.klw.fastfun.pay.view.app.service.FeeBack; method: processOtherOrder; line: 4052;  Exception: 
+class: com.klw.fastfun.pay.view.app.service.FeeBack; method: feexsjmback; line: 1681;  Exception: 
+class: sun.reflect.NativeMethodAccessorImpl; method: invoke0; line: -2;  Exception: 
+class: sun.reflect.NativeMethodAccessorImpl; method: invoke; line: -1;  Exception: 
+class: sun.reflect.DelegatingMethodAccessorImpl; method: invoke; line: -1;  Exception: 
+class: java.lang.reflect.Method; method: invoke; line: -1;  Exception: 
+class: com.juice.orange.game.handler.DefaultJuiceHandler; method: handleHttpRequest; line: 81;  Exception: 
+class: com.juice.orange.game.handler.DefaultJuiceHandler; method: handlerRequest; line: 35;  Exception: 
+class: com.juice.orange.game.handler.JuiceHttpControl; method: nextHandler; line: 84;  Exception: 
+class: com.juice.orange.game.handler.JuiceHttpControl; method: nextHandler; line: 67;  Exception: 
+class: com.juice.orange.game.util.threadpool.JuiceThreadPool$JuiceWorkThread; method: run; line: 70;  Exception: 
+java.net.UnknownHostException
+[m[2;32m2018-03-09 00:28:24,300 - INFO  [Thread-151:FeeBack@4055] - 给CP的同步结果：
+[m[7;31m2018-03-09 00:28:27,301 - ERROR [Thread-151:FeeBack@4527] - class: java.net.AbstractPlainSocketImpl; method: connect; line: -1;  Exception: 
+class: java.net.PlainSocketImpl; method: connect; line: -1;  Exception: 
+class: java.net.SocksSocketImpl; method: connect; line: -1;  Exception: 
+class: java.net.Socket; method: connect; line: -1;  Exception: 
+class: sun.security.ssl.SSLSocketImpl; method: connect; line: -1;  Exception: 
+class: sun.net.NetworkClient; method: doConnect; line: -1;  Exception: 
+class: sun.net.www.http.HttpClient; method: openServer; line: -1;  Exception: 
+class: sun.net.www.http.HttpClient; method: openServer; line: -1;  Exception: 
+class: sun.net.www.protocol.https.HttpsClient; method: <init>; line: -1;  Exception: 
+class: sun.net.www.protocol.https.HttpsClient; method: New; line: -1;  Exception: 
+class: sun.net.www.protocol.https.AbstractDelegateHttpsURLConnection; method: getNewHttpClient; line: -1;  Exception: 
+class: sun.net.www.protocol.http.HttpURLConnection; method: plainConnect0; line: -1;  Exception: 
+class: sun.net.www.protocol.http.HttpURLConnection; method: plainConnect; line: -1;  Exception: 
+class: sun.net.www.protocol.https.AbstractDelegateHttpsURLConnection; method: connect; line: -1;  Exception: 
+class: sun.net.www.protocol.https.HttpsURLConnectionImpl; method: connect; line: -1;  Exception: 
+class: com.klw.fastfun.pay.common.tool.HttpsTool; method: sendGet; line: 204;  Exception: 
+class: com.klw.fastfun.pay.view.app.service.FeeBack; method: notityOtherResult; line: 4520;  Exception: 
+class: com.klw.fastfun.pay.view.app.service.FeeBack; method: processOtherOrder; line: 4063;  Exception: 
+class: com.klw.fastfun.pay.view.app.service.FeeBack; method: feexsjmback; line: 1681;  Exception: 
+class: sun.reflect.NativeMethodAccessorImpl; method: invoke0; line: -2;  Exception: 
+class: sun.reflect.NativeMethodAccessorImpl; method: invoke; line: -1;  Exception: 
+class: sun.reflect.DelegatingMethodAccessorImpl; method: invoke; line: -1;  Exception: 
+class: java.lang.reflect.Method; method: invoke; line: -1;  Exception: 
+class: com.juice.orange.game.handler.DefaultJuiceHandler; method: handleHttpRequest; line: 81;  Exception: 
+class: com.juice.orange.game.handler.DefaultJuiceHandler; method: handlerRequest; line: 35;  Exception: 
+class: com.juice.orange.game.handler.JuiceHttpControl; method: nextHandler; line: 84;  Exception: 
+class: com.juice.orange.game.handler.JuiceHttpControl; method: nextHandler; line: 67;  Exception: 
+class: com.juice.orange.game.util.threadpool.JuiceThreadPool$JuiceWorkThread; method: run; line: 70;  Exception: 
+java.net.UnknownHostException
+[m[7;31m2018-03-09 00:28:27,301 - ERROR [Thread-151:FeeBack@4065] - 03sdm94421907087订单第2次同步
+[m[7;31m2018-03-09 00:28:30,303 - ERROR [Thread-151:FeeBack@4527] - class: java.net.AbstractPlainSocketImpl; method: connect; line: -1;  Exception: 
+class: java.net.PlainSocketImpl; method: connect; line: -1;  Exception: 
+class: java.net.SocksSocketImpl; method: connect; line: -1;  Exception: 
+class: java.net.Socket; method: connect; line: -1;  Exception: 
+class: sun.security.ssl.SSLSocketImpl; method: connect; line: -1;  Exception: 
+class: sun.net.NetworkClient; method: doConnect; line: -1;  Exception: 
+class: sun.net.www.http.HttpClient; method: openServer; line: -1;  Exception: 
+class: sun.net.www.http.HttpClient; method: openServer; line: -1;  Exception: 
+class: sun.net.www.protocol.https.HttpsClient; method: <init>; line: -1;  Exception: 
+class: sun.net.www.protocol.https.HttpsClient; method: New; line: -1;  Exception: 
+class: sun.net.www.protocol.https.AbstractDelegateHttpsURLConnection; method: getNewHttpClient; line: -1;  Exception: 
+class: sun.net.www.protocol.http.HttpURLConnection; method: plainConnect0; line: -1;  Exception: 
+class: sun.net.www.protocol.http.HttpURLConnection; method: plainConnect; line: -1;  Exception: 
+class: sun.net.www.protocol.https.AbstractDelegateHttpsURLConnection; method: connect; line: -1;  Exception: 
+class: sun.net.www.protocol.https.HttpsURLConnectionImpl; method: connect; line: -1;  Exception: 
+class: com.klw.fastfun.pay.common.tool.HttpsTool; method: sendGet; line: 204;  Exception: 
+class: com.klw.fastfun.pay.view.app.service.FeeBack; method: notityOtherResult; line: 4520;  Exception: 
+class: com.klw.fastfun.pay.view.app.service.FeeBack; method: processOtherOrder; line: 4063;  Exception: 
+class: com.klw.fastfun.pay.view.app.service.FeeBack; method: feexsjmback; line: 1681;  Exception: 
+class: sun.reflect.NativeMethodAccessorImpl; method: invoke0; line: -2;  Exception: 
+class: sun.reflect.NativeMethodAccessorImpl; method: invoke; line: -1;  Exception: 
+class: sun.reflect.DelegatingMethodAccessorImpl; method: invoke; line: -1;  Exception: 
+class: java.lang.reflect.Method; method: invoke; line: -1;  Exception: 
+class: com.juice.orange.game.handler.DefaultJuiceHandler; method: handleHttpRequest; line: 81;  Exception: 
+class: com.juice.orange.game.handler.DefaultJuiceHandler; method: handlerRequest; line: 35;  Exception: 
+class: com.juice.orange.game.handler.JuiceHttpControl; method: nextHandler; line: 84;  Exception: 
+class: com.juice.orange.game.handler.JuiceHttpControl; method: nextHandler; line: 67;  Exception: 
+class: com.juice.orange.game.util.threadpool.JuiceThreadPool$JuiceWorkThread; method: run; line: 70;  Exception: 
+java.net.UnknownHostException
+[m[7;31m2018-03-09 00:28:30,304 - ERROR [Thread-151:FeeBack@4065] - 03sdm94421907087订单第3次同步
+[m[7;31m2018-03-09 00:28:33,305 - ERROR [Thread-151:FeeBack@4527] - class: java.net.AbstractPlainSocketImpl; method: connect; line: -1;  Exception: 
+class: java.net.PlainSocketImpl; method: connect; line: -1;  Exception: 
+class: java.net.SocksSocketImpl; method: connect; line: -1;  Exception: 
+class: java.net.Socket; method: connect; line: -1;  Exception: 
+class: sun.security.ssl.SSLSocketImpl; method: connect; line: -1;  Exception: 
+class: sun.net.NetworkClient; method: doConnect; line: -1;  Exception: 
+class: sun.net.www.http.HttpClient; method: openServer; line: -1;  Exception: 
+class: sun.net.www.http.HttpClient; method: openServer; line: -1;  Exception: 
+class: sun.net.www.protocol.https.HttpsClient; method: <init>; line: -1;  Exception: 
+class: sun.net.www.protocol.https.HttpsClient; method: New; line: -1;  Exception: 
+class: sun.net.www.protocol.https.AbstractDelegateHttpsURLConnection; method: getNewHttpClient; line: -1;  Exception: 
+class: sun.net.www.protocol.http.HttpURLConnection; method: plainConnect0; line: -1;  Exception: 
+class: sun.net.www.protocol.http.HttpURLConnection; method: plainConnect; line: -1;  Exception: 
+class: sun.net.www.protocol.https.AbstractDelegateHttpsURLConnection; method: connect; line: -1;  Exception: 
+class: sun.net.www.protocol.https.HttpsURLConnectionImpl; method: connect; line: -1;  Exception: 
+class: com.klw.fastfun.pay.common.tool.HttpsTool; method: sendGet; line: 204;  Exception: 
+class: com.klw.fastfun.pay.view.app.service.FeeBack; method: notityOtherResult; line: 4520;  Exception: 
+class: com.klw.fastfun.pay.view.app.service.FeeBack; method: processOtherOrder; line: 4063;  Exception: 
+class: com.klw.fastfun.pay.view.app.service.FeeBack; method: feexsjmback; line: 1681;  Exception: 
+class: sun.reflect.NativeMethodAccessorImpl; method: invoke0; line: -2;  Exception: 
+class: sun.reflect.NativeMethodAccessorImpl; method: invoke; line: -1;  Exception: 
+class: sun.reflect.DelegatingMethodAccessorImpl; method: invoke; line: -1;  Exception: 
+class: java.lang.reflect.Method; method: invoke; line: -1;  Exception: 
+class: com.juice.orange.game.handler.DefaultJuiceHandler; method: handleHttpRequest; line: 81;  Exception: 
+class: com.juice.orange.game.handler.DefaultJuiceHandler; method: handlerRequest; line: 35;  Exception: 
+class: com.juice.orange.game.handler.JuiceHttpControl; method: nextHandler; line: 84;  Exception: 
+class: com.juice.orange.game.handler.JuiceHttpControl; method: nextHandler; line: 67;  Exception: 
+class: com.juice.orange.game.util.threadpool.JuiceThreadPool$JuiceWorkThread; method: run; line: 70;  Exception: 
+java.net.UnknownHostException
+[m[7;31m2018-03-09 00:28:33,305 - ERROR [Thread-151:FeeBack@4065] - 03sdm94421907087订单第4次同步
+[m[7;31m2018-03-09 00:28:41,330 - ERROR [Thread-151:FeeBack@4527] - class: java.net.AbstractPlainSocketImpl; method: connect; line: -1;  Exception: 
+class: java.net.PlainSocketImpl; method: connect; line: -1;  Exception: 
+class: java.net.SocksSocketImpl; method: connect; line: -1;  Exception: 
+class: java.net.Socket; method: connect; line: -1;  Exception: 
+class: sun.security.ssl.SSLSocketImpl; method: connect; line: -1;  Exception: 
+class: sun.net.NetworkClient; method: doConnect; line: -1;  Exception: 
+class: sun.net.www.http.HttpClient; method: openServer; line: -1;  Exception: 
+class: sun.net.www.http.HttpClient; method: openServer; line: -1;  Exception: 
+class: sun.net.www.protocol.https.HttpsClient; method: <init>; line: -1;  Exception: 
+class: sun.net.www.protocol.https.HttpsClient; method: New; line: -1;  Exception: 
+class: sun.net.www.protocol.https.AbstractDelegateHttpsURLConnection; method: getNewHttpClient; line: -1;  Exception: 
+class: sun.net.www.protocol.http.HttpURLConnection; method: plainConnect0; line: -1;  Exception: 
+class: sun.net.www.protocol.http.HttpURLConnection; method: plainConnect; line: -1;  Exception: 
+class: sun.net.www.protocol.https.AbstractDelegateHttpsURLConnection; method: connect; line: -1;  Exception: 
+class: sun.net.www.protocol.https.HttpsURLConnectionImpl; method: connect; line: -1;  Exception: 
+class: com.klw.fastfun.pay.common.tool.HttpsTool; method: sendGet; line: 204;  Exception: 
+class: com.klw.fastfun.pay.view.app.service.FeeBack; method: notityOtherResult; line: 4520;  Exception: 
+class: com.klw.fastfun.pay.view.app.service.FeeBack; method: processOtherOrder; line: 4063;  Exception: 
+class: com.klw.fastfun.pay.view.app.service.FeeBack; method: feexsjmback; line: 1681;  Exception: 
+class: sun.reflect.NativeMethodAccessorImpl; method: invoke0; line: -2;  Exception: 
+class: sun.reflect.NativeMethodAccessorImpl; method: invoke; line: -1;  Exception: 
+class: sun.reflect.DelegatingMethodAccessorImpl; method: invoke; line: -1;  Exception: 
+class: java.lang.reflect.Method; method: invoke; line: -1;  Exception: 
+class: com.juice.orange.game.handler.DefaultJuiceHandler; method: handleHttpRequest; line: 81;  Exception: 
+class: com.juice.orange.game.handler.DefaultJuiceHandler; method: handlerRequest; line: 35;  Exception: 
+class: com.juice.orange.game.handler.JuiceHttpControl; method: nextHandler; line: 84;  Exception: 
+class: com.juice.orange.game.handler.JuiceHttpControl; method: nextHandler; line: 67;  Exception: 
+class: com.juice.orange.game.util.threadpool.JuiceThreadPool$JuiceWorkThread; method: run; line: 70;  Exception: 
+java.net.UnknownHostException
+[m[7;31m2018-03-09 00:28:41,331 - ERROR [Thread-151:FeeBack@4065] - 03sdm94421907087订单第5次同步
+[m[2;35m2018-03-09 00:28:41,347 - WARN  [Thread-151:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :35019, uri:/fee/feexsjmback
+[m[2;32m2018-03-09 00:28:54,492 - INFO  [Thread-141:FeeBack@1660] - feexsjmback加冕-QQ扫码请求header信息：[Accept=*/*, Host=127.0.0.1:9911, Content-Length=263, Connection=Keep-Alive, Cache-Control=no-cache]
+[m[2;32m2018-03-09 00:28:54,494 - INFO  [Thread-141:FeeBack@1662] - feexsjmback请求body信息：orderNo=sd9003sdm94421907087&orderAmount=498.98&orderTime=20180308221701&payTime=20180308221716&noise=KY8UMIcWy54WUB2inWozr2f8RDPQDHTx&sign=675FF8E4410FAF0676F970B0EF57C982&mid=822017122669578&flowNo=ZF20180308221701862553&succAmount=498.98&type=QQwallet&status=1
+[m[7;31m2018-03-09 00:29:30,629 - ERROR [Thread-141:FeeBack@4527] - class: java.net.AbstractPlainSocketImpl; method: connect; line: -1;  Exception: 
+class: java.net.PlainSocketImpl; method: connect; line: -1;  Exception: 
+class: java.net.SocksSocketImpl; method: connect; line: -1;  Exception: 
+class: java.net.Socket; method: connect; line: -1;  Exception: 
+class: sun.security.ssl.SSLSocketImpl; method: connect; line: -1;  Exception: 
+class: sun.net.NetworkClient; method: doConnect; line: -1;  Exception: 
+class: sun.net.www.http.HttpClient; method: openServer; line: -1;  Exception: 
+class: sun.net.www.http.HttpClient; method: openServer; line: -1;  Exception: 
+class: sun.net.www.protocol.https.HttpsClient; method: <init>; line: -1;  Exception: 
+class: sun.net.www.protocol.https.HttpsClient; method: New; line: -1;  Exception: 
+class: sun.net.www.protocol.https.AbstractDelegateHttpsURLConnection; method: getNewHttpClient; line: -1;  Exception: 
+class: sun.net.www.protocol.http.HttpURLConnection; method: plainConnect0; line: -1;  Exception: 
+class: sun.net.www.protocol.http.HttpURLConnection; method: plainConnect; line: -1;  Exception: 
+class: sun.net.www.protocol.https.AbstractDelegateHttpsURLConnection; method: connect; line: -1;  Exception: 
+class: sun.net.www.protocol.https.HttpsURLConnectionImpl; method: connect; line: -1;  Exception: 
+class: com.klw.fastfun.pay.common.tool.HttpsTool; method: sendGet; line: 204;  Exception: 
+class: com.klw.fastfun.pay.view.app.service.FeeBack; method: notityOtherResult; line: 4520;  Exception: 
+class: com.klw.fastfun.pay.view.app.service.FeeBack; method: processOtherOrder; line: 4052;  Exception: 
+class: com.klw.fastfun.pay.view.app.service.FeeBack; method: feexsjmback; line: 1681;  Exception: 
+class: sun.reflect.NativeMethodAccessorImpl; method: invoke0; line: -2;  Exception: 
+class: sun.reflect.NativeMethodAccessorImpl; method: invoke; line: -1;  Exception: 
+class: sun.reflect.DelegatingMethodAccessorImpl; method: invoke; line: -1;  Exception: 
+class: java.lang.reflect.Method; method: invoke; line: -1;  Exception: 
+class: com.juice.orange.game.handler.DefaultJuiceHandler; method: handleHttpRequest; line: 81;  Exception: 
+class: com.juice.orange.game.handler.DefaultJuiceHandler; method: handlerRequest; line: 35;  Exception: 
+class: com.juice.orange.game.handler.JuiceHttpControl; method: nextHandler; line: 84;  Exception: 
+class: com.juice.orange.game.handler.JuiceHttpControl; method: nextHandler; line: 67;  Exception: 
+class: com.juice.orange.game.util.threadpool.JuiceThreadPool$JuiceWorkThread; method: run; line: 70;  Exception: 
+java.net.UnknownHostException
+[m[2;32m2018-03-09 00:29:30,629 - INFO  [Thread-141:FeeBack@4055] - 给CP的同步结果：
+[m[7;31m2018-03-09 00:29:52,557 - ERROR [Thread-141:FeeBack@4527] - class: java.net.AbstractPlainSocketImpl; method: connect; line: -1;  Exception: 
+class: java.net.PlainSocketImpl; method: connect; line: -1;  Exception: 
+class: java.net.SocksSocketImpl; method: connect; line: -1;  Exception: 
+class: java.net.Socket; method: connect; line: -1;  Exception: 
+class: sun.security.ssl.SSLSocketImpl; method: connect; line: -1;  Exception: 
+class: sun.net.NetworkClient; method: doConnect; line: -1;  Exception: 
+class: sun.net.www.http.HttpClient; method: openServer; line: -1;  Exception: 
+class: sun.net.www.http.HttpClient; method: openServer; line: -1;  Exception: 
+class: sun.net.www.protocol.https.HttpsClient; method: <init>; line: -1;  Exception: 
+class: sun.net.www.protocol.https.HttpsClient; method: New; line: -1;  Exception: 
+class: sun.net.www.protocol.https.AbstractDelegateHttpsURLConnection; method: getNewHttpClient; line: -1;  Exception: 
+class: sun.net.www.protocol.http.HttpURLConnection; method: plainConnect0; line: -1;  Exception: 
+class: sun.net.www.protocol.http.HttpURLConnection; method: plainConnect; line: -1;  Exception: 
+class: sun.net.www.protocol.https.AbstractDelegateHttpsURLConnection; method: connect; line: -1;  Exception: 
+class: sun.net.www.protocol.https.HttpsURLConnectionImpl; method: connect; line: -1;  Exception: 
+class: com.klw.fastfun.pay.common.tool.HttpsTool; method: sendGet; line: 204;  Exception: 
+class: com.klw.fastfun.pay.view.app.service.FeeBack; method: notityOtherResult; line: 4520;  Exception: 
+class: com.klw.fastfun.pay.view.app.service.FeeBack; method: processOtherOrder; line: 4063;  Exception: 
+class: com.klw.fastfun.pay.view.app.service.FeeBack; method: feexsjmback; line: 1681;  Exception: 
+class: sun.reflect.NativeMethodAccessorImpl; method: invoke0; line: -2;  Exception: 
+class: sun.reflect.NativeMethodAccessorImpl; method: invoke; line: -1;  Exception: 
+class: sun.reflect.DelegatingMethodAccessorImpl; method: invoke; line: -1;  Exception: 
+class: java.lang.reflect.Method; method: invoke; line: -1;  Exception: 
+class: com.juice.orange.game.handler.DefaultJuiceHandler; method: handleHttpRequest; line: 81;  Exception: 
+class: com.juice.orange.game.handler.DefaultJuiceHandler; method: handlerRequest; line: 35;  Exception: 
+class: com.juice.orange.game.handler.JuiceHttpControl; method: nextHandler; line: 84;  Exception: 
+class: com.juice.orange.game.handler.JuiceHttpControl; method: nextHandler; line: 67;  Exception: 
+class: com.juice.orange.game.util.threadpool.JuiceThreadPool$JuiceWorkThread; method: run; line: 70;  Exception: 
+java.net.UnknownHostException
+[m[7;31m2018-03-09 00:29:52,558 - ERROR [Thread-141:FeeBack@4065] - 03sdm94421907087订单第2次同步
+[m[7;31m2018-03-09 00:30:10,410 - ERROR [Thread-141:FeeBack@4527] - class: java.net.AbstractPlainSocketImpl; method: connect; line: -1;  Exception: 
+class: java.net.PlainSocketImpl; method: connect; line: -1;  Exception: 
+class: java.net.SocksSocketImpl; method: connect; line: -1;  Exception: 
+class: java.net.Socket; method: connect; line: -1;  Exception: 
+class: sun.security.ssl.SSLSocketImpl; method: connect; line: -1;  Exception: 
+class: sun.net.NetworkClient; method: doConnect; line: -1;  Exception: 
+class: sun.net.www.http.HttpClient; method: openServer; line: -1;  Exception: 
+class: sun.net.www.http.HttpClient; method: openServer; line: -1;  Exception: 
+class: sun.net.www.protocol.https.HttpsClient; method: <init>; line: -1;  Exception: 
+class: sun.net.www.protocol.https.HttpsClient; method: New; line: -1;  Exception: 
+class: sun.net.www.protocol.https.AbstractDelegateHttpsURLConnection; method: getNewHttpClient; line: -1;  Exception: 
+class: sun.net.www.protocol.http.HttpURLConnection; method: plainConnect0; line: -1;  Exception: 
+class: sun.net.www.protocol.http.HttpURLConnection; method: plainConnect; line: -1;  Exception: 
+class: sun.net.www.protocol.https.AbstractDelegateHttpsURLConnection; method: connect; line: -1;  Exception: 
+class: sun.net.www.protocol.https.HttpsURLConnectionImpl; method: connect; line: -1;  Exception: 
+class: com.klw.fastfun.pay.common.tool.HttpsTool; method: sendGet; line: 204;  Exception: 
+class: com.klw.fastfun.pay.view.app.service.FeeBack; method: notityOtherResult; line: 4520;  Exception: 
+class: com.klw.fastfun.pay.view.app.service.FeeBack; method: processOtherOrder; line: 4063;  Exception: 
+class: com.klw.fastfun.pay.view.app.service.FeeBack; method: feexsjmback; line: 1681;  Exception: 
+class: sun.reflect.NativeMethodAccessorImpl; method: invoke0; line: -2;  Exception: 
+class: sun.reflect.NativeMethodAccessorImpl; method: invoke; line: -1;  Exception: 
+class: sun.reflect.DelegatingMethodAccessorImpl; method: invoke; line: -1;  Exception: 
+class: java.lang.reflect.Method; method: invoke; line: -1;  Exception: 
+class: com.juice.orange.game.handler.DefaultJuiceHandler; method: handleHttpRequest; line: 81;  Exception: 
+class: com.juice.orange.game.handler.DefaultJuiceHandler; method: handlerRequest; line: 35;  Exception: 
+class: com.juice.orange.game.handler.JuiceHttpControl; method: nextHandler; line: 84;  Exception: 
+class: com.juice.orange.game.handler.JuiceHttpControl; method: nextHandler; line: 67;  Exception: 
+class: com.juice.orange.game.util.threadpool.JuiceThreadPool$JuiceWorkThread; method: run; line: 70;  Exception: 
+java.net.UnknownHostException
+[m[7;31m2018-03-09 00:30:10,410 - ERROR [Thread-141:FeeBack@4065] - 03sdm94421907087订单第3次同步
+[m[7;31m2018-03-09 00:52:27,858 - ERROR [Thread-141:FeeBack@4527] - class: java.net.AbstractPlainSocketImpl; method: connect; line: -1;  Exception: 
+class: java.net.PlainSocketImpl; method: connect; line: -1;  Exception: 
+class: java.net.SocksSocketImpl; method: connect; line: -1;  Exception: 
+class: java.net.Socket; method: connect; line: -1;  Exception: 
+class: sun.security.ssl.SSLSocketImpl; method: connect; line: -1;  Exception: 
+class: sun.net.NetworkClient; method: doConnect; line: -1;  Exception: 
+class: sun.net.www.http.HttpClient; method: openServer; line: -1;  Exception: 
+class: sun.net.www.http.HttpClient; method: openServer; line: -1;  Exception: 
+class: sun.net.www.protocol.https.HttpsClient; method: <init>; line: -1;  Exception: 
+class: sun.net.www.protocol.https.HttpsClient; method: New; line: -1;  Exception: 
+class: sun.net.www.protocol.https.AbstractDelegateHttpsURLConnection; method: getNewHttpClient; line: -1;  Exception: 
+class: sun.net.www.protocol.http.HttpURLConnection; method: plainConnect0; line: -1;  Exception: 
+class: sun.net.www.protocol.http.HttpURLConnection; method: plainConnect; line: -1;  Exception: 
+class: sun.net.www.protocol.https.AbstractDelegateHttpsURLConnection; method: connect; line: -1;  Exception: 
+class: sun.net.www.protocol.https.HttpsURLConnectionImpl; method: connect; line: -1;  Exception: 
+class: com.klw.fastfun.pay.common.tool.HttpsTool; method: sendGet; line: 204;  Exception: 
+class: com.klw.fastfun.pay.view.app.service.FeeBack; method: notityOtherResult; line: 4520;  Exception: 
+class: com.klw.fastfun.pay.view.app.service.FeeBack; method: processOtherOrder; line: 4063;  Exception: 
+class: com.klw.fastfun.pay.view.app.service.FeeBack; method: feexsjmback; line: 1681;  Exception: 
+class: sun.reflect.NativeMethodAccessorImpl; method: invoke0; line: -2;  Exception: 
+class: sun.reflect.NativeMethodAccessorImpl; method: invoke; line: -1;  Exception: 
+class: sun.reflect.DelegatingMethodAccessorImpl; method: invoke; line: -1;  Exception: 
+class: java.lang.reflect.Method; method: invoke; line: -1;  Exception: 
+class: com.juice.orange.game.handler.DefaultJuiceHandler; method: handleHttpRequest; line: 81;  Exception: 
+class: com.juice.orange.game.handler.DefaultJuiceHandler; method: handlerRequest; line: 35;  Exception: 
+class: com.juice.orange.game.handler.JuiceHttpControl; method: nextHandler; line: 84;  Exception: 
+class: com.juice.orange.game.handler.JuiceHttpControl; method: nextHandler; line: 67;  Exception: 
+class: com.juice.orange.game.util.threadpool.JuiceThreadPool$JuiceWorkThread; method: run; line: 70;  Exception: 
+java.net.UnknownHostException
+[m[7;31m2018-03-09 00:52:27,859 - ERROR [Thread-141:FeeBack@4065] - 03sdm94421907087订单第4次同步
+[m[7;31m2018-03-09 00:52:30,860 - ERROR [Thread-141:FeeBack@4527] - class: java.net.AbstractPlainSocketImpl; method: connect; line: -1;  Exception: 
+class: java.net.PlainSocketImpl; method: connect; line: -1;  Exception: 
+class: java.net.SocksSocketImpl; method: connect; line: -1;  Exception: 
+class: java.net.Socket; method: connect; line: -1;  Exception: 
+class: sun.security.ssl.SSLSocketImpl; method: connect; line: -1;  Exception: 
+class: sun.net.NetworkClient; method: doConnect; line: -1;  Exception: 
+class: sun.net.www.http.HttpClient; method: openServer; line: -1;  Exception: 
+class: sun.net.www.http.HttpClient; method: openServer; line: -1;  Exception: 
+class: sun.net.www.protocol.https.HttpsClient; method: <init>; line: -1;  Exception: 
+class: sun.net.www.protocol.https.HttpsClient; method: New; line: -1;  Exception: 
+class: sun.net.www.protocol.https.AbstractDelegateHttpsURLConnection; method: getNewHttpClient; line: -1;  Exception: 
+class: sun.net.www.protocol.http.HttpURLConnection; method: plainConnect0; line: -1;  Exception: 
+class: sun.net.www.protocol.http.HttpURLConnection; method: plainConnect; line: -1;  Exception: 
+class: sun.net.www.protocol.https.AbstractDelegateHttpsURLConnection; method: connect; line: -1;  Exception: 
+class: sun.net.www.protocol.https.HttpsURLConnectionImpl; method: connect; line: -1;  Exception: 
+class: com.klw.fastfun.pay.common.tool.HttpsTool; method: sendGet; line: 204;  Exception: 
+class: com.klw.fastfun.pay.view.app.service.FeeBack; method: notityOtherResult; line: 4520;  Exception: 
+class: com.klw.fastfun.pay.view.app.service.FeeBack; method: processOtherOrder; line: 4063;  Exception: 
+class: com.klw.fastfun.pay.view.app.service.FeeBack; method: feexsjmback; line: 1681;  Exception: 
+class: sun.reflect.NativeMethodAccessorImpl; method: invoke0; line: -2;  Exception: 
+class: sun.reflect.NativeMethodAccessorImpl; method: invoke; line: -1;  Exception: 
+class: sun.reflect.DelegatingMethodAccessorImpl; method: invoke; line: -1;  Exception: 
+class: java.lang.reflect.Method; method: invoke; line: -1;  Exception: 
+class: com.juice.orange.game.handler.DefaultJuiceHandler; method: handleHttpRequest; line: 81;  Exception: 
+class: com.juice.orange.game.handler.DefaultJuiceHandler; method: handlerRequest; line: 35;  Exception: 
+class: com.juice.orange.game.handler.JuiceHttpControl; method: nextHandler; line: 84;  Exception: 
+class: com.juice.orange.game.handler.JuiceHttpControl; method: nextHandler; line: 67;  Exception: 
+class: com.juice.orange.game.util.threadpool.JuiceThreadPool$JuiceWorkThread; method: run; line: 70;  Exception: 
+java.net.UnknownHostException
+[m[7;31m2018-03-09 00:52:30,860 - ERROR [Thread-141:FeeBack@4065] - 03sdm94421907087订单第5次同步
+[m[2;35m2018-03-09 00:52:30,876 - WARN  [Thread-141:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :1416384, uri:/fee/feexsjmback
+[m[2;32m2018-03-09 00:56:29,554 - INFO  [main:ServerBootstrap@95] - Configuration Server bootstrap params.......
+[m[2;32m2018-03-09 00:56:29,557 - INFO  [main:ServerBootstrap@96] - Server protocol:	http
+[m[2;32m2018-03-09 00:56:29,557 - INFO  [main:ServerBootstrap@97] - Server port:	9911
+[m[2;32m2018-03-09 00:56:29,831 - INFO  [main:ServerBootstrap@106] - Configuration Remote Server.......
+[m[2;32m2018-03-09 00:56:29,831 - INFO  [main:ServerBootstrap@108] - Add Remote Server - Name:FastFunSystem;Address:localhost;Port:9912
+[m[2;35m2018-03-09 00:56:29,886 - WARN  [main:XMemcachedClient@727] - XMemcachedClient use Binary protocol
+[m[2;32m2018-03-09 00:56:29,921 - INFO  [main:SelectorManager@37] - Creating 16 reactors...
+[m[2;35m2018-03-09 00:56:29,931 - WARN  [main:AbstractController@372] - The Controller started at localhost/127.0.0.1:0 ...
+[m[2;35m2018-03-09 00:56:29,945 - WARN  [Xmemcached-Reactor-0:MemcachedConnector@251] - Add a session: 127.0.0.1:11211
+[m[2;32m2018-03-09 00:56:29,945 - INFO  [main:Application@25] - Init servers......
+[m[2;32m2018-03-09 00:56:30,017 - INFO  [main:ServerBootstrap@120] - Application PID:	12576
+[m[2;32m2018-03-09 00:56:43,189 - INFO  [Thread-154:FeeBack@1660] - feexsjmback加冕-QQ扫码请求header信息：[Accept=*/*, Host=127.0.0.1:9911, Content-Length=261, Connection=Keep-Alive, Cache-Control=no-cache]
+[m[2;32m2018-03-09 00:56:43,190 - INFO  [Thread-154:FeeBack@1662] - feexsjmback请求body信息：orderNo=sd9003sdq06070056408&orderAmount=98.96&orderTime=20180308221712&payTime=20180308221750&noise=XO2li8CDhcDvjIIo13cF3S99v0BBxwP2&sign=688987E36AEEA65B1C41779871D23309&mid=822017122669578&flowNo=ZF20180308221712862578&succAmount=98.96&type=QQwallet&status=1
+[m[7;31m2018-03-09 00:57:04,331 - ERROR [Thread-154:FeeBack@4527] - class: java.net.AbstractPlainSocketImpl; method: connect; line: -1;  Exception: 
+class: java.net.PlainSocketImpl; method: connect; line: -1;  Exception: 
+class: java.net.SocksSocketImpl; method: connect; line: -1;  Exception: 
+class: java.net.Socket; method: connect; line: -1;  Exception: 
+class: sun.security.ssl.SSLSocketImpl; method: connect; line: -1;  Exception: 
+class: sun.net.NetworkClient; method: doConnect; line: -1;  Exception: 
+class: sun.net.www.http.HttpClient; method: openServer; line: -1;  Exception: 
+class: sun.net.www.http.HttpClient; method: openServer; line: -1;  Exception: 
+class: sun.net.www.protocol.https.HttpsClient; method: <init>; line: -1;  Exception: 
+class: sun.net.www.protocol.https.HttpsClient; method: New; line: -1;  Exception: 
+class: sun.net.www.protocol.https.AbstractDelegateHttpsURLConnection; method: getNewHttpClient; line: -1;  Exception: 
+class: sun.net.www.protocol.http.HttpURLConnection; method: plainConnect0; line: -1;  Exception: 
+class: sun.net.www.protocol.http.HttpURLConnection; method: plainConnect; line: -1;  Exception: 
+class: sun.net.www.protocol.https.AbstractDelegateHttpsURLConnection; method: connect; line: -1;  Exception: 
+class: sun.net.www.protocol.https.HttpsURLConnectionImpl; method: connect; line: -1;  Exception: 
+class: com.klw.fastfun.pay.common.tool.HttpsTool; method: sendGet; line: 204;  Exception: 
+class: com.klw.fastfun.pay.view.app.service.FeeBack; method: notityOtherResult; line: 4520;  Exception: 
+class: com.klw.fastfun.pay.view.app.service.FeeBack; method: processOtherOrder; line: 4052;  Exception: 
+class: com.klw.fastfun.pay.view.app.service.FeeBack; method: feexsjmback; line: 1681;  Exception: 
+class: sun.reflect.NativeMethodAccessorImpl; method: invoke0; line: -2;  Exception: 
+class: sun.reflect.NativeMethodAccessorImpl; method: invoke; line: -1;  Exception: 
+class: sun.reflect.DelegatingMethodAccessorImpl; method: invoke; line: -1;  Exception: 
+class: java.lang.reflect.Method; method: invoke; line: -1;  Exception: 
+class: com.juice.orange.game.handler.DefaultJuiceHandler; method: handleHttpRequest; line: 81;  Exception: 
+class: com.juice.orange.game.handler.DefaultJuiceHandler; method: handlerRequest; line: 35;  Exception: 
+class: com.juice.orange.game.handler.JuiceHttpControl; method: nextHandler; line: 84;  Exception: 
+class: com.juice.orange.game.handler.JuiceHttpControl; method: nextHandler; line: 67;  Exception: 
+class: com.juice.orange.game.util.threadpool.JuiceThreadPool$JuiceWorkThread; method: run; line: 70;  Exception: 
+java.net.UnknownHostException
+[m[2;32m2018-03-09 00:57:04,331 - INFO  [Thread-154:FeeBack@4055] - 给CP的同步结果：
+[m[7;31m2018-03-09 00:57:45,842 - ERROR [Thread-154:FeeBack@4527] - class: java.net.AbstractPlainSocketImpl; method: connect; line: -1;  Exception: 
+class: java.net.PlainSocketImpl; method: connect; line: -1;  Exception: 
+class: java.net.SocksSocketImpl; method: connect; line: -1;  Exception: 
+class: java.net.Socket; method: connect; line: -1;  Exception: 
+class: sun.security.ssl.SSLSocketImpl; method: connect; line: -1;  Exception: 
+class: sun.net.NetworkClient; method: doConnect; line: -1;  Exception: 
+class: sun.net.www.http.HttpClient; method: openServer; line: -1;  Exception: 
+class: sun.net.www.http.HttpClient; method: openServer; line: -1;  Exception: 
+class: sun.net.www.protocol.https.HttpsClient; method: <init>; line: -1;  Exception: 
+class: sun.net.www.protocol.https.HttpsClient; method: New; line: -1;  Exception: 
+class: sun.net.www.protocol.https.AbstractDelegateHttpsURLConnection; method: getNewHttpClient; line: -1;  Exception: 
+class: sun.net.www.protocol.http.HttpURLConnection; method: plainConnect0; line: -1;  Exception: 
+class: sun.net.www.protocol.http.HttpURLConnection; method: plainConnect; line: -1;  Exception: 
+class: sun.net.www.protocol.https.AbstractDelegateHttpsURLConnection; method: connect; line: -1;  Exception: 
+class: sun.net.www.protocol.https.HttpsURLConnectionImpl; method: connect; line: -1;  Exception: 
+class: com.klw.fastfun.pay.common.tool.HttpsTool; method: sendGet; line: 204;  Exception: 
+class: com.klw.fastfun.pay.view.app.service.FeeBack; method: notityOtherResult; line: 4520;  Exception: 
+class: com.klw.fastfun.pay.view.app.service.FeeBack; method: processOtherOrder; line: 4063;  Exception: 
+class: com.klw.fastfun.pay.view.app.service.FeeBack; method: feexsjmback; line: 1681;  Exception: 
+class: sun.reflect.NativeMethodAccessorImpl; method: invoke0; line: -2;  Exception: 
+class: sun.reflect.NativeMethodAccessorImpl; method: invoke; line: -1;  Exception: 
+class: sun.reflect.DelegatingMethodAccessorImpl; method: invoke; line: -1;  Exception: 
+class: java.lang.reflect.Method; method: invoke; line: -1;  Exception: 
+class: com.juice.orange.game.handler.DefaultJuiceHandler; method: handleHttpRequest; line: 81;  Exception: 
+class: com.juice.orange.game.handler.DefaultJuiceHandler; method: handlerRequest; line: 35;  Exception: 
+class: com.juice.orange.game.handler.JuiceHttpControl; method: nextHandler; line: 84;  Exception: 
+class: com.juice.orange.game.handler.JuiceHttpControl; method: nextHandler; line: 67;  Exception: 
+class: com.juice.orange.game.util.threadpool.JuiceThreadPool$JuiceWorkThread; method: run; line: 70;  Exception: 
+java.net.UnknownHostException
+[m[7;31m2018-03-09 00:57:45,844 - ERROR [Thread-154:FeeBack@4065] - 03sdq06070056408订单第2次同步
+[m

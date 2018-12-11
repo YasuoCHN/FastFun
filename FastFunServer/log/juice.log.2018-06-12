@@ -1,0 +1,344 @@
+[2;32m2018-06-12 10:22:32,448 - INFO  [main:ServerBootstrap@95] - Configuration Server bootstrap params.......
+[m[2;32m2018-06-12 10:22:32,451 - INFO  [main:ServerBootstrap@96] - Server protocol:	http
+[m[2;32m2018-06-12 10:22:32,451 - INFO  [main:ServerBootstrap@97] - Server port:	9911
+[m[2;32m2018-06-12 10:22:32,683 - INFO  [main:ServerBootstrap@106] - Configuration Remote Server.......
+[m[2;32m2018-06-12 10:22:32,683 - INFO  [main:ServerBootstrap@108] - Add Remote Server - Name:FastFunSystem;Address:localhost;Port:9912
+[m[2;35m2018-06-12 10:22:32,752 - WARN  [main:XMemcachedClient@727] - XMemcachedClient use Binary protocol
+[m[2;32m2018-06-12 10:22:32,782 - INFO  [main:SelectorManager@37] - Creating 8 reactors...
+[m[2;35m2018-06-12 10:22:32,789 - WARN  [main:AbstractController@372] - The Controller started at localhost/127.0.0.1:0 ...
+[m[7;31m2018-06-12 10:22:33,802 - ERROR [main:XMemcachedClient@593] - connect to 127.0.0.1:11211 error
+[mjava.util.concurrent.ExecutionException: java.net.ConnectException: Connection refused: no further information
+	at com.google.code.yanf4j.core.impl.FutureImpl.get(FutureImpl.java:145)
+	at net.rubyeye.xmemcached.XMemcachedClient.connect(XMemcachedClient.java:582)
+	at net.rubyeye.xmemcached.XMemcachedClient.<init>(XMemcachedClient.java:870)
+	at net.rubyeye.xmemcached.XMemcachedClientBuilder.build(XMemcachedClientBuilder.java:340)
+	at com.juice.orange.game.cached.MemcachedResource.buildMemcached(MemcachedResource.java:34)
+	at com.klw.fastfun.pay.view.app.ServerBootstrap.main(ServerBootstrap.java:78)
+Caused by: java.net.ConnectException: Connection refused: no further information
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(Unknown Source)
+	at net.rubyeye.xmemcached.impl.MemcachedConnector.onConnect(MemcachedConnector.java:404)
+	at com.google.code.yanf4j.nio.impl.Reactor.dispatchEvent(Reactor.java:303)
+	at com.google.code.yanf4j.nio.impl.Reactor.run(Reactor.java:142)
+[7;31m2018-06-12 10:22:33,803 - ERROR [Xmemcached-Reactor-0:MemcachedConnector$InnerControllerStateListener@558] - Exception occured in controller
+[mjava.io.IOException: Connect to 127.0.0.1:11211 fail,Connection refused: no further information
+	at net.rubyeye.xmemcached.impl.MemcachedConnector.onConnect(MemcachedConnector.java:423)
+	at com.google.code.yanf4j.nio.impl.Reactor.dispatchEvent(Reactor.java:303)
+	at com.google.code.yanf4j.nio.impl.Reactor.run(Reactor.java:142)
+[7;31m2018-06-12 10:22:33,805 - ERROR [Xmemcached-Reactor-0:Reactor@325] - Reactor dispatch events error
+[mjava.io.IOException: Connect to 127.0.0.1:11211 fail,Connection refused: no further information
+	at net.rubyeye.xmemcached.impl.MemcachedConnector.onConnect(MemcachedConnector.java:423)
+	at com.google.code.yanf4j.nio.impl.Reactor.dispatchEvent(Reactor.java:303)
+	at com.google.code.yanf4j.nio.impl.Reactor.run(Reactor.java:142)
+[7;31m2018-06-12 10:22:33,806 - ERROR [main:XMemcachedClient@627] - Connect to 127.0.0.1:11211 fail
+[mjava.util.concurrent.ExecutionException: java.net.ConnectException: Connection refused: no further information
+	at com.google.code.yanf4j.core.impl.FutureImpl.get(FutureImpl.java:145)
+	at net.rubyeye.xmemcached.XMemcachedClient.connect(XMemcachedClient.java:582)
+	at net.rubyeye.xmemcached.XMemcachedClient.<init>(XMemcachedClient.java:870)
+	at net.rubyeye.xmemcached.XMemcachedClientBuilder.build(XMemcachedClientBuilder.java:340)
+	at com.juice.orange.game.cached.MemcachedResource.buildMemcached(MemcachedResource.java:34)
+	at com.klw.fastfun.pay.view.app.ServerBootstrap.main(ServerBootstrap.java:78)
+Caused by: java.net.ConnectException: Connection refused: no further information
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(Unknown Source)
+	at net.rubyeye.xmemcached.impl.MemcachedConnector.onConnect(MemcachedConnector.java:404)
+	at com.google.code.yanf4j.nio.impl.Reactor.dispatchEvent(Reactor.java:303)
+	at com.google.code.yanf4j.nio.impl.Reactor.run(Reactor.java:142)
+[2;32m2018-06-12 10:22:33,809 - INFO  [main:Application@25] - Init servers......
+[m[2;32m2018-06-12 10:22:33,857 - INFO  [main:ServerBootstrap@120] - Application PID:	9096
+[m[2;35m2018-06-12 10:22:35,813 - WARN  [Heal-Session-Thread:MemcachedConnector$SessionMonitor@125] - Trying to connect to 127.0.0.1:11211 for 1 times
+[m[7;31m2018-06-12 10:22:36,820 - ERROR [Xmemcached-Reactor-0:MemcachedConnector$InnerControllerStateListener@558] - Exception occured in controller
+[mjava.io.IOException: Connect to 127.0.0.1:11211 fail,Connection refused: no further information
+	at net.rubyeye.xmemcached.impl.MemcachedConnector.onConnect(MemcachedConnector.java:423)
+	at com.google.code.yanf4j.nio.impl.Reactor.dispatchEvent(Reactor.java:303)
+	at com.google.code.yanf4j.nio.impl.Reactor.run(Reactor.java:142)
+[7;31m2018-06-12 10:22:36,824 - ERROR [Xmemcached-Reactor-0:Reactor@325] - Reactor dispatch events error
+[mjava.io.IOException: Connect to 127.0.0.1:11211 fail,Connection refused: no further information
+	at net.rubyeye.xmemcached.impl.MemcachedConnector.onConnect(MemcachedConnector.java:423)
+	at com.google.code.yanf4j.nio.impl.Reactor.dispatchEvent(Reactor.java:303)
+	at com.google.code.yanf4j.nio.impl.Reactor.run(Reactor.java:142)
+[7;31m2018-06-12 10:22:36,820 - ERROR [Heal-Session-Thread:MemcachedConnector$SessionMonitor@169] - Reconnect to 127.0.0.1:11211 fail
+[m[2;35m2018-06-12 10:22:38,820 - WARN  [Heal-Session-Thread:MemcachedConnector$SessionMonitor@125] - Trying to connect to 127.0.0.1:11211 for 2 times
+[m[7;31m2018-06-12 10:22:39,821 - ERROR [Xmemcached-Reactor-0:MemcachedConnector$InnerControllerStateListener@558] - Exception occured in controller
+[mjava.io.IOException: Connect to 127.0.0.1:11211 fail,Connection refused: no further information
+	at net.rubyeye.xmemcached.impl.MemcachedConnector.onConnect(MemcachedConnector.java:423)
+	at com.google.code.yanf4j.nio.impl.Reactor.dispatchEvent(Reactor.java:303)
+	at com.google.code.yanf4j.nio.impl.Reactor.run(Reactor.java:142)
+[7;31m2018-06-12 10:22:39,822 - ERROR [Xmemcached-Reactor-0:Reactor@325] - Reactor dispatch events error
+[mjava.io.IOException: Connect to 127.0.0.1:11211 fail,Connection refused: no further information
+	at net.rubyeye.xmemcached.impl.MemcachedConnector.onConnect(MemcachedConnector.java:423)
+	at com.google.code.yanf4j.nio.impl.Reactor.dispatchEvent(Reactor.java:303)
+	at com.google.code.yanf4j.nio.impl.Reactor.run(Reactor.java:142)
+[7;31m2018-06-12 10:22:39,824 - ERROR [Heal-Session-Thread:MemcachedConnector$SessionMonitor@169] - Reconnect to 127.0.0.1:11211 fail
+[m[2;32m2018-06-12 10:23:02,860 - INFO  [main:ServerBootstrap@95] - Configuration Server bootstrap params.......
+[m[2;32m2018-06-12 10:23:02,868 - INFO  [main:ServerBootstrap@96] - Server protocol:	http
+[m[2;32m2018-06-12 10:23:02,869 - INFO  [main:ServerBootstrap@97] - Server port:	9911
+[m[2;32m2018-06-12 10:23:03,042 - INFO  [main:ServerBootstrap@106] - Configuration Remote Server.......
+[m[2;32m2018-06-12 10:23:03,042 - INFO  [main:ServerBootstrap@108] - Add Remote Server - Name:FastFunSystem;Address:localhost;Port:9912
+[m[2;35m2018-06-12 10:23:03,087 - WARN  [main:XMemcachedClient@727] - XMemcachedClient use Binary protocol
+[m[2;32m2018-06-12 10:23:03,117 - INFO  [main:SelectorManager@37] - Creating 8 reactors...
+[m[2;35m2018-06-12 10:23:03,125 - WARN  [main:AbstractController@372] - The Controller started at localhost/127.0.0.1:0 ...
+[m[2;35m2018-06-12 10:23:03,137 - WARN  [Xmemcached-Reactor-0:MemcachedConnector@251] - Add a session: 127.0.0.1:11211
+[m[2;32m2018-06-12 10:23:03,138 - INFO  [main:Application@25] - Init servers......
+[m[2;32m2018-06-12 10:23:03,177 - INFO  [main:ServerBootstrap@120] - Application PID:	11804
+[m[2;32m2018-06-12 10:26:22,231 - INFO  [Thread-31:FeeBack@6086] - feeSZLTzckssd34请求header信息：[Host=192.168.1.53:9911, Connection=keep-alive, Accept=*/*, User-Agent=Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.139 Safari/537.36, Accept-Encoding=gzip, deflate, Accept-Language=zh-CN,zh;q=0.9]
+[m[2;32m2018-06-12 10:26:22,430 - INFO  [Thread-31:FeeBack@5120] - flag!!!!!!=null
+[m[2;32m2018-06-12 10:26:22,547 - INFO  [Thread-31:HttpTool@130] - sendKLWPost指令url:http://118.190.90.1/mmcode/test
+[m[2;32m2018-06-12 10:26:22,548 - INFO  [Thread-31:HttpTool@131] - sendKLWPost指令param:{"cpParam":"120406225845","cpid":"test001","fee":0,"ffId":"06sd3415992071864","ip":"192.168.1.53","phone":"15992071864","status":"1"}
+[m[2;32m2018-06-12 10:26:22,664 - INFO  [Thread-31:HttpTool@169] - 指令结果=ok
+[m[2;32m2018-06-12 10:26:22,665 - INFO  [Thread-31:FeeBack@5164] - 给CP的同步结果：ok
+[m[2;35m2018-06-12 10:26:22,678 - WARN  [Thread-31:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :449, uri:/fee/feeSZLTzckssd34?mobile=15992071864&code=1111&status=1
+[m[2;32m2018-06-12 17:15:30,696 - INFO  [main:ServerBootstrap@95] - Configuration Server bootstrap params.......
+[m[2;32m2018-06-12 17:15:30,699 - INFO  [main:ServerBootstrap@96] - Server protocol:	http
+[m[2;32m2018-06-12 17:15:30,699 - INFO  [main:ServerBootstrap@97] - Server port:	9911
+[m[2;32m2018-06-12 17:15:30,873 - INFO  [main:ServerBootstrap@106] - Configuration Remote Server.......
+[m[2;32m2018-06-12 17:15:30,873 - INFO  [main:ServerBootstrap@108] - Add Remote Server - Name:FastFunSystem;Address:localhost;Port:9912
+[m[2;35m2018-06-12 17:15:30,923 - WARN  [main:XMemcachedClient@727] - XMemcachedClient use Binary protocol
+[m[2;32m2018-06-12 17:15:30,950 - INFO  [main:SelectorManager@37] - Creating 8 reactors...
+[m[2;35m2018-06-12 17:15:30,957 - WARN  [main:AbstractController@372] - The Controller started at localhost/127.0.0.1:0 ...
+[m[2;35m2018-06-12 17:15:30,964 - WARN  [Xmemcached-Reactor-0:MemcachedConnector@251] - Add a session: 127.0.0.1:11211
+[m[2;32m2018-06-12 17:15:30,965 - INFO  [main:Application@25] - Init servers......
+[m[2;32m2018-06-12 17:15:31,011 - INFO  [main:ServerBootstrap@120] - Application PID:	7204
+[m[2;32m2018-06-12 17:21:16,829 - INFO  [Thread-72:CodeHelperServer@119] - registerWBPhone请求header信息：[Host=192.168.1.53:9911, Connection=keep-alive, Accept=*/*, User-Agent=Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.139 Safari/537.36, Accept-Encoding=gzip, deflate, Accept-Language=zh-CN,zh;q=0.9]
+[m[2;32m2018-06-12 17:21:16,831 - INFO  [Thread-72:CodeHelperServer@2626] - 用户访问IP=192.168.1.53
+[m[2;32m2018-06-12 17:21:16,843 - INFO  [Thread-72:CodeHelperServer@2656] - 根据IP查询省份=局域
+[m[2;32m2018-06-12 17:21:17,010 - INFO  [Thread-72:HttpTool@774] - 指令url:http://anyuese.gz01.bdysite.com/phone.php
+[m[2;32m2018-06-12 17:21:17,011 - INFO  [Thread-72:HttpTool@775] - 同步内容:phone=13570841885
+[m[2;32m2018-06-12 17:21:17,298 - INFO  [Thread-72:CodeReqHelper@617] - sd34请求结果:success!
+[m[2;32m2018-06-12 17:21:17,362 - INFO  [Thread-72:CodeHelperServer@197] - 合作方:test001
+通道方:sd34
+订单号:06sd3413570841885
+指令内容:{"msg":"success","orderid":"06sd3413570841885","status":"0"}
+[m[2;35m2018-06-12 17:21:17,376 - WARN  [Thread-72:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :549, uri:/code/registerWBPhone?cpid=test001&phone=13570841885&mobiletype=2&imsi460078246494288
+[m[2;32m2018-06-12 17:22:22,707 - INFO  [Thread-61:CodeHelperServer@119] - registerWBPhone请求header信息：[Host=192.168.1.53:9911, Connection=keep-alive, Accept=*/*, User-Agent=Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.139 Safari/537.36, Accept-Encoding=gzip, deflate, Accept-Language=zh-CN,zh;q=0.9]
+[m[2;32m2018-06-12 17:22:22,707 - INFO  [Thread-61:CodeHelperServer@2626] - 用户访问IP=192.168.1.53
+[m[2;32m2018-06-12 17:22:22,708 - INFO  [Thread-61:CodeHelperServer@2656] - 根据IP查询省份=局域
+[m[2;32m2018-06-12 17:22:22,728 - INFO  [Thread-61:HttpTool@774] - 指令url:http://103.229.214.108/api/cpask
+[m[2;32m2018-06-12 17:22:22,729 - INFO  [Thread-61:HttpTool@775] - 同步内容:pid=30060&cid=114&ReturnSmsData=30&mobile=13570841885&imsi=null&MobileType=2
+[m[2;32m2018-06-12 17:22:22,824 - INFO  [Thread-61:CodeReqHelper@565] - 微博解封sd35请求结果：{"smsTask":[],"state":"ok","message":"成功"}
+[m[2;32m2018-06-12 17:22:22,900 - INFO  [Thread-61:CodeHelperServer@197] - 合作方:test001
+通道方:sd35
+订单号:06sd3513570841885
+指令内容:ok
+[m[2;35m2018-06-12 17:22:22,910 - WARN  [Thread-61:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :203, uri:/code/registerWBPhone?cpid=test001&phone=13570841885&mobiletype=2&imsi460078246494288
+[m[2;32m2018-06-12 17:23:15,129 - INFO  [Thread-11:CodeHelperServer@119] - registerWBPhone请求header信息：[Host=192.168.1.53:9911, Connection=keep-alive, Accept=*/*, User-Agent=Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.139 Safari/537.36, Accept-Encoding=gzip, deflate, Accept-Language=zh-CN,zh;q=0.9]
+[m[2;32m2018-06-12 17:23:15,129 - INFO  [Thread-11:CodeHelperServer@2626] - 用户访问IP=192.168.1.53
+[m[2;32m2018-06-12 17:23:15,129 - INFO  [Thread-11:CodeHelperServer@2656] - 根据IP查询省份=局域
+[m[2;35m2018-06-12 17:23:15,148 - WARN  [Thread-11:CodeHelperServer@189] - registerWBPhone号码已经被提交过，phone13570841885
+[m[2;35m2018-06-12 17:23:15,148 - WARN  [Thread-11:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :20, uri:/code/registerWBPhone?cpid=test001&phone=13570841885&mobiletype=2&imsi460078246494288
+[m[2;32m2018-06-12 17:24:45,294 - INFO  [Thread-71:CodeHelperServer@119] - registerWBPhone请求header信息：[Host=192.168.1.53:9911, Connection=keep-alive, Accept=*/*, User-Agent=Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.139 Safari/537.36, Accept-Encoding=gzip, deflate, Accept-Language=zh-CN,zh;q=0.9]
+[m[2;32m2018-06-12 17:24:45,294 - INFO  [Thread-71:CodeHelperServer@2626] - 用户访问IP=192.168.1.53
+[m[2;32m2018-06-12 17:24:45,294 - INFO  [Thread-71:CodeHelperServer@2656] - 根据IP查询省份=局域
+[m[2;32m2018-06-12 17:24:45,310 - INFO  [Thread-71:HttpTool@774] - 指令url:http://103.229.214.108/api/cpask
+[m[2;32m2018-06-12 17:24:45,310 - INFO  [Thread-71:HttpTool@775] - 同步内容:pid=30060&cid=114&ReturnSmsData=30&mobile=13570841885&imsi=null&MobileType=2
+[m[2;32m2018-06-12 17:24:45,391 - INFO  [Thread-71:CodeReqHelper@565] - 微博解封sd35请求结果：{"smsTask":[],"state":"ok","message":"成功"}
+[m[2;32m2018-06-12 17:24:45,399 - INFO  [Thread-71:CodeHelperServer@197] - 合作方:test001
+通道方:sd35
+订单号:06sd3513570841885
+指令内容:ok
+[m[2;35m2018-06-12 17:24:45,408 - WARN  [Thread-71:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :114, uri:/code/registerWBPhone?cpid=test001&phone=13570841885&mobiletype=2&imsi460078246494288
+[m[2;32m2018-06-12 17:27:36,122 - INFO  [Thread-32:CodeHelperServer@119] - registerWBPhone请求header信息：[Host=192.168.1.53:9911, Connection=keep-alive, Accept=*/*, User-Agent=Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.139 Safari/537.36, Accept-Encoding=gzip, deflate, Accept-Language=zh-CN,zh;q=0.9]
+[m[2;32m2018-06-12 17:27:36,122 - INFO  [Thread-32:CodeHelperServer@2626] - 用户访问IP=192.168.1.53
+[m[2;32m2018-06-12 17:27:36,122 - INFO  [Thread-32:CodeHelperServer@2656] - 根据IP查询省份=局域
+[m[2;35m2018-06-12 17:27:36,134 - WARN  [Thread-32:CodeHelperServer@189] - registerWBPhone号码已经被提交过，phone13570841885
+[m[2;35m2018-06-12 17:27:36,134 - WARN  [Thread-32:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :12, uri:/code/registerWBPhone?cpid=test001&phone=13570841885&mobiletype=2&imsi=460078246494288
+[m[2;32m2018-06-12 17:27:39,721 - INFO  [Thread-52:CodeHelperServer@119] - registerWBPhone请求header信息：[Host=192.168.1.53:9911, Connection=keep-alive, Accept=*/*, User-Agent=Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.139 Safari/537.36, Accept-Encoding=gzip, deflate, Accept-Language=zh-CN,zh;q=0.9]
+[m[2;32m2018-06-12 17:27:39,721 - INFO  [Thread-52:CodeHelperServer@2626] - 用户访问IP=192.168.1.53
+[m[2;32m2018-06-12 17:27:39,721 - INFO  [Thread-52:CodeHelperServer@2656] - 根据IP查询省份=局域
+[m[2;35m2018-06-12 17:27:39,727 - WARN  [Thread-52:CodeHelperServer@189] - registerWBPhone号码已经被提交过，phone13570841885
+[m[2;35m2018-06-12 17:27:39,728 - WARN  [Thread-52:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :7, uri:/code/registerWBPhone?cpid=test001&phone=13570841885&mobiletype=2&imsi=460078246494288
+[m[2;32m2018-06-12 17:27:58,857 - INFO  [Thread-21:CodeHelperServer@119] - registerWBPhone请求header信息：[Host=192.168.1.53:9911, Connection=keep-alive, Accept=*/*, User-Agent=Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.139 Safari/537.36, Accept-Encoding=gzip, deflate, Accept-Language=zh-CN,zh;q=0.9]
+[m[2;32m2018-06-12 17:27:58,857 - INFO  [Thread-21:CodeHelperServer@2626] - 用户访问IP=192.168.1.53
+[m[2;32m2018-06-12 17:27:58,857 - INFO  [Thread-21:CodeHelperServer@2656] - 根据IP查询省份=局域
+[m[2;35m2018-06-12 17:27:58,863 - WARN  [Thread-21:CodeHelperServer@189] - registerWBPhone号码已经被提交过，phone13570841885
+[m[2;35m2018-06-12 17:27:58,864 - WARN  [Thread-21:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :8, uri:/code/registerWBPhone?cpid=test001&phone=13570841885&mobiletype=2&imsi=460078246494288
+[m[2;32m2018-06-12 17:28:16,211 - INFO  [Thread-2:CodeHelperServer@119] - registerWBPhone请求header信息：[Host=192.168.1.53:9911, Connection=keep-alive, Accept=*/*, User-Agent=Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.139 Safari/537.36, Accept-Encoding=gzip, deflate, Accept-Language=zh-CN,zh;q=0.9]
+[m[2;32m2018-06-12 17:28:16,211 - INFO  [Thread-2:CodeHelperServer@2626] - 用户访问IP=192.168.1.53
+[m[2;32m2018-06-12 17:28:16,213 - INFO  [Thread-2:CodeHelperServer@2656] - 根据IP查询省份=局域
+[m[2;32m2018-06-12 17:28:16,224 - INFO  [Thread-2:HttpTool@774] - 指令url:http://103.229.214.108/api/cpask
+[m[2;32m2018-06-12 17:28:16,224 - INFO  [Thread-2:HttpTool@775] - 同步内容:pid=30060&cid=114&ReturnSmsData=30&mobile=13570841885&imsi=460078246494288&MobileType=2
+[m[2;32m2018-06-12 17:28:16,318 - INFO  [Thread-2:CodeReqHelper@565] - 微博解封sd35请求结果：{"smsTask":[],"state":"ok","message":"成功"}
+[m[2;32m2018-06-12 17:28:16,324 - INFO  [Thread-2:CodeHelperServer@197] - 合作方:test001
+通道方:sd35
+订单号:06sd3513570841885
+指令内容:ok
+[m[2;35m2018-06-12 17:28:16,338 - WARN  [Thread-2:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :144, uri:/code/registerWBPhone?cpid=test001&phone=13570841885&mobiletype=2&imsi=460078246494288
+[m[2;32m2018-06-12 17:29:03,509 - INFO  [main:ServerBootstrap@95] - Configuration Server bootstrap params.......
+[m[2;32m2018-06-12 17:29:03,511 - INFO  [main:ServerBootstrap@96] - Server protocol:	http
+[m[2;32m2018-06-12 17:29:03,512 - INFO  [main:ServerBootstrap@97] - Server port:	9911
+[m[2;32m2018-06-12 17:29:03,660 - INFO  [main:ServerBootstrap@106] - Configuration Remote Server.......
+[m[2;32m2018-06-12 17:29:03,660 - INFO  [main:ServerBootstrap@108] - Add Remote Server - Name:FastFunSystem;Address:localhost;Port:9912
+[m[2;35m2018-06-12 17:29:03,700 - WARN  [main:XMemcachedClient@727] - XMemcachedClient use Binary protocol
+[m[2;32m2018-06-12 17:29:03,723 - INFO  [main:SelectorManager@37] - Creating 8 reactors...
+[m[2;35m2018-06-12 17:29:03,730 - WARN  [main:AbstractController@372] - The Controller started at localhost/127.0.0.1:0 ...
+[m[2;35m2018-06-12 17:29:03,737 - WARN  [Xmemcached-Reactor-0:MemcachedConnector@251] - Add a session: 127.0.0.1:11211
+[m[2;32m2018-06-12 17:29:03,738 - INFO  [main:Application@25] - Init servers......
+[m[2;32m2018-06-12 17:29:03,773 - INFO  [main:ServerBootstrap@120] - Application PID:	13220
+[m[2;32m2018-06-12 17:29:22,311 - INFO  [Thread-51:CodeHelperServer@119] - registerWBPhone请求header信息：[Host=192.168.1.53:9911, Connection=keep-alive, Accept=*/*, User-Agent=Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.139 Safari/537.36, Accept-Encoding=gzip, deflate, Accept-Language=zh-CN,zh;q=0.9]
+[m[2;32m2018-06-12 17:29:22,312 - INFO  [Thread-51:CodeHelperServer@2626] - 用户访问IP=192.168.1.53
+[m[2;32m2018-06-12 17:29:22,316 - INFO  [Thread-51:CodeHelperServer@2656] - 根据IP查询省份=局域
+[m[2;32m2018-06-12 17:29:22,431 - INFO  [Thread-51:HttpTool@774] - 指令url:http://103.229.214.108/api/cpask
+[m[2;32m2018-06-12 17:29:22,431 - INFO  [Thread-51:HttpTool@775] - 同步内容:pid=30060&cid=114&ReturnSmsData=30&mobile=13570841885&imsi=460078246494288&MobileType=2
+[m[2;32m2018-06-12 17:29:22,535 - INFO  [Thread-51:CodeReqHelper@565] - 微博解封sd35请求结果：{"smsTask":[],"state":"ok","message":"成功"}
+[m[2;32m2018-06-12 17:29:22,591 - INFO  [Thread-51:CodeReqHelper@571] - ok
+[m[2;32m2018-06-12 17:29:22,591 - INFO  [Thread-51:CodeReqHelper@572] - []
+[m[2;32m2018-06-12 17:29:22,600 - INFO  [Thread-51:CodeHelperServer@197] - 合作方:test001
+通道方:sd35
+订单号:06sd3513570841885
+指令内容:ok
+[m[2;35m2018-06-12 17:29:22,613 - WARN  [Thread-51:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :303, uri:/code/registerWBPhone?cpid=test001&phone=13570841885&mobiletype=2&imsi=460078246494288
+[m[2;32m2018-06-12 17:31:28,515 - INFO  [main:ServerBootstrap@95] - Configuration Server bootstrap params.......
+[m[2;32m2018-06-12 17:31:28,517 - INFO  [main:ServerBootstrap@96] - Server protocol:	http
+[m[2;32m2018-06-12 17:31:28,517 - INFO  [main:ServerBootstrap@97] - Server port:	9911
+[m[2;32m2018-06-12 17:31:28,656 - INFO  [main:ServerBootstrap@106] - Configuration Remote Server.......
+[m[2;32m2018-06-12 17:31:28,656 - INFO  [main:ServerBootstrap@108] - Add Remote Server - Name:FastFunSystem;Address:localhost;Port:9912
+[m[2;35m2018-06-12 17:31:28,694 - WARN  [main:XMemcachedClient@727] - XMemcachedClient use Binary protocol
+[m[2;32m2018-06-12 17:31:28,717 - INFO  [main:SelectorManager@37] - Creating 8 reactors...
+[m[2;35m2018-06-12 17:31:28,724 - WARN  [main:AbstractController@372] - The Controller started at localhost/127.0.0.1:0 ...
+[m[2;35m2018-06-12 17:31:28,730 - WARN  [Xmemcached-Reactor-0:MemcachedConnector@251] - Add a session: 127.0.0.1:11211
+[m[2;32m2018-06-12 17:31:28,731 - INFO  [main:Application@25] - Init servers......
+[m[2;32m2018-06-12 17:31:28,771 - INFO  [main:ServerBootstrap@120] - Application PID:	4280
+[m[2;32m2018-06-12 17:31:40,988 - INFO  [Thread-71:CodeHelperServer@119] - registerWBPhone请求header信息：[Host=192.168.1.53:9911, Connection=keep-alive, Accept=*/*, User-Agent=Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.139 Safari/537.36, Accept-Encoding=gzip, deflate, Accept-Language=zh-CN,zh;q=0.9]
+[m[2;32m2018-06-12 17:31:40,989 - INFO  [Thread-71:CodeHelperServer@2626] - 用户访问IP=192.168.1.53
+[m[2;32m2018-06-12 17:31:40,994 - INFO  [Thread-71:CodeHelperServer@2656] - 根据IP查询省份=局域
+[m[2;32m2018-06-12 17:31:41,132 - INFO  [Thread-71:HttpTool@774] - 指令url:http://103.229.214.108/api/cpask
+[m[2;32m2018-06-12 17:31:41,132 - INFO  [Thread-71:HttpTool@775] - 同步内容:pid=30060&cid=114&ReturnSmsData=30&mobile=13570841885&imsi=460078246494288&MobileType=2
+[m[2;32m2018-06-12 17:31:41,237 - INFO  [Thread-71:CodeReqHelper@565] - 微博解封sd35请求结果：{"smsTask":[],"state":"ok","message":"成功"}
+[m[2;32m2018-06-12 17:31:41,304 - INFO  [Thread-71:CodeReqHelper@571] - ok
+[m[2;32m2018-06-12 17:31:41,304 - INFO  [Thread-71:CodeReqHelper@572] - []
+[m[2;32m2018-06-12 17:31:41,304 - INFO  [Thread-71:CodeReqHelper@573] - 2
+[m[2;32m2018-06-12 17:31:41,313 - INFO  [Thread-71:CodeHelperServer@197] - 合作方:test001
+通道方:sd35
+订单号:06sd3513570841885
+指令内容:ok
+[m[2;35m2018-06-12 17:31:41,324 - WARN  [Thread-71:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :337, uri:/code/registerWBPhone?cpid=test001&phone=13570841885&mobiletype=2&imsi=460078246494288
+[m[2;32m2018-06-12 17:32:22,616 - INFO  [Thread-61:CodeHelperServer@119] - registerWBPhone请求header信息：[Host=192.168.1.53:9911, Connection=keep-alive, Accept=*/*, User-Agent=Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.139 Safari/537.36, Accept-Encoding=gzip, deflate, Accept-Language=zh-CN,zh;q=0.9]
+[m[2;32m2018-06-12 17:32:22,616 - INFO  [Thread-61:CodeHelperServer@2626] - 用户访问IP=192.168.1.53
+[m[2;32m2018-06-12 17:32:22,616 - INFO  [Thread-61:CodeHelperServer@2656] - 根据IP查询省份=局域
+[m[2;32m2018-06-12 17:32:22,624 - INFO  [Thread-61:HttpTool@774] - 指令url:http://103.229.214.108/api/cpask
+[m[2;32m2018-06-12 17:32:22,624 - INFO  [Thread-61:HttpTool@775] - 同步内容:pid=30060&cid=114&ReturnSmsData=30&mobile=13570841886&imsi=460078246494288&MobileType=2
+[m[2;32m2018-06-12 17:32:22,714 - INFO  [Thread-61:CodeReqHelper@565] - 微博解封sd35请求结果：{"smsTask":[],"state":"ok","message":"成功"}
+[m[2;32m2018-06-12 17:32:22,714 - INFO  [Thread-61:CodeReqHelper@571] - ok
+[m[2;32m2018-06-12 17:32:22,714 - INFO  [Thread-61:CodeReqHelper@572] - []
+[m[2;32m2018-06-12 17:32:22,714 - INFO  [Thread-61:CodeReqHelper@573] - 2
+[m[2;32m2018-06-12 17:32:22,718 - INFO  [Thread-61:CodeHelperServer@197] - 合作方:test001
+通道方:sd35
+订单号:06sd3513570841886
+指令内容:ok
+[m[2;35m2018-06-12 17:32:22,725 - WARN  [Thread-61:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :109, uri:/code/registerWBPhone?cpid=test001&phone=13570841886&mobiletype=2&imsi=460078246494288
+[m[2;32m2018-06-12 17:32:28,703 - INFO  [Thread-51:CodeHelperServer@119] - registerWBPhone请求header信息：[Host=192.168.1.53:9911, Connection=keep-alive, Accept=*/*, User-Agent=Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.139 Safari/537.36, Accept-Encoding=gzip, deflate, Accept-Language=zh-CN,zh;q=0.9]
+[m[2;32m2018-06-12 17:32:28,703 - INFO  [Thread-51:CodeHelperServer@2626] - 用户访问IP=192.168.1.53
+[m[2;32m2018-06-12 17:32:28,703 - INFO  [Thread-51:CodeHelperServer@2656] - 根据IP查询省份=局域
+[m[2;32m2018-06-12 17:32:28,710 - INFO  [Thread-51:HttpTool@774] - 指令url:http://103.229.214.108/api/cpask
+[m[2;32m2018-06-12 17:32:28,710 - INFO  [Thread-51:HttpTool@775] - 同步内容:pid=30060&cid=114&ReturnSmsData=30&mobile=13570841888&imsi=460078246494288&MobileType=2
+[m[2;32m2018-06-12 17:32:28,797 - INFO  [Thread-51:CodeReqHelper@565] - 微博解封sd35请求结果：{"smsTask":[{"number":"1069009010015","sms":"26","smsType":"text","taskid":"1528795959979792"}],"state":"ok","message":"成功"}
+[m[2;32m2018-06-12 17:32:28,799 - INFO  [Thread-51:CodeReqHelper@571] - ok
+[m[2;32m2018-06-12 17:32:28,799 - INFO  [Thread-51:CodeReqHelper@572] - [{"number":"1069009010015","sms":"26","smsType":"text","taskid":"1528795959979792"}]
+[m[2;32m2018-06-12 17:32:28,799 - INFO  [Thread-51:CodeReqHelper@573] - 84
+[m[2;32m2018-06-12 17:32:28,803 - INFO  [Thread-51:CodeHelperServer@197] - 合作方:test001
+通道方:sd35
+订单号:06sd3513570841888
+指令内容:ok
+[m[2;35m2018-06-12 17:32:28,808 - WARN  [Thread-51:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :106, uri:/code/registerWBPhone?cpid=test001&phone=13570841888&mobiletype=2&imsi=460078246494288
+[m[2;32m2018-06-12 17:40:56,572 - INFO  [main:ServerBootstrap@95] - Configuration Server bootstrap params.......
+[m[2;32m2018-06-12 17:40:56,574 - INFO  [main:ServerBootstrap@96] - Server protocol:	http
+[m[2;32m2018-06-12 17:40:56,574 - INFO  [main:ServerBootstrap@97] - Server port:	9911
+[m[2;32m2018-06-12 17:40:56,718 - INFO  [main:ServerBootstrap@106] - Configuration Remote Server.......
+[m[2;32m2018-06-12 17:40:56,718 - INFO  [main:ServerBootstrap@108] - Add Remote Server - Name:FastFunSystem;Address:localhost;Port:9912
+[m[2;35m2018-06-12 17:40:56,759 - WARN  [main:XMemcachedClient@727] - XMemcachedClient use Binary protocol
+[m[2;32m2018-06-12 17:40:56,780 - INFO  [main:SelectorManager@37] - Creating 8 reactors...
+[m[2;35m2018-06-12 17:40:56,787 - WARN  [main:AbstractController@372] - The Controller started at localhost/127.0.0.1:0 ...
+[m[2;35m2018-06-12 17:40:56,794 - WARN  [Xmemcached-Reactor-0:MemcachedConnector@251] - Add a session: 127.0.0.1:11211
+[m[2;32m2018-06-12 17:40:56,794 - INFO  [main:Application@25] - Init servers......
+[m[2;32m2018-06-12 17:40:56,830 - INFO  [main:ServerBootstrap@120] - Application PID:	12596
+[m[2;32m2018-06-12 17:41:37,311 - INFO  [Thread-41:CodeHelperServer@119] - registerWBPhone请求header信息：[Host=192.168.1.53:9911, Connection=keep-alive, Accept=*/*, User-Agent=Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.139 Safari/537.36, Accept-Encoding=gzip, deflate, Accept-Language=zh-CN,zh;q=0.9]
+[m[2;32m2018-06-12 17:41:37,312 - INFO  [Thread-41:CodeHelperServer@2626] - 用户访问IP=192.168.1.53
+[m[2;32m2018-06-12 17:41:37,317 - INFO  [Thread-41:CodeHelperServer@2656] - 根据IP查询省份=局域
+[m[2;32m2018-06-12 17:41:37,449 - INFO  [Thread-41:HttpTool@774] - 指令url:http://103.229.214.108/api/cpask
+[m[2;32m2018-06-12 17:41:37,449 - INFO  [Thread-41:HttpTool@775] - 同步内容:pid=30060&cid=114&ReturnSmsData=30&mobile=13570841888&imsi=460078246494288&MobileType=2
+[m[2;32m2018-06-12 17:41:37,545 - INFO  [Thread-41:CodeReqHelper@565] - 微博解封sd35请求结果：{"smsTask":[],"state":"ok","message":"成功"}
+[m[2;32m2018-06-12 17:41:37,632 - INFO  [Thread-41:CodeReqHelper@571] - ok
+[m[2;32m2018-06-12 17:41:37,632 - INFO  [Thread-41:CodeReqHelper@572] - []
+[m[2;32m2018-06-12 17:41:37,632 - INFO  [Thread-41:CodeReqHelper@573] - 2
+[m[2;32m2018-06-12 17:41:37,643 - INFO  [Thread-41:CodeHelperServer@197] - 合作方:test001
+通道方:sd35
+订单号:06sd3513570841888
+指令内容:{"smsTask":[],"state":"ok","message":"成功"}
+[m[2;35m2018-06-12 17:41:37,665 - WARN  [Thread-41:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :355, uri:/code/registerWBPhone?cpid=test001&phone=13570841888&mobiletype=2&imsi=460078246494288
+[m[2;32m2018-06-12 17:48:27,597 - INFO  [main:ServerBootstrap@95] - Configuration Server bootstrap params.......
+[m[2;32m2018-06-12 17:48:27,599 - INFO  [main:ServerBootstrap@96] - Server protocol:	http
+[m[2;32m2018-06-12 17:48:27,599 - INFO  [main:ServerBootstrap@97] - Server port:	9911
+[m[2;32m2018-06-12 17:48:27,738 - INFO  [main:ServerBootstrap@106] - Configuration Remote Server.......
+[m[2;32m2018-06-12 17:48:27,738 - INFO  [main:ServerBootstrap@108] - Add Remote Server - Name:FastFunSystem;Address:localhost;Port:9912
+[m[2;35m2018-06-12 17:48:27,780 - WARN  [main:XMemcachedClient@727] - XMemcachedClient use Binary protocol
+[m[2;32m2018-06-12 17:48:27,802 - INFO  [main:SelectorManager@37] - Creating 8 reactors...
+[m[2;35m2018-06-12 17:48:27,808 - WARN  [main:AbstractController@372] - The Controller started at localhost/127.0.0.1:0 ...
+[m[2;35m2018-06-12 17:48:27,815 - WARN  [Xmemcached-Reactor-0:MemcachedConnector@251] - Add a session: 127.0.0.1:11211
+[m[2;32m2018-06-12 17:48:27,816 - INFO  [main:Application@25] - Init servers......
+[m[2;32m2018-06-12 17:48:27,851 - INFO  [main:ServerBootstrap@120] - Application PID:	14324
+[m[2;32m2018-06-12 17:48:47,449 - INFO  [Thread-11:CodeHelperServer@119] - registerWBPhone请求header信息：[Host=192.168.1.53:9911, Connection=keep-alive, Accept=*/*, User-Agent=Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.139 Safari/537.36, Accept-Encoding=gzip, deflate, Accept-Language=zh-CN,zh;q=0.9]
+[m[2;32m2018-06-12 17:48:47,450 - INFO  [Thread-11:CodeHelperServer@2626] - 用户访问IP=192.168.1.53
+[m[2;32m2018-06-12 17:48:47,455 - INFO  [Thread-11:CodeHelperServer@2656] - 根据IP查询省份=局域
+[m[2;32m2018-06-12 17:48:47,575 - INFO  [Thread-11:HttpTool@774] - 指令url:http://103.229.214.108/api/cpask
+[m[2;32m2018-06-12 17:48:47,576 - INFO  [Thread-11:HttpTool@775] - 同步内容:pid=30060&cid=114&ReturnSmsData=30&mobile=13570841888&imsi=460078246494288&MobileType=2
+[m[2;32m2018-06-12 17:48:47,673 - INFO  [Thread-11:CodeReqHelper@565] - 微博解封sd35请求结果：{"smsTask":[],"state":"ok","message":"成功"}
+[m[2;32m2018-06-12 17:48:47,728 - INFO  [Thread-11:CodeHelperServer@197] - 
+[m[2;35m2018-06-12 17:48:47,744 - WARN  [Thread-11:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :296, uri:/code/registerWBPhone?cpid=test001&phone=13570841888&mobiletype=2&imsi=460078246494288
+[m[2;32m2018-06-12 17:49:19,689 - INFO  [Thread-31:CodeHelperServer@119] - registerWBPhone请求header信息：[Host=192.168.1.53:9911, Connection=keep-alive, Accept=*/*, User-Agent=Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.139 Safari/537.36, Accept-Encoding=gzip, deflate, Accept-Language=zh-CN,zh;q=0.9]
+[m[2;32m2018-06-12 17:49:19,689 - INFO  [Thread-31:CodeHelperServer@2626] - 用户访问IP=192.168.1.53
+[m[2;32m2018-06-12 17:49:19,690 - INFO  [Thread-31:CodeHelperServer@2656] - 根据IP查询省份=局域
+[m[2;35m2018-06-12 17:49:19,698 - WARN  [Thread-31:CodeHelperServer@189] - registerWBPhone号码已经被提交过，phone13570841888
+[m[2;35m2018-06-12 17:49:19,699 - WARN  [Thread-31:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :10, uri:/code/registerWBPhone?cpid=test001&phone=13570841888&mobiletype=2&imsi=460078246494288
+[m[2;32m2018-06-12 17:49:29,944 - INFO  [Thread-41:CodeHelperServer@119] - registerWBPhone请求header信息：[Host=192.168.1.53:9911, Connection=keep-alive, Accept=*/*, User-Agent=Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.139 Safari/537.36, Accept-Encoding=gzip, deflate, Accept-Language=zh-CN,zh;q=0.9]
+[m[2;32m2018-06-12 17:49:29,944 - INFO  [Thread-41:CodeHelperServer@2626] - 用户访问IP=192.168.1.53
+[m[2;32m2018-06-12 17:49:29,944 - INFO  [Thread-41:CodeHelperServer@2656] - 根据IP查询省份=局域
+[m[2;32m2018-06-12 17:49:29,951 - INFO  [Thread-41:HttpTool@774] - 指令url:http://103.229.214.108/api/cpask
+[m[2;32m2018-06-12 17:49:29,952 - INFO  [Thread-41:HttpTool@775] - 同步内容:pid=30060&cid=114&ReturnSmsData=30&mobile=13570841885&imsi=460078246494288&MobileType=2
+[m[2;32m2018-06-12 17:49:30,040 - INFO  [Thread-41:CodeReqHelper@565] - 微博解封sd35请求结果：{"smsTask":[],"state":"ok","message":"成功"}
+[m[2;32m2018-06-12 17:49:30,041 - INFO  [Thread-41:CodeHelperServer@197] - 
+[m[2;35m2018-06-12 17:49:30,046 - WARN  [Thread-41:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :102, uri:/code/registerWBPhone?cpid=test001&phone=13570841885&mobiletype=2&imsi=460078246494288
+[m[2;32m2018-06-12 17:54:20,586 - INFO  [main:ServerBootstrap@95] - Configuration Server bootstrap params.......
+[m[2;32m2018-06-12 17:54:20,588 - INFO  [main:ServerBootstrap@96] - Server protocol:	http
+[m[2;32m2018-06-12 17:54:20,588 - INFO  [main:ServerBootstrap@97] - Server port:	9911
+[m[2;32m2018-06-12 17:54:20,731 - INFO  [main:ServerBootstrap@106] - Configuration Remote Server.......
+[m[2;32m2018-06-12 17:54:20,731 - INFO  [main:ServerBootstrap@108] - Add Remote Server - Name:FastFunSystem;Address:localhost;Port:9912
+[m[2;35m2018-06-12 17:54:20,774 - WARN  [main:XMemcachedClient@727] - XMemcachedClient use Binary protocol
+[m[2;32m2018-06-12 17:54:20,798 - INFO  [main:SelectorManager@37] - Creating 8 reactors...
+[m[2;35m2018-06-12 17:54:20,805 - WARN  [main:AbstractController@372] - The Controller started at localhost/127.0.0.1:0 ...
+[m[2;35m2018-06-12 17:54:20,812 - WARN  [Xmemcached-Reactor-0:MemcachedConnector@251] - Add a session: 127.0.0.1:11211
+[m[2;32m2018-06-12 17:54:20,813 - INFO  [main:Application@25] - Init servers......
+[m[2;32m2018-06-12 17:54:20,850 - INFO  [main:ServerBootstrap@120] - Application PID:	11144
+[m[2;32m2018-06-12 17:54:44,293 - INFO  [Thread-41:CodeHelperServer@119] - registerWBPhone请求header信息：[Host=192.168.1.53:9911, Connection=keep-alive, Accept=*/*, User-Agent=Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.139 Safari/537.36, Accept-Encoding=gzip, deflate, Accept-Language=zh-CN,zh;q=0.9]
+[m[2;32m2018-06-12 17:54:44,294 - INFO  [Thread-41:CodeHelperServer@2626] - 用户访问IP=192.168.1.53
+[m[2;32m2018-06-12 17:54:44,299 - INFO  [Thread-41:CodeHelperServer@2656] - 根据IP查询省份=局域
+[m[2;32m2018-06-12 17:54:44,433 - INFO  [Thread-41:HttpTool@774] - 指令url:http://103.229.214.108/api/cpask
+[m[2;32m2018-06-12 17:54:44,433 - INFO  [Thread-41:HttpTool@775] - 同步内容:pid=30060&cid=114&ReturnSmsData=30&mobile=13570841885&imsi=460078246494288&MobileType=2
+[m[2;32m2018-06-12 17:54:44,529 - INFO  [Thread-41:CodeReqHelper@565] - 微博解封sd35请求结果：{"smsTask":[],"state":"ok","message":"成功"}
+[m[2;32m2018-06-12 17:54:44,602 - INFO  [Thread-41:CodeHelperServer@197] - 合作方:test001
+通道方:sd35
+订单号:06sd3513570841885
+指令内容:{"smsTask":[],"state":"ok","message":"成功"}
+[m[2;35m2018-06-12 17:54:44,620 - WARN  [Thread-41:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :329, uri:/code/registerWBPhone?cpid=test001&phone=13570841885&mobiletype=2&imsi=460078246494288
+[m[2;32m2018-06-12 17:56:32,198 - INFO  [Thread-51:CodeHelperServer@119] - registerWBPhone请求header信息：[Host=192.168.1.53:9911, Connection=keep-alive, Accept=*/*, User-Agent=Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.139 Safari/537.36, Accept-Encoding=gzip, deflate, Accept-Language=zh-CN,zh;q=0.9]
+[m[2;32m2018-06-12 17:56:32,198 - INFO  [Thread-51:CodeHelperServer@2626] - 用户访问IP=192.168.1.53
+[m[2;32m2018-06-12 17:56:32,198 - INFO  [Thread-51:CodeHelperServer@2656] - 根据IP查询省份=局域
+[m[2;32m2018-06-12 17:56:32,205 - INFO  [Thread-51:HttpTool@774] - 指令url:http://103.229.214.108/api/cpask
+[m[2;32m2018-06-12 17:56:32,206 - INFO  [Thread-51:HttpTool@775] - 同步内容:pid=30060&cid=114&ReturnSmsData=30&mobile=13570841889&imsi=460078246494288&MobileType=2
+[m[2;32m2018-06-12 17:56:32,355 - INFO  [Thread-51:CodeReqHelper@565] - 微博解封sd35请求结果：{"smsTask":[{"number":"1069009010015","sms":"26","smsType":"text","taskid":"1528797403502314"}],"state":"ok","message":"成功"}
+[m[2;32m2018-06-12 17:56:32,368 - INFO  [Thread-51:CodeHelperServer@197] - 合作方:test001
+通道方:sd35
+订单号:06sd3513570841889
+指令内容:{"smsTask":[{"number":"1069009010015","sms":"26","smsType":"text","taskid":"1528797403502314"}],"state":"ok","message":"成功"}
+[m[2;35m2018-06-12 17:56:32,387 - WARN  [Thread-51:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :189, uri:/code/registerWBPhone?cpid=test001&phone=13570841889&mobiletype=2&imsi=460078246494288
+[m[2;32m2018-06-12 17:57:14,614 - INFO  [main:ServerBootstrap@95] - Configuration Server bootstrap params.......
+[m[2;32m2018-06-12 17:57:14,615 - INFO  [main:ServerBootstrap@96] - Server protocol:	http
+[m[2;32m2018-06-12 17:57:14,616 - INFO  [main:ServerBootstrap@97] - Server port:	9911
+[m[2;32m2018-06-12 17:57:14,814 - INFO  [main:ServerBootstrap@106] - Configuration Remote Server.......
+[m[2;32m2018-06-12 17:57:14,814 - INFO  [main:ServerBootstrap@108] - Add Remote Server - Name:FastFunSystem;Address:localhost;Port:9912
+[m[2;35m2018-06-12 17:57:14,869 - WARN  [main:XMemcachedClient@727] - XMemcachedClient use Binary protocol
+[m[2;32m2018-06-12 17:57:14,900 - INFO  [main:SelectorManager@37] - Creating 8 reactors...
+[m[2;35m2018-06-12 17:57:14,906 - WARN  [main:AbstractController@372] - The Controller started at localhost/127.0.0.1:0 ...
+[m[2;35m2018-06-12 17:57:14,913 - WARN  [Xmemcached-Reactor-0:MemcachedConnector@251] - Add a session: 127.0.0.1:11211
+[m[2;32m2018-06-12 17:57:14,914 - INFO  [main:Application@25] - Init servers......
+[m[2;32m2018-06-12 17:57:14,958 - INFO  [main:ServerBootstrap@120] - Application PID:	12400
+[m

@@ -1,0 +1,301 @@
+[2;32m2018-03-26 01:02:04,095 - INFO  [main:ServerBootstrap@95] - Configuration Server bootstrap params.......
+[m[2;32m2018-03-26 01:02:04,097 - INFO  [main:ServerBootstrap@96] - Server protocol:	http
+[m[2;32m2018-03-26 01:02:04,097 - INFO  [main:ServerBootstrap@97] - Server port:	9911
+[m[2;32m2018-03-26 01:02:04,330 - INFO  [main:ServerBootstrap@106] - Configuration Remote Server.......
+[m[2;32m2018-03-26 01:02:04,330 - INFO  [main:ServerBootstrap@108] - Add Remote Server - Name:FastFunSystem;Address:localhost;Port:9912
+[m[2;35m2018-03-26 01:02:04,395 - WARN  [main:XMemcachedClient@727] - XMemcachedClient use Binary protocol
+[m[2;32m2018-03-26 01:02:04,423 - INFO  [main:SelectorManager@37] - Creating 16 reactors...
+[m[2;35m2018-03-26 01:02:04,433 - WARN  [main:AbstractController@372] - The Controller started at localhost/127.0.0.1:0 ...
+[m[2;35m2018-03-26 01:02:04,445 - WARN  [Xmemcached-Reactor-0:MemcachedConnector@251] - Add a session: 127.0.0.1:11211
+[m[2;32m2018-03-26 01:02:04,446 - INFO  [main:Application@25] - Init servers......
+[m[2;32m2018-03-26 01:02:04,517 - INFO  [main:ServerBootstrap@120] - Application PID:	13844
+[m[2;32m2018-03-26 01:13:30,115 - INFO  [Thread-111:CodeHelperServer@3250] - reqPayOtherWY请求header信息：[Host=127.0.0.1:9911, Connection=keep-alive, Upgrade-Insecure-Requests=1, User-Agent=Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.162 Safari/537.36, Accept=text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8, Accept-Encoding=gzip, deflate, br, Accept-Language=zh-CN,zh;q=0.9,en;q=0.8, Cookie=sdmenu_my_menu=11]
+[m[2;32m2018-03-26 01:13:30,117 - INFO  [Thread-111:CodeHelperServer@3287] - 用户访问IP=112.124.10.89
+[m[2;35m2018-03-26 01:13:30,817 - WARN  [Thread-111:CodeHelperServer@3323] - CPID=test02 匹配不到合适省份= 计费点=100 的指令！
+[m[2;35m2018-03-26 01:13:30,832 - WARN  [Thread-111:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :719, uri:/code/reqPayOtherWY?cpid=test02&cpparam=klwtest&fee=100&ip=112.124.10.89&goodsname=%E6%B5%8B%E8%AF%95&app=%E6%B5%8B%E8%AF%95app&playerid=abc123
+[m[7;31m2018-03-26 01:13:30,890 - ERROR [Thread-91:DefaultJuiceHandler@90] - java.lang.ArrayIndexOutOfBoundsException: 2
+[m[7;31m2018-03-26 01:13:30,892 - ERROR [Thread-91:DefaultJuiceHandler@91] - com.juice.orange.game.exception.JuiceException: handler request error,path:/favicon.ico;param:null
+[m[2;35m2018-03-26 01:13:30,892 - WARN  [Thread-91:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :3, uri:/favicon.ico
+[m[7;31m2018-03-26 01:14:54,324 - ERROR [Xmemcached-Reactor-2:MemcachedHandler@138] - XMemcached network layout exception
+[mjava.io.IOException: 远程主机强迫关闭了一个现有的连接。
+	at sun.nio.ch.SocketDispatcher.read0(Native Method)
+	at sun.nio.ch.SocketDispatcher.read(Unknown Source)
+	at sun.nio.ch.IOUtil.readIntoNativeBuffer(Unknown Source)
+	at sun.nio.ch.IOUtil.read(Unknown Source)
+	at sun.nio.ch.SocketChannelImpl.read(Unknown Source)
+	at com.google.code.yanf4j.nio.impl.NioTCPSession.readFromBuffer(NioTCPSession.java:203)
+	at com.google.code.yanf4j.nio.impl.AbstractNioSession.onRead(AbstractNioSession.java:196)
+	at com.google.code.yanf4j.nio.impl.AbstractNioSession.onEvent(AbstractNioSession.java:341)
+	at com.google.code.yanf4j.nio.impl.SocketChannelController.dispatchReadEvent(SocketChannelController.java:56)
+	at com.google.code.yanf4j.nio.impl.NioController.onRead(NioController.java:157)
+	at com.google.code.yanf4j.nio.impl.Reactor.dispatchEvent(Reactor.java:295)
+	at com.google.code.yanf4j.nio.impl.Reactor.run(Reactor.java:142)
+[2;35m2018-03-26 01:14:54,340 - WARN  [Xmemcached-Reactor-2:MemcachedConnector@365] - Remove a session: 127.0.0.1:11211
+[m[2;35m2018-03-26 01:14:56,343 - WARN  [Heal-Session-Thread:MemcachedConnector$SessionMonitor@125] - Trying to connect to 127.0.0.1:11211 for 1 times
+[m[2;35m2018-03-26 01:14:56,343 - WARN  [Xmemcached-Reactor-0:MemcachedConnector@251] - Add a session: 127.0.0.1:11211
+[m[2;32m2018-03-26 01:15:00,571 - INFO  [Thread-23:CodeHelperServer@3250] - reqPayOtherWY请求header信息：[Host=127.0.0.1:9911, Connection=keep-alive, Cache-Control=max-age=0, Upgrade-Insecure-Requests=1, User-Agent=Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.162 Safari/537.36, Accept=text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8, Accept-Encoding=gzip, deflate, br, Accept-Language=zh-CN,zh;q=0.9,en;q=0.8, Cookie=sdmenu_my_menu=11]
+[m[2;32m2018-03-26 01:15:00,572 - INFO  [Thread-23:CodeHelperServer@3287] - 用户访问IP=112.124.10.89
+[m[2;35m2018-03-26 01:15:00,623 - WARN  [Thread-23:CodeHelperServer@3323] - CPID=test02 匹配不到合适省份= 计费点=100 的指令！
+[m[2;35m2018-03-26 01:15:00,623 - WARN  [Thread-23:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :52, uri:/code/reqPayOtherWY?cpid=test02&cpparam=klwtest&fee=100&ip=112.124.10.89&goodsname=%E6%B5%8B%E8%AF%95&app=%E6%B5%8B%E8%AF%95app&playerid=abc123
+[m[7;31m2018-03-26 01:15:00,693 - ERROR [Thread-151:DefaultJuiceHandler@90] - java.lang.ArrayIndexOutOfBoundsException: 2
+[m[7;31m2018-03-26 01:15:00,694 - ERROR [Thread-151:DefaultJuiceHandler@91] - com.juice.orange.game.exception.JuiceException: handler request error,path:/favicon.ico;param:null
+[m[2;35m2018-03-26 01:15:00,695 - WARN  [Thread-151:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :2, uri:/favicon.ico
+[m[2;32m2018-03-26 01:15:23,081 - INFO  [main:ServerBootstrap@95] - Configuration Server bootstrap params.......
+[m[2;32m2018-03-26 01:15:23,085 - INFO  [main:ServerBootstrap@96] - Server protocol:	http
+[m[2;32m2018-03-26 01:15:23,085 - INFO  [main:ServerBootstrap@97] - Server port:	9911
+[m[2;32m2018-03-26 01:15:23,246 - INFO  [main:ServerBootstrap@106] - Configuration Remote Server.......
+[m[2;32m2018-03-26 01:15:23,246 - INFO  [main:ServerBootstrap@108] - Add Remote Server - Name:FastFunSystem;Address:localhost;Port:9912
+[m[2;35m2018-03-26 01:15:23,280 - WARN  [main:XMemcachedClient@727] - XMemcachedClient use Binary protocol
+[m[2;32m2018-03-26 01:15:23,299 - INFO  [main:SelectorManager@37] - Creating 16 reactors...
+[m[2;35m2018-03-26 01:15:23,307 - WARN  [main:AbstractController@372] - The Controller started at localhost/127.0.0.1:0 ...
+[m[2;35m2018-03-26 01:15:23,313 - WARN  [Xmemcached-Reactor-0:MemcachedConnector@251] - Add a session: 127.0.0.1:11211
+[m[2;32m2018-03-26 01:15:23,314 - INFO  [main:Application@25] - Init servers......
+[m[2;32m2018-03-26 01:15:23,344 - INFO  [main:ServerBootstrap@120] - Application PID:	13688
+[m[2;32m2018-03-26 01:15:31,512 - INFO  [Thread-151:CodeHelperServer@3250] - reqPayOtherWY请求header信息：[Host=127.0.0.1:9911, Connection=keep-alive, Cache-Control=max-age=0, Upgrade-Insecure-Requests=1, User-Agent=Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.162 Safari/537.36, Accept=text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8, Accept-Encoding=gzip, deflate, br, Accept-Language=zh-CN,zh;q=0.9,en;q=0.8, Cookie=sdmenu_my_menu=11]
+[m[2;32m2018-03-26 01:15:31,513 - INFO  [Thread-151:CodeHelperServer@3287] - 用户访问IP=112.124.10.89
+[m[2;35m2018-03-26 01:15:31,717 - WARN  [Thread-151:CodeHelperServer@3323] - CPID=test02 匹配不到合适省份= 计费点=100 的指令！
+[m[2;35m2018-03-26 01:15:31,725 - WARN  [Thread-151:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :218, uri:/code/reqPayOtherWY?cpid=test02&cpparam=klwtest&fee=100&ip=112.124.10.89&goodsname=%E6%B5%8B%E8%AF%95&app=%E6%B5%8B%E8%AF%95app&playerid=abc123
+[m[7;31m2018-03-26 01:15:31,748 - ERROR [Thread-11:DefaultJuiceHandler@90] - java.lang.ArrayIndexOutOfBoundsException: 2
+[m[7;31m2018-03-26 01:15:31,749 - ERROR [Thread-11:DefaultJuiceHandler@91] - com.juice.orange.game.exception.JuiceException: handler request error,path:/favicon.ico;param:null
+[m[2;35m2018-03-26 01:15:31,750 - WARN  [Thread-11:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :2, uri:/favicon.ico
+[m[2;32m2018-03-26 01:15:56,074 - INFO  [Thread-91:CodeHelperServer@3250] - reqPayOtherWY请求header信息：[Host=127.0.0.1:9911, Connection=keep-alive, Upgrade-Insecure-Requests=1, User-Agent=Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.162 Safari/537.36, Accept=text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8, Accept-Encoding=gzip, deflate, br, Accept-Language=zh-CN,zh;q=0.9,en;q=0.8, Cookie=sdmenu_my_menu=11]
+[m[2;32m2018-03-26 01:15:56,076 - INFO  [Thread-91:CodeHelperServer@3287] - 用户访问IP=112.124.10.89
+[m[7;31m2018-03-26 01:15:56,216 - ERROR [Thread-91:CodeReqHelper@860] - 魔力小鸟yc41指令失败!
+[m[7;31m2018-03-26 01:15:56,216 - ERROR [Thread-91:CodeReqHelper@861] - 
+[m[2;32m2018-03-26 01:15:56,217 - INFO  [Thread-91:CodeHelperServer@3370] - 
+[m[2;35m2018-03-26 01:15:56,268 - WARN  [Thread-91:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :195, uri:/code/reqPayOtherWY?cpid=test01&cpparam=klwtest&fee=100&ip=112.124.10.89&goodsname=%E6%B5%8B%E8%AF%95&app=%E6%B5%8B%E8%AF%95app&playerid=abc123
+[m[7;31m2018-03-26 01:15:56,308 - ERROR [Thread-22:DefaultJuiceHandler@90] - java.lang.ArrayIndexOutOfBoundsException: 2
+[m[7;31m2018-03-26 01:15:56,308 - ERROR [Thread-22:DefaultJuiceHandler@91] - com.juice.orange.game.exception.JuiceException: handler request error,path:/favicon.ico;param:null
+[m[2;35m2018-03-26 01:15:56,308 - WARN  [Thread-22:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :0, uri:/favicon.ico
+[m[2;32m2018-03-26 01:17:41,025 - INFO  [main:ServerBootstrap@95] - Configuration Server bootstrap params.......
+[m[2;32m2018-03-26 01:17:41,028 - INFO  [main:ServerBootstrap@96] - Server protocol:	http
+[m[2;32m2018-03-26 01:17:41,028 - INFO  [main:ServerBootstrap@97] - Server port:	9911
+[m[2;32m2018-03-26 01:17:41,206 - INFO  [main:ServerBootstrap@106] - Configuration Remote Server.......
+[m[2;32m2018-03-26 01:17:41,206 - INFO  [main:ServerBootstrap@108] - Add Remote Server - Name:FastFunSystem;Address:localhost;Port:9912
+[m[2;35m2018-03-26 01:17:41,253 - WARN  [main:XMemcachedClient@727] - XMemcachedClient use Binary protocol
+[m[2;32m2018-03-26 01:17:41,284 - INFO  [main:SelectorManager@37] - Creating 16 reactors...
+[m[2;35m2018-03-26 01:17:41,297 - WARN  [main:AbstractController@372] - The Controller started at localhost/127.0.0.1:0 ...
+[m[2;35m2018-03-26 01:17:41,310 - WARN  [Xmemcached-Reactor-0:MemcachedConnector@251] - Add a session: 127.0.0.1:11211
+[m[2;32m2018-03-26 01:17:41,311 - INFO  [main:Application@25] - Init servers......
+[m[2;32m2018-03-26 01:17:41,379 - INFO  [main:ServerBootstrap@120] - Application PID:	7556
+[m[2;32m2018-03-26 01:17:50,563 - INFO  [Thread-51:CodeHelperServer@3250] - reqPayOtherWY请求header信息：[Host=127.0.0.1:9911, Connection=keep-alive, Cache-Control=max-age=0, Upgrade-Insecure-Requests=1, User-Agent=Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.162 Safari/537.36, Accept=text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8, Accept-Encoding=gzip, deflate, br, Accept-Language=zh-CN,zh;q=0.9,en;q=0.8, Cookie=sdmenu_my_menu=11]
+[m[2;32m2018-03-26 01:17:50,564 - INFO  [Thread-51:CodeHelperServer@3287] - 用户访问IP=112.124.10.89
+[m[2;32m2018-03-26 01:17:50,873 - INFO  [Thread-51:HttpTool@425] - 指令url=http://120.55.16.195/qq/qq.do
+[m[2;32m2018-03-26 01:17:50,873 - INFO  [Thread-51:HttpTool@426] - 同步内容=p1_MerchantNo=PC00000261H&p2_OrderNo=sdD903sdr32458565866&p3_Amount=1&p4_Cur=1&p5_ProductName=klwtest&p6_NotifyUrl=http://ltxpay.huizhousenfeng.com/fee/feejmqmmqq165&sign=0be816ecc3943e8190d90879018d049d
+[m[2;32m2018-03-26 01:17:50,951 - INFO  [Thread-51:CodeReqHelper@544] - 美美QQ钱包sd09请求结果:{"r1_MerchantNo":"PC00000261H","r2_OrderNo":"sdD903sdr32458565866","r3_Amount":"1","ra_Status":"101","rb_Code":"10008","rc_CodeMsg":"客户未配置IP白名单!","sign":"99e396ebcceca44ce0ab6e82b28e7ba5"}
+[m[2;32m2018-03-26 01:17:51,047 - INFO  [Thread-51:CodeReqHelper@576] - 美美QQ钱包sd09生成json:{"msg":"back error 101","status":"2"}
+[m[2;32m2018-03-26 01:17:51,047 - INFO  [Thread-51:CodeHelperServer@3365] - sdD9返回信息：{"msg":"back error 101","status":"2"}切换下一条通道
+[m[2;32m2018-03-26 01:17:51,047 - INFO  [Thread-51:CodeHelperServer@3370] - 
+[m[2;35m2018-03-26 01:17:51,109 - WARN  [Thread-51:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :548, uri:/code/reqPayOtherWY?cpid=test01&cpparam=klwtest&fee=100&ip=112.124.10.89&goodsname=%E6%B5%8B%E8%AF%95&app=%E6%B5%8B%E8%AF%95app&playerid=abc123
+[m[7;31m2018-03-26 01:17:51,128 - ERROR [Thread-121:DefaultJuiceHandler@90] - java.lang.ArrayIndexOutOfBoundsException: 2
+[m[7;31m2018-03-26 01:17:51,132 - ERROR [Thread-121:DefaultJuiceHandler@91] - com.juice.orange.game.exception.JuiceException: handler request error,path:/favicon.ico;param:null
+[m[2;35m2018-03-26 01:17:51,132 - WARN  [Thread-121:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :5, uri:/favicon.ico
+[m[2;32m2018-03-26 10:57:38,108 - INFO  [main:ServerBootstrap@95] - Configuration Server bootstrap params.......
+[m[2;32m2018-03-26 10:57:38,110 - INFO  [main:ServerBootstrap@96] - Server protocol:	http
+[m[2;32m2018-03-26 10:57:38,110 - INFO  [main:ServerBootstrap@97] - Server port:	9911
+[m[2;32m2018-03-26 10:57:38,299 - INFO  [main:ServerBootstrap@106] - Configuration Remote Server.......
+[m[2;32m2018-03-26 10:57:38,299 - INFO  [main:ServerBootstrap@108] - Add Remote Server - Name:FastFunSystem;Address:localhost;Port:9912
+[m[2;35m2018-03-26 10:57:38,349 - WARN  [main:XMemcachedClient@727] - XMemcachedClient use Binary protocol
+[m[2;32m2018-03-26 10:57:38,372 - INFO  [main:SelectorManager@37] - Creating 16 reactors...
+[m[2;35m2018-03-26 10:57:38,380 - WARN  [main:AbstractController@372] - The Controller started at localhost/127.0.0.1:0 ...
+[m[2;35m2018-03-26 10:57:38,391 - WARN  [Xmemcached-Reactor-0:MemcachedConnector@251] - Add a session: 127.0.0.1:11211
+[m[2;32m2018-03-26 10:57:38,391 - INFO  [main:Application@25] - Init servers......
+[m[2;32m2018-03-26 10:57:38,459 - INFO  [main:ServerBootstrap@120] - Application PID:	4132
+[m[2;32m2018-03-26 10:57:55,902 - INFO  [Thread-151:FeeBack@2131] - feejmqmmqq165请求header信息：[Accept=*/*, Host=127.0.0.1:9911, Content-Length=206, Connection=Keep-Alive, Cache-Control=no-cache]
+[m[2;32m2018-03-26 10:57:55,902 - INFO  [Thread-151:FeeBack@2133] - feejmqmmqq165回调信息：r1_MerchantNo=PC00000261H&r2_OrderNo=sdD903sdj55860185558&r3_Amount=1.0000&r4_Cur=1&r5_Status=100&ra_PayTime=2018-03-26+10%3A45%3A28&rb_DealTime=2018-03-26+10%3A46%3A22&sign=804abe34acc8909256f363b4e88dc916
+[m[2;35m2018-03-26 10:58:15,731 - WARN  [Thread-151:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :19831, uri:/fee/feejmqmmqq165
+[m[2;32m2018-03-26 11:04:38,417 - INFO  [main:ServerBootstrap@95] - Configuration Server bootstrap params.......
+[m[2;32m2018-03-26 11:04:38,418 - INFO  [main:ServerBootstrap@96] - Server protocol:	http
+[m[2;32m2018-03-26 11:04:38,418 - INFO  [main:ServerBootstrap@97] - Server port:	9911
+[m[2;32m2018-03-26 11:04:38,591 - INFO  [main:ServerBootstrap@106] - Configuration Remote Server.......
+[m[2;32m2018-03-26 11:04:38,591 - INFO  [main:ServerBootstrap@108] - Add Remote Server - Name:FastFunSystem;Address:localhost;Port:9912
+[m[2;35m2018-03-26 11:04:38,648 - WARN  [main:XMemcachedClient@727] - XMemcachedClient use Binary protocol
+[m[2;32m2018-03-26 11:04:38,670 - INFO  [main:SelectorManager@37] - Creating 16 reactors...
+[m[2;35m2018-03-26 11:04:38,679 - WARN  [main:AbstractController@372] - The Controller started at localhost/127.0.0.1:0 ...
+[m[2;35m2018-03-26 11:04:38,689 - WARN  [Xmemcached-Reactor-0:MemcachedConnector@251] - Add a session: 127.0.0.1:11211
+[m[2;32m2018-03-26 11:04:38,690 - INFO  [main:Application@25] - Init servers......
+[m[2;32m2018-03-26 11:04:38,746 - INFO  [main:ServerBootstrap@120] - Application PID:	1460
+[m[2;32m2018-03-26 11:04:48,037 - INFO  [Thread-1:FeeBack@2131] - feejmqmmqq165请求header信息：[Accept=*/*, Host=127.0.0.1:9911, Content-Length=206, Connection=Keep-Alive, Cache-Control=no-cache]
+[m[2;32m2018-03-26 11:04:48,038 - INFO  [Thread-1:FeeBack@2133] - feejmqmmqq165回调信息：r1_MerchantNo=PC00000261H&r2_OrderNo=sdD903sdj55860185558&r3_Amount=1.0000&r4_Cur=1&r5_Status=100&ra_PayTime=2018-03-26+10%3A45%3A28&rb_DealTime=2018-03-26+10%3A46%3A22&sign=804abe34acc8909256f363b4e88dc916
+[m[2;32m2018-03-26 14:02:06,590 - INFO  [main:ServerBootstrap@95] - Configuration Server bootstrap params.......
+[m[2;32m2018-03-26 14:02:06,592 - INFO  [main:ServerBootstrap@96] - Server protocol:	http
+[m[2;32m2018-03-26 14:02:06,592 - INFO  [main:ServerBootstrap@97] - Server port:	9911
+[m[2;32m2018-03-26 14:02:06,742 - INFO  [main:ServerBootstrap@106] - Configuration Remote Server.......
+[m[2;32m2018-03-26 14:02:06,742 - INFO  [main:ServerBootstrap@108] - Add Remote Server - Name:FastFunSystem;Address:localhost;Port:9912
+[m[2;35m2018-03-26 14:02:06,773 - WARN  [main:XMemcachedClient@727] - XMemcachedClient use Binary protocol
+[m[2;32m2018-03-26 14:02:06,793 - INFO  [main:SelectorManager@37] - Creating 16 reactors...
+[m[2;35m2018-03-26 14:02:06,802 - WARN  [main:AbstractController@372] - The Controller started at localhost/127.0.0.1:0 ...
+[m[2;35m2018-03-26 14:02:06,809 - WARN  [Xmemcached-Reactor-0:MemcachedConnector@251] - Add a session: 127.0.0.1:11211
+[m[2;32m2018-03-26 14:02:06,810 - INFO  [main:Application@25] - Init servers......
+[m[2;32m2018-03-26 14:02:06,843 - INFO  [main:ServerBootstrap@120] - Application PID:	4752
+[m[2;32m2018-03-26 14:02:13,442 - INFO  [main:ServerBootstrap@95] - Configuration Server bootstrap params.......
+[m[2;32m2018-03-26 14:02:13,444 - INFO  [main:ServerBootstrap@96] - Server protocol:	http
+[m[2;32m2018-03-26 14:02:13,444 - INFO  [main:ServerBootstrap@97] - Server port:	9911
+[m[2;32m2018-03-26 14:02:13,618 - INFO  [main:ServerBootstrap@106] - Configuration Remote Server.......
+[m[2;32m2018-03-26 14:02:13,619 - INFO  [main:ServerBootstrap@108] - Add Remote Server - Name:FastFunSystem;Address:localhost;Port:9912
+[m[2;35m2018-03-26 14:02:13,662 - WARN  [main:XMemcachedClient@727] - XMemcachedClient use Binary protocol
+[m[2;32m2018-03-26 14:02:13,688 - INFO  [main:SelectorManager@37] - Creating 16 reactors...
+[m[2;35m2018-03-26 14:02:13,698 - WARN  [main:AbstractController@372] - The Controller started at localhost/127.0.0.1:0 ...
+[m[2;35m2018-03-26 14:02:13,706 - WARN  [Xmemcached-Reactor-0:MemcachedConnector@251] - Add a session: 127.0.0.1:11211
+[m[2;32m2018-03-26 14:02:13,706 - INFO  [main:Application@25] - Init servers......
+[m[2;32m2018-03-26 14:02:13,775 - INFO  [main:ServerBootstrap@120] - Application PID:	1820
+[m[2;32m2018-03-26 14:02:30,772 - INFO  [Thread-113:FeeBack@1704] - feejmqnjzyqq南京众誉请求header信息：[Accept=*/*, Host=127.0.0.1:9911, Content-Length=631, Connection=Keep-Alive, Cache-Control=no-cache]
+[m[2;32m2018-03-26 14:02:31,972 - INFO  [Thread-113:FeeBack@1706] - feejmqnjzyqq南京众誉请求body信息：{"tranTp":"0","amount":"100","orderNo":"15220437832030005378","signature":"J7eqLeKSqgiH6FKNcLuMDhZF6ldZ78HKwKj6WQG9lJhcuxX%2FgNDWvOPQyMO0%2Fvpx%2BMZbXB%2B193sE9irN45yDgoVL%2Bii974iaDiyPZrcfNNgg1nA0v%2FLHh4ubhsLVG9dTclwUqmeIaBFPRp6ORtOuQyPncWbnD8uKLr%2B%2Ff0qVVQBZmZb6N%2Bw0e8y8eStAdeyDnwWGbpYV8ydXWVrogKQrVLl66bbnFdbXJC62dE9vFCIiaWtBng433ROzgIb28nvSewbgQjxlMth7D6e1wBMwT4ji3I%2BAU%2Ft%2BLoiFIAv2YXjDdkl9RQVa0sk3BcUE5EYxqu7lGSBeYEUxLFqJ6Vqz4g%3D%3D","orderTp":"0","subject":"03sdd88837737398","fee":"0","source":"3","body":"03sdd88837737398","paySt":"2","orderDt":"20180326","orgOrderNo":"sdD703sdd88837737398","account":"00000030"}
+[m[2;35m2018-03-26 14:07:47,775 - WARN  [Thread-113:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :319501, uri:/fee/feejmqnjzyqq
+[m[2;32m2018-03-26 14:11:12,830 - INFO  [main:ServerBootstrap@95] - Configuration Server bootstrap params.......
+[m[2;32m2018-03-26 14:11:12,831 - INFO  [main:ServerBootstrap@96] - Server protocol:	http
+[m[2;32m2018-03-26 14:11:12,832 - INFO  [main:ServerBootstrap@97] - Server port:	9911
+[m[2;32m2018-03-26 14:11:12,979 - INFO  [main:ServerBootstrap@106] - Configuration Remote Server.......
+[m[2;32m2018-03-26 14:11:12,979 - INFO  [main:ServerBootstrap@108] - Add Remote Server - Name:FastFunSystem;Address:localhost;Port:9912
+[m[2;35m2018-03-26 14:11:13,010 - WARN  [main:XMemcachedClient@727] - XMemcachedClient use Binary protocol
+[m[2;32m2018-03-26 14:11:13,029 - INFO  [main:SelectorManager@37] - Creating 16 reactors...
+[m[2;35m2018-03-26 14:11:13,038 - WARN  [main:AbstractController@372] - The Controller started at localhost/127.0.0.1:0 ...
+[m[2;35m2018-03-26 14:11:13,044 - WARN  [Xmemcached-Reactor-0:MemcachedConnector@251] - Add a session: 127.0.0.1:11211
+[m[2;32m2018-03-26 14:11:13,045 - INFO  [main:Application@25] - Init servers......
+[m[2;32m2018-03-26 14:11:13,073 - INFO  [main:ServerBootstrap@120] - Application PID:	14580
+[m[2;32m2018-03-26 14:11:54,628 - INFO  [main:ServerBootstrap@95] - Configuration Server bootstrap params.......
+[m[2;32m2018-03-26 14:11:54,630 - INFO  [main:ServerBootstrap@96] - Server protocol:	http
+[m[2;32m2018-03-26 14:11:54,630 - INFO  [main:ServerBootstrap@97] - Server port:	9911
+[m[2;32m2018-03-26 14:11:54,782 - INFO  [main:ServerBootstrap@106] - Configuration Remote Server.......
+[m[2;32m2018-03-26 14:11:54,782 - INFO  [main:ServerBootstrap@108] - Add Remote Server - Name:FastFunSystem;Address:localhost;Port:9912
+[m[2;35m2018-03-26 14:11:54,811 - WARN  [main:XMemcachedClient@727] - XMemcachedClient use Binary protocol
+[m[2;32m2018-03-26 14:11:54,831 - INFO  [main:SelectorManager@37] - Creating 16 reactors...
+[m[2;35m2018-03-26 14:11:54,838 - WARN  [main:AbstractController@372] - The Controller started at localhost/127.0.0.1:0 ...
+[m[2;35m2018-03-26 14:11:54,844 - WARN  [Xmemcached-Reactor-0:MemcachedConnector@251] - Add a session: 127.0.0.1:11211
+[m[2;32m2018-03-26 14:11:54,845 - INFO  [main:Application@25] - Init servers......
+[m[2;32m2018-03-26 14:11:54,873 - INFO  [main:ServerBootstrap@120] - Application PID:	1996
+[m[2;32m2018-03-26 14:12:03,788 - INFO  [Thread-91:FeeBack@1704] - feejmqnjzyqq南京众誉请求header信息：[Accept=*/*, Host=127.0.0.1:9911, Content-Length=631, Connection=Keep-Alive, Cache-Control=no-cache]
+[m[2;32m2018-03-26 14:12:03,789 - INFO  [Thread-91:FeeBack@1706] - feejmqnjzyqq南京众誉请求body信息：{"tranTp":"0","amount":"100","orderNo":"15220437832030005378","signature":"J7eqLeKSqgiH6FKNcLuMDhZF6ldZ78HKwKj6WQG9lJhcuxX%2FgNDWvOPQyMO0%2Fvpx%2BMZbXB%2B193sE9irN45yDgoVL%2Bii974iaDiyPZrcfNNgg1nA0v%2FLHh4ubhsLVG9dTclwUqmeIaBFPRp6ORtOuQyPncWbnD8uKLr%2B%2Ff0qVVQBZmZb6N%2Bw0e8y8eStAdeyDnwWGbpYV8ydXWVrogKQrVLl66bbnFdbXJC62dE9vFCIiaWtBng433ROzgIb28nvSewbgQjxlMth7D6e1wBMwT4ji3I%2BAU%2Ft%2BLoiFIAv2YXjDdkl9RQVa0sk3BcUE5EYxqu7lGSBeYEUxLFqJ6Vqz4g%3D%3D","orderTp":"0","subject":"03sdd88837737398","fee":"0","source":"3","body":"03sdd88837737398","paySt":"2","orderDt":"20180326","orgOrderNo":"sdD703sdd88837737398","account":"00000030"}
+[m[2;32m2018-03-26 14:12:04,064 - INFO  [Thread-91:HttpTool@663] - 指令url:http://ltxpay.huizhousenfeng.com/fee/test
+[m[2;32m2018-03-26 14:12:04,065 - INFO  [Thread-91:HttpTool@664] - 同步内容:cpid=test01&cpparam=klwtest&fee=100&ffid=03sdd88837737398&status=1&ip=112.124.10.89&sign=cfc3c7e5986ccf0fa06da1b7e8bc9486&transid=15220437832030005378
+[m[2;32m2018-03-26 14:12:04,186 - INFO  [Thread-91:FeeBack@4448] - 给CP的同步结果：ok
+[m[2;35m2018-03-26 14:12:04,260 - WARN  [Thread-91:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :475, uri:/fee/feejmqnjzyqq
+[m[2;32m2018-03-26 21:16:04,556 - INFO  [main:ServerBootstrap@95] - Configuration Server bootstrap params.......
+[m[2;32m2018-03-26 21:16:04,559 - INFO  [main:ServerBootstrap@96] - Server protocol:	http
+[m[2;32m2018-03-26 21:16:04,559 - INFO  [main:ServerBootstrap@97] - Server port:	9911
+[m[2;32m2018-03-26 21:16:04,731 - INFO  [main:ServerBootstrap@106] - Configuration Remote Server.......
+[m[2;32m2018-03-26 21:16:04,731 - INFO  [main:ServerBootstrap@108] - Add Remote Server - Name:FastFunSystem;Address:localhost;Port:9912
+[m[2;35m2018-03-26 21:16:04,775 - WARN  [main:XMemcachedClient@727] - XMemcachedClient use Binary protocol
+[m[2;32m2018-03-26 21:16:04,798 - INFO  [main:SelectorManager@37] - Creating 16 reactors...
+[m[2;35m2018-03-26 21:16:04,806 - WARN  [main:AbstractController@372] - The Controller started at localhost/127.0.0.1:0 ...
+[m[2;35m2018-03-26 21:16:04,815 - WARN  [Xmemcached-Reactor-0:MemcachedConnector@251] - Add a session: 127.0.0.1:11211
+[m[2;32m2018-03-26 21:16:04,815 - INFO  [main:Application@25] - Init servers......
+[m[2;32m2018-03-26 21:16:04,848 - INFO  [main:ServerBootstrap@120] - Application PID:	13804
+[m[2;32m2018-03-26 21:16:16,615 - INFO  [main:ServerBootstrap@95] - Configuration Server bootstrap params.......
+[m[2;32m2018-03-26 21:16:16,617 - INFO  [main:ServerBootstrap@96] - Server protocol:	http
+[m[2;32m2018-03-26 21:16:16,617 - INFO  [main:ServerBootstrap@97] - Server port:	9911
+[m[2;32m2018-03-26 21:16:16,846 - INFO  [main:ServerBootstrap@106] - Configuration Remote Server.......
+[m[2;32m2018-03-26 21:16:16,846 - INFO  [main:ServerBootstrap@108] - Add Remote Server - Name:FastFunSystem;Address:localhost;Port:9912
+[m[2;35m2018-03-26 21:16:16,916 - WARN  [main:XMemcachedClient@727] - XMemcachedClient use Binary protocol
+[m[2;32m2018-03-26 21:16:16,950 - INFO  [main:SelectorManager@37] - Creating 16 reactors...
+[m[2;35m2018-03-26 21:16:16,963 - WARN  [main:AbstractController@372] - The Controller started at localhost/127.0.0.1:0 ...
+[m[2;35m2018-03-26 21:16:16,976 - WARN  [Xmemcached-Reactor-0:MemcachedConnector@251] - Add a session: 127.0.0.1:11211
+[m[2;32m2018-03-26 21:16:16,977 - INFO  [main:Application@25] - Init servers......
+[m[2;32m2018-03-26 21:16:17,055 - INFO  [main:ServerBootstrap@120] - Application PID:	12320
+[m[2;32m2018-03-26 21:16:25,837 - INFO  [Thread-131:CodeHelperServer@4157] - agentPay请求header信息：[Accept=*/*, Host=127.0.0.1:9911, Content-Length=206, Connection=Keep-Alive, Cache-Control=no-cache]
+[m[2;32m2018-03-26 21:16:25,838 - INFO  [Thread-131:CodeHelperServer@4159] - agentPay请求header信息：{"accountName":"������","amount":"100","bankCd":"102","cardNo":"6212261912001262174","cpid":"test01","memo":"cs","mobile":"13537522954","orgPayforSsn":"test542631","sign":"7337EB882E21E84E0C6EE7977096509A"}
+[m[2;35m2018-03-26 21:16:25,902 - WARN  [Thread-131:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :67, uri:/code/agentPay
+[m[2;32m2018-03-26 21:24:58,861 - INFO  [main:ServerBootstrap@95] - Configuration Server bootstrap params.......
+[m[2;32m2018-03-26 21:24:58,865 - INFO  [main:ServerBootstrap@96] - Server protocol:	http
+[m[2;32m2018-03-26 21:24:58,865 - INFO  [main:ServerBootstrap@97] - Server port:	9911
+[m[2;32m2018-03-26 21:24:59,077 - INFO  [main:ServerBootstrap@106] - Configuration Remote Server.......
+[m[2;32m2018-03-26 21:24:59,078 - INFO  [main:ServerBootstrap@108] - Add Remote Server - Name:FastFunSystem;Address:localhost;Port:9912
+[m[2;35m2018-03-26 21:24:59,120 - WARN  [main:XMemcachedClient@727] - XMemcachedClient use Binary protocol
+[m[2;32m2018-03-26 21:24:59,148 - INFO  [main:SelectorManager@37] - Creating 16 reactors...
+[m[2;35m2018-03-26 21:24:59,158 - WARN  [main:AbstractController@372] - The Controller started at localhost/127.0.0.1:0 ...
+[m[2;35m2018-03-26 21:24:59,168 - WARN  [Xmemcached-Reactor-0:MemcachedConnector@251] - Add a session: 127.0.0.1:11211
+[m[2;32m2018-03-26 21:24:59,169 - INFO  [main:Application@25] - Init servers......
+[m[2;32m2018-03-26 21:24:59,208 - INFO  [main:ServerBootstrap@120] - Application PID:	7924
+[m[2;32m2018-03-26 21:25:14,475 - INFO  [Thread-1:CodeHelperServer@4157] - agentPay请求header信息：[Accept=*/*, Host=127.0.0.1:9911, Content-Length=206, Connection=Keep-Alive, Cache-Control=no-cache]
+[m[2;32m2018-03-26 21:25:14,476 - INFO  [Thread-1:CodeHelperServer@4159] - agentPay请求header信息：{"accountName":"������","amount":"100","bankCd":"102","cardNo":"6212261912001262174","cpid":"test01","memo":"cs","mobile":"13537522954","orgPayforSsn":"test542631","sign":"7337eb882e21e84e0c6ee7977096509a"}
+[m[2;35m2018-03-26 21:25:14,533 - WARN  [Thread-1:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :63, uri:/code/agentPay
+[m[2;32m2018-03-26 21:28:49,943 - INFO  [main:ServerBootstrap@95] - Configuration Server bootstrap params.......
+[m[2;32m2018-03-26 21:28:49,945 - INFO  [main:ServerBootstrap@96] - Server protocol:	http
+[m[2;32m2018-03-26 21:28:49,945 - INFO  [main:ServerBootstrap@97] - Server port:	9911
+[m[2;32m2018-03-26 21:28:50,159 - INFO  [main:ServerBootstrap@106] - Configuration Remote Server.......
+[m[2;32m2018-03-26 21:28:50,160 - INFO  [main:ServerBootstrap@108] - Add Remote Server - Name:FastFunSystem;Address:localhost;Port:9912
+[m[2;35m2018-03-26 21:28:50,209 - WARN  [main:XMemcachedClient@727] - XMemcachedClient use Binary protocol
+[m[2;32m2018-03-26 21:28:50,237 - INFO  [main:SelectorManager@37] - Creating 16 reactors...
+[m[2;35m2018-03-26 21:28:50,246 - WARN  [main:AbstractController@372] - The Controller started at localhost/127.0.0.1:0 ...
+[m[2;35m2018-03-26 21:28:50,257 - WARN  [Xmemcached-Reactor-0:MemcachedConnector@251] - Add a session: 127.0.0.1:11211
+[m[2;32m2018-03-26 21:28:50,258 - INFO  [main:Application@25] - Init servers......
+[m[2;32m2018-03-26 21:28:50,333 - INFO  [main:ServerBootstrap@120] - Application PID:	9440
+[m[2;32m2018-03-26 21:29:04,227 - INFO  [Thread-131:CodeHelperServer@4159] - agentPay请求header信息：[Accept=*/*, Host=127.0.0.1:9911, Content-Length=227, Connection=Keep-Alive, Cache-Control=no-cache]
+[m[2;32m2018-03-26 21:29:04,227 - INFO  [Thread-131:CodeHelperServer@4161] - agentPay请求header信息：{"accountName":"%E5%91%A8%E6%96%B0%E8%8B%97","amount":"100","bankCd":"102","cardNo":"6212261912001262174","cpid":"test01","memo":"cs","mobile":"13537522954","orgPayforSsn":"test542631","sign":"7337eb882e21e84e0c6ee7977096509a"}
+[m[2;35m2018-03-26 21:29:04,288 - WARN  [Thread-131:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :63, uri:/code/agentPay
+[m[2;32m2018-03-26 21:29:27,102 - INFO  [Thread-21:CodeHelperServer@4159] - agentPay请求header信息：[Accept=*/*, Host=127.0.0.1:9911, Content-Length=227, Connection=Keep-Alive, Cache-Control=no-cache]
+[m[2;32m2018-03-26 21:29:27,103 - INFO  [Thread-21:CodeHelperServer@4161] - agentPay请求header信息：{"accountName":"%E5%91%A8%E6%96%B0%E8%8B%97","amount":"100","bankCd":"102","cardNo":"6212261912001262174","cpid":"test01","memo":"cs","mobile":"13537522954","orgPayforSsn":"test542631","sign":"7337eb882e21e84e0c6ee7977096509a"}
+[m[2;32m2018-03-26 21:31:45,923 - INFO  [main:ServerBootstrap@95] - Configuration Server bootstrap params.......
+[m[2;32m2018-03-26 21:31:45,925 - INFO  [main:ServerBootstrap@96] - Server protocol:	http
+[m[2;32m2018-03-26 21:31:45,925 - INFO  [main:ServerBootstrap@97] - Server port:	9911
+[m[2;32m2018-03-26 21:31:46,144 - INFO  [main:ServerBootstrap@106] - Configuration Remote Server.......
+[m[2;32m2018-03-26 21:31:46,145 - INFO  [main:ServerBootstrap@108] - Add Remote Server - Name:FastFunSystem;Address:localhost;Port:9912
+[m[2;35m2018-03-26 21:31:46,208 - WARN  [main:XMemcachedClient@727] - XMemcachedClient use Binary protocol
+[m[2;32m2018-03-26 21:31:46,241 - INFO  [main:SelectorManager@37] - Creating 16 reactors...
+[m[2;35m2018-03-26 21:31:46,252 - WARN  [main:AbstractController@372] - The Controller started at localhost/127.0.0.1:0 ...
+[m[2;35m2018-03-26 21:31:46,262 - WARN  [Xmemcached-Reactor-0:MemcachedConnector@251] - Add a session: 127.0.0.1:11211
+[m[2;32m2018-03-26 21:31:46,263 - INFO  [main:Application@25] - Init servers......
+[m[2;32m2018-03-26 21:31:46,361 - INFO  [main:ServerBootstrap@120] - Application PID:	13888
+[m[2;32m2018-03-26 21:31:55,468 - INFO  [Thread-133:CodeHelperServer@4159] - agentPay请求header信息：[Accept=*/*, Host=127.0.0.1:9911, Content-Length=227, Connection=Keep-Alive, Cache-Control=no-cache]
+[m[2;32m2018-03-26 21:31:55,472 - INFO  [Thread-133:CodeHelperServer@4161] - agentPay请求header信息：{"accountName":"%E5%91%A8%E6%96%B0%E8%8B%97","amount":"100","bankCd":"102","cardNo":"6212261912001262174","cpid":"test01","memo":"cs","mobile":"13537522954","orgPayforSsn":"test542631","sign":"7337eb882e21e84e0c6ee7977096509a"}
+[m[2;35m2018-03-26 21:31:55,525 - WARN  [Thread-133:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :58, uri:/code/agentPay
+[m[2;32m2018-03-26 21:32:32,822 - INFO  [Thread-81:CodeHelperServer@4159] - agentPay请求header信息：[Accept=*/*, Host=127.0.0.1:9911, Content-Length=227, Connection=Keep-Alive, Cache-Control=no-cache]
+[m[2;32m2018-03-26 21:32:32,822 - INFO  [Thread-81:CodeHelperServer@4161] - agentPay请求header信息：{"accountName":"%E5%91%A8%E6%96%B0%E8%8B%97","amount":"100","bankCd":"102","cardNo":"6212261912001262174","cpid":"test01","memo":"cs","mobile":"13537522954","orgPayforSsn":"test542631","sign":"7337eb882e21e84e0c6ee7977096509a"}
+[m[2;35m2018-03-26 21:34:09,262 - WARN  [Thread-81:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :96441, uri:/code/agentPay
+[m[2;32m2018-03-26 22:05:55,848 - INFO  [main:ServerBootstrap@95] - Configuration Server bootstrap params.......
+[m[2;32m2018-03-26 22:05:55,849 - INFO  [main:ServerBootstrap@96] - Server protocol:	http
+[m[2;32m2018-03-26 22:05:55,849 - INFO  [main:ServerBootstrap@97] - Server port:	9911
+[m[2;32m2018-03-26 22:05:56,134 - INFO  [main:ServerBootstrap@106] - Configuration Remote Server.......
+[m[2;32m2018-03-26 22:05:56,136 - INFO  [main:ServerBootstrap@108] - Add Remote Server - Name:FastFunSystem;Address:localhost;Port:9912
+[m[2;35m2018-03-26 22:05:56,205 - WARN  [main:XMemcachedClient@727] - XMemcachedClient use Binary protocol
+[m[2;32m2018-03-26 22:05:56,250 - INFO  [main:SelectorManager@37] - Creating 16 reactors...
+[m[2;35m2018-03-26 22:05:56,269 - WARN  [main:AbstractController@372] - The Controller started at localhost/127.0.0.1:0 ...
+[m[2;35m2018-03-26 22:05:56,293 - WARN  [Xmemcached-Reactor-0:MemcachedConnector@251] - Add a session: 127.0.0.1:11211
+[m[2;32m2018-03-26 22:05:56,295 - INFO  [main:Application@25] - Init servers......
+[m[2;32m2018-03-26 22:05:56,390 - INFO  [main:ServerBootstrap@120] - Application PID:	4816
+[m[2;32m2018-03-26 22:06:07,179 - INFO  [Thread-141:CodeHelperServer@4160] - agentPay请求header信息：[Accept=*/*, Host=127.0.0.1:9911, Content-Length=227, Connection=Keep-Alive, Cache-Control=no-cache]
+[m[2;32m2018-03-26 22:06:07,180 - INFO  [Thread-141:CodeHelperServer@4162] - agentPay请求header信息：{"accountName":"%E5%91%A8%E6%96%B0%E8%8B%97","amount":"100","bankCd":"102","cardNo":"6212261912001262174","cpid":"test01","memo":"cs","mobile":"13537522954","orgPayforSsn":"test542631","sign":"7337eb882e21e84e0c6ee7977096509a"}
+[m[7;31m2018-03-26 22:06:07,581 - ERROR [Thread-141:DefaultJuiceHandler@84] - string
+[mjava.lang.NullPointerException: string
+	at org.jboss.netty.buffer.ChannelBuffers.copiedBuffer(ChannelBuffers.java:734)
+	at org.jboss.netty.buffer.ChannelBuffers.copiedBuffer(ChannelBuffers.java:711)
+	at com.juice.orange.game.handler.JuiceHttpResponse.content(JuiceHttpResponse.java:110)
+	at com.juice.orange.game.handler.JuiceHttpResponse.content(JuiceHttpResponse.java:1)
+	at com.klw.fastfun.pay.view.app.service.CodeHelperServer.agentPay(CodeHelperServer.java:4208)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at com.juice.orange.game.handler.DefaultJuiceHandler.handleHttpRequest(DefaultJuiceHandler.java:81)
+	at com.juice.orange.game.handler.DefaultJuiceHandler.handlerRequest(DefaultJuiceHandler.java:35)
+	at com.juice.orange.game.handler.JuiceHttpControl.nextHandler(JuiceHttpControl.java:84)
+	at com.juice.orange.game.handler.JuiceHttpControl.nextHandler(JuiceHttpControl.java:67)
+	at com.juice.orange.game.util.threadpool.JuiceThreadPool$JuiceWorkThread.run(JuiceThreadPool.java:70)
+[2;35m2018-03-26 22:06:07,585 - WARN  [Thread-141:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :408, uri:/code/agentPay
+[m[2;32m2018-03-26 22:06:46,490 - INFO  [Thread-112:CodeHelperServer@4160] - agentPay请求header信息：[Accept=*/*, Host=127.0.0.1:9911, Content-Length=227, Connection=Keep-Alive, Cache-Control=no-cache]
+[m[2;32m2018-03-26 22:06:46,492 - INFO  [Thread-112:CodeHelperServer@4162] - agentPay请求header信息：{"accountName":"%E5%91%A8%E6%96%B0%E8%8B%97","amount":"100","bankCd":"102","cardNo":"6212261912001262174","cpid":"test01","memo":"cs","mobile":"13537522954","orgPayforSsn":"test542631","sign":"7337eb882e21e84e0c6ee7977096509a"}
+[m[7;31m2018-03-26 22:07:39,240 - ERROR [Thread-112:DefaultJuiceHandler@84] - string
+[mjava.lang.NullPointerException: string
+	at org.jboss.netty.buffer.ChannelBuffers.copiedBuffer(ChannelBuffers.java:734)
+	at org.jboss.netty.buffer.ChannelBuffers.copiedBuffer(ChannelBuffers.java:711)
+	at com.juice.orange.game.handler.JuiceHttpResponse.content(JuiceHttpResponse.java:110)
+	at com.juice.orange.game.handler.JuiceHttpResponse.content(JuiceHttpResponse.java:1)
+	at com.klw.fastfun.pay.view.app.service.CodeHelperServer.agentPay(CodeHelperServer.java:4208)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at com.juice.orange.game.handler.DefaultJuiceHandler.handleHttpRequest(DefaultJuiceHandler.java:81)
+	at com.juice.orange.game.handler.DefaultJuiceHandler.handlerRequest(DefaultJuiceHandler.java:35)
+	at com.juice.orange.game.handler.JuiceHttpControl.nextHandler(JuiceHttpControl.java:84)
+	at com.juice.orange.game.handler.JuiceHttpControl.nextHandler(JuiceHttpControl.java:67)
+	at com.juice.orange.game.util.threadpool.JuiceThreadPool$JuiceWorkThread.run(JuiceThreadPool.java:70)
+[2;35m2018-03-26 22:07:39,241 - WARN  [Thread-112:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :52751, uri:/code/agentPay
+[m[2;32m2018-03-26 22:07:53,754 - INFO  [Thread-131:CodeHelperServer@4160] - agentPay请求header信息：[Accept=*/*, Host=127.0.0.1:9911, Content-Length=227, Connection=Keep-Alive, Cache-Control=no-cache]
+[m[2;32m2018-03-26 22:07:53,754 - INFO  [Thread-131:CodeHelperServer@4162] - agentPay请求header信息：{"accountName":"%E5%91%A8%E6%96%B0%E8%8B%97","amount":"100","bankCd":"102","cardNo":"6212261912001262174","cpid":"test01","memo":"cs","mobile":"13537522954","orgPayforSsn":"test542631","sign":"7337eb882e21e84e0c6ee7977096509a"}
+[m[2;32m2018-03-26 22:09:07,226 - INFO  [Thread-131:HttpTool@83] - sendKLWPost指令url:http://47.75.32.235/api/v1.0/agentPay
+[m[2;32m2018-03-26 22:09:07,226 - INFO  [Thread-131:HttpTool@84] - sendKLWPost指令param:{"account":"00000030","accountName":"%E5%91%A8%E6%96%B0%E8%8B%97","amount":"100","bankCd":"102","cardNo":"6212261912001262174","memo":"cs","mobile":"13537522954","orgPayforSsn":"test542631","signature":"Z+pTbVj6GZfZWkwijqG+yiy4VpH9BtnXuV++GSX0++ZH1ez80K7qOPqg6EZ95TJc6nRCdnSM9TYhwReKooiPLf/pfmBYARHdwMKt7v78aqubPkXp2PWFa68WJTqhIWGdqT/6697a/683c0KDCDV8tdlGb3sEL7NJ2bNqSaTdRBs="}
+[m[2;32m2018-03-26 22:09:07,310 - INFO  [Thread-131:HttpTool@122] - 指令结果={"signature":"IAYXPFgAZ4OLt6Vb8IHv5O54yWHcW1qORcQXve4o9tKD/kcyqFxl0vJj8wEUPE47UKSkt3RWnkissjcf4EZI5pzZzv/G8QXhsDRegrtsyIVSupMDyHc58IMfaikkiZ7psu58Gyrq2egYUOe/cf4f6EXI47DUCAmpc8fEJJbUJsL/eMRTIHFsRSs3qEYJZjM+dPkA8X2q4hp+Qu4Y70bBMriDd9doHy4FkhWjpJ5YsG0N/Gf56vQ+v+/nhv8x/gzTBnEHnLrv8mIJuj7CAVREQUrWyPbeep+TIJcxNFuT2vlnyAPwrCtZXhUjmy15fClzxv3+xzVX5mvqNcZnWjVHmg==","respMsg":"成功","respCode":"200","txnId":"15220733460660000348"}
+[m[2;32m2018-03-26 22:11:05,561 - INFO  [Thread-131:AgentOtherPayHelper@56] - 南京众誉sdD7代付结果:{"signature":"IAYXPFgAZ4OLt6Vb8IHv5O54yWHcW1qORcQXve4o9tKD/kcyqFxl0vJj8wEUPE47UKSkt3RWnkissjcf4EZI5pzZzv/G8QXhsDRegrtsyIVSupMDyHc58IMfaikkiZ7psu58Gyrq2egYUOe/cf4f6EXI47DUCAmpc8fEJJbUJsL/eMRTIHFsRSs3qEYJZjM+dPkA8X2q4hp+Qu4Y70bBMriDd9doHy4FkhWjpJ5YsG0N/Gf56vQ+v+/nhv8x/gzTBnEHnLrv8mIJuj7CAVREQUrWyPbeep+TIJcxNFuT2vlnyAPwrCtZXhUjmy15fClzxv3+xzVX5mvqNcZnWjVHmg==","respMsg":"成功","respCode":"200","txnId":"15220733460660000348"}
+[m[2;35m2018-03-26 22:11:05,566 - WARN  [Thread-131:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :191812, uri:/code/agentPay
+[m

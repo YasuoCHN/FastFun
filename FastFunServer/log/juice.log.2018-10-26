@@ -1,0 +1,111 @@
+[2;32m2018-10-26 11:18:25,391 - INFO  [main:ServerBootstrap@95] - Configuration Server bootstrap params.......
+[m[2;32m2018-10-26 11:18:25,393 - INFO  [main:ServerBootstrap@96] - Server protocol:	http
+[m[2;32m2018-10-26 11:18:25,394 - INFO  [main:ServerBootstrap@97] - Server port:	9911
+[m[2;32m2018-10-26 11:18:25,604 - INFO  [main:ServerBootstrap@106] - Configuration Remote Server.......
+[m[2;32m2018-10-26 11:18:25,605 - INFO  [main:ServerBootstrap@108] - Add Remote Server - Name:FastFunSystem;Address:localhost;Port:9912
+[m[2;35m2018-10-26 11:18:25,635 - WARN  [main:XMemcachedClient@727] - XMemcachedClient use Binary protocol
+[m[2;32m2018-10-26 11:18:25,651 - INFO  [main:SelectorManager@37] - Creating 16 reactors...
+[m[2;35m2018-10-26 11:18:25,662 - WARN  [main:AbstractController@372] - The Controller started at localhost/127.0.0.1:0 ...
+[m[2;35m2018-10-26 11:18:25,670 - WARN  [Xmemcached-Reactor-0:MemcachedConnector@251] - Add a session: 127.0.0.1:11211
+[m[2;32m2018-10-26 11:18:25,670 - INFO  [main:Application@25] - Init servers......
+[m[2;32m2018-10-26 11:18:25,700 - INFO  [main:ServerBootstrap@120] - Application PID:	11360
+[m[2;32m2018-10-26 11:20:24,390 - INFO  [Thread-131:CodeHelperServer@2195] - registerJDPhone请求header信息：[Accept=text/html, application/xhtml+xml, */*, Content-Type=text/html, User-Agent=Mozilla/5.0(compatible;MSIE 9.0; Windows NT 6.1; Trident/5.0), Host=192.168.0.112:9911, Connection=Keep-Alive]
+[m[2;32m2018-10-26 11:20:24,390 - INFO  [Thread-131:CodeHelperServer@3581] - 用户访问IP=192.168.0.112
+[m[2;32m2018-10-26 11:20:24,399 - INFO  [Thread-131:CodeHelperServer@3611] - 根据IP查询省份=局域
+[m[2;32m2018-10-26 11:20:24,400 - INFO  [Thread-131:CodeHelperServer@8414] - 用户访问phone=15862370903
+[m[2;32m2018-10-26 11:20:24,467 - INFO  [Thread-131:CodeHelperServer@8459] - 用户访问IP=192.168.0.112
+[m[7;31m2018-10-26 11:20:24,467 - ERROR [Thread-131:CommonTool@124] - 根据IMSI获取手机号码类型错误
+[m[2;32m2018-10-26 11:20:24,467 - INFO  [Thread-131:CodeHelperServer@8463] - 根据IP查询省份：局域 ,用户运营商类型：1
+[m[2;32m2018-10-26 11:20:24,468 - INFO  [Thread-131:CodeHelperServer@8468] - 依据ip判断city:网
+[m[2;32m2018-10-26 11:20:24,567 - INFO  [Thread-131:HttpTool@268] - sendYZWHPost指令url:http://134.175.108.60:5566/api.ashx?action=upph&replys={"mobile":"15862370903","msgId":"15862370903","pid":"591"}
+[m[2;32m2018-10-26 11:20:25,490 - INFO  [Thread-131:HttpTool@308] - 指令结果:{  "Success": true,  "Code": 1,  "Msg": "ok",  "Ms": 620}
+[m[2;32m2018-10-26 11:20:25,491 - INFO  [Thread-131:CodeReqHelper@605] - ELM:sd56请求结果：{  "Success": true,  "Code": 1,  "Msg": "ok",  "Ms": 620}
+[m[2;32m2018-10-26 11:20:25,558 - INFO  [Thread-131:CodeHelperServer@2285] - 合作方:test01
+通道方:sd56
+订单号:1026sd5615862370903
+指令内容:{"msg":"success","orderid":"1026sd5615862370903","status":0}
+[m[2;35m2018-10-26 11:20:25,567 - WARN  [Thread-131:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :1191, uri:/code/registerJDPhone?cpid=test01&phone=15862370903&cpparam=111111
+[m[2;32m2018-10-26 11:24:05,601 - INFO  [Thread-101:CodeHelperServer@2605] - commitCode请求header信息：[Accept=text/html, application/xhtml+xml, */*, Content-Type=text/html, User-Agent=Mozilla/5.0(compatible;MSIE 9.0; Windows NT 6.1; Trident/5.0), Host=192.168.0.112:9911, Connection=Keep-Alive]
+[m[2;32m2018-10-26 11:24:05,613 - INFO  [Thread-101:HttpTool@268] - sendYZWHPost指令url:http://134.175.108.60:5566/api.ashx?action=upmsm&replys={"content":"222222","mobile":"15862370903","msgId":"15862370903","pid":"591","replyTime":null,"state":"0"}
+[m[2;32m2018-10-26 11:24:05,687 - INFO  [Thread-101:HttpTool@308] - 指令结果:{  "Success": true,  "Code": 1,  "Msg": "ok",  "Ms": 3}
+[m[2;32m2018-10-26 11:24:05,687 - INFO  [Thread-101:CodeCommitReqHelper@139] - sd56请求结果:{  "Success": true,  "Code": 1,  "Msg": "ok",  "Ms": 3}
+[m[2;32m2018-10-26 11:24:05,687 - INFO  [Thread-101:CodeHelperServer@2651] - 合作方:test01
+通道方:sd56
+省份:局域
+计费点:0
+订单号:1026sd5615862370903
+指令内容:ok
+[m[2;35m2018-10-26 11:24:05,692 - WARN  [Thread-101:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :91, uri:/code/commitCode?cpid=test01&orderid=1026sd5615862370903&code=222222
+[m[2;32m2018-10-26 11:25:25,325 - INFO  [Thread-71:FeeBack@155] - feeSZLTzclWtcsd56请求header信息：[Accept=text/html, application/xhtml+xml, */*, Content-Type=text/html, User-Agent=Mozilla/5.0(compatible;MSIE 9.0; Windows NT 6.1; Trident/5.0), Host=192.168.0.112:9911, Content-Length=0, Connection=Keep-Alive]
+[m[2;35m2018-10-26 11:25:25,329 - WARN  [Thread-71:FeeBack@5842] - 找不到对应的订单号=10sd5615862370903
+[m[2;35m2018-10-26 11:25:25,329 - WARN  [Thread-71:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :5, uri:/fee/feeSZLTzclWtcsd56?phone=15862370903&status=1
+[m[2;32m2018-10-26 11:26:45,941 - INFO  [main:ServerBootstrap@95] - Configuration Server bootstrap params.......
+[m[2;32m2018-10-26 11:26:45,942 - INFO  [main:ServerBootstrap@96] - Server protocol:	http
+[m[2;32m2018-10-26 11:26:45,942 - INFO  [main:ServerBootstrap@97] - Server port:	9911
+[m[2;32m2018-10-26 11:26:46,144 - INFO  [main:ServerBootstrap@106] - Configuration Remote Server.......
+[m[2;32m2018-10-26 11:26:46,144 - INFO  [main:ServerBootstrap@108] - Add Remote Server - Name:FastFunSystem;Address:localhost;Port:9912
+[m[2;35m2018-10-26 11:26:46,177 - WARN  [main:XMemcachedClient@727] - XMemcachedClient use Binary protocol
+[m[2;32m2018-10-26 11:26:46,193 - INFO  [main:SelectorManager@37] - Creating 16 reactors...
+[m[2;35m2018-10-26 11:26:46,201 - WARN  [main:AbstractController@372] - The Controller started at localhost/127.0.0.1:0 ...
+[m[2;35m2018-10-26 11:26:46,207 - WARN  [Xmemcached-Reactor-0:MemcachedConnector@251] - Add a session: 127.0.0.1:11211
+[m[2;32m2018-10-26 11:26:46,207 - INFO  [main:Application@25] - Init servers......
+[m[2;32m2018-10-26 11:26:46,237 - INFO  [main:ServerBootstrap@120] - Application PID:	17636
+[m[2;32m2018-10-26 11:27:11,550 - INFO  [Thread-71:FeeBack@155] - feeSZLTzclWtcsd56请求header信息：[Accept=text/html, application/xhtml+xml, */*, Content-Type=text/html, User-Agent=Mozilla/5.0(compatible;MSIE 9.0; Windows NT 6.1; Trident/5.0), Host=192.168.0.112:9911, Content-Length=0, Connection=Keep-Alive]
+[m[2;32m2018-10-26 11:27:11,623 - INFO  [Thread-71:HttpTool@867] - 指令url:http://118.190.90.1/mmcode/test
+[m[2;32m2018-10-26 11:27:11,624 - INFO  [Thread-71:HttpTool@868] - 同步内容:imsi=null&imei=null&ffId=1026sd5615862370903&cpParam=111111&fee=0&phone=15862370903&ip=192.168.0.112&cpid=test01&status=1
+[m[2;32m2018-10-26 11:27:11,708 - INFO  [Thread-71:FeeBack@5916] - 给CP的同步结果：ok
+[m[2;35m2018-10-26 11:27:11,720 - WARN  [Thread-71:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :187, uri:/fee/feeSZLTzclWtcsd56?phone=15862370903&status=1
+[m[7;31m2018-10-26 11:27:28,495 - ERROR [JUICE-SERVER-Handler-4-1-thread:ConnectionException@22] - uncaughtException :
+[mcom.juice.orange.game.exception.JuiceException: 远程主机强迫关闭了一个现有的连接。 on [id: 0x933a4069, /192.168.0.112:65222 => /192.168.0.112:9911]
+	at com.juice.orange.game.exception.JuiceException.fromException(JuiceException.java:38)
+	at com.juice.orange.game.exception.JuiceException.fromExceptionEvent(JuiceException.java:32)
+	at com.juice.orange.game.util.ConnectionHelper$2.run(ConnectionHelper.java:56)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: java.io.IOException: 远程主机强迫关闭了一个现有的连接。
+	at sun.nio.ch.SocketDispatcher.read0(Native Method)
+	at sun.nio.ch.SocketDispatcher.read(Unknown Source)
+	at sun.nio.ch.IOUtil.readIntoNativeBuffer(Unknown Source)
+	at sun.nio.ch.IOUtil.read(Unknown Source)
+	at sun.nio.ch.SocketChannelImpl.read(Unknown Source)
+	at org.jboss.netty.channel.socket.nio.NioWorker.read(NioWorker.java:64)
+	at org.jboss.netty.channel.socket.nio.AbstractNioWorker.process(AbstractNioWorker.java:107)
+	at org.jboss.netty.channel.socket.nio.AbstractNioSelector.run(AbstractNioSelector.java:312)
+	at org.jboss.netty.channel.socket.nio.AbstractNioWorker.run(AbstractNioWorker.java:88)
+	at org.jboss.netty.channel.socket.nio.NioWorker.run(NioWorker.java:178)
+	... 3 more
+[2;32m2018-10-26 14:40:01,822 - INFO  [main:ServerBootstrap@95] - Configuration Server bootstrap params.......
+[m[2;32m2018-10-26 14:40:01,823 - INFO  [main:ServerBootstrap@96] - Server protocol:	http
+[m[2;32m2018-10-26 14:40:01,823 - INFO  [main:ServerBootstrap@97] - Server port:	9911
+[m[2;32m2018-10-26 14:40:02,031 - INFO  [main:ServerBootstrap@106] - Configuration Remote Server.......
+[m[2;32m2018-10-26 14:40:02,031 - INFO  [main:ServerBootstrap@108] - Add Remote Server - Name:FastFunSystem;Address:localhost;Port:9912
+[m[2;35m2018-10-26 14:40:02,061 - WARN  [main:XMemcachedClient@727] - XMemcachedClient use Binary protocol
+[m[2;32m2018-10-26 14:40:02,077 - INFO  [main:SelectorManager@37] - Creating 16 reactors...
+[m[2;35m2018-10-26 14:40:02,086 - WARN  [main:AbstractController@372] - The Controller started at localhost/127.0.0.1:0 ...
+[m[2;35m2018-10-26 14:40:02,091 - WARN  [Xmemcached-Reactor-0:MemcachedConnector@251] - Add a session: 127.0.0.1:11211
+[m[2;32m2018-10-26 14:40:02,092 - INFO  [main:Application@25] - Init servers......
+[m[2;32m2018-10-26 14:40:02,123 - INFO  [main:ServerBootstrap@120] - Application PID:	18552
+[m[2;35m2018-10-26 14:40:20,336 - WARN  [Thread-141:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :20, uri:/fee/feeback
+[m[7;31m2018-10-26 14:42:09,917 - ERROR [JUICE-SERVER-Handler-4-1-thread:ConnectionException@22] - uncaughtException :
+[mcom.juice.orange.game.exception.JuiceException: 远程主机强迫关闭了一个现有的连接。 on [id: 0xbdf3e98b, /192.168.0.112:60370 => /192.168.0.112:9911]
+	at com.juice.orange.game.exception.JuiceException.fromException(JuiceException.java:38)
+	at com.juice.orange.game.exception.JuiceException.fromExceptionEvent(JuiceException.java:32)
+	at com.juice.orange.game.util.ConnectionHelper$2.run(ConnectionHelper.java:56)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: java.io.IOException: 远程主机强迫关闭了一个现有的连接。
+	at sun.nio.ch.SocketDispatcher.read0(Native Method)
+	at sun.nio.ch.SocketDispatcher.read(Unknown Source)
+	at sun.nio.ch.IOUtil.readIntoNativeBuffer(Unknown Source)
+	at sun.nio.ch.IOUtil.read(Unknown Source)
+	at sun.nio.ch.SocketChannelImpl.read(Unknown Source)
+	at org.jboss.netty.channel.socket.nio.NioWorker.read(NioWorker.java:64)
+	at org.jboss.netty.channel.socket.nio.AbstractNioWorker.process(AbstractNioWorker.java:107)
+	at org.jboss.netty.channel.socket.nio.AbstractNioSelector.run(AbstractNioSelector.java:312)
+	at org.jboss.netty.channel.socket.nio.AbstractNioWorker.run(AbstractNioWorker.java:88)
+	at org.jboss.netty.channel.socket.nio.NioWorker.run(NioWorker.java:178)
+	... 3 more
+[2;35m2018-10-26 14:42:40,300 - WARN  [Thread-101:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :0, uri:/fee/feeback
+[m

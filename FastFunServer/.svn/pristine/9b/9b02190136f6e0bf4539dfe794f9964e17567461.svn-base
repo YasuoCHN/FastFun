@@ -1,0 +1,5571 @@
+/**
+ * FastFunServer
+ */
+package com.klw.fastfun.pay.view.app.service;
+
+import java.io.UnsupportedEncodingException;
+import java.net.URLDecoder;
+import java.net.URLEncoder;
+import java.text.SimpleDateFormat;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.StringTokenizer;
+import java.util.concurrent.atomic.AtomicInteger;
+
+import org.apache.log4j.Logger;
+import org.dom4j.Element;
+
+import com.alibaba.fastjson.JSON;
+import com.alibaba.fastjson.JSONArray;
+import com.alibaba.fastjson.JSONObject;
+import com.juice.orange.game.exception.JuiceException;
+import com.juice.orange.game.handler.HttpRequest;
+import com.juice.orange.game.handler.HttpResponse;
+import com.juice.orange.game.log.LoggerFactory;
+import com.klw.fastfun.pay.common.domain.CPInfo;
+import com.klw.fastfun.pay.common.domain.CodeInfo;
+import com.klw.fastfun.pay.common.domain.CodeOnlyInfo;
+import com.klw.fastfun.pay.common.domain.CustomInfo;
+import com.klw.fastfun.pay.common.domain.MMPayInfo;
+import com.klw.fastfun.pay.common.domain.MobileInfo;
+import com.klw.fastfun.pay.common.domain.OrderReqInfo;
+import com.klw.fastfun.pay.common.domain.ResSDKReport;
+import com.klw.fastfun.pay.common.domain.SDKUpdateInfo;
+import com.klw.fastfun.pay.common.exception.ExceptionTool;
+import com.klw.fastfun.pay.common.json.SynJson;
+import com.klw.fastfun.pay.common.json.SynOtherJson;
+import com.klw.fastfun.pay.common.tool.Base64;
+import com.klw.fastfun.pay.common.tool.CPParam;
+import com.klw.fastfun.pay.common.tool.CommonTool;
+import com.klw.fastfun.pay.common.tool.ConstantDefine;
+import com.klw.fastfun.pay.common.tool.DateTool;
+import com.klw.fastfun.pay.common.tool.HttpTool;
+import com.klw.fastfun.pay.common.tool.MD5Tool;
+import com.klw.fastfun.pay.common.tool.StringUtils;
+import com.klw.fastfun.pay.common.tool.mm.SyncAppOrderReq;
+import com.klw.fastfun.pay.common.tool.mm.SyncAppOrderResp;
+import com.klw.fastfun.pay.common.tool.mm.SyncXMLUtils;
+import com.klw.fastfun.pay.common.tool.mm.XMLUtils;
+import com.klw.fastfun.pay.common.tool.xdzf.MD5;
+import com.klw.fastfun.pay.common.transport.CodeT;
+import com.klw.fastfun.pay.common.transport.OrderT;
+import com.klw.fastfun.pay.view.app.ActionAware;
+import com.klw.fastfun.pay.view.app.http.CodeReqHelper;
+import com.klw.fastfun.pay.view.app.other.qmdyuril.PaySignUtil;
+import com.klw.fastfun.pay.view.app.other.util.HMacMD5;
+import com.klw.fastfun.pay.view.app.other.util.RSASignature;
+import com.klw.fastfun.pay.view.app.wxpay.utils.PayUtil;
+import com.klw.fastfun.pay.view.app.wxpay.utils.XmlUtil;
+
+/**
+ * @author klwplayer.com
+ *
+ *         2015年3月31日
+ */
+public class FeeBack extends ActionAware {
+	private static Logger logger = LoggerFactory.getLogger(FeeBack.class);
+	
+	public static final SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
+	public static final String RSA_PRIVATE = "MIICdwIBADANBgkqhkiG9w0BAQEFAASCAmEwggJdAgEAAoGBALq3jFZhW8us7o4opJMpnZLSwv1SCdAL6/0ip8DB1u0EfuTHPy6XS49PlbR3sVDFJvRzNF2Fc7tylWYDoOTztyapdV8Y2LnLI9W8B/aWtn0fhAzLyr2IFLhHmP6VcGrCWY0DYnL12wTo5jgvbqCLH/Q3DBvekD6q13pmIbxw5uJDAgMBAAECgYEAg+PlgJrS8cMc21QANGeAA9dWnwPVJJ1XO/6/ylviCphTXh0UF0ANwpRv5gNqP+iThLbf9XOv9WeR+nZzr2YsJzB4wJQHjF1LrH1HFdFwhul19BSjEXkzcyCl0/tfeIsxvhdNYp7IhznlitGDAvOZEb4a1+e+L5Y0Uhx3kQLC8VkCQQDrLg3IK9HXKLaUg3BtSs1H3p5yDXs8ytNemfiVVwB2dyBG/q+RGjUpgwXbgEG8OeuGgYXcoYClJ+OSl/jWrrn1AkEAyz8qiNTw6C9s8e8z4MyCdTDiKXTCmA/du07AXC08NK3VOvw27N4b/5NNt7WyR7N/vQTxSx8d6P8uPRzvynDwVwJAf1+/GSYajcTANmmF77uuuPkqqa0BjShxGHCeAQxQ9NiKQ8lW/2jJWEVdW8f4UmCwXnYyMQ/LpCeZiuECZgvWLQJBAK76lL30xeq/WcX4L+urZe1Kxor2UMnlbvnhVM6Gyzx3JAqCNS88EVK5GMG+ldwQ9zpeVPZdtbxwZPiMPw1EqkUCQGph1+LoYCffaaCZw4aCPitO1t8Dfa2V8aBedhVqyXb74EQ7rSJIDcG2SDua/U4s+hEFQ+dOepC3gQ300xLWI80=";
+	
+	private static Map<String, String> testImsiMap = new HashMap<String, String>();
+	static {
+		testImsiMap.put("460001261929455", "true");
+		testImsiMap.put("460079005047370", "true");//乐朋
+		testImsiMap.put("460007082891181", "true");//掌信拓维
+		testImsiMap.put("460000383148352", "true");//掌信拓维
+		testImsiMap.put("460027141464450", "true");//掌信拓维
+		testImsiMap.put("460005734382225", "true");//掌信拓维
+		testImsiMap.put("460023107582358", "true");//有乐通
+		testImsiMap.put("460005180413361", "true");//明日空间
+		testImsiMap.put("460078027658863", "true");//虚实
+		testImsiMap.put("460020398641270", "true");//酱油
+		testImsiMap.put("460008247093133", "true");//酱油
+		testImsiMap.put("460007082891181", "true");//搜游互动
+		testImsiMap.put("460016111035704", "true");//考拉
+		testImsiMap.put("460030495440302", "true");//考拉
+		testImsiMap.put("460017086211144", "true");//艾阁
+		testImsiMap.put("460001161954388", "true");//聚游堂
+		testImsiMap.put("460007142548903", "true");//聚游堂
+		testImsiMap.put("460009091826976", "true");//微游戏
+		testImsiMap.put("460008453168042", "true");//中至
+		testImsiMap.put("460026564248647", "true");//搜影
+		testImsiMap.put("460077347212700", "true");//搜影
+		testImsiMap.put("460024104032386", "true");//搜影
+	}
+	
+	public void feeBackSMSby(HttpRequest request, HttpResponse response)
+			throws JuiceException {
+		try {
+			String cid = request.getParam("cid");//网关标识
+			String stype = request.getParam("stype");//计费代码
+			String scode = request.getParam("spCode");//sp长号
+			String mobile = request.getParam("mobile");//用户手机号码
+			String msg = request.getParam("cmd");//下行内容
+			String lid = CommonTool.getxsOrderNO("only02");
+			String time = request.getParam("time");//下行时间
+			String fee = request.getParam("fee");//信息资费(单位：分)
+			String report = request.getParam("sta");//状态报告
+			
+			OrderReqInfo info = new OrderReqInfo();
+			info.setCpParam(cid+"&"+stype+"&"+scode+"&"+msg+"&"+time);
+			info.setMobile(mobile);
+			info.setFfId(lid);
+			info.setFee(new Integer(fee));
+			info.setSpId("only02");
+			// 处理订单
+			boolean isSuc = false;
+			//1表用户定制包月彩信,2表示用户退订,10表示用户计费成功
+			info.setIsSuccess(-1);
+			if ("10".equals(report)) {
+				info.setIsSuccess(0);
+				isSuc = true;
+			} else if ("1".equals(report)) {
+				info.setIsSuccess(1);//户定制包月彩信
+			} else if ("2".equals(report)) {
+				info.setIsSuccess(2);//用户退订
+			}
+			processOnlyCPOrder(isSuc, info);
+		} catch (Exception e) {
+			logger.error(ExceptionTool.getExceptionMessage(e));
+		}
+		response.content("OK").end();
+		
+	}
+	
+	public void feeBackSMS(HttpRequest request, HttpResponse response)
+			throws JuiceException {
+		try {
+			String cid = request.getParam("cid");//网关标识
+			String stype = request.getParam("stype");//计费代码
+			String scode = request.getParam("scode");//sp长号
+			String mobile = request.getParam("mobile");//用户手机号码
+			String msg = request.getParam("msg");//下行内容
+			String lid = request.getParam("lid");//linkId
+			String time = request.getParam("time");//下行时间
+			String fee = request.getParam("fee");//信息资费(单位：分)
+			String report = request.getParam("report");//状态报告
+			
+			OrderReqInfo info = new OrderReqInfo();
+			info.setCpParam(cid+"&"+stype+"&"+scode+"&"+msg+"&"+time);
+			info.setMobile(mobile);
+			info.setFfId(lid);
+			info.setFee(new Integer(fee));
+			info.setSpId("only01");
+			// 处理订单
+			boolean isSuc = false;
+			//DELIVRD			表示移动短信成功下行状态
+			//0  					表示联通短信成功下行状态
+			//1000  				表示彩信成功下行状态
+			//DeliveredToTerminal	表示电信成功下行状态
+			if ("DELIVRD".equals(report) || "0".equals(report) || "1000".equals(report) ||
+					"DeliveredToTerminal".equals(report)) {
+				info.setIsSuccess(0);
+				isSuc = true;
+			} else {
+				info.setIsSuccess(-1);
+			}
+			processOnlyCPOrder(isSuc, info);
+		} catch (Exception e) {
+			logger.error(ExceptionTool.getExceptionMessage(e));
+		}
+		response.content("OK").end();
+		
+	}
+	
+	/**
+	 * 处理无透传参数订单
+	 */
+	private void processOnlyCPOrder(boolean isSuc, OrderReqInfo order) {
+		try {
+			int synStatus = ConstantDefine.SYN_STATUS_DEFAULT;
+			String spId = order.getSpId();
+			
+			CodeOnlyInfo onlyInfo = commonAction.queryCodeOnlyBySpid(spId);
+			
+			if (onlyInfo != null) {
+				if (isSuc) {
+					String newCpId = spId;
+					int synRadio = onlyInfo.getSynRadio();
+					
+					logger.info("同步率synRadio："+synRadio);
+					CPParam cpp = CommonTool.getCPParam(newCpId,
+							synRadio);
+					
+					AtomicInteger ati = cpp.getAti();
+					boolean isSyn = CommonTool.isContain(cpp.getVc(),
+							ati.incrementAndGet());
+					if (isSyn) {
+						if (onlyInfo.getBackUrl() != null && onlyInfo.getBackUrl().length() > 0) {
+							// 同步
+							String result = notityResult(onlyInfo,order,isSuc);
+							
+							logger.info("给CP的同步结果："+result);
+							if (result.equals("success")) {
+								synStatus = ConstantDefine.SYN_STATUS_TRUE;
+							} else {
+								synStatus = ConstantDefine.SYN_STATUS_FALSE;
+							}
+						} else {
+							synStatus = ConstantDefine.SYN_STATUS_FALSE;
+						}
+					} else {
+						synStatus = ConstantDefine.SYN_STATUS_Buckle;
+					}
+					
+					if (ati.get() == 100)
+						ati.set(0);
+					cpp.setAti(ati);
+//					CommonTool.updateCPParam(cp.getCpId(), cpp);
+					CommonTool.updateCPParam(newCpId, cpp);
+				} else {
+					String result = notityResult(onlyInfo,order,isSuc);
+					
+					logger.info("给CP的同步结果："+result);
+					if (result.equals("success")) {
+						synStatus = ConstantDefine.SYN_STATUS_TRUE;
+					} else {
+						synStatus = ConstantDefine.SYN_STATUS_FALSE;
+					}
+				}
+			}
+			order.setSynStatus(synStatus);
+			commonAction.addOnlyOrder(order);
+		} catch (Exception e) {
+			logger.error(ExceptionTool.getExceptionMessage(e));
+		}
+	}
+	
+	private String notityResult(CodeOnlyInfo info, OrderReqInfo order,boolean isSyn) {
+		String result = "";
+		String param = "";
+		if (info.getReqMethod() == 2) {
+			SynJson sj = new SynJson();
+			sj.setFfId(order.getFfId());
+			sj.setImei(order.getImei());
+			sj.setImsi(order.getImsi());
+			sj.setFee(order.getFee());
+			sj.setIp(order.getIp());
+			sj.setStatus(order.getIsSuccess()+"");
+			param = JSON.toJSONString(sj);
+			result = HttpTool.sendKLWPost(info.getBackUrl(), param, "utf-8", 500);
+//			System.out.println(result);
+		} else {
+			StringBuilder msg = new StringBuilder();
+			msg.append("imsi=").append(order.getImsi())
+			.append("&imei=").append(order.getImei())
+			.append("&ffId=").append(order.getFfId())
+			.append("&fee=").append(order.getFee())
+			.append("&ip=").append(order.getIp())
+			.append("&status=").append(order.getIsSuccess()+"");
+			param = msg.toString();
+			result = HttpTool.sendGetSetTimeout(info.getBackUrl(), param, "500");
+		}
+		return result;
+	}
+	
+	
+	/**
+	 * 深圳点之行RDO 回调通知
+	 * http://120.24.88.90/fee/feedzxrdo
+	 */
+	public void feedzxrdo(HttpRequest request, HttpResponse response)
+			throws JuiceException {
+		try {
+			logger.info("feedzxrdo请求header信息："+request.allHeaders());
+			String result = request.getParam("status");
+			String ffId = request.getParam("msg");
+			ffId = ffId.substring(ffId.length()-16, ffId.length());
+			// 处理订单
+			boolean isSuc = false;
+			if ("DELIVRD".equals(result)) 
+				isSuc = true;
+			processOrder(ffId, isSuc);
+		} catch (Exception e) {
+			logger.error(ExceptionTool.getExceptionMessage(e));
+		}
+		response.content("ok").end();
+		
+	}
+	
+	/**
+	 * 深圳点之行RDO 回调通知
+	 * http://smspay.xushihudong.com/fee/feexsmm
+	 */
+	public void feexsmm(HttpRequest request, HttpResponse response)
+			throws JuiceException {
+		try {
+			logger.info("feexsmm请求header信息："+request.allHeaders());
+			String result = request.getParam("status");
+			String ffId = request.getParam("cpparam");
+			// 处理订单
+			boolean isSuc = false;
+			if ("1".equals(result)) 
+				isSuc = true;
+			processOrder(ffId, isSuc);
+		} catch (Exception e) {
+			logger.error(ExceptionTool.getExceptionMessage(e));
+		}
+		response.content("ok").end();
+		
+	}
+
+	/**
+	 * 家医MM 回调通知
+	 * http://smspay.xushihudong.com/fee/feexsjyback
+	 */
+	public void feexsjyback(HttpRequest request, HttpResponse response)
+			throws JuiceException {
+		try {
+			logger.info("feexsjyback请求header信息："+request.allHeaders());
+			String result = request.getParam("paystatus");
+			String ffId = request.getParam("tradeId");
+			// 处理订单
+			boolean isSuc = false;
+			if ("1".equals(result)) 
+				isSuc = true;
+			processOrder(ffId, isSuc);
+		} catch (Exception e) {
+			logger.error(ExceptionTool.getExceptionMessage(e));
+		}
+		response.content("ok").end();
+		
+	}
+	
+	/**
+	 * 掌中飞扬RDO 掌中飞扬回调通知
+	 * http://118.190.90.1/fee/feezzfyrdo
+	 */
+	public void feezzfyrdo(HttpRequest request, HttpResponse response)
+			throws JuiceException {
+		try {
+			logger.info("feezzfyrdo请求header信息："+request.allHeaders());
+			String result = request.getParam("stat");
+			String ffId = request.getParam("CPParam");
+			ffId = ffId.substring(ffId.length()-12, ffId.length());
+			// 处理订单
+			boolean isSuc = false;
+			if ("1".equals(result)) 
+				isSuc = true;
+			processOrder(ffId, isSuc);
+		} catch (Exception e) {
+			logger.error(ExceptionTool.getExceptionMessage(e));
+		}
+		response.content("ok").end();
+		
+	}
+	
+	/**
+	 * 苏州乐麟RDO 苏州乐米回调通知
+	 * http://120.24.88.90/fee/feeszlm
+	 */
+	public void feeszlm(HttpRequest request, HttpResponse response)
+			throws JuiceException {
+		try {
+			String result = request.getParam("result");
+			String ffId = request.getParam("extparams");
+			
+			// 处理订单
+			boolean isSuc = false;
+			if ("0".equals(result)) 
+				isSuc = true;
+			processOrder(ffId, isSuc);
+		} catch (Exception e) {
+			logger.error(ExceptionTool.getExceptionMessage(e));
+		}
+		response.content("ok").end();
+		
+	}
+	
+	/**
+	 * 厚衡 回调通知
+	 * http://smspay.xushihudong.com/fee/feexshhback
+	 */
+	public void feexshhback(HttpRequest request, HttpResponse response)
+			throws JuiceException {
+		try {
+			String result = "0";
+			String ffId = request.getParam("cpparam");
+			
+			// 处理订单
+			boolean isSuc = false;
+			if ("0".equals(result)) 
+				isSuc = true;
+			processXSOrder(ffId, isSuc);
+		} catch (Exception e) {
+			logger.error(ExceptionTool.getExceptionMessage(e));
+		}
+		response.content("ok").end();
+		
+	}
+	
+		
+	
+	/**
+	 * 苏州全真回调通知
+	 * http://smspay.xushihudong.com/fee/feexsszqzback
+	 */
+	public void feexsszqzback(HttpRequest request, HttpResponse response)
+			throws JuiceException {
+		try {
+			logger.info("feexsszqzback请求header信息："+request.allHeaders());
+			String content = request.body();
+			logger.info("feexsszqzback苏州全真回调信息："+content);
+			JSONObject myObj = JSONObject.parseObject(content);
+			String result = myObj.getString("status");
+			String ffId = myObj.getString("info1");
+			
+			// 处理订单
+			boolean isSuc = false;
+			if ("0".equals(result)) 
+				isSuc = true;
+			processXSOrder(ffId, isSuc);
+		} catch (Exception e) {
+			logger.error(ExceptionTool.getExceptionMessage(e));
+		}
+		response.content("ok").end();
+		
+	}
+	
+	/**
+	 * 竹语回调通知
+	 * http://otherpay.xushihudong.com/fee/feexszyh5back
+	 */
+	public void feexszyh5back(HttpRequest request, HttpResponse response)
+			throws JuiceException {
+		try {
+			logger.info("feexszyh5back请求header信息："+request.allHeaders());
+			String result = request.getParam("result");
+			String ffId = request.getParam("passInfo");
+			
+			// 处理订单
+			boolean isSuc = false;
+			if ("1".equals(result)) 
+				isSuc = true;
+			processOtherOrder(ffId, isSuc);
+		} catch (Exception e) {
+			logger.error(ExceptionTool.getExceptionMessage(e));
+		}
+		response.content("ok").end();
+		
+	}
+	
+	/**
+	 * 云支付回调通知
+	 * http://otherpay.xushihudong.com/fee/feexsyzfback
+	 */
+	public void feexsyzfback(HttpRequest request, HttpResponse response)
+			throws JuiceException {
+		try {
+			logger.info("feexsyzfback请求header信息："+request.allHeaders());
+			String result = request.getParam("result");
+			String ffId = request.getParam("custom");
+			String order_no = request.getParam("order_no");
+			String pay_amt = request.getParam("pay_amt");
+			String sign = request.getParam("sign");
+			
+			if (ffId != null && ffId.length()>16) {
+				String channel = ffId.substring(ffId.length()-4,ffId.length());
+				ffId = ffId.substring(0,16);
+				CodeInfo codeInfo = commonAction.queryCodeInfoBySpid(channel);
+				String appsecret = ConstantDefine.LTH5WX_PAY_KEY;
+				if (codeInfo != null) {
+					String matchRegex = codeInfo.getMatchRegex();
+					String[] tmp = matchRegex.split("##");
+					appsecret = tmp[1];
+				}
+				
+				StringBuilder signparam = new StringBuilder();
+				signparam.append("order_no=").append(order_no)
+				.append("&order_amt=").append(pay_amt)
+				.append("&key=").append(appsecret);
+				String newkey = MD5.md5(signparam.toString(), "utf-8").toLowerCase();
+				if (newkey.equals(sign.toLowerCase())) {
+					// 处理订单
+					boolean isSuc = false;
+					if ("1".equals(result)) 
+						isSuc = true;
+					processOtherOrder(ffId, isSuc);
+				}
+			}
+			
+		} catch (Exception e) {
+			logger.error(ExceptionTool.getExceptionMessage(e));
+		}
+		response.content("ok").end();
+		
+	}
+	
+	/**
+	 * 订单通知接口
+	 * <p>
+	 * Market平台 ---> 开发者服务器 开发者服务器
+	 * </p>
+	 * 
+	 * http://smspay.xushihudong.com/fee/feeMM
+	 */
+	public void feeMM(HttpRequest request, HttpResponse response)
+			throws JuiceException {
+		logger.info("feeMM请求header信息："+request.allHeaders());
+		String content = request.body();
+		String ip = getRealIP(request);
+		logger.info("read xmlStr: " + content + "; ip:" + ip);
+		SyncXMLUtils utils = new SyncXMLUtils();
+		try {
+			SyncAppOrderReq syncAppOrderReq = XMLUtils.getInstance()
+					.parseXML2AppOrderReq(content);
+			logger.info("syncAppOrderReq:" + syncAppOrderReq.getAppID());
+			
+			/*String channelid = syncAppOrderReq.getChannelID();
+			if ("2200198494".equals(channelid)) {
+				String utl = "http://mmroute.coujiaowa.com/mmroute/dealmm.php";
+				String result = HttpTool.sendPost(utl, content);
+				logger.info("回传2200198494结果result:"+result);
+			} else if ("2200202910".equals(channelid) || "2200207557".equals(channelid)) {
+				String utl = "http://x.smilegames.cn:8080/M_Market/SyncAppOrderServlet";
+				String result = HttpTool.sendPost(utl, content);
+				logger.info("回传2200202910和2200207557结果result:"+result);
+			} else if ("2200203416".equals(channelid)) {
+				String utl = "http://mmroute.coujiaowa.com/mmroute/dealmm.php";
+				String result = HttpTool.sendPost(utl, content);
+				logger.info("回传2200203416结果result:"+result);
+			} else {
+				//
+			}*/
+			saveOrder(syncAppOrderReq);
+			// 返回消息转为vo
+			SyncAppOrderResp syncAppOrderResp = new SyncAppOrderResp();
+			syncAppOrderResp.setMsgType("SyncAppOrderResp");
+			syncAppOrderResp.setVersion("1.0.0");
+			syncAppOrderResp.sethRet(0);
+			String result = utils.vo2Xml(syncAppOrderResp, "SyncAppOrderResp");
+			response.content(result).end();
+			
+			// 处理订单
+			boolean isSuc = false;
+			if (syncAppOrderReq.getPrice() > 0 && !"00000000000000000000".equals(syncAppOrderReq.getOrderID())) {
+				isSuc = true;
+//					commonAction.saveExt(syncAppOrderReq.getExData());
+			}
+			processOrder(syncAppOrderReq.getExData(), isSuc);
+		} catch (Exception e) {
+			logger.error(ExceptionTool.getExceptionMessage(e));
+		}
+
+	}
+
+	/**
+	 * 保持数据
+	 */
+	private void saveOrder(SyncAppOrderReq sao) {
+		try {
+			MMPayInfo order = new MMPayInfo();
+			order.setOrderId(sao.getOrderID());
+			order.setTradeId(sao.getTradeID());
+			order.setAppId(sao.getAppID());
+			order.setChannelId(sao.getChannelID());
+			order.setActionId(sao.getActionID());
+			order.setActionTime(DateTool.convertString(sao.getActionTime()));
+			order.setMsisdn(sao.getMSISDN());
+			order.setMsisdnFee(sao.getFeeMSISDN());
+			order.setPayCode(sao.getPayCode());
+			order.setPrice(sao.getPrice());
+			order.setNum(sao.getSubsNumb());
+			order.setTotalPrice(sao.getTotalPrice());
+			order.setExt(sao.getExData());
+			order.setResultStatus(sao.getReturnStatus());
+
+			commonAction.addMMPayInfo(order);
+		} catch (Exception e) {
+			logger.error(e);
+		}
+	}
+	
+	/**
+	 * 客户端id
+	 * <p>
+	 * Market平台 ---> 开发者服务器 开发者服务器
+	 * </p>
+	 * 
+	 * http://120.24.88.90/fee/newreport
+	 */
+	public void newreport(HttpRequest request, HttpResponse response)
+			throws JuiceException {
+		try {
+			logger.info("请求header信息："+request.allHeaders());
+			
+			String reqJson = request.getParam("json");
+			System.out.println(reqJson.length());
+			JSONObject myObj = JSONObject.parseObject(reqJson);
+			
+			ResSDKReport reqInfo = new ResSDKReport();
+			String orderid = myObj.getString("orderid");
+			String errcode = myObj.getString("errcode");
+			reqInfo.setOrderid(orderid);
+			reqInfo.setErrcode(errcode);
+			reqInfo.setImsi(myObj.getString("imsi"));
+			reqInfo.setImei(myObj.getString("imei"));
+			reqInfo.setAppkey(myObj.getString("appkey"));
+			reqInfo.setSdkver(myObj.getString("sdkver"));
+			reqInfo.setApn(myObj.getString("apn"));
+			reqInfo.setOsver(myObj.getString("osver"));
+			reqInfo.setProduct(myObj.getString("product"));
+			reqInfo.setChannel(myObj.getString("channel"));
+			reqInfo.setIsanto(myObj.getString("isanto"));
+			
+			boolean isSuc = false;
+			if ("0".equals(errcode)) isSuc = true;
+			commonAction.updateOrder(orderid, isSuc, 0);
+			
+			commonAction.addResSDKReport(reqInfo);
+		} catch (Exception e) {
+			logger.error(ExceptionTool.getExceptionMessage(e));
+		}
+		response.content("ok").end();
+		
+	}
+	
+	/**
+	 * http://120.24.88.90/fee/getExt
+	 */
+	public void getExt(HttpRequest request, HttpResponse response)
+			throws JuiceException {
+		String result = "ok";
+		/*String result = "0";
+		try {
+			logger.info("请求header信息："+request.allHeaders());                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            
+			
+			String ffid = request.getParam("ffid");
+			if (ffid != null && ffid.length() > 0) {
+				String ext = commonAction.queryExt(ffid);
+				if (ffid.equals(ext)) result = "1";
+			}
+			
+		} catch (Exception e) {
+			response.content(result).end();
+			logger.error(ExceptionTool.getExceptionMessage(e));
+		}*/
+		response.content(result).end();
+	}
+	
+	/**
+	 * 客户端id
+	 * <p>
+	 * Market平台 ---> 开发者服务器 开发者服务器
+	 * </p>
+	 * 
+	 * http://120.24.88.90/fee/feeSDKback
+	 */
+	public void feeSDKback(HttpRequest request, HttpResponse response)
+			throws JuiceException {
+		try {
+			logger.info("请求header信息："+request.allHeaders());
+			
+			String ffId = request.getParam("ffid");
+			String sdkResult = request.getParam("sdk_result");
+			
+			commonAction.updateSDKResult(ffId,sdkResult);
+		} catch (Exception e) {
+			logger.error(ExceptionTool.getExceptionMessage(e));
+		}
+		response.content("ok").end();
+		
+	}
+	
+	public void feeSW(HttpRequest request, HttpResponse response)
+			throws JuiceException {
+		response.content("ok").end();
+	}
+	
+	/**
+	 * 乐米支付宝H5回调通知
+	 * http://otherpay.xushihudong.com/fee/feezfbH5back
+	 */
+	public void feezfbH5back(HttpRequest request, HttpResponse response)
+			throws JuiceException {
+		try {
+			logger.info("feezfbH5back请求header信息：" + request.allHeaders());
+			
+			String content = request.body();
+			logger.info("feezfbH5back请求content信息：" + content);
+			if (content != null && content.length() > 0) {
+				JSONObject myObj = JSONObject.parseObject(content);
+				
+				String out_trade_no = myObj.getString("out_trade_no");
+				String appid = myObj.getString("appid");
+				String attch = myObj.getString("attch");
+				String channel = myObj.getString("channel");
+				String type = myObj.getString("type");
+				String result = myObj.getString("result");
+				String gooddesc = myObj.getString("gooddesc");
+				String total_fee = myObj.getString("total_fee");
+				String create_time = myObj.getString("create_time");
+				String sign = myObj.getString("sign");
+				
+				String appsecret = ConstantDefine.LTH5WX_PAY_KEY;
+				if (channel != null && channel.length() > 0) {
+					CodeInfo codeInfo = commonAction.queryCodeInfoBySpid(channel);
+					if (codeInfo != null) {
+						String keyword = codeInfo.getKeyword();
+						String[] tmp = keyword.split("#");
+						appsecret = tmp[1];
+					}
+				}
+				
+				/*TreeMap<String, String> treeMap = new TreeMap<String, String>();
+				treeMap.put("out_trade_no", out_trade_no);
+				treeMap.put("appid",appid);
+				treeMap.put("attch", attch);
+				treeMap.put("channel", channel);
+				treeMap.put("type",type);
+				treeMap.put("gooddesc",gooddesc);
+				treeMap.put("total_fee",total_fee);
+				treeMap.put("result",result);
+				treeMap.put("create_time", create_time);
+				StringBuilder param = new StringBuilder();
+				for (String keString : treeMap.keySet()) {
+					param.append(keString).append("=").append(treeMap.get(keString)).append("&");
+				}
+				String md5param = param.append("key=").append(appsecret).toString().toUpperCase();*/
+				
+				StringBuilder signparam = new StringBuilder();
+				signparam.append("appid=").append(appid)
+				.append("&attch=").append(attch)
+				.append("&channel=").append(channel)
+				.append("&create_time=").append(create_time)
+				.append("&gooddesc=").append(gooddesc)
+				.append("&out_trade_no=").append(out_trade_no)
+				.append("&result=").append(result)
+				.append("&total_fee=").append(total_fee)
+				.append("&type=").append(type)
+				.append("&key=").append(appsecret);
+				String signstr = signparam.toString().toUpperCase();
+				logger.info("feezfbH5back请求signparam信息：" + signstr);
+				String klwsign = MD5.md5(signstr, "utf-8");
+				if (sign.equals(klwsign)) {
+					logger.info("feezfbH5back签名验证通过：" + klwsign);
+					boolean isSuc = false;
+					if ("0".equals(result))
+						isSuc = true;
+					processOtherOrder(attch, isSuc);
+				}
+			}
+		} catch (Exception e) {
+			logger.error(ExceptionTool.getExceptionMessage(e));
+		}
+		
+		response.content("ok").end();
+	}
+	
+	/**
+	 * 加冕加回调通知
+	 * http://otherpay.xushihudong.com/fee/feejmjQQback
+	 */
+	public void feejmjQQback(HttpRequest request, HttpResponse response)
+			throws JuiceException {
+		try {
+			logger.info("feejmjQQback请求header信息：" + request.allHeaders());
+			
+			String content = request.body();
+			logger.info("feejmjQQback请求content信息：" + content);
+			if (content != null && content.length() > 0) {
+				Map<String, String> myObj = CommonTool.parseYZ(content);
+				
+				String app_id = myObj.get("app_id");
+				String order_id = myObj.get("order_id");
+				String pay_seq = myObj.get("pay_seq");
+				String pay_amt = myObj.get("pay_amt");
+				String pay_result = myObj.get("pay_result");
+//				String result_desc = myObj.getString("result_desc");
+				String ext = myObj.get("extends");
+				String sign = myObj.get("sign");
+				
+				String channel = ext;
+				String attch = order_id;
+				
+				String appsecret = ConstantDefine.LTH5WX_PAY_KEY;
+				if (channel != null && channel.length() > 0) {
+					CodeInfo codeInfo = commonAction.queryCodeInfoBySpid(channel);
+					if (codeInfo != null) {
+						String keyword = codeInfo.getKeyword();
+						String[] tmp = keyword.split("#");
+						appsecret = tmp[1];
+					}
+				}
+				
+				StringBuilder signparam = new StringBuilder();
+				signparam.append("app_id=").append(app_id)
+				.append("&order_id=").append(order_id)
+				.append("&pay_seq=").append(pay_seq)
+				.append("&pay_amt=").append(pay_amt)
+				.append("&pay_result=").append(pay_result)
+				.append("&key=").append(MD5.md5(appsecret, "utf-8"));
+				logger.info("feejmjQQback请求signparam信息：" + signparam.toString());
+				String klwsign = MD5.md5(signparam.toString(), "utf-8");
+				if (sign.equals(klwsign)) {
+					logger.info("feejmjQQback签名验证通过：" + klwsign);
+					boolean isSuc = false;
+					if ("20".equals(pay_result))
+						isSuc = true;
+					processOtherOrder(attch, isSuc);
+				}
+			}
+		} catch (Exception e) {
+			logger.error(ExceptionTool.getExceptionMessage(e));
+		}
+		
+		response.content("ok").end();
+	}
+	
+	/**
+	 * 金海哲 回调通知
+	 * http://otherpay.xushihudong.com/fee/feejhzback
+	 */
+	public void feejhzback(HttpRequest request, HttpResponse response)
+			throws JuiceException {
+		try {
+			logger.info("feejhzback请求header信息：" + request.allHeaders());
+			
+			String content = request.body();
+			logger.info("feejhzback请求content信息：" + content);
+			if (content != null && content.length() > 0) {
+				Map<String, String> myObj = CommonTool.parseYZ(content);
+				
+				String ret = myObj.get("ret");
+				String msg = myObj.get("msg");
+				String sign = myObj.get("sign");
+				
+				JSONObject jsonobj = JSONObject.parseObject(ret);
+				String code = jsonobj.getString("code");
+				JSONObject jsonobj1 = JSONObject.parseObject(msg);
+				String no = jsonobj1.getString("no");
+				
+				String attch = no.substring(no.length()-16);
+				
+				String appsecret = ConstantDefine.JHZ_P_KEY;
+				
+				StringBuilder signparam = new StringBuilder();
+				signparam.append(ret).append("|").append(msg);
+				boolean checkresult = RSASignature.verify(signparam.toString(), sign, appsecret);
+				
+				logger.info("feejhzback请求signparam信息：" + signparam.toString());
+				if (checkresult) {
+					boolean isSuc = false;
+					if ("1000".equals(code))
+						isSuc = true;
+					processOtherOrder(attch, isSuc);
+				}
+			}
+		} catch (Exception e) {
+			logger.error(ExceptionTool.getExceptionMessage(e));
+		}
+		
+		response.content("SUCCESS").end();
+	}
+	
+	/**
+	 * 乐米微信H5回调通知
+	 * http://otherpay.xushihudong.com/fee/feexsszlmH5back
+	 */
+	public void feexsszlmH5back(HttpRequest request, HttpResponse response)
+			throws JuiceException {
+		try {
+			logger.info("feexsszlmH5back请求header信息：" + request.allHeaders());
+			
+			String content = request.body();
+			logger.info("feexsszlmH5back请求content信息：" + content);
+			if (content != null && content.length() > 0) {
+				JSONObject myObj = JSONObject.parseObject(content);
+				
+				String out_trade_no = myObj.getString("out_trade_no");
+				String appid = myObj.getString("appid");
+				String attch = myObj.getString("attch");
+				String type = myObj.getString("type");
+				String result = myObj.getString("result");
+				String channel = myObj.getString("channel");
+				String gooddesc = myObj.getString("gooddesc");
+				String total_fee = myObj.getString("total_fee");
+				String create_time = myObj.getString("create_time");
+				String sign = myObj.getString("sign");
+				
+				String transaction_id = myObj.getString("transaction_id");
+				
+				String appsecret = ConstantDefine.LTH5WX_PAY_KEY;
+				if (channel != null && channel.length() > 0) {
+					CodeInfo codeInfo = commonAction.queryCodeInfoBySpid(channel);
+					if (codeInfo != null) {
+						String matchRegex = codeInfo.getMatchRegex();
+						String[] tmp = matchRegex.split("##");
+						appsecret = tmp[1];
+					}
+				}
+				
+				StringBuilder signparam = new StringBuilder();
+				signparam.append("appid=").append(appid)
+				.append("&attch=").append(attch)
+				.append("&channel=").append(channel)
+				.append("&create_time=").append(create_time)
+				.append("&gooddesc=").append(gooddesc)
+				.append("&out_trade_no=").append(out_trade_no)
+				.append("&result=").append(result)
+				.append("&total_fee=").append(total_fee)
+				.append("&type=").append(type)
+				.append("&key=").append(appsecret);
+				String signstr = signparam.toString().toUpperCase();
+				logger.info("feexsszlmH5back请求signparam信息：" + signstr);
+				String klwsign = MD5.md5(signstr, "utf-8");
+//				if (sign.equals(klwsign)) {
+					logger.info("feexsszlmH5back签名验证通过：" + klwsign);
+					boolean isSuc = false;
+					if ("0".equals(result))
+						isSuc = true;
+					processOtherOrder(attch, isSuc, transaction_id);
+//				}
+			}
+		} catch (Exception e) {
+			logger.error(ExceptionTool.getExceptionMessage(e));
+		}
+		
+		response.content("ok").end();
+	}
+	
+	/**
+	 * 朗天H5回调通知
+	 * http://120.24.88.90/fee/feeH5back
+	 */
+	public void feeH5back(HttpRequest request, HttpResponse response)
+			throws JuiceException {
+		try {
+			logger.info("feeH5back请求header信息：" + request.allHeaders());
+			
+			String content = request.body();
+			logger.info("feeH5back请求content信息：" + content);
+			Map<String, String> repmap = CommonTool.parseYZ(content);
+			if (repmap != null && repmap.size() > 0) {
+				String transdata = repmap.get("transdata");
+				String sign = repmap.get("sign");
+//				String signtype = repmap.get("signtype");
+				JSONObject myObj = JSONObject.parseObject(transdata);
+				
+				String appid = myObj.getString("appid");
+				String cporderid = myObj.getString("cporderid");
+				String currency = myObj.getString("currency");
+				String fact_money = myObj.getString("fact_money");
+				String feetype = myObj.getString("feetype");
+				String goodsid = myObj.getString("goodsid");
+				String money = myObj.getString("money");
+				String paytype = myObj.getString("paytype");
+				String pc_priv_info = myObj.getString("pc_priv_info");
+				String pcuserid = myObj.getString("pcuserid");
+				String result = myObj.getString("result");
+				String transid = myObj.getString("transid");
+				String transtime = myObj.getString("transtime");
+				String transtype = myObj.getString("transtype");
+				
+				String appsecret = ConstantDefine.LTH5WX_PAY_KEY;
+				if (pc_priv_info != null && pc_priv_info.length() > 0) {
+					CodeInfo codeInfo = commonAction.queryCodeInfoBySpid(pc_priv_info);
+					if (codeInfo != null) {
+						String keyword = codeInfo.getKeyword();
+						String[] tmp = keyword.split("#");
+						appsecret = tmp[1];
+					}
+				}
+					
+				StringBuilder signparam = new StringBuilder();
+				signparam.append("appid=").append(appid)
+				.append("&cporderid=").append(cporderid)
+				.append("&currency=").append(currency)
+				.append("&fact_money=").append(fact_money)
+				.append("&feetype=").append(feetype)
+				.append("&goodsid=").append(goodsid)
+				.append("&money=").append(money)
+				.append("&paytype=").append(paytype)
+				.append("&pc_priv_info=").append(pc_priv_info)
+				.append("&pcuserid=").append(pcuserid)
+				.append("&result=").append(result)
+				.append("&transid=").append(transid)
+				.append("&transtime=").append(transtime)
+				.append("&transtype=").append(transtype)
+				.append("&key=").append(appsecret);
+				logger.info("feeH5back请求signparam信息：" + signparam.toString());
+				String klwsign = MD5.md5(signparam.toString(), "utf-8");
+				if (sign.equals(klwsign)) {
+					boolean isSuc = false;
+					if ("1".equals(result))
+						isSuc = true;
+					processOtherOrder(cporderid, isSuc);
+				}
+			}
+		} catch (Exception e) {
+			logger.error(ExceptionTool.getExceptionMessage(e));
+		}
+		
+		response.content("SUCCESS").end();
+	}
+	
+	/**
+	 * 高汇通回调通知
+	 * http://120.24.88.90/fee/feeGHTback
+	 */
+	public void feeGHTback(HttpRequest request, HttpResponse response)
+			throws JuiceException {
+		try {
+			logger.info("feeGHTback请求header信息：" + request.allHeaders());
+			
+			String content = request.body();
+			logger.info("feeGHTback请求content信息：" + content);
+			JSONObject myObj = JSONObject.parseObject(content);
+			
+			String isSuccess = myObj.getString("resp_code");
+			String ffId = myObj.getString("order_no");
+			
+			boolean isSuc = false;
+			if ("0".equals(isSuccess))
+				isSuc = true;
+			processOtherOrder(ffId, isSuc);
+		} catch (Exception e) {
+			logger.error(ExceptionTool.getExceptionMessage(e));
+		}
+		
+		response.content("ok").end();
+	}
+	
+	/**
+	 * 
+	 * http://120.24.88.90/fee/feebacklp
+	 */
+	public void feebacklp(HttpRequest request, HttpResponse response)
+			throws JuiceException {
+		try {
+			logger.info("feebacklp请求header信息：" + request.allHeaders());
+			
+			String ffId = request.getParam("extParm");
+			String isSuccess = request.getParam("result");
+			
+			boolean isSuc = false;
+			if ("0".equals(isSuccess))
+				isSuc = true;
+			processOrder(ffId, isSuc);
+		} catch (Exception e) {
+			logger.error(ExceptionTool.getExceptionMessage(e));
+		}
+		
+		response.content("ok").end();
+	}
+	
+	/**
+	 * 
+	 * http://120.24.88.90/fee/feertzyback
+	 */
+	public void feertzyback(HttpRequest request, HttpResponse response)
+			throws JuiceException {
+		try {
+			logger.info("feertzyback请求header信息：" + request.allHeaders());
+			
+			String ffId = request.getParam("ccpara");
+			String isSuccess = request.getParam("delivrd");
+			
+			boolean isSuc = false;
+			if ("delivrd".equals(isSuccess.toLowerCase()))
+				isSuc = true;
+			processOrder(ffId, isSuc);
+		} catch (Exception e) {
+			logger.error(ExceptionTool.getExceptionMessage(e));
+		}
+		
+		response.content("ok").end();
+	}
+	
+	/**
+	 * 润土12306注册
+	 * http://118.190.90.1/fee/feertzcback
+	 */
+	public void feertzcback(HttpRequest request, HttpResponse response)
+			throws JuiceException {
+		try {
+			logger.info("feertzcback请求header信息：" + request.allHeaders());
+			
+			String ffId = request.getParam("order");
+			String isSuccess = request.getParam("status");
+			
+			boolean isSuc = false;
+			if ("1".equals(isSuccess.toLowerCase()))
+				isSuc = true;
+			processXSOrder(ffId, isSuc);
+		} catch (Exception e) {
+			logger.error(ExceptionTool.getExceptionMessage(e));
+		}
+		
+		response.content("ok").end();
+	}
+	
+	/**
+	 * 
+	 * http://120.24.88.90/fee/feertzrback
+	 */
+	public void feertzrback(HttpRequest request, HttpResponse response)
+			throws JuiceException {
+		try {
+			logger.info("feertzrback请求header信息：" + request.allHeaders());
+			
+			String ffId = request.getParam("appid");
+			String isSuccess = request.getParam("ServiceAction");
+			ffId = ffId.substring(ffId.length()-16,ffId.length());
+			
+			boolean isSuc = false;
+			if ("0".equals(isSuccess))
+				isSuc = true;
+			processOrder(ffId, isSuc);
+		} catch (Exception e) {
+			logger.error(ExceptionTool.getExceptionMessage(e));
+		}
+		
+		response.content("ok").end();
+	}
+	
+	/**
+	 * 润土兆荣联通
+	 * http://118.190.90.1/fee/feertzrltback
+	 */
+	public void feertzrltback(HttpRequest request, HttpResponse response)
+			throws JuiceException {
+		try {
+			logger.info("feertzrltback请求header信息：" + request.allHeaders());
+
+			String ffId = request.getParam("transParam");
+			String isSuccess = request.getParam("hRet");
+			ffId = ffId.substring(ffId.length()-16,ffId.length());
+
+			boolean isSuc = false;
+			if ("0".equals(isSuccess))
+				isSuc = true;
+			processOrder(ffId, isSuc);
+		} catch (Exception e) {
+			logger.error(ExceptionTool.getExceptionMessage(e));
+		}
+
+		response.content("ok").end();
+	}
+	
+	
+	
+	public void feeNotity(HttpRequest request, HttpResponse response)
+			throws JuiceException {
+		try {
+			logger.info("feeNotity请求header信息：" + request.allHeaders());
+			
+			String ffId = request.getParam("ffid");
+			String isSuccess = request.getParam("issuccess");
+			
+			boolean isSuc = false;
+			if ("1".equals(isSuccess))
+				isSuc = true;
+			processOrder(ffId, isSuc);
+		} catch (Exception e) {
+			logger.error(ExceptionTool.getExceptionMessage(e));
+		}
+		
+		response.content("ok").end();
+	}
+	
+	
+	public void feeForward(HttpRequest request, HttpResponse response)
+			throws JuiceException {
+		try {
+			logger.info("feeForward请求header信息：" + request.allHeaders());
+			
+			String json = request.getParam("json");
+			logger.info("feeForward请求json：" + json);
+			
+			commonAction.reqForward(json);
+		} catch (Exception e) {
+			logger.error(ExceptionTool.getExceptionMessage(e));
+		}
+		
+		response.content("ok").end();
+	}
+	
+
+	/**
+	 * QQ注册同步接口
+	 * http://120.24.88.90/fee/feexsqqzcback
+	 */
+	public void feexsqqzcback(HttpRequest request, HttpResponse response)
+			throws JuiceException {
+		try {
+			String ffId = request.getParam("cpParam");
+			
+			// 处理订单
+			boolean isSuc = true;
+			Thread.sleep(1000);
+			processOrder(ffId, isSuc);
+		} catch (Exception e) {
+			logger.error(ExceptionTool.getExceptionMessage(e));
+		}
+		response.content("ok").end();
+	}
+	
+	/**
+	 * QQ注册同步接口
+	 * http://120.24.88.90/fee/feeqqzcback
+	 */
+	public void feeqqzcback(HttpRequest request, HttpResponse response)
+			throws JuiceException {
+		try {
+			String ffId = request.getParam("ccpara");
+			
+			// 处理订单
+			boolean isSuc = true;
+			
+			processOrder(ffId, isSuc);
+		} catch (Exception e) {
+			logger.error(ExceptionTool.getExceptionMessage(e));
+		}
+		response.content("ok").end();
+	}
+	
+	/**
+	 * 微信APP支付同步
+	 * http://120.24.88.90/fee/feewxappback
+	 */
+	public void feewxappback(HttpRequest request, HttpResponse response)
+			throws JuiceException {
+		String result = "ok";
+		try {
+			logger.info("feewxappback请求header信息：" + request.allHeaders());
+			String content = request.body();
+			Map<String, String> restmap = XmlUtil.xmlParse(content);
+			// 处理订单
+			boolean isSuc = false;
+			if ("SUCCESS".equals(restmap.get("return_code"))) {
+				// 订单支付成功 业务处理
+				String ffId = restmap.get("out_trade_no"); // 商户订单号
+				// 通过商户订单判断是否该订单已经处理 如果处理跳过 如果未处理先校验sign签名 再进行订单业务相关的处理
+				
+				String sing = restmap.get("sign"); // 返回的签名
+				restmap.remove("sign");
+				String signnow = PayUtil.getSign(restmap, ConstantDefine.APPH5WX_PAY_KEY);
+				if (signnow.equals(sing)) {
+					isSuc = true;
+				}
+				processXSOrder(ffId, isSuc);
+			}
+			Map<String, String> map = new HashMap<String, String>();
+			map.put("return_code", "SUCCESS");
+			map.put("return_msg", "OK");
+			result = XmlUtil.xmlFormat(map,true);
+		} catch (Exception e) {
+			logger.error(ExceptionTool.getExceptionMessage(e));
+		}
+		response.content(result).end();
+	}
+	
+	/**
+	 * xshd微信公众号支付同步
+	 * http://120.24.88.90/fee/feexshdwxgzhback
+	 */
+	public void feexshdwxgzhback(HttpRequest request, HttpResponse response)
+			throws JuiceException {
+		String result = "fail";
+		try {
+			logger.info("feexshdwxgzhback请求header信息：" + request.allHeaders());
+			String status = request.getParam("result_code");
+//			String mch_id = request.getParam("mch_id");
+			String out_trade_no = request.getParam("out_trade_no");
+			String feepoint = request.getParam("feepoint");
+//			String fee = request.getParam("fee");
+//			String out_transaction_id = request.getParam("out_transaction_id");
+			String sign = request.getParam("sign");
+			// 处理订单
+			boolean isSuc = false;
+			if ("0".equals(status)) {
+				int len = out_trade_no.length();
+				String spId = out_trade_no.substring(len-4,len);
+				CodeInfo codeInfo = commonAction.queryCodeInfoBySpid(spId);
+				if (codeInfo != null) {
+					String keyword = codeInfo.getKeyword();
+					String[] tmp = keyword.split("#");
+					String appsecret = tmp[1];
+					
+					StringBuilder signparam = new StringBuilder();
+					signparam.append(feepoint).append("&")
+					.append(out_trade_no).append("&")
+					.append(appsecret);
+					String signnow = MD5Tool.toMD5Value32(signparam.toString());
+					logger.info("feexshdwxgzhback需签名字符串：" + signparam.toString());
+					logger.info("feexshdwxgzhback生成签名：" + signnow);
+					
+					String ffId = out_trade_no.substring(tmp[0].length(),tmp[0].length()+16);
+					if (signnow.equals(sign)) {
+						result = "success";
+						isSuc = true;
+					}
+					processXSOrder(ffId, isSuc);
+				}
+			}
+		} catch (Exception e) {
+			logger.error(ExceptionTool.getExceptionMessage(e));
+		}
+		response.content(result).end();
+	}
+	
+	/**
+	 * 海南支付宝支付同步
+	 * http://120.24.88.90/fee/feehnzfbback
+	 */
+	public void feehnzfbback(HttpRequest request, HttpResponse response)
+			throws JuiceException {
+		String result = "fail";
+		try {
+			logger.info("feehnzfbback请求header信息：" + request.allHeaders());
+			String content = request.body();
+			logger.info("feehnzfbback请求content信息：" + content);
+			Map<String, String> restmap = CommonTool.parseYZ(content);
+			// 处理订单
+			boolean isSuc = false;
+			String payResult = restmap.get("payResult");
+			if ("1".equals(payResult)) {
+				// 订单支付成功 业务处理
+				String merchantOutOrderNo = restmap.get("merchantOutOrderNo"); // 商户订单号
+				// 通过商户订单判断是否该订单已经处理 如果处理跳过 如果未处理先校验sign签名 再进行订单业务相关的处理
+				String ffId = merchantOutOrderNo.substring(0,16);
+				String spId = "sd" + merchantOutOrderNo.substring(16,18);
+				String sign = restmap.get("sign"); // 返回的签名
+				CodeInfo codeInfo = commonAction.queryCodeInfoBySpid(spId);
+				if (codeInfo != null) {
+					String keyword = codeInfo.getKeyword();
+					String[] tmp = keyword.split("#");
+					String appsecret = tmp[1];
+					restmap.remove("sign");
+					restmap.remove("key");
+					String signnow = PayUtil.getSign(restmap, appsecret);
+					logger.info("appsecret:"+appsecret);
+					logger.info("sign:"+sign);
+					logger.info("signnow:"+signnow);
+					if (signnow.equals(sign.toUpperCase())) {
+						result = "success";
+						isSuc = true;
+					}
+					processOrder(ffId, isSuc);
+				}
+			}
+		} catch (Exception e) {
+			logger.error(ExceptionTool.getExceptionMessage(e));
+		}
+		response.content(result).end();
+	}
+	
+	/**
+	 * 刘文微信公众号支付同步
+	 * http://120.24.88.90/fee/feelwwxgzhback
+	 */
+	public void feelwwxgzhback(HttpRequest request, HttpResponse response)
+			throws JuiceException {
+		String result = "fail";
+		try {
+			logger.info("feelwwxgzhback请求header信息：" + request.allHeaders());
+			String content = request.body();
+			Map<String, String> restmap = XmlUtil.xmlParse(content);
+			// 处理订单
+			boolean isSuc = false;
+			if ("0".equals(restmap.get("status")) && "0".equals(restmap.get("result_code"))) {
+				// 订单支付成功 业务处理
+				String ffId = restmap.get("out_trade_no"); // 商户订单号
+				// 通过商户订单判断是否该订单已经处理 如果处理跳过 如果未处理先校验sign签名 再进行订单业务相关的处理
+				
+				String sing = restmap.get("sign"); // 返回的签名
+				String attach = restmap.get("attach");
+				CodeInfo codeInfo = commonAction.queryCodeInfoBySpid(attach);
+				if (codeInfo != null) {
+					String keyword = codeInfo.getKeyword();
+					String[] tmp = keyword.split("#");
+					String appsecret = tmp[1];
+					restmap.remove("sign");
+					String signnow = PayUtil.getSign(restmap, appsecret);
+					if (signnow.equals(sing) && "0".equals(restmap.get("pay_result"))) {
+						result = "success";
+						isSuc = true;
+					}
+					processOrder(ffId, isSuc);
+				}
+			}
+		} catch (Exception e) {
+			logger.error(ExceptionTool.getExceptionMessage(e));
+		}
+		response.content(result).end();
+	}
+	
+	/**
+	 * 加冕加支付宝扫码支付同步
+	 * http://otherpay.xushihudong.com/fee/feexszfbsmback
+	 */
+	public void feexszfbsmback(HttpRequest request, HttpResponse response)
+			throws JuiceException {
+		String result = "fail";
+		try {
+			logger.info("feexszfbsmback请求header信息：" + request.allHeaders());
+			String content = request.body();
+			Map<String, String> restmap = XmlUtil.xmlParse(content);
+			// 处理订单
+			boolean isSuc = false;
+			result = "success";
+			if ("0".equals(restmap.get("status")) && "0".equals(restmap.get("result_code"))) {
+				// 订单支付成功 业务处理
+				String ffId = restmap.get("out_trade_no"); // 商户订单号
+				// 通过商户订单判断是否该订单已经处理 如果处理跳过 如果未处理先校验sign签名 再进行订单业务相关的处理
+				
+				String sing = restmap.get("sign"); // 返回的签名
+				String attach = restmap.get("attach");
+				CodeInfo codeInfo = commonAction.queryCodeInfoBySpid(attach);
+				if (codeInfo != null) {
+					String keyword = codeInfo.getKeyword();
+					String[] tmp = keyword.split("#");
+					String appsecret = tmp[1];
+					restmap.remove("sign");
+					String signnow = PayUtil.getSign(restmap, appsecret);
+					if (signnow.equals(sing) && "0".equals(restmap.get("pay_result"))) {
+						isSuc = true;
+					}
+					String traid = restmap.get("transaction_id");
+					processOtherOrder(ffId, isSuc, traid);
+				}
+			}
+		} catch (Exception e) {
+			logger.error(ExceptionTool.getExceptionMessage(e));
+		}
+		response.content(result).end();
+	}
+	
+	/**
+	 * 加冕加支付宝扫码支付同步
+	 * http://otherpay.xushihudong.com/fee/feexsqmdyback
+	 */
+	public void feexsqmdyback(HttpRequest request, HttpResponse response)
+			throws JuiceException {
+		String result = "fail";
+		try {
+			logger.info("feexsqmdyback请求header信息：" + request.allHeaders());
+			String content = request.body();
+			logger.info("feexsqmdyback请求body信息：" + content);
+			Map<String, Object> restmap = CommonTool.parseObj(content);
+			// 处理订单
+			boolean isSuc = false;
+			result = "SUCCESS";
+			String sign = (String)restmap.get("sign"); // 返回的签名
+			String attach = (String)restmap.get("remark");
+			String result_code = (String)restmap.get("result_code");
+			CodeInfo codeInfo = commonAction.queryCodeInfoBySpid(attach);
+			if (codeInfo != null) {
+				String keyword = codeInfo.getKeyword();
+				String[] tmp = keyword.split("#");
+				String appsecret = tmp[1];
+//				restmap.put("appKey", tmp[0]);
+//				restmap.put("sign", sign);
+				boolean flag = PaySignUtil.checkSign(restmap,appsecret);
+				if (flag && "200".equals(result_code)) {
+					isSuc = true;
+				}
+				String traid = (String)restmap.get("order_num");
+				String ffId = (String)restmap.get("buss_order_num");
+				processOtherOrder(ffId, isSuc, traid);
+			}
+		} catch (Exception e) {
+			logger.error(ExceptionTool.getExceptionMessage(e));
+		}
+		response.content(result).end();
+	}
+	/**
+	 * 外放-加冕-QQ扫码回调通知
+	 * http://smspay.xushihudong.com/fee/feexsjmback
+	 */
+	public void feexsjmback(HttpRequest request, HttpResponse response)
+			throws JuiceException {
+		String result = "fail";
+		try {
+			logger.info("feexsjmback加冕-QQ扫码请求header信息："+request.allHeaders());
+			String content = request.body();
+			logger.info("feexsjmback请求body信息：" + content);
+			Map<String,String> restmap = CommonTool.parseYZ(content);
+			String param=PaySignUtil.getParamStr2(restmap);
+			String sign = restmap.get("sign");
+			String ffId = restmap.get("orderNo");
+			String status = restmap.get("status");
+			String traid = restmap.get("flowNo");
+			String succAmount=restmap.get("succAmount");
+			if(MD5.md5(param, "utf-8").toUpperCase().equals(sign)){
+				boolean isSuc = false;
+				if ("1".equals(status)&&succAmount!=null) 
+					isSuc = true;
+				processOtherOrder(ffId, isSuc, traid);
+				result="ok";
+			}
+		} catch (Exception e) {
+			logger.error(ExceptionTool.getExceptionMessage(e));
+		}
+		response.content(result).end();}
+	/**
+	 * 蒋道理回调通知
+	 * http://smspay.xushihudong.com/fee/feexsjdlback
+	 */
+	public void feexsjdlback(HttpRequest request, HttpResponse response)
+			throws JuiceException {
+		String result = "fail";
+		try {
+			logger.info("feexsjdlback请求header信息："+request.allHeaders());
+			String content = request.body();
+			logger.info("feexsjdlback蒋道理回调信息："+content);
+			JSONObject myObj = JSONObject.parseObject(content);
+			String amount=myObj.getString("amount");
+			String app_id=myObj.getString("app_id");
+			String extend=myObj.getString("extends");
+			String ffId = myObj.getString("mc_order");
+			String traid = myObj.getString("ppay_order");
+			String status = myObj.getString("status");
+			String sign=myObj.getString("sign");
+			// 处理订单
+			CodeInfo codeInfo = commonAction.queryCodeInfoBySpid(extend);
+			if(codeInfo!=null){
+			StringBuilder param=new StringBuilder();
+			param.append("amount=").append(amount)
+			.append("&app_id=").append(app_id)
+			.append("&extends=").append(extend)
+			.append("&mc_order").append(ffId)
+			.append("&ppay_order=").append(traid)
+			.append("&status=").append(status);
+			String newSign=HMacMD5.getHmacMd5Str(codeInfo.getKeyword().split("#")[2],param.toString());
+			if(sign.equals(newSign)){
+				boolean isSuc = false;
+				if ("0".equals(status)) 
+					isSuc = true;
+				processOtherOrder(ffId, isSuc, traid);
+				result="ok";
+			}
+				}
+		} catch (Exception e) {
+			logger.error(ExceptionTool.getExceptionMessage(e));
+		}
+		response.content(result).end();}
+	/**
+	 * 付易通微信H5回调通知
+	 * http://smspay.xushihudong.com/fee/feexsfytback
+	 */
+	public void feexsfytback(HttpRequest request, HttpResponse response)
+			throws JuiceException {
+		String result = "fail";
+		try {
+			logger.info("feexsyftback易付通请求header信息：" + request.allHeaders());
+			String content = request.body();
+			logger.info("feexsyftback请求body信息：" + content);
+			Map<String, String> restmap = CommonTool.parseYZ(content);
+			String attach = restmap.get("attach");
+			CodeInfo codeInfo = commonAction.queryCodeInfoBySpid(attach);
+			if (codeInfo != null) {
+				restmap.put("key", codeInfo.getKeyword().split("#")[3]);
+				String param = PaySignUtil.getParamStr2(restmap);
+				String status = restmap.get("status");
+				String ffId = restmap.get("out_trade_no");
+				String traid = restmap.get("out_transaction_id");
+				String sign = restmap.get("sign");
+				if (MD5.md5(param, "utf-8").equals(sign)) {
+					boolean isSuc = false;
+					if ("0".equals(status))
+						isSuc = true;
+					processOtherOrder(ffId, isSuc, traid);
+					result = "success";
+				}
+			}
+		} catch (Exception e) {
+			logger.error(ExceptionTool.getExceptionMessage(e));
+		}
+		response.content(result).end();
+	}
+	/**
+	 * 鸿游第三方支付同步
+	 * http://otherpay.xushihudong.com/fee/feexshyback
+	 */
+	public void feexshyback(HttpRequest request, HttpResponse response)
+			throws JuiceException {
+		String result = "fail";
+		try {
+			logger.info("feexshyback请求header信息：" + request.allHeaders());
+			String ffId = request.getParam("cpparam");
+			String status = request.getParam("status");
+			String traid = request.getParam("ffid");
+			
+			// 处理订单
+			boolean isSuc = false;
+			if ("1".equals(status)) {
+				isSuc = true;
+			}
+			
+			result = "ok";
+			processOtherOrder(ffId, isSuc, traid);
+		} catch (Exception e) {
+			logger.error(ExceptionTool.getExceptionMessage(e));
+		}
+		response.content(result).end();
+	}
+	/**
+	 * 盈华迅方第三方支付同步 http://otherpay.xushihudong.com/fee/feexsyhxfback
+	 */
+	public void feexsyhxfback(HttpRequest request, HttpResponse response)
+			throws JuiceException {
+		String result = "fail";
+		try {
+			logger.info("feexsyhxfback请求header信息：" + request.allHeaders());
+			// String oid=request.getParam("oid");
+			String ffId = request.getParam("sporder");
+			String spId = request.getParam("spid");
+			String mz = request.getParam("mz");
+			String traid = request.getParam("oid");
+			String md5 = request.getParam("md5");
+			String zdy = request.getParam("zdy");
+			// 处理订单
+			// md5=oid+sporder+spid+mz+sppwd
+			CodeInfo codeInfo = commonAction.queryCodeInfoBySpid(zdy);
+			if (codeInfo != null) {
+				//获取sppwd  分配的18位数据
+				String sppwd = codeInfo.getKeyword().split("#")[3];
+				StringBuilder key = new StringBuilder();
+				key.append(traid).append(ffId).append(spId).append(mz)
+						.append(sppwd);
+				//验签
+				if (!MD5.md5(key.toString(), "utf-8").toUpperCase().equals(md5)) {
+					//验证支付状态
+					boolean isSuc = false;
+					if (Float.valueOf(mz) > 0) {
+						isSuc = true;
+					}
+					result = "ok";
+					processOtherOrder(ffId, isSuc, traid);
+				}
+					
+			}
+		} catch (Exception e) {
+			logger.error(ExceptionTool.getExceptionMessage(e));
+		}
+		response.content(result).end();
+	}
+
+	/**
+	 * 惠付第三方支付同步 http://otherpay.xushihudong.com/fee/feexshfback
+	 */
+	public void feexshfback(HttpRequest request, HttpResponse response)
+			throws JuiceException {
+		String result = "fail";
+		try {
+			logger.info("feexshfback请求header信息：" + request.allHeaders());
+			String content = request.body();
+			logger.info("feexshfback请求body信息：" + content);
+			Map<String, String> restmap = CommonTool.parseYZ(content);
+			String ffId = restmap.get("order_id");
+			String money = restmap.get("money");
+			String traid = restmap.get("orderNo");
+			String status = restmap.get("status");
+			String sign = restmap.get("sign");
+			String mch = restmap.get("mch");
+			String pay_type = restmap.get("pay_type");
+			String time = restmap.get("time");
+			String spId = restmap.get("extra");
+			// 处理订单
+			// md5(订单号码+系统订单+支付金额+商务号+支付类型+时间戳+md5(下单传过来的key))
+			CodeInfo codeInfo = commonAction.queryCodeInfoBySpid(spId);
+			if (codeInfo != null) {
+				// 获取key
+				String key = codeInfo.getKeyword().split("#")[1];
+				StringBuilder md5 = new StringBuilder();
+				md5.append(ffId).append(traid).append(money).append(mch)
+						.append(pay_type).append(time)
+						.append(MD5.md5(key, "utf-8"));
+				//验签
+				if (MD5.md5(md5.toString(), "utf-8").equals(sign)) {
+					//验证金额和支付状态
+					boolean isSuc = false;
+					if (Integer.valueOf(money) > 0 && "1".equals(status))
+						isSuc = true;
+					result = "SUCCESS";
+					processOtherOrder(ffId, isSuc, traid);
+				}
+			}
+		} catch (Exception e) {
+			logger.error(ExceptionTool.getExceptionMessage(e));
+		}
+		response.content(result).end();
+	}
+	
+	/**
+	 * http://127.0.0.1:9911/fee/budan?ffid=
+	 * @param request
+	 * @param response
+	 * @throws JuiceException
+	 */
+	/*public void budan(HttpRequest request, HttpResponse response)
+			throws JuiceException {
+		String ffId = request.getParam("ffid");
+		boolean isSuc = true;
+		String traid = "";
+		processOtherOrder(ffId, isSuc, traid);
+		response.content("ok").end();
+	}*/
+	
+	/**
+	 * 富有第三方支付同步
+	 * http://otherpay.xushihudong.com/fee/feexsfyback
+	 */
+	public void feexsfyback(HttpRequest request, HttpResponse response)
+			throws JuiceException {
+		String result = "fail";
+		try {
+			logger.info("feexsfyback请求header信息：" + request.allHeaders());
+			String content = request.body();
+			logger.info("feexsfyback请求body信息：" + content);
+			JSONObject jsonobj = JSONObject.parseObject(content);
+			Map<String, String> restmap = new HashMap<String, String>();
+			for (Map.Entry<String,Object> entry :  jsonobj.entrySet()) {
+				String value = entry.getValue() + "";
+				restmap.put( entry.getKey(), value);
+			}
+			// 处理订单
+			boolean isSuc = false;
+			
+			String attach = (String)restmap.get("additional_info");
+			String result_code = (String)restmap.get("code");
+			CodeInfo codeInfo = commonAction.queryCodeInfoBySpid(attach);
+			if (codeInfo != null) {
+				String keyword = codeInfo.getKeyword();
+				String[] tmp = keyword.split("#");
+				String appsecret = tmp[1];
+				
+				String ressign = (String)restmap.get("sign");
+				restmap.remove("sign");
+				
+				String resbacksign = PayUtil.getSign(restmap, appsecret);
+				boolean flag = ressign.equals(resbacksign);
+				logger.info("feexsfyback验签结果：" + flag);
+				if (flag && "0000".equals(result_code)) {
+					isSuc = true;
+				}
+				String traid = (String)restmap.get("platform_order_no");
+				String ffId = (String)restmap.get("merchant_order_no");
+				result = "success";
+				processOtherOrder(ffId, isSuc, traid);
+			}
+		} catch (Exception e) {
+			logger.error(ExceptionTool.getExceptionMessage(e));
+		}
+		response.content(result).end();
+	}
+
+	/**
+	 * 我赞第三方支付同步
+	 * http://otherpay.xushihudong.com/fee/feexswzdsfback
+	 */
+	public void feexswzdsfback(HttpRequest request, HttpResponse response)
+			throws JuiceException {
+		String result = "success";
+		try {
+			logger.info("feexswzdsfback请求header信息：" + request.allHeaders());
+			String content = request.body();
+			logger.info("feexswzdsfback请求body信息：" + content);
+			Map<String, String> restmap = CommonTool.parseYZ(content);
+//			String appId = restmap.get("appId");
+			String payNo = restmap.get("payNo");
+			String ffId = restmap.get("orderNo");
+			String userName = restmap.get("userName");
+			String status = restmap.get("result");
+			String pay_channel = restmap.get("pay_channel");
+			String amount = restmap.get("amount");
+			String pay_time = restmap.get("pay_time");
+			String spId = restmap.get("userpara");
+			String sign = restmap.get("sign");
+			String traid = payNo;
+			
+			userName = userName==null?"":userName;
+			
+			// 处理订单
+			boolean isSuc = false;
+			if ("1".equals(status)) {
+				CodeInfo codeInfo = commonAction.queryCodeInfoBySpid(spId);
+				if (codeInfo != null) {
+					String keyword = codeInfo.getKeyword();
+					String[] tmp = keyword.split("#");
+					String appsecret = tmp[1];
+					String singparam = ffId + userName + status + amount+ pay_time + pay_channel + appsecret;
+					String newsign = MD5.md5(singparam, "utf-8");
+					if (sign.equals(newsign)) {
+						isSuc = true;
+					}
+					processOtherOrder(ffId, isSuc, traid);
+				}
+			}
+		} catch (Exception e) {
+			logger.error(ExceptionTool.getExceptionMessage(e));
+		}
+		response.content(result).end();
+	}
+	
+	
+	/**
+	 * 小之麦田同步接口
+	 * http://120.24.88.90/fee/feexzmtltbyback
+	 */
+	public void feexzmtltbyback(HttpRequest request, HttpResponse response)
+			throws JuiceException {
+		try {
+			logger.info("feexzmtltbyback请求header信息：" + request.allHeaders());
+			
+			String content = request.body();
+			logger.info("小之麦田："+content);
+			if (content != null && content.length() > 0) {
+				Map<String, String> myObj = parseYZ(content);
+				
+				String mobile = myObj.get("phone");
+				String pid = myObj.get("servcode");
+				
+				String status = "1";
+				
+				int isSuccess = 0;
+				if ("1".equals(status)) {
+					isSuccess = 1;
+				} else {
+					isSuccess = CommonTool.convertInt(status);
+				}
+				int fee = 1000;
+				OrderReqInfo info = new OrderReqInfo();
+				info.setMobile(mobile);
+				info.setSpId("wd99");
+				info.setIsSuccess(isSuccess);
+				info.setFee(fee);
+				info.setCpParam("WS");
+				
+				processWlwWtcOrder(pid,info);
+			}
+		} catch (Exception e) {
+			logger.error(ExceptionTool.getExceptionMessage(e));
+		}
+		
+		response.content("ok").end();
+	}
+	
+	/**
+	 * 润土同步接口
+	 * http://118.190.90.1/fee/feexzmtltbyRtback
+	 */
+	public void feexzmtltbyRtback(HttpRequest request, HttpResponse response)
+			throws JuiceException {
+		try {
+			logger.info("feexzmtltbyRtback请求header信息：" + request.allHeaders());
+			String mobile = request.getParam("mobile");
+			String momsg = request.getParam("momsg");
+			String spnumber = request.getParam("spnumber");
+			String linkid = request.getParam("linkid");
+			String flag = request.getParam("flag");
+			
+			int isSuccess = 0;
+			if ("delivrd".equals(flag))
+				isSuccess=1;
+			OrderReqInfo info = new OrderReqInfo();
+			info.setMobile(mobile);
+			info.setSpId("wd99");
+			info.setIsSuccess(isSuccess);
+			info.setFee(0);
+			info.setCpParam(linkid);
+			info.setOrderId(linkid);
+			info.setSms(momsg);
+			info.setSmscontent(spnumber);
+			String pid = momsg + "_" + spnumber;
+			
+			processWlwWtcRtOrder(pid,info);
+		} catch (Exception e) {
+			logger.error(ExceptionTool.getExceptionMessage(e));
+		}
+		
+		response.content("ok").end();
+	}
+	
+	/**
+	 * 润土积分同步接口
+	 * http://118.190.90.1/fee/feexzmtltjfRtback
+	 */
+	public void feexzmtltjfRtback(HttpRequest request, HttpResponse response)
+			throws JuiceException {
+		try {
+			logger.info("feexzmtltjfRtback请求header信息：" + request.allHeaders());
+			String mobile = request.getParam("mobile");
+			String momsg = request.getParam("momsg");
+			String spnumber = request.getParam("spnumber");
+			String linkid = request.getParam("orderId");
+			String flag = request.getParam("flag");
+			String price = request.getParam("price");
+			
+			int isSuccess = 0;
+			if ("delivrd".equals(flag))
+				isSuccess=1;
+			OrderReqInfo info = new OrderReqInfo();
+			info.setMobile(mobile);
+			info.setSpId("wd99");
+			info.setIsSuccess(isSuccess);
+			info.setFee(CommonTool.convertInt(price));
+			info.setCpParam(linkid);
+			info.setOrderId(linkid);
+			info.setSms(momsg);
+			info.setSmscontent(spnumber);
+			String pid = momsg + "_" + spnumber;
+			
+			processWlwWtcRtOrder(pid,info);
+		} catch (Exception e) {
+			logger.error(ExceptionTool.getExceptionMessage(e));
+		}
+		
+		response.content("ok").end();
+	}
+	
+	/**
+	 * 润土同步接口
+	 * http://120.24.88.90/fee/feeszrtbyback
+	 */
+	public void feeszrtbyback(HttpRequest request, HttpResponse response)
+			throws JuiceException {
+		try {
+			logger.info("feexzmtltbyback请求header信息：" + request.allHeaders());
+			
+			String mobile = request.getParam("phone");
+			String pid = request.getParam("cpParam");
+			
+			String status = "1";
+			
+			int isSuccess = 0;
+			if ("1".equals(status)) {
+				isSuccess = 1;
+			} else {
+				isSuccess = CommonTool.convertInt(status);
+			}
+			int fee = 1000;
+			OrderReqInfo info = new OrderReqInfo();
+			info.setMobile(mobile);
+			info.setSpId("wd99");
+			info.setIsSuccess(isSuccess);
+			info.setFee(fee);
+			info.setCpParam("WS");
+			
+			processWlwWtcOrder(pid,info);
+		} catch (Exception e) {
+			logger.error(ExceptionTool.getExceptionMessage(e));
+		}
+		
+		response.content("ok").end();
+	}
+	
+	/**
+	 * 润土同步接口
+	 * http://120.24.88.90/fee/feeghbdxdbback
+	 */
+	public void feeghbdxdbback(HttpRequest request, HttpResponse response)
+			throws JuiceException {
+		try {
+			logger.info("feeghbdxdbback请求header信息：" + request.allHeaders());
+			
+			String mobile = request.getParam("phone");//手机号
+			String status = request.getParam("status");//状态  0：订购  3：退订
+//			String addtime = request.getParam("ordertime");//订购/退订时间
+			String pid = request.getParam("spcmd");//指令
+			
+			
+			int isSuccess = 0;
+			if ("0".equals(status)) {
+				isSuccess = 1;
+			} else if ("1".equals(status)) {
+				isSuccess = 2;
+			} else {
+				isSuccess = CommonTool.convertInt(status);
+			}
+			int fee = 500;
+			OrderReqInfo info = new OrderReqInfo();
+			info.setMobile(mobile);
+			info.setSpId("dx90");
+			info.setIsSuccess(isSuccess);
+			info.setFee(fee);
+			info.setCpParam(pid);
+			
+			processWlwWtcOrder(pid,info);
+		} catch (Exception e) {
+			logger.error(ExceptionTool.getExceptionMessage(e));
+		}
+		
+		response.content("ok").end();
+	}
+	
+	/**
+	 * 心期天 同步接口
+	 * http://118.190.90.1/fee/feexqtdbback
+	 */
+	public void feexqtdbback(HttpRequest request, HttpResponse response)
+			throws JuiceException {
+		try {
+			logger.info("feexqtdbback请求header信息：" + request.allHeaders());
+			
+			String mobile = request.getParam("mobileid");//手机号
+			String status = request.getParam("retcode");//状态  DELIVRD：成功
+			String price = request.getParam("feecode");//资费
+			String pid = request.getParam("pid");//
+			
+			if (price == null || price.length() == 0) price="0";
+			
+			int isSuccess = 0;
+			if ("0000".equals(status)) {
+				isSuccess = 1;
+			} else {
+				isSuccess = 2;
+			}
+			int fee = CommonTool.convertInt(price);
+			OrderReqInfo info = new OrderReqInfo();
+			info.setMobile(mobile);
+			info.setSpId("yc91");
+			info.setIsSuccess(isSuccess);
+			info.setFee(fee);
+			info.setCpParam(pid);
+			
+			processWlwWtcOrder(pid,info);
+		} catch (Exception e) {
+			logger.error(ExceptionTool.getExceptionMessage(e));
+		}
+		
+		response.content("ok").end();
+	}
+	
+	/**
+	 * 兆荣绿通点播 同步接口
+	 * http://120.24.88.90/fee/feezrltdbback
+	 */
+	public void feezrltdbback(HttpRequest request, HttpResponse response)
+			throws JuiceException {
+		try {
+			logger.info("feezrltdbback请求header信息：" + request.allHeaders());
+			
+			String mobile = request.getParam("phone");//手机号
+			String status = request.getParam("report");//状态  DELIVRD：成功
+			String pid = "LTBYDM";//指令
+			
+			
+			int isSuccess = 0;
+			if ("DELIVRD".equals(status)) {
+				isSuccess = 1;
+			} else {
+				isSuccess = 2;
+			}
+			int fee = 100;
+			OrderReqInfo info = new OrderReqInfo();
+			info.setMobile(mobile);
+			info.setSpId("yc90");
+			info.setIsSuccess(isSuccess);
+			info.setFee(fee);
+			info.setCpParam(pid);
+			
+			processWlwWtcOrder(pid,info);
+		} catch (Exception e) {
+			logger.error(ExceptionTool.getExceptionMessage(e));
+		}
+		
+		response.content("ok").end();
+	}
+	
+	/**
+	 * 无透传通用 同步接口
+	 * http://120.24.88.90/fee/feewtccomback
+	 */
+	public void feexswtcback(HttpRequest request, HttpResponse response)
+			throws JuiceException {
+		try {
+			logger.info("feewtccomback请求header信息：" + request.allHeaders());
+			
+			String mobile = request.getParam("mobile");//手机号
+			String status = request.getParam("status");//状态  DELIVRD：成功
+			String price = request.getParam("price");//
+			String pid = request.getParam("pid");//短信内容
+			
+			
+			int isSuccess = 0;
+			if ("DELIVRD".equals(status)) {
+				isSuccess = 1;
+			} else {
+				isSuccess = 2;
+			}
+			int fee = CommonTool.convertInt(price);
+			OrderReqInfo info = new OrderReqInfo();
+			info.setMobile(mobile);
+			info.setSpId("yc95");
+			info.setIsSuccess(isSuccess);
+			info.setFee(fee);
+			info.setCpParam(pid);
+			
+			processWlwWtcOrder(pid,info);
+		} catch (Exception e) {
+			logger.error(ExceptionTool.getExceptionMessage(e));
+		}
+		
+		response.content("ok").end();
+	}
+	
+	/**
+	 * 吉祥ivr 同步接口
+	 * http://120.24.88.90/fee/feejxivrback
+	 */
+	public void feejxivrback(HttpRequest request, HttpResponse response)
+			throws JuiceException {
+		try {
+			logger.info("feejxivrback请求header信息：" + request.allHeaders());
+			String content = request.body();
+			logger.info("feejxivrback下行短信："+content);
+			
+			JSONObject jsonObj = JSONObject.parseObject(content);
+			
+			String price = jsonObj.getString("fee");//
+			String mobile = jsonObj.getString("caller");//
+			String pid = jsonObj.getString("called");//
+			
+			
+			int isSuccess = 1;
+			
+			int fee = 0;
+			if (price != null && price.length() > 0) fee = CommonTool.convertInt(price);
+			OrderReqInfo info = new OrderReqInfo();
+			info.setMobile(mobile);
+			info.setSpId("yc93");
+			info.setIsSuccess(isSuccess);
+			info.setFee(fee);
+			info.setCpParam(pid);
+			
+			processIVRWlwWtcOrder(pid,info,content);
+		} catch (Exception e) {
+			logger.error(ExceptionTool.getExceptionMessage(e));
+		}
+		
+		response.content("ok").end();
+	}
+	
+	
+	/**
+	 * IVR无联网无透传参数订单同步处理
+	 * @param pid
+	 * @param info
+	 * @throws Exception 
+	 */
+	private void processIVRWlwWtcOrder(String pid, OrderReqInfo info,String content) throws Exception {
+		String cpId = commonAction.getCpid(pid);
+		
+		String spid = info.getSpId();
+		int isSuccess = info.getIsSuccess();
+		String ffId = CommonTool.genrateOrderNO(DateTool.getMonth(), spid);
+		CPInfo cp = commonAction.queryCP(cpId);
+		int synStatus = ConstantDefine.SYN_STATUS_DEFAULT;
+		
+		String newCpId = cp.getCpId()+spid;
+		int synRadio = cp.getSynRadio();
+		logger.info("同步率synRadio："+synRadio);
+		CPParam cpp = CommonTool.getCPParam(newCpId,
+				synRadio);
+		
+		info.setCpId(cpId);
+		info.setFfId(ffId);
+		info.setSpId(spid);
+		info.setIp("127.0.0.1");
+		info.setProvince("局域");
+		info.setIsSyn(1);
+		
+		boolean flag = true;
+		if (synRadio == 100) flag = false;
+		if (isSuccess == 1 && flag) {
+			AtomicInteger ati = cpp.getAti();
+			boolean isSyn = CommonTool.isContain(cpp.getVc(),
+					ati.incrementAndGet());
+			if (checkOrderNum(cp)) isSyn = true;
+			if (isSyn) {
+				if (cp.getUrl() != null && cp.getUrl().length() > 0) {
+					// 同步
+					String result = notityIVRWlwWtcResult(cp,content,info);
+					
+					logger.info("给CP的同步结果："+result);
+					if (result.equals("ok")) {
+						synStatus = ConstantDefine.SYN_STATUS_TRUE;
+					} else {
+						synStatus = ConstantDefine.SYN_STATUS_FALSE;
+					}
+				} else {
+					synStatus = ConstantDefine.SYN_STATUS_FALSE;
+				}
+			} else {
+				synStatus = ConstantDefine.SYN_STATUS_Buckle;
+			}
+			
+			if (ati.get() == 100)
+				ati.set(0);
+			cpp.setAti(ati);
+			CommonTool.updateCPParam(newCpId, cpp);
+		} else {
+			// 同步
+			String result = notityIVRWlwWtcResult(cp,content,info);
+			logger.info("给CP的同步结果："+result);
+			if (result.equals("ok")) {
+				synStatus = ConstantDefine.SYN_STATUS_TRUE;
+			} else {
+				synStatus = ConstantDefine.SYN_STATUS_FALSE;
+			}
+		}
+		
+		info.setSynStatus(synStatus);
+		commonAction.addOrderReqInfoAll(info);
+	}
+	
+	/**
+	 * IVR无联网无透传参数数据同步通知
+	 * @param pid
+	 * @param order
+	 * @return
+	 * @throws Exception 
+	 */
+	private String notityIVRWlwWtcResult(CPInfo cp, String content, OrderReqInfo order) throws Exception {
+		
+		String result = "error";
+		String param = "";
+		if (cp.getBackMethod() == 1) {
+			result = HttpTool.sendKLWPost(cp.getUrl(), content, "utf-8", 500);
+		} else {
+			JSONObject jsonobj = JSONObject.parseObject(content);
+			String caller = jsonobj.getString("caller");
+			String called = jsonobj.getString("called");
+			String btime = jsonobj.getString("btime");
+			String etime = jsonobj.getString("etime");
+			String time = jsonobj.getString("time");
+			String minute = jsonobj.getString("minute");
+			String fee = jsonobj.getString("fee");
+			String linkid = jsonobj.getString("linkid");
+			String type = jsonobj.getString("type");
+			if ("xk01".equals(cp.getCpId())) {
+				time = fee.replace("00", "");
+			}
+			StringBuilder msg = new StringBuilder();
+			msg.append("caller=").append(caller)
+			.append("&called=").append(called)
+			.append("&btime=").append(URLEncoder.encode(btime,"utf-8"))
+			.append("&etime=").append(URLEncoder.encode(etime,"utf-8"))
+			.append("&time=").append(time)
+			.append("&minute=").append(minute)
+			.append("&fee=").append(fee)
+			.append("&linkid=").append(linkid)
+			.append("&type=").append(type);
+			param = msg.toString();
+			result = HttpTool.sendGetSetTimeout(cp.getUrl(), param, "500");
+		}
+		return result;
+	}
+	
+	/**
+	 * 刷卡 同步接口
+	 * http://120.24.88.90/fee/feeskback
+	 */
+	public void feeskback(HttpRequest request, HttpResponse response)
+			throws JuiceException {
+		try {
+			logger.info("feeskback请求header信息：" + request.allHeaders());
+			
+			String data = request.getParam("data");//手机号
+			JSONObject jsonObj = JSONObject.parseObject(data);
+			
+			String status = jsonObj.getString("status");//
+			String mobile = jsonObj.getString("mobile");//
+			String price = jsonObj.getString("fee");//
+			String pid = "SK";//指令
+				
+			
+			int isSuccess = 0;
+			if ("0000".equals(status)) {
+				isSuccess = 1;
+			} else {
+				isSuccess = 2;
+			}
+			int fee = 10;
+			if (price != null && price.length() > 0) fee = CommonTool.convertInt(price);
+			OrderReqInfo info = new OrderReqInfo();
+			info.setMobile(mobile);
+			info.setSpId("yc92");
+			info.setIsSuccess(isSuccess);
+			info.setFee(fee);
+			info.setCpParam(pid);
+			
+			processWlwWtcOrder(pid,info);
+		} catch (Exception e) {
+			logger.error(ExceptionTool.getExceptionMessage(e));
+		}
+		
+		response.content("ok").end();
+	}
+	
+	/**
+	 * 无联网无透传参数润土订单同步处理
+	 * @param pid
+	 * @param info
+	 */
+	private void processWlwWtcRtOrder(String pid, OrderReqInfo info) {
+		String cpId = commonAction.getCpid(pid);
+		
+		String spid = info.getSpId();
+		int isSuccess = info.getIsSuccess();
+		String ffId = CommonTool.genrateOrderNO(DateTool.getMonth(), spid);
+		CPInfo cp = commonAction.queryCP(cpId);
+		int synStatus = ConstantDefine.SYN_STATUS_DEFAULT;
+		
+		String newCpId = cp.getCpId()+spid;
+		int synRadio = cp.getSynRadio();
+		logger.info("同步率synRadio："+synRadio);
+		CPParam cpp = CommonTool.getCPParam(newCpId,
+				synRadio);
+		
+		info.setCpId(cpId);
+		info.setFfId(ffId);
+		info.setSpId(spid);
+		info.setIp("127.0.0.1");
+		info.setProvince("局域");
+		info.setIsSyn(1);
+		
+		boolean flag = true;
+		if (synRadio == 100) flag = false;
+		if (isSuccess == 1 && flag) {
+			AtomicInteger ati = cpp.getAti();
+			boolean isSyn = CommonTool.isContain(cpp.getVc(),
+					ati.incrementAndGet());
+			if (checkOrderNum(cp)) isSyn = true;
+			if (isSyn) {
+				if (cp.getUrl() != null && cp.getUrl().length() > 0) {
+					// 同步
+					String result = notityWlwWtcRtResult(cp,pid,info);
+					
+					logger.info("给CP的同步结果："+result);
+					if (result.equals("ok")) {
+						synStatus = ConstantDefine.SYN_STATUS_TRUE;
+					} else {
+						synStatus = ConstantDefine.SYN_STATUS_FALSE;
+					}
+				} else {
+					synStatus = ConstantDefine.SYN_STATUS_FALSE;
+				}
+			} else {
+				synStatus = ConstantDefine.SYN_STATUS_Buckle;
+			}
+			
+			if (ati.get() == 100)
+				ati.set(0);
+			cpp.setAti(ati);
+			CommonTool.updateCPParam(newCpId, cpp);
+		} else {
+			// 同步
+			String result = notityWlwWtcRtResult(cp,pid,info);
+			logger.info("给CP的同步结果："+result);
+			if (result.equals("ok")) {
+				synStatus = ConstantDefine.SYN_STATUS_TRUE;
+			} else {
+				synStatus = ConstantDefine.SYN_STATUS_FALSE;
+			}
+		}
+		
+		info.setSynStatus(synStatus);
+		commonAction.addOrderReqInfoAll(info);
+	}
+	
+	/**
+	 * 无联网无透传参数订单同步处理
+	 * @param pid
+	 * @param info
+	 */
+	private void processWlwWtcOrder(String pid, OrderReqInfo info) {
+		String cpId = commonAction.getCpid(pid);
+		
+		String spid = info.getSpId();
+		int isSuccess = info.getIsSuccess();
+		String ffId = CommonTool.genrateOrderNO(DateTool.getMonth(), spid);
+		CPInfo cp = commonAction.queryCP(cpId);
+		int synStatus = ConstantDefine.SYN_STATUS_DEFAULT;
+		
+		String newCpId = cp.getCpId()+spid;
+		int synRadio = cp.getSynRadio();
+		logger.info("同步率synRadio："+synRadio);
+		CPParam cpp = CommonTool.getCPParam(newCpId,
+				synRadio);
+		
+		info.setCpId(cpId);
+		info.setFfId(ffId);
+		info.setSpId(spid);
+		info.setIp("127.0.0.1");
+		info.setProvince("局域");
+		info.setIsSyn(1);
+		
+		boolean flag = true;
+		if (synRadio == 100) flag = false;
+		if (isSuccess == 1 && flag) {
+			AtomicInteger ati = cpp.getAti();
+			boolean isSyn = CommonTool.isContain(cpp.getVc(),
+					ati.incrementAndGet());
+			if (checkOrderNum(cp)) isSyn = true;
+			if (isSyn) {
+				if (cp.getUrl() != null && cp.getUrl().length() > 0) {
+					// 同步
+					String result = notityWlwWtcResult(cp,pid,info);
+					
+					logger.info("给CP的同步结果："+result);
+					if (result.equals("ok")) {
+						synStatus = ConstantDefine.SYN_STATUS_TRUE;
+					} else {
+						synStatus = ConstantDefine.SYN_STATUS_FALSE;
+					}
+				} else {
+					synStatus = ConstantDefine.SYN_STATUS_FALSE;
+				}
+			} else {
+				synStatus = ConstantDefine.SYN_STATUS_Buckle;
+			}
+			
+			if (ati.get() == 100)
+				ati.set(0);
+			cpp.setAti(ati);
+			CommonTool.updateCPParam(newCpId, cpp);
+		} else {
+			// 同步
+			String result = notityWlwWtcResult(cp,pid,info);
+			logger.info("给CP的同步结果："+result);
+			if (result.equals("ok")) {
+				synStatus = ConstantDefine.SYN_STATUS_TRUE;
+			} else {
+				synStatus = ConstantDefine.SYN_STATUS_FALSE;
+			}
+		}
+		
+		info.setSynStatus(synStatus);
+		commonAction.addOrderReqInfoAll(info);
+	}
+	
+	/**
+	 * 无联网无透传参数润土数据同步通知
+	 * @param pid
+	 * @param order
+	 * @return
+	 */
+	private String notityWlwWtcRtResult(CPInfo cp, String pid, OrderReqInfo order) {
+		
+		String result = "error";
+		String param = "";
+		if (cp.getBackMethod() == 1) {
+			SynJson sj = new SynJson();
+			sj.setPhone(order.getMobile());
+			sj.setStatus(order.getIsSuccess()+"");
+			sj.setOrderId(order.getOrderId());
+			param = JSON.toJSONString(sj);
+			result = HttpTool.sendKLWPost(cp.getUrl(), param, "utf-8", 500);
+		} else {
+			StringBuilder msg = new StringBuilder();
+			msg.append("mobile=").append(order.getMobile())
+			.append("&momsg=").append(order.getSms())
+			.append("&spnumber=").append(order.getSmscontent())
+			.append("&status=").append(order.getIsSuccess())
+			.append("&orderid=").append(order.getOrderId());
+			param = msg.toString();
+			result = HttpTool.sendGetSetTimeout(cp.getUrl(), param, "500");
+		}
+		return result;
+	}
+	
+	/**
+	 * 无联网无透传参数数据同步通知
+	 * @param pid
+	 * @param order
+	 * @return
+	 */
+	private String notityWlwWtcResult(CPInfo cp, String pid, OrderReqInfo order) {
+		
+		String result = "error";
+		String param = "";
+		if (cp.getBackMethod() == 1) {
+			SynJson sj = new SynJson();
+			sj.setFfId(order.getFfId());
+			sj.setCpParam(order.getCpParam());
+			sj.setImei(order.getImei());
+			sj.setImsi(order.getImsi());
+			sj.setFee(order.getFee());
+			sj.setIp(order.getIp());
+			sj.setPhone(order.getMobile());
+			sj.setStatus(order.getIsSuccess()+"");
+			sj.setOrderId(order.getOrderId());
+			param = JSON.toJSONString(sj);
+			result = HttpTool.sendKLWPost(cp.getUrl(), param, "utf-8", 500);
+		} else {
+			StringBuilder msg = new StringBuilder();
+			msg.append("imsi=").append(order.getImsi())
+			.append("&imei=").append(order.getImei())
+			.append("&ffId=").append(order.getFfId())
+			.append("&phone=").append(order.getMobile())
+			.append("&cpParam=").append(order.getCpParam())
+			.append("&fee=").append(order.getFee())
+			.append("&status=").append(order.getIsSuccess())
+			.append("&orderId=").append(order.getOrderId())
+			.append("&ip=").append(order.getIp());
+			param = msg.toString();
+			result = HttpTool.sendGetSetTimeout(cp.getUrl(), param, "500");
+		}
+		return result;
+	}
+	
+	
+	/**
+	 * 北京翼联电信同步接口
+	 * http://120.24.88.90/fee/feebjylback
+	 */
+	public void feebjylback(HttpRequest request, HttpResponse response)
+			throws JuiceException {
+		try {
+			logger.info("feebjylback请求header信息：" + request.allHeaders());
+			
+			String ffId = request.getParam("cpparam");
+			String isSuccess = request.getParam("status");
+			String mobile = request.getParam("phone");
+			String spcmd = URLDecoder.decode(request.getParam("spcmd"),"utf-8");
+			if (spcmd != null && spcmd.contains("klbw@")) {
+				String[] temp = spcmd.split("@");
+				if (temp.length >= 2) {
+					String cpid = temp[1];
+					commitlocal(request,cpid);
+				} else {
+					logger.error("feebjylback错误指令spcmd："+spcmd);
+				}
+			} else if (spcmd != null && spcmd.contains("jyfsjdxby1949")) {
+				String cpid = "afq01";
+				commitlocal(request,cpid);
+			} else if (spcmd != null && spcmd.contains("jyfsjdxby")) {
+				commitback(request);
+			} else {
+				if (ffId == null || ffId.length() <= 0) {
+					if (spcmd != null && spcmd.length() > 0) {
+						ffId = spcmd.substring(spcmd.length()-16,spcmd.length());
+					}
+				}
+				OrderReqInfo info = new OrderReqInfo();
+				info.setFfId(ffId);
+				if ("0".equals(isSuccess)) {
+					info.setIsSuccess(1);
+				} else if ("1".equals(isSuccess)) {
+					info.setIsSuccess(2);
+				} else if ("3".equals(isSuccess)) {
+					info.setIsSuccess(3);
+				} else {
+					info.setIsSuccess(9);
+				}
+				info.setMobile(mobile);
+				processBYOrder(info);
+			}
+			
+		} catch (Exception e) {
+			logger.error(ExceptionTool.getExceptionMessage(e));
+		}
+		
+		response.content("ok").end();
+	}
+	
+	/**
+	 * 透传带cpid 同步接口
+	 * http://smspay.xushihudong.com/fee/feexsdfback1
+	 */
+	public void feexsdfback1(HttpRequest request, HttpResponse response)
+			throws JuiceException {
+		try {
+			logger.info("feexsdfback1请求header信息：" + request.allHeaders());
+			
+			String momsg = request.getParam("momsg");
+			String spnumber = request.getParam("spnumber");
+			String status = request.getParam("status");
+			String mobile = request.getParam("mobile");
+			String amount = request.getParam("amount");
+			String cpid = request.getParam("cpid");
+			String cpparam = request.getParam("cpparam");
+			String spcmd = URLDecoder.decode(request.getParam("momsg"),"utf-8");
+			
+			int isSuccess = 0;
+			if ("1".equals(status)) isSuccess=1;
+			
+			if (cpid != null && cpid.length() > 0 && !"null".equals(cpid)) {
+				commitdflocal(mobile, isSuccess, amount, cpid, momsg, spnumber, cpparam);
+			} else {
+				if (spcmd != null) {
+					String[] temp = spcmd.split("#xs");
+					if (temp.length >= 2) {
+						cpid = temp[1];
+						commitdflocal(mobile, isSuccess, amount, cpid, momsg, spnumber, cpparam);
+					} else {
+						OrderReqInfo info = new OrderReqInfo();
+						info.setMobile(mobile);
+						info.setSpId("wt99");
+						info.setIsSuccess(isSuccess);
+						info.setFee(CommonTool.convertInt(amount));
+						info.setSms(spnumber);
+						info.setSmscontent(momsg);
+						info.setDelayed(cpparam);
+						
+						processxsWlwWtcOrder(momsg+"_"+spnumber,info);
+					}
+				}
+			}
+			
+			
+		} catch (Exception e) {
+			logger.error(ExceptionTool.getExceptionMessage(e));
+		}
+		
+		response.content("ok").end();
+	}
+	
+	/**
+	 * 北京翼联电信同步接口
+	 * http://smspay.xushihudong.com/fee/feexsbjylback
+	 */
+	public void feexsbjylback(HttpRequest request, HttpResponse response)
+			throws JuiceException {
+		try {
+			logger.info("feexsbjylback请求header信息：" + request.allHeaders());
+			
+			String isSuccess = request.getParam("status");
+			String mobile = request.getParam("phone");
+			String ffId = URLDecoder.decode(request.getParam("spcmd"),"utf-8");
+			
+			OrderReqInfo info = new OrderReqInfo();
+			if ("0".equals(isSuccess)) {
+				info.setIsSuccess(1);
+			} else if ("1".equals(isSuccess)) {
+				info.setIsSuccess(2);
+			} else if ("3".equals(isSuccess)) {
+				info.setIsSuccess(3);
+			} else {
+				info.setIsSuccess(9);
+			}
+			info.setMobile(mobile);
+			
+			if (ffId != null && ffId.length() > 16) {
+				ffId = ffId.substring(ffId.length()-16,ffId.length());
+				info.setFfId(ffId);
+				processxsBYOrder(info);
+			} else {
+				logger.info("feexsbjylback请求ffId信息：" + ffId);
+				
+			}
+			
+		} catch (Exception e) {
+			logger.error(ExceptionTool.getExceptionMessage(e));
+		}
+		
+		response.content("ok").end();
+	}
+	
+	/**
+	 * 广州友趣 同步接口
+	 * http://smspay.xushihudong.com/fee/feexsgzyqback
+	 */
+	public void feexsgzyqback(HttpRequest request, HttpResponse response)
+			throws JuiceException {
+		try {
+			logger.info("feexsgzyqback请求header信息：" + request.allHeaders());
+			
+			String isSuccess = request.getParam("status");
+//			String mobile = request.getParam("paymentUser");
+			String ffId = request.getParam("extra");
+			
+			boolean isSucc = false;
+			if ("1".equals(isSuccess)) isSucc = true;
+			processXSOrder(ffId,isSucc);
+		} catch (Exception e) {
+			logger.error(ExceptionTool.getExceptionMessage(e));
+		}
+		
+		response.content("0").end();
+	}
+	
+	/**
+	 * 广州普石 同步接口
+	 * http://smspay.xushihudong.com/fee/feexsgzpsback
+	 */
+	public void feexsgzpsback(HttpRequest request, HttpResponse response)
+			throws JuiceException {
+		try {
+			logger.info("feexsgzpsback请求header信息：" + request.allHeaders());
+			String isSuccess = request.getParam("mmStates");
+//			String mobile = request.getParam("paymentUser");
+			String ffId = request.getParam("extension");
+			
+			boolean isSucc = false;
+			if ("0".equals(isSuccess)) isSucc = true;
+			processXSOrder(ffId,isSucc);
+		} catch (Exception e) {
+			logger.error(ExceptionTool.getExceptionMessage(e));
+		}
+		
+		response.content("ok").end();
+	}
+	
+	/**
+	 * 杭州电喵 同步接口
+	 * http://smspay.xushihudong.com/fee/feexshzdmback
+	 */
+	public void feexshzdmback(HttpRequest request, HttpResponse response)
+			throws JuiceException {
+		try {
+			logger.info("feexshzdmback请求header信息：" + request.allHeaders());
+			
+			String isSuccess = request.getParam("code");
+//			String mobile = request.getParam("paymentUser");
+			String ffId = request.getParam("cpparam");
+			
+			boolean isSucc = false;
+			if ("1".equals(isSuccess)) isSucc = true;
+			processXSOrder(ffId,isSucc);
+		} catch (Exception e) {
+			logger.error(ExceptionTool.getExceptionMessage(e));
+		}
+		
+		response.content("0").end();
+	}
+	
+	/**
+	 * 上海省开 同步接口
+	 * http://smspay.xushihudong.com/fee/feexsshskback
+	 */
+	public void feexsshskback(HttpRequest request, HttpResponse response)
+			throws JuiceException {
+		try {
+			logger.info("feexsshskback请求header信息：" + request.allHeaders());
+			
+			String isSuccess = request.getParam("status");
+//			String mobile = request.getParam("paymentUser");
+			String ffId = request.getParam("note");
+			
+			boolean isSucc = false;
+			if ("DELIVRD".equals(isSuccess)) isSucc = true;
+			processXSOrder(ffId,isSucc);
+		} catch (Exception e) {
+			logger.error(ExceptionTool.getExceptionMessage(e));
+		}
+		
+		response.content("0").end();
+	}
+	
+	/**
+	 * 稻香联通 同步接口
+	 * http://smspay.xushihudong.com/fee/feexsdxltback
+	 */
+	public void feexsdxltback(HttpRequest request, HttpResponse response)
+			throws JuiceException {
+		try {
+			logger.info("feexsdxltback请求header信息：" + request.allHeaders());
+			
+			String isSuccess = request.getParam("chargeResultCode");
+//			String mobile = request.getParam("paymentUser");
+			String ffId = request.getParam("extData");
+			
+			boolean isSucc = false;
+			if ("0".equals(isSuccess)) isSucc = true;
+			processXSOrder(ffId,isSucc);
+		} catch (Exception e) {
+			logger.error(ExceptionTool.getExceptionMessage(e));
+		}
+		
+		response.content("0").end();
+	}
+	
+	/**
+	 * 厦门杨顺 同步接口
+	 * http://smspay.xushihudong.com/fee/feexsxmysback
+	 */
+	public void feexsxmysback(HttpRequest request, HttpResponse response)
+			throws JuiceException {
+		try {
+			logger.info("feexsxmysback请求header信息：" + request.allHeaders());
+			
+			String isSuccess = request.getParam("result");
+//			String mobile = request.getParam("paymentUser");
+			String ffId = request.getParam("cpparam");
+			
+			boolean isSucc = false;
+			if ("0".equals(isSuccess)) isSucc = true;
+			processXSOrder(ffId,isSucc);
+		} catch (Exception e) {
+			logger.error(ExceptionTool.getExceptionMessage(e));
+		}
+		
+		response.content("0").end();
+	}
+	
+	/**
+	 * 朱云烧烤 同步接口
+	 * http://smspay.xushihudong.com/fee/feexszyskback
+	 */
+	public void feexszyskback(HttpRequest request, HttpResponse response)
+			throws JuiceException {
+		try {
+			logger.info("feexszyskback请求header信息：" + request.allHeaders());
+			
+			String isSuccess = request.getParam("code");
+//			String mobile = request.getParam("paymentUser");
+			String ffId = request.getParam("cpparam");
+			
+			ffId = ffId.substring(ffId.length()-16,ffId.length());
+			
+			boolean isSucc = false;
+			if ("1".equals(isSuccess)) isSucc = true;
+			processXSOrder(ffId,isSucc);
+		} catch (Exception e) {
+			logger.error(ExceptionTool.getExceptionMessage(e));
+		}
+		
+		response.content("0").end();
+	}
+	
+	/**
+	 * 深圳凯耀达 同步接口
+	 * http://smspay.xushihudong.com/fee/feexsszkydback
+	 */
+	public void feexsszkydback(HttpRequest request, HttpResponse response)
+			throws JuiceException {
+		try {
+			logger.info("feexsszkydback请求header信息：" + request.allHeaders());
+			
+			String isSuccess = "0";
+//			String mobile = request.getParam("paymentUser");
+			String ffId = request.getParam("cpparam");
+			
+			boolean isSucc = false;
+			if ("0".equals(isSuccess)) isSucc = true;
+			processXSOrder(ffId,isSucc);
+		} catch (Exception e) {
+			logger.error(ExceptionTool.getExceptionMessage(e));
+		}
+		
+		response.content("0").end();
+	}
+	
+	/**
+	 * 玉品天成 同步接口
+	 * http://smspay.xushihudong.com/fee/feexsyptcback
+	 */
+	public void feexsyptcback(HttpRequest request, HttpResponse response)
+			throws JuiceException {
+		try {
+			logger.info("feexsyptcback请求header信息：" + request.allHeaders());
+			
+			String isSuccess = request.getParam("status");
+//			String mobile = request.getParam("paymentUser");
+			String ffId = request.getParam("cpparam");
+			
+			boolean isSucc = false;
+			if ("0".equals(isSuccess)) isSucc = true;
+			processXSOrder(ffId,isSucc);
+		} catch (Exception e) {
+			logger.error(ExceptionTool.getExceptionMessage(e));
+		}
+		
+		response.content("0").end();
+	}
+	
+	/**
+	 * 竹语 同步接口
+	 * http://smspay.xushihudong.com/fee/feexszyback
+	 */
+	public void feexszyback(HttpRequest request, HttpResponse response)
+			throws JuiceException {
+		try {
+			logger.info("feexszyback请求header信息：" + request.allHeaders());
+			
+			String isSuccess = request.getParam("status");
+//			String mobile = request.getParam("paymentUser");
+			String ffId = request.getParam("cppram");
+			
+			boolean isSucc = false;
+			if ("0".equals(isSuccess)) isSucc = true;
+			processXSOrder(ffId,isSucc);
+		} catch (Exception e) {
+			logger.error(ExceptionTool.getExceptionMessage(e));
+		}
+		
+		response.content("0").end();
+	}
+	
+	/**
+	 * 讯鸿咪咕 同步接口
+	 * http://smspay.xushihudong.com/fee/feexsxhmgback
+	 */
+	public void feexsxhmgback(HttpRequest request, HttpResponse response)
+			throws JuiceException {
+		try {
+			logger.info("feexsxhmgback请求header信息：" + request.allHeaders());
+			String content = request.body();
+			logger.info("feexsxhmgback请求content信息："+content);
+			Element root = XMLUtils.getInstance().parseXML2Element(content);
+			
+			String isSuccess = root.element("status").getText();
+			String ffId = root.element("cpparam").getText();
+			
+			boolean isSucc = false;
+			if ("0".equals(isSuccess)) isSucc = true;
+			processXSOrder(ffId,isSucc);
+		} catch (Exception e) {
+			logger.error(ExceptionTool.getExceptionMessage(e));
+		}
+		
+		response.content("<?xml version=\"1.0\" encoding=\"utf-8\"?><ROOT>< returnCode >0</ returnCode ></ROOT>").end();
+	}
+	
+	/**
+	 * 讯鸿咪咕单机 同步接口
+	 * http://smspay.xushihudong.com/fee/feexsxhmgdjback
+	 */
+	public void feexsxhmgdjback(HttpRequest request, HttpResponse response)
+			throws JuiceException {
+		try {
+			logger.info("feexsxhmgdjback请求header信息：" + request.allHeaders());
+			String content = request.body();
+			logger.info("feexsxhmgdjback请求content信息："+content);
+			Element root = XMLUtils.getInstance().parseXML2Element(content);
+			
+			String isSuccess = root.element("status").getText();
+			String ffId = root.element("cpparam").getText();
+			
+			boolean isSucc = false;
+			if ("0".equals(isSuccess)) isSucc = true;
+			processXSOrder(ffId,isSucc);
+		} catch (Exception e) {
+			logger.error(ExceptionTool.getExceptionMessage(e));
+		}
+		
+		response.content("<?xml version=\"1.0\" encoding=\"utf-8\"?><ROOT>< returnCode >0</ returnCode ></ROOT>").end();
+	}
+	
+	/**
+	 * 易周文化阅读 同步接口
+	 * http://smspay.xushihudong.com/fee/feexsyzwhydback
+	 */
+	public void feexsyzwhydback(HttpRequest request, HttpResponse response)
+			throws JuiceException {
+		try {
+			logger.info("feexsyzwhydback请求header信息：" + request.allHeaders());
+			String content = request.body();
+			logger.info("feexsyzwhydback请求content信息："+content);
+			Map<String, String> map = XmlUtil.xmlParsebytag(content, "request");
+			
+			String isSuccess = map.get("Status");
+			String ffId = map.get("OutOrderID");
+			ffId = ffId.substring(ffId.length()-16,ffId.length());
+			
+			boolean isSucc = false;
+			if ("1".equals(isSuccess))
+				isSucc = true;
+			processXSOrder(ffId,isSucc);
+		} catch (Exception e) {
+			logger.error(ExceptionTool.getExceptionMessage(e));
+		}
+		
+		response.content("ok").end();
+	}
+	
+	/**
+	 * 易周文化 同步接口
+	 * http://smspay.xushihudong.com/fee/feexsyzwhback
+	 */
+	public void feexsyzwhback(HttpRequest request, HttpResponse response)
+			throws JuiceException {
+		try {
+			logger.info("feexsyzwhback请求header信息：" + request.allHeaders());
+			String content = request.body();
+			logger.info("feexsyzwhback请求content信息："+content);
+			Map<String, String> map = XmlUtil.xmlParsebytag(content, "request");
+			
+			String isSuccess = map.get("hRet");
+			String ffId = map.get("cpparam");
+			
+			boolean isSucc = false;
+			if ("0".equals(isSuccess)) {
+				isSucc = true;
+				
+				OrderReqInfo info = commonAction.queryOrderReqInfo(ffId);
+				if (info != null && info.getApp() != null && info.getApp().length() > 0) {
+					String spid = info.getSpId();
+					if (!ffId.substring(2, 4).equals(spid.substring(0,2))) spid = "dm19";
+					CodeInfo codeInfo = commonAction.queryCodeInfoBySpid(spid);
+					
+					String matchregex = codeInfo.getMatchRegex();
+					String[] tmp = matchregex.split("##");
+					String[] tmp1= info.getApp().split("##");
+					String guid = tmp1[tmp1.length-1];
+					String version = "2.0.0";
+					String msgID = "3";
+					Map<String, String> mapparam3 = new HashMap<String, String>();
+					mapparam3.put("guid", guid);
+					mapparam3.put("backdata", content);
+					String data3 = Base64.encode(JSONObject.toJSONString(mapparam3).getBytes());
+					
+					Map<String, String> paramap3 = new HashMap<String, String>();
+					paramap3.put("version", version);
+					paramap3.put("msgID", msgID);
+					paramap3.put("data", data3);
+					String param3 = JSONObject.toJSONString(paramap3);
+					String reqResult3 = HttpTool.sendYZWHPost(tmp[0], param3, 5000);
+					logger.info("易周文化dm19请求msgID"+msgID+"结果:"+reqResult3);
+				}
+			}
+			processXSOrder(ffId,isSucc);
+		} catch (Exception e) {
+			logger.error(ExceptionTool.getExceptionMessage(e));
+		}
+		
+		response.content("ok").end();
+	}
+	
+	private void commitlocal(HttpRequest request, String cpid) throws Exception {
+		String spid = "dx07";
+		String ffId = CommonTool.genrateOrderNO(DateTool.getMonth(), spid);
+		String mobile = request.getParam("phone");
+		String status = request.getParam("status");
+		String amount = request.getParam("amount");
+		String spcmd = URLDecoder.decode(request.getParam("spcmd"),"utf-8");
+		
+		int fee = 0;
+		if (amount != null && amount.length() > 0){
+			fee = CommonTool.convertInt(amount);
+		}
+		
+		int isSuccess = 0;
+		if ("0".equals(status)) {
+			isSuccess = 1;//订购成功
+		} else if ("1".equals(status)) {
+			if (spcmd != null && spcmd.startsWith("jyf")) {
+				isSuccess = 1;
+			} else {
+				isSuccess = 2; //订购失败
+			}
+		} else if ("3".equals(status)) {
+			isSuccess = 3; //退订
+		}
+		
+		int synStatus = ConstantDefine.SYN_STATUS_DEFAULT;
+		
+		OrderReqInfo info = new OrderReqInfo();
+		info.setMobile(mobile);
+		info.setIsSuccess(isSuccess);
+		
+		
+		CPInfo cp = commonAction.queryCP(cpid);
+		OrderReqInfo order = commonAction.queryOrderByMobile(mobile, ffId);
+		if (spcmd.contains("yldjdlb12sj")) order = null;//点播业务同一号码可以订购多个
+		
+		if (order == null) {
+			String newCpId = cp.getCpId()+spid;
+			int synRadio = cp.getSynRadio();
+			logger.info("同步率synRadio："+synRadio);
+			CPParam cpp = CommonTool.getCPParam(newCpId,
+					synRadio);
+			if (isSuccess == 1) {
+				AtomicInteger ati = cpp.getAti();
+				boolean isSyn = CommonTool.isContain(cpp.getVc(),
+						ati.incrementAndGet());
+				if (checkOrderNum(cp)) isSyn = true;
+				if (isSyn) {
+					if (cp.getUrl() != null && cp.getUrl().length() > 0) {
+						// 同步
+						String result = notityBYResult(cp,request);
+						
+						logger.info("给CP的同步结果："+result);
+						if (result.equals("ok")) {
+							synStatus = ConstantDefine.SYN_STATUS_TRUE;
+						} else {
+							synStatus = ConstantDefine.SYN_STATUS_FALSE;
+						}
+					} else {
+						synStatus = ConstantDefine.SYN_STATUS_FALSE;
+					}
+				} else {
+					synStatus = ConstantDefine.SYN_STATUS_Buckle;
+				}
+				
+				if (ati.get() == 100)
+					ati.set(0);
+				cpp.setAti(ati);
+				CommonTool.updateCPParam(newCpId, cpp);
+			} else {
+				// 同步
+				String result = notityBYResult(cp,request);
+				logger.info("给CP的同步结果："+result);
+				if (result.equals("ok")) {
+					synStatus = ConstantDefine.SYN_STATUS_TRUE;
+				} else {
+					synStatus = ConstantDefine.SYN_STATUS_FALSE;
+				}
+			}
+			
+			info.setSynStatus(synStatus);
+			info.setFfId(ffId);
+			info.setCpId(cpid);
+			info.setSpId(spid);
+			info.setFee(fee);
+			info.setIp("127.0.0.1");
+			info.setProvince("局域");
+			info.setIsSyn(0);
+			commonAction.addOrderReqInfoAll(info);
+		} else {
+			
+			if (order.getSynStatus() != 4) {
+				String result = notityBYResult(cp,request);
+				logger.info("给CP的同步结果："+result);
+			}
+			
+			info.setFfId(order.getFfId());
+			info.setSynStatus(order.getSynStatus());
+			commonAction.updateOrderInfo(info);
+		}
+		
+	}
+	
+	private void commitdflocal(String mobile, int isSuccess, String amount, String cpid, String momsg,
+			String spnumber, String cpparam) throws Exception {
+		
+		CPInfo cp = commonAction.queryCP(cpid);
+		if (cp != null) {
+			String spid = cp.getLocalSpId();
+			String ffId = CommonTool.genrateOrderNO(DateTool.getMonth(), spid);
+			int fee = 0;
+			if (amount != null && amount.length() > 0){
+				fee = CommonTool.convertInt(amount);
+			}
+			
+			int synStatus = ConstantDefine.SYN_STATUS_DEFAULT;
+			
+			OrderReqInfo info = new OrderReqInfo();
+			info.setMobile(mobile);
+			info.setIsSuccess(isSuccess);
+			
+//			OrderReqInfo order = commonAction.queryOrderByMobile(mobile, ffId);
+			info.setSms(spnumber);
+			info.setSmscontent(momsg);
+			info.setFee(fee);
+			info.setCpId(cpid);
+			info.setFfId(ffId);
+			info.setCpParam(momsg);
+			info.setIp("127.0.0.1");
+			info.setOrderId(ffId);
+			info.setDelayed(cpparam);
+			
+			String newCpId = cp.getCpId()+spid;
+			int synRadio = cp.getSynRadio();
+			logger.info("同步率synRadio："+synRadio);
+			CPParam cpp = CommonTool.getCPParam(newCpId,
+					synRadio);
+			if (isSuccess == 1) {
+				AtomicInteger ati = cpp.getAti();
+				boolean isSyn = CommonTool.isContain(cpp.getVc(),
+						ati.incrementAndGet());
+				if (checkOrderNum(cp)) isSyn = true;
+				if (isSyn) {
+					if (cp.getUrl() != null && cp.getUrl().length() > 0) {
+						// 同步
+						String result = notitydfBYResult(cp,info);
+						
+						logger.info("给CP的同步结果："+result);
+						if (result.equals("ok")) {
+							synStatus = ConstantDefine.SYN_STATUS_TRUE;
+						} else {
+							synStatus = ConstantDefine.SYN_STATUS_FALSE;
+						}
+					} else {
+						synStatus = ConstantDefine.SYN_STATUS_FALSE;
+					}
+				} else {
+					synStatus = ConstantDefine.SYN_STATUS_Buckle;
+				}
+				
+				if (ati.get() == 100)
+					ati.set(0);
+				cpp.setAti(ati);
+				CommonTool.updateCPParam(newCpId, cpp);
+			} else {
+				// 同步
+				String result = notitydfBYResult(cp,info);
+				logger.info("给CP的同步结果："+result);
+				if (result.equals("ok")) {
+					synStatus = ConstantDefine.SYN_STATUS_TRUE;
+				} else {
+					synStatus = ConstantDefine.SYN_STATUS_FALSE;
+				}
+			}
+			
+			info.setSynStatus(synStatus);
+			info.setFfId(ffId);
+			info.setCpId(cpid);
+			info.setSpId(spid);
+			info.setFee(fee);
+			info.setIp("127.0.0.1");
+			info.setProvince("局域");
+			info.setIsSyn(0);
+			info.setCpParam(momsg+"_"+spnumber);
+			commonAction.addOrderReqInfoAll(info);
+		}
+		
+		
+	}
+	
+	private void commitback(HttpRequest request) throws Exception {
+		String admount = request.getParam("admount");//金额 单位：分
+		String productid = request.getParam("productid");//产品id
+		String mobile = request.getParam("phone");//手机号
+		String isStatus = request.getParam("status");//状态  0：订购  3：退订
+		String addtime = request.getParam("ordertime");//订购/退订时间
+		String spnum = request.getParam("spnum");//长号码
+		String spcmd = request.getParam("spcmd");//指令
+		
+		String result = "";
+		String param = "";
+		String url = "http://121.40.72.80/lwpay/feeBYNotity15";
+		StringBuilder msg = new StringBuilder();
+		msg.append("admount=").append(admount)
+		.append("&productid=").append(productid)
+		.append("&phone=").append(mobile)
+		.append("&status=").append(isStatus)
+		.append("&ordertime=").append(URLEncoder.encode(addtime,"utf-8"))
+		.append("&spnum=").append(spnum)
+		.append("&spcmd=").append(spcmd);
+		param = msg.toString();
+		result = HttpTool.sendHttp(url+"?"+param, "", "utf-8");
+		logger.info(result);
+	}
+
+	/**
+	 * 北京翼联电信验证码提交
+	 * http://120.24.88.90/fee/commitVerifyCode
+	 */
+	public void commitVerifyCode(HttpRequest request, HttpResponse response)
+			throws JuiceException {
+		try {
+			logger.info("commitVerifyCode请求header信息：" + request.allHeaders());
+
+			String code = request.getParam("code");
+			String orderid = request.getParam("orderid");
+			String url = "http://123.57.17.32:700/YiLianXinRui/SubmitVCode.aspx";
+			
+			StringBuilder param = new StringBuilder();
+			param.append("code").append(code)
+			.append("&orderid=").append(orderid);
+			
+			String result = HttpTool.sendGet(url, param.toString());
+			logger.info("commitVerifyCode验证码提交结果：" + result);
+			
+		} catch (Exception e) {
+			logger.error(ExceptionTool.getExceptionMessage(e));
+		}
+
+		response.content("ok").end();
+	}
+	
+	/**
+	 * 处理订单
+	 */
+	private void processOrder(String ffId, boolean isSuc) {
+		try {
+			int synStatus = ConstantDefine.SYN_STATUS_DEFAULT;
+			if (!isSuc) {
+//				commonAction.updateOrder(ffId, isSuc, synStatus);
+				return;
+			} else {
+				commonAction.saveExt(ffId);
+			}
+			
+			OrderT ot = commonAction.queryOrderT(ffId);
+			if (ot == null) {
+				logger.warn("找不到对应的订单号=" + ffId);
+				return;
+			}
+			
+			OrderReqInfo order = ot.getOrder();
+			CPInfo cp = ot.getCp();
+			
+			if (order.getIsSyn() == ConstantDefine.SYN_TRUE && order.getSynStatus() == 0) {
+				order.setIsSuccess(1);
+				String flag = testImsiMap.get(order.getImsi());
+				int synRadio = cp.getSynRadio();
+				if (synRadio == 100) flag = "true";
+				if (!"true".equals(flag)) {
+					String province = order.getProvince();
+					String newCpId = cp.getCpId()+order.getSpId()+province;
+					
+					synRadio = getSynRadio(cp, province, synRadio);
+					
+					logger.info("同步省份：" + province + "  同步率synRadio："+synRadio);
+					CPParam cpp = CommonTool.getCPParam(newCpId,
+							synRadio);
+					
+					AtomicInteger ati = cpp.getAti();
+					boolean isSyn = CommonTool.isContain(cpp.getVc(),
+							ati.incrementAndGet());
+					if (checkOrderNum(cp)) isSyn = true;
+					if (isSyn) {
+						if (cp.getUrl() != null && cp.getUrl().length() > 0) {
+							// 同步
+							String result = notityResult(cp,ffId,order);
+							
+							logger.info("给CP的同步结果："+result);
+							if (result.equals("ok")) {
+								synStatus = ConstantDefine.SYN_STATUS_TRUE;
+							} else {
+								synStatus = ConstantDefine.SYN_STATUS_FALSE;
+							}
+						} else {
+							synStatus = ConstantDefine.SYN_STATUS_FALSE;
+						}
+					} else {
+						synStatus = ConstantDefine.SYN_STATUS_Buckle;
+					}
+					
+					if (ati.get() == 100)
+						ati.set(0);
+					cpp.setAti(ati);
+//					CommonTool.updateCPParam(cp.getCpId(), cpp);
+					CommonTool.updateCPParam(newCpId, cpp);
+				} else {
+					String result = notityResult(cp,ffId,order);
+					
+					logger.info("给CP的同步结果："+result);
+					if (result.equals("ok")) {
+						synStatus = ConstantDefine.SYN_STATUS_TRUE;
+					} else {
+						synStatus = ConstantDefine.SYN_STATUS_FALSE;
+					}
+				}
+			}
+			if (order.getSynStatus() == 0) {
+				commonAction.updateOrder(ffId, isSuc, synStatus);
+			}
+		} catch (Exception e) {
+			logger.error(ExceptionTool.getExceptionMessage(e));
+		}
+	}
+	
+	private int getSynRadio(CPInfo cp, String province, int synRadio) {
+		int synOpen = cp.getSynOpen();
+		if (synOpen == 1) {
+			String synProvinces = cp.getSynProvince();
+			String synNums = cp.getSynNum();
+			if (synProvinces != null && synProvinces.length() > 0 &&
+					synNums != null && synNums.length() > 0) {
+				String[] synProvinceArr = synProvinces.split("#");
+				String[] synNumArr = synNums.split("#");
+				if (synNumArr.length == synProvinceArr.length) {
+					for (int i=0; i<synProvinceArr.length; i++) {
+						if (synProvinceArr[i].equals(province)) {
+							synRadio = synRadio + CommonTool.convertInt(synNumArr[i]);
+							break;
+						}
+					}
+				}
+			}
+		}
+		
+		return synRadio;
+	}
+	
+	/**
+	 * 处理订单
+	 */
+	private void processOtherOrder(String ffId, boolean isSuc) {
+		try {
+			int synStatus = ConstantDefine.SYN_STATUS_DEFAULT;
+			
+			OrderT ot = commonAction.queryOrderT(ffId);
+			if (ot == null) {
+				logger.warn("找不到对应的订单号=" + ffId);
+				return;
+			}
+			
+			OrderReqInfo order = ot.getOrder();
+			CPInfo cp = ot.getCp();
+			if (cp == null) {
+				logger.warn("对应cp已关闭计费功能cpid=" + ot.getCp());
+				return;
+			}
+			
+			if (isSuc) order.setIsSuccess(1);
+			String result = notityOtherResult(cp,ffId,order);
+			int count = 1;
+			
+			logger.info("给CP的同步结果："+result);
+			if ("ok".equals(result)) {
+				synStatus = ConstantDefine.SYN_STATUS_TRUE;
+			} else {
+//				if (isSuc && "gzjc01".equals(cp.getCpId())) {
+				if (isSuc) {
+					do {
+						Thread.sleep(3000);
+						result = notityOtherResult(cp,ffId,order);
+						count += 1;
+						logger.error(ffId + "订单第" + count + "次同步" );
+					} while (count < 5 && !"ok".equals(result));
+					if ("ok".equals(result)) {
+						synStatus = ConstantDefine.SYN_STATUS_TRUE;
+					} else {
+						synStatus = ConstantDefine.SYN_STATUS_FALSE;
+					}
+				} else {
+					synStatus = ConstantDefine.SYN_STATUS_FALSE;
+				}
+			}
+			commonAction.updateOrder(ffId, isSuc, synStatus);
+		} catch (Exception e) {
+			logger.error(ExceptionTool.getExceptionMessage(e));
+		}
+	}
+	
+	/**
+	 * 处理订单
+	 */
+	private void processOtherOrder(String ffId, boolean isSuc, String traid) {
+		try {
+			int synStatus = ConstantDefine.SYN_STATUS_DEFAULT;
+			
+			OrderT ot = commonAction.queryOrderT(ffId);
+			if (ot == null) {
+				logger.warn("找不到对应的订单号=" + ffId);
+				return;
+			}
+			
+			OrderReqInfo order = ot.getOrder();
+			CPInfo cp = ot.getCp();
+			if (cp == null) {
+				logger.warn("对应cp已关闭计费功能cpid=" + ot.getCp());
+				return;
+			}
+			
+			if (isSuc) order.setIsSuccess(1);
+			order.setPmodel(traid);
+			
+			String result = notityOtherResult(cp,ffId,order);
+			int count = 1;
+			
+			logger.info("给CP的同步结果："+result);
+			if ("ok".equals(result)) {
+				synStatus = ConstantDefine.SYN_STATUS_TRUE;
+			} else {
+//				if (isSuc && "gzjc01".equals(cp.getCpId())) {
+				if (isSuc) {
+					do {
+						Thread.sleep(3000);
+						result = notityOtherResult(cp,ffId,order);
+						count += 1;
+						logger.error(ffId + "订单第" + count + "次同步" );
+					} while (count < 5 && !"ok".equals(result));
+					if ("ok".equals(result)) {
+						synStatus = ConstantDefine.SYN_STATUS_TRUE;
+					} else {
+						synStatus = ConstantDefine.SYN_STATUS_FALSE;
+					}
+				} else {
+					synStatus = ConstantDefine.SYN_STATUS_FALSE;
+				}
+			}
+//			commonAction.updateOrder(ffId, isSuc, synStatus);
+			OrderReqInfo info = new OrderReqInfo();
+			info.setFfId(ffId);
+			info.setIsSuccess(order.getIsSuccess());
+			if (synStatus == -1) {
+				info.setCtech(order.getCtech());
+				synStatus = ConstantDefine.SYN_STATUS_RESTART;
+			}
+			info.setSynStatus(synStatus);
+			info.setPmodel(traid);
+			commonAction.updateOrderInfo(info);
+		} catch (Exception e) {
+			logger.error(ExceptionTool.getExceptionMessage(e));
+		}
+	}
+
+	/**
+	 * 处理订单
+	 */
+	private void processBYOrder(OrderReqInfo reqInfo) {
+		String ffId = reqInfo.getFfId();
+		try {
+			int synStatus = ConstantDefine.SYN_STATUS_DEFAULT;
+			/*if (!isSuc) {
+//				commonAction.updateOrder(ffId, isSuc, synStatus);
+				return;
+			} else {
+				commonAction.saveExt(ffId);
+			}*/
+			
+			OrderT ot = commonAction.queryOrderT(ffId);
+			if (ot == null) {
+				logger.warn("找不到对应的订单号=" + ffId);
+				return;
+			}
+			
+			OrderReqInfo order = ot.getOrder();
+			order.setMobile(reqInfo.getMobile());
+			CPInfo cp = ot.getCp();
+			if (order.getSynStatus() == 4) {
+				order.setIsSyn(0);
+				synStatus = 4;
+			}
+			
+			if (cp == null) {
+				logger.warn("对应cp的通道已经关闭=" + ot.getCp());
+				return;
+			}
+			
+			String newffid =  reqInfo.getNewffid();
+			order.setIsSuccess(reqInfo.getIsSuccess());
+			if (order.getIsSyn() == ConstantDefine.SYN_TRUE) {
+				String flag = testImsiMap.get(order.getImsi());
+				int synRadio = cp.getSynRadio();
+				if (reqInfo.getIsSuccess() != 1 || synRadio == 100) flag = "true";
+				
+				
+				if (newffid != null && newffid.length() > 0) ffId = newffid;
+				
+				if (!"true".equals(flag)) {
+					String newCpId = cp.getCpId()+order.getSpId();
+					
+					logger.info("同步率synRadio："+synRadio);
+					CPParam cpp = CommonTool.getCPParam(newCpId,
+							synRadio);
+					
+					AtomicInteger ati = cpp.getAti();
+					boolean isSyn = CommonTool.isContain(cpp.getVc(),
+							ati.incrementAndGet());
+					if (checkOrderNum(cp)) isSyn = true;
+					if (isSyn) {
+						if (cp.getUrl() != null && cp.getUrl().length() > 0) {
+							// 同步
+							String result = notityBYResult(cp,ffId,order);
+							
+							logger.info("给CP的同步结果："+result);
+							if (result.equals("ok")) {
+								synStatus = ConstantDefine.SYN_STATUS_TRUE;
+							} else {
+								synStatus = ConstantDefine.SYN_STATUS_FALSE;
+							}
+						} else {
+							synStatus = ConstantDefine.SYN_STATUS_FALSE;
+						}
+					} else {
+						synStatus = ConstantDefine.SYN_STATUS_Buckle;
+					}
+					
+					if (ati.get() == 100)
+						ati.set(0);
+					cpp.setAti(ati);
+//					CommonTool.updateCPParam(cp.getCpId(), cpp);
+					CommonTool.updateCPParam(newCpId, cpp);
+				} else {
+					String result = notityBYResult(cp,ffId,order);
+					
+					logger.info("给CP的同步结果："+result);
+					if (result.equals("ok")) {
+						synStatus = ConstantDefine.SYN_STATUS_TRUE;
+					} else {
+						synStatus = ConstantDefine.SYN_STATUS_FALSE;
+					}
+				}
+			}
+			OrderReqInfo info = new OrderReqInfo();
+			info.setFfId(reqInfo.getFfId());
+			info.setMobile(reqInfo.getMobile());
+			info.setIsSuccess(reqInfo.getIsSuccess());
+			info.setSynStatus(synStatus);
+			info.setNewffid(newffid);
+			commonAction.updateOrderInfo(info);
+		} catch (Exception e) {
+			logger.error(ExceptionTool.getExceptionMessage(e));
+		}
+	}
+	/*public static void main(String[] args) {
+		String url ="http://120.24.221.140:1002/TBTBTB/xunhong.aspx";
+		String param = "{\"cpParam\":\"4test4testGypelJu0rN8ABxVoO\",\"fee\":0,\"ffId\":\"04yct39932618947\",\"imei\":\"352584063215633\",\"imsi\":\"460001161954388\",\"ip\":\"115.199.100.118\",\"phone\":\"13762143362\",\"status\":\"1\"}";
+		String result = null;
+//		result = HttpTool.sendKLWPost(url, param, "utf-8", 5000);
+		System.out.println(result);
+		
+		
+		StringBuilder msg = new StringBuilder();
+		msg.append("imsi=").append("460001161954388")
+		.append("&imei=").append("352584063215633")
+		.append("&ffid=").append("04yct39932618947")
+		.append("&cpparam=").append("wb")
+		.append("&fee=").append(1000)
+		.append("&phone=").append("13762143362")
+		.append("&ip=").append("115.199.100.118")
+		.append("&cpid=").append("test01")
+		.append("&status=1");
+		param = msg.toString();
+		result = HttpTool.sendGetSetTimeout(url, param, "500");
+		System.out.println(result);
+		
+	}*/
+	
+	private String notityBYResult(CPInfo cp, String ffId, OrderReqInfo order) {
+		String result = "";
+		String param = "";
+		if (cp.getBackMethod() == 1) {
+			SynJson sj = new SynJson();
+			sj.setFfId(ffId);
+			sj.setCpParam(order.getCpParam());
+			sj.setImei(order.getImei());
+			sj.setImsi(order.getImsi());
+			sj.setFee(order.getFee());
+			sj.setIp(order.getIp());
+			sj.setStatus(order.getIsSuccess()+"");
+			sj.setPhone(order.getMobile());
+			sj.setCpid(cp.getCpId());
+			param = JSON.toJSONString(sj);
+			result = HttpTool.sendKLWPost(cp.getUrl(), param, "utf-8", 500);
+			
+//			System.out.println(result);
+		} else {
+			StringBuilder msg = new StringBuilder();
+			msg.append("imsi=").append(order.getImsi())
+			.append("&imei=").append(order.getImei())
+			.append("&ffId=").append(ffId)
+			.append("&cpParam=").append(order.getCpParam())
+			.append("&fee=").append(order.getFee())
+			.append("&phone=").append(order.getMobile())
+			.append("&ip=").append(order.getIp())
+			.append("&cpid=").append(cp.getCpId())
+			.append("&status=").append(order.getIsSuccess());
+			String url = cp.getUrl();
+			if (url != null && url.contains("\\?")) {
+				String[] tmp = url.split("?");
+				url = tmp[0];
+				msg.append("&").append(tmp[1]);
+			}
+			param = msg.toString();
+			result = HttpTool.sendGetSetTimeout(url, param, "500");
+		}
+		return result;
+	}
+	
+	/**
+	 * 无联网回调通知
+	 * @param cp
+	 * @param ffId
+	 * @param order
+	 * @return
+	 * @throws Exception 
+	 */
+	private String notitydfBYResult(CPInfo cp, OrderReqInfo order) 
+			throws Exception {
+		String result = "";
+		String param = "";
+		StringBuilder msg = new StringBuilder();
+		msg.append("smsport=").append(order.getSms())
+		.append("&smscontent=").append(order.getSmscontent())
+		.append("&phone=").append(order.getMobile())
+		.append("&fee=").append(order.getFee())
+		.append("&cpid=").append(order.getCpId())
+		.append("&ffid=").append(order.getFfId())
+		.append("&cpparam=").append(order.getDelayed())
+		.append("&status=").append(order.getIsSuccess());
+		param = msg.toString();
+		result = HttpTool.sendGetSetTimeout(cp.getUrl(), param, "500");
+		return result;
+	}
+	
+	/**
+	 * 无联网回调通知
+	 * @param cp
+	 * @param ffId
+	 * @param order
+	 * @return
+	 * @throws Exception 
+	 */
+	private String notityBYResult(CPInfo cp, HttpRequest request) throws Exception {
+		String admount = request.getParam("admount");//金额 单位：分
+		String productid = request.getParam("productid");//产品id
+		String mobile = request.getParam("phone");//手机号
+		String isStatus = request.getParam("status");//状态  0：订购  3：退订
+		String addtime = request.getParam("ordertime");//订购/退订时间
+		String spnum = request.getParam("spnum");//长号码
+		String spcmd = request.getParam("spcmd");//指令
+		if (addtime == null) addtime = "";
+		
+		String result = "";
+		String param = "";
+		StringBuilder msg = new StringBuilder();
+		msg.append("admount=").append(admount)
+		.append("&productid=").append(productid)
+		.append("&phone=").append(mobile)
+		.append("&status=").append(isStatus)
+		.append("&ordertime=").append(URLEncoder.encode(addtime,"utf-8"))
+		.append("&spnum=").append(spnum)
+		.append("&spcmd=").append(spcmd);
+		param = msg.toString();
+		result = HttpTool.sendGetSetTimeout(cp.getUrl(), param, "500");
+		return result;
+	}
+	
+	/**
+	 * 无联网回调通知
+	 * @param cp
+	 * @param ffId
+	 * @param order
+	 * @return
+	 * @throws Exception 
+	 */
+	private String notityBYResultJHDL(CPInfo cp, HttpRequest request) throws Exception {
+		String admount = request.getParam("admount");//金额 单位：分
+		String productid = request.getParam("productid");//产品id
+		String mobile = request.getParam("mobile");//用户手机号
+		String isStatus = request.getParam("status");//状态  0：订购  3：退订
+		String addtime = request.getParam("timestamp");//unix时间戳
+		String spnum = request.getParam("spnum");//长号码
+		String spcmd = request.getParam("sms_order");//上行指令，由我方分配
+		
+		String product_type = request.getParam("product_type");//产品类型1包月 2点播
+		String state = request.getParam("state");//计费状态 0成功1失败
+		String op_type = request.getParam("op_type");//操作类型 0 订购 1退订
+		if ("1".equals(product_type)) {
+			if ("0".equals(op_type)) {
+				isStatus = "0";
+			} else if ("1".equals(op_type)) {
+				isStatus = "3";
+			} else {
+				isStatus = "2";
+			}
+		} else {
+			if ("0".equals(state)) {
+				isStatus = "0";
+			} else {
+				isStatus = "2";
+			}
+		}
+		
+		if (addtime == null) addtime = "";
+		
+		String result = "";
+		String param = "";
+		StringBuilder msg = new StringBuilder();
+		msg.append("admount=").append(admount)
+		.append("&productid=").append(productid)
+		.append("&phone=").append(mobile)
+		.append("&status=").append(isStatus)
+		.append("&ordertime=").append(URLEncoder.encode(addtime,"utf-8"))
+		.append("&spnum=").append(spnum)
+		.append("&spcmd=").append(spcmd);
+		param = msg.toString();
+		result = HttpTool.sendGetSetTimeout(cp.getUrl(), param, "500");
+		return result;
+	}
+	
+	private String notityOtherResult(CPInfo cp, String ffId, OrderReqInfo order) throws Exception {
+		String result = "";
+		String param = "";
+		String pmodel = order.getPmodel();
+		String cpid = cp.getCpId();
+		String imsi = order.getImsi();
+		if (imsi != null && imsi.length() > 0) {
+			imsi = URLEncoder.encode(imsi, "utf-8");
+		}
+		if (cpid == null || cpid.length() <= 2) {
+			cpid = "mrjm";
+		} else {
+			cpid = cpid.substring(0,cpid.length()-2);
+		}
+		String key = ConstantDefine.MD5_KEY1 + cpid + ConstantDefine.MD5_KEY2;
+		StringBuilder msg = new StringBuilder();
+		msg.append("cpid=").append(cp.getCpId())
+		.append("&cpparam=").append(order.getCpParam())
+		.append("&fee=").append(order.getFee())
+		.append("&ffid=").append(ffId);
+		String sign = MD5.md5(msg.toString()+"&key="+key, "utf-8");
+		if (cp.getBackMethod() == 1) {
+			SynOtherJson sj = new SynOtherJson();
+			sj.setFfid(ffId);
+			sj.setCpparam(order.getCpParam());
+			sj.setImei(order.getImei());
+			sj.setImsi(imsi);
+			sj.setFee(order.getFee());
+			sj.setIp(order.getIp());
+			sj.setPhone(order.getMobile());
+			sj.setStatus(order.getIsSuccess()+"");
+			sj.setCpid(cp.getCpId());
+			sj.setSign(sign);
+//			sj.setTransid(order.getPmodel());
+			param = JSON.toJSONString(sj);
+			result = HttpTool.sendKLWPost(cp.getUrl(), param, "utf-8", 5000);
+//			System.out.println(result);
+		} else {
+			msg.append("&imei=").append(order.getImei())
+			.append("&status=").append(order.getIsSuccess())
+			.append("&phone=").append(order.getMobile())
+			.append("&imsi=").append(imsi)
+//			.append("&transid=").append(order.getPmodel())
+			.append("&ip=").append(order.getIp())
+			.append("&sign=").append(sign);
+			if (pmodel != null && pmodel.length() > 0) {
+				msg.append("&transid=").append(pmodel);
+			}
+			
+			param = msg.toString();
+			result = HttpTool.sendGetSetTimeout(cp.getUrl(), param, "5000");
+		}
+		order.setCtech(cp.getUrl()+"?"+param);
+		return result;
+	}
+	
+	private String notityResult(CPInfo cp, String ffId, OrderReqInfo order) {
+		String result = "";
+		String param = "";
+		String cpId = cp.getCpId();
+		if (cp.getBackMethod() == 1) {
+			SynJson sj = new SynJson();
+			sj.setFfId(ffId);
+			sj.setCpParam(order.getCpParam());
+			sj.setImei(order.getImei());
+			sj.setImsi(order.getImsi());
+			sj.setFee(order.getFee());
+			sj.setIp(order.getIp());
+			sj.setPhone(order.getMobile());
+			sj.setStatus(order.getIsSuccess()+"");
+			sj.setCpid(cp.getCpId());
+			param = JSON.toJSONString(sj);
+			if ("sz01".equals(cpId) || "ylt01".equals(cpId) || "zh01".equals(cpId)
+					|| "zxtw01".equals(cpId) || "xs02".equals(cpId) || "mr01".equals(cpId)) {
+				result = HttpTool.sendPost(cp.getUrl(), param, "2000");
+			} else {
+				result = HttpTool.sendKLWPost(cp.getUrl(), param, "utf-8", 500);
+			}
+//			System.out.println(result);
+		} else {
+			StringBuilder msg = new StringBuilder();
+			if (cpId.contains("bbwl") || cpId.contains("kxy") || cpId.contains("shyy") 
+					|| cpId.contains("mx") || cpId.contains("hwd")) {
+				msg.append("imsi=").append(order.getImsi())
+				.append("&cpid=").append(cp.getCpId())
+				.append("&imei=").append(order.getImei())
+				.append("&ffId=").append(ffId)
+				.append("&cpParam=").append(order.getCpParam())
+				.append("&fee=").append(order.getFee())
+				.append("&status=").append(order.getIsSuccess())
+				.append("&phone=").append(order.getMobile())
+				.append("&ip=").append(order.getIp());
+			} else {
+				msg.append("imsi=").append(order.getImsi())
+				.append("&cpid=").append(cp.getCpId())
+				.append("&imei=").append(order.getImei())
+				.append("&ffid=").append(ffId)
+				.append("&cpparam=").append(order.getCpParam())
+				.append("&fee=").append(order.getFee())
+				.append("&status=").append(order.getIsSuccess())
+				.append("&phone=").append(order.getMobile())
+				.append("&ip=").append(order.getIp());
+			}
+			param = msg.toString();
+			result = HttpTool.sendGetSetTimeout(cp.getUrl(), param, "500");
+		}
+		return result;
+	}
+	
+	private String notityZCResult(CPInfo cp,String phone,String ffId,String status) {
+		String result = "";
+		String param = "";
+		String cpId = cp.getCpId();
+		StringBuilder msg = new StringBuilder();
+		msg.append("phone=").append(phone)
+		.append("&linked=").append(ffId)
+		.append("&cpid=").append(cpId)
+		.append("&status=").append(status);
+		param = msg.toString();
+		result = HttpTool.sendGetSetTimeout(cp.getUrl(), param, "500");
+		return result;
+	}
+	
+	private String notityResultKL(CPInfo cp, String ffId, OrderReqInfo order) {
+		String result = "";
+		String param = "";
+		if (cp.getBackMethod() == 1) {
+			Map<String, String> map = new HashMap<String, String>();
+			map.put("ffId", ffId);
+			map.put("cpParam", order.getCpParam());
+			map.put("fee", order.getFee()+"");
+			map.put("mobile", order.getMobile());
+			param = JSON.toJSONString(map);
+			result = HttpTool.sendKLWPost(cp.getUrl(), param, "utf-8", 500);
+		} else {
+			StringBuilder msg = new StringBuilder();
+			msg.append("ffId=").append(ffId)
+			.append("&cpParam=").append(order.getCpParam())
+			.append("&fee=").append(order.getFee())
+			.append("&mobile=").append(order.getMobile());
+			param = msg.toString();
+			result = HttpTool.sendGetSetTimeout(cp.getUrl(), param, "500");
+		}
+		return result;
+	}
+	
+	/*public static void main(String[] args) {
+		String url = "http://122.114.57.133:8001/tykj/xkmm.aspx";
+		String param = "{\"cpParam\":\"16021442\",\"fee\":1000,\"ffId\":\"05dxb59627215428\",\"imei\":\"99000535611401\",\"imsi\":\"460030813377603\",\"ip\":\"110.156.211.109\"}";
+		String result = HttpTool.sendKLWPost(url, param, "utf-8", 500);
+		System.out.println(result);
+	}*/
+	/*public static void main(String[] args) {
+		String url = "http://120.24.88.90/fee/feeLTDXBY";
+		String param = "phone=18802135388&state=3&extra=01ecl25590138841";
+		String result = HttpTool.sendKLWPost(url, param, "utf-8", 1500);
+		System.out.println(result);
+		List<OrderReqInfo> list = new ArrayList<OrderReqInfo>();
+		OrderReqInfo info = new OrderReqInfo();
+		info.setOrderId("1111");
+		info.setApp("a1");
+		OrderReqInfo info1 = new OrderReqInfo();
+		info1.setOrderId("2222");
+		info1.setApp("a2");
+		list.add(info);
+		list.add(info1);
+		System.out.println(JSONArray.toJSONString(list));
+	}*/
+	
+	/***
+	 * 订单回调
+	 * http://smspay.xushihudong.com/fee/feeLTDXBY
+	 */
+	public void feeLTDXBY(HttpRequest request, HttpResponse response)
+			throws Exception {
+		try {
+			logger.info("feeLTDXBY请求header信息：" + request.allHeaders());
+			String content = request.body();
+			logger.info("朗天电信下行短信："+content);
+			Map<String, String> myObj = parseYZ(content);
+			
+			String mobile = myObj.get("mobile");
+			String state = myObj.get("status");//0-订购 3-退订
+//			String ddate = myObj.get("ddate");//订购时间
+//			String tddate = myObj.get("tddate");//退订时间
+//			String command = myObj.get("command");//订购指令
+			String extra = myObj.get("extra");
+//			String fee = myObj.get("fee");
+//			String type = myObj.get("type");//业务类型
+			
+			OrderReqInfo info = new OrderReqInfo();
+			info.setFfId(extra);
+			if ("00".equals(state)) {
+				info.setIsSuccess(1);
+			} else if ("3".equals(state)) {
+				info.setIsSuccess(3);
+			} else {
+				info.setIsSuccess(9);
+			}
+			info.setMobile(mobile);
+			processxsBYOrder(info);
+		} catch (Exception e) {
+			logger.error(ExceptionTool.getExceptionMessage(e));
+		}
+		response.content("success").end();
+		
+	}
+	
+	/***
+	 * 订单回调 动漫视频包月
+	 * http://120.24.88.90/fee/feeBYdmback
+	 */
+	public void feeBYdmback(HttpRequest request, HttpResponse response)
+			throws Exception {
+		try {
+			logger.info("feeBYdmback请求header信息：" + request.allHeaders());
+			
+			String ffId = request.getParam("cp_param");
+			String isSuccess = request.getParam("result");
+			String mobile = request.getParam("mobile");
+			
+			OrderReqInfo info = new OrderReqInfo();
+			info.setFfId(ffId);
+			if ("succ".equals(isSuccess)) {
+				info.setIsSuccess(1);//订购
+			} else if ("3".equals(isSuccess)) {
+				info.setIsSuccess(3);
+			} else {
+				info.setIsSuccess(9);
+			}
+			info.setMobile(mobile);
+			processBYOrder(info);
+		} catch (Exception e) {
+			logger.error(ExceptionTool.getExceptionMessage(e));
+		}
+		response.content("ok").end();
+		
+	}
+	
+	/***
+	 * 订单回调 摩宝视频包月
+	 * http://120.24.88.90/fee/feertbymbback
+	 */
+	public void feertbymbback(HttpRequest request, HttpResponse response)
+			throws Exception {
+		try {
+			logger.info("feertbymbback请求header信息：" + request.allHeaders());
+			
+			String ffId = request.getParam("PHGH1");
+			String isSuccess = request.getParam("status");
+			
+			boolean issuc = false;
+			if ("DELIVRD".equals(isSuccess)) {
+				issuc = true;//订购
+			}
+			processOrder(ffId, issuc);
+		} catch (Exception e) {
+			logger.error(ExceptionTool.getExceptionMessage(e));
+		}
+		response.content("{\"status\": 200} ").end();
+		
+	}
+	
+	/***
+	 * 订单回调
+	 * http://120.24.88.90/fee/feeSZLTsfyj
+	 */
+	public void feeSZLTsfyj(HttpRequest request, HttpResponse response)
+			throws Exception {
+		String MchNo = request.getParam("MchNo");
+		try {
+			logger.info("feeSZLTsfyj请求header信息：" + request.allHeaders());
+			
+			String ffId = request.getParam("CPParam");
+			String isSuccess = request.getParam("RetCode");
+			String mobile = request.getParam("Mobile");
+			
+			OrderReqInfo info = new OrderReqInfo();
+			info.setFfId(ffId);
+			if ("000000".equals(isSuccess)) {
+				info.setIsSuccess(1);
+			} else {
+				info.setIsSuccess(CommonTool.convertInt(isSuccess));
+			}
+			info.setMobile(mobile);
+			processBYOrder(info);
+		} catch (Exception e) {
+			logger.error(ExceptionTool.getExceptionMessage(e));
+		}
+		Map<String, String> map = new HashMap<String, String>();
+		map.put("RetCode", "000000");
+		map.put("RetMsg", "充值成功");
+		map.put("MchNo", MchNo);
+		response.content(JSONObject.toJSONString(map)).end();
+		
+	}
+	
+	/***
+	 * 订单回调
+	 * http://120.24.88.90/fee/feeSZLTzc
+	 */
+	public void feeSZLTzc(HttpRequest request, HttpResponse response)
+			throws Exception {
+		try {
+			logger.info("feeSZLTzc请求header信息：" + request.allHeaders());
+			
+			String ffId = request.getParam("cpparam");
+			String isSuccess = request.getParam("status");
+			String mobile = request.getParam("phone");
+			
+			OrderReqInfo info = new OrderReqInfo();
+			info.setFfId(ffId);
+			if ("2".equals(isSuccess)) {
+				info.setIsSuccess(1);
+			} else {
+				info.setIsSuccess(CommonTool.convertInt(isSuccess));
+			}
+			info.setMobile(mobile);
+			processBYOrder(info);
+		} catch (Exception e) {
+			logger.error(ExceptionTool.getExceptionMessage(e));
+		}
+		response.content("ok").end();
+		
+	}
+	
+	/***
+	 * 订单回调
+	 * http://120.24.88.90/fee/feeSZLTzclymWtc
+	 */
+	public void feeSZLTzclymWtc(HttpRequest request, HttpResponse response)
+			throws Exception {
+		try {
+			logger.info("feeSZLTzclymWtc请求header信息：" + request.allHeaders());
+			
+			String isSuccess = request.getParam("status");
+			String mobile = request.getParam("phone");
+			String ffId = DateTool.getMonth() + "zcl" + mobile;
+			
+			
+			OrderReqInfo info = new OrderReqInfo();
+			info.setFfId(ffId);
+			if ("2".equals(isSuccess)) {//更新ffidl,
+				String newffid = CommonTool.genrateOrderNO(DateTool.getMonth(), "sd");
+				info.setNewffid(newffid);
+				info.setIsSuccess(5);
+			} else {
+				info.setIsSuccess(CommonTool.convertInt(isSuccess));
+			}
+			info.setMobile(mobile);
+			processBYOrder(info);
+		} catch (Exception e) {
+			logger.error(ExceptionTool.getExceptionMessage(e));
+		}
+		response.content("ok").end();
+		
+	}
+	
+	/***
+	 * 订单回调 12306注册无透传
+	 * http://120.24.88.90/fee/feeSZLTzclWtc
+	 */
+	public void feeSZLTzclWtc(HttpRequest request, HttpResponse response)
+			throws Exception {
+		try {
+			logger.info("feeSZLTzclWtc请求header信息：" + request.allHeaders());
+			
+			String isSuccess = request.getParam("status");
+			String mobile = request.getParam("phone");
+			String ffId = DateTool.getMonth() + "zcl" + mobile;
+			
+			
+			OrderReqInfo info = new OrderReqInfo();
+			info.setFfId(ffId);
+			if ("2".equals(isSuccess)) {
+				info.setIsSuccess(1);
+			} else if ("1".equals(isSuccess)) {
+				info.setIsSuccess(2);
+			} else if ("3".equals(isSuccess) || "5".equals(isSuccess)) {
+				String newffid = CommonTool.genrateOrderNO(DateTool.getMonth(), "sd");
+				info.setNewffid(newffid);
+				info.setIsSuccess(CommonTool.convertInt(isSuccess));
+			} else {
+				info.setIsSuccess(CommonTool.convertInt(isSuccess));
+			}
+			info.setMobile(mobile);
+			processBYOrder(info);
+		} catch (Exception e) {
+			logger.error(ExceptionTool.getExceptionMessage(e));
+		}
+		response.content("ok").end();
+		
+	}
+	
+	/***
+	 * 订单回调 微信注册无透传
+	 * http://118.190.90.1/fee/feeSZLTwcWtc
+	 */
+	public void feeSZLTwcWtc(HttpRequest request, HttpResponse response)
+			throws Exception {
+		try {
+			logger.info("feeSZLTwcWtc请求header信息：" + request.allHeaders());
+			
+			String isSuccess = request.getParam("status");
+			String mobile = request.getParam("phone");
+			String ffId = DateTool.getMonth() + "wc" + mobile;
+			
+			
+			OrderReqInfo info = new OrderReqInfo();
+			info.setFfId(ffId);
+			if ("2".equals(isSuccess)) {
+				info.setIsSuccess(1);
+			} else if ("1".equals(isSuccess)) {
+				info.setIsSuccess(2);
+			} else if ("3".equals(isSuccess) || "5".equals(isSuccess)) {
+				String newffid = CommonTool.genrateOrderNO(DateTool.getMonth(), "sd");
+				info.setNewffid(newffid);
+				info.setIsSuccess(CommonTool.convertInt(isSuccess));
+			} else {
+				info.setIsSuccess(CommonTool.convertInt(isSuccess));
+			}
+			info.setMobile(mobile);
+			processBYOrder(info);
+		} catch (Exception e) {
+			logger.error(ExceptionTool.getExceptionMessage(e));
+		}
+		response.content("ok").end();
+		
+	}
+	
+	/***
+	 * 订单回调
+	 * http://120.24.88.90/fee/feeSZLTzc12306
+	 */
+	public void feeSZLTzc12306(HttpRequest request, HttpResponse response)
+			throws Exception {
+		try {
+			logger.info("feeSZLTzc12306请求header信息：" + request.allHeaders());
+			
+			String isSuccess = request.getParam("status");
+			String mobile = request.getParam("phone");
+			String ffId = request.getParam("cpParam");
+			
+			
+			OrderReqInfo info = new OrderReqInfo();
+			info.setFfId(ffId);
+			/*if ("2".equals(isSuccess)) {
+				info.setIsSuccess(1);
+			} else if ("1".equals(isSuccess)) {
+				info.setIsSuccess(2);
+			} else {
+			}*/
+			info.setIsSuccess(CommonTool.convertInt(isSuccess));
+			info.setMobile(mobile);
+			processxsBYOrder(info);
+		} catch (Exception e) {
+			logger.error(ExceptionTool.getExceptionMessage(e));
+		}
+		response.content("ok").end();
+		
+	}
+	
+	/***
+	 * 订单回调
+	 * http://120.76.230.89/fee/feewjZFB
+	 */
+	public void feewjZFB(HttpRequest request, HttpResponse response)
+			throws Exception {
+		try {
+			logger.info("请求header信息：" + request.allHeaders());
+
+			String ffId = request.getParam("cpparam");
+			String cpid = request.getParam("cpid");
+			String price = request.getParam("price");
+			String state = request.getParam("state");
+			String sn = request.getParam("sn");
+			String imsi = request.getParam("imsi");
+			String tel = request.getParam("tel");
+			String agreement_no = request.getParam("agreement_no");
+			int isSuc = 0;
+			if ("0".equals(state)) {
+				isSuc = 1;
+			} else if("3".equals(state)) {
+				isSuc = 5;
+			}
+
+			int synStatus = 0;
+
+			OrderT ot = commonAction.queryOrderT(ffId);
+			if (ot == null) {
+				logger.warn("feewjZFB找不到对应的订单号=" + ffId);
+				return;
+			}
+
+			OrderReqInfo order = ot.getOrder();
+			CPInfo cp = ot.getCp();
+
+			if ((cp.getUrl() != null) && (cp.getUrl().length() > 0)) {
+				String result = "";
+				String param = "";
+				StringBuilder msg = new StringBuilder();
+				msg.append("imsi=").append(imsi)
+						.append("&cpid=").append(cpid)
+						.append("&price=").append(price)
+						.append("&state=").append(state)
+						.append("&sn=").append(sn)
+						.append("&tel=").append(tel)
+						.append("&agreement_no=").append(agreement_no)
+						.append("&cpparam=").append(order.getCpParam())
+						.append("&ip=").append(order.getIp());
+				param = msg.toString();
+				result = HttpTool.sendGet(cp.getUrl(), param);
+
+				logger.info("feewjZFB给CP的同步结果：" + result);
+				if (result.equals("success"))
+					synStatus = 1;
+				else
+					synStatus = -1;
+			} else {
+				synStatus = -1;
+			}
+
+
+			commonAction.updateOrderZFB(ffId, agreement_no, sn, isSuc, synStatus);
+		} catch (Exception e) {
+			logger.error(ExceptionTool.getExceptionMessage(e));
+		}
+		response.content("ok").end();
+		
+	}
+	
+	public void feeZFB(HttpRequest request, HttpResponse response)
+			throws JuiceException {
+		try {
+			logger.info("请求header信息：" + request.allHeaders());
+
+			String ffId = request.getParam("ffid");
+			String isSuccess = request.getParam("issuccess");
+			boolean isSuc = false;
+			if ((isSuccess != null) && (isSuccess.length() != 0))
+				isSuc = true;
+
+			int synStatus = 0;
+
+			OrderT ot = commonAction.queryOrderT(ffId);
+			if (ot == null) {
+				logger.warn("feeZFB找不到对应的订单号=" + ffId);
+				return;
+			}
+
+			OrderReqInfo order = ot.getOrder();
+			CPInfo cp = ot.getCp();
+
+			if (order.getIsSyn() == 1) {
+				if ((cp.getUrl() != null) && (cp.getUrl().length() > 0)) {
+					String result = "";
+					String param = "";
+					if (cp.getBackMethod() == 1) {
+						SynJson sj = new SynJson();
+						sj.setFfId(ffId);
+						sj.setCpParam(order.getCpParam());
+						sj.setImei(order.getImei());
+						sj.setImsi(order.getImsi());
+						sj.setFee(order.getFee());
+						sj.setIp(order.getIp());
+						param = JSON.toJSONString(sj);
+						result = HttpTool.sendKLWPost(cp.getUrl(), param, "utf-8", 1000);
+					} else {
+						StringBuilder msg = new StringBuilder();
+						msg.append("imsi=").append(order.getImsi())
+								.append("&imei=").append(order.getImei())
+								.append("&ffId=").append(ffId)
+								.append("&cpParam=").append(order.getCpParam())
+								.append("&fee=").append(order.getFee())
+								.append("&ip=").append(order.getIp());
+						param = msg.toString();
+						result = HttpTool.sendGet(cp.getUrl(), param);
+					}
+
+					logger.info("feeZFB给CP的同步结果：" + result);
+					if (result.equals("success"))
+						synStatus = 1;
+					else
+						synStatus = -1;
+				} else {
+					synStatus = -1;
+				}
+
+			}
+
+			commonAction.updateOrder(ffId, isSuc, synStatus);
+		} catch (Exception e) {
+			logger.error(ExceptionTool.getExceptionMessage(e));
+		}
+		response.content("ok").end();
+	}
+
+	/**
+	 * 提取号码码接口
+	 * http://120.24.88.90/fee/getMobile
+	 */
+	public void getMobile(HttpRequest request, HttpResponse response)
+			throws JuiceException {
+		String sms = "error";
+		try {
+			logger.info("getMobile请求header信息：" + request.allHeaders());
+			
+			String pid = request.getParam("pid");
+			String cpId = commonAction.getCpid(pid);
+			String count = request.getParam("count");
+			if (count == null || count.length() <= 0) count = "1";
+			int codetype = 1;
+			
+			OrderReqInfo reqInfo = new OrderReqInfo();
+			reqInfo.setCpId(cpId);
+			reqInfo.setCodeType(codetype);
+			reqInfo.setCount(CommonTool.convertInt(count));
+			CodeT ct = commonAction.getOtherPayCodes(reqInfo);
+			
+			String spId = "oo11";
+			if (ct == null) {
+				logger.warn("没有开通注册通道");
+				response.content("error").end();
+				return;
+			} else {
+				String ffId = ct.getFfId();
+				StringBuilder clog = new StringBuilder();
+				for (CodeInfo info : ct.getCodes()) {
+					spId = info.getSpId();
+					ffId = CommonTool.genrateOrderNO(DateTool.getMonth(), info.getSpFlag());
+					reqInfo.setUrl(info.getUrl());
+					reqInfo.setUrlNo(info.getUrlNo());
+					reqInfo.setPmodel("");
+					reqInfo.setFfId(ffId);
+					reqInfo.setKeyword(info.getKeyword());
+					reqInfo.setMatchRegex(info.getMatchRegex());
+					reqInfo.setFees(info.getFee());
+					reqInfo.setMsg(info.getMemo());
+					reqInfo.setSpId(spId);
+					sms = CodeReqHelper.getSMSCode(reqInfo);
+					if (!"error".equals(sms)) {
+						clog.append("合作方:").append(cpId).append("\n");
+						clog.append("通道方:").append(info.getSpId()).append("\n");
+						clog.append("订单号:").append(ffId).append("\n");
+						clog.append("指令内容:").append(sms);
+						break;
+					}
+				}
+				reqInfo.setSpId(spId);
+				ct.setFfId(ffId);
+				logger.info(clog.toString());
+			}
+			
+		} catch (Exception e) {
+			logger.error(ExceptionTool.getExceptionMessage(e));
+		}
+		response.content(sms).end();
+		
+	}
+
+	/**
+	 * 提取号码和验证码接口
+	 * http://120.24.88.90/fee/getMobileAndCode
+	 */
+	public void getMobileAndCode(HttpRequest request, HttpResponse response)
+			throws JuiceException {
+		String sms = "error";
+		try {
+			logger.info("getMobileAndCode请求header信息：" + request.allHeaders());
+			
+			String pid = request.getParam("pid");
+			String cpId = commonAction.getCpid(pid);
+			String messageId = cpId;
+			String phones = request.getParam("phones");
+			if (phones != null) {
+				phones = URLDecoder.decode(phones, "utf-8");
+			}
+			JSONArray jsonArr1 = JSONArray.parseArray(phones);
+			int count = jsonArr1.size();
+			int codetype = 2;
+			
+			OrderReqInfo reqInfo = new OrderReqInfo();
+			reqInfo.setCpId(cpId);
+			reqInfo.setCodeType(codetype);
+			reqInfo.setCount(count);
+			reqInfo.setMobile(phones);
+			CodeT ct = commonAction.getOtherPayCodes(reqInfo);
+			
+			String spId = "oo11";
+			if (ct == null) {
+				logger.warn("没有开通注册通道");
+				response.content("error").end();
+				return;
+			} else {
+				String ffId = ct.getFfId();
+				StringBuilder clog = new StringBuilder();
+				for (CodeInfo info : ct.getCodes()) {
+					spId = info.getSpId();
+					ffId = CommonTool.genrateOrderNO(DateTool.getMonth(), info.getSpFlag());
+					reqInfo.setUrl(info.getUrl());
+					reqInfo.setUrlNo(info.getUrlNo());
+					reqInfo.setPmodel("");
+					reqInfo.setFfId(ffId);
+					reqInfo.setKeyword(info.getKeyword());
+					reqInfo.setMatchRegex(info.getMatchRegex());
+					reqInfo.setFees(info.getFee());
+					reqInfo.setMsg(info.getMemo());
+					reqInfo.setSpId(spId);
+					sms = CodeReqHelper.getSMSCode(reqInfo);
+					if (!"error".equals(sms)) {
+						clog.append("合作方:").append(cpId).append("\n");
+						clog.append("通道方:").append(info.getSpId()).append("\n");
+						clog.append("订单号:").append(ffId).append("\n");
+						clog.append("指令内容:").append(sms);
+						break;
+					}
+				}
+				reqInfo.setSpId(spId);
+				ct.setFfId(ffId);
+				logger.info(clog.toString());
+			}
+			
+			if (!"error".equals(sms)) {
+				JSONArray jsonArr = JSONArray.parseArray(sms);
+				for (int i=0 ; i<jsonArr.size(); i++) {
+					JSONObject jsonObj = JSONObject.parseObject(jsonArr.getString(i));
+					String mobile = jsonObj.getString("mobile");
+					String code = jsonObj.getString("code");
+					CustomInfo info = new CustomInfo();
+					info.setMessageId(messageId);
+					info.setSmsMessage(code);
+					info.setMobile(mobile);
+					info.setLocalTab("00");
+					if (mobile != null) {
+						info.setLocalTab(CommonTool.getImsiSub(mobile));
+					}
+					commonAction.addCustomInfo(info);
+				}
+			}
+			
+		} catch (Exception e) {
+			logger.error(ExceptionTool.getExceptionMessage(e));
+		}
+		response.content(sms).end();
+		
+	}
+	
+	public void getCustomInfo(HttpRequest request, HttpResponse response)
+			throws JuiceException {
+		StringBuffer result = new StringBuffer();
+		try {
+			logger.info("请求header信息：" + request.allHeaders());
+
+			String content = URLDecoder.decode(request.body(), "utf-8");
+			logger.info("短信服务信息：" + content);
+
+			Map<String,String> myMap = new HashMap<String, String>();
+			String[] strArr = content.split("&");
+			for (String s : strArr) {
+				String[] tempList = s.split("=");
+				if (tempList.length == 2) {
+					myMap.put(tempList[0], tempList[1]);
+				}
+			}
+			String MessageId = (String) myMap.get("MessageId");
+			String SmsMessage = (String) myMap.get("SmsMessage");
+			String Mobile = (String) myMap.get("Mobile");
+			String SrcNumber = (String) myMap.get("SrcNumber");
+			String City = (String) myMap.get("City");
+			String Pre = (String) myMap.get("Pre");
+			String PortType = (String) myMap.get("PortType");
+
+			result.append("{\"MessageId\":\"").append(MessageId)
+					.append("\",\"SmsMessage\":\"").append(SmsMessage)
+					.append("\",\"Mobile\":\"").append(Mobile)
+					.append("\",\"SrcNumber\":\"").append(SrcNumber)
+					.append("\",\"Pre\":\"").append(Pre).append("\"}");
+
+			CustomInfo info = new CustomInfo();
+			info.setMessageId(MessageId);
+			info.setSmsMessage(SmsMessage);
+			info.setMobile(Mobile);
+			info.setSrcNumber(SrcNumber);
+			info.setCity(City);
+			info.setPre(Pre);
+			info.setPortType(PortType);
+			info.setLocalTab("00");
+
+			String[] params = SmsMessage.split("\\#");
+			if (params.length == 3) {
+				info.setImsi(params[0]);
+				info.setImsiFlag(params[1]);
+				info.setIccid(params[2]);
+				info.setLocalTab(CommonTool.getImsiSub(params[0]));
+			}
+
+			commonAction.addCustomInfo(info);
+		} catch (Exception e) {
+			logger.error(ExceptionTool.getExceptionMessage(e));
+		}
+		response.content(result.toString()).end();
+	}
+
+	public void checkCustomNum(HttpRequest request, HttpResponse response)
+			throws JuiceException {
+		String result = "error";
+		try {
+			logger.info("请求header信息：" + request.allHeaders());
+
+			String imsi = request.getParam("imsi");
+
+			CustomInfo info = new CustomInfo();
+			info.setImsi(imsi);
+			info.setLocalTab(imsi);
+
+			CustomInfo resultInfo = commonAction.getCustomInfo(info);
+			if (resultInfo != null)
+				result = resultInfo.getMobile();
+		} catch (Exception e) {
+			logger.error(ExceptionTool.getExceptionMessage(e));
+		}
+
+		response.content(result).end();
+	}
+
+	public void refreshCache(HttpRequest request, HttpResponse response)
+			throws JuiceException {
+		String result = "error";
+		try {
+			logger.info("refreshCache请求header信息：" + request.allHeaders());
+
+			commonAction.refreshCache();
+			result = "ok";
+		} catch (Exception e) {
+			logger.error(ExceptionTool.getExceptionMessage(e));
+		}
+
+		response.content(result).end();
+	}
+
+	public void updateklwsdk(HttpRequest request, HttpResponse response)
+			throws JuiceException {
+		String result = "error";
+		try {
+			logger.info("refreshCache请求header信息：" + request.allHeaders());
+
+			String id = request.getParam("id");
+			int iid = id == null ? 0 : CommonTool.convertInt(id);
+
+			SDKUpdateInfo reqInfo = new SDKUpdateInfo();
+			reqInfo.setId(iid);
+			SDKUpdateInfo info = commonAction.getSDKUpdateParam(reqInfo);
+			if (info != null)
+				result = JSONObject.toJSONString(info);
+		} catch (Exception e) {
+			logger.error(ExceptionTool.getExceptionMessage(e));
+		}
+
+		response.content(result).end();
+	}
+
+	public void getzfbkey(HttpRequest request, HttpResponse response)
+			throws JuiceException {
+		String result = "error";
+		try {
+			logger.info("getzfbkey请求header信息：" + request.allHeaders());
+
+			String orderInfo = request.getParam("orderInfo");
+			result = StringUtils
+					.sign(orderInfo,
+							"MIICdwIBADANBgkqhkiG9w0BAQEFAASCAmEwggJdAgEAAoGBALq3jFZhW8us7o4opJMpnZLSwv1SCdAL6/0ip8DB1u0EfuTHPy6XS49PlbR3sVDFJvRzNF2Fc7tylWYDoOTztyapdV8Y2LnLI9W8B/aWtn0fhAzLyr2IFLhHmP6VcGrCWY0DYnL12wTo5jgvbqCLH/Q3DBvekD6q13pmIbxw5uJDAgMBAAECgYEAg+PlgJrS8cMc21QANGeAA9dWnwPVJJ1XO/6/ylviCphTXh0UF0ANwpRv5gNqP+iThLbf9XOv9WeR+nZzr2YsJzB4wJQHjF1LrH1HFdFwhul19BSjEXkzcyCl0/tfeIsxvhdNYp7IhznlitGDAvOZEb4a1+e+L5Y0Uhx3kQLC8VkCQQDrLg3IK9HXKLaUg3BtSs1H3p5yDXs8ytNemfiVVwB2dyBG/q+RGjUpgwXbgEG8OeuGgYXcoYClJ+OSl/jWrrn1AkEAyz8qiNTw6C9s8e8z4MyCdTDiKXTCmA/du07AXC08NK3VOvw27N4b/5NNt7WyR7N/vQTxSx8d6P8uPRzvynDwVwJAf1+/GSYajcTANmmF77uuuPkqqa0BjShxGHCeAQxQ9NiKQ8lW/2jJWEVdW8f4UmCwXnYyMQ/LpCeZiuECZgvWLQJBAK76lL30xeq/WcX4L+urZe1Kxor2UMnlbvnhVM6Gyzx3JAqCNS88EVK5GMG+ldwQ9zpeVPZdtbxwZPiMPw1EqkUCQGph1+LoYCffaaCZw4aCPitO1t8Dfa2V8aBedhVqyXb74EQ7rSJIDcG2SDua/U4s+hEFQ+dOepC3gQ300xLWI80=");
+		} catch (Exception e) {
+			logger.error(ExceptionTool.getExceptionMessage(e));
+		}
+
+		response.content(result).end();
+	}
+
+	public void getxdkey(HttpRequest request, HttpResponse response)
+			throws JuiceException {
+		String result = "error";
+		try {
+			logger.info("getxdkey请求header信息：" + request.allHeaders());
+
+			String content = request.body();
+			String appkey = "8oV2czsLo5oUet0d8xXLd7gEMlFCMprx";
+			content = URLDecoder.decode(content, "utf-8");
+			logger.info("getxdkey传递post内容：" + content);
+			result = MD5.md5(content + "&" + MD5.md5(appkey, "utf-8"), "utf-8");
+			result = "mhtSignature=" + result + "&mhtSignType=MD5";
+		} catch (Exception e) {
+			logger.error(ExceptionTool.getExceptionMessage(e));
+		}
+
+		response.content(result).end();
+	}
+	
+	/**
+	 * 处理订单
+	 */
+	private void processXSOrder(String ffId, boolean isSuc) {
+		try {
+			int synStatus = ConstantDefine.SYN_STATUS_DEFAULT;
+			if (!isSuc) {
+//				commonAction.updateOrder(ffId, isSuc, synStatus);
+				return;
+			} else {
+				commonAction.saveExt(ffId);
+			}
+			
+			OrderT ot = commonAction.queryOrderT(ffId);
+			if (ot == null) {
+				logger.warn("找不到对应的订单号=" + ffId);
+				return;
+			}
+			
+			OrderReqInfo order = ot.getOrder();
+			CPInfo cp = ot.getCp();
+			
+			if (order.getIsSyn() == ConstantDefine.SYN_TRUE && order.getSynStatus() == 0) {
+				order.setIsSuccess(1);
+				String flag = testImsiMap.get(order.getImsi());
+				int synRadio = cp.getSynRadio();
+				if (synRadio == 100) flag = "true";
+				if (!"true".equals(flag)) {
+					String province = order.getProvince();
+					String newCpId = cp.getCpId()+order.getSpId()+province;
+					
+					synRadio = getSynRadio(cp, province, synRadio);
+					
+					logger.info("同步省份：" + province + "  同步率synRadio："+synRadio);
+					CPParam cpp = CommonTool.getCPParam(newCpId,
+							synRadio);
+					
+					AtomicInteger ati = cpp.getAti();
+					boolean isSyn = CommonTool.isContain(cpp.getVc(),
+							ati.incrementAndGet());
+//					logger.info("同步计算结果："+isSyn+",newCpId："+newCpId+",ati:"+ati.get()+",vc:"+cpp.getVc());
+					
+					if (checkOrderNum(cp)) isSyn = true;
+					
+					if (isSyn) {
+						if (cp.getUrl() != null && cp.getUrl().length() > 0) {
+							// 同步
+							String result = notityXSResult(cp,ffId,order);
+							
+							logger.info("给CP的同步结果："+result);
+							if (result.equals("ok")) {
+								synStatus = ConstantDefine.SYN_STATUS_TRUE;
+							} else {
+								synStatus = ConstantDefine.SYN_STATUS_FALSE;
+							}
+						} else {
+							synStatus = ConstantDefine.SYN_STATUS_FALSE;
+						}
+					} else {
+						synStatus = ConstantDefine.SYN_STATUS_Buckle;
+					}
+					
+					if (ati.get() == 100)
+						ati.set(0);
+					cpp.setAti(ati);
+//					CommonTool.updateCPParam(cp.getCpId(), cpp);
+					CommonTool.updateCPParam(newCpId, cpp);
+				} else {
+					String result = notityXSResult(cp,ffId,order);
+					
+					logger.info("给CP的同步结果："+result);
+					if (result.equals("ok")) {
+						synStatus = ConstantDefine.SYN_STATUS_TRUE;
+					} else {
+						synStatus = ConstantDefine.SYN_STATUS_FALSE;
+					}
+				}
+			}
+			if (order.getSynStatus() == 0) {
+				commonAction.updateOrder(ffId, isSuc, synStatus);
+			}
+		} catch (Exception e) {
+			logger.error(ExceptionTool.getExceptionMessage(e));
+		}
+	}
+	
+	/**
+	 * 范范 同步接口
+	 * http://smspay.xushihudong.com/fee/feexsffback
+	 */
+	public void feexsffback(HttpRequest request, HttpResponse response)
+			throws Exception {
+		try {
+			logger.info("feexsffback请求header信息：" + request.allHeaders());
+			
+			String ffId = request.getParam("param");
+			String isSuccess = request.getParam("status");
+			String mobile = request.getParam("phone");
+			
+			OrderReqInfo info = new OrderReqInfo();
+			info.setFfId(ffId);
+			if ("DELIVRD".equals(isSuccess) && !"0".equals(mobile)) {
+				info.setIsSuccess(1);//订购
+			} else if ("3".equals(isSuccess)) {
+				info.setIsSuccess(3);
+			} else {
+				info.setIsSuccess(9);
+			}
+			info.setMobile(mobile);
+			processxsBYOrder(info);
+		} catch (Exception e) {
+			logger.error(ExceptionTool.getExceptionMessage(e));
+		}
+		response.content("ok").end();
+		
+	}
+	
+	/**
+	 * 代付包月 同步接口
+	 * http://smspay.xushihudong.com/fee/feexsdfbyback
+	 */
+	public void feexsdfbyback(HttpRequest request, HttpResponse response)
+			throws Exception {
+		try {
+			logger.info("feexsdfbyback请求header信息：" + request.allHeaders());
+			
+			String ffId = request.getParam("param");
+			String spnumber = request.getParam("spnumber");
+			String momsg = request.getParam("momsg");
+			String isSuccess = request.getParam("flag");
+			String mobile = request.getParam("mobile");
+			
+			OrderReqInfo info = new OrderReqInfo();
+			info.setFfId(ffId);
+			if ("DELIVRD".equals(isSuccess) && !"0".equals(mobile)) {
+				info.setIsSuccess(1);//订购
+			} else if ("3".equals(isSuccess)) {
+				info.setIsSuccess(3);
+			} else {
+				info.setIsSuccess(9);
+			}
+			info.setMobile(mobile);
+			processxsBYOrder(info);
+		} catch (Exception e) {
+			logger.error(ExceptionTool.getExceptionMessage(e));
+		}
+		response.content("ok").end();
+		
+	}
+	
+	/**
+	 * 虚实彩信 同步接口
+	 * http://120.24.88.90/fee/feexscxbyback
+	 */
+	public void feexscxbyback(HttpRequest request, HttpResponse response)
+			throws JuiceException {
+		try {
+			logger.info("feexscxbyback请求header信息：" + request.allHeaders());
+			
+			String mobile = request.getParam("mobile");
+			String status = request.getParam("status");
+			String fee = request.getParam("fee");
+			String smsport = request.getParam("smsport");
+			String sms = request.getParam("sms");
+			String linkid = request.getParam("linkid");
+			String date = request.getParam("date");
+			String pid = request.getParam("pid");
+			String tab = request.getParam("tab");
+			
+			if (date != null && date.length() > 0) 
+				date = URLDecoder.decode(date, "utf-8");
+			
+			int isSuccess = CommonTool.convertInt(status);
+			
+			OrderReqInfo info = new OrderReqInfo();
+			info.setMobile(mobile);
+			info.setSpId("wt01");
+			info.setIsSuccess(isSuccess);
+			info.setFee(CommonTool.convertInt(fee));
+			info.setSms(smsport);
+			info.setSmscontent(sms);
+			info.setStartTime(date);
+			info.setCpParam(linkid);
+			info.setTab(tab);
+			
+			processxsWlwWtcByOrder(pid,info);
+		} catch (Exception e) {
+			logger.error(ExceptionTool.getExceptionMessage(e));
+		}
+		
+		response.content("ok").end();
+	}
+	
+	/**
+	 * 苏州润土视频包月 同步接口
+	 * http://120.24.88.90/fee/feexsszrtback
+	 */
+	public void feexsszrtback(HttpRequest request, HttpResponse response)
+			throws Exception {
+		try {
+			logger.info("feexsszrtback请求header信息：" + request.allHeaders());
+			
+			String ffId = request.getParam("cpparam");
+			String status = request.getParam("status");
+			boolean isSucc = false;
+			
+			if ("1".equals(status))
+				isSucc = true;
+			
+			processXSOrder(ffId, isSucc);
+		} catch (Exception e) {
+			logger.error(ExceptionTool.getExceptionMessage(e));
+		}
+		response.content("ok").end();
+		
+	}
+	
+	/**
+	 * 讯图MM、卓翌MM 同步接口
+	 * http://smspay.xushihudong.com/fee/feexsxtmmback
+	 */
+	public void feexsxtmmback(HttpRequest request, HttpResponse response)
+			throws Exception {
+		try {
+			logger.info("feexsxtmmback请求header信息：" + request.allHeaders());
+			
+			String ffId = request.getParam("msg");
+			String status = request.getParam("status");
+			ffId = ffId.substring(ffId.length()-16,ffId.length());
+			boolean isSucc = false;
+			
+			if ("DELIVRD".equals(status))
+				isSucc = true;
+			
+			processXSOrder(ffId, isSucc);
+		} catch (Exception e) {
+			logger.error(ExceptionTool.getExceptionMessage(e));
+		}
+		response.content("ok").end();
+		
+	}
+	
+	/**
+	 * 柒颜文化MM 同步接口
+	 * http://smspay.xushihudong.com/fee/feexsqrwhback
+	 */
+	public void feexsqrwhback(HttpRequest request, HttpResponse response)
+			throws Exception {
+		try {
+			logger.info("feexsqrwhback请求header信息：" + request.allHeaders());
+			
+			String ffId = request.getParam("momsg");
+			String status = "1";
+			boolean isSucc = false;
+			
+			if ("1".equals(status))
+				isSucc = true;
+			
+			processXSOrder(ffId, isSucc);
+		} catch (Exception e) {
+			logger.error(ExceptionTool.getExceptionMessage(e));
+		}
+		response.content("ok").end();
+		
+	}
+	
+	/**
+	 * 第七城市 同步接口
+	 * http://120.24.88.90/fee/feexsdqcsback
+	 */
+	public void feexsdqcsback(HttpRequest request, HttpResponse response)
+			throws Exception {
+		try {
+			logger.info("feexsdqcsback请求header信息：" + request.allHeaders());
+			
+			String ffId = request.getParam("extData");
+			boolean isSucc = true;
+			
+			processXSOrder(ffId, isSucc);
+		} catch (Exception e) {
+			logger.error(ExceptionTool.getExceptionMessage(e));
+		}
+		response.content("ok").end();
+		
+	}
+	
+	/**
+	 * 点通 同步接口
+	 * http://120.24.88.90/fee/feexsdtback
+	 */
+	public void feexsdtback(HttpRequest request, HttpResponse response)
+			throws Exception {
+		try {
+			logger.info("feexsdtback请求header信息：" + request.allHeaders());
+			String content = request.body();
+			Map<String, String> restmap = XmlUtil.xmlParsebytag(content,"request");
+			
+			String ffId = restmap.get("cpparam");
+			String isSuccess = restmap.get("hret");
+			String mobile = restmap.get("mobile");
+			
+			OrderReqInfo info = new OrderReqInfo();
+			info.setFfId(ffId);
+			if ("0".equals(isSuccess)) {
+				info.setIsSuccess(1);//订购
+			} else if ("2".equals(isSuccess)) {
+				info.setIsSuccess(3);//退订
+			} else {
+				info.setIsSuccess(9);
+			}
+			info.setMobile(mobile);
+			processxsBYOrder(info);
+		} catch (Exception e) {
+			logger.error(ExceptionTool.getExceptionMessage(e));
+		}
+		response.content("ok").end();
+		
+	}
+	
+	/**
+	 * 上海池乐 同步接口
+	 * http://120.24.88.90/fee/feexsshclback
+	 */
+	public void feexsshclback(HttpRequest request, HttpResponse response)
+			throws JuiceException {
+		try {
+			logger.info("feexsshclback请求header信息：" + request.allHeaders());
+			String ffId = request.getParam("cp_param");
+			String status = request.getParam("status");
+			String province = request.getParam("province_name");
+			
+			if (status == null || status.length() <= 0) {
+				// 处理订单
+				boolean isSuc = true;
+				
+				processXSOrder(ffId, isSuc);
+			} else {
+				logger.error("上海池乐计费通道"+province+"达到计费上限请切换通道！");
+			}
+		} catch (Exception e) {
+			logger.error(ExceptionTool.getExceptionMessage(e));
+		}
+		response.content("ok").end();
+	}
+	
+	/**
+	 * 上海弘龙 同步接口
+	 * http://120.24.88.90/fee/feexsshhlback
+	 */
+	public void feexsshhlback(HttpRequest request, HttpResponse response)
+			throws JuiceException {
+		try {
+			logger.info("feexsshhlback请求header信息：" + request.allHeaders());
+			String ffId = request.getParam("cpparam");
+			String status = request.getParam("status");
+			
+			if (status != null && status.length() > 0) {
+				// 处理订单
+				boolean isSuc = true;
+				if (!"0".equals(status)) {
+					isSuc = false;
+				}
+				
+				processXSOrder(ffId, isSuc);
+			}
+		} catch (Exception e) {
+			logger.error(ExceptionTool.getExceptionMessage(e));
+		}
+		response.content("ok").end();
+	}
+	
+	/**
+	 * 虚实彩信点播 同步接口
+	 * http://120.24.88.90/fee/feexscxdbback
+	 */
+	public void feexscxdbback(HttpRequest request, HttpResponse response)
+			throws JuiceException {
+		try {
+			logger.info("feexscxdbback请求header信息：" + request.allHeaders());
+			
+			String mobile = request.getParam("mobile");
+			String status = request.getParam("status");
+			String fee = request.getParam("fee");
+			String smsport = request.getParam("smsport");
+			String sms = request.getParam("sms");
+			String date = request.getParam("date");
+			String pid = request.getParam("pid");
+			
+			int isSuccess = CommonTool.convertInt(status);
+			
+			OrderReqInfo info = new OrderReqInfo();
+			info.setMobile(mobile);
+			info.setSpId("yc99");
+			info.setIsSuccess(isSuccess);
+			info.setFee(CommonTool.convertInt(fee));
+			info.setSms(smsport);
+			info.setSmscontent(sms);
+			info.setStartTime(date);
+			info.setCpParam(pid);
+			
+			processxsWlwWtcOrder(pid,info);
+		} catch (Exception e) {
+			logger.error(ExceptionTool.getExceptionMessage(e));
+		}
+		
+		response.content("ok").end();
+	}
+	
+	/**
+	 * 苏州乐米 回调通知
+	 * http://120.24.88.90/fee/feeszlmmm
+	 */
+	public void feeszlmmm(HttpRequest request, HttpResponse response)
+			throws JuiceException {
+		try {
+			logger.info("feeszlmmm请求header信息："+request.allHeaders());
+			String result = request.getParam("result");
+			String ffId = request.getParam("extparams");
+			// 处理订单
+			boolean isSuc = false;
+			if ("0".equals(result)) 
+				isSuc = true;
+			processXSOrder(ffId, isSuc);
+		} catch (Exception e) {
+			logger.error(ExceptionTool.getExceptionMessage(e));
+		}
+		response.content("ok").end();
+		
+	}
+	
+	
+	
+	
+	
+	
+	
+	/**
+	 * 虚实无联网无透传参数订单同步处理
+	 * @param pid
+	 * @param info
+	 */
+	private void processxsWlwWtcOrder(String pid, OrderReqInfo info) {
+		CPInfo cpinfo = commonAction.getCpByPid(pid);
+		String cpId = cpinfo.getCpId();
+		String spid = cpinfo.getLocalSpId();
+		
+		int isSuccess = info.getIsSuccess();
+		String ffId = CommonTool.genrateOrderNO(DateTool.getMonth(), spid.substring(0,2));
+		CPInfo cp = commonAction.queryCP(cpId);
+		int synStatus = ConstantDefine.SYN_STATUS_DEFAULT;
+		
+		String newCpId = cp.getCpId()+spid;
+		int synRadio = cp.getSynRadio();
+		logger.info("同步率synRadio："+synRadio);
+		CPParam cpp = CommonTool.getCPParam(newCpId,
+				synRadio);
+		
+		String province = "局域";
+		
+		String mobile = info.getMobile();
+		MobileInfo mobileInfo = getProvinceByPhone(mobile);
+		if (mobileInfo != null) {
+			province = mobileInfo.getProvince();
+			String corp = mobileInfo.getCorp();
+			if ("中国移动".equals(corp)) {
+				logger.info("移动用户phone：" + mobile);
+			} else if ("中国联通".equals(corp)) {
+				logger.info("联通用户phone：" + mobile);
+			} else {
+				logger.info("电信用户phone：" + mobile);
+			}
+			logger.info("根据phone查询省份地市：" + province);
+		}
+		
+		info.setCpId(cpId);
+		info.setFfId(ffId);
+		info.setSpId(spid);
+		info.setIp("127.0.0.1");
+		info.setProvince(province);
+		info.setIsSyn(1);
+		
+		boolean flag = true;
+		if (synRadio == 100) flag = false;
+		if (isSuccess == 1 && flag) {
+			AtomicInteger ati = cpp.getAti();
+			boolean isSyn = CommonTool.isContain(cpp.getVc(),
+					ati.incrementAndGet());
+			if (checkOrderNum(cp)) isSyn = true;
+			if (isSyn) {
+				if (cp.getUrl() != null && cp.getUrl().length() > 0) {
+					// 同步
+					String result = notityxsWlwWtcResult(cp,pid,info);
+					
+					logger.info("给CP的同步结果："+result);
+					if (result.equals("ok")) {
+						synStatus = ConstantDefine.SYN_STATUS_TRUE;
+					} else {
+						synStatus = ConstantDefine.SYN_STATUS_FALSE;
+					}
+				} else {
+					synStatus = ConstantDefine.SYN_STATUS_FALSE;
+				}
+			} else {
+				synStatus = ConstantDefine.SYN_STATUS_Buckle;
+			}
+			
+			if (ati.get() == 100)
+				ati.set(0);
+			cpp.setAti(ati);
+			CommonTool.updateCPParam(newCpId, cpp);
+		} else {
+			// 同步
+			String result = notityxsWlwWtcResult(cp,pid,info);
+			logger.info("给CP的同步结果："+result);
+			if (result.equals("ok")) {
+				synStatus = ConstantDefine.SYN_STATUS_TRUE;
+			} else {
+				synStatus = ConstantDefine.SYN_STATUS_FALSE;
+			}
+		}
+		
+		info.setSynStatus(synStatus);
+		info.setCpParam(pid);
+		commonAction.addOrderReqInfoAll(info);
+	}
+	
+	/**
+	 * 虚实无联网无透传参数包月订单同步处理
+	 * @param pid
+	 * @param info
+	 */
+	private void processxsWlwWtcByOrder(String pid, OrderReqInfo info) {
+		CPInfo cpinfo = commonAction.getCpByPid(pid);
+		String cpId = cpinfo.getCpId();
+		
+		int isSuccess = info.getIsSuccess();
+		CPInfo cp = commonAction.queryCP(cpId);
+		if (cp == null) {
+			logger.error("processxsWlwWtcByOrder中cpid："+cpId+"没有打开权限！");
+			return;
+		}
+		String spid = cpinfo.getLocalSpId();
+		String ffId = CommonTool.genrateOrderNO(DateTool.getMonth(), spid.substring(0,2));
+		String tab = info.getTab();
+		if (tab != null && tab.length() > 0) ffId = tab;
+		OrderReqInfo reqInfo = new OrderReqInfo();
+		reqInfo.setSpId(spid);
+		reqInfo.setFfId(ffId);
+		reqInfo.setMobile(info.getMobile());
+		OrderReqInfo order = commonAction.queryOrderByCondition(reqInfo);
+		int synStatus = ConstantDefine.SYN_STATUS_DEFAULT;
+		String newCpId = cp.getCpId()+spid;
+		int synRadio = cp.getSynRadio();
+		logger.info("同步率synRadio："+synRadio);
+		CPParam cpp = CommonTool.getCPParam(newCpId,
+				synRadio);
+		if (order != null && !cp.getCpId().equals(order.getCpId())) {
+			if (isSuccess == 1) {
+				if (order.getIsSuccess() == 3) {
+					order = null;
+				} else {
+					return;
+				}
+			} else {
+				cpId = order.getCpId();
+				cp = commonAction.queryCP(cpId);
+			}
+		}
+		if (order != null) {
+			ffId = order.getFfId();
+			info.setFfId(ffId);
+			synStatus = order.getSynStatus();
+			if (synStatus == 0) {
+				AtomicInteger ati = cpp.getAti();
+				boolean isSyn = CommonTool.isContain(cpp.getVc(),
+						ati.incrementAndGet());
+				if (checkOrderNum(cp)) isSyn = true;
+				if (isSyn) {
+					if (cp.getUrl() != null && cp.getUrl().length() > 0) {
+						// 同步
+						String result = "no";
+						if (1 == isSuccess) {
+							result = notityxsWlwWtcResult(cp,pid,info);
+						}
+						
+						logger.info("给CP的同步结果："+result);
+						if (result.equals("ok")) {
+							synStatus = ConstantDefine.SYN_STATUS_TRUE;
+						} else {
+							synStatus = ConstantDefine.SYN_STATUS_FALSE;
+						}
+					} else {
+						synStatus = ConstantDefine.SYN_STATUS_FALSE;
+					}
+				} else {
+					synStatus = ConstantDefine.SYN_STATUS_Buckle;
+				}
+				
+				if (ati.get() == 100)
+					ati.set(0);
+				cpp.setAti(ati);
+				CommonTool.updateCPParam(newCpId, cpp);
+			} else if (synStatus != 4) {
+				String result = "no";
+				if (1 == isSuccess) {
+					result = notityxsWlwWtcResult(cp,pid,info);
+				}
+				logger.info("给CP的同步结果："+result);
+				if (result.equals("ok")) {
+					synStatus = ConstantDefine.SYN_STATUS_TRUE;
+				} else {
+					synStatus = ConstantDefine.SYN_STATUS_FALSE;
+				}
+			}
+			info.setSynStatus(synStatus);
+			commonAction.updateOrderInfo(info);
+		} else {
+			
+			String province = "局域";
+			String mobile = info.getMobile();
+			MobileInfo mobileInfo = getProvinceByPhone(mobile);
+			if (mobileInfo != null) {
+				province = mobileInfo.getProvince();
+				String corp = mobileInfo.getCorp();
+				if ("中国移动".equals(corp)) {
+					logger.info("移动用户phone：" + mobile);
+				} else if ("中国联通".equals(corp)) {
+					logger.info("联通用户phone：" + mobile);
+				} else {
+					logger.info("电信用户phone：" + mobile);
+				}
+				logger.info("根据phone查询省份地市：" + province);
+			}
+			
+			info.setCpId(cpId);
+			info.setFfId(ffId);
+			info.setSpId(spid);
+			info.setIp("127.0.0.1");
+			info.setProvince(province);
+			info.setIsSyn(1);
+			
+			boolean flag = true;
+			if (synRadio == 100) flag = false;
+			if (isSuccess == 1 && flag) {
+				AtomicInteger ati = cpp.getAti();
+				boolean isSyn = CommonTool.isContain(cpp.getVc(),
+						ati.incrementAndGet());
+				if (checkOrderNum(cp)) isSyn = true;
+				if (isSyn) {
+					if (cp.getUrl() != null && cp.getUrl().length() > 0) {
+						// 同步
+						String result = "no";
+						if (1 == isSuccess) {
+							result = notityxsWlwWtcResult(cp,pid,info);
+						}
+						
+						logger.info("给CP的同步结果："+result);
+						if (result.equals("ok")) {
+							synStatus = ConstantDefine.SYN_STATUS_TRUE;
+						} else {
+							synStatus = ConstantDefine.SYN_STATUS_FALSE;
+						}
+					} else {
+						synStatus = ConstantDefine.SYN_STATUS_FALSE;
+					}
+				} else {
+					synStatus = ConstantDefine.SYN_STATUS_Buckle;
+				}
+				
+				if (ati.get() == 100)
+					ati.set(0);
+				cpp.setAti(ati);
+				CommonTool.updateCPParam(newCpId, cpp);
+			} else {
+				// 同步
+				String result = "1";
+				if (isSuccess == 1) {
+					result = notityxsWlwWtcResult(cp,pid,info);
+				}
+				logger.info("给CP的同步结果："+result);
+				if (result.equals("ok")) {
+					synStatus = ConstantDefine.SYN_STATUS_TRUE;
+				} else {
+					synStatus = ConstantDefine.SYN_STATUS_FALSE;
+				}
+			}
+			
+			info.setSynStatus(synStatus);
+			commonAction.addOrderReqInfoAll(info);
+		}
+		
+	}
+	
+	/**
+	 * 处理订单
+	 */
+	private void processxsBYOrder(OrderReqInfo reqInfo) {
+		String ffId = reqInfo.getFfId();
+		try {
+			int synStatus = ConstantDefine.SYN_STATUS_DEFAULT;
+			/*if (!isSuc) {
+//				commonAction.updateOrder(ffId, isSuc, synStatus);
+				return;
+			} else {
+				commonAction.saveExt(ffId);
+			}*/
+			
+			OrderT ot = commonAction.queryOrderT(ffId);
+			if (ot == null) {
+				logger.warn("找不到对应的订单号=" + ffId);
+				return;
+			}
+			
+			OrderReqInfo order = ot.getOrder();
+			order.setMobile(reqInfo.getMobile());
+			CPInfo cp = ot.getCp();
+			if (order.getSynStatus() == 4) {
+				order.setIsSyn(0);
+				synStatus = 4;
+			}
+			
+			if (cp == null) {
+				logger.warn("对应cp的通道已经关闭=" + ot.getCp());
+				return;
+			}
+			
+			order.setIsSuccess(reqInfo.getIsSuccess());
+			if (order.getIsSyn() == ConstantDefine.SYN_TRUE) {
+				String flag = testImsiMap.get(order.getImsi());
+				int synRadio = cp.getSynRadio();
+				if (reqInfo.getIsSuccess() != 1 || synRadio == 100) flag = "true";
+				if (!"true".equals(flag)) {
+					String province = order.getProvince();
+					String newCpId = cp.getCpId()+order.getSpId()+province;
+					
+					synRadio = getSynRadio(cp, province, synRadio);
+					
+					logger.info("同步省份：" + province + "  同步率synRadio："+synRadio);
+					CPParam cpp = CommonTool.getCPParam(newCpId,
+							synRadio);
+					
+					AtomicInteger ati = cpp.getAti();
+					boolean isSyn = CommonTool.isContain(cpp.getVc(),
+							ati.incrementAndGet());
+					if (checkOrderNum(cp)) isSyn = true;
+					if (isSyn) {
+						if (cp.getUrl() != null && cp.getUrl().length() > 0) {
+							// 同步
+							String result = notityXSResult(cp,ffId,order);
+							
+							logger.info("给CP的同步结果："+result);
+							if (result.equals("success")) {
+								synStatus = ConstantDefine.SYN_STATUS_TRUE;
+							} else {
+								synStatus = ConstantDefine.SYN_STATUS_FALSE;
+							}
+						} else {
+							synStatus = ConstantDefine.SYN_STATUS_FALSE;
+						}
+					} else {
+						synStatus = ConstantDefine.SYN_STATUS_Buckle;
+					}
+					
+					if (ati.get() == 100)
+						ati.set(0);
+					cpp.setAti(ati);
+//					CommonTool.updateCPParam(cp.getCpId(), cpp);
+					CommonTool.updateCPParam(newCpId, cpp);
+				} else {
+					String result = notityXSResult(cp,ffId,order);
+					
+					logger.info("给CP的同步结果："+result);
+					if (result.equals("success")) {
+						synStatus = ConstantDefine.SYN_STATUS_TRUE;
+					} else {
+						synStatus = ConstantDefine.SYN_STATUS_FALSE;
+					}
+				}
+			}
+			OrderReqInfo info = new OrderReqInfo();
+			info.setFfId(ffId);
+			info.setMobile(reqInfo.getMobile());
+			info.setIsSuccess(reqInfo.getIsSuccess());
+			info.setSynStatus(synStatus);
+			commonAction.updateOrderInfo(info);
+		} catch (Exception e) {
+			logger.error(ExceptionTool.getExceptionMessage(e));
+		}
+	}
+	
+	/**
+	 * 虚实无联网无透传参数数据同步通知
+	 * @param pid
+	 * @param order
+	 * @return
+	 */
+	private String notityxsWlwWtcResult(CPInfo cp, String pid, OrderReqInfo order) {
+		
+		String result = "error";
+		String param = "";
+		if (order.getIsSuccess() == 6) {
+			order.setIsSuccess(3);
+		}
+		StringBuilder msg = new StringBuilder();
+		msg.append("smsport=").append(order.getSms())
+		.append("&smscontent=").append(order.getSmscontent())
+		.append("&phone=").append(order.getMobile())
+		.append("&fee=").append(order.getFee())
+		.append("&cpid=").append(order.getCpId())
+		.append("&ffid=").append(order.getFfId())
+		.append("&cpparam=").append(order.getDelayed())
+		.append("&status=").append(order.getIsSuccess());
+		param = msg.toString();
+		result = HttpTool.sendGetSetTimeout(cp.getUrl(), param, "500");
+		return result;
+	}
+
+	private String notityXSResult(CPInfo cp, String ffId, OrderReqInfo order) {
+		String result = "";
+		String param = "";
+		String cpId = cp.getCpId();
+		if (cp.getBackMethod() == 1) {
+			if ("bbwl01".equals(cpId)) {
+				Map<String, String> map = new HashMap<String, String>();
+				map.put("cpid", cpId);
+				map.put("imsi", order.getImsi());
+				map.put("imei", order.getImei());
+				map.put("ffId", ffId);
+				map.put("phone", order.getMobile());
+				map.put("cpParam", order.getCpParam());
+				map.put("fee", order.getFee()+"");
+				map.put("status", order.getIsSuccess()+"");
+				map.put("ip", order.getIp());
+				param = JSON.toJSONString(map);
+			} else {
+				Map<String, String> map = new HashMap<String, String>();
+				map.put("cpid", cpId);
+				map.put("imsi", order.getImsi());
+				map.put("imei", order.getImei());
+				map.put("ffid", ffId);
+				map.put("phone", order.getMobile());
+				map.put("cpparam", order.getCpParam());
+				map.put("fee", order.getFee()+"");
+				map.put("status", order.getIsSuccess()+"");
+				map.put("ip", order.getIp());
+				param = JSON.toJSONString(map);
+			}
+			result = HttpTool.sendKLWPost(cp.getUrl(), param, "utf-8", 500);
+		} else {
+			StringBuilder msg = new StringBuilder();
+			msg.append("imsi=").append(order.getImsi())
+			.append("&cpid=").append(cpId)
+			.append("&imei=").append(order.getImei())
+			.append("&ffid=").append(ffId)
+			.append("&cpparam=").append(order.getCpParam())
+			.append("&fee=").append(order.getFee())
+			.append("&status=").append(order.getIsSuccess())
+			.append("&phone=").append(order.getMobile())
+			.append("&ip=").append(order.getIp());
+			param = msg.toString();
+			result = HttpTool.sendGetSetTimeout(cp.getUrl(), param, "500");
+		}
+		return result;
+	}
+	
+	private Map<String, String> parseYZ(String content) {
+		Map<String, String> params = new HashMap<String, String>();
+		try {
+			StringTokenizer st = new StringTokenizer(content, "&");
+			while (st.hasMoreTokens()) {
+				String[] pair = st.nextToken().split("=");
+				String key = URLDecoder.decode(pair[0], "UTF-8");
+				String value = pair.length == 1 ? null : URLDecoder.decode(
+						pair[1], "UTF-8");
+				params.put(key, value);
+			}
+		} catch (UnsupportedEncodingException e) {
+			throw new RuntimeException("Couldn't parse query string: "
+					+ content, e);
+		}
+		return params;
+	}
+	
+	
+	private boolean checkOrderNum(CPInfo cp) {
+		boolean isSyn = false;
+		CPParam totalcpp = CommonTool.getCPParam(cp.getCpId(),
+				cp.getSynRadio());
+		AtomicInteger totalati = totalcpp.getAti();
+		int currnum = totalati.incrementAndGet();
+		CommonTool.updateCPParam(cp.getCpId(), totalcpp);
+		if (currnum<8) {
+			isSyn = true;
+			logger.info("前8个订单全部同步cpid：" + cp.getCpId() + ",当前第"+currnum+"个订单");
+		}
+		
+		return isSyn;
+	}
+	
+	private MobileInfo getProvinceByPhone(String phone) {
+		MobileInfo info = null;
+		
+		if (phone != null && phone.length() > 7) {
+			int mobile = CommonTool.convertInt(phone.substring(0,7));
+			info = commonAction.getProvinceByPhone(mobile);
+		}
+		
+		return info;
+	}
+	
+}

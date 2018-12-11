@@ -1,0 +1,290 @@
+[2;32m2018-04-11 14:20:02,350 - INFO  [main:ServerBootstrap@99] - connect to database:jdbc:mysql://39.104.63.148:3306/fastfun?useUnicode=true&characterEncoding=UTF-8
+[m[2;32m2018-04-11 14:20:03,868 - INFO  [main:ServerBootstrap@125] - Configuration Server bootstrap params.......
+[m[2;32m2018-04-11 14:20:03,868 - INFO  [main:ServerBootstrap@126] - Server protocol:	socket
+[m[2;32m2018-04-11 14:20:03,868 - INFO  [main:ServerBootstrap@127] - Server port:	9912
+[m[2;35m2018-04-11 14:20:04,150 - WARN  [main:XMemcachedClient@727] - XMemcachedClient use Binary protocol
+[m[2;32m2018-04-11 14:20:04,171 - INFO  [main:SelectorManager@37] - Creating 16 reactors...
+[m[2;35m2018-04-11 14:20:04,181 - WARN  [main:AbstractController@372] - The Controller started at localhost/127.0.0.1:0 ...
+[m[2;35m2018-04-11 14:20:04,189 - WARN  [Xmemcached-Reactor-0:MemcachedConnector@251] - Add a session: 127.0.0.1:11211
+[m[2;32m2018-04-11 14:20:04,189 - INFO  [main:Application@25] - 初始化AO...
+[m[2;32m2018-04-11 14:20:04,201 - INFO  [main:ServerBootstrap@150] - Application PID:	10520
+[m[2;35m2018-04-11 14:20:53,391 - WARN  [Thread-22:JuiceThreadPool$JuiceWorkThread@108] - RPC method start time :68, action:com.klw.fastfun.pay.common.action.CommonAction, method:getProvinceByPhone
+[m[7;31m2018-04-11 14:20:53,442 - ERROR [Thread-2:ConnectionResource@65] - select mobile from t_qqzh_info where mobile=? 
+[mcom.mysql.jdbc.exceptions.MySQLSyntaxErrorException: Table 'fastfun.t_qqzh_info' doesn't exist
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:936)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:2985)
+	at com.mysql.jdbc.MysqlIO.sendCommand(MysqlIO.java:1631)
+	at com.mysql.jdbc.MysqlIO.sqlQueryDirect(MysqlIO.java:1723)
+	at com.mysql.jdbc.Connection.execSQL(Connection.java:3256)
+	at com.mysql.jdbc.PreparedStatement.executeInternal(PreparedStatement.java:1313)
+	at com.mysql.jdbc.PreparedStatement.executeQuery(PreparedStatement.java:1448)
+	at com.jolbox.bonecp.PreparedStatementHandle.executeQuery(PreparedStatementHandle.java:172)
+	at com.juice.orange.game.database.ConnectionResource.queryForObject(ConnectionResource.java:60)
+	at com.klw.fastfun.pay.data.dao.CommonDAO.queryBlackMobile(CommonDAO.java:157)
+	at com.klw.fastfun.pay.data.ao.CommonAO.queryBlackMobile(CommonAO.java:71)
+	at com.klw.fastfun.pay.common.action.impl.CommonActionImpl.queryBlackMobile(CommonActionImpl.java:1496)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at com.juice.orange.game.rmi.control.RPCServerControl.nextHandler(RPCServerControl.java:57)
+	at com.juice.orange.game.util.threadpool.JuiceThreadPool$JuiceWorkThread.run(JuiceThreadPool.java:70)
+[2;35m2018-04-11 14:20:53,445 - WARN  [Thread-2:JuiceThreadPool$JuiceWorkThread@108] - RPC method start time :51, action:com.klw.fastfun.pay.common.action.CommonAction, method:queryBlackMobile
+[m[2;35m2018-04-11 14:20:53,502 - WARN  [Thread-52:JuiceThreadPool$JuiceWorkThread@108] - RPC method start time :47, action:com.klw.fastfun.pay.common.action.CommonAction, method:getPayCodes
+[m[2;32m2018-04-11 14:21:25,890 - INFO  [main:ServerBootstrap@99] - connect to database:jdbc:mysql://39.104.63.148:3306/fastfun?useUnicode=true&characterEncoding=UTF-8
+[m[2;32m2018-04-11 14:21:27,560 - INFO  [main:ServerBootstrap@125] - Configuration Server bootstrap params.......
+[m[2;32m2018-04-11 14:21:27,560 - INFO  [main:ServerBootstrap@126] - Server protocol:	socket
+[m[2;32m2018-04-11 14:21:27,560 - INFO  [main:ServerBootstrap@127] - Server port:	9912
+[m[2;35m2018-04-11 14:21:27,774 - WARN  [main:XMemcachedClient@727] - XMemcachedClient use Binary protocol
+[m[2;32m2018-04-11 14:21:27,791 - INFO  [main:SelectorManager@37] - Creating 16 reactors...
+[m[2;35m2018-04-11 14:21:27,801 - WARN  [main:AbstractController@372] - The Controller started at localhost/127.0.0.1:0 ...
+[m[2;35m2018-04-11 14:21:27,808 - WARN  [Xmemcached-Reactor-0:MemcachedConnector@251] - Add a session: 127.0.0.1:11211
+[m[2;32m2018-04-11 14:21:27,808 - INFO  [main:Application@25] - 初始化AO...
+[m[2;32m2018-04-11 14:21:27,820 - INFO  [main:ServerBootstrap@150] - Application PID:	12524
+[m[2;35m2018-04-11 14:21:34,365 - WARN  [Thread-122:JuiceThreadPool$JuiceWorkThread@108] - RPC method start time :13, action:com.klw.fastfun.pay.common.action.CommonAction, method:getProvinceByPhone
+[m[7;31m2018-04-11 14:21:34,422 - ERROR [Thread-123:ConnectionResource@65] - select mobile from t_black_mobile where mobile=? 
+[mcom.mysql.jdbc.exceptions.MySQLSyntaxErrorException: Table 'fastfun.t_black_mobile' doesn't exist
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:936)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:2985)
+	at com.mysql.jdbc.MysqlIO.sendCommand(MysqlIO.java:1631)
+	at com.mysql.jdbc.MysqlIO.sqlQueryDirect(MysqlIO.java:1723)
+	at com.mysql.jdbc.Connection.execSQL(Connection.java:3256)
+	at com.mysql.jdbc.PreparedStatement.executeInternal(PreparedStatement.java:1313)
+	at com.mysql.jdbc.PreparedStatement.executeQuery(PreparedStatement.java:1448)
+	at com.jolbox.bonecp.PreparedStatementHandle.executeQuery(PreparedStatementHandle.java:172)
+	at com.juice.orange.game.database.ConnectionResource.queryForObject(ConnectionResource.java:60)
+	at com.klw.fastfun.pay.data.dao.CommonDAO.queryBlackMobile(CommonDAO.java:157)
+	at com.klw.fastfun.pay.data.ao.CommonAO.queryBlackMobile(CommonAO.java:71)
+	at com.klw.fastfun.pay.common.action.impl.CommonActionImpl.queryBlackMobile(CommonActionImpl.java:1496)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at com.juice.orange.game.rmi.control.RPCServerControl.nextHandler(RPCServerControl.java:57)
+	at com.juice.orange.game.util.threadpool.JuiceThreadPool$JuiceWorkThread.run(JuiceThreadPool.java:70)
+[2;35m2018-04-11 14:21:34,425 - WARN  [Thread-123:JuiceThreadPool$JuiceWorkThread@108] - RPC method start time :56, action:com.klw.fastfun.pay.common.action.CommonAction, method:queryBlackMobile
+[m[2;35m2018-04-11 14:21:34,484 - WARN  [Thread-142:JuiceThreadPool$JuiceWorkThread@108] - RPC method start time :47, action:com.klw.fastfun.pay.common.action.CommonAction, method:getPayCodes
+[m[2;32m2018-04-11 14:22:21,420 - INFO  [main:ServerBootstrap@99] - connect to database:jdbc:mysql://39.104.100.58:3306/fastfun?useUnicode=true&characterEncoding=UTF-8
+[m[2;32m2018-04-11 14:22:22,966 - INFO  [main:ServerBootstrap@125] - Configuration Server bootstrap params.......
+[m[2;32m2018-04-11 14:22:22,967 - INFO  [main:ServerBootstrap@126] - Server protocol:	socket
+[m[2;32m2018-04-11 14:22:22,967 - INFO  [main:ServerBootstrap@127] - Server port:	9912
+[m[2;35m2018-04-11 14:22:23,238 - WARN  [main:XMemcachedClient@727] - XMemcachedClient use Binary protocol
+[m[2;32m2018-04-11 14:22:23,256 - INFO  [main:SelectorManager@37] - Creating 16 reactors...
+[m[2;35m2018-04-11 14:22:23,266 - WARN  [main:AbstractController@372] - The Controller started at localhost/127.0.0.1:0 ...
+[m[2;35m2018-04-11 14:22:23,272 - WARN  [Xmemcached-Reactor-0:MemcachedConnector@251] - Add a session: 127.0.0.1:11211
+[m[2;32m2018-04-11 14:22:23,273 - INFO  [main:Application@25] - 初始化AO...
+[m[2;32m2018-04-11 14:22:23,287 - INFO  [main:ServerBootstrap@150] - Application PID:	11660
+[m[2;35m2018-04-11 14:22:29,064 - WARN  [Thread-42:JuiceThreadPool$JuiceWorkThread@108] - RPC method start time :77, action:com.klw.fastfun.pay.common.action.CommonAction, method:getProvinceByPhone
+[m[2;35m2018-04-11 14:22:29,126 - WARN  [Thread-102:JuiceThreadPool$JuiceWorkThread@108] - RPC method start time :51, action:com.klw.fastfun.pay.common.action.CommonAction, method:queryBlackMobile
+[m[2;35m2018-04-11 14:22:29,262 - WARN  [Thread-112:JuiceThreadPool$JuiceWorkThread@108] - RPC method start time :124, action:com.klw.fastfun.pay.common.action.CommonAction, method:getPayCodes
+[m[2;35m2018-04-11 14:22:29,533 - WARN  [Thread-32:JuiceThreadPool$JuiceWorkThread@108] - RPC method start time :47, action:com.klw.fastfun.pay.common.action.CommonAction, method:addOrderReqInfo
+[m[2;35m2018-04-11 14:23:48,671 - WARN  [Thread-132:JuiceThreadPool$JuiceWorkThread@108] - RPC method start time :48, action:com.klw.fastfun.pay.common.action.CommonAction, method:getProvinceByPhone
+[m[7;31m2018-04-11 14:23:48,722 - ERROR [Thread-152:ConnectionResource@65] - select mobile from t_black_mobile where mobile=? 
+[mjava.sql.SQLException: Column 'username' not found.
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:910)
+	at com.mysql.jdbc.ResultSet.findColumn(ResultSet.java:987)
+	at com.mysql.jdbc.ResultSet.getString(ResultSet.java:5584)
+	at com.klw.fastfun.pay.data.dao.CommonDAO$10.handler(CommonDAO.java:124)
+	at com.klw.fastfun.pay.data.dao.CommonDAO$10.handler(CommonDAO.java:1)
+	at com.juice.orange.game.database.ConnectionResource.queryForObject(ConnectionResource.java:62)
+	at com.klw.fastfun.pay.data.dao.CommonDAO.queryBlackMobile(CommonDAO.java:157)
+	at com.klw.fastfun.pay.data.ao.CommonAO.queryBlackMobile(CommonAO.java:71)
+	at com.klw.fastfun.pay.common.action.impl.CommonActionImpl.queryBlackMobile(CommonActionImpl.java:1496)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at com.juice.orange.game.rmi.control.RPCServerControl.nextHandler(RPCServerControl.java:57)
+	at com.juice.orange.game.util.threadpool.JuiceThreadPool$JuiceWorkThread.run(JuiceThreadPool.java:70)
+[2;35m2018-04-11 14:23:48,724 - WARN  [Thread-152:JuiceThreadPool$JuiceWorkThread@108] - RPC method start time :51, action:com.klw.fastfun.pay.common.action.CommonAction, method:queryBlackMobile
+[m[2;35m2018-04-11 14:23:48,775 - WARN  [Thread-43:JuiceThreadPool$JuiceWorkThread@108] - RPC method start time :49, action:com.klw.fastfun.pay.common.action.CommonAction, method:getPayCodes
+[m[2;35m2018-04-11 14:23:48,918 - WARN  [Thread-92:JuiceThreadPool$JuiceWorkThread@108] - RPC method start time :47, action:com.klw.fastfun.pay.common.action.CommonAction, method:addOrderReqInfo
+[m[2;35m2018-04-11 14:24:13,828 - WARN  [Thread-22:JuiceThreadPool$JuiceWorkThread@108] - RPC method start time :5, action:com.klw.fastfun.pay.common.action.CommonAction, method:getProvinceByPhone
+[m[7;31m2018-04-11 14:24:13,877 - ERROR [Thread-103:ConnectionResource@65] - select mobile from t_black_mobile where mobile=? 
+[mjava.sql.SQLException: Column 'username' not found.
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:910)
+	at com.mysql.jdbc.ResultSet.findColumn(ResultSet.java:987)
+	at com.mysql.jdbc.ResultSet.getString(ResultSet.java:5584)
+	at com.klw.fastfun.pay.data.dao.CommonDAO$10.handler(CommonDAO.java:124)
+	at com.klw.fastfun.pay.data.dao.CommonDAO$10.handler(CommonDAO.java:1)
+	at com.juice.orange.game.database.ConnectionResource.queryForObject(ConnectionResource.java:62)
+	at com.klw.fastfun.pay.data.dao.CommonDAO.queryBlackMobile(CommonDAO.java:157)
+	at com.klw.fastfun.pay.data.ao.CommonAO.queryBlackMobile(CommonAO.java:71)
+	at com.klw.fastfun.pay.common.action.impl.CommonActionImpl.queryBlackMobile(CommonActionImpl.java:1496)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at com.juice.orange.game.rmi.control.RPCServerControl.nextHandler(RPCServerControl.java:57)
+	at com.juice.orange.game.util.threadpool.JuiceThreadPool$JuiceWorkThread.run(JuiceThreadPool.java:70)
+[2;35m2018-04-11 14:24:13,877 - WARN  [Thread-103:JuiceThreadPool$JuiceWorkThread@108] - RPC method start time :47, action:com.klw.fastfun.pay.common.action.CommonAction, method:queryBlackMobile
+[m[2;35m2018-04-11 14:24:13,884 - WARN  [Thread-113:JuiceThreadPool$JuiceWorkThread@108] - RPC method start time :4, action:com.klw.fastfun.pay.common.action.CommonAction, method:getPayCodes
+[m[2;35m2018-04-11 14:24:14,027 - WARN  [Thread-44:JuiceThreadPool$JuiceWorkThread@108] - RPC method start time :47, action:com.klw.fastfun.pay.common.action.CommonAction, method:addOrderReqInfo
+[m[7;31m2018-04-11 14:24:39,711 - ERROR [JUICE-SERVER-Handler-4-2-thread:ConnectionException@22] - uncaughtException :
+[mcom.juice.orange.game.exception.JuiceException: 远程主机强迫关闭了一个现有的连接。 on [id: 0x2aa8d9da, /127.0.0.1:60905 => /127.0.0.1:9912]
+	at com.juice.orange.game.exception.JuiceException.fromException(JuiceException.java:38)
+	at com.juice.orange.game.exception.JuiceException.fromExceptionEvent(JuiceException.java:32)
+	at com.juice.orange.game.util.ConnectionHelper$2.run(ConnectionHelper.java:56)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: java.io.IOException: 远程主机强迫关闭了一个现有的连接。
+	at sun.nio.ch.SocketDispatcher.read0(Native Method)
+	at sun.nio.ch.SocketDispatcher.read(Unknown Source)
+	at sun.nio.ch.IOUtil.readIntoNativeBuffer(Unknown Source)
+	at sun.nio.ch.IOUtil.read(Unknown Source)
+	at sun.nio.ch.SocketChannelImpl.read(Unknown Source)
+	at org.jboss.netty.channel.socket.nio.NioWorker.read(NioWorker.java:64)
+	at org.jboss.netty.channel.socket.nio.AbstractNioWorker.process(AbstractNioWorker.java:107)
+	at org.jboss.netty.channel.socket.nio.AbstractNioSelector.run(AbstractNioSelector.java:312)
+	at org.jboss.netty.channel.socket.nio.AbstractNioWorker.run(AbstractNioWorker.java:88)
+	at org.jboss.netty.channel.socket.nio.NioWorker.run(NioWorker.java:178)
+	... 3 more
+[7;31m2018-04-11 14:24:39,718 - ERROR [JUICE-SERVER-Handler-4-3-thread:ConnectionException@22] - uncaughtException :
+[mcom.juice.orange.game.exception.JuiceException: 远程主机强迫关闭了一个现有的连接。 on [id: 0x99d7842e, /127.0.0.1:60904 => /127.0.0.1:9912]
+	at com.juice.orange.game.exception.JuiceException.fromException(JuiceException.java:38)
+	at com.juice.orange.game.exception.JuiceException.fromExceptionEvent(JuiceException.java:32)
+	at com.juice.orange.game.util.ConnectionHelper$2.run(ConnectionHelper.java:56)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: java.io.IOException: 远程主机强迫关闭了一个现有的连接。
+	at sun.nio.ch.SocketDispatcher.read0(Native Method)
+	at sun.nio.ch.SocketDispatcher.read(Unknown Source)
+	at sun.nio.ch.IOUtil.readIntoNativeBuffer(Unknown Source)
+	at sun.nio.ch.IOUtil.read(Unknown Source)
+	at sun.nio.ch.SocketChannelImpl.read(Unknown Source)
+	at org.jboss.netty.channel.socket.nio.NioWorker.read(NioWorker.java:64)
+	at org.jboss.netty.channel.socket.nio.AbstractNioWorker.process(AbstractNioWorker.java:107)
+	at org.jboss.netty.channel.socket.nio.AbstractNioSelector.run(AbstractNioSelector.java:312)
+	at org.jboss.netty.channel.socket.nio.AbstractNioWorker.run(AbstractNioWorker.java:88)
+	at org.jboss.netty.channel.socket.nio.NioWorker.run(NioWorker.java:178)
+	... 3 more
+[7;31m2018-04-11 14:24:39,718 - ERROR [JUICE-SERVER-Handler-4-1-thread:ConnectionException@22] - uncaughtException :
+[mcom.juice.orange.game.exception.JuiceException: 远程主机强迫关闭了一个现有的连接。 on [id: 0xfea54150, /127.0.0.1:60903 :> /127.0.0.1:9912]
+	at com.juice.orange.game.exception.JuiceException.fromException(JuiceException.java:38)
+	at com.juice.orange.game.exception.JuiceException.fromExceptionEvent(JuiceException.java:32)
+	at com.juice.orange.game.util.ConnectionHelper$2.run(ConnectionHelper.java:56)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: java.io.IOException: 远程主机强迫关闭了一个现有的连接。
+	at sun.nio.ch.SocketDispatcher.read0(Native Method)
+	at sun.nio.ch.SocketDispatcher.read(Unknown Source)
+	at sun.nio.ch.IOUtil.readIntoNativeBuffer(Unknown Source)
+	at sun.nio.ch.IOUtil.read(Unknown Source)
+	at sun.nio.ch.SocketChannelImpl.read(Unknown Source)
+	at org.jboss.netty.channel.socket.nio.NioWorker.read(NioWorker.java:64)
+	at org.jboss.netty.channel.socket.nio.AbstractNioWorker.process(AbstractNioWorker.java:107)
+	at org.jboss.netty.channel.socket.nio.AbstractNioSelector.run(AbstractNioSelector.java:312)
+	at org.jboss.netty.channel.socket.nio.AbstractNioWorker.run(AbstractNioWorker.java:88)
+	at org.jboss.netty.channel.socket.nio.NioWorker.run(NioWorker.java:178)
+	... 3 more
+[2;32m2018-04-11 14:24:49,377 - INFO  [main:ServerBootstrap@99] - connect to database:jdbc:mysql://39.104.100.58:3306/fastfun?useUnicode=true&characterEncoding=UTF-8
+[m[2;32m2018-04-11 14:24:50,972 - INFO  [main:ServerBootstrap@125] - Configuration Server bootstrap params.......
+[m[2;32m2018-04-11 14:24:50,972 - INFO  [main:ServerBootstrap@126] - Server protocol:	socket
+[m[2;32m2018-04-11 14:24:50,973 - INFO  [main:ServerBootstrap@127] - Server port:	9912
+[m[2;35m2018-04-11 14:24:51,236 - WARN  [main:XMemcachedClient@727] - XMemcachedClient use Binary protocol
+[m[2;32m2018-04-11 14:24:51,255 - INFO  [main:SelectorManager@37] - Creating 16 reactors...
+[m[2;35m2018-04-11 14:24:51,265 - WARN  [main:AbstractController@372] - The Controller started at localhost/127.0.0.1:0 ...
+[m[2;35m2018-04-11 14:24:51,273 - WARN  [Xmemcached-Reactor-0:MemcachedConnector@251] - Add a session: 127.0.0.1:11211
+[m[2;32m2018-04-11 14:24:51,274 - INFO  [main:Application@25] - 初始化AO...
+[m[2;32m2018-04-11 14:24:51,292 - INFO  [main:ServerBootstrap@150] - Application PID:	13220
+[m[2;35m2018-04-11 14:24:55,380 - WARN  [Thread-142:JuiceThreadPool$JuiceWorkThread@108] - RPC method start time :26, action:com.klw.fastfun.pay.common.action.CommonAction, method:getProvinceByPhone
+[m[7;31m2018-04-11 14:24:55,449 - ERROR [Thread-132:ConnectionResource@65] - select mobile from t_black_mobile where mobile=? 
+[mjava.sql.SQLException: Column 'username' not found.
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:910)
+	at com.mysql.jdbc.ResultSet.findColumn(ResultSet.java:987)
+	at com.mysql.jdbc.ResultSet.getString(ResultSet.java:5584)
+	at com.klw.fastfun.pay.data.dao.CommonDAO$10.handler(CommonDAO.java:124)
+	at com.klw.fastfun.pay.data.dao.CommonDAO$10.handler(CommonDAO.java:1)
+	at com.juice.orange.game.database.ConnectionResource.queryForObject(ConnectionResource.java:62)
+	at com.klw.fastfun.pay.data.dao.CommonDAO.queryBlackMobile(CommonDAO.java:157)
+	at com.klw.fastfun.pay.data.ao.CommonAO.queryBlackMobile(CommonAO.java:71)
+	at com.klw.fastfun.pay.common.action.impl.CommonActionImpl.queryBlackMobile(CommonActionImpl.java:1496)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at com.juice.orange.game.rmi.control.RPCServerControl.nextHandler(RPCServerControl.java:57)
+	at com.juice.orange.game.util.threadpool.JuiceThreadPool$JuiceWorkThread.run(JuiceThreadPool.java:70)
+[2;35m2018-04-11 14:24:55,458 - WARN  [Thread-132:JuiceThreadPool$JuiceWorkThread@108] - RPC method start time :73, action:com.klw.fastfun.pay.common.action.CommonAction, method:queryBlackMobile
+[m[7;31m2018-04-11 14:25:58,055 - ERROR [JUICE-SERVER-Handler-4-1-thread:ConnectionException@22] - uncaughtException :
+[mcom.juice.orange.game.exception.JuiceException: 远程主机强迫关闭了一个现有的连接。 on [id: 0x9d187184, /127.0.0.1:61178 => /127.0.0.1:9912]
+	at com.juice.orange.game.exception.JuiceException.fromException(JuiceException.java:38)
+	at com.juice.orange.game.exception.JuiceException.fromExceptionEvent(JuiceException.java:32)
+	at com.juice.orange.game.util.ConnectionHelper$2.run(ConnectionHelper.java:56)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: java.io.IOException: 远程主机强迫关闭了一个现有的连接。
+	at sun.nio.ch.SocketDispatcher.read0(Native Method)
+	at sun.nio.ch.SocketDispatcher.read(Unknown Source)
+	at sun.nio.ch.IOUtil.readIntoNativeBuffer(Unknown Source)
+	at sun.nio.ch.IOUtil.read(Unknown Source)
+	at sun.nio.ch.SocketChannelImpl.read(Unknown Source)
+	at org.jboss.netty.channel.socket.nio.NioWorker.read(NioWorker.java:64)
+	at org.jboss.netty.channel.socket.nio.AbstractNioWorker.process(AbstractNioWorker.java:107)
+	at org.jboss.netty.channel.socket.nio.AbstractNioSelector.run(AbstractNioSelector.java:312)
+	at org.jboss.netty.channel.socket.nio.AbstractNioWorker.run(AbstractNioWorker.java:88)
+	at org.jboss.netty.channel.socket.nio.NioWorker.run(NioWorker.java:178)
+	... 3 more
+[7;31m2018-04-11 14:25:58,078 - ERROR [JUICE-SERVER-Handler-4-2-thread:ConnectionException@22] - uncaughtException :
+[mcom.juice.orange.game.exception.JuiceException: 远程主机强迫关闭了一个现有的连接。 on [id: 0x7764d2de, /127.0.0.1:61177 => /127.0.0.1:9912]
+	at com.juice.orange.game.exception.JuiceException.fromException(JuiceException.java:38)
+	at com.juice.orange.game.exception.JuiceException.fromExceptionEvent(JuiceException.java:32)
+	at com.juice.orange.game.util.ConnectionHelper$2.run(ConnectionHelper.java:56)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: java.io.IOException: 远程主机强迫关闭了一个现有的连接。
+	at sun.nio.ch.SocketDispatcher.read0(Native Method)
+	at sun.nio.ch.SocketDispatcher.read(Unknown Source)
+	at sun.nio.ch.IOUtil.readIntoNativeBuffer(Unknown Source)
+	at sun.nio.ch.IOUtil.read(Unknown Source)
+	at sun.nio.ch.SocketChannelImpl.read(Unknown Source)
+	at org.jboss.netty.channel.socket.nio.NioWorker.read(NioWorker.java:64)
+	at org.jboss.netty.channel.socket.nio.AbstractNioWorker.process(AbstractNioWorker.java:107)
+	at org.jboss.netty.channel.socket.nio.AbstractNioSelector.run(AbstractNioSelector.java:312)
+	at org.jboss.netty.channel.socket.nio.AbstractNioWorker.run(AbstractNioWorker.java:88)
+	at org.jboss.netty.channel.socket.nio.NioWorker.run(NioWorker.java:178)
+	... 3 more
+[7;31m2018-04-11 14:25:58,078 - ERROR [JUICE-SERVER-Handler-4-1-thread:ConnectionException@22] - uncaughtException :
+[mcom.juice.orange.game.exception.JuiceException: 远程主机强迫关闭了一个现有的连接。 on [id: 0xe89b47fb, /127.0.0.1:61179 => /127.0.0.1:9912]
+	at com.juice.orange.game.exception.JuiceException.fromException(JuiceException.java:38)
+	at com.juice.orange.game.exception.JuiceException.fromExceptionEvent(JuiceException.java:32)
+	at com.juice.orange.game.util.ConnectionHelper$2.run(ConnectionHelper.java:56)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: java.io.IOException: 远程主机强迫关闭了一个现有的连接。
+	at sun.nio.ch.SocketDispatcher.read0(Native Method)
+	at sun.nio.ch.SocketDispatcher.read(Unknown Source)
+	at sun.nio.ch.IOUtil.readIntoNativeBuffer(Unknown Source)
+	at sun.nio.ch.IOUtil.read(Unknown Source)
+	at sun.nio.ch.SocketChannelImpl.read(Unknown Source)
+	at org.jboss.netty.channel.socket.nio.NioWorker.read(NioWorker.java:64)
+	at org.jboss.netty.channel.socket.nio.AbstractNioWorker.process(AbstractNioWorker.java:107)
+	at org.jboss.netty.channel.socket.nio.AbstractNioSelector.run(AbstractNioSelector.java:312)
+	at org.jboss.netty.channel.socket.nio.AbstractNioWorker.run(AbstractNioWorker.java:88)
+	at org.jboss.netty.channel.socket.nio.NioWorker.run(NioWorker.java:178)
+	... 3 more
+[2;32m2018-04-11 14:26:34,074 - INFO  [main:ServerBootstrap@99] - connect to database:jdbc:mysql://39.104.100.58:3306/fastfun?useUnicode=true&characterEncoding=UTF-8
+[m[2;32m2018-04-11 14:26:35,651 - INFO  [main:ServerBootstrap@125] - Configuration Server bootstrap params.......
+[m[2;32m2018-04-11 14:26:35,652 - INFO  [main:ServerBootstrap@126] - Server protocol:	socket
+[m[2;32m2018-04-11 14:26:35,652 - INFO  [main:ServerBootstrap@127] - Server port:	9912
+[m[2;35m2018-04-11 14:26:35,881 - WARN  [main:XMemcachedClient@727] - XMemcachedClient use Binary protocol
+[m[2;32m2018-04-11 14:26:35,899 - INFO  [main:SelectorManager@37] - Creating 16 reactors...
+[m[2;35m2018-04-11 14:26:35,909 - WARN  [main:AbstractController@372] - The Controller started at localhost/127.0.0.1:0 ...
+[m[2;35m2018-04-11 14:26:35,915 - WARN  [Xmemcached-Reactor-0:MemcachedConnector@251] - Add a session: 127.0.0.1:11211
+[m[2;32m2018-04-11 14:26:35,916 - INFO  [main:Application@25] - 初始化AO...
+[m[2;32m2018-04-11 14:26:35,928 - INFO  [main:ServerBootstrap@150] - Application PID:	10248
+[m[2;35m2018-04-11 14:26:36,134 - WARN  [Thread-2:JuiceThreadPool$JuiceWorkThread@108] - RPC method start time :89, action:com.klw.fastfun.pay.common.action.CommonAction, method:getProvinceByPhone
+[m[2;35m2018-04-11 14:26:36,193 - WARN  [Thread-12:JuiceThreadPool$JuiceWorkThread@108] - RPC method start time :49, action:com.klw.fastfun.pay.common.action.CommonAction, method:queryBlackMobile
+[m[2;35m2018-04-11 14:26:41,190 - WARN  [Thread-132:JuiceThreadPool$JuiceWorkThread@108] - RPC method start time :5, action:com.klw.fastfun.pay.common.action.CommonAction, method:getProvinceByPhone
+[m[2;35m2018-04-11 14:26:41,196 - WARN  [Thread-133:JuiceThreadPool$JuiceWorkThread@108] - RPC method start time :2, action:com.klw.fastfun.pay.common.action.CommonAction, method:queryBlackMobile
+[m[2;35m2018-04-11 14:26:44,967 - WARN  [Thread-142:JuiceThreadPool$JuiceWorkThread@108] - RPC method start time :2, action:com.klw.fastfun.pay.common.action.CommonAction, method:getProvinceByPhone
+[m[2;35m2018-04-11 14:26:45,023 - WARN  [Thread-143:JuiceThreadPool$JuiceWorkThread@108] - RPC method start time :49, action:com.klw.fastfun.pay.common.action.CommonAction, method:queryBlackMobile
+[m[2;35m2018-04-11 14:26:45,168 - WARN  [Thread-13:JuiceThreadPool$JuiceWorkThread@108] - RPC method start time :122, action:com.klw.fastfun.pay.common.action.CommonAction, method:getPayCodes
+[m[2;35m2018-04-11 14:26:45,404 - WARN  [Thread-82:JuiceThreadPool$JuiceWorkThread@108] - RPC method start time :47, action:com.klw.fastfun.pay.common.action.CommonAction, method:addOrderReqInfo
+[m

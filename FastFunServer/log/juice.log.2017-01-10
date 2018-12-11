@@ -1,0 +1,70 @@
+[2;32m2017-01-10 17:28:52,677 - INFO  [main:ServerBootstrap@67] - Configuration Server bootstrap params.......
+[m[2;32m2017-01-10 17:28:52,682 - INFO  [main:ServerBootstrap@68] - Server protocol:	http
+[m[2;32m2017-01-10 17:28:52,682 - INFO  [main:ServerBootstrap@69] - Server port:	9911
+[m[2;32m2017-01-10 17:28:52,943 - INFO  [main:ServerBootstrap@78] - Configuration Remote Server.......
+[m[2;32m2017-01-10 17:28:52,946 - INFO  [main:ServerBootstrap@80] - Add Remote Server - Name:FastFunSystem;Address:localhost;Port:9912
+[m[2;32m2017-01-10 17:28:52,949 - INFO  [main:Application@25] - Init servers......
+[m[2;32m2017-01-10 17:28:53,015 - INFO  [main:ServerBootstrap@92] - Application PID:	6332
+[m[2;32m2017-01-10 17:29:32,586 - INFO  [Thread-11:CodeHelperServer@897] - getDXBYcode请求header信息：[Host=127.0.0.1:9911, Connection=keep-alive, Accept=text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8, User-Agent=Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.71 Safari/537.36, Accept-Encoding=gzip, deflate, sdch, Accept-Language=zh-CN,zh;q=0.8, Cookie=Hm_lvt_2fb6850c2dc8b36d451b5a97886724b7=1459320534; Hm_lvt_babfd903cf7f9b8cdbdc317eba1cb1af=1459320161]
+[m[2;32m2017-01-10 17:29:32,589 - INFO  [Thread-11:CodeHelperServer@1163] - 用户访问IP=192.168.0.1
+[m[2;32m2017-01-10 17:29:32,603 - INFO  [Thread-11:CodeHelperServer@1167] - 根据IP查询省份=局域
+[m[2;32m2017-01-10 17:29:33,086 - INFO  [Thread-11:HttpTool@132] - 指令url=http://121.40.192.229:8782/ys/dx/ysb1.0/GetCode?channelId=57&payCode=90216617&phone=0&imsi=460031267903712&imei=a000004f31afa0&extra=01ecv85437517836&ip=192.168.0.1&mac=5643DDD7BC5F2E32F8CCDB6551A02657
+[m[2;32m2017-01-10 17:29:33,923 - INFO  [Thread-11:HttpTool@170] - 指令结果={"recordId":"5720170110172933817473","resultCode":"00","resultDesc":"获取验证码成功"}
+[m[2;35m2017-01-10 17:29:33,978 - WARN  [Thread-11:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :1397, uri:/code/getDXBYcode?cpid=test02&imsi=460031267903712&imei=a000004f31afa0&cpparam=6329&ip=192.168.0.1
+[m[7;31m2017-01-10 17:29:34,101 - ERROR [Thread-21:DefaultJuiceHandler@90] - java.lang.ArrayIndexOutOfBoundsException: 2
+[m[7;31m2017-01-10 17:29:34,108 - ERROR [Thread-21:DefaultJuiceHandler@91] - com.juice.orange.game.exception.JuiceException: handler request error,path:/favicon.ico;param:null
+[m[2;35m2017-01-10 17:29:34,108 - WARN  [Thread-21:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :9, uri:/favicon.ico
+[m[7;31m2017-01-10 17:36:22,779 - ERROR [Thread-2:DefaultJuiceHandler@90] - java.lang.ArrayIndexOutOfBoundsException: 2
+[m[7;31m2017-01-10 17:36:22,783 - ERROR [Thread-2:DefaultJuiceHandler@91] - com.juice.orange.game.exception.JuiceException: handler request error,path:/favicon.ico;param:null
+[m[2;35m2017-01-10 17:36:22,783 - WARN  [Thread-2:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :5, uri:/favicon.ico
+[m[2;32m2017-01-10 17:36:59,829 - INFO  [Thread-12:CodeHelperServer@928] - getDXBYPay请求header信息：[Host=127.0.0.1:9911, Connection=keep-alive, Accept=text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8, User-Agent=Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.71 Safari/537.36, Accept-Encoding=gzip, deflate, sdch, Accept-Language=zh-CN,zh;q=0.8, Cookie=Hm_lvt_2fb6850c2dc8b36d451b5a97886724b7=1459320534; Hm_lvt_babfd903cf7f9b8cdbdc317eba1cb1af=1459320161]
+[m[2;32m2017-01-10 17:36:59,830 - INFO  [Thread-12:CodeHelperServer@1163] - 用户访问IP=127.0.0.1
+[m[2;32m2017-01-10 17:36:59,840 - INFO  [Thread-12:CodeHelperServer@1167] - 根据IP查询省份=IA
+[m[7;31m2017-01-10 17:37:09,841 - ERROR [Thread-12:JuiceInvocationHandler@63] - Latch request time out..
+[m[7;31m2017-01-10 17:37:09,843 - ERROR [Thread-12:DefaultJuiceHandler@84] - 
+[mjava.lang.NullPointerException
+	at com.juice.orange.game.rmi.JuiceInvocationHandler.invoke(JuiceInvocationHandler.java:69)
+	at $Proxy0.getPointPayCodes(Unknown Source)
+	at com.klw.fastfun.pay.view.app.service.CodeHelperServer.getDXBYPay(CodeHelperServer.java:934)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:601)
+	at com.juice.orange.game.handler.DefaultJuiceHandler.handleHttpRequest(DefaultJuiceHandler.java:81)
+	at com.juice.orange.game.handler.DefaultJuiceHandler.handlerRequest(DefaultJuiceHandler.java:35)
+	at com.juice.orange.game.handler.JuiceHttpControl.nextHandler(JuiceHttpControl.java:84)
+	at com.juice.orange.game.handler.JuiceHttpControl.nextHandler(JuiceHttpControl.java:67)
+	at com.juice.orange.game.util.threadpool.JuiceThreadPool$JuiceWorkThread.run(JuiceThreadPool.java:70)
+[2;35m2017-01-10 17:37:09,851 - WARN  [Thread-12:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :10023, uri:/code/getDXBYPay?cpid=test02&recordId=5720170110172933817473&vcode=6329&fee=1000
+[m[2;32m2017-01-10 17:38:26,845 - INFO  [main:ServerBootstrap@67] - Configuration Server bootstrap params.......
+[m[2;32m2017-01-10 17:38:26,848 - INFO  [main:ServerBootstrap@68] - Server protocol:	http
+[m[2;32m2017-01-10 17:38:26,848 - INFO  [main:ServerBootstrap@69] - Server port:	9911
+[m[2;32m2017-01-10 17:38:27,171 - INFO  [main:ServerBootstrap@78] - Configuration Remote Server.......
+[m[2;32m2017-01-10 17:38:27,171 - INFO  [main:ServerBootstrap@80] - Add Remote Server - Name:FastFunSystem;Address:localhost;Port:9912
+[m[2;32m2017-01-10 17:38:27,178 - INFO  [main:Application@25] - Init servers......
+[m[2;32m2017-01-10 17:38:27,228 - INFO  [main:ServerBootstrap@92] - Application PID:	4804
+[m[2;32m2017-01-10 17:38:29,668 - INFO  [Thread-29:CodeHelperServer@928] - getDXBYPay请求header信息：[Host=127.0.0.1:9911, Connection=keep-alive, Cache-Control=max-age=0, Accept=text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8, User-Agent=Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.71 Safari/537.36, Accept-Encoding=gzip, deflate, sdch, Accept-Language=zh-CN,zh;q=0.8, Cookie=Hm_lvt_2fb6850c2dc8b36d451b5a97886724b7=1459320534; Hm_lvt_babfd903cf7f9b8cdbdc317eba1cb1af=1459320161]
+[m[2;32m2017-01-10 17:38:29,669 - INFO  [Thread-29:CodeHelperServer@1163] - 用户访问IP=127.0.0.1
+[m[2;32m2017-01-10 17:38:29,682 - INFO  [Thread-29:CodeHelperServer@1167] - 根据IP查询省份=IA
+[m[2;32m2017-01-10 17:38:30,096 - INFO  [Thread-29:HttpTool@132] - 指令url=http://121.40.192.229:8782/ys/dx/ysb1.0/GetCode?channelId=57&recordId=5720170110172933817473&vcode=6329&mac=43E949E8816455A41BEC3057ECF76DC7
+[m[2;32m2017-01-10 17:38:30,170 - INFO  [Thread-29:HttpTool@170] - 指令结果={"resultCode":"01","resultDesc":"payCode为空"}
+[m[2;35m2017-01-10 17:38:30,194 - WARN  [Thread-29:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :528, uri:/code/getDXBYPay?cpid=test02&recordId=5720170110172933817473&vcode=6329&fee=1000
+[m[7;31m2017-01-10 17:38:30,229 - ERROR [Thread-27:DefaultJuiceHandler@90] - java.lang.ArrayIndexOutOfBoundsException: 2
+[m[7;31m2017-01-10 17:38:30,230 - ERROR [Thread-27:DefaultJuiceHandler@91] - com.juice.orange.game.exception.JuiceException: handler request error,path:/favicon.ico;param:null
+[m[2;35m2017-01-10 17:38:30,230 - WARN  [Thread-27:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :1, uri:/favicon.ico
+[m[7;31m2017-01-10 17:45:56,957 - ERROR [Thread-20:DefaultJuiceHandler@90] - java.lang.ArrayIndexOutOfBoundsException: 2
+[m[7;31m2017-01-10 17:45:56,958 - ERROR [Thread-20:DefaultJuiceHandler@91] - com.juice.orange.game.exception.JuiceException: handler request error,path:/favicon.ico;param:null
+[m[2;35m2017-01-10 17:45:56,958 - WARN  [Thread-20:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :1, uri:/favicon.ico
+[m[2;32m2017-01-10 17:54:01,692 - INFO  [Thread-31:CodeHelperServer@928] - getDXBYPay请求header信息：[Host=127.0.0.1:9911, Connection=keep-alive, Cache-Control=max-age=0, Accept=text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8, User-Agent=Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.71 Safari/537.36, Accept-Encoding=gzip, deflate, sdch, Accept-Language=zh-CN,zh;q=0.8, Cookie=Hm_lvt_2fb6850c2dc8b36d451b5a97886724b7=1459320534; Hm_lvt_babfd903cf7f9b8cdbdc317eba1cb1af=1459320161]
+[m[2;32m2017-01-10 17:54:01,693 - INFO  [Thread-31:CodeHelperServer@1163] - 用户访问IP=127.0.0.1
+[m[2;32m2017-01-10 17:54:01,693 - INFO  [Thread-31:CodeHelperServer@1167] - 根据IP查询省份=IA
+[m[2;32m2017-01-10 17:54:01,793 - INFO  [Thread-31:HttpTool@132] - 指令url=http://121.40.192.229:8782/ys/dx/ysb1.0/GetCode?channelId=57&recordId=5720170110172933817473&vcode=6329&mac=43E949E8816455A41BEC3057ECF76DC7
+[m[2;32m2017-01-10 17:54:01,861 - INFO  [Thread-31:HttpTool@170] - 指令结果={"resultCode":"01","resultDesc":"payCode为空"}
+[m[2;35m2017-01-10 17:54:01,862 - WARN  [Thread-31:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :170, uri:/code/getDXBYPay?cpid=test02&recordId=5720170110172933817473&vcode=6329&fee=1000
+[m[7;31m2017-01-10 17:54:01,915 - ERROR [Thread-25:DefaultJuiceHandler@90] - java.lang.ArrayIndexOutOfBoundsException: 2
+[m[7;31m2017-01-10 17:54:01,915 - ERROR [Thread-25:DefaultJuiceHandler@91] - com.juice.orange.game.exception.JuiceException: handler request error,path:/favicon.ico;param:null
+[m[2;35m2017-01-10 17:54:01,916 - WARN  [Thread-25:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :2, uri:/favicon.ico
+[m[7;31m2017-01-10 18:00:56,987 - ERROR [Thread-23:DefaultJuiceHandler@90] - java.lang.ArrayIndexOutOfBoundsException: 2
+[m[7;31m2017-01-10 18:00:56,989 - ERROR [Thread-23:DefaultJuiceHandler@91] - com.juice.orange.game.exception.JuiceException: handler request error,path:/favicon.ico;param:null
+[m[2;35m2017-01-10 18:00:56,989 - WARN  [Thread-23:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :2, uri:/favicon.ico
+[m

@@ -1,0 +1,72 @@
+[2;32m2018-06-15 09:42:20,922 - INFO  [main:ServerBootstrap@95] - Configuration Server bootstrap params.......
+[m[2;32m2018-06-15 09:42:20,925 - INFO  [main:ServerBootstrap@96] - Server protocol:	http
+[m[2;32m2018-06-15 09:42:20,925 - INFO  [main:ServerBootstrap@97] - Server port:	9911
+[m[2;32m2018-06-15 09:42:21,149 - INFO  [main:ServerBootstrap@106] - Configuration Remote Server.......
+[m[2;32m2018-06-15 09:42:21,149 - INFO  [main:ServerBootstrap@108] - Add Remote Server - Name:FastFunSystem;Address:localhost;Port:9912
+[m[2;35m2018-06-15 09:42:21,202 - WARN  [main:XMemcachedClient@727] - XMemcachedClient use Binary protocol
+[m[2;32m2018-06-15 09:42:21,238 - INFO  [main:SelectorManager@37] - Creating 8 reactors...
+[m[2;35m2018-06-15 09:42:21,246 - WARN  [main:AbstractController@372] - The Controller started at localhost/127.0.0.1:0 ...
+[m[2;35m2018-06-15 09:42:21,254 - WARN  [Xmemcached-Reactor-0:MemcachedConnector@251] - Add a session: 127.0.0.1:11211
+[m[2;32m2018-06-15 09:42:21,255 - INFO  [main:Application@25] - Init servers......
+[m[2;32m2018-06-15 09:42:21,311 - INFO  [main:ServerBootstrap@120] - Application PID:	4308
+[m[7;31m2018-06-15 09:43:01,718 - ERROR [Thread-71:DefaultJuiceHandler@90] - java.lang.NoSuchMethodException: com.klw.fastfun.pay.view.app.service.CodeHelperServer.registersPhone(com.juice.orange.game.handler.HttpRequest, com.juice.orange.game.handler.HttpResponse)
+[m[7;31m2018-06-15 09:43:01,718 - ERROR [Thread-71:DefaultJuiceHandler@91] - com.juice.orange.game.exception.JuiceException: handler request error,path:/code/registersPhone?cpid=test001&code=190595&cpparam=12345&phone=13661234567;param:null
+[m[2;35m2018-06-15 09:43:01,719 - WARN  [Thread-71:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :2, uri:/code/registersPhone?cpid=test001&code=190595&cpparam=12345&phone=13661234567
+[m[2;32m2018-06-15 09:43:11,009 - INFO  [Thread-11:CodeHelperServer@1124] - registerPhone请求header信息：[Host=192.168.1.53:9911, Connection=keep-alive, Accept=*/*, User-Agent=Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.139 Safari/537.36, Accept-Encoding=gzip, deflate, Accept-Language=zh-CN,zh;q=0.9]
+[m[2;32m2018-06-15 09:43:11,012 - INFO  [Thread-11:CodeHelperServer@2629] - 用户访问IP=192.168.1.53
+[m[2;32m2018-06-15 09:43:11,028 - INFO  [Thread-11:CodeHelperServer@2659] - 根据IP查询省份=局域
+[m[2;35m2018-06-15 09:43:11,197 - WARN  [Thread-11:CodeHelperServer@1198] - registerPhone号码已经被提交过，phone13661234567
+[m[2;35m2018-06-15 09:43:11,207 - WARN  [Thread-11:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :198, uri:/code/registerPhone?cpid=test001&code=190595&cpparam=12345&phone=13661234567
+[m[2;32m2018-06-15 09:43:38,985 - INFO  [Thread-31:CodeHelperServer@1124] - registerPhone请求header信息：[Host=192.168.1.53:9911, Connection=keep-alive, Accept=*/*, User-Agent=Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.139 Safari/537.36, Accept-Encoding=gzip, deflate, Accept-Language=zh-CN,zh;q=0.9]
+[m[2;32m2018-06-15 09:43:38,985 - INFO  [Thread-31:CodeHelperServer@2629] - 用户访问IP=192.168.1.53
+[m[2;32m2018-06-15 09:43:38,985 - INFO  [Thread-31:CodeHelperServer@2659] - 根据IP查询省份=局域
+[m[2;32m2018-06-15 09:43:39,032 - INFO  [Thread-31:HttpTool@774] - 指令url:http://139.199.29.89:52703/api/pre-send/upload
+[m[2;32m2018-06-15 09:43:39,033 - INFO  [Thread-31:HttpTool@775] - 同步内容:username=yuser100&mobile_sms=13661234567,190595
+[m[2;32m2018-06-15 09:43:39,157 - INFO  [Thread-31:CodeReqHelper@565] - 12306注册sd36请求结果：[{"result":true, "error":""}]
+[m[2;32m2018-06-15 09:43:39,245 - INFO  [Thread-31:CodeHelperServer@1206] - 合作方:test001
+通道方:sd36
+订单号:0613661234567190595
+指令内容:ok
+[m[2;35m2018-06-15 09:43:39,252 - WARN  [Thread-31:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :268, uri:/code/registerPhone?cpid=test001&code=190595&cpparam=12345&phone=13661234567
+[m[2;32m2018-06-15 09:45:45,110 - INFO  [Thread-32:FeeBack@6282] - feeSZLTzckssd36请求header信息：[Host=192.168.1.53:9911, Connection=keep-alive, Content-Length=44, Accept=*/*, Origin=chrome-extension://geobniafmelcledgickglbajofpkllpl, User-Agent=Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.139 Safari/537.36, Content-Type=multipart/form-data; boundary=----WebKitFormBoundarylOJHTmeovIDMcwAD, Accept-Encoding=gzip, deflate, Accept-Language=zh-CN,zh;q=0.9]
+[m[2;35m2018-06-15 09:45:45,115 - WARN  [Thread-32:FeeBack@5099] - 找不到对应的订单号=0613661234567111111
+[m[2;35m2018-06-15 09:45:45,115 - WARN  [Thread-32:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :5, uri:/fee/feeSZLTzckssd36?phone=13661234567&code=111111&status=1
+[m[2;32m2018-06-15 09:46:56,730 - INFO  [Thread-12:FeeBack@6282] - feeSZLTzckssd36请求header信息：[Host=192.168.1.53:9911, Connection=keep-alive, Content-Length=44, Accept=*/*, Origin=chrome-extension://geobniafmelcledgickglbajofpkllpl, User-Agent=Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.139 Safari/537.36, Content-Type=multipart/form-data; boundary=----WebKitFormBoundaryzzdghLL4Gs1vEYH1, Accept-Encoding=gzip, deflate, Accept-Language=zh-CN,zh;q=0.9]
+[m[2;32m2018-06-15 09:46:56,826 - INFO  [Thread-12:HttpTool@130] - sendKLWPost指令url:http://118.190.90.1/mmcode/test
+[m[2;32m2018-06-15 09:46:56,826 - INFO  [Thread-12:HttpTool@131] - sendKLWPost指令param:{"cpParam":"12345","cpid":"test001","fee":0,"ffId":"0613661234567190595","ip":"192.168.1.53","phone":"13661234567","status":"1"}
+[m[2;32m2018-06-15 09:46:56,936 - INFO  [Thread-12:HttpTool@169] - 指令结果=ok
+[m[2;32m2018-06-15 09:46:56,936 - INFO  [Thread-12:FeeBack@5169] - 给CP的同步结果：ok
+[m[2;35m2018-06-15 09:46:56,941 - WARN  [Thread-12:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :211, uri:/fee/feeSZLTzckssd36?phone=13661234567&code=190595&status=1
+[m[2;32m2018-06-15 09:47:50,162 - INFO  [Thread-2:FeeBack@6282] - feeSZLTzckssd36请求header信息：[Host=192.168.1.53:9911, Connection=keep-alive, Content-Length=44, Accept=*/*, Origin=chrome-extension://geobniafmelcledgickglbajofpkllpl, User-Agent=Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.139 Safari/537.36, Content-Type=multipart/form-data; boundary=----WebKitFormBoundaryN90FGbGHQPEdAYX7, Accept-Encoding=gzip, deflate, Accept-Language=zh-CN,zh;q=0.9]
+[m[2;32m2018-06-15 09:47:50,174 - INFO  [Thread-2:HttpTool@130] - sendKLWPost指令url:http://118.190.90.1/mmcode/test
+[m[2;32m2018-06-15 09:47:50,175 - INFO  [Thread-2:HttpTool@131] - sendKLWPost指令param:{"cpParam":"12345","cpid":"test001","fee":0,"ffId":"06sdc76732743292","ip":"192.168.1.53","phone":"13661234567","status":"2"}
+[m[2;32m2018-06-15 09:47:50,273 - INFO  [Thread-2:HttpTool@169] - 指令结果=ok
+[m[2;32m2018-06-15 09:47:50,274 - INFO  [Thread-2:FeeBack@5169] - 给CP的同步结果：ok
+[m[2;35m2018-06-15 09:47:50,279 - WARN  [Thread-2:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :117, uri:/fee/feeSZLTzckssd36?phone=13661234567&code=190595&status=2
+[m[2;32m2018-06-15 09:49:13,715 - INFO  [main:ServerBootstrap@95] - Configuration Server bootstrap params.......
+[m[2;32m2018-06-15 09:49:13,717 - INFO  [main:ServerBootstrap@96] - Server protocol:	http
+[m[2;32m2018-06-15 09:49:13,717 - INFO  [main:ServerBootstrap@97] - Server port:	9911
+[m[2;32m2018-06-15 09:49:13,911 - INFO  [main:ServerBootstrap@106] - Configuration Remote Server.......
+[m[2;32m2018-06-15 09:49:13,911 - INFO  [main:ServerBootstrap@108] - Add Remote Server - Name:FastFunSystem;Address:localhost;Port:9912
+[m[2;35m2018-06-15 09:49:13,958 - WARN  [main:XMemcachedClient@727] - XMemcachedClient use Binary protocol
+[m[2;32m2018-06-15 09:49:13,989 - INFO  [main:SelectorManager@37] - Creating 8 reactors...
+[m[2;35m2018-06-15 09:49:13,995 - WARN  [main:AbstractController@372] - The Controller started at localhost/127.0.0.1:0 ...
+[m[2;35m2018-06-15 09:49:14,011 - WARN  [Xmemcached-Reactor-0:MemcachedConnector@251] - Add a session: 127.0.0.1:11211
+[m[2;32m2018-06-15 09:49:14,012 - INFO  [main:Application@25] - Init servers......
+[m[2;32m2018-06-15 09:49:14,050 - INFO  [main:ServerBootstrap@120] - Application PID:	14252
+[m[2;32m2018-06-15 09:50:10,022 - INFO  [Thread-31:FeeBack@6282] - feeSZLTzckssd36请求header信息：[Host=192.168.1.53:9911, Connection=keep-alive, Content-Length=44, Accept=*/*, Origin=chrome-extension://geobniafmelcledgickglbajofpkllpl, User-Agent=Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.139 Safari/537.36, Content-Type=multipart/form-data; boundary=----WebKitFormBoundaryzraaKNVFt8HCUija, Accept-Encoding=gzip, deflate, Accept-Language=zh-CN,zh;q=0.9]
+[m[2;35m2018-06-15 09:50:10,160 - WARN  [Thread-31:FeeBack@5099] - 找不到对应的订单号=0613661234567190595
+[m[2;35m2018-06-15 09:50:10,161 - WARN  [Thread-31:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :142, uri:/fee/feeSZLTzckssd36?phone=13661234567&code=190595&status=3
+[m[2;32m2018-06-15 09:50:41,834 - INFO  [Thread-11:FeeBack@6282] - feeSZLTzckssd36请求header信息：[Host=192.168.1.53:9911, Connection=keep-alive, Content-Length=44, Accept=*/*, Origin=chrome-extension://geobniafmelcledgickglbajofpkllpl, User-Agent=Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.139 Safari/537.36, Content-Type=multipart/form-data; boundary=----WebKitFormBoundaryzaXzPylu9g4bfahv, Accept-Encoding=gzip, deflate, Accept-Language=zh-CN,zh;q=0.9]
+[m[2;32m2018-06-15 09:50:41,985 - INFO  [Thread-11:HttpTool@130] - sendKLWPost指令url:http://118.190.90.1/mmcode/test
+[m[2;32m2018-06-15 09:50:41,987 - INFO  [Thread-11:HttpTool@131] - sendKLWPost指令param:{"cpParam":"12345","cpid":"test001","fee":0,"ffId":"06sdg75115747447","ip":"192.168.1.53","phone":"13661234567","status":"3"}
+[m[2;32m2018-06-15 09:50:42,118 - INFO  [Thread-11:HttpTool@169] - 指令结果=ok
+[m[2;32m2018-06-15 09:50:42,118 - INFO  [Thread-11:FeeBack@5169] - 给CP的同步结果：ok
+[m[2;35m2018-06-15 09:50:42,130 - WARN  [Thread-11:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :296, uri:/fee/feeSZLTzckssd36?phone=13661234567&code=190595&status=3
+[m[2;32m2018-06-15 09:51:27,517 - INFO  [Thread-41:FeeBack@6282] - feeSZLTzckssd36请求header信息：[Host=192.168.1.53:9911, Connection=keep-alive, Content-Length=44, Accept=*/*, Origin=chrome-extension://geobniafmelcledgickglbajofpkllpl, User-Agent=Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.139 Safari/537.36, Content-Type=multipart/form-data; boundary=----WebKitFormBoundary3ROoZ3ESwHcXaAFy, Accept-Encoding=gzip, deflate, Accept-Language=zh-CN,zh;q=0.9]
+[m[2;32m2018-06-15 09:51:27,538 - INFO  [Thread-41:HttpTool@130] - sendKLWPost指令url:http://118.190.90.1/mmcode/test
+[m[2;32m2018-06-15 09:51:27,539 - INFO  [Thread-41:HttpTool@131] - sendKLWPost指令param:{"cpParam":"12345","cpid":"test001","fee":0,"ffId":"06sdb24609285950","ip":"192.168.1.53","phone":"13661234567","status":"4"}
+[m[2;32m2018-06-15 09:51:27,637 - INFO  [Thread-41:HttpTool@169] - 指令结果=ok
+[m[2;32m2018-06-15 09:51:27,637 - INFO  [Thread-41:FeeBack@5169] - 给CP的同步结果：ok
+[m[2;35m2018-06-15 09:51:27,642 - WARN  [Thread-41:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :126, uri:/fee/feeSZLTzckssd36?phone=13661234567&code=190595&status=4
+[m

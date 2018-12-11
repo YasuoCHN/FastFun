@@ -1,0 +1,82 @@
+[2;32m2017-09-20 01:26:50,038 - INFO  [main:ServerBootstrap@95] - Configuration Server bootstrap params.......
+[m[2;32m2017-09-20 01:26:50,041 - INFO  [main:ServerBootstrap@96] - Server protocol:	http
+[m[2;32m2017-09-20 01:26:50,041 - INFO  [main:ServerBootstrap@97] - Server port:	9911
+[m[2;32m2017-09-20 01:26:50,217 - INFO  [main:ServerBootstrap@106] - Configuration Remote Server.......
+[m[2;32m2017-09-20 01:26:50,217 - INFO  [main:ServerBootstrap@108] - Add Remote Server - Name:FastFunSystem;Address:localhost;Port:9912
+[m[2;35m2017-09-20 01:26:50,245 - WARN  [main:XMemcachedClient@727] - XMemcachedClient use Binary protocol
+[m[2;32m2017-09-20 01:26:50,271 - INFO  [main:SelectorManager@37] - Creating 16 reactors...
+[m[2;35m2017-09-20 01:26:50,280 - WARN  [main:AbstractController@372] - The Controller started at localhost/127.0.0.1:0 ...
+[m[2;35m2017-09-20 01:26:50,288 - WARN  [Xmemcached-Reactor-0:MemcachedConnector@251] - Add a session: 127.0.0.1:11211
+[m[2;32m2017-09-20 01:26:50,289 - INFO  [main:Application@25] - Init servers......
+[m[2;32m2017-09-20 01:26:50,321 - INFO  [main:ServerBootstrap@120] - Application PID:	7652
+[m[2;32m2017-09-20 01:27:08,705 - INFO  [Thread-132:CodeHelperServer@2388] - reqPayOtherWY请求header信息：[Host=127.0.0.1:9911, Connection=keep-alive, Upgrade-Insecure-Requests=1, User-Agent=Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.113 Safari/537.36, Accept=text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8, Accept-Encoding=gzip, deflate, br, Accept-Language=zh-CN,zh;q=0.8,en;q=0.6]
+[m[2;32m2017-09-20 01:27:08,706 - INFO  [Thread-132:CodeHelperServer@2420] - 用户访问IP=112.124.10.89
+[m[2;32m2017-09-20 01:27:08,931 - INFO  [Thread-132:HttpTool@388] - 指令url=https://pay.swiftpass.cn/pay/gateway
+[m[2;32m2017-09-20 01:27:08,931 - INFO  [Thread-132:HttpTool@389] - 同步内容=<xml><nonce_str>hr9UayMcS1juDvNmvW74SyLPv5uipaft</nonce_str><out_trade_no>09sds59737244293</out_trade_no><service>pay.alipay.native</service><total_fee>1</total_fee><sign>8695788831219EA6A63A02F09381D1DD</sign><attach>sd50</attach><mch_id>127540003196</mch_id><body>测试app-测试</body><notify_url>http://otherpay.xushihudong.com/fee/feexszfbsmback</notify_url><mch_create_ip>112.124.10.89</mch_create_ip></xml>
+[m[2;32m2017-09-20 01:27:09,568 - INFO  [Thread-132:CodeReqHelper@642] - 支付宝扫码sd50请求结果=><xml><appid><![CDATA[2016083101827401]]></appid><charset><![CDATA[UTF-8]]></charset><code_img_url><![CDATA[https://pay.swiftpass.cn/pay/qrcode?uuid=https%3A%2F%2Fqr.alipay.com%2Fbax04867slmjayvf7luo406d]]></code_img_url><code_url><![CDATA[https://qr.alipay.com/bax04867slmjayvf7luo406d]]></code_url><mch_id><![CDATA[127540003196]]></mch_id><nonce_str><![CDATA[hr9UayMcS1juDvNmvW74SyLPv5uipaft]]></nonce_str><result_code><![CDATA[0]]></result_code><sign><![CDATA[9D59E88CCBE524B0948535E9C8103FDE]]></sign><sign_type><![CDATA[MD5]]></sign_type><status><![CDATA[0]]></status><version><![CDATA[2.0]]></version></xml>
+[m[2;32m2017-09-20 01:27:09,609 - INFO  [Thread-132:CodeReqHelper@666] - 支付宝扫码sd50生成json:{"orderid":"09sds59737244293","spid":"sd50","status":"0","url":"https://qr.alipay.com/bax04867slmjayvf7luo406d","urlimg":"https://pay.swiftpass.cn/pay/qrcode?uuid=https%3A%2F%2Fqr.alipay.com%2Fbax04867slmjayvf7luo406d"}
+[m[2;32m2017-09-20 01:27:09,630 - INFO  [Thread-132:CodeHelperServer@2484] - 合作方:test10
+通道方:sd50
+省份:
+计费点:1
+订单号:09sds59737244293
+指令内容:{"orderid":"09sds59737244293","spid":"sd50","status":"0","url":"https://qr.alipay.com/bax04867slmjayvf7luo406d","urlimg":"https://pay.swiftpass.cn/pay/qrcode?uuid=https%3A%2F%2Fqr.alipay.com%2Fbax04867slmjayvf7luo406d"}
+[m[2;35m2017-09-20 01:27:09,659 - WARN  [Thread-132:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :955, uri:/code/reqPayOtherWY?cpid=test10&imsi=460000000462781&imei=357806046192158&cpparam=klwtest&fee=1&ip=112.124.10.89&goodsname=%E6%B5%8B%E8%AF%95&app=%e6%b5%8b%e8%af%95app
+[m[7;31m2017-09-20 01:27:09,721 - ERROR [Thread-31:DefaultJuiceHandler@90] - java.lang.ArrayIndexOutOfBoundsException: 2
+[m[7;31m2017-09-20 01:27:09,722 - ERROR [Thread-31:DefaultJuiceHandler@91] - com.juice.orange.game.exception.JuiceException: handler request error,path:/favicon.ico;param:null
+[m[2;35m2017-09-20 01:27:09,723 - WARN  [Thread-31:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :2, uri:/favicon.ico
+[m[7;31m2017-09-20 01:32:28,524 - ERROR [Xmemcached-Reactor-2:MemcachedHandler@138] - XMemcached network layout exception
+[mjava.io.IOException: 远程主机强迫关闭了一个现有的连接。
+	at sun.nio.ch.SocketDispatcher.read0(Native Method)
+	at sun.nio.ch.SocketDispatcher.read(Unknown Source)
+	at sun.nio.ch.IOUtil.readIntoNativeBuffer(Unknown Source)
+	at sun.nio.ch.IOUtil.read(Unknown Source)
+	at sun.nio.ch.SocketChannelImpl.read(Unknown Source)
+	at com.google.code.yanf4j.nio.impl.NioTCPSession.readFromBuffer(NioTCPSession.java:203)
+	at com.google.code.yanf4j.nio.impl.AbstractNioSession.onRead(AbstractNioSession.java:196)
+	at com.google.code.yanf4j.nio.impl.AbstractNioSession.onEvent(AbstractNioSession.java:341)
+	at com.google.code.yanf4j.nio.impl.SocketChannelController.dispatchReadEvent(SocketChannelController.java:56)
+	at com.google.code.yanf4j.nio.impl.NioController.onRead(NioController.java:157)
+	at com.google.code.yanf4j.nio.impl.Reactor.dispatchEvent(Reactor.java:295)
+	at com.google.code.yanf4j.nio.impl.Reactor.run(Reactor.java:142)
+[2;35m2017-09-20 01:32:28,541 - WARN  [Xmemcached-Reactor-2:MemcachedConnector@365] - Remove a session: 127.0.0.1:11211
+[m[2;35m2017-09-20 01:32:30,545 - WARN  [Heal-Session-Thread:MemcachedConnector$SessionMonitor@125] - Trying to connect to 127.0.0.1:11211 for 1 times
+[m[7;31m2017-09-20 01:32:31,539 - ERROR [Xmemcached-Reactor-0:MemcachedConnector$InnerControllerStateListener@558] - Exception occured in controller
+[mjava.io.IOException: Connect to 127.0.0.1:11211 fail,Connection refused: no further information
+	at net.rubyeye.xmemcached.impl.MemcachedConnector.onConnect(MemcachedConnector.java:423)
+	at com.google.code.yanf4j.nio.impl.Reactor.dispatchEvent(Reactor.java:303)
+	at com.google.code.yanf4j.nio.impl.Reactor.run(Reactor.java:142)
+[7;31m2017-09-20 01:32:31,540 - ERROR [Xmemcached-Reactor-0:Reactor@325] - Reactor dispatch events error
+[mjava.io.IOException: Connect to 127.0.0.1:11211 fail,Connection refused: no further information
+	at net.rubyeye.xmemcached.impl.MemcachedConnector.onConnect(MemcachedConnector.java:423)
+	at com.google.code.yanf4j.nio.impl.Reactor.dispatchEvent(Reactor.java:303)
+	at com.google.code.yanf4j.nio.impl.Reactor.run(Reactor.java:142)
+[7;31m2017-09-20 01:32:31,540 - ERROR [Heal-Session-Thread:MemcachedConnector$SessionMonitor@169] - Reconnect to 127.0.0.1:11211 fail
+[m[2;32m2017-09-20 23:08:05,616 - INFO  [main:ServerBootstrap@95] - Configuration Server bootstrap params.......
+[m[2;32m2017-09-20 23:08:05,617 - INFO  [main:ServerBootstrap@96] - Server protocol:	http
+[m[2;32m2017-09-20 23:08:05,618 - INFO  [main:ServerBootstrap@97] - Server port:	9911
+[m[2;32m2017-09-20 23:08:05,838 - INFO  [main:ServerBootstrap@106] - Configuration Remote Server.......
+[m[2;32m2017-09-20 23:08:05,838 - INFO  [main:ServerBootstrap@108] - Add Remote Server - Name:FastFunSystem;Address:localhost;Port:9912
+[m[2;35m2017-09-20 23:08:05,883 - WARN  [main:XMemcachedClient@727] - XMemcachedClient use Binary protocol
+[m[2;32m2017-09-20 23:08:05,907 - INFO  [main:SelectorManager@37] - Creating 16 reactors...
+[m[2;35m2017-09-20 23:08:05,919 - WARN  [main:AbstractController@372] - The Controller started at localhost/127.0.0.1:0 ...
+[m[2;35m2017-09-20 23:08:05,928 - WARN  [Xmemcached-Reactor-0:MemcachedConnector@251] - Add a session: 127.0.0.1:11211
+[m[2;32m2017-09-20 23:08:05,929 - INFO  [main:Application@25] - Init servers......
+[m[2;32m2017-09-20 23:08:05,968 - INFO  [main:ServerBootstrap@120] - Application PID:	8936
+[m[2;32m2017-09-20 23:09:36,428 - INFO  [Thread-121:CodeHelperServer@2388] - reqPayOtherWY请求header信息：[Host=127.0.0.1:9911, Connection=keep-alive, Upgrade-Insecure-Requests=1, User-Agent=Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.113 Safari/537.36, Accept=text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8, Accept-Encoding=gzip, deflate, br, Accept-Language=zh-CN,zh;q=0.8,en;q=0.6]
+[m[2;32m2017-09-20 23:09:36,429 - INFO  [Thread-121:CodeHelperServer@2420] - 用户访问IP=112.124.10.89
+[m[2;32m2017-09-20 23:09:36,677 - INFO  [Thread-121:HttpTool@388] - 指令url=https://pay.swiftpass.cn/pay/gateway
+[m[2;32m2017-09-20 23:09:36,677 - INFO  [Thread-121:HttpTool@389] - 同步内容=<xml><nonce_str>tF4bUtkQbipCaV1Mp2DeBepBEfB6QJ50</nonce_str><out_trade_no>09sdw47847789157</out_trade_no><device_info>AND_WAP</device_info><service>pay.weixin.wappay</service><total_fee>1</total_fee><sign>F5A295052ADF65729655EB91C3981F11</sign><attach>sd52</attach><mch_id>101590138167</mch_id><body>测试app-测试</body><notify_url>http://otherpay.xushihudong.com/fee/feexszfbsmback</notify_url><mch_create_ip>112.124.10.89</mch_create_ip></xml>
+[m[2;32m2017-09-20 23:09:37,144 - INFO  [Thread-121:CodeReqHelper@429] - 微信H5sd52请求结果:<xml><charset><![CDATA[UTF-8]]></charset><mch_id><![CDATA[101590138167]]></mch_id><nonce_str><![CDATA[tF4bUtkQbipCaV1Mp2DeBepBEfB6QJ50]]></nonce_str><pay_info><![CDATA[https://statecheck.swiftpass.cn/pay/wappay?token_id=1948f07c0c37eeca9eeebb96eb44c73bf&service=pay.weixin.wappayv2]]></pay_info><result_code><![CDATA[0]]></result_code><sign><![CDATA[4A3EAFE8B1D97694C254566A63821B1E]]></sign><sign_type><![CDATA[MD5]]></sign_type><status><![CDATA[0]]></status><version><![CDATA[2.0]]></version></xml>
+[m[2;32m2017-09-20 23:09:37,188 - INFO  [Thread-121:CodeReqHelper@453] - 微信H5sd52生成json:{"orderid":"09sdw47847789157","spid":"sd52","status":"0","url":"https://statecheck.swiftpass.cn/pay/wappay?token_id=1948f07c0c37eeca9eeebb96eb44c73bf&service=pay.weixin.wappayv2"}
+[m[2;32m2017-09-20 23:09:37,213 - INFO  [Thread-121:CodeHelperServer@2484] - 合作方:test03
+通道方:sd52
+省份:
+计费点:1
+订单号:09sdw47847789157
+指令内容:{"orderid":"09sdw47847789157","spid":"sd52","status":"0","url":"https://statecheck.swiftpass.cn/pay/wappay?token_id=1948f07c0c37eeca9eeebb96eb44c73bf&service=pay.weixin.wappayv2"}
+[m[2;35m2017-09-20 23:09:37,237 - WARN  [Thread-121:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :810, uri:/code/reqPayOtherWY?cpid=test03&imsi=460000000462781&imei=357806046192158&cpparam=klwtest&fee=1&ip=112.124.10.89&goodsname=%E6%B5%8B%E8%AF%95&app=%e6%b5%8b%e8%af%95app
+[m[7;31m2017-09-20 23:09:37,260 - ERROR [Thread-71:DefaultJuiceHandler@90] - java.lang.ArrayIndexOutOfBoundsException: 2
+[m[7;31m2017-09-20 23:09:37,261 - ERROR [Thread-71:DefaultJuiceHandler@91] - com.juice.orange.game.exception.JuiceException: handler request error,path:/favicon.ico;param:null
+[m[2;35m2017-09-20 23:09:37,261 - WARN  [Thread-71:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :2, uri:/favicon.ico
+[m

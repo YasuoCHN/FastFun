@@ -1,0 +1,167 @@
+[2;32m2018-01-19 11:31:46,220 - INFO  [main:ServerBootstrap@95] - Configuration Server bootstrap params.......
+[m[2;32m2018-01-19 11:31:46,224 - INFO  [main:ServerBootstrap@96] - Server protocol:	http
+[m[2;32m2018-01-19 11:31:46,225 - INFO  [main:ServerBootstrap@97] - Server port:	9911
+[m[2;32m2018-01-19 11:31:46,392 - INFO  [main:ServerBootstrap@106] - Configuration Remote Server.......
+[m[2;32m2018-01-19 11:31:46,393 - INFO  [main:ServerBootstrap@108] - Add Remote Server - Name:FastFunSystem;Address:localhost;Port:9912
+[m[2;35m2018-01-19 11:31:46,436 - WARN  [main:XMemcachedClient@727] - XMemcachedClient use Binary protocol
+[m[2;32m2018-01-19 11:31:46,457 - INFO  [main:SelectorManager@37] - Creating 16 reactors...
+[m[2;35m2018-01-19 11:31:46,466 - WARN  [main:AbstractController@372] - The Controller started at localhost/127.0.0.1:0 ...
+[m[2;35m2018-01-19 11:31:46,475 - WARN  [Xmemcached-Reactor-0:MemcachedConnector@251] - Add a session: 127.0.0.1:11211
+[m[2;32m2018-01-19 11:31:46,476 - INFO  [main:Application@25] - Init servers......
+[m[2;32m2018-01-19 11:31:46,532 - INFO  [main:ServerBootstrap@120] - Application PID:	20844
+[m[7;31m2018-01-19 11:32:22,548 - ERROR [Xmemcached-Reactor-2:MemcachedHandler@138] - XMemcached network layout exception
+[mjava.io.IOException: 远程主机强迫关闭了一个现有的连接。
+	at sun.nio.ch.SocketDispatcher.read0(Native Method)
+	at sun.nio.ch.SocketDispatcher.read(Unknown Source)
+	at sun.nio.ch.IOUtil.readIntoNativeBuffer(Unknown Source)
+	at sun.nio.ch.IOUtil.read(Unknown Source)
+	at sun.nio.ch.SocketChannelImpl.read(Unknown Source)
+	at com.google.code.yanf4j.nio.impl.NioTCPSession.readFromBuffer(NioTCPSession.java:203)
+	at com.google.code.yanf4j.nio.impl.AbstractNioSession.onRead(AbstractNioSession.java:196)
+	at com.google.code.yanf4j.nio.impl.AbstractNioSession.onEvent(AbstractNioSession.java:341)
+	at com.google.code.yanf4j.nio.impl.SocketChannelController.dispatchReadEvent(SocketChannelController.java:56)
+	at com.google.code.yanf4j.nio.impl.NioController.onRead(NioController.java:157)
+	at com.google.code.yanf4j.nio.impl.Reactor.dispatchEvent(Reactor.java:295)
+	at com.google.code.yanf4j.nio.impl.Reactor.run(Reactor.java:142)
+[2;35m2018-01-19 11:32:22,559 - WARN  [Xmemcached-Reactor-2:MemcachedConnector@365] - Remove a session: 127.0.0.1:11211
+[m[2;35m2018-01-19 11:32:24,561 - WARN  [Heal-Session-Thread:MemcachedConnector$SessionMonitor@125] - Trying to connect to 127.0.0.1:11211 for 1 times
+[m[2;35m2018-01-19 11:32:24,561 - WARN  [Xmemcached-Reactor-0:MemcachedConnector@251] - Add a session: 127.0.0.1:11211
+[m[2;32m2018-01-19 11:33:03,576 - INFO  [Thread-151:CodeHelperServer@2847] - reqPayOtherWY请求header信息：[Host=127.0.0.1:9911, Connection=keep-alive, User-Agent=Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36, Upgrade-Insecure-Requests=1, Accept=text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8, Accept-Encoding=gzip, deflate, br, Accept-Language=zh-CN,zh;q=0.9,en;q=0.8]
+[m[2;32m2018-01-19 11:33:03,582 - INFO  [Thread-151:CodeHelperServer@2885] - 用户访问IP=127.0.0.1
+[m[2;32m2018-01-19 11:33:03,789 - INFO  [Thread-151:HttpTool@550] - 指令url=http://tscand01.3vpay.net/thirdPay/pay/gateway
+[m[2;32m2018-01-19 11:33:03,789 - INFO  [Thread-151:HttpTool@551] - 同步内容=appId=1001&attach=sd95&body=%E6%B5%8B%E8%AF%95&channelOrderId=01sdn83782449783&detail=%E6%B5%8B%E8%AF%95&notifyUrl=http%3A%2F%2Fotherpay.xushihudong.com%2Ffee%2Ffeexsfyback&partnerId=100964&payType=2600&returnUrl=http%3A%2F%2Fwww.xushihudong.com%2Fbackurl.htm&timeStamp=1516332783785&totalFee=9500&sign=9fd65ce15dde0c598c229f2ea4819b28
+[m[2;32m2018-01-19 11:33:08,492 - INFO  [Thread-151:CodeReqHelper@499] - 全名点游sd95请求结果:{"payParam":{"code_img_url":"http://tscand01.3vpay.net/thirdPay/pay/qrcode?uuid=https%3A%2F%2Fqpay.qq.com%2Fqr%2F5f378828"},"return_msg":"下单成功","return_code":0,"orderId":"1009641001201801190202371111"}
+[m[2;32m2018-01-19 11:33:08,512 - INFO  [Thread-151:CodeHelperServer@2958] - 合作方:test03
+通道方:sd95
+省份:
+计费点:9500
+订单号:01sdn83782449783
+指令内容:{"orderid":"01sdn83782449783","spid":"sd95","status":0,"url":"http://tscand01.3vpay.net/thirdPay/pay/qrcode?uuid=https%3A%2F%2Fqpay.qq.com%2Fqr%2F5f378828"}
+[m[2;35m2018-01-19 11:33:08,531 - WARN  [Thread-151:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :4956, uri:/code/reqPayOtherWY?cpid=test03&imsi=460000000462781&imei=357806046192158&cpparam=klwtest&fee=9500&goodsname=%E6%B5%8B%E8%AF%95&app=%E6%B5%8B%E8%AF%95app
+[m[7;31m2018-01-19 11:33:08,555 - ERROR [Thread-152:DefaultJuiceHandler@90] - java.lang.ArrayIndexOutOfBoundsException: 2
+[m[7;31m2018-01-19 11:33:08,555 - ERROR [Thread-152:DefaultJuiceHandler@91] - com.juice.orange.game.exception.JuiceException: handler request error,path:/favicon.ico;param:null
+[m[2;35m2018-01-19 11:33:08,555 - WARN  [Thread-152:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :1, uri:/favicon.ico
+[m[7;31m2018-01-19 11:46:39,087 - ERROR [Xmemcached-Reactor-3:MemcachedHandler@138] - XMemcached network layout exception
+[mjava.io.IOException: 远程主机强迫关闭了一个现有的连接。
+	at sun.nio.ch.SocketDispatcher.read0(Native Method)
+	at sun.nio.ch.SocketDispatcher.read(Unknown Source)
+	at sun.nio.ch.IOUtil.readIntoNativeBuffer(Unknown Source)
+	at sun.nio.ch.IOUtil.read(Unknown Source)
+	at sun.nio.ch.SocketChannelImpl.read(Unknown Source)
+	at com.google.code.yanf4j.nio.impl.NioTCPSession.readFromBuffer(NioTCPSession.java:203)
+	at com.google.code.yanf4j.nio.impl.AbstractNioSession.onRead(AbstractNioSession.java:196)
+	at com.google.code.yanf4j.nio.impl.AbstractNioSession.onEvent(AbstractNioSession.java:341)
+	at com.google.code.yanf4j.nio.impl.SocketChannelController.dispatchReadEvent(SocketChannelController.java:56)
+	at com.google.code.yanf4j.nio.impl.NioController.onRead(NioController.java:157)
+	at com.google.code.yanf4j.nio.impl.Reactor.dispatchEvent(Reactor.java:295)
+	at com.google.code.yanf4j.nio.impl.Reactor.run(Reactor.java:142)
+[2;35m2018-01-19 11:46:39,090 - WARN  [Xmemcached-Reactor-3:MemcachedConnector@365] - Remove a session: 127.0.0.1:11211
+[m[2;35m2018-01-19 11:46:41,092 - WARN  [Heal-Session-Thread:MemcachedConnector$SessionMonitor@125] - Trying to connect to 127.0.0.1:11211 for 1 times
+[m[2;35m2018-01-19 11:46:41,093 - WARN  [Xmemcached-Reactor-0:MemcachedConnector@251] - Add a session: 127.0.0.1:11211
+[m[2;32m2018-01-19 11:47:45,451 - INFO  [Thread-41:CodeHelperServer@2847] - reqPayOtherWY请求header信息：[Host=127.0.0.1:9911, Connection=keep-alive, Cache-Control=max-age=0, User-Agent=Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36, Upgrade-Insecure-Requests=1, Accept=text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8, Accept-Encoding=gzip, deflate, br, Accept-Language=zh-CN,zh;q=0.9,en;q=0.8]
+[m[2;32m2018-01-19 11:47:45,451 - INFO  [Thread-41:CodeHelperServer@2885] - 用户访问IP=127.0.0.1
+[m[2;32m2018-01-19 11:47:45,482 - INFO  [Thread-41:HttpTool@550] - 指令url=http://tscand01.3vpay.net/thirdPay/pay/gateway
+[m[2;32m2018-01-19 11:47:45,483 - INFO  [Thread-41:HttpTool@551] - 同步内容=appId=1002&attach=sd95&body=%E6%B5%8B%E8%AF%95&channelOrderId=01sdt74729600688&detail=%E6%B5%8B%E8%AF%95&notifyUrl=http%3A%2F%2Fotherpay.xushihudong.com%2Ffee%2Ffeexsfyback&partnerId=100964&payType=2600&returnUrl=http%3A%2F%2Fwww.xushihudong.com%2Fbackurl.htm&timeStamp=1516333665482&totalFee=9500&sign=88152eb3ff119dae2c577740e229ba54
+[m[2;32m2018-01-19 11:47:45,580 - INFO  [Thread-41:CodeHelperServer@2958] - 
+[m[2;35m2018-01-19 11:47:45,593 - WARN  [Thread-41:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :143, uri:/code/reqPayOtherWY?cpid=test03&imsi=460000000462781&imei=357806046192158&cpparam=klwtest&fee=9500&goodsname=%E6%B5%8B%E8%AF%95&app=%E6%B5%8B%E8%AF%95app
+[m[7;31m2018-01-19 11:47:45,610 - ERROR [Thread-61:DefaultJuiceHandler@90] - java.lang.ArrayIndexOutOfBoundsException: 2
+[m[7;31m2018-01-19 11:47:45,610 - ERROR [Thread-61:DefaultJuiceHandler@91] - com.juice.orange.game.exception.JuiceException: handler request error,path:/favicon.ico;param:null
+[m[2;35m2018-01-19 11:47:45,610 - WARN  [Thread-61:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :0, uri:/favicon.ico
+[m[7;31m2018-01-19 12:31:46,443 - ERROR [Thread-11:DefaultJuiceHandler@90] - java.lang.ArrayIndexOutOfBoundsException: 2
+[m[7;31m2018-01-19 12:31:46,444 - ERROR [Thread-11:DefaultJuiceHandler@91] - com.juice.orange.game.exception.JuiceException: handler request error,path:/favicon.ico;param:null
+[m[2;35m2018-01-19 12:31:46,444 - WARN  [Thread-11:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :1, uri:/favicon.ico
+[m[7;31m2018-01-19 13:43:26,069 - ERROR [Xmemcached-Reactor-4:MemcachedHandler@138] - XMemcached network layout exception
+[mjava.io.IOException: 远程主机强迫关闭了一个现有的连接。
+	at sun.nio.ch.SocketDispatcher.read0(Native Method)
+	at sun.nio.ch.SocketDispatcher.read(Unknown Source)
+	at sun.nio.ch.IOUtil.readIntoNativeBuffer(Unknown Source)
+	at sun.nio.ch.IOUtil.read(Unknown Source)
+	at sun.nio.ch.SocketChannelImpl.read(Unknown Source)
+	at com.google.code.yanf4j.nio.impl.NioTCPSession.readFromBuffer(NioTCPSession.java:203)
+	at com.google.code.yanf4j.nio.impl.AbstractNioSession.onRead(AbstractNioSession.java:196)
+	at com.google.code.yanf4j.nio.impl.AbstractNioSession.onEvent(AbstractNioSession.java:341)
+	at com.google.code.yanf4j.nio.impl.SocketChannelController.dispatchReadEvent(SocketChannelController.java:56)
+	at com.google.code.yanf4j.nio.impl.NioController.onRead(NioController.java:157)
+	at com.google.code.yanf4j.nio.impl.Reactor.dispatchEvent(Reactor.java:295)
+	at com.google.code.yanf4j.nio.impl.Reactor.run(Reactor.java:142)
+[2;35m2018-01-19 13:43:26,071 - WARN  [Xmemcached-Reactor-4:MemcachedConnector@365] - Remove a session: 127.0.0.1:11211
+[m[2;35m2018-01-19 13:43:28,073 - WARN  [Heal-Session-Thread:MemcachedConnector$SessionMonitor@125] - Trying to connect to 127.0.0.1:11211 for 1 times
+[m[2;35m2018-01-19 13:43:28,074 - WARN  [Xmemcached-Reactor-0:MemcachedConnector@251] - Add a session: 127.0.0.1:11211
+[m[2;32m2018-01-19 13:43:35,660 - INFO  [main:ServerBootstrap@95] - Configuration Server bootstrap params.......
+[m[2;32m2018-01-19 13:43:35,662 - INFO  [main:ServerBootstrap@96] - Server protocol:	http
+[m[2;32m2018-01-19 13:43:35,662 - INFO  [main:ServerBootstrap@97] - Server port:	9911
+[m[2;32m2018-01-19 13:43:35,835 - INFO  [main:ServerBootstrap@106] - Configuration Remote Server.......
+[m[2;32m2018-01-19 13:43:35,835 - INFO  [main:ServerBootstrap@108] - Add Remote Server - Name:FastFunSystem;Address:localhost;Port:9912
+[m[2;35m2018-01-19 13:43:35,864 - WARN  [main:XMemcachedClient@727] - XMemcachedClient use Binary protocol
+[m[2;32m2018-01-19 13:43:35,886 - INFO  [main:SelectorManager@37] - Creating 16 reactors...
+[m[2;35m2018-01-19 13:43:35,894 - WARN  [main:AbstractController@372] - The Controller started at localhost/127.0.0.1:0 ...
+[m[2;35m2018-01-19 13:43:35,901 - WARN  [Xmemcached-Reactor-0:MemcachedConnector@251] - Add a session: 127.0.0.1:11211
+[m[2;32m2018-01-19 13:43:35,901 - INFO  [main:Application@25] - Init servers......
+[m[2;32m2018-01-19 13:43:35,927 - INFO  [main:ServerBootstrap@120] - Application PID:	11440
+[m[2;32m2018-01-19 13:43:46,052 - INFO  [Thread-151:CodeHelperServer@2847] - reqPayOtherWY请求header信息：[Host=127.0.0.1:9911, Connection=keep-alive, Cache-Control=max-age=0, User-Agent=Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36, Upgrade-Insecure-Requests=1, Accept=text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8, Accept-Encoding=gzip, deflate, br, Accept-Language=zh-CN,zh;q=0.9,en;q=0.8]
+[m[2;32m2018-01-19 13:43:46,053 - INFO  [Thread-151:CodeHelperServer@2885] - 用户访问IP=127.0.0.1
+[m[2;32m2018-01-19 13:43:46,236 - INFO  [Thread-151:HttpTool@550] - 指令url=http://tscand01.3vpay.net/thirdPay/pay/gateway
+[m[2;32m2018-01-19 13:43:46,236 - INFO  [Thread-151:HttpTool@551] - 同步内容=appId=1002&attach=sd95&body=%E6%B5%8B%E8%AF%95&channelOrderId=01sdc35056970396&detail=%E6%B5%8B%E8%AF%95&notifyUrl=http%3A%2F%2Fotherpay.xushihudong.com%2Ffee%2Ffeexsfyback&partnerId=100964&payType=2600&returnUrl=http%3A%2F%2Fwww.xushihudong.com%2Fbackurl.htm&timeStamp=1516340626233&totalFee=9500&sign=b1b82a516187ed9ab9e163b9f9e48b4b
+[m[2;32m2018-01-19 13:43:49,173 - INFO  [Thread-151:CodeReqHelper@499] - 全名点游sd95请求结果:{"payParam":{"pay_info":"https://qpay.qq.com/qr/52bf9f3f"},"return_msg":"下单成功","return_code":0,"orderId":"1009641002201801194079581228"}
+[m[2;32m2018-01-19 13:43:49,189 - INFO  [Thread-151:CodeHelperServer@2958] - 合作方:test03
+通道方:sd95
+省份:
+计费点:9500
+订单号:01sdc35056970396
+指令内容:{"orderid":"01sdc35056970396","spid":"sd95","status":0}
+[m[2;35m2018-01-19 13:43:49,209 - WARN  [Thread-151:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :3158, uri:/code/reqPayOtherWY?cpid=test03&imsi=460000000462781&imei=357806046192158&cpparam=klwtest&fee=9500&goodsname=%E6%B5%8B%E8%AF%95&app=%E6%B5%8B%E8%AF%95app
+[m[7;31m2018-01-19 13:43:49,219 - ERROR [Thread-31:DefaultJuiceHandler@90] - java.lang.ArrayIndexOutOfBoundsException: 2
+[m[7;31m2018-01-19 13:43:49,219 - ERROR [Thread-31:DefaultJuiceHandler@91] - com.juice.orange.game.exception.JuiceException: handler request error,path:/favicon.ico;param:null
+[m[2;35m2018-01-19 13:43:49,219 - WARN  [Thread-31:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :0, uri:/favicon.ico
+[m[7;31m2018-01-19 14:28:35,842 - ERROR [Thread-1:DefaultJuiceHandler@90] - java.lang.ArrayIndexOutOfBoundsException: 2
+[m[7;31m2018-01-19 14:28:35,843 - ERROR [Thread-1:DefaultJuiceHandler@91] - com.juice.orange.game.exception.JuiceException: handler request error,path:/favicon.ico;param:null
+[m[2;35m2018-01-19 14:28:35,843 - WARN  [Thread-1:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :1, uri:/favicon.ico
+[m[7;31m2018-01-19 16:08:38,415 - ERROR [Xmemcached-Reactor-2:MemcachedHandler@138] - XMemcached network layout exception
+[mjava.io.IOException: 远程主机强迫关闭了一个现有的连接。
+	at sun.nio.ch.SocketDispatcher.read0(Native Method)
+	at sun.nio.ch.SocketDispatcher.read(Unknown Source)
+	at sun.nio.ch.IOUtil.readIntoNativeBuffer(Unknown Source)
+	at sun.nio.ch.IOUtil.read(Unknown Source)
+	at sun.nio.ch.SocketChannelImpl.read(Unknown Source)
+	at com.google.code.yanf4j.nio.impl.NioTCPSession.readFromBuffer(NioTCPSession.java:203)
+	at com.google.code.yanf4j.nio.impl.AbstractNioSession.onRead(AbstractNioSession.java:196)
+	at com.google.code.yanf4j.nio.impl.AbstractNioSession.onEvent(AbstractNioSession.java:341)
+	at com.google.code.yanf4j.nio.impl.SocketChannelController.dispatchReadEvent(SocketChannelController.java:56)
+	at com.google.code.yanf4j.nio.impl.NioController.onRead(NioController.java:157)
+	at com.google.code.yanf4j.nio.impl.Reactor.dispatchEvent(Reactor.java:295)
+	at com.google.code.yanf4j.nio.impl.Reactor.run(Reactor.java:142)
+[2;35m2018-01-19 16:08:38,432 - WARN  [Xmemcached-Reactor-2:MemcachedConnector@365] - Remove a session: 127.0.0.1:11211
+[m[2;35m2018-01-19 16:08:40,435 - WARN  [Heal-Session-Thread:MemcachedConnector$SessionMonitor@125] - Trying to connect to 127.0.0.1:11211 for 1 times
+[m[2;35m2018-01-19 16:08:40,435 - WARN  [Xmemcached-Reactor-0:MemcachedConnector@251] - Add a session: 127.0.0.1:11211
+[m[2;32m2018-01-19 16:09:06,043 - INFO  [main:ServerBootstrap@95] - Configuration Server bootstrap params.......
+[m[2;32m2018-01-19 16:09:06,046 - INFO  [main:ServerBootstrap@96] - Server protocol:	http
+[m[2;32m2018-01-19 16:09:06,046 - INFO  [main:ServerBootstrap@97] - Server port:	9911
+[m[2;32m2018-01-19 16:09:06,193 - INFO  [main:ServerBootstrap@106] - Configuration Remote Server.......
+[m[2;32m2018-01-19 16:09:06,193 - INFO  [main:ServerBootstrap@108] - Add Remote Server - Name:FastFunSystem;Address:localhost;Port:9912
+[m[2;35m2018-01-19 16:09:06,222 - WARN  [main:XMemcachedClient@727] - XMemcachedClient use Binary protocol
+[m[2;32m2018-01-19 16:09:06,244 - INFO  [main:SelectorManager@37] - Creating 16 reactors...
+[m[2;35m2018-01-19 16:09:06,253 - WARN  [main:AbstractController@372] - The Controller started at localhost/127.0.0.1:0 ...
+[m[2;35m2018-01-19 16:09:06,259 - WARN  [Xmemcached-Reactor-0:MemcachedConnector@251] - Add a session: 127.0.0.1:11211
+[m[2;32m2018-01-19 16:09:06,259 - INFO  [main:Application@25] - Init servers......
+[m[2;32m2018-01-19 16:09:06,283 - INFO  [main:ServerBootstrap@120] - Application PID:	20900
+[m[2;32m2018-01-19 16:09:47,645 - INFO  [Thread-141:CodeHelperServer@2847] - reqPayOtherWY请求header信息：[Host=127.0.0.1:9911, Connection=keep-alive, Cache-Control=max-age=0, User-Agent=Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36, Upgrade-Insecure-Requests=1, Accept=text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8, Accept-Encoding=gzip, deflate, br, Accept-Language=zh-CN,zh;q=0.9,en;q=0.8]
+[m[2;32m2018-01-19 16:09:47,646 - INFO  [Thread-141:CodeHelperServer@2885] - 用户访问IP=127.0.0.1
+[m[2;32m2018-01-19 16:09:47,861 - INFO  [Thread-141:HttpTool@425] - 指令url=http://pay.didodo.cn/pay/order.php
+[m[2;32m2018-01-19 16:09:47,862 - INFO  [Thread-141:HttpTool@426] - 同步内容={"body":"klwtest","charset":"UTF-8","extra":"sd94","mchid":"1022","method":"five.order.pay","notifyurl":"http://otherpay.xushihudong.com/fee/feexsaxH5back","orderip":"127.0.0.1","orderno":"01sdh73621316987","paytype":"weixin","randstr":"HMcGjMQJMXq5S13q7pVYcVSqj8EjDsxi","returnurl":"http://www.xushihudong.com/backurl.htm","sign":"F6C9D17A6BE307FB025B8061F832812D","signtype":"MD5","totalfee":"9500"}
+[m[7;31m2018-01-19 16:09:52,955 - ERROR [Thread-141:HttpTool@455] - Read timed out
+[m[2;32m2018-01-19 16:09:52,959 - INFO  [Thread-141:CodeReqHelper@620] - 阿信第三方支付sd94请求结果:
+[m[2;32m2018-01-19 16:09:52,959 - INFO  [Thread-141:CodeReqHelper@657] - 阿信第三方支付sd94生成json:{"message":"request time out","status":"1"}
+[m[2;32m2018-01-19 16:09:53,007 - INFO  [Thread-141:CodeHelperServer@2958] - 合作方:test03
+通道方:sd94
+省份:
+计费点:9500
+订单号:01sdh73621316987
+指令内容:{"message":"request time out","status":"1"}
+[m[2;35m2018-01-19 16:09:53,024 - WARN  [Thread-141:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :5380, uri:/code/reqPayOtherWY?cpid=test03&imsi=460000000462781&imei=357806046192158&cpparam=klwtest&fee=9500&goodsname=%E6%B5%8B%E8%AF%95&app=%E6%B5%8B%E8%AF%95app
+[m[7;31m2018-01-19 16:09:53,034 - ERROR [Thread-41:DefaultJuiceHandler@90] - java.lang.ArrayIndexOutOfBoundsException: 2
+[m[7;31m2018-01-19 16:09:53,034 - ERROR [Thread-41:DefaultJuiceHandler@91] - com.juice.orange.game.exception.JuiceException: handler request error,path:/favicon.ico;param:null
+[m[2;35m2018-01-19 16:09:53,035 - WARN  [Thread-41:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :1, uri:/favicon.ico
+[m[7;31m2018-01-19 16:54:06,225 - ERROR [Thread-112:DefaultJuiceHandler@90] - java.lang.ArrayIndexOutOfBoundsException: 2
+[m[7;31m2018-01-19 16:54:06,225 - ERROR [Thread-112:DefaultJuiceHandler@91] - com.juice.orange.game.exception.JuiceException: handler request error,path:/favicon.ico;param:null
+[m[2;35m2018-01-19 16:54:06,225 - WARN  [Thread-112:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :1, uri:/favicon.ico
+[m

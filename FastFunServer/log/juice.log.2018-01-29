@@ -1,0 +1,364 @@
+[2;32m2018-01-29 18:53:46,872 - INFO  [main:ServerBootstrap@95] - Configuration Server bootstrap params.......
+[m[2;32m2018-01-29 18:53:46,874 - INFO  [main:ServerBootstrap@96] - Server protocol:	http
+[m[2;32m2018-01-29 18:53:46,875 - INFO  [main:ServerBootstrap@97] - Server port:	9911
+[m[2;32m2018-01-29 18:53:47,094 - INFO  [main:ServerBootstrap@106] - Configuration Remote Server.......
+[m[2;32m2018-01-29 18:53:47,094 - INFO  [main:ServerBootstrap@108] - Add Remote Server - Name:FastFunSystem;Address:localhost;Port:9912
+[m[2;35m2018-01-29 18:53:47,158 - WARN  [main:XMemcachedClient@727] - XMemcachedClient use Binary protocol
+[m[2;32m2018-01-29 18:53:47,183 - INFO  [main:SelectorManager@37] - Creating 16 reactors...
+[m[2;35m2018-01-29 18:53:47,192 - WARN  [main:AbstractController@372] - The Controller started at localhost/127.0.0.1:0 ...
+[m[7;31m2018-01-29 18:53:48,199 - ERROR [main:XMemcachedClient@593] - connect to 127.0.0.1:11211 error
+[mjava.util.concurrent.ExecutionException: java.net.ConnectException: Connection refused: no further information
+	at com.google.code.yanf4j.core.impl.FutureImpl.get(FutureImpl.java:145)
+	at net.rubyeye.xmemcached.XMemcachedClient.connect(XMemcachedClient.java:582)
+	at net.rubyeye.xmemcached.XMemcachedClient.<init>(XMemcachedClient.java:870)
+	at net.rubyeye.xmemcached.XMemcachedClientBuilder.build(XMemcachedClientBuilder.java:340)
+	at com.juice.orange.game.cached.MemcachedResource.buildMemcached(MemcachedResource.java:34)
+	at com.klw.fastfun.pay.view.app.ServerBootstrap.main(ServerBootstrap.java:78)
+Caused by: java.net.ConnectException: Connection refused: no further information
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(Unknown Source)
+	at net.rubyeye.xmemcached.impl.MemcachedConnector.onConnect(MemcachedConnector.java:404)
+	at com.google.code.yanf4j.nio.impl.Reactor.dispatchEvent(Reactor.java:303)
+	at com.google.code.yanf4j.nio.impl.Reactor.run(Reactor.java:142)
+[7;31m2018-01-29 18:53:48,201 - ERROR [Xmemcached-Reactor-0:MemcachedConnector$InnerControllerStateListener@558] - Exception occured in controller
+[mjava.io.IOException: Connect to 127.0.0.1:11211 fail,Connection refused: no further information
+	at net.rubyeye.xmemcached.impl.MemcachedConnector.onConnect(MemcachedConnector.java:423)
+	at com.google.code.yanf4j.nio.impl.Reactor.dispatchEvent(Reactor.java:303)
+	at com.google.code.yanf4j.nio.impl.Reactor.run(Reactor.java:142)
+[7;31m2018-01-29 18:53:48,207 - ERROR [Xmemcached-Reactor-0:Reactor@325] - Reactor dispatch events error
+[mjava.io.IOException: Connect to 127.0.0.1:11211 fail,Connection refused: no further information
+	at net.rubyeye.xmemcached.impl.MemcachedConnector.onConnect(MemcachedConnector.java:423)
+	at com.google.code.yanf4j.nio.impl.Reactor.dispatchEvent(Reactor.java:303)
+	at com.google.code.yanf4j.nio.impl.Reactor.run(Reactor.java:142)
+[7;31m2018-01-29 18:53:48,208 - ERROR [main:XMemcachedClient@627] - Connect to 127.0.0.1:11211 fail
+[mjava.util.concurrent.ExecutionException: java.net.ConnectException: Connection refused: no further information
+	at com.google.code.yanf4j.core.impl.FutureImpl.get(FutureImpl.java:145)
+	at net.rubyeye.xmemcached.XMemcachedClient.connect(XMemcachedClient.java:582)
+	at net.rubyeye.xmemcached.XMemcachedClient.<init>(XMemcachedClient.java:870)
+	at net.rubyeye.xmemcached.XMemcachedClientBuilder.build(XMemcachedClientBuilder.java:340)
+	at com.juice.orange.game.cached.MemcachedResource.buildMemcached(MemcachedResource.java:34)
+	at com.klw.fastfun.pay.view.app.ServerBootstrap.main(ServerBootstrap.java:78)
+Caused by: java.net.ConnectException: Connection refused: no further information
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(Unknown Source)
+	at net.rubyeye.xmemcached.impl.MemcachedConnector.onConnect(MemcachedConnector.java:404)
+	at com.google.code.yanf4j.nio.impl.Reactor.dispatchEvent(Reactor.java:303)
+	at com.google.code.yanf4j.nio.impl.Reactor.run(Reactor.java:142)
+[2;32m2018-01-29 18:53:48,210 - INFO  [main:Application@25] - Init servers......
+[m[2;32m2018-01-29 18:53:48,331 - INFO  [main:ServerBootstrap@120] - Application PID:	3604
+[m[2;35m2018-01-29 18:53:50,209 - WARN  [Heal-Session-Thread:MemcachedConnector$SessionMonitor@125] - Trying to connect to 127.0.0.1:11211 for 1 times
+[m[2;35m2018-01-29 18:53:50,714 - WARN  [Xmemcached-Reactor-0:MemcachedConnector@251] - Add a session: 127.0.0.1:11211
+[m[2;32m2018-01-29 18:55:22,141 - INFO  [Thread-84:CodeHelperServer@2930] - reqPayOtherWY请求header信息：[Host=127.0.0.1:9911, Connection=keep-alive, User-Agent=Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36, Upgrade-Insecure-Requests=1, Accept=text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8, Accept-Encoding=gzip, deflate, br, Accept-Language=zh-CN,zh;q=0.9,en;q=0.8]
+[m[2;32m2018-01-29 18:55:22,142 - INFO  [Thread-84:CodeHelperServer@2968] - 用户访问IP=127.0.0.1
+[m[2;32m2018-01-29 18:55:22,485 - INFO  [Thread-84:HttpTool@663] - 指令url:http://u3.yqunion.com/utopay/api/safepay.pay
+[m[2;32m2018-01-29 18:55:22,485 - INFO  [Thread-84:HttpTool@664] - 同步内容:{"callbackUrl":"http%3A%2F%2Fwww.xushihudong.com","companyId":"39","fee":"1000","ip":"127.0.0.1","item":"%E6%B5%8B%E8%AF%95","payType":"3","sign":"bc1e782c9d0b8b6a53cd8d789d093b18","syncUrl":"http%3A%2F%2Fsmspay.xushihudong.com%2Ffee%2Ffeexsmmspback","userOrderId":"sd9701sda17299753501"}
+[m[2;32m2018-01-29 18:58:21,159 - INFO  [main:ServerBootstrap@95] - Configuration Server bootstrap params.......
+[m[2;32m2018-01-29 18:58:21,160 - INFO  [main:ServerBootstrap@96] - Server protocol:	http
+[m[2;32m2018-01-29 18:58:21,160 - INFO  [main:ServerBootstrap@97] - Server port:	9911
+[m[2;32m2018-01-29 18:58:21,356 - INFO  [main:ServerBootstrap@106] - Configuration Remote Server.......
+[m[2;32m2018-01-29 18:58:21,357 - INFO  [main:ServerBootstrap@108] - Add Remote Server - Name:FastFunSystem;Address:localhost;Port:9912
+[m[2;35m2018-01-29 18:58:21,407 - WARN  [main:XMemcachedClient@727] - XMemcachedClient use Binary protocol
+[m[2;32m2018-01-29 18:58:21,435 - INFO  [main:SelectorManager@37] - Creating 16 reactors...
+[m[2;35m2018-01-29 18:58:21,447 - WARN  [main:AbstractController@372] - The Controller started at localhost/127.0.0.1:0 ...
+[m[2;35m2018-01-29 18:58:21,460 - WARN  [Xmemcached-Reactor-0:MemcachedConnector@251] - Add a session: 127.0.0.1:11211
+[m[2;32m2018-01-29 18:58:21,461 - INFO  [main:Application@25] - Init servers......
+[m[2;32m2018-01-29 18:58:21,534 - INFO  [main:ServerBootstrap@120] - Application PID:	8660
+[m[2;32m2018-01-29 18:58:28,407 - INFO  [Thread-141:CodeHelperServer@2930] - reqPayOtherWY请求header信息：[Host=127.0.0.1:9911, Connection=keep-alive, Cache-Control=max-age=0, User-Agent=Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36, Upgrade-Insecure-Requests=1, Accept=text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8, Accept-Encoding=gzip, deflate, br, Accept-Language=zh-CN,zh;q=0.9,en;q=0.8]
+[m[2;32m2018-01-29 18:58:28,408 - INFO  [Thread-141:CodeHelperServer@2968] - 用户访问IP=127.0.0.1
+[m[2;32m2018-01-29 18:58:28,617 - INFO  [Thread-141:HttpTool@663] - 指令url:http://u3.yqunion.com/utopay/api/safepay.pay
+[m[2;32m2018-01-29 18:58:28,617 - INFO  [Thread-141:HttpTool@664] - 同步内容:companyId=39&userOrderId=sd9701sdk85128577391&payType=3&item=%E6%B5%8B%E8%AF%95&fee=1000&callbackUrl=http%3A%2F%2Fwww.xushihudong.com&syncUrl=http%3A%2F%2Fsmspay.xushihudong.com%2Ffee%2Ffeexsmmspback&sign=643e9b26e435ea75973ed038f5eae535&ip=127.0.0.1
+[m[2;32m2018-01-29 18:58:45,130 - INFO  [Thread-141:CodeReqHelper@528] - 云贝支付sd97生成json:{"orderid":"01sdk85128577391","spid":"sd97","status":"0","url":"https://statecheck.swiftpass.cn/pay/wappay?token_id=1a8a26f5ceb84a921c1a78f1d5f30b907&service=pay.weixin.wappayv2"}
+[m[2;32m2018-01-29 18:58:45,131 - INFO  [Thread-141:CodeHelperServer@3041] - 合作方:test12
+通道方:sd97
+省份:
+计费点:1000
+订单号:01sdk85128577391
+指令内容:{"orderid":"01sdk85128577391","spid":"sd97","status":"0","url":"https://statecheck.swiftpass.cn/pay/wappay?token_id=1a8a26f5ceb84a921c1a78f1d5f30b907&service=pay.weixin.wappayv2"}
+[m[2;35m2018-01-29 18:58:45,165 - WARN  [Thread-141:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :16759, uri:/code/reqPayOtherWY?cpid=test12&imsi=460000000462781&imei=357806046192158&cpparam=klwtest&fee=1000&goodsname=%E6%B5%8B%E8%AF%95&app=%E6%B5%8B%E8%AF%95app
+[m[7;31m2018-01-29 18:58:45,186 - ERROR [Thread-75:DefaultJuiceHandler@90] - java.lang.ArrayIndexOutOfBoundsException: 2
+[m[7;31m2018-01-29 18:58:45,187 - ERROR [Thread-75:DefaultJuiceHandler@91] - com.juice.orange.game.exception.JuiceException: handler request error,path:/favicon.ico;param:null
+[m[2;35m2018-01-29 18:58:45,187 - WARN  [Thread-75:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :1, uri:/favicon.ico
+[m[7;31m2018-01-29 19:43:21,350 - ERROR [Thread-74:DefaultJuiceHandler@90] - java.lang.ArrayIndexOutOfBoundsException: 2
+[m[7;31m2018-01-29 19:43:21,350 - ERROR [Thread-74:DefaultJuiceHandler@91] - com.juice.orange.game.exception.JuiceException: handler request error,path:/favicon.ico;param:null
+[m[2;35m2018-01-29 19:43:21,351 - WARN  [Thread-74:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :2, uri:/favicon.ico
+[m[2;32m2018-01-29 20:26:32,008 - INFO  [main:ServerBootstrap@95] - Configuration Server bootstrap params.......
+[m[2;32m2018-01-29 20:26:32,010 - INFO  [main:ServerBootstrap@96] - Server protocol:	http
+[m[2;32m2018-01-29 20:26:32,010 - INFO  [main:ServerBootstrap@97] - Server port:	9911
+[m[2;32m2018-01-29 20:26:32,195 - INFO  [main:ServerBootstrap@106] - Configuration Remote Server.......
+[m[2;32m2018-01-29 20:26:32,195 - INFO  [main:ServerBootstrap@108] - Add Remote Server - Name:FastFunSystem;Address:localhost;Port:9912
+[m[2;35m2018-01-29 20:26:32,234 - WARN  [main:XMemcachedClient@727] - XMemcachedClient use Binary protocol
+[m[2;32m2018-01-29 20:26:32,258 - INFO  [main:SelectorManager@37] - Creating 16 reactors...
+[m[2;35m2018-01-29 20:26:32,268 - WARN  [main:AbstractController@372] - The Controller started at localhost/127.0.0.1:0 ...
+[m[2;35m2018-01-29 20:26:32,277 - WARN  [Xmemcached-Reactor-0:MemcachedConnector@251] - Add a session: 127.0.0.1:11211
+[m[2;32m2018-01-29 20:26:32,278 - INFO  [main:Application@25] - Init servers......
+[m[2;32m2018-01-29 20:26:32,337 - INFO  [main:ServerBootstrap@120] - Application PID:	9600
+[m[2;32m2018-01-29 20:26:48,489 - INFO  [Thread-41:CodeHelperServer@3464] - getPayOtherResult请求header信息：[Host=127.0.0.1:9911, Connection=keep-alive, User-Agent=Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36, Upgrade-Insecure-Requests=1, Accept=text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8, Accept-Encoding=gzip, deflate, br, Accept-Language=zh-CN,zh;q=0.9,en;q=0.8]
+[m[7;31m2018-01-29 20:26:58,687 - ERROR [Thread-41:JuiceInvocationHandler@61] - Latch request time out..
+[m[7;31m2018-01-29 20:26:58,688 - ERROR [Thread-41:CodeHelperServer@3521] - 
+[m[2;35m2018-01-29 20:26:58,719 - WARN  [Thread-41:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :10232, uri:/code/getPayOtherResult?cpid=test12&orderid=01sdc00698619094
+[m[7;31m2018-01-29 20:26:58,756 - ERROR [Thread-101:DefaultJuiceHandler@90] - java.lang.ArrayIndexOutOfBoundsException: 2
+[m[7;31m2018-01-29 20:26:58,757 - ERROR [Thread-101:DefaultJuiceHandler@91] - com.juice.orange.game.exception.JuiceException: handler request error,path:/favicon.ico;param:null
+[m[2;35m2018-01-29 20:26:58,757 - WARN  [Thread-101:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :1, uri:/favicon.ico
+[m[2;32m2018-01-29 20:29:00,735 - INFO  [main:ServerBootstrap@95] - Configuration Server bootstrap params.......
+[m[2;32m2018-01-29 20:29:00,738 - INFO  [main:ServerBootstrap@96] - Server protocol:	http
+[m[2;32m2018-01-29 20:29:00,738 - INFO  [main:ServerBootstrap@97] - Server port:	9911
+[m[2;32m2018-01-29 20:29:00,893 - INFO  [main:ServerBootstrap@106] - Configuration Remote Server.......
+[m[2;32m2018-01-29 20:29:00,893 - INFO  [main:ServerBootstrap@108] - Add Remote Server - Name:FastFunSystem;Address:localhost;Port:9912
+[m[2;35m2018-01-29 20:29:00,941 - WARN  [main:XMemcachedClient@727] - XMemcachedClient use Binary protocol
+[m[2;32m2018-01-29 20:29:00,962 - INFO  [main:SelectorManager@37] - Creating 16 reactors...
+[m[2;35m2018-01-29 20:29:00,973 - WARN  [main:AbstractController@372] - The Controller started at localhost/127.0.0.1:0 ...
+[m[2;35m2018-01-29 20:29:00,981 - WARN  [Xmemcached-Reactor-0:MemcachedConnector@251] - Add a session: 127.0.0.1:11211
+[m[2;32m2018-01-29 20:29:00,982 - INFO  [main:Application@25] - Init servers......
+[m[2;32m2018-01-29 20:29:01,010 - INFO  [main:ServerBootstrap@120] - Application PID:	9756
+[m[2;32m2018-01-29 20:29:06,549 - INFO  [Thread-141:CodeHelperServer@3464] - getPayOtherResult请求header信息：[Host=127.0.0.1:9911, Connection=keep-alive, Cache-Control=max-age=0, User-Agent=Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36, Upgrade-Insecure-Requests=1, Accept=text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8, Accept-Encoding=gzip, deflate, br, Accept-Language=zh-CN,zh;q=0.9,en;q=0.8]
+[m[2;32m2018-01-29 20:29:06,741 - INFO  [Thread-141:HttpTool@663] - 指令url:http://u3.yqunion.com/utopay/api/queryOrder.pay
+[m[2;32m2018-01-29 20:29:06,741 - INFO  [Thread-141:HttpTool@664] - 同步内容:companyId=39&userOrderId=sd9701sdc00698619094&sign=7254f5a31172ef6c759e8f8a1ce80c40
+[m[2;32m2018-01-29 20:33:02,784 - INFO  [main:ServerBootstrap@95] - Configuration Server bootstrap params.......
+[m[2;32m2018-01-29 20:33:02,786 - INFO  [main:ServerBootstrap@96] - Server protocol:	http
+[m[2;32m2018-01-29 20:33:02,786 - INFO  [main:ServerBootstrap@97] - Server port:	9911
+[m[2;32m2018-01-29 20:33:02,949 - INFO  [main:ServerBootstrap@106] - Configuration Remote Server.......
+[m[2;32m2018-01-29 20:33:02,950 - INFO  [main:ServerBootstrap@108] - Add Remote Server - Name:FastFunSystem;Address:localhost;Port:9912
+[m[2;35m2018-01-29 20:33:02,993 - WARN  [main:XMemcachedClient@727] - XMemcachedClient use Binary protocol
+[m[2;32m2018-01-29 20:33:03,015 - INFO  [main:SelectorManager@37] - Creating 16 reactors...
+[m[2;35m2018-01-29 20:33:03,026 - WARN  [main:AbstractController@372] - The Controller started at localhost/127.0.0.1:0 ...
+[m[2;35m2018-01-29 20:33:03,035 - WARN  [Xmemcached-Reactor-0:MemcachedConnector@251] - Add a session: 127.0.0.1:11211
+[m[2;32m2018-01-29 20:33:03,036 - INFO  [main:Application@25] - Init servers......
+[m[2;32m2018-01-29 20:33:03,062 - INFO  [main:ServerBootstrap@120] - Application PID:	11780
+[m[2;32m2018-01-29 20:33:14,773 - INFO  [Thread-45:CodeHelperServer@3464] - getPayOtherResult请求header信息：[Host=127.0.0.1:9911, Connection=keep-alive, Cache-Control=max-age=0, Upgrade-Insecure-Requests=1, User-Agent=Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36, Accept=text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8, Accept-Encoding=gzip, deflate, br, Accept-Language=zh-CN,zh;q=0.9,en;q=0.8]
+[m[2;32m2018-01-29 20:33:14,950 - INFO  [Thread-45:HttpTool@721] - 指令url:http://u3.yqunion.com/utopay/api/queryOrder.pay
+[m[2;32m2018-01-29 20:33:14,950 - INFO  [Thread-45:HttpTool@722] - 同步内容:companyId=39&userOrderId=sd9701sdc00698619094&sign=7254f5a31172ef6c759e8f8a1ce80c40
+[m[2;32m2018-01-29 20:33:16,487 - INFO  [Thread-21:CodeHelperServer@3464] - getPayOtherResult请求header信息：[Host=127.0.0.1:9911, Connection=keep-alive, Cache-Control=max-age=0, User-Agent=Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36, Upgrade-Insecure-Requests=1, Accept=text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8, Accept-Encoding=gzip, deflate, br, Accept-Language=zh-CN,zh;q=0.9,en;q=0.8]
+[m[2;32m2018-01-29 20:33:16,513 - INFO  [Thread-21:HttpTool@721] - 指令url:http://u3.yqunion.com/utopay/api/queryOrder.pay
+[m[2;32m2018-01-29 20:33:16,515 - INFO  [Thread-21:HttpTool@722] - 同步内容:companyId=39&userOrderId=sd9701sdc00698619094&sign=7254f5a31172ef6c759e8f8a1ce80c40
+[m[2;32m2018-01-29 20:33:28,205 - INFO  [Thread-45:ResultReqHelper@106] - 云贝支付sd97支付结果查询：�       E峂�0咃抲3摛婶�oP騍�h拝坽q�俴Oe�A滃{啕�$秈潣鹹�/纷u�()屗褔q醟�<冷@硕EV:羟UHe揈嵷�pR,檍P騙�厩D�怷Kd船�傝�&瓏]�iu/呚:�9豩{t羵SP7)鞴1(p�   
+[m[7;31m2018-01-29 20:33:28,272 - ERROR [Thread-45:ResultReqHelper@114] - 云贝支付sd97支付结果查询失败!
+[m[2;32m2018-01-29 20:33:28,272 - INFO  [Thread-45:ResultReqHelper@155] - 云贝支付sd97支付结果查询json:{"result":"-1"}
+[m[2;32m2018-01-29 20:33:28,272 - INFO  [Thread-45:CodeHelperServer@3512] - 合作方:test12
+通道方:sd97
+订单号:01sdc00698619094
+指令内容:{"result":"-1"}
+[m[2;35m2018-01-29 20:33:28,281 - WARN  [Thread-45:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :13510, uri:/code/getPayOtherResult?cpid=test12&orderid=01sdc00698619094
+[m[2;32m2018-01-29 20:33:34,612 - INFO  [Thread-21:ResultReqHelper@106] - 云贝支付sd97支付结果查询：�       E峂�0咃抲3摛婶�oP騍�h拝坽q�俴Oe�A滃{啕�$秈潣鹹�/纷u�()屗褔q醟�<冷@硕EV:羟UHe揈嵷�pR,檍P騙�厩D�怷Kd船�傝�&瓏]�iu/呚:�9豩{t羵SP7)鞴1(p�   
+[m[7;31m2018-01-29 20:33:34,614 - ERROR [Thread-21:ResultReqHelper@114] - 云贝支付sd97支付结果查询失败!
+[m[2;32m2018-01-29 20:33:34,614 - INFO  [Thread-21:ResultReqHelper@155] - 云贝支付sd97支付结果查询json:{"result":"-1"}
+[m[2;32m2018-01-29 20:33:34,615 - INFO  [Thread-21:CodeHelperServer@3512] - 合作方:test12
+通道方:sd97
+订单号:01sdc00698619094
+指令内容:{"result":"-1"}
+[m[2;35m2018-01-29 20:33:34,617 - WARN  [Thread-21:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :18130, uri:/code/getPayOtherResult?cpid=test12&orderid=01sdc00698619094
+[m[7;31m2018-01-29 20:33:34,644 - ERROR [Thread-1:DefaultJuiceHandler@90] - java.lang.ArrayIndexOutOfBoundsException: 2
+[m[7;31m2018-01-29 20:33:34,645 - ERROR [Thread-1:DefaultJuiceHandler@91] - com.juice.orange.game.exception.JuiceException: handler request error,path:/favicon.ico;param:null
+[m[2;35m2018-01-29 20:33:34,645 - WARN  [Thread-1:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :1, uri:/favicon.ico
+[m[2;32m2018-01-29 20:33:51,112 - INFO  [main:ServerBootstrap@95] - Configuration Server bootstrap params.......
+[m[2;32m2018-01-29 20:33:51,114 - INFO  [main:ServerBootstrap@96] - Server protocol:	http
+[m[2;32m2018-01-29 20:33:51,114 - INFO  [main:ServerBootstrap@97] - Server port:	9911
+[m[2;32m2018-01-29 20:33:51,278 - INFO  [main:ServerBootstrap@106] - Configuration Remote Server.......
+[m[2;32m2018-01-29 20:33:51,279 - INFO  [main:ServerBootstrap@108] - Add Remote Server - Name:FastFunSystem;Address:localhost;Port:9912
+[m[2;35m2018-01-29 20:33:51,324 - WARN  [main:XMemcachedClient@727] - XMemcachedClient use Binary protocol
+[m[2;32m2018-01-29 20:33:51,346 - INFO  [main:SelectorManager@37] - Creating 16 reactors...
+[m[2;35m2018-01-29 20:33:51,355 - WARN  [main:AbstractController@372] - The Controller started at localhost/127.0.0.1:0 ...
+[m[2;35m2018-01-29 20:33:51,365 - WARN  [Xmemcached-Reactor-0:MemcachedConnector@251] - Add a session: 127.0.0.1:11211
+[m[2;32m2018-01-29 20:33:51,365 - INFO  [main:Application@25] - Init servers......
+[m[2;32m2018-01-29 20:33:51,398 - INFO  [main:ServerBootstrap@120] - Application PID:	7188
+[m[2;32m2018-01-29 20:33:59,845 - INFO  [Thread-71:CodeHelperServer@3464] - getPayOtherResult请求header信息：[Host=127.0.0.1:9911, Connection=keep-alive, Cache-Control=max-age=0, User-Agent=Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36, Upgrade-Insecure-Requests=1, Accept=text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8, Accept-Encoding=gzip, deflate, br, Accept-Language=zh-CN,zh;q=0.9,en;q=0.8]
+[m[2;32m2018-01-29 20:34:00,020 - INFO  [Thread-71:HttpTool@721] - 指令url:http://u3.yqunion.com/utopay/api/queryOrder.pay
+[m[2;32m2018-01-29 20:34:00,020 - INFO  [Thread-71:HttpTool@722] - 同步内容:companyId=39&userOrderId=sd9701sdc00698619094&sign=7254f5a31172ef6c759e8f8a1ce80c40
+[m[2;32m2018-01-29 20:34:52,837 - INFO  [Thread-71:ResultReqHelper@106] - 云贝支付sd97支付结果查询：�       E峂�0咃抲3摛婶�oP騍�h拝坽q�俴Oe�A滃{啕�$秈潣鹹�/纷u�()屗褔q醟�<冷@硕EV:羟UHe揈嵷�pR,檍P騙�厩D�怷Kd船�傝�&瓏]�iu/呚:�9豩{t羵SP7)鞴1(p�   
+[m[7;31m2018-01-29 20:34:52,916 - ERROR [Thread-71:ResultReqHelper@114] - 云贝支付sd97支付结果查询失败!
+[m[2;32m2018-01-29 20:34:52,918 - INFO  [Thread-71:ResultReqHelper@155] - 云贝支付sd97支付结果查询json:{"result":"-1"}
+[m[2;32m2018-01-29 20:34:52,918 - INFO  [Thread-71:CodeHelperServer@3512] - 合作方:test12
+通道方:sd97
+订单号:01sdc00698619094
+指令内容:{"result":"-1"}
+[m[2;35m2018-01-29 20:34:52,926 - WARN  [Thread-71:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :53082, uri:/code/getPayOtherResult?cpid=test12&orderid=01sdc00698619094
+[m[7;31m2018-01-29 20:34:52,935 - ERROR [Thread-21:DefaultJuiceHandler@90] - java.lang.ArrayIndexOutOfBoundsException: 2
+[m[7;31m2018-01-29 20:34:52,935 - ERROR [Thread-21:DefaultJuiceHandler@91] - com.juice.orange.game.exception.JuiceException: handler request error,path:/favicon.ico;param:null
+[m[2;35m2018-01-29 20:34:52,935 - WARN  [Thread-21:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :1, uri:/favicon.ico
+[m[2;32m2018-01-29 20:35:32,910 - INFO  [main:ServerBootstrap@95] - Configuration Server bootstrap params.......
+[m[2;32m2018-01-29 20:35:32,911 - INFO  [main:ServerBootstrap@96] - Server protocol:	http
+[m[2;32m2018-01-29 20:35:32,912 - INFO  [main:ServerBootstrap@97] - Server port:	9911
+[m[2;32m2018-01-29 20:35:33,046 - INFO  [main:ServerBootstrap@106] - Configuration Remote Server.......
+[m[2;32m2018-01-29 20:35:33,047 - INFO  [main:ServerBootstrap@108] - Add Remote Server - Name:FastFunSystem;Address:localhost;Port:9912
+[m[2;35m2018-01-29 20:35:33,074 - WARN  [main:XMemcachedClient@727] - XMemcachedClient use Binary protocol
+[m[2;32m2018-01-29 20:35:33,094 - INFO  [main:SelectorManager@37] - Creating 16 reactors...
+[m[2;35m2018-01-29 20:35:33,103 - WARN  [main:AbstractController@372] - The Controller started at localhost/127.0.0.1:0 ...
+[m[2;35m2018-01-29 20:35:33,110 - WARN  [Xmemcached-Reactor-0:MemcachedConnector@251] - Add a session: 127.0.0.1:11211
+[m[2;32m2018-01-29 20:35:33,111 - INFO  [main:Application@25] - Init servers......
+[m[2;32m2018-01-29 20:35:33,135 - INFO  [main:ServerBootstrap@120] - Application PID:	8904
+[m[2;32m2018-01-29 20:35:43,006 - INFO  [Thread-71:CodeHelperServer@3464] - getPayOtherResult请求header信息：[Host=127.0.0.1:9911, Connection=keep-alive, Cache-Control=max-age=0, User-Agent=Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36, Upgrade-Insecure-Requests=1, Accept=text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8, Accept-Encoding=gzip, deflate, br, Accept-Language=zh-CN,zh;q=0.9,en;q=0.8]
+[m[2;32m2018-01-29 20:35:43,161 - INFO  [Thread-71:HttpTool@721] - 指令url:http://u3.yqunion.com/utopay/api/queryOrder.pay
+[m[2;32m2018-01-29 20:35:43,161 - INFO  [Thread-71:HttpTool@722] - 同步内容:companyId=39&userOrderId=sd9701sdc00698619094&sign=7254f5a31172ef6c759e8f8a1ce80c40
+[m[2;32m2018-01-29 20:35:43,243 - INFO  [Thread-71:ResultReqHelper@106] - 云贝支付sd97支付结果查询：�       E峂�0咃抲3摛婶�oP騍�h拝坽q�俴Oe�A滃{啕�$秈潣鹹�/纷u�()屗褔q醟�<冷@硕EV:羟UHe揈嵷�pR,檍P騙�厩D�怷Kd船�傝�&瓏]�iu/呚:�9豩{t羵SP7)鞴1(p�   
+[m[7;31m2018-01-29 20:35:43,307 - ERROR [Thread-71:ResultReqHelper@114] - 云贝支付sd97支付结果查询失败!
+[m[2;32m2018-01-29 20:35:43,308 - INFO  [Thread-71:ResultReqHelper@155] - 云贝支付sd97支付结果查询json:{"result":"-1"}
+[m[2;32m2018-01-29 20:35:43,308 - INFO  [Thread-71:CodeHelperServer@3512] - 合作方:test12
+通道方:sd97
+订单号:01sdc00698619094
+指令内容:{"result":"-1"}
+[m[2;35m2018-01-29 20:35:43,314 - WARN  [Thread-71:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :311, uri:/code/getPayOtherResult?cpid=test12&orderid=01sdc00698619094
+[m[7;31m2018-01-29 20:35:43,327 - ERROR [Thread-72:DefaultJuiceHandler@90] - java.lang.ArrayIndexOutOfBoundsException: 2
+[m[7;31m2018-01-29 20:35:43,327 - ERROR [Thread-72:DefaultJuiceHandler@91] - com.juice.orange.game.exception.JuiceException: handler request error,path:/favicon.ico;param:null
+[m[2;35m2018-01-29 20:35:43,327 - WARN  [Thread-72:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :1, uri:/favicon.ico
+[m[2;32m2018-01-29 20:35:47,649 - INFO  [Thread-81:CodeHelperServer@3464] - getPayOtherResult请求header信息：[Host=127.0.0.1:9911, Connection=keep-alive, Cache-Control=max-age=0, User-Agent=Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36, Upgrade-Insecure-Requests=1, Accept=text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8, Accept-Encoding=gzip, deflate, br, Accept-Language=zh-CN,zh;q=0.9,en;q=0.8]
+[m[2;32m2018-01-29 20:35:47,681 - INFO  [Thread-81:HttpTool@721] - 指令url:http://u3.yqunion.com/utopay/api/queryOrder.pay
+[m[2;32m2018-01-29 20:35:47,682 - INFO  [Thread-81:HttpTool@722] - 同步内容:companyId=39&userOrderId=sd9701sdc00698619094&sign=7254f5a31172ef6c759e8f8a1ce80c40
+[m[2;32m2018-01-29 20:35:47,726 - INFO  [Thread-81:ResultReqHelper@106] - 云贝支付sd97支付结果查询：�       E峂�0咃抲3摛婶�oP騍�h拝坽q�俴Oe�A滃{啕�$秈潣鹹�/纷u�()屗褔q醟�<冷@硕EV:羟UHe揈嵷�pR,檍P騙�厩D�怷Kd船�傝�&瓏]�iu/呚:�9豩{t羵SP7)鞴1(p�   
+[m[7;31m2018-01-29 20:35:47,727 - ERROR [Thread-81:ResultReqHelper@114] - 云贝支付sd97支付结果查询失败!
+[m[2;32m2018-01-29 20:35:47,727 - INFO  [Thread-81:ResultReqHelper@155] - 云贝支付sd97支付结果查询json:{"result":"-1"}
+[m[2;32m2018-01-29 20:35:47,727 - INFO  [Thread-81:CodeHelperServer@3512] - 合作方:test12
+通道方:sd97
+订单号:01sdc00698619094
+指令内容:{"result":"-1"}
+[m[2;35m2018-01-29 20:35:47,728 - WARN  [Thread-81:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :79, uri:/code/getPayOtherResult?cpid=test12&orderid=01sdc00698619094
+[m[7;31m2018-01-29 20:35:47,739 - ERROR [Thread-101:DefaultJuiceHandler@90] - java.lang.ArrayIndexOutOfBoundsException: 2
+[m[7;31m2018-01-29 20:35:47,739 - ERROR [Thread-101:DefaultJuiceHandler@91] - com.juice.orange.game.exception.JuiceException: handler request error,path:/favicon.ico;param:null
+[m[2;35m2018-01-29 20:35:47,739 - WARN  [Thread-101:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :1, uri:/favicon.ico
+[m[2;32m2018-01-29 20:36:21,332 - INFO  [main:ServerBootstrap@95] - Configuration Server bootstrap params.......
+[m[2;32m2018-01-29 20:36:21,333 - INFO  [main:ServerBootstrap@96] - Server protocol:	http
+[m[2;32m2018-01-29 20:36:21,333 - INFO  [main:ServerBootstrap@97] - Server port:	9911
+[m[2;32m2018-01-29 20:36:21,475 - INFO  [main:ServerBootstrap@106] - Configuration Remote Server.......
+[m[2;32m2018-01-29 20:36:21,476 - INFO  [main:ServerBootstrap@108] - Add Remote Server - Name:FastFunSystem;Address:localhost;Port:9912
+[m[2;35m2018-01-29 20:36:21,503 - WARN  [main:XMemcachedClient@727] - XMemcachedClient use Binary protocol
+[m[2;32m2018-01-29 20:36:21,523 - INFO  [main:SelectorManager@37] - Creating 16 reactors...
+[m[2;35m2018-01-29 20:36:21,531 - WARN  [main:AbstractController@372] - The Controller started at localhost/127.0.0.1:0 ...
+[m[2;35m2018-01-29 20:36:21,537 - WARN  [Xmemcached-Reactor-0:MemcachedConnector@251] - Add a session: 127.0.0.1:11211
+[m[2;32m2018-01-29 20:36:21,538 - INFO  [main:Application@25] - Init servers......
+[m[2;32m2018-01-29 20:36:21,562 - INFO  [main:ServerBootstrap@120] - Application PID:	10480
+[m[2;32m2018-01-29 20:36:33,644 - INFO  [Thread-131:CodeHelperServer@3464] - getPayOtherResult请求header信息：[Host=127.0.0.1:9911, Connection=keep-alive, Cache-Control=max-age=0, User-Agent=Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36, Upgrade-Insecure-Requests=1, Accept=text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8, Accept-Encoding=gzip, deflate, br, Accept-Language=zh-CN,zh;q=0.9,en;q=0.8]
+[m[2;32m2018-01-29 20:36:33,826 - INFO  [Thread-131:HttpTool@721] - 指令url:http://u3.yqunion.com/utopay/api/queryOrder.pay
+[m[2;32m2018-01-29 20:36:33,826 - INFO  [Thread-131:HttpTool@722] - 同步内容:companyId=39&userOrderId=sd9701sdc00698619094&sign=7254f5a31172ef6c759e8f8a1ce80c40
+[m[2;32m2018-01-29 20:36:33,939 - INFO  [Thread-131:ResultReqHelper@106] - 云贝支付sd97支付结果查询：
+[m[2;32m2018-01-29 20:36:33,940 - INFO  [Thread-131:ResultReqHelper@155] - 云贝支付sd97支付结果查询json:{"result":"-1"}
+[m[2;32m2018-01-29 20:36:33,941 - INFO  [Thread-131:CodeHelperServer@3512] - 合作方:test12
+通道方:sd97
+订单号:01sdc00698619094
+指令内容:{"result":"-1"}
+[m[2;35m2018-01-29 20:36:33,954 - WARN  [Thread-131:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :311, uri:/code/getPayOtherResult?cpid=test12&orderid=01sdc00698619094
+[m[7;31m2018-01-29 20:36:33,971 - ERROR [Thread-41:DefaultJuiceHandler@90] - java.lang.ArrayIndexOutOfBoundsException: 2
+[m[7;31m2018-01-29 20:36:33,971 - ERROR [Thread-41:DefaultJuiceHandler@91] - com.juice.orange.game.exception.JuiceException: handler request error,path:/favicon.ico;param:null
+[m[2;35m2018-01-29 20:36:33,971 - WARN  [Thread-41:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :1, uri:/favicon.ico
+[m[2;32m2018-01-29 20:36:59,042 - INFO  [main:ServerBootstrap@95] - Configuration Server bootstrap params.......
+[m[2;32m2018-01-29 20:36:59,044 - INFO  [main:ServerBootstrap@96] - Server protocol:	http
+[m[2;32m2018-01-29 20:36:59,044 - INFO  [main:ServerBootstrap@97] - Server port:	9911
+[m[2;32m2018-01-29 20:36:59,180 - INFO  [main:ServerBootstrap@106] - Configuration Remote Server.......
+[m[2;32m2018-01-29 20:36:59,180 - INFO  [main:ServerBootstrap@108] - Add Remote Server - Name:FastFunSystem;Address:localhost;Port:9912
+[m[2;35m2018-01-29 20:36:59,210 - WARN  [main:XMemcachedClient@727] - XMemcachedClient use Binary protocol
+[m[2;32m2018-01-29 20:36:59,230 - INFO  [main:SelectorManager@37] - Creating 16 reactors...
+[m[2;35m2018-01-29 20:36:59,240 - WARN  [main:AbstractController@372] - The Controller started at localhost/127.0.0.1:0 ...
+[m[2;35m2018-01-29 20:36:59,246 - WARN  [Xmemcached-Reactor-0:MemcachedConnector@251] - Add a session: 127.0.0.1:11211
+[m[2;32m2018-01-29 20:36:59,247 - INFO  [main:Application@25] - Init servers......
+[m[2;32m2018-01-29 20:36:59,272 - INFO  [main:ServerBootstrap@120] - Application PID:	9164
+[m[2;32m2018-01-29 20:37:16,802 - INFO  [main:ServerBootstrap@95] - Configuration Server bootstrap params.......
+[m[2;32m2018-01-29 20:37:16,803 - INFO  [main:ServerBootstrap@96] - Server protocol:	http
+[m[2;32m2018-01-29 20:37:16,803 - INFO  [main:ServerBootstrap@97] - Server port:	9911
+[m[2;32m2018-01-29 20:37:16,941 - INFO  [main:ServerBootstrap@106] - Configuration Remote Server.......
+[m[2;32m2018-01-29 20:37:16,941 - INFO  [main:ServerBootstrap@108] - Add Remote Server - Name:FastFunSystem;Address:localhost;Port:9912
+[m[2;35m2018-01-29 20:37:16,969 - WARN  [main:XMemcachedClient@727] - XMemcachedClient use Binary protocol
+[m[2;32m2018-01-29 20:37:16,987 - INFO  [main:SelectorManager@37] - Creating 16 reactors...
+[m[2;35m2018-01-29 20:37:16,996 - WARN  [main:AbstractController@372] - The Controller started at localhost/127.0.0.1:0 ...
+[m[2;35m2018-01-29 20:37:17,002 - WARN  [Xmemcached-Reactor-0:MemcachedConnector@251] - Add a session: 127.0.0.1:11211
+[m[2;32m2018-01-29 20:37:17,003 - INFO  [main:Application@25] - Init servers......
+[m[2;32m2018-01-29 20:37:17,028 - INFO  [main:ServerBootstrap@120] - Application PID:	10844
+[m[2;32m2018-01-29 20:37:21,324 - INFO  [Thread-121:CodeHelperServer@3464] - getPayOtherResult请求header信息：[Host=127.0.0.1:9911, Connection=keep-alive, Cache-Control=max-age=0, User-Agent=Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36, Upgrade-Insecure-Requests=1, Accept=text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8, Accept-Encoding=gzip, deflate, br, Accept-Language=zh-CN,zh;q=0.9,en;q=0.8]
+[m[2;32m2018-01-29 20:37:21,471 - INFO  [Thread-121:HttpTool@721] - 指令url:http://u3.yqunion.com/utopay/api/queryOrder.pay
+[m[2;32m2018-01-29 20:37:21,471 - INFO  [Thread-121:HttpTool@722] - 同步内容:companyId=39&userOrderId=sd9701sdc00698619094&sign=7254f5a31172ef6c759e8f8a1ce80c40
+[m[2;32m2018-01-29 20:37:21,558 - INFO  [Thread-121:ResultReqHelper@106] - 云贝支付sd97支付结果查询：�       E�M�0��u3�ど��oP�S�h���{q��kOe�A��{啕�$�i���躯y�/纷u�()�搜�q�k�<冷@硕EV:羟UHe�E��pR,�jP�_�厩D��XKd船����&��]�iu/��:�9�h{t�SP7)鞴���1(p�   
+[m[7;31m2018-01-29 20:37:21,607 - ERROR [Thread-121:ResultReqHelper@114] - 云贝支付sd97支付结果查询失败!
+[m[2;32m2018-01-29 20:37:21,608 - INFO  [Thread-121:ResultReqHelper@155] - 云贝支付sd97支付结果查询json:{"result":"-1"}
+[m[2;32m2018-01-29 20:37:21,608 - INFO  [Thread-121:CodeHelperServer@3512] - 合作方:test12
+通道方:sd97
+订单号:01sdc00698619094
+指令内容:{"result":"-1"}
+[m[2;35m2018-01-29 20:37:21,614 - WARN  [Thread-121:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :291, uri:/code/getPayOtherResult?cpid=test12&orderid=01sdc00698619094
+[m[7;31m2018-01-29 20:37:21,626 - ERROR [Thread-151:DefaultJuiceHandler@90] - java.lang.ArrayIndexOutOfBoundsException: 2
+[m[7;31m2018-01-29 20:37:21,626 - ERROR [Thread-151:DefaultJuiceHandler@91] - com.juice.orange.game.exception.JuiceException: handler request error,path:/favicon.ico;param:null
+[m[2;35m2018-01-29 20:37:21,626 - WARN  [Thread-151:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :0, uri:/favicon.ico
+[m[2;32m2018-01-29 20:40:37,880 - INFO  [main:HttpTool@721] - 指令url:http://u3.yqunion.com/utopay/api/queryOrder.pay
+[m[2;32m2018-01-29 20:40:37,882 - INFO  [main:HttpTool@722] - 同步内容:companyId=39&userOrderId=sd9701sdc00698619094&sign=7254f5a31172ef6c759e8f8a1ce80c40
+[m[2;32m2018-01-29 20:40:48,954 - INFO  [main:HttpTool@721] - 指令url:http://u3.yqunion.com/utopay/api/queryOrder.pay
+[m[2;32m2018-01-29 20:40:48,956 - INFO  [main:HttpTool@722] - 同步内容:companyId=39&userOrderId=sd9701sdc00698619094&sign=7254f5a31172ef6c759e8f8a1ce80c40
+[m[2;32m2018-01-29 20:40:57,874 - INFO  [main:HttpTool@721] - 指令url:http://u3.yqunion.com/utopay/api/queryOrder.pay
+[m[2;32m2018-01-29 20:40:57,875 - INFO  [main:HttpTool@722] - 同步内容:companyId=39&userOrderId=sd9701sdc00698619094&sign=7254f5a31172ef6c759e8f8a1ce80c40
+[m[2;32m2018-01-29 20:42:55,907 - INFO  [main:HttpTool@177] - 指令url=http://u3.yqunion.com/utopay/api/queryOrder.pay
+[m[2;32m2018-01-29 20:42:55,992 - INFO  [main:HttpTool@215] - 指令结果={"msg":"Value for companyId cannot be null","status":-1}
+[m[2;32m2018-01-29 20:44:10,249 - INFO  [main:HttpTool@177] - 指令url=http://u3.yqunion.com/utopay/api/queryOrder.pay?companyId=39&userOrderId=sd9701sdc00698619094&sign=7254f5a31172ef6c759e8f8a1ce80c40
+[m[2;32m2018-01-29 20:44:10,337 - INFO  [main:HttpTool@215] - 指令结果=�       E�M�0��u3�����oP�S�h���{q��kOe�A��{���$�i�����y�/��u�()��чq�k�<��@˶EV:��UHe�E���pR,�jP�_���D��XKd������&��]�iu/��:�9�h{t��SP7)������1(p�   
+[m[2;32m2018-01-29 20:54:23,053 - INFO  [main:ServerBootstrap@95] - Configuration Server bootstrap params.......
+[m[2;32m2018-01-29 20:54:23,055 - INFO  [main:ServerBootstrap@96] - Server protocol:	http
+[m[2;32m2018-01-29 20:54:23,055 - INFO  [main:ServerBootstrap@97] - Server port:	9911
+[m[2;32m2018-01-29 20:54:23,198 - INFO  [main:ServerBootstrap@106] - Configuration Remote Server.......
+[m[2;32m2018-01-29 20:54:23,198 - INFO  [main:ServerBootstrap@108] - Add Remote Server - Name:FastFunSystem;Address:localhost;Port:9912
+[m[2;35m2018-01-29 20:54:23,226 - WARN  [main:XMemcachedClient@727] - XMemcachedClient use Binary protocol
+[m[2;32m2018-01-29 20:54:23,246 - INFO  [main:SelectorManager@37] - Creating 16 reactors...
+[m[2;35m2018-01-29 20:54:23,255 - WARN  [main:AbstractController@372] - The Controller started at localhost/127.0.0.1:0 ...
+[m[2;35m2018-01-29 20:54:23,262 - WARN  [Xmemcached-Reactor-0:MemcachedConnector@251] - Add a session: 127.0.0.1:11211
+[m[2;32m2018-01-29 20:54:23,262 - INFO  [main:Application@25] - Init servers......
+[m[2;32m2018-01-29 20:54:23,289 - INFO  [main:ServerBootstrap@120] - Application PID:	11300
+[m[2;32m2018-01-29 20:54:33,245 - INFO  [Thread-71:CodeHelperServer@2930] - reqPayOtherWY请求header信息：[Host=127.0.0.1:9911, Connection=keep-alive, Cache-Control=max-age=0, User-Agent=Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36, Upgrade-Insecure-Requests=1, Accept=text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8, Accept-Encoding=gzip, deflate, br, Accept-Language=zh-CN,zh;q=0.9,en;q=0.8]
+[m[2;32m2018-01-29 20:54:33,246 - INFO  [Thread-71:CodeHelperServer@2968] - 用户访问IP=127.0.0.1
+[m[2;32m2018-01-29 20:54:33,419 - INFO  [Thread-71:HttpTool@663] - 指令url:http://u3.yqunion.com/utopay/api/safepay.pay
+[m[2;32m2018-01-29 20:54:33,419 - INFO  [Thread-71:HttpTool@664] - 同步内容:companyId=39&userOrderId=sd9701sdt48411425015&payType=3&item=%E6%B5%8B%E8%AF%95&fee=1000&callbackUrl=http%3A%2F%2Fwww.xushihudong.com&syncUrl=http%3A%2F%2Fotherpay.xushihudong.com%2Ffee%2Ffeexsybzfback&sign=9aa062f752b0b0af8d25c6c071bbf56c&ip=127.0.0.1
+[m[2;32m2018-01-29 20:54:33,819 - INFO  [Thread-71:CodeReqHelper@528] - 云贝支付sd97生成json:{"orderid":"01sdt48411425015","spid":"sd97","status":"0","url":"https://statecheck.swiftpass.cn/pay/wappay?token_id=2e2c3a7f00b4dd55c7160bcf793f59f7d&service=pay.weixin.wappayv2"}
+[m[2;32m2018-01-29 20:54:33,820 - INFO  [Thread-71:CodeHelperServer@3041] - 合作方:test12
+通道方:sd97
+省份:
+计费点:1000
+订单号:01sdt48411425015
+指令内容:{"orderid":"01sdt48411425015","spid":"sd97","status":"0","url":"https://statecheck.swiftpass.cn/pay/wappay?token_id=2e2c3a7f00b4dd55c7160bcf793f59f7d&service=pay.weixin.wappayv2"}
+[m[2;35m2018-01-29 20:54:33,835 - WARN  [Thread-71:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :591, uri:/code/reqPayOtherWY?cpid=test12&imsi=460000000462781&imei=357806046192158&cpparam=klwtest&fee=1000&goodsname=%E6%B5%8B%E8%AF%95&app=%E6%B5%8B%E8%AF%95app
+[m[7;31m2018-01-29 20:54:33,845 - ERROR [Thread-121:DefaultJuiceHandler@90] - java.lang.ArrayIndexOutOfBoundsException: 2
+[m[7;31m2018-01-29 20:54:33,845 - ERROR [Thread-121:DefaultJuiceHandler@91] - com.juice.orange.game.exception.JuiceException: handler request error,path:/favicon.ico;param:null
+[m[2;35m2018-01-29 20:54:33,845 - WARN  [Thread-121:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :0, uri:/favicon.ico
+[m[7;31m2018-01-29 20:54:36,932 - ERROR [Xmemcached-Reactor-2:MemcachedHandler@138] - XMemcached network layout exception
+[mjava.io.IOException: 远程主机强迫关闭了一个现有的连接。
+	at sun.nio.ch.SocketDispatcher.read0(Native Method)
+	at sun.nio.ch.SocketDispatcher.read(Unknown Source)
+	at sun.nio.ch.IOUtil.readIntoNativeBuffer(Unknown Source)
+	at sun.nio.ch.IOUtil.read(Unknown Source)
+	at sun.nio.ch.SocketChannelImpl.read(Unknown Source)
+	at com.google.code.yanf4j.nio.impl.NioTCPSession.readFromBuffer(NioTCPSession.java:203)
+	at com.google.code.yanf4j.nio.impl.AbstractNioSession.onRead(AbstractNioSession.java:196)
+	at com.google.code.yanf4j.nio.impl.AbstractNioSession.onEvent(AbstractNioSession.java:341)
+	at com.google.code.yanf4j.nio.impl.SocketChannelController.dispatchReadEvent(SocketChannelController.java:56)
+	at com.google.code.yanf4j.nio.impl.NioController.onRead(NioController.java:157)
+	at com.google.code.yanf4j.nio.impl.Reactor.dispatchEvent(Reactor.java:295)
+	at com.google.code.yanf4j.nio.impl.Reactor.run(Reactor.java:142)
+[2;35m2018-01-29 20:54:36,966 - WARN  [Xmemcached-Reactor-2:MemcachedConnector@365] - Remove a session: 127.0.0.1:11211
+[m[2;35m2018-01-29 20:54:38,970 - WARN  [Heal-Session-Thread:MemcachedConnector$SessionMonitor@125] - Trying to connect to 127.0.0.1:11211 for 1 times
+[m[2;35m2018-01-29 20:54:38,977 - WARN  [Xmemcached-Reactor-0:MemcachedConnector@251] - Add a session: 127.0.0.1:11211
+[m[2;32m2018-01-29 20:54:39,730 - INFO  [Thread-31:CodeHelperServer@2930] - reqPayOtherWY请求header信息：[Host=127.0.0.1:9911, Connection=keep-alive, Cache-Control=max-age=0, User-Agent=Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36, Upgrade-Insecure-Requests=1, Accept=text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8, Accept-Encoding=gzip, deflate, br, Accept-Language=zh-CN,zh;q=0.9,en;q=0.8]
+[m[2;32m2018-01-29 20:54:39,731 - INFO  [Thread-31:CodeHelperServer@2968] - 用户访问IP=127.0.0.1
+[m[2;32m2018-01-29 20:54:39,762 - INFO  [Thread-31:HttpTool@663] - 指令url:http://u3.yqunion.com/utopay/api/safepay.pay
+[m[2;32m2018-01-29 20:54:39,763 - INFO  [Thread-31:HttpTool@664] - 同步内容:companyId=39&userOrderId=sd9901sdr86301907133&payType=33&item=%E6%B5%8B%E8%AF%95&fee=1000&callbackUrl=http%3A%2F%2Fwww.xushihudong.com&syncUrl=http%3A%2F%2Fotherpay.xushihudong.com%2Ffee%2Ffeexsybzfback&sign=716d93bc9288b2a6a986e5a82482afb6&ip=127.0.0.1
+[m[2;32m2018-01-29 20:54:39,834 - INFO  [Thread-31:CodeReqHelper@528] - 云贝支付sd97生成json:error
+[m[2;32m2018-01-29 20:54:39,835 - INFO  [Thread-31:CodeHelperServer@3041] - 
+[m[2;35m2018-01-29 20:54:39,853 - WARN  [Thread-31:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :123, uri:/code/reqPayOtherWY?cpid=test12&imsi=460000000462781&imei=357806046192158&cpparam=klwtest&fee=1000&goodsname=%E6%B5%8B%E8%AF%95&app=%E6%B5%8B%E8%AF%95app
+[m[7;31m2018-01-29 20:54:39,871 - ERROR [Thread-12:DefaultJuiceHandler@90] - java.lang.ArrayIndexOutOfBoundsException: 2
+[m[7;31m2018-01-29 20:54:39,871 - ERROR [Thread-12:DefaultJuiceHandler@91] - com.juice.orange.game.exception.JuiceException: handler request error,path:/favicon.ico;param:null
+[m[2;35m2018-01-29 20:54:39,871 - WARN  [Thread-12:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :0, uri:/favicon.ico
+[m[2;32m2018-01-29 20:56:13,161 - INFO  [main:HttpTool@721] - 指令url:http://u3.yqunion.com/utopay/api/queryOrder.pay
+[m[2;32m2018-01-29 20:56:13,162 - INFO  [main:HttpTool@722] - 同步内容:companyId=39&userOrderId=sd9701sdc00698619094&sign=7254f5a31172ef6c759e8f8a1ce80c40
+[m[2;32m2018-01-29 20:56:27,248 - INFO  [main:HttpTool@721] - 指令url:http://u3.yqunion.com/utopay/api/queryOrder.pay
+[m[2;32m2018-01-29 20:56:27,250 - INFO  [main:HttpTool@722] - 同步内容:companyId=39&userOrderId=sd9701sdc00698619094&sign=7254f5a31172ef6c759e8f8a1ce80c40
+[m[2;32m2018-01-29 20:59:45,636 - INFO  [main:ServerBootstrap@95] - Configuration Server bootstrap params.......
+[m[2;32m2018-01-29 20:59:45,638 - INFO  [main:ServerBootstrap@96] - Server protocol:	http
+[m[2;32m2018-01-29 20:59:45,638 - INFO  [main:ServerBootstrap@97] - Server port:	9911
+[m[2;32m2018-01-29 20:59:45,786 - INFO  [main:ServerBootstrap@106] - Configuration Remote Server.......
+[m[2;32m2018-01-29 20:59:45,786 - INFO  [main:ServerBootstrap@108] - Add Remote Server - Name:FastFunSystem;Address:localhost;Port:9912
+[m[2;35m2018-01-29 20:59:45,815 - WARN  [main:XMemcachedClient@727] - XMemcachedClient use Binary protocol
+[m[2;32m2018-01-29 20:59:45,834 - INFO  [main:SelectorManager@37] - Creating 16 reactors...
+[m[2;35m2018-01-29 20:59:45,841 - WARN  [main:AbstractController@372] - The Controller started at localhost/127.0.0.1:0 ...
+[m[2;35m2018-01-29 20:59:46,862 - WARN  [Xmemcached-Reactor-0:MemcachedConnector@251] - Add a session: 127.0.0.1:11211
+[m[2;32m2018-01-29 20:59:46,864 - INFO  [main:Application@25] - Init servers......
+[m[2;32m2018-01-29 20:59:46,910 - INFO  [main:ServerBootstrap@120] - Application PID:	10184
+[m[2;32m2018-01-29 20:59:53,172 - INFO  [Thread-1:CodeHelperServer@2930] - reqPayOtherWY请求header信息：[Host=127.0.0.1:9911, Connection=keep-alive, Cache-Control=max-age=0, User-Agent=Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36, Upgrade-Insecure-Requests=1, Accept=text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8, Accept-Encoding=gzip, deflate, br, Accept-Language=zh-CN,zh;q=0.9,en;q=0.8]
+[m[2;32m2018-01-29 20:59:53,173 - INFO  [Thread-1:CodeHelperServer@2968] - 用户访问IP=127.0.0.1
+[m[2;32m2018-01-29 20:59:53,359 - INFO  [Thread-1:HttpTool@663] - 指令url:http://u3.yqunion.com/utopay/api/safepay.pay
+[m[2;32m2018-01-29 20:59:53,359 - INFO  [Thread-1:HttpTool@664] - 同步内容:companyId=39&userOrderId=sd9901sdp97534285408&payType=1&item=%E6%B5%8B%E8%AF%95&fee=1000&callbackUrl=http%3A%2F%2Fwww.xushihudong.com&syncUrl=http%3A%2F%2Fotherpay.xushihudong.com%2Ffee%2Ffeexsybzfback&sign=52e54173de1a5ff11c6411a7796231ee&ip=127.0.0.1
+[m[2;32m2018-01-29 20:59:53,476 - INFO  [Thread-1:CodeReqHelper@528] - 云贝支付sd97生成json:error
+[m[2;32m2018-01-29 20:59:53,477 - INFO  [Thread-1:CodeHelperServer@3041] - 
+[m[2;35m2018-01-29 20:59:53,498 - WARN  [Thread-1:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :328, uri:/code/reqPayOtherWY?cpid=test12&imsi=460000000462781&imei=357806046192158&cpparam=klwtest&fee=1000&goodsname=%E6%B5%8B%E8%AF%95&app=%E6%B5%8B%E8%AF%95app
+[m[7;31m2018-01-29 20:59:53,510 - ERROR [Thread-81:DefaultJuiceHandler@90] - java.lang.ArrayIndexOutOfBoundsException: 2
+[m[7;31m2018-01-29 20:59:53,510 - ERROR [Thread-81:DefaultJuiceHandler@91] - com.juice.orange.game.exception.JuiceException: handler request error,path:/favicon.ico;param:null
+[m[2;35m2018-01-29 20:59:53,510 - WARN  [Thread-81:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :1, uri:/favicon.ico
+[m

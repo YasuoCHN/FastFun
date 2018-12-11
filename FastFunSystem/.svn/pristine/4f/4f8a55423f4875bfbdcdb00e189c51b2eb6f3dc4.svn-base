@@ -1,0 +1,150 @@
+[2;32m2017-01-10 17:29:05,240 - INFO  [main:ServerBootstrap@78] - connect to database:jdbc:mysql://120.24.88.90:3306/fastfun?useUnicode=true&characterEncoding=UTF-8
+[m[2;32m2017-01-10 17:29:05,913 - INFO  [main:ServerBootstrap@104] - Configuration Server bootstrap params.......
+[m[2;32m2017-01-10 17:29:05,914 - INFO  [main:ServerBootstrap@105] - Server protocol:	socket
+[m[2;32m2017-01-10 17:29:05,914 - INFO  [main:ServerBootstrap@106] - Server port:	9912
+[m[2;35m2017-01-10 17:29:06,191 - WARN  [main:XMemcachedClient@727] - XMemcachedClient use Binary protocol
+[m[2;32m2017-01-10 17:29:06,236 - INFO  [main:SelectorManager@37] - Creating 4 reactors...
+[m[2;35m2017-01-10 17:29:06,248 - WARN  [main:AbstractController@372] - The Controller started at localhost/127.0.0.1:0 ...
+[m[2;35m2017-01-10 17:29:06,267 - WARN  [Xmemcached-Reactor-0:MemcachedConnector@251] - Add a session: 120.24.88.90:11211
+[m[2;32m2017-01-10 17:29:06,270 - INFO  [main:Application@25] - 初始化AO...
+[m[2;32m2017-01-10 17:29:06,348 - INFO  [main:ServerBootstrap@129] - Application PID:	2120
+[m[2;35m2017-01-10 17:29:33,069 - WARN  [Thread-32:JuiceThreadPool$JuiceWorkThread@108] - RPC method start time :103, action:com.klw.fastfun.pay.common.action.CommonAction, method:getPointPayCodes
+[m[2;35m2017-01-10 17:29:33,950 - WARN  [Thread-33:JuiceThreadPool$JuiceWorkThread@108] - RPC method start time :18, action:com.klw.fastfun.pay.common.action.CommonAction, method:addOrderReqInfo
+[m[7;31m2017-01-10 17:37:18,880 - ERROR [Thread-12:ConnectionHandle@297] - Database access problem. Killing off all remaining connections in the connection pool. SQL State = 08S01
+[m[7;31m2017-01-10 17:37:18,886 - ERROR [Thread-12:ConnectionResource@65] - select * from t_code_ec where sp_id=? and is_open>0
+[mcom.mysql.jdbc.CommunicationsException: Communications link failure due to underlying exception: 
+
+** BEGIN NESTED EXCEPTION ** 
+
+java.net.SocketTimeoutException
+MESSAGE: Read timed out
+
+STACKTRACE:
+
+java.net.SocketTimeoutException: Read timed out
+	at java.net.SocketInputStream.socketRead0(Native Method)
+	at java.net.SocketInputStream.read(SocketInputStream.java:150)
+	at java.net.SocketInputStream.read(SocketInputStream.java:121)
+	at com.mysql.jdbc.util.ReadAheadInputStream.fill(ReadAheadInputStream.java:113)
+	at com.mysql.jdbc.util.ReadAheadInputStream.readFromUnderlyingStreamIfNecessary(ReadAheadInputStream.java:160)
+	at com.mysql.jdbc.util.ReadAheadInputStream.read(ReadAheadInputStream.java:188)
+	at com.mysql.jdbc.MysqlIO.readFully(MysqlIO.java:1994)
+	at com.mysql.jdbc.MysqlIO.reuseAndReadPacket(MysqlIO.java:2411)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:2916)
+	at com.mysql.jdbc.MysqlIO.sendCommand(MysqlIO.java:1631)
+	at com.mysql.jdbc.MysqlIO.sqlQueryDirect(MysqlIO.java:1723)
+	at com.mysql.jdbc.Connection.execSQL(Connection.java:3256)
+	at com.mysql.jdbc.PreparedStatement.executeInternal(PreparedStatement.java:1313)
+	at com.mysql.jdbc.PreparedStatement.executeQuery(PreparedStatement.java:1448)
+	at com.jolbox.bonecp.PreparedStatementHandle.executeQuery(PreparedStatementHandle.java:172)
+	at com.juice.orange.game.database.ConnectionResource.queryForObject(ConnectionResource.java:60)
+	at com.klw.fastfun.pay.data.dao.CodeHelperDAO.queryCodeBySpId(CodeHelperDAO.java:92)
+	at com.klw.fastfun.pay.data.ao.CodeHelperAO.collectCodeInfo(CodeHelperAO.java:102)
+	at com.klw.fastfun.pay.data.ao.CodeHelperAO.collectPointCode(CodeHelperAO.java:64)
+	at com.klw.fastfun.pay.common.action.impl.CommonActionImpl.getPointPayCodes(CommonActionImpl.java:344)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:601)
+	at com.juice.orange.game.rmi.control.RPCServerControl.nextHandler(RPCServerControl.java:57)
+	at com.juice.orange.game.util.threadpool.JuiceThreadPool$JuiceWorkThread.run(JuiceThreadPool.java:70)
+
+
+** END NESTED EXCEPTION **
+
+
+
+Last packet sent to the server was 18980 ms ago.
+	at com.mysql.jdbc.MysqlIO.reuseAndReadPacket(MysqlIO.java:2622)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:2916)
+	at com.mysql.jdbc.MysqlIO.sendCommand(MysqlIO.java:1631)
+	at com.mysql.jdbc.MysqlIO.sqlQueryDirect(MysqlIO.java:1723)
+	at com.mysql.jdbc.Connection.execSQL(Connection.java:3256)
+	at com.mysql.jdbc.PreparedStatement.executeInternal(PreparedStatement.java:1313)
+	at com.mysql.jdbc.PreparedStatement.executeQuery(PreparedStatement.java:1448)
+	at com.jolbox.bonecp.PreparedStatementHandle.executeQuery(PreparedStatementHandle.java:172)
+	at com.juice.orange.game.database.ConnectionResource.queryForObject(ConnectionResource.java:60)
+	at com.klw.fastfun.pay.data.dao.CodeHelperDAO.queryCodeBySpId(CodeHelperDAO.java:92)
+	at com.klw.fastfun.pay.data.ao.CodeHelperAO.collectCodeInfo(CodeHelperAO.java:102)
+	at com.klw.fastfun.pay.data.ao.CodeHelperAO.collectPointCode(CodeHelperAO.java:64)
+	at com.klw.fastfun.pay.common.action.impl.CommonActionImpl.getPointPayCodes(CommonActionImpl.java:344)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:601)
+	at com.juice.orange.game.rmi.control.RPCServerControl.nextHandler(RPCServerControl.java:57)
+	at com.juice.orange.game.util.threadpool.JuiceThreadPool$JuiceWorkThread.run(JuiceThreadPool.java:70)
+[2;35m2017-01-10 17:37:18,890 - WARN  [Thread-12:JuiceThreadPool$JuiceWorkThread@108] - RPC method start time :19026, action:com.klw.fastfun.pay.common.action.CommonAction, method:getPointPayCodes
+[m[7;31m2017-01-10 17:38:15,408 - ERROR [JUICE-SERVER-Handler-4-1-thread:ConnectionException@22] - uncaughtException :
+[mcom.juice.orange.game.exception.JuiceException: 远程主机强迫关闭了一个现有的连接。 on [id: 0xa111072f, /127.0.0.1:57394 => /127.0.0.1:9912]
+	at com.juice.orange.game.exception.JuiceException.fromException(JuiceException.java:38)
+	at com.juice.orange.game.exception.JuiceException.fromExceptionEvent(JuiceException.java:32)
+	at com.juice.orange.game.util.ConnectionHelper$2.run(ConnectionHelper.java:56)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1110)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:603)
+	at java.lang.Thread.run(Thread.java:722)
+Caused by: java.io.IOException: 远程主机强迫关闭了一个现有的连接。
+	at sun.nio.ch.SocketDispatcher.read0(Native Method)
+	at sun.nio.ch.SocketDispatcher.read(SocketDispatcher.java:43)
+	at sun.nio.ch.IOUtil.readIntoNativeBuffer(IOUtil.java:218)
+	at sun.nio.ch.IOUtil.read(IOUtil.java:186)
+	at sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:359)
+	at org.jboss.netty.channel.socket.nio.NioWorker.read(NioWorker.java:64)
+	at org.jboss.netty.channel.socket.nio.AbstractNioWorker.process(AbstractNioWorker.java:107)
+	at org.jboss.netty.channel.socket.nio.AbstractNioSelector.run(AbstractNioSelector.java:312)
+	at org.jboss.netty.channel.socket.nio.AbstractNioWorker.run(AbstractNioWorker.java:88)
+	at org.jboss.netty.channel.socket.nio.NioWorker.run(NioWorker.java:178)
+	... 3 more
+[7;31m2017-01-10 17:38:15,447 - ERROR [JUICE-SERVER-Handler-4-2-thread:ConnectionException@22] - uncaughtException :
+[mcom.juice.orange.game.exception.JuiceException: 远程主机强迫关闭了一个现有的连接。 on [id: 0xf3916669, /127.0.0.1:57396 :> /127.0.0.1:9912]
+	at com.juice.orange.game.exception.JuiceException.fromException(JuiceException.java:38)
+	at com.juice.orange.game.exception.JuiceException.fromExceptionEvent(JuiceException.java:32)
+	at com.juice.orange.game.util.ConnectionHelper$2.run(ConnectionHelper.java:56)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1110)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:603)
+	at java.lang.Thread.run(Thread.java:722)
+Caused by: java.io.IOException: 远程主机强迫关闭了一个现有的连接。
+	at sun.nio.ch.SocketDispatcher.read0(Native Method)
+	at sun.nio.ch.SocketDispatcher.read(SocketDispatcher.java:43)
+	at sun.nio.ch.IOUtil.readIntoNativeBuffer(IOUtil.java:218)
+	at sun.nio.ch.IOUtil.read(IOUtil.java:186)
+	at sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:359)
+	at org.jboss.netty.channel.socket.nio.NioWorker.read(NioWorker.java:64)
+	at org.jboss.netty.channel.socket.nio.AbstractNioWorker.process(AbstractNioWorker.java:107)
+	at org.jboss.netty.channel.socket.nio.AbstractNioSelector.run(AbstractNioSelector.java:312)
+	at org.jboss.netty.channel.socket.nio.AbstractNioWorker.run(AbstractNioWorker.java:88)
+	at org.jboss.netty.channel.socket.nio.NioWorker.run(NioWorker.java:178)
+	... 3 more
+[7;31m2017-01-10 17:38:15,467 - ERROR [JUICE-SERVER-Handler-4-1-thread:ConnectionException@22] - uncaughtException :
+[mcom.juice.orange.game.exception.JuiceException: 远程主机强迫关闭了一个现有的连接。 on [id: 0x8c02cabe, /127.0.0.1:57395 :> /127.0.0.1:9912]
+	at com.juice.orange.game.exception.JuiceException.fromException(JuiceException.java:38)
+	at com.juice.orange.game.exception.JuiceException.fromExceptionEvent(JuiceException.java:32)
+	at com.juice.orange.game.util.ConnectionHelper$2.run(ConnectionHelper.java:56)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1110)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:603)
+	at java.lang.Thread.run(Thread.java:722)
+Caused by: java.io.IOException: 远程主机强迫关闭了一个现有的连接。
+	at sun.nio.ch.SocketDispatcher.read0(Native Method)
+	at sun.nio.ch.SocketDispatcher.read(SocketDispatcher.java:43)
+	at sun.nio.ch.IOUtil.readIntoNativeBuffer(IOUtil.java:218)
+	at sun.nio.ch.IOUtil.read(IOUtil.java:186)
+	at sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:359)
+	at org.jboss.netty.channel.socket.nio.NioWorker.read(NioWorker.java:64)
+	at org.jboss.netty.channel.socket.nio.AbstractNioWorker.process(AbstractNioWorker.java:107)
+	at org.jboss.netty.channel.socket.nio.AbstractNioSelector.run(AbstractNioSelector.java:312)
+	at org.jboss.netty.channel.socket.nio.AbstractNioWorker.run(AbstractNioWorker.java:88)
+	at org.jboss.netty.channel.socket.nio.NioWorker.run(NioWorker.java:178)
+	... 3 more
+[2;32m2017-01-10 17:38:23,143 - INFO  [main:ServerBootstrap@78] - connect to database:jdbc:mysql://120.24.88.90:3306/fastfun?useUnicode=true&characterEncoding=UTF-8
+[m[2;32m2017-01-10 17:38:23,670 - INFO  [main:ServerBootstrap@104] - Configuration Server bootstrap params.......
+[m[2;32m2017-01-10 17:38:23,670 - INFO  [main:ServerBootstrap@105] - Server protocol:	socket
+[m[2;32m2017-01-10 17:38:23,670 - INFO  [main:ServerBootstrap@106] - Server port:	9912
+[m[2;35m2017-01-10 17:38:24,000 - WARN  [main:XMemcachedClient@727] - XMemcachedClient use Binary protocol
+[m[2;32m2017-01-10 17:38:24,042 - INFO  [main:SelectorManager@37] - Creating 4 reactors...
+[m[2;35m2017-01-10 17:38:24,054 - WARN  [main:AbstractController@372] - The Controller started at localhost/127.0.0.1:0 ...
+[m[2;35m2017-01-10 17:38:24,080 - WARN  [Xmemcached-Reactor-0:MemcachedConnector@251] - Add a session: 120.24.88.90:11211
+[m[2;32m2017-01-10 17:38:24,081 - INFO  [main:Application@25] - 初始化AO...
+[m[2;32m2017-01-10 17:38:24,145 - INFO  [main:ServerBootstrap@129] - Application PID:	3504
+[m[2;35m2017-01-10 17:38:30,055 - WARN  [Thread-22:JuiceThreadPool$JuiceWorkThread@108] - RPC method start time :114, action:com.klw.fastfun.pay.common.action.CommonAction, method:getPointPayCodes
+[m[2;35m2017-01-10 17:54:01,791 - WARN  [Thread-12:JuiceThreadPool$JuiceWorkThread@108] - RPC method start time :19, action:com.klw.fastfun.pay.common.action.CommonAction, method:getPointPayCodes
+[m

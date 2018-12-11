@@ -1,0 +1,84 @@
+[2;32m2018-04-26 17:45:45,664 - INFO  [main:ServerBootstrap@95] - Configuration Server bootstrap params.......
+[m[2;32m2018-04-26 17:45:45,668 - INFO  [main:ServerBootstrap@96] - Server protocol:	http
+[m[2;32m2018-04-26 17:45:45,668 - INFO  [main:ServerBootstrap@97] - Server port:	9911
+[m[2;32m2018-04-26 17:45:45,945 - INFO  [main:ServerBootstrap@106] - Configuration Remote Server.......
+[m[2;32m2018-04-26 17:45:45,946 - INFO  [main:ServerBootstrap@108] - Add Remote Server - Name:FastFunSystem;Address:localhost;Port:9912
+[m[2;35m2018-04-26 17:45:46,006 - WARN  [main:XMemcachedClient@727] - XMemcachedClient use Binary protocol
+[m[2;32m2018-04-26 17:45:46,037 - INFO  [main:SelectorManager@37] - Creating 16 reactors...
+[m[2;35m2018-04-26 17:45:46,049 - WARN  [main:AbstractController@372] - The Controller started at localhost/127.0.0.1:0 ...
+[m[7;31m2018-04-26 17:45:47,064 - ERROR [main:XMemcachedClient@593] - connect to 127.0.0.1:11211 error
+[mjava.util.concurrent.ExecutionException: java.net.ConnectException: Connection refused: no further information
+	at com.google.code.yanf4j.core.impl.FutureImpl.get(FutureImpl.java:145)
+	at net.rubyeye.xmemcached.XMemcachedClient.connect(XMemcachedClient.java:582)
+	at net.rubyeye.xmemcached.XMemcachedClient.<init>(XMemcachedClient.java:870)
+	at net.rubyeye.xmemcached.XMemcachedClientBuilder.build(XMemcachedClientBuilder.java:340)
+	at com.juice.orange.game.cached.MemcachedResource.buildMemcached(MemcachedResource.java:34)
+	at com.klw.fastfun.pay.view.app.ServerBootstrap.main(ServerBootstrap.java:78)
+Caused by: java.net.ConnectException: Connection refused: no further information
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(Unknown Source)
+	at net.rubyeye.xmemcached.impl.MemcachedConnector.onConnect(MemcachedConnector.java:404)
+	at com.google.code.yanf4j.nio.impl.Reactor.dispatchEvent(Reactor.java:303)
+	at com.google.code.yanf4j.nio.impl.Reactor.run(Reactor.java:142)
+[7;31m2018-04-26 17:45:47,071 - ERROR [Xmemcached-Reactor-0:MemcachedConnector$InnerControllerStateListener@558] - Exception occured in controller
+[mjava.io.IOException: Connect to 127.0.0.1:11211 fail,Connection refused: no further information
+	at net.rubyeye.xmemcached.impl.MemcachedConnector.onConnect(MemcachedConnector.java:423)
+	at com.google.code.yanf4j.nio.impl.Reactor.dispatchEvent(Reactor.java:303)
+	at com.google.code.yanf4j.nio.impl.Reactor.run(Reactor.java:142)
+[7;31m2018-04-26 17:45:47,077 - ERROR [Xmemcached-Reactor-0:Reactor@325] - Reactor dispatch events error
+[mjava.io.IOException: Connect to 127.0.0.1:11211 fail,Connection refused: no further information
+	at net.rubyeye.xmemcached.impl.MemcachedConnector.onConnect(MemcachedConnector.java:423)
+	at com.google.code.yanf4j.nio.impl.Reactor.dispatchEvent(Reactor.java:303)
+	at com.google.code.yanf4j.nio.impl.Reactor.run(Reactor.java:142)
+[7;31m2018-04-26 17:45:47,078 - ERROR [main:XMemcachedClient@627] - Connect to 127.0.0.1:11211 fail
+[mjava.util.concurrent.ExecutionException: java.net.ConnectException: Connection refused: no further information
+	at com.google.code.yanf4j.core.impl.FutureImpl.get(FutureImpl.java:145)
+	at net.rubyeye.xmemcached.XMemcachedClient.connect(XMemcachedClient.java:582)
+	at net.rubyeye.xmemcached.XMemcachedClient.<init>(XMemcachedClient.java:870)
+	at net.rubyeye.xmemcached.XMemcachedClientBuilder.build(XMemcachedClientBuilder.java:340)
+	at com.juice.orange.game.cached.MemcachedResource.buildMemcached(MemcachedResource.java:34)
+	at com.klw.fastfun.pay.view.app.ServerBootstrap.main(ServerBootstrap.java:78)
+Caused by: java.net.ConnectException: Connection refused: no further information
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(Unknown Source)
+	at net.rubyeye.xmemcached.impl.MemcachedConnector.onConnect(MemcachedConnector.java:404)
+	at com.google.code.yanf4j.nio.impl.Reactor.dispatchEvent(Reactor.java:303)
+	at com.google.code.yanf4j.nio.impl.Reactor.run(Reactor.java:142)
+[2;32m2018-04-26 17:45:47,079 - INFO  [main:Application@25] - Init servers......
+[m[2;32m2018-04-26 17:45:47,184 - INFO  [main:ServerBootstrap@120] - Application PID:	6168
+[m[2;35m2018-04-26 17:45:49,080 - WARN  [Heal-Session-Thread:MemcachedConnector$SessionMonitor@125] - Trying to connect to 127.0.0.1:11211 for 1 times
+[m[7;31m2018-04-26 17:45:50,079 - ERROR [Xmemcached-Reactor-0:MemcachedConnector$InnerControllerStateListener@558] - Exception occured in controller
+[mjava.io.IOException: Connect to 127.0.0.1:11211 fail,Connection refused: no further information
+	at net.rubyeye.xmemcached.impl.MemcachedConnector.onConnect(MemcachedConnector.java:423)
+	at com.google.code.yanf4j.nio.impl.Reactor.dispatchEvent(Reactor.java:303)
+	at com.google.code.yanf4j.nio.impl.Reactor.run(Reactor.java:142)
+[7;31m2018-04-26 17:45:50,079 - ERROR [Heal-Session-Thread:MemcachedConnector$SessionMonitor@169] - Reconnect to 127.0.0.1:11211 fail
+[m[7;31m2018-04-26 17:45:50,082 - ERROR [Xmemcached-Reactor-0:Reactor@325] - Reactor dispatch events error
+[mjava.io.IOException: Connect to 127.0.0.1:11211 fail,Connection refused: no further information
+	at net.rubyeye.xmemcached.impl.MemcachedConnector.onConnect(MemcachedConnector.java:423)
+	at com.google.code.yanf4j.nio.impl.Reactor.dispatchEvent(Reactor.java:303)
+	at com.google.code.yanf4j.nio.impl.Reactor.run(Reactor.java:142)
+[2;35m2018-04-26 17:45:52,081 - WARN  [Heal-Session-Thread:MemcachedConnector$SessionMonitor@125] - Trying to connect to 127.0.0.1:11211 for 2 times
+[m[2;35m2018-04-26 17:45:52,595 - WARN  [Xmemcached-Reactor-0:MemcachedConnector@251] - Add a session: 127.0.0.1:11211
+[m[2;32m2018-04-26 17:46:28,305 - INFO  [Thread-151:CodeHelperServer@3408] - reqPayOtherWY请求header信息：[Host=127.0.0.1:9911, Connection=keep-alive, Upgrade-Insecure-Requests=1, User-Agent=Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36, Accept=text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8, Accept-Encoding=gzip, deflate, br, Accept-Language=zh-CN,zh;q=0.9,en;q=0.8]
+[m[2;32m2018-04-26 17:46:28,306 - INFO  [Thread-151:CodeHelperServer@3460] - 用户访问IP=112.124.10.89
+[m[2;32m2018-04-26 17:46:28,689 - INFO  [Thread-151:HttpTool@472] - 指令url=http://119.63.39.12:8002/mpay/interface/pay/payinit.php
+[m[2;32m2018-04-26 17:46:28,689 - INFO  [Thread-151:HttpTool@473] - 同步内容=client_ip=112.124.10.89&goodsname=04sdu20558104950&md5key=3c67bd0d1dcf316999e637b2a3e8a972&paymoney=1000&paytypeid=21&siteid=90010&siteorderid=sdF404sdu20558104950&spare1=2&tcid=100&thenotify_url=http://www.baidu.com/&thereport_url=http://ltxpay.huizhousenfeng.com/fee/feeltxbtwxh5
+[m[2;32m2018-04-26 17:46:29,383 - INFO  [Thread-151:CodeReqHelper@1754] - 博腾sdD6请求结果:{"returncode":"100","returnmsg":"\u6210\u529f\u83b7\u53d6\u8ba1\u8d39\u6570\u636e","myorderid":"310000015ae19fb18a8b00184","siteorderid":"sdF404sdu20558104950","code_img_url":"http:\/\/47.92.126.200\/ali\/img\/5783695720180426170424ALI.jpg"}
+[m[2;32m2018-04-26 17:48:02,523 - INFO  [main:ServerBootstrap@95] - Configuration Server bootstrap params.......
+[m[2;32m2018-04-26 17:48:02,527 - INFO  [main:ServerBootstrap@96] - Server protocol:	http
+[m[2;32m2018-04-26 17:48:02,527 - INFO  [main:ServerBootstrap@97] - Server port:	9911
+[m[2;32m2018-04-26 17:48:02,749 - INFO  [main:ServerBootstrap@106] - Configuration Remote Server.......
+[m[2;32m2018-04-26 17:48:02,750 - INFO  [main:ServerBootstrap@108] - Add Remote Server - Name:FastFunSystem;Address:localhost;Port:9912
+[m[2;35m2018-04-26 17:48:02,809 - WARN  [main:XMemcachedClient@727] - XMemcachedClient use Binary protocol
+[m[2;32m2018-04-26 17:48:02,841 - INFO  [main:SelectorManager@37] - Creating 16 reactors...
+[m[2;35m2018-04-26 17:48:02,852 - WARN  [main:AbstractController@372] - The Controller started at localhost/127.0.0.1:0 ...
+[m[2;35m2018-04-26 17:48:02,859 - WARN  [Xmemcached-Reactor-0:MemcachedConnector@251] - Add a session: 127.0.0.1:11211
+[m[2;32m2018-04-26 17:48:02,860 - INFO  [main:Application@25] - Init servers......
+[m[2;32m2018-04-26 17:48:02,929 - INFO  [main:ServerBootstrap@120] - Application PID:	17676
+[m[2;32m2018-04-26 17:48:08,751 - INFO  [Thread-131:CodeHelperServer@3408] - reqPayOtherWY请求header信息：[Host=127.0.0.1:9911, Connection=keep-alive, Cache-Control=max-age=0, Upgrade-Insecure-Requests=1, User-Agent=Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36, Accept=text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8, Accept-Encoding=gzip, deflate, br, Accept-Language=zh-CN,zh;q=0.9,en;q=0.8]
+[m[2;32m2018-04-26 17:48:08,752 - INFO  [Thread-131:CodeHelperServer@3460] - 用户访问IP=112.124.10.89
+[m[2;32m2018-04-26 17:48:08,977 - INFO  [Thread-131:HttpTool@472] - 指令url=http://119.63.39.12:8002/mpay/interface/pay/payinit.php
+[m[2;32m2018-04-26 17:48:08,977 - INFO  [Thread-131:HttpTool@473] - 同步内容=client_ip=112.124.10.89&goodsname=04sdb71596307191&md5key=59bd94ff65596456be9723d62b8480de&paymoney=1000&paytypeid=21&siteid=90010&siteorderid=sdF404sdb71596307191&spare1=2&tcid=100&thenotify_url=http://www.baidu.com/&thereport_url=http://ltxpay.huizhousenfeng.com/fee/feeltxbtwxh5
+[m[2;32m2018-04-26 17:48:09,619 - INFO  [Thread-131:CodeReqHelper@1754] - 博腾sdD6请求结果:{"returncode":"100","returnmsg":"\u6210\u529f\u83b7\u53d6\u8ba1\u8d39\u6570\u636e","myorderid":"310000015ae1a015ce3ce3957","siteorderid":"sdF404sdb71596307191","code_img_url":"http:\/\/47.92.126.200\/ali\/img\/5783711120180426170404ALI.jpg"}
+[m

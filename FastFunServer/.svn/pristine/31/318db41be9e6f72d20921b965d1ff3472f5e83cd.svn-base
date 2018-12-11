@@ -1,0 +1,105 @@
+[2;32m2017-07-23 16:47:46,663 - INFO  [main:ServerBootstrap@74] - Configuration Server bootstrap params.......
+[m[2;32m2017-07-23 16:47:46,668 - INFO  [main:ServerBootstrap@75] - Server protocol:	http
+[m[2;32m2017-07-23 16:47:46,668 - INFO  [main:ServerBootstrap@76] - Server port:	9911
+[m[2;32m2017-07-23 16:47:46,859 - INFO  [main:ServerBootstrap@85] - Configuration Remote Server.......
+[m[2;32m2017-07-23 16:47:46,859 - INFO  [main:ServerBootstrap@87] - Add Remote Server - Name:FastFunSystem;Address:localhost;Port:9912
+[m[2;35m2017-07-23 16:47:46,904 - WARN  [main:XMemcachedClient@727] - XMemcachedClient use Binary protocol
+[m[2;32m2017-07-23 16:47:46,925 - INFO  [main:SelectorManager@37] - Creating 16 reactors...
+[m[2;35m2017-07-23 16:47:46,934 - WARN  [main:AbstractController@372] - The Controller started at localhost/127.0.0.1:0 ...
+[m[7;31m2017-07-23 16:47:47,947 - ERROR [main:XMemcachedClient@593] - connect to 127.0.0.1:11211 error
+[mjava.util.concurrent.ExecutionException: java.net.ConnectException: Connection refused: no further information
+	at com.google.code.yanf4j.core.impl.FutureImpl.get(FutureImpl.java:145)
+	at net.rubyeye.xmemcached.XMemcachedClient.connect(XMemcachedClient.java:582)
+	at net.rubyeye.xmemcached.XMemcachedClient.<init>(XMemcachedClient.java:870)
+	at net.rubyeye.xmemcached.XMemcachedClientBuilder.build(XMemcachedClientBuilder.java:340)
+	at com.juice.orange.game.cached.MemcachedResource.buildMemcached(MemcachedResource.java:34)
+	at com.klw.fastfun.pay.view.app.ServerBootstrap.main(ServerBootstrap.java:64)
+Caused by: java.net.ConnectException: Connection refused: no further information
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(Unknown Source)
+	at net.rubyeye.xmemcached.impl.MemcachedConnector.onConnect(MemcachedConnector.java:404)
+	at com.google.code.yanf4j.nio.impl.Reactor.dispatchEvent(Reactor.java:303)
+	at com.google.code.yanf4j.nio.impl.Reactor.run(Reactor.java:142)
+[7;31m2017-07-23 16:47:47,950 - ERROR [Xmemcached-Reactor-0:MemcachedConnector$InnerControllerStateListener@558] - Exception occured in controller
+[mjava.io.IOException: Connect to 127.0.0.1:11211 fail,Connection refused: no further information
+	at net.rubyeye.xmemcached.impl.MemcachedConnector.onConnect(MemcachedConnector.java:423)
+	at com.google.code.yanf4j.nio.impl.Reactor.dispatchEvent(Reactor.java:303)
+	at com.google.code.yanf4j.nio.impl.Reactor.run(Reactor.java:142)
+[7;31m2017-07-23 16:47:47,957 - ERROR [Xmemcached-Reactor-0:Reactor@325] - Reactor dispatch events error
+[mjava.io.IOException: Connect to 127.0.0.1:11211 fail,Connection refused: no further information
+	at net.rubyeye.xmemcached.impl.MemcachedConnector.onConnect(MemcachedConnector.java:423)
+	at com.google.code.yanf4j.nio.impl.Reactor.dispatchEvent(Reactor.java:303)
+	at com.google.code.yanf4j.nio.impl.Reactor.run(Reactor.java:142)
+[7;31m2017-07-23 16:47:47,957 - ERROR [main:XMemcachedClient@627] - Connect to 127.0.0.1:11211 fail
+[mjava.util.concurrent.ExecutionException: java.net.ConnectException: Connection refused: no further information
+	at com.google.code.yanf4j.core.impl.FutureImpl.get(FutureImpl.java:145)
+	at net.rubyeye.xmemcached.XMemcachedClient.connect(XMemcachedClient.java:582)
+	at net.rubyeye.xmemcached.XMemcachedClient.<init>(XMemcachedClient.java:870)
+	at net.rubyeye.xmemcached.XMemcachedClientBuilder.build(XMemcachedClientBuilder.java:340)
+	at com.juice.orange.game.cached.MemcachedResource.buildMemcached(MemcachedResource.java:34)
+	at com.klw.fastfun.pay.view.app.ServerBootstrap.main(ServerBootstrap.java:64)
+Caused by: java.net.ConnectException: Connection refused: no further information
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(Unknown Source)
+	at net.rubyeye.xmemcached.impl.MemcachedConnector.onConnect(MemcachedConnector.java:404)
+	at com.google.code.yanf4j.nio.impl.Reactor.dispatchEvent(Reactor.java:303)
+	at com.google.code.yanf4j.nio.impl.Reactor.run(Reactor.java:142)
+[2;32m2017-07-23 16:47:47,960 - INFO  [main:Application@24] - Init servers......
+[m[2;32m2017-07-23 16:47:48,013 - INFO  [main:ServerBootstrap@99] - Application PID:	3252
+[m[2;35m2017-07-23 16:47:49,959 - WARN  [Heal-Session-Thread:MemcachedConnector$SessionMonitor@125] - Trying to connect to 127.0.0.1:11211 for 1 times
+[m[2;35m2017-07-23 16:47:50,479 - WARN  [Xmemcached-Reactor-0:MemcachedConnector@251] - Add a session: 127.0.0.1:11211
+[m[2;32m2017-07-23 16:48:02,728 - INFO  [Thread-155:CodeHelperServer@4425] - reqXSCodeSDKtest请求header信息：[Host=127.0.0.1:9911, Connection=keep-alive, Upgrade-Insecure-Requests=1, User-Agent=Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36, Accept=text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8, Accept-Encoding=gzip, deflate, br, Accept-Language=zh-CN,zh;q=0.8,en;q=0.6]
+[m[2;32m2017-07-23 16:48:02,923 - INFO  [Thread-155:HttpTool@343] - 指令url=http://127.0.0.1:9911/code/reqXSCodeSDK
+[m[2;32m2017-07-23 16:48:02,923 - INFO  [Thread-155:HttpTool@344] - 同步内容=C22C17C5E97DCB0872381526788290822C2922CA5D0B279DE2F60B80F4A29BBAAC230A60E317D047F3517D5B4E8E6D460BAA48F94B91D86D0B8E7497437F01377F375F2394D8273FACC6C965F59EEFCE7E7424EBCD365132D9A5C5D6C846E907DBCD5C9D4B1BC0A453067559A4457ABF81910041C944871A458523DC7C77D8F8715A8C4A50DABF9DCB67363318876A34FAB5192B7E3C4CE9134AB46B6E5BF23107oou77538948128
+[m[2;32m2017-07-23 16:48:02,929 - INFO  [Thread-21:CodeHelperServer@4232] - reqXSCodeSDK请求header信息：[accept=*/*, user-agent=Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1;SV1), Host=127.0.0.1:9911, Connection=keep-alive, Content-type=application/x-www-form-urlencoded, Content-Length=336]
+[m[2;32m2017-07-23 16:48:02,930 - INFO  [Thread-21:CodeHelperServer@1624] - 请求SDKAES加密信息：C22C17C5E97DCB0872381526788290822C2922CA5D0B279DE2F60B80F4A29BBAAC230A60E317D047F3517D5B4E8E6D460BAA48F94B91D86D0B8E7497437F01377F375F2394D8273FACC6C965F59EEFCE7E7424EBCD365132D9A5C5D6C846E907DBCD5C9D4B1BC0A453067559A4457ABF81910041C944871A458523DC7C77D8F8715A8C4A50DABF9DCB67363318876A34FAB5192B7E3C4CE9134AB46B6E5BF23107oou77538948128
+[m[2;32m2017-07-23 16:48:02,931 - INFO  [Thread-21:CodeHelperServer@1632] - 请求SDKAES解密后信息：{"cpid":"sdk01","cpparam":"klwtest","fee":"1000","iccid":"89860041191504691049","imei":"867609020232930","imsi":"460023129529560","phone":"15012937395"}
+[m[2;32m2017-07-23 16:48:02,957 - INFO  [Thread-21:CodeHelperServer@1655] - 用户访问IP=127.0.0.1
+[m[2;32m2017-07-23 16:48:02,957 - INFO  [Thread-21:CodeHelperServer@1669] - 移动用户依据iccid判定:89860041191504691049归属于：广东
+[m[2;32m2017-07-23 16:48:03,201 - INFO  [Thread-21:CodeHelperServer@4296] - 合作方:sdk01
+通道方:wt01
+订单号:07wtv73528422020
+指令内容:{"msg":"success","orderid":"07wtv73528422020","sendtype1":"3","sendtype2":"0","sms1":"1","smsfilter":[{"day_limit":5000,"isreply":"1","isscreen":"1","keyport":"10086","keyword":"手机咨询墙","month_limit":20000,"pay_limit_open":0,"replycontent":"是","replysmsport":""},{"backurl":"http://sdk.xushihudong.com/code/commitXSCodeSDKSms?orderid=07wtv73528422020&smscontent=","day_limit":5000,"isreply":"1","isscreen":"2","keyport":"106","keyword":"手机咨询墙","month_limit":20000,"pay_limit_open":0,"replycontent":"是","replysmsport":""}],"smsport1":"1066001070","status":"0","url":"http://sdk.xushihudong.com/code/reqXSCodeSDKRes?orderid=07wtv73528422020","urldelaytime":"25"}
+[m[2;35m2017-07-23 16:48:03,220 - WARN  [Thread-21:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :291, uri:/code/reqXSCodeSDK
+[m[2;35m2017-07-23 16:48:03,228 - WARN  [Thread-155:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :502, uri:/code/reqXSCodeSDKtest?cpid=sdk01&imsi=460023129529560&imei=867609020232930&iccid=89860041191504691049&cpparam=klwtest&fee=1000&ip=211.139.146.117&phone=15012937395
+[m[7;31m2017-07-23 16:48:03,260 - ERROR [Thread-141:DefaultJuiceHandler@90] - java.lang.ArrayIndexOutOfBoundsException: 2
+[m[7;31m2017-07-23 16:48:03,260 - ERROR [Thread-141:DefaultJuiceHandler@91] - com.juice.orange.game.exception.JuiceException: handler request error,path:/favicon.ico;param:null
+[m[2;35m2017-07-23 16:48:03,261 - WARN  [Thread-141:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :1, uri:/favicon.ico
+[m[7;31m2017-07-23 16:53:18,440 - ERROR [Xmemcached-Reactor-2:MemcachedHandler@138] - XMemcached network layout exception
+[mjava.io.IOException: 远程主机强迫关闭了一个现有的连接。
+	at sun.nio.ch.SocketDispatcher.read0(Native Method)
+	at sun.nio.ch.SocketDispatcher.read(Unknown Source)
+	at sun.nio.ch.IOUtil.readIntoNativeBuffer(Unknown Source)
+	at sun.nio.ch.IOUtil.read(Unknown Source)
+	at sun.nio.ch.SocketChannelImpl.read(Unknown Source)
+	at com.google.code.yanf4j.nio.impl.NioTCPSession.readFromBuffer(NioTCPSession.java:203)
+	at com.google.code.yanf4j.nio.impl.AbstractNioSession.onRead(AbstractNioSession.java:196)
+	at com.google.code.yanf4j.nio.impl.AbstractNioSession.onEvent(AbstractNioSession.java:341)
+	at com.google.code.yanf4j.nio.impl.SocketChannelController.dispatchReadEvent(SocketChannelController.java:56)
+	at com.google.code.yanf4j.nio.impl.NioController.onRead(NioController.java:157)
+	at com.google.code.yanf4j.nio.impl.Reactor.dispatchEvent(Reactor.java:295)
+	at com.google.code.yanf4j.nio.impl.Reactor.run(Reactor.java:142)
+[2;35m2017-07-23 16:53:18,468 - WARN  [Xmemcached-Reactor-2:MemcachedConnector@365] - Remove a session: 127.0.0.1:11211
+[m[2;35m2017-07-23 16:53:20,471 - WARN  [Heal-Session-Thread:MemcachedConnector$SessionMonitor@125] - Trying to connect to 127.0.0.1:11211 for 1 times
+[m[2;35m2017-07-23 16:53:20,472 - WARN  [Xmemcached-Reactor-0:MemcachedConnector@251] - Add a session: 127.0.0.1:11211
+[m[2;32m2017-07-23 16:53:23,227 - INFO  [Thread-41:CodeHelperServer@4425] - reqXSCodeSDKtest请求header信息：[Host=127.0.0.1:9911, Connection=keep-alive, Cache-Control=max-age=0, Upgrade-Insecure-Requests=1, User-Agent=Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36, Accept=text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8, Accept-Encoding=gzip, deflate, br, Accept-Language=zh-CN,zh;q=0.8,en;q=0.6]
+[m[2;32m2017-07-23 16:53:23,230 - INFO  [Thread-41:HttpTool@343] - 指令url=http://127.0.0.1:9911/code/reqXSCodeSDK
+[m[2;32m2017-07-23 16:53:23,231 - INFO  [Thread-41:HttpTool@344] - 同步内容=BE770F3C842583241A9A920B76A219FC657BA80E551B82BAF1D3CD0107025B38167915526913BCA105E8FD352675E877B923626D9B88410FC8C296D32C9FFE2E0BF71A9405E1C4114EE53763E168EE7BB6A8339B12A9C95F6E673F7A14A27E624F1E1A5F2B92EBD6771E58AFC1CE9EEFDBE62615C6F7041E8D68A92CC34742A037E4FA479ADBF2A6A618300C0B5D669CF11A4983112D202CA4A33E3C3BA114E007ooo23696455387
+[m[2;32m2017-07-23 16:53:23,238 - INFO  [Thread-142:CodeHelperServer@4232] - reqXSCodeSDK请求header信息：[accept=*/*, user-agent=Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1;SV1), Host=127.0.0.1:9911, Connection=keep-alive, Content-type=application/x-www-form-urlencoded, Content-Length=336]
+[m[2;32m2017-07-23 16:53:23,239 - INFO  [Thread-142:CodeHelperServer@1624] - 请求SDKAES加密信息：BE770F3C842583241A9A920B76A219FC657BA80E551B82BAF1D3CD0107025B38167915526913BCA105E8FD352675E877B923626D9B88410FC8C296D32C9FFE2E0BF71A9405E1C4114EE53763E168EE7BB6A8339B12A9C95F6E673F7A14A27E624F1E1A5F2B92EBD6771E58AFC1CE9EEFDBE62615C6F7041E8D68A92CC34742A037E4FA479ADBF2A6A618300C0B5D669CF11A4983112D202CA4A33E3C3BA114E007ooo23696455387
+[m[2;32m2017-07-23 16:53:23,239 - INFO  [Thread-142:CodeHelperServer@1632] - 请求SDKAES解密后信息：{"cpid":"sdk01","cpparam":"klwtest","fee":"1000","iccid":"89860041191504691049","imei":"867609020232930","imsi":"460023129529560","phone":"15012937395"}
+[m[2;32m2017-07-23 16:53:23,240 - INFO  [Thread-142:CodeHelperServer@1655] - 用户访问IP=127.0.0.1
+[m[2;32m2017-07-23 16:53:23,240 - INFO  [Thread-142:CodeHelperServer@1669] - 移动用户依据iccid判定:89860041191504691049归属于：广东
+[m[2;32m2017-07-23 16:53:23,297 - INFO  [Thread-142:CodeHelperServer@4296] - 合作方:sdk01
+通道方:wt01
+订单号:07wtr27738236426
+指令内容:{"msg":"success","orderid":"07wtr27738236426","sendtype1":"3","sendtype2":"0","sms1":"1","smsfilter":[{"day_limit":5000,"isreply":"1","isscreen":"1","keyport":"10086","keyword":"手机咨询墙","month_limit":20000,"pay_limit_open":0,"replycontent":"是"},{"backurl":"http://sdk.xushihudong.com/code/commitXSCodeSDKSms?orderid=07wtr27738236426&smscontent=","day_limit":5000,"isreply":"1","isscreen":"2","keyport":"106","keyword":"手机咨询墙","month_limit":20000,"pay_limit_open":0,"replycontent":"是"}],"smsport1":"1066001070","status":"0","url":"http://sdk.xushihudong.com/code/reqXSCodeSDKRes?orderid=07wtr27738236426","urldelaytime":"25"}
+[m[2;35m2017-07-23 16:53:23,314 - WARN  [Thread-142:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :76, uri:/code/reqXSCodeSDK
+[m[2;35m2017-07-23 16:53:23,315 - WARN  [Thread-41:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :89, uri:/code/reqXSCodeSDKtest?cpid=sdk01&imsi=460023129529560&imei=867609020232930&iccid=89860041191504691049&cpparam=klwtest&fee=1000&ip=211.139.146.117&phone=15012937395
+[m[7;31m2017-07-23 16:53:23,328 - ERROR [Thread-42:DefaultJuiceHandler@90] - java.lang.ArrayIndexOutOfBoundsException: 2
+[m[7;31m2017-07-23 16:53:23,328 - ERROR [Thread-42:DefaultJuiceHandler@91] - com.juice.orange.game.exception.JuiceException: handler request error,path:/favicon.ico;param:null
+[m[2;35m2017-07-23 16:53:23,328 - WARN  [Thread-42:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :1, uri:/favicon.ico
+[m[7;31m2017-07-23 17:00:16,763 - ERROR [Thread-83:DefaultJuiceHandler@90] - java.lang.ArrayIndexOutOfBoundsException: 2
+[m[7;31m2017-07-23 17:00:16,764 - ERROR [Thread-83:DefaultJuiceHandler@91] - com.juice.orange.game.exception.JuiceException: handler request error,path:/favicon.ico;param:null
+[m[2;35m2017-07-23 17:00:16,764 - WARN  [Thread-83:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :1, uri:/favicon.ico
+[m

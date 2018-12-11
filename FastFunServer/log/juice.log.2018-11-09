@@ -1,0 +1,1089 @@
+[2;32m2018-11-09 09:41:41,647 - INFO  [main:ServerBootstrap@95] - Configuration Server bootstrap params.......
+[m[2;32m2018-11-09 09:41:41,656 - INFO  [main:ServerBootstrap@96] - Server protocol:	http
+[m[2;32m2018-11-09 09:41:41,656 - INFO  [main:ServerBootstrap@97] - Server port:	9911
+[m[2;32m2018-11-09 09:41:42,326 - INFO  [main:ServerBootstrap@106] - Configuration Remote Server.......
+[m[2;32m2018-11-09 09:41:42,326 - INFO  [main:ServerBootstrap@108] - Add Remote Server - Name:FastFunSystem;Address:localhost;Port:9912
+[m[2;35m2018-11-09 09:41:42,454 - WARN  [main:XMemcachedClient@727] - XMemcachedClient use Binary protocol
+[m[2;32m2018-11-09 09:41:42,486 - INFO  [main:SelectorManager@37] - Creating 8 reactors...
+[m[2;35m2018-11-09 09:41:42,495 - WARN  [main:AbstractController@372] - The Controller started at localhost/127.0.0.1:0 ...
+[m[7;31m2018-11-09 09:41:43,511 - ERROR [Xmemcached-Reactor-0:MemcachedConnector$InnerControllerStateListener@558] - Exception occured in controller
+[mjava.io.IOException: Connect to 127.0.0.1:11211 fail,Connection refused: no further information
+	at net.rubyeye.xmemcached.impl.MemcachedConnector.onConnect(MemcachedConnector.java:423)
+	at com.google.code.yanf4j.nio.impl.Reactor.dispatchEvent(Reactor.java:303)
+	at com.google.code.yanf4j.nio.impl.Reactor.run(Reactor.java:142)
+[7;31m2018-11-09 09:41:43,522 - ERROR [Xmemcached-Reactor-0:Reactor@325] - Reactor dispatch events error
+[mjava.io.IOException: Connect to 127.0.0.1:11211 fail,Connection refused: no further information
+	at net.rubyeye.xmemcached.impl.MemcachedConnector.onConnect(MemcachedConnector.java:423)
+	at com.google.code.yanf4j.nio.impl.Reactor.dispatchEvent(Reactor.java:303)
+	at com.google.code.yanf4j.nio.impl.Reactor.run(Reactor.java:142)
+[7;31m2018-11-09 09:41:43,513 - ERROR [main:XMemcachedClient@593] - connect to 127.0.0.1:11211 error
+[mjava.util.concurrent.ExecutionException: java.net.ConnectException: Connection refused: no further information
+	at com.google.code.yanf4j.core.impl.FutureImpl.get(FutureImpl.java:145)
+	at net.rubyeye.xmemcached.XMemcachedClient.connect(XMemcachedClient.java:582)
+	at net.rubyeye.xmemcached.XMemcachedClient.<init>(XMemcachedClient.java:870)
+	at net.rubyeye.xmemcached.XMemcachedClientBuilder.build(XMemcachedClientBuilder.java:340)
+	at com.juice.orange.game.cached.MemcachedResource.buildMemcached(MemcachedResource.java:34)
+	at com.klw.fastfun.pay.view.app.ServerBootstrap.main(ServerBootstrap.java:78)
+Caused by: java.net.ConnectException: Connection refused: no further information
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(Unknown Source)
+	at net.rubyeye.xmemcached.impl.MemcachedConnector.onConnect(MemcachedConnector.java:404)
+	at com.google.code.yanf4j.nio.impl.Reactor.dispatchEvent(Reactor.java:303)
+	at com.google.code.yanf4j.nio.impl.Reactor.run(Reactor.java:142)
+[7;31m2018-11-09 09:41:43,526 - ERROR [main:XMemcachedClient@627] - Connect to 127.0.0.1:11211 fail
+[mjava.util.concurrent.ExecutionException: java.net.ConnectException: Connection refused: no further information
+	at com.google.code.yanf4j.core.impl.FutureImpl.get(FutureImpl.java:145)
+	at net.rubyeye.xmemcached.XMemcachedClient.connect(XMemcachedClient.java:582)
+	at net.rubyeye.xmemcached.XMemcachedClient.<init>(XMemcachedClient.java:870)
+	at net.rubyeye.xmemcached.XMemcachedClientBuilder.build(XMemcachedClientBuilder.java:340)
+	at com.juice.orange.game.cached.MemcachedResource.buildMemcached(MemcachedResource.java:34)
+	at com.klw.fastfun.pay.view.app.ServerBootstrap.main(ServerBootstrap.java:78)
+Caused by: java.net.ConnectException: Connection refused: no further information
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(Unknown Source)
+	at net.rubyeye.xmemcached.impl.MemcachedConnector.onConnect(MemcachedConnector.java:404)
+	at com.google.code.yanf4j.nio.impl.Reactor.dispatchEvent(Reactor.java:303)
+	at com.google.code.yanf4j.nio.impl.Reactor.run(Reactor.java:142)
+[2;32m2018-11-09 09:41:43,541 - INFO  [main:Application@25] - Init servers......
+[m[2;32m2018-11-09 09:41:44,312 - INFO  [main:ServerBootstrap@120] - Application PID:	17588
+[m[2;35m2018-11-09 09:41:45,527 - WARN  [Heal-Session-Thread:MemcachedConnector$SessionMonitor@125] - Trying to connect to 127.0.0.1:11211 for 1 times
+[m[7;31m2018-11-09 09:41:46,536 - ERROR [Xmemcached-Reactor-0:MemcachedConnector$InnerControllerStateListener@558] - Exception occured in controller
+[mjava.io.IOException: Connect to 127.0.0.1:11211 fail,Connection refused: no further information
+	at net.rubyeye.xmemcached.impl.MemcachedConnector.onConnect(MemcachedConnector.java:423)
+	at com.google.code.yanf4j.nio.impl.Reactor.dispatchEvent(Reactor.java:303)
+	at com.google.code.yanf4j.nio.impl.Reactor.run(Reactor.java:142)
+[7;31m2018-11-09 09:41:46,538 - ERROR [Xmemcached-Reactor-0:Reactor@325] - Reactor dispatch events error
+[mjava.io.IOException: Connect to 127.0.0.1:11211 fail,Connection refused: no further information
+	at net.rubyeye.xmemcached.impl.MemcachedConnector.onConnect(MemcachedConnector.java:423)
+	at com.google.code.yanf4j.nio.impl.Reactor.dispatchEvent(Reactor.java:303)
+	at com.google.code.yanf4j.nio.impl.Reactor.run(Reactor.java:142)
+[7;31m2018-11-09 09:41:46,538 - ERROR [Heal-Session-Thread:MemcachedConnector$SessionMonitor@169] - Reconnect to 127.0.0.1:11211 fail
+[m[2;35m2018-11-09 09:41:48,579 - WARN  [Heal-Session-Thread:MemcachedConnector$SessionMonitor@125] - Trying to connect to 127.0.0.1:11211 for 2 times
+[m[7;31m2018-11-09 09:41:49,583 - ERROR [Xmemcached-Reactor-0:MemcachedConnector$InnerControllerStateListener@558] - Exception occured in controller
+[mjava.io.IOException: Connect to 127.0.0.1:11211 fail,Connection refused: no further information
+	at net.rubyeye.xmemcached.impl.MemcachedConnector.onConnect(MemcachedConnector.java:423)
+	at com.google.code.yanf4j.nio.impl.Reactor.dispatchEvent(Reactor.java:303)
+	at com.google.code.yanf4j.nio.impl.Reactor.run(Reactor.java:142)
+[7;31m2018-11-09 09:41:49,583 - ERROR [Xmemcached-Reactor-0:Reactor@325] - Reactor dispatch events error
+[mjava.io.IOException: Connect to 127.0.0.1:11211 fail,Connection refused: no further information
+	at net.rubyeye.xmemcached.impl.MemcachedConnector.onConnect(MemcachedConnector.java:423)
+	at com.google.code.yanf4j.nio.impl.Reactor.dispatchEvent(Reactor.java:303)
+	at com.google.code.yanf4j.nio.impl.Reactor.run(Reactor.java:142)
+[7;31m2018-11-09 09:41:49,583 - ERROR [Heal-Session-Thread:MemcachedConnector$SessionMonitor@169] - Reconnect to 127.0.0.1:11211 fail
+[m[2;35m2018-11-09 09:41:53,585 - WARN  [Heal-Session-Thread:MemcachedConnector$SessionMonitor@125] - Trying to connect to 127.0.0.1:11211 for 3 times
+[m[7;31m2018-11-09 09:41:54,586 - ERROR [Xmemcached-Reactor-0:MemcachedConnector$InnerControllerStateListener@558] - Exception occured in controller
+[mjava.io.IOException: Connect to 127.0.0.1:11211 fail,Connection refused: no further information
+	at net.rubyeye.xmemcached.impl.MemcachedConnector.onConnect(MemcachedConnector.java:423)
+	at com.google.code.yanf4j.nio.impl.Reactor.dispatchEvent(Reactor.java:303)
+	at com.google.code.yanf4j.nio.impl.Reactor.run(Reactor.java:142)
+[7;31m2018-11-09 09:41:54,587 - ERROR [Xmemcached-Reactor-0:Reactor@325] - Reactor dispatch events error
+[mjava.io.IOException: Connect to 127.0.0.1:11211 fail,Connection refused: no further information
+	at net.rubyeye.xmemcached.impl.MemcachedConnector.onConnect(MemcachedConnector.java:423)
+	at com.google.code.yanf4j.nio.impl.Reactor.dispatchEvent(Reactor.java:303)
+	at com.google.code.yanf4j.nio.impl.Reactor.run(Reactor.java:142)
+[7;31m2018-11-09 09:41:54,586 - ERROR [Heal-Session-Thread:MemcachedConnector$SessionMonitor@169] - Reconnect to 127.0.0.1:11211 fail
+[m[2;35m2018-11-09 09:42:00,586 - WARN  [Heal-Session-Thread:MemcachedConnector$SessionMonitor@125] - Trying to connect to 127.0.0.1:11211 for 4 times
+[m[7;31m2018-11-09 09:42:01,589 - ERROR [Xmemcached-Reactor-0:MemcachedConnector$InnerControllerStateListener@558] - Exception occured in controller
+[mjava.io.IOException: Connect to 127.0.0.1:11211 fail,Connection refused: no further information
+	at net.rubyeye.xmemcached.impl.MemcachedConnector.onConnect(MemcachedConnector.java:423)
+	at com.google.code.yanf4j.nio.impl.Reactor.dispatchEvent(Reactor.java:303)
+	at com.google.code.yanf4j.nio.impl.Reactor.run(Reactor.java:142)
+[7;31m2018-11-09 09:42:01,590 - ERROR [Xmemcached-Reactor-0:Reactor@325] - Reactor dispatch events error
+[mjava.io.IOException: Connect to 127.0.0.1:11211 fail,Connection refused: no further information
+	at net.rubyeye.xmemcached.impl.MemcachedConnector.onConnect(MemcachedConnector.java:423)
+	at com.google.code.yanf4j.nio.impl.Reactor.dispatchEvent(Reactor.java:303)
+	at com.google.code.yanf4j.nio.impl.Reactor.run(Reactor.java:142)
+[7;31m2018-11-09 09:42:01,589 - ERROR [Heal-Session-Thread:MemcachedConnector$SessionMonitor@169] - Reconnect to 127.0.0.1:11211 fail
+[m[2;35m2018-11-09 09:42:09,590 - WARN  [Heal-Session-Thread:MemcachedConnector$SessionMonitor@125] - Trying to connect to 127.0.0.1:11211 for 5 times
+[m[7;31m2018-11-09 09:42:10,593 - ERROR [Xmemcached-Reactor-0:MemcachedConnector$InnerControllerStateListener@558] - Exception occured in controller
+[mjava.io.IOException: Connect to 127.0.0.1:11211 fail,Connection refused: no further information
+	at net.rubyeye.xmemcached.impl.MemcachedConnector.onConnect(MemcachedConnector.java:423)
+	at com.google.code.yanf4j.nio.impl.Reactor.dispatchEvent(Reactor.java:303)
+	at com.google.code.yanf4j.nio.impl.Reactor.run(Reactor.java:142)
+[7;31m2018-11-09 09:42:10,593 - ERROR [Heal-Session-Thread:MemcachedConnector$SessionMonitor@169] - Reconnect to 127.0.0.1:11211 fail
+[m[7;31m2018-11-09 09:42:10,594 - ERROR [Xmemcached-Reactor-0:Reactor@325] - Reactor dispatch events error
+[mjava.io.IOException: Connect to 127.0.0.1:11211 fail,Connection refused: no further information
+	at net.rubyeye.xmemcached.impl.MemcachedConnector.onConnect(MemcachedConnector.java:423)
+	at com.google.code.yanf4j.nio.impl.Reactor.dispatchEvent(Reactor.java:303)
+	at com.google.code.yanf4j.nio.impl.Reactor.run(Reactor.java:142)
+[2;35m2018-11-09 09:42:20,595 - WARN  [Heal-Session-Thread:MemcachedConnector$SessionMonitor@125] - Trying to connect to 127.0.0.1:11211 for 6 times
+[m[2;35m2018-11-09 09:42:20,600 - WARN  [Xmemcached-Reactor-0:MemcachedConnector@251] - Add a session: 127.0.0.1:11211
+[m[2;32m2018-11-09 09:42:26,535 - INFO  [Thread-1:CodeHelperServer@126] - registerPhoneunify请求header信息：[Accept=text/html, application/xhtml+xml, */*, Content-Type=text/html, User-Agent=Mozilla/5.0(compatible;MSIE 9.0; Windows NT 6.1; Trident/5.0), Host=192.168.0.107:9911, Connection=Keep-Alive]
+[m[2;32m2018-11-09 09:42:26,536 - INFO  [Thread-1:CodeHelperServer@3717] - 用户访问IP=192.168.0.107
+[m[2;32m2018-11-09 09:42:26,754 - INFO  [Thread-1:CodeHelperServer@3747] - 根据IP查询省份=局域
+[m[2;35m2018-11-09 09:42:26,807 - WARN  [Thread-1:CodeHelperServer@137] - registerPhoneunify手机号非法，mobile:12345678901
+[m[2;35m2018-11-09 09:42:26,813 - WARN  [Thread-1:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :280, uri:/code/registerPhoneunify?phone=12345678901&TB=01&cpid=test01
+[m[7;31m2018-11-09 09:42:59,137 - ERROR [JUICE-SERVER-Handler-4-1-thread:ConnectionException@22] - uncaughtException :
+[mcom.juice.orange.game.exception.JuiceException: 远程主机强迫关闭了一个现有的连接。 on [id: 0xeaa89832, /192.168.0.107:63651 => /192.168.0.107:9911]
+	at com.juice.orange.game.exception.JuiceException.fromException(JuiceException.java:38)
+	at com.juice.orange.game.exception.JuiceException.fromExceptionEvent(JuiceException.java:32)
+	at com.juice.orange.game.util.ConnectionHelper$2.run(ConnectionHelper.java:56)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: java.io.IOException: 远程主机强迫关闭了一个现有的连接。
+	at sun.nio.ch.SocketDispatcher.read0(Native Method)
+	at sun.nio.ch.SocketDispatcher.read(Unknown Source)
+	at sun.nio.ch.IOUtil.readIntoNativeBuffer(Unknown Source)
+	at sun.nio.ch.IOUtil.read(Unknown Source)
+	at sun.nio.ch.SocketChannelImpl.read(Unknown Source)
+	at org.jboss.netty.channel.socket.nio.NioWorker.read(NioWorker.java:64)
+	at org.jboss.netty.channel.socket.nio.AbstractNioWorker.process(AbstractNioWorker.java:107)
+	at org.jboss.netty.channel.socket.nio.AbstractNioSelector.run(AbstractNioSelector.java:312)
+	at org.jboss.netty.channel.socket.nio.AbstractNioWorker.run(AbstractNioWorker.java:88)
+	at org.jboss.netty.channel.socket.nio.NioWorker.run(NioWorker.java:178)
+	... 3 more
+[2;32m2018-11-09 09:43:09,932 - INFO  [Thread-41:CodeHelperServer@126] - registerPhoneunify请求header信息：[Accept=text/html, application/xhtml+xml, */*, Content-Type=text/html, User-Agent=Mozilla/5.0(compatible;MSIE 9.0; Windows NT 6.1; Trident/5.0), Host=192.168.0.107:9911, Connection=Keep-Alive]
+[m[2;32m2018-11-09 09:43:09,932 - INFO  [Thread-41:CodeHelperServer@3717] - 用户访问IP=192.168.0.107
+[m[2;32m2018-11-09 09:43:09,932 - INFO  [Thread-41:CodeHelperServer@3747] - 根据IP查询省份=局域
+[m[2;35m2018-11-09 09:43:09,932 - WARN  [Thread-41:CodeHelperServer@137] - registerPhoneunify手机号非法，mobile:12345678901
+[m[2;35m2018-11-09 09:43:09,933 - WARN  [Thread-41:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :2, uri:/code/registerPhoneunify?phone=12345678901&TB=01&cpid=test01
+[m[2;32m2018-11-09 09:43:10,701 - INFO  [Thread-2:CodeHelperServer@126] - registerPhoneunify请求header信息：[Accept=text/html, application/xhtml+xml, */*, Content-Type=text/html, User-Agent=Mozilla/5.0(compatible;MSIE 9.0; Windows NT 6.1; Trident/5.0), Host=192.168.0.107:9911]
+[m[2;32m2018-11-09 09:43:10,701 - INFO  [Thread-2:CodeHelperServer@3717] - 用户访问IP=192.168.0.107
+[m[2;32m2018-11-09 09:43:10,702 - INFO  [Thread-2:CodeHelperServer@3747] - 根据IP查询省份=局域
+[m[2;35m2018-11-09 09:43:10,702 - WARN  [Thread-2:CodeHelperServer@137] - registerPhoneunify手机号非法，mobile:12345678901
+[m[2;35m2018-11-09 09:43:10,702 - WARN  [Thread-2:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :1, uri:/code/registerPhoneunify?phone=12345678901&TB=01&cpid=test01
+[m[7;31m2018-11-09 11:42:45,193 - ERROR [Thread-11:DefaultJuiceHandler@90] - java.lang.ArrayIndexOutOfBoundsException: 2
+[m[7;31m2018-11-09 11:42:45,215 - ERROR [Thread-11:DefaultJuiceHandler@91] - com.juice.orange.game.exception.JuiceException: handler request error,path:/favicon.ico;param:null
+[m[2;35m2018-11-09 11:42:45,216 - WARN  [Thread-11:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :24, uri:/favicon.ico
+[m[2;32m2018-11-09 11:47:12,351 - INFO  [Thread-22:CodeHelperServer@126] - registerPhoneunify请求header信息：[Accept=text/html, application/xhtml+xml, image/jxr, */*, Accept-Language=zh-CN, User-Agent=Mozilla/5.0 (Windows NT 10.0; WOW64; Trident/7.0; LCTE; rv:11.0) like Gecko, Accept-Encoding=gzip, deflate, Host=192.168.0.107:9911, Connection=Keep-Alive]
+[m[2;32m2018-11-09 11:47:12,352 - INFO  [Thread-22:CodeHelperServer@3717] - 用户访问IP=192.168.0.107
+[m[2;32m2018-11-09 11:47:12,352 - INFO  [Thread-22:CodeHelperServer@3747] - 根据IP查询省份=局域
+[m[2;35m2018-11-09 11:47:13,105 - WARN  [Thread-22:CodeHelperServer@179] - registerPhoneunify号码已经被提交过，phone17621067516
+[m[2;35m2018-11-09 11:47:13,116 - WARN  [Thread-22:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :765, uri:/code/registerPhoneunify?cpid=test01&phone=17621067516&TB=01
+[m[7;31m2018-11-09 11:47:13,431 - ERROR [Thread-42:DefaultJuiceHandler@90] - java.lang.ArrayIndexOutOfBoundsException: 2
+[m[7;31m2018-11-09 11:47:13,431 - ERROR [Thread-42:DefaultJuiceHandler@91] - com.juice.orange.game.exception.JuiceException: handler request error,path:/favicon.ico;param:null
+[m[2;35m2018-11-09 11:47:13,433 - WARN  [Thread-42:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :2, uri:/favicon.ico
+[m[2;32m2018-11-09 11:48:19,610 - INFO  [Thread-31:CodeHelperServer@126] - registerPhoneunify请求header信息：[Accept=text/html, application/xhtml+xml, image/jxr, */*, Accept-Language=zh-CN, User-Agent=Mozilla/5.0 (Windows NT 10.0; WOW64; Trident/7.0; LCTE; rv:11.0) like Gecko, Accept-Encoding=gzip, deflate, Host=192.168.0.107:9911, Connection=Keep-Alive]
+[m[2;32m2018-11-09 11:48:19,610 - INFO  [Thread-31:CodeHelperServer@3717] - 用户访问IP=192.168.0.107
+[m[2;32m2018-11-09 11:48:19,611 - INFO  [Thread-31:CodeHelperServer@3747] - 根据IP查询省份=局域
+[m[2;32m2018-11-09 11:48:19,877 - INFO  [Thread-31:HttpTool@867] - 指令url:http://47.98.33.246/receive
+[m[2;32m2018-11-09 11:48:19,877 - INFO  [Thread-31:HttpTool@868] - 同步内容:TB=01&phone=17621067516
+[m[2;32m2018-11-09 11:48:20,083 - INFO  [Thread-31:CodeReqHelper@632] - ELM:sd23指令失败!
+[m[7;31m2018-11-09 11:48:20,083 - ERROR [Thread-31:CodeReqHelper@633] - 
+[m[2;32m2018-11-09 11:48:20,083 - INFO  [Thread-31:CodeHelperServer@187] - 
+[m[2;35m2018-11-09 11:48:20,094 - WARN  [Thread-31:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :485, uri:/code/registerPhoneunify?cpid=test01&phone=17621067516&TB=01
+[m[2;32m2018-11-09 11:48:36,469 - INFO  [main:ServerBootstrap@95] - Configuration Server bootstrap params.......
+[m[2;32m2018-11-09 11:48:36,474 - INFO  [main:ServerBootstrap@96] - Server protocol:	http
+[m[2;32m2018-11-09 11:48:36,474 - INFO  [main:ServerBootstrap@97] - Server port:	9911
+[m[2;32m2018-11-09 11:48:36,992 - INFO  [main:ServerBootstrap@106] - Configuration Remote Server.......
+[m[2;32m2018-11-09 11:48:36,992 - INFO  [main:ServerBootstrap@108] - Add Remote Server - Name:FastFunSystem;Address:localhost;Port:9912
+[m[2;35m2018-11-09 11:48:37,065 - WARN  [main:XMemcachedClient@727] - XMemcachedClient use Binary protocol
+[m[2;32m2018-11-09 11:48:37,130 - INFO  [main:SelectorManager@37] - Creating 8 reactors...
+[m[2;35m2018-11-09 11:48:37,142 - WARN  [main:AbstractController@372] - The Controller started at localhost/127.0.0.1:0 ...
+[m[2;35m2018-11-09 11:48:37,163 - WARN  [Xmemcached-Reactor-0:MemcachedConnector@251] - Add a session: 127.0.0.1:11211
+[m[2;32m2018-11-09 11:48:37,174 - INFO  [main:Application@25] - Init servers......
+[m[2;32m2018-11-09 11:48:37,486 - INFO  [main:ServerBootstrap@120] - Application PID:	11364
+[m[2;32m2018-11-09 11:49:18,279 - INFO  [Thread-41:CodeHelperServer@126] - registerPhoneunify请求header信息：[Accept=text/html, application/xhtml+xml, image/jxr, */*, Accept-Language=zh-CN, User-Agent=Mozilla/5.0 (Windows NT 10.0; WOW64; Trident/7.0; LCTE; rv:11.0) like Gecko, Accept-Encoding=gzip, deflate, Host=192.168.0.107:9911, Connection=Keep-Alive]
+[m[2;32m2018-11-09 11:49:18,280 - INFO  [Thread-41:CodeHelperServer@3717] - 用户访问IP=192.168.0.107
+[m[2;32m2018-11-09 11:49:18,467 - INFO  [Thread-41:CodeHelperServer@3747] - 根据IP查询省份=局域
+[m[2;35m2018-11-09 11:49:18,583 - WARN  [Thread-41:CodeHelperServer@179] - registerPhoneunify号码已经被提交过，phone17621067516
+[m[2;35m2018-11-09 11:49:18,592 - WARN  [Thread-41:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :314, uri:/code/registerPhoneunify?cpid=test01&phone=17621067516&TB=01
+[m[2;32m2018-11-09 11:50:09,798 - INFO  [Thread-21:CodeHelperServer@126] - registerPhoneunify请求header信息：[Accept=text/html, application/xhtml+xml, image/jxr, */*, Accept-Language=zh-CN, User-Agent=Mozilla/5.0 (Windows NT 10.0; WOW64; Trident/7.0; LCTE; rv:11.0) like Gecko, Accept-Encoding=gzip, deflate, Host=192.168.0.107:9911, Connection=Keep-Alive]
+[m[2;32m2018-11-09 11:50:09,798 - INFO  [Thread-21:CodeHelperServer@3717] - 用户访问IP=192.168.0.107
+[m[2;32m2018-11-09 11:50:09,799 - INFO  [Thread-21:CodeHelperServer@3747] - 根据IP查询省份=局域
+[m[2;32m2018-11-09 11:50:09,851 - INFO  [Thread-21:HttpTool@867] - 指令url:http://47.98.33.246/receive
+[m[2;32m2018-11-09 11:50:09,852 - INFO  [Thread-21:HttpTool@868] - 同步内容:TB=01&phone=17621067516
+[m[2;32m2018-11-09 11:50:10,001 - INFO  [Thread-21:CodeReqHelper@632] - ELM:sd23指令失败!
+[m[7;31m2018-11-09 11:50:10,002 - ERROR [Thread-21:CodeReqHelper@633] - 
+[m[2;32m2018-11-09 11:50:10,002 - INFO  [Thread-21:CodeHelperServer@187] - 
+[m[2;35m2018-11-09 11:50:10,013 - WARN  [Thread-21:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :215, uri:/code/registerPhoneunify?cpid=test01&phone=17621067516&TB=01
+[m[2;32m2018-11-09 11:52:23,316 - INFO  [Thread-71:CodeHelperServer@126] - registerPhoneunify请求header信息：[Accept=text/html, application/xhtml+xml, image/jxr, */*, Accept-Language=zh-CN, User-Agent=Mozilla/5.0 (Windows NT 10.0; WOW64; Trident/7.0; LCTE; rv:11.0) like Gecko, Accept-Encoding=gzip, deflate, Host=192.168.0.107:9911, Connection=Keep-Alive]
+[m[2;32m2018-11-09 11:52:23,316 - INFO  [Thread-71:CodeHelperServer@3717] - 用户访问IP=192.168.0.107
+[m[2;32m2018-11-09 11:52:23,316 - INFO  [Thread-71:CodeHelperServer@3747] - 根据IP查询省份=局域
+[m[2;35m2018-11-09 11:52:23,328 - WARN  [Thread-71:CodeHelperServer@179] - registerPhoneunify号码已经被提交过，phone17621067516
+[m[2;35m2018-11-09 11:52:23,329 - WARN  [Thread-71:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :14, uri:/code/registerPhoneunify?cpid=test01&phone=17621067516&TB=01
+[m[7;31m2018-11-09 11:54:52,679 - ERROR [Thread-42:DefaultJuiceHandler@90] - java.lang.ArrayIndexOutOfBoundsException: 2
+[m[7;31m2018-11-09 11:54:52,679 - ERROR [Thread-42:DefaultJuiceHandler@91] - com.juice.orange.game.exception.JuiceException: handler request error,path:/favicon.ico;param:null
+[m[2;35m2018-11-09 11:54:52,679 - WARN  [Thread-42:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :0, uri:/favicon.ico
+[m[2;32m2018-11-09 11:55:22,576 - INFO  [Thread-11:CodeHelperServer@126] - registerPhoneunify请求header信息：[Accept=text/html, application/xhtml+xml, image/jxr, */*, Accept-Language=zh-CN, User-Agent=Mozilla/5.0 (Windows NT 10.0; WOW64; Trident/7.0; LCTE; rv:11.0) like Gecko, Accept-Encoding=gzip, deflate, Host=192.168.0.107:9911, Connection=Keep-Alive]
+[m[2;32m2018-11-09 11:55:22,577 - INFO  [Thread-11:CodeHelperServer@3717] - 用户访问IP=192.168.0.107
+[m[2;32m2018-11-09 11:55:22,577 - INFO  [Thread-11:CodeHelperServer@3747] - 根据IP查询省份=局域
+[m[2;35m2018-11-09 11:55:22,582 - WARN  [Thread-11:CodeHelperServer@144] - registerPhoneunify没有注册通道
+[m[2;35m2018-11-09 11:55:22,583 - WARN  [Thread-11:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :7, uri:/code/registerPhoneunify?phone=17621067516&TB=01
+[m[7;31m2018-11-09 11:55:22,626 - ERROR [Thread-43:DefaultJuiceHandler@90] - java.lang.ArrayIndexOutOfBoundsException: 2
+[m[7;31m2018-11-09 11:55:22,626 - ERROR [Thread-43:DefaultJuiceHandler@91] - com.juice.orange.game.exception.JuiceException: handler request error,path:/favicon.ico;param:null
+[m[2;35m2018-11-09 11:55:22,626 - WARN  [Thread-43:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :1, uri:/favicon.ico
+[m[2;32m2018-11-09 11:55:25,896 - INFO  [Thread-61:CodeHelperServer@126] - registerPhoneunify请求header信息：[Accept=text/html, application/xhtml+xml, image/jxr, */*, Accept-Language=zh-CN, User-Agent=Mozilla/5.0 (Windows NT 10.0; WOW64; Trident/7.0; LCTE; rv:11.0) like Gecko, Accept-Encoding=gzip, deflate, Host=192.168.0.107:9911, Connection=Keep-Alive]
+[m[2;32m2018-11-09 11:55:25,896 - INFO  [Thread-61:CodeHelperServer@3717] - 用户访问IP=192.168.0.107
+[m[2;32m2018-11-09 11:55:25,896 - INFO  [Thread-61:CodeHelperServer@3747] - 根据IP查询省份=局域
+[m[2;35m2018-11-09 11:55:25,901 - WARN  [Thread-61:CodeHelperServer@144] - registerPhoneunify没有注册通道
+[m[2;35m2018-11-09 11:55:25,902 - WARN  [Thread-61:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :6, uri:/code/registerPhoneunify?phone=17621067516&TB=01
+[m[2;32m2018-11-09 11:56:31,996 - INFO  [Thread-44:CodeHelperServer@126] - registerPhoneunify请求header信息：[Accept=text/html, application/xhtml+xml, image/jxr, */*, Accept-Language=zh-CN, User-Agent=Mozilla/5.0 (Windows NT 10.0; WOW64; Trident/7.0; LCTE; rv:11.0) like Gecko, Accept-Encoding=gzip, deflate, Host=192.168.0.107:9911, Connection=Keep-Alive]
+[m[2;32m2018-11-09 11:56:31,997 - INFO  [Thread-44:CodeHelperServer@3717] - 用户访问IP=192.168.0.107
+[m[2;32m2018-11-09 11:56:31,997 - INFO  [Thread-44:CodeHelperServer@3747] - 根据IP查询省份=局域
+[m[2;35m2018-11-09 11:56:32,007 - WARN  [Thread-44:CodeHelperServer@179] - registerPhoneunify号码已经被提交过，phone17621067516
+[m[2;35m2018-11-09 11:56:32,008 - WARN  [Thread-44:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :12, uri:/code/registerPhoneunify?phone=17621067516&TB=01&cpid=test01
+[m[7;31m2018-11-09 11:56:32,063 - ERROR [Thread-52:DefaultJuiceHandler@90] - java.lang.ArrayIndexOutOfBoundsException: 2
+[m[7;31m2018-11-09 11:56:32,063 - ERROR [Thread-52:DefaultJuiceHandler@91] - com.juice.orange.game.exception.JuiceException: handler request error,path:/favicon.ico;param:null
+[m[2;35m2018-11-09 11:56:32,064 - WARN  [Thread-52:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :19, uri:/favicon.ico
+[m[7;31m2018-11-09 12:59:28,100 - ERROR [JUICE-SERVER-Handler-4-2-thread:ConnectionException@22] - uncaughtException :
+[mcom.juice.orange.game.exception.JuiceException: 远程主机强迫关闭了一个现有的连接。 on [id: 0x20752146, /192.168.0.107:57901 => /192.168.0.107:9911]
+	at com.juice.orange.game.exception.JuiceException.fromException(JuiceException.java:38)
+	at com.juice.orange.game.exception.JuiceException.fromExceptionEvent(JuiceException.java:32)
+	at com.juice.orange.game.util.ConnectionHelper$2.run(ConnectionHelper.java:56)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: java.io.IOException: 远程主机强迫关闭了一个现有的连接。
+	at sun.nio.ch.SocketDispatcher.read0(Native Method)
+	at sun.nio.ch.SocketDispatcher.read(Unknown Source)
+	at sun.nio.ch.IOUtil.readIntoNativeBuffer(Unknown Source)
+	at sun.nio.ch.IOUtil.read(Unknown Source)
+	at sun.nio.ch.SocketChannelImpl.read(Unknown Source)
+	at org.jboss.netty.channel.socket.nio.NioWorker.read(NioWorker.java:64)
+	at org.jboss.netty.channel.socket.nio.AbstractNioWorker.process(AbstractNioWorker.java:107)
+	at org.jboss.netty.channel.socket.nio.AbstractNioSelector.run(AbstractNioSelector.java:312)
+	at org.jboss.netty.channel.socket.nio.AbstractNioWorker.run(AbstractNioWorker.java:88)
+	at org.jboss.netty.channel.socket.nio.NioWorker.run(NioWorker.java:178)
+	... 3 more
+[7;31m2018-11-09 12:59:28,101 - ERROR [JUICE-SERVER-Handler-4-2-thread:ConnectionException@22] - uncaughtException :
+[mcom.juice.orange.game.exception.JuiceException: 远程主机强迫关闭了一个现有的连接。 on [id: 0x3fb149ef, /192.168.0.107:57872 => /192.168.0.107:9911]
+	at com.juice.orange.game.exception.JuiceException.fromException(JuiceException.java:38)
+	at com.juice.orange.game.exception.JuiceException.fromExceptionEvent(JuiceException.java:32)
+	at com.juice.orange.game.util.ConnectionHelper$2.run(ConnectionHelper.java:56)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: java.io.IOException: 远程主机强迫关闭了一个现有的连接。
+	at sun.nio.ch.SocketDispatcher.read0(Native Method)
+	at sun.nio.ch.SocketDispatcher.read(Unknown Source)
+	at sun.nio.ch.IOUtil.readIntoNativeBuffer(Unknown Source)
+	at sun.nio.ch.IOUtil.read(Unknown Source)
+	at sun.nio.ch.SocketChannelImpl.read(Unknown Source)
+	at org.jboss.netty.channel.socket.nio.NioWorker.read(NioWorker.java:64)
+	at org.jboss.netty.channel.socket.nio.AbstractNioWorker.process(AbstractNioWorker.java:107)
+	at org.jboss.netty.channel.socket.nio.AbstractNioSelector.run(AbstractNioSelector.java:312)
+	at org.jboss.netty.channel.socket.nio.AbstractNioWorker.run(AbstractNioWorker.java:88)
+	at org.jboss.netty.channel.socket.nio.NioWorker.run(NioWorker.java:178)
+	... 3 more
+[7;31m2018-11-09 13:00:04,286 - ERROR [Thread-72:DefaultJuiceHandler@90] - java.lang.ArrayIndexOutOfBoundsException: 2
+[m[7;31m2018-11-09 13:00:04,286 - ERROR [Thread-72:DefaultJuiceHandler@91] - com.juice.orange.game.exception.JuiceException: handler request error,path:/favicon.ico;param:null
+[m[2;35m2018-11-09 13:00:04,286 - WARN  [Thread-72:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :0, uri:/favicon.ico
+[m[2;32m2018-11-09 13:00:05,296 - INFO  [Thread-2:CodeHelperServer@126] - registerPhoneunify请求header信息：[Accept=text/html, application/xhtml+xml, image/jxr, */*, Accept-Language=zh-CN, User-Agent=Mozilla/5.0 (Windows NT 10.0; WOW64; Trident/7.0; LCTE; rv:11.0) like Gecko, Accept-Encoding=gzip, deflate, Host=192.168.0.107:9911, Connection=Keep-Alive]
+[m[2;32m2018-11-09 13:00:05,296 - INFO  [Thread-2:CodeHelperServer@3717] - 用户访问IP=192.168.0.107
+[m[2;32m2018-11-09 13:00:05,296 - INFO  [Thread-2:CodeHelperServer@3747] - 根据IP查询省份=局域
+[m[2;32m2018-11-09 13:00:05,302 - INFO  [Thread-2:HttpTool@867] - 指令url:http://47.98.33.246/receive
+[m[2;32m2018-11-09 13:00:05,302 - INFO  [Thread-2:HttpTool@868] - 同步内容:TB=01&phone=17621067515
+[m[2;32m2018-11-09 13:00:05,403 - INFO  [Thread-2:CodeReqHelper@632] - ELM:sd23指令失败!
+[m[7;31m2018-11-09 13:00:05,403 - ERROR [Thread-2:CodeReqHelper@633] - 
+[m[2;32m2018-11-09 13:00:05,404 - INFO  [Thread-2:CodeHelperServer@187] - 
+[m[2;35m2018-11-09 13:00:05,408 - WARN  [Thread-2:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :113, uri:/code/registerPhoneunify?phone=17621067515&TB=01&cpid=test01
+[m[7;31m2018-11-09 13:00:05,443 - ERROR [Thread-45:DefaultJuiceHandler@90] - java.lang.ArrayIndexOutOfBoundsException: 2
+[m[7;31m2018-11-09 13:00:05,443 - ERROR [Thread-45:DefaultJuiceHandler@91] - com.juice.orange.game.exception.JuiceException: handler request error,path:/favicon.ico;param:null
+[m[2;35m2018-11-09 13:00:05,443 - WARN  [Thread-45:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :0, uri:/favicon.ico
+[m[2;32m2018-11-09 13:00:12,522 - INFO  [Thread-13:CodeHelperServer@126] - registerPhoneunify请求header信息：[Accept=text/html, application/xhtml+xml, image/jxr, */*, Accept-Language=zh-CN, User-Agent=Mozilla/5.0 (Windows NT 10.0; WOW64; Trident/7.0; LCTE; rv:11.0) like Gecko, Accept-Encoding=gzip, deflate, Host=192.168.0.107:9911, Connection=Keep-Alive]
+[m[2;32m2018-11-09 13:00:12,522 - INFO  [Thread-13:CodeHelperServer@3717] - 用户访问IP=192.168.0.107
+[m[2;32m2018-11-09 13:00:12,522 - INFO  [Thread-13:CodeHelperServer@3747] - 根据IP查询省份=局域
+[m[2;35m2018-11-09 13:00:12,527 - WARN  [Thread-13:CodeHelperServer@144] - registerPhoneunify没有注册通道
+[m[2;35m2018-11-09 13:00:12,529 - WARN  [Thread-13:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :7, uri:/code/registerPhoneunify?phone=17621067515&TB=01
+[m[7;31m2018-11-09 13:00:12,575 - ERROR [Thread-1:DefaultJuiceHandler@90] - java.lang.ArrayIndexOutOfBoundsException: 2
+[m[7;31m2018-11-09 13:00:12,575 - ERROR [Thread-1:DefaultJuiceHandler@91] - com.juice.orange.game.exception.JuiceException: handler request error,path:/favicon.ico;param:null
+[m[2;35m2018-11-09 13:00:12,575 - WARN  [Thread-1:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :0, uri:/favicon.ico
+[m[2;32m2018-11-09 13:00:29,551 - INFO  [Thread-12:CodeHelperServer@126] - registerPhoneunify请求header信息：[Accept=text/html, application/xhtml+xml, image/jxr, */*, Accept-Language=zh-CN, User-Agent=Mozilla/5.0 (Windows NT 10.0; WOW64; Trident/7.0; LCTE; rv:11.0) like Gecko, Accept-Encoding=gzip, deflate, Host=192.168.0.107:9911, Connection=Keep-Alive]
+[m[2;32m2018-11-09 13:00:29,551 - INFO  [Thread-12:CodeHelperServer@3717] - 用户访问IP=192.168.0.107
+[m[2;32m2018-11-09 13:00:29,552 - INFO  [Thread-12:CodeHelperServer@3747] - 根据IP查询省份=局域
+[m[2;35m2018-11-09 13:00:29,558 - WARN  [Thread-12:CodeHelperServer@144] - registerPhoneunify没有注册通道
+[m[2;35m2018-11-09 13:00:29,559 - WARN  [Thread-12:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :9, uri:/code/registerPhoneunify?phone=17621067515&TB=01&cpid=text01
+[m[7;31m2018-11-09 13:00:29,605 - ERROR [Thread-32:DefaultJuiceHandler@90] - java.lang.ArrayIndexOutOfBoundsException: 2
+[m[7;31m2018-11-09 13:00:29,605 - ERROR [Thread-32:DefaultJuiceHandler@91] - com.juice.orange.game.exception.JuiceException: handler request error,path:/favicon.ico;param:null
+[m[2;35m2018-11-09 13:00:29,606 - WARN  [Thread-32:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :1, uri:/favicon.ico
+[m[2;32m2018-11-09 13:00:38,713 - INFO  [Thread-62:CodeHelperServer@126] - registerPhoneunify请求header信息：[Accept=text/html, application/xhtml+xml, image/jxr, */*, Accept-Language=zh-CN, User-Agent=Mozilla/5.0 (Windows NT 10.0; WOW64; Trident/7.0; LCTE; rv:11.0) like Gecko, Accept-Encoding=gzip, deflate, Host=192.168.0.107:9911, Connection=Keep-Alive]
+[m[2;32m2018-11-09 13:00:38,713 - INFO  [Thread-62:CodeHelperServer@3717] - 用户访问IP=192.168.0.107
+[m[2;32m2018-11-09 13:00:38,713 - INFO  [Thread-62:CodeHelperServer@3747] - 根据IP查询省份=局域
+[m[2;32m2018-11-09 13:00:38,721 - INFO  [Thread-62:HttpTool@867] - 指令url:http://47.98.33.246/receive
+[m[2;32m2018-11-09 13:00:38,722 - INFO  [Thread-62:HttpTool@868] - 同步内容:TB=01&phone=17621067514
+[m[2;32m2018-11-09 13:00:38,813 - INFO  [Thread-62:CodeReqHelper@632] - ELM:sd23指令失败!
+[m[7;31m2018-11-09 13:00:38,888 - ERROR [Thread-62:CodeReqHelper@633] - 
+[m[2;32m2018-11-09 13:00:38,888 - INFO  [Thread-62:CodeHelperServer@187] - 
+[m[2;35m2018-11-09 13:00:38,897 - WARN  [Thread-62:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :185, uri:/code/registerPhoneunify?phone=17621067514&TB=01&cpid=test01
+[m[7;31m2018-11-09 13:00:38,932 - ERROR [Thread-51:DefaultJuiceHandler@90] - java.lang.ArrayIndexOutOfBoundsException: 2
+[m[7;31m2018-11-09 13:00:38,933 - ERROR [Thread-51:DefaultJuiceHandler@91] - com.juice.orange.game.exception.JuiceException: handler request error,path:/favicon.ico;param:null
+[m[2;35m2018-11-09 13:00:38,933 - WARN  [Thread-51:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :1, uri:/favicon.ico
+[m[2;32m2018-11-09 13:01:37,727 - INFO  [main:ServerBootstrap@95] - Configuration Server bootstrap params.......
+[m[2;32m2018-11-09 13:01:37,730 - INFO  [main:ServerBootstrap@96] - Server protocol:	http
+[m[2;32m2018-11-09 13:01:37,730 - INFO  [main:ServerBootstrap@97] - Server port:	9911
+[m[2;32m2018-11-09 13:01:38,234 - INFO  [main:ServerBootstrap@106] - Configuration Remote Server.......
+[m[2;32m2018-11-09 13:01:38,234 - INFO  [main:ServerBootstrap@108] - Add Remote Server - Name:FastFunSystem;Address:localhost;Port:9912
+[m[2;35m2018-11-09 13:01:38,324 - WARN  [main:XMemcachedClient@727] - XMemcachedClient use Binary protocol
+[m[2;32m2018-11-09 13:01:38,354 - INFO  [main:SelectorManager@37] - Creating 8 reactors...
+[m[2;35m2018-11-09 13:01:38,361 - WARN  [main:AbstractController@372] - The Controller started at localhost/127.0.0.1:0 ...
+[m[2;35m2018-11-09 13:01:38,370 - WARN  [Xmemcached-Reactor-0:MemcachedConnector@251] - Add a session: 127.0.0.1:11211
+[m[2;32m2018-11-09 13:01:38,389 - INFO  [main:Application@25] - Init servers......
+[m[2;32m2018-11-09 13:01:38,877 - INFO  [main:ServerBootstrap@120] - Application PID:	7472
+[m[2;32m2018-11-09 13:07:37,157 - INFO  [Thread-31:CodeHelperServer@126] - registerPhoneunify请求header信息：[Accept=text/html, application/xhtml+xml, image/jxr, */*, Accept-Language=zh-CN, User-Agent=Mozilla/5.0 (Windows NT 10.0; WOW64; Trident/7.0; LCTE; rv:11.0) like Gecko, Accept-Encoding=gzip, deflate, Host=192.168.0.107:9911, Connection=Keep-Alive]
+[m[2;32m2018-11-09 13:07:37,159 - INFO  [Thread-31:CodeHelperServer@3717] - 用户访问IP=192.168.0.107
+[m[2;32m2018-11-09 13:07:37,392 - INFO  [Thread-31:CodeHelperServer@3747] - 根据IP查询省份=局域
+[m[2;32m2018-11-09 13:07:37,770 - INFO  [Thread-31:HttpTool@867] - 指令url:http://47.98.33.246/receive
+[m[2;32m2018-11-09 13:07:37,771 - INFO  [Thread-31:HttpTool@868] - 同步内容:TB=01&phone=17621067514
+[m[2;32m2018-11-09 13:07:37,932 - INFO  [Thread-31:CodeReqHelper@632] - ELM:sd23指令失败!
+[m[7;31m2018-11-09 13:07:37,932 - ERROR [Thread-31:CodeReqHelper@633] - 
+[m[2;32m2018-11-09 13:07:37,933 - INFO  [Thread-31:CodeHelperServer@187] - 
+[m[2;35m2018-11-09 13:07:37,957 - WARN  [Thread-31:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :802, uri:/code/registerPhoneunify?phone=17621067514&TB=01&cpid=test01
+[m[2;32m2018-11-09 13:10:54,409 - INFO  [Thread-1:CodeHelperServer@126] - registerPhoneunify请求header信息：[Accept=text/html, application/xhtml+xml, image/jxr, */*, Accept-Language=zh-CN, User-Agent=Mozilla/5.0 (Windows NT 10.0; WOW64; Trident/7.0; LCTE; rv:11.0) like Gecko, Accept-Encoding=gzip, deflate, Host=192.168.0.107:9911, Connection=Keep-Alive]
+[m[2;32m2018-11-09 13:10:54,409 - INFO  [Thread-1:CodeHelperServer@3717] - 用户访问IP=192.168.0.107
+[m[2;32m2018-11-09 13:10:54,409 - INFO  [Thread-1:CodeHelperServer@3747] - 根据IP查询省份=局域
+[m[2;35m2018-11-09 13:10:54,427 - WARN  [Thread-1:CodeHelperServer@179] - registerPhoneunify号码已经被提交过，phone17621067514
+[m[2;35m2018-11-09 13:10:54,428 - WARN  [Thread-1:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :19, uri:/code/registerPhoneunify?phone=17621067514&TB=01&cpid=test01
+[m[7;31m2018-11-09 13:10:59,441 - ERROR [Thread-32:DefaultJuiceHandler@90] - java.lang.ArrayIndexOutOfBoundsException: 2
+[m[7;31m2018-11-09 13:10:59,441 - ERROR [Thread-32:DefaultJuiceHandler@91] - com.juice.orange.game.exception.JuiceException: handler request error,path:/favicon.ico;param:null
+[m[2;35m2018-11-09 13:10:59,442 - WARN  [Thread-32:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :1, uri:/favicon.ico
+[m[2;32m2018-11-09 13:11:01,369 - INFO  [Thread-61:CodeHelperServer@126] - registerPhoneunify请求header信息：[Accept=text/html, application/xhtml+xml, image/jxr, */*, Accept-Language=zh-CN, User-Agent=Mozilla/5.0 (Windows NT 10.0; WOW64; Trident/7.0; LCTE; rv:11.0) like Gecko, Accept-Encoding=gzip, deflate, Host=192.168.0.107:9911, Connection=Keep-Alive]
+[m[2;32m2018-11-09 13:11:01,369 - INFO  [Thread-61:CodeHelperServer@3717] - 用户访问IP=192.168.0.107
+[m[2;32m2018-11-09 13:11:01,369 - INFO  [Thread-61:CodeHelperServer@3747] - 根据IP查询省份=局域
+[m[2;32m2018-11-09 13:11:01,383 - INFO  [Thread-61:HttpTool@867] - 指令url:http://47.98.33.246/receive
+[m[2;32m2018-11-09 13:11:01,383 - INFO  [Thread-61:HttpTool@868] - 同步内容:TB=01&phone=17621067524
+[m[2;32m2018-11-09 13:11:01,570 - INFO  [Thread-61:CodeReqHelper@632] - ELM:sd23指令失败!
+[m[7;31m2018-11-09 13:11:01,570 - ERROR [Thread-61:CodeReqHelper@633] - 
+[m[2;32m2018-11-09 13:11:01,570 - INFO  [Thread-61:CodeHelperServer@187] - 
+[m[2;35m2018-11-09 13:11:01,576 - WARN  [Thread-61:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :207, uri:/code/registerPhoneunify?phone=17621067524&TB=01&cpid=test01
+[m[7;31m2018-11-09 13:11:01,609 - ERROR [Thread-21:DefaultJuiceHandler@90] - java.lang.ArrayIndexOutOfBoundsException: 2
+[m[7;31m2018-11-09 13:11:01,609 - ERROR [Thread-21:DefaultJuiceHandler@91] - com.juice.orange.game.exception.JuiceException: handler request error,path:/favicon.ico;param:null
+[m[2;35m2018-11-09 13:11:01,609 - WARN  [Thread-21:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :2, uri:/favicon.ico
+[m[2;32m2018-11-09 13:26:01,754 - INFO  [main:ServerBootstrap@95] - Configuration Server bootstrap params.......
+[m[2;32m2018-11-09 13:26:01,757 - INFO  [main:ServerBootstrap@96] - Server protocol:	http
+[m[2;32m2018-11-09 13:26:01,757 - INFO  [main:ServerBootstrap@97] - Server port:	9911
+[m[2;32m2018-11-09 13:26:02,176 - INFO  [main:ServerBootstrap@106] - Configuration Remote Server.......
+[m[2;32m2018-11-09 13:26:02,176 - INFO  [main:ServerBootstrap@108] - Add Remote Server - Name:FastFunSystem;Address:localhost;Port:9912
+[m[2;35m2018-11-09 13:26:02,237 - WARN  [main:XMemcachedClient@727] - XMemcachedClient use Binary protocol
+[m[2;32m2018-11-09 13:26:02,265 - INFO  [main:SelectorManager@37] - Creating 8 reactors...
+[m[2;35m2018-11-09 13:26:02,273 - WARN  [main:AbstractController@372] - The Controller started at localhost/127.0.0.1:0 ...
+[m[2;35m2018-11-09 13:26:02,282 - WARN  [Xmemcached-Reactor-0:MemcachedConnector@251] - Add a session: 127.0.0.1:11211
+[m[2;32m2018-11-09 13:26:02,282 - INFO  [main:Application@25] - Init servers......
+[m[2;32m2018-11-09 13:26:02,357 - INFO  [main:ServerBootstrap@120] - Application PID:	9068
+[m[2;32m2018-11-09 13:26:25,564 - INFO  [Thread-71:CodeHelperServer@206] - registerPhoneunify请求header信息：[Accept=text/html, application/xhtml+xml, image/jxr, */*, Accept-Language=zh-CN, User-Agent=Mozilla/5.0 (Windows NT 10.0; WOW64; Trident/7.0; LCTE; rv:11.0) like Gecko, Accept-Encoding=gzip, deflate, Host=192.168.0.107:9911, Connection=Keep-Alive]
+[m[2;32m2018-11-09 13:26:25,565 - INFO  [Thread-71:CodeHelperServer@3797] - 用户访问IP=192.168.0.107
+[m[2;32m2018-11-09 13:26:25,807 - INFO  [Thread-71:CodeHelperServer@3827] - 根据IP查询省份=局域
+[m[2;35m2018-11-09 13:26:25,917 - WARN  [Thread-71:CodeHelperServer@259] - registerPhoneunify号码已经被提交过，phone17621067524
+[m[2;35m2018-11-09 13:26:25,926 - WARN  [Thread-71:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :364, uri:/code/registerPhoneunify?phone=17621067524&TB=01&cpid=test01
+[m[7;31m2018-11-09 13:26:29,475 - ERROR [Thread-31:DefaultJuiceHandler@90] - java.lang.ArrayIndexOutOfBoundsException: 2
+[m[7;31m2018-11-09 13:26:29,476 - ERROR [Thread-31:DefaultJuiceHandler@91] - com.juice.orange.game.exception.JuiceException: handler request error,path:/favicon.ico;param:null
+[m[2;35m2018-11-09 13:26:29,476 - WARN  [Thread-31:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :1, uri:/favicon.ico
+[m[2;32m2018-11-09 13:26:31,135 - INFO  [Thread-32:CodeHelperServer@206] - registerPhoneunify请求header信息：[Accept=text/html, application/xhtml+xml, image/jxr, */*, Accept-Language=zh-CN, User-Agent=Mozilla/5.0 (Windows NT 10.0; WOW64; Trident/7.0; LCTE; rv:11.0) like Gecko, Accept-Encoding=gzip, deflate, Host=192.168.0.107:9911, Connection=Keep-Alive]
+[m[2;32m2018-11-09 13:26:31,136 - INFO  [Thread-32:CodeHelperServer@3797] - 用户访问IP=192.168.0.107
+[m[2;32m2018-11-09 13:26:31,136 - INFO  [Thread-32:CodeHelperServer@3827] - 根据IP查询省份=局域
+[m[2;32m2018-11-09 13:26:31,175 - INFO  [Thread-32:HttpTool@812] - 指令url=http://47.98.33.246/receive
+[m[2;32m2018-11-09 13:26:31,175 - INFO  [Thread-32:HttpTool@813] - 同步内容=TB=01&phone=17621067522
+[m[2;32m2018-11-09 13:26:31,375 - INFO  [Thread-32:CodeReqHelper@633] - ELM:sd23指令失败!
+[m[7;31m2018-11-09 13:26:31,375 - ERROR [Thread-32:CodeReqHelper@634] - 
+[m[2;32m2018-11-09 13:26:31,376 - INFO  [Thread-32:CodeHelperServer@267] - 
+[m[2;35m2018-11-09 13:26:31,383 - WARN  [Thread-32:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :249, uri:/code/registerPhoneunify?phone=17621067522&TB=01&cpid=test01
+[m[7;31m2018-11-09 13:26:31,419 - ERROR [Thread-22:DefaultJuiceHandler@90] - java.lang.ArrayIndexOutOfBoundsException: 2
+[m[7;31m2018-11-09 13:26:31,419 - ERROR [Thread-22:DefaultJuiceHandler@91] - com.juice.orange.game.exception.JuiceException: handler request error,path:/favicon.ico;param:null
+[m[2;35m2018-11-09 13:26:31,419 - WARN  [Thread-22:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :0, uri:/favicon.ico
+[m[2;32m2018-11-09 13:31:36,478 - INFO  [main:ServerBootstrap@95] - Configuration Server bootstrap params.......
+[m[2;32m2018-11-09 13:31:36,482 - INFO  [main:ServerBootstrap@96] - Server protocol:	http
+[m[2;32m2018-11-09 13:31:36,482 - INFO  [main:ServerBootstrap@97] - Server port:	9911
+[m[2;32m2018-11-09 13:31:36,881 - INFO  [main:ServerBootstrap@106] - Configuration Remote Server.......
+[m[2;32m2018-11-09 13:31:36,881 - INFO  [main:ServerBootstrap@108] - Add Remote Server - Name:FastFunSystem;Address:localhost;Port:9912
+[m[2;35m2018-11-09 13:31:36,939 - WARN  [main:XMemcachedClient@727] - XMemcachedClient use Binary protocol
+[m[2;32m2018-11-09 13:31:36,967 - INFO  [main:SelectorManager@37] - Creating 8 reactors...
+[m[2;35m2018-11-09 13:31:36,976 - WARN  [main:AbstractController@372] - The Controller started at localhost/127.0.0.1:0 ...
+[m[2;35m2018-11-09 13:31:36,986 - WARN  [Xmemcached-Reactor-0:MemcachedConnector@251] - Add a session: 127.0.0.1:11211
+[m[2;32m2018-11-09 13:31:36,987 - INFO  [main:Application@25] - Init servers......
+[m[2;32m2018-11-09 13:31:37,038 - INFO  [main:ServerBootstrap@120] - Application PID:	20276
+[m[2;32m2018-11-09 13:31:44,755 - INFO  [Thread-22:CodeHelperServer@206] - registerPhoneunify请求header信息：[Accept=text/html, application/xhtml+xml, image/jxr, */*, Accept-Language=zh-CN, User-Agent=Mozilla/5.0 (Windows NT 10.0; WOW64; Trident/7.0; LCTE; rv:11.0) like Gecko, Accept-Encoding=gzip, deflate, Host=192.168.0.107:9911, Connection=Keep-Alive]
+[m[2;32m2018-11-09 13:31:44,756 - INFO  [Thread-22:CodeHelperServer@3797] - 用户访问IP=192.168.0.107
+[m[2;32m2018-11-09 13:31:44,766 - INFO  [Thread-22:CodeHelperServer@3827] - 根据IP查询省份=局域
+[m[2;32m2018-11-09 13:31:44,901 - INFO  [Thread-22:HttpTool@812] - 指令url=http://47.98.33.246/receive
+[m[2;32m2018-11-09 13:31:44,901 - INFO  [Thread-22:HttpTool@813] - 同步内容=TB=01&phone=17621067523
+[m[2;32m2018-11-09 13:31:45,056 - INFO  [Thread-22:CodeReqHelper@633] - ELM:sd23指令失败!
+[m[7;31m2018-11-09 13:31:45,057 - ERROR [Thread-22:CodeReqHelper@634] - 
+[m[2;32m2018-11-09 13:31:45,057 - INFO  [Thread-22:CodeHelperServer@267] - 
+[m[2;35m2018-11-09 13:31:45,074 - WARN  [Thread-22:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :321, uri:/code/registerPhoneunify?phone=17621067523&TB=01&cpid=test01
+[m[7;31m2018-11-09 13:31:45,110 - ERROR [Thread-61:DefaultJuiceHandler@90] - java.lang.ArrayIndexOutOfBoundsException: 2
+[m[7;31m2018-11-09 13:31:45,111 - ERROR [Thread-61:DefaultJuiceHandler@91] - com.juice.orange.game.exception.JuiceException: handler request error,path:/favicon.ico;param:null
+[m[2;35m2018-11-09 13:31:45,113 - WARN  [Thread-61:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :4, uri:/favicon.ico
+[m[2;32m2018-11-09 13:33:59,705 - INFO  [main:ServerBootstrap@95] - Configuration Server bootstrap params.......
+[m[2;32m2018-11-09 13:33:59,707 - INFO  [main:ServerBootstrap@96] - Server protocol:	http
+[m[2;32m2018-11-09 13:33:59,707 - INFO  [main:ServerBootstrap@97] - Server port:	9911
+[m[2;32m2018-11-09 13:34:00,099 - INFO  [main:ServerBootstrap@106] - Configuration Remote Server.......
+[m[2;32m2018-11-09 13:34:00,099 - INFO  [main:ServerBootstrap@108] - Add Remote Server - Name:FastFunSystem;Address:localhost;Port:9912
+[m[2;35m2018-11-09 13:34:00,156 - WARN  [main:XMemcachedClient@727] - XMemcachedClient use Binary protocol
+[m[2;32m2018-11-09 13:34:00,184 - INFO  [main:SelectorManager@37] - Creating 8 reactors...
+[m[2;35m2018-11-09 13:34:00,192 - WARN  [main:AbstractController@372] - The Controller started at localhost/127.0.0.1:0 ...
+[m[2;35m2018-11-09 13:34:00,201 - WARN  [Xmemcached-Reactor-0:MemcachedConnector@251] - Add a session: 127.0.0.1:11211
+[m[2;32m2018-11-09 13:34:00,202 - INFO  [main:Application@25] - Init servers......
+[m[2;32m2018-11-09 13:34:00,249 - INFO  [main:ServerBootstrap@120] - Application PID:	10852
+[m[2;32m2018-11-09 13:34:09,397 - INFO  [Thread-31:CodeHelperServer@206] - registerPhoneunify请求header信息：[Accept=text/html, application/xhtml+xml, image/jxr, */*, Accept-Language=zh-CN, User-Agent=Mozilla/5.0 (Windows NT 10.0; WOW64; Trident/7.0; LCTE; rv:11.0) like Gecko, Accept-Encoding=gzip, deflate, Host=192.168.0.107:9911, Connection=Keep-Alive]
+[m[2;32m2018-11-09 13:34:09,398 - INFO  [Thread-31:CodeHelperServer@3797] - 用户访问IP=192.168.0.107
+[m[2;32m2018-11-09 13:34:09,405 - INFO  [Thread-31:CodeHelperServer@3827] - 根据IP查询省份=局域
+[m[2;35m2018-11-09 13:34:09,521 - WARN  [Thread-31:CodeHelperServer@259] - registerPhoneunify号码已经被提交过，phone17621067524
+[m[2;35m2018-11-09 13:34:09,529 - WARN  [Thread-31:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :134, uri:/code/registerPhoneunify?phone=17621067524&TB=01&cpid=test01
+[m[7;31m2018-11-09 13:34:09,563 - ERROR [Thread-32:DefaultJuiceHandler@90] - java.lang.ArrayIndexOutOfBoundsException: 2
+[m[7;31m2018-11-09 13:34:09,563 - ERROR [Thread-32:DefaultJuiceHandler@91] - com.juice.orange.game.exception.JuiceException: handler request error,path:/favicon.ico;param:null
+[m[2;35m2018-11-09 13:34:09,563 - WARN  [Thread-32:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :0, uri:/favicon.ico
+[m[2;32m2018-11-09 13:34:17,859 - INFO  [Thread-21:CodeHelperServer@206] - registerPhoneunify请求header信息：[Accept=text/html, application/xhtml+xml, image/jxr, */*, Accept-Language=zh-CN, User-Agent=Mozilla/5.0 (Windows NT 10.0; WOW64; Trident/7.0; LCTE; rv:11.0) like Gecko, Accept-Encoding=gzip, deflate, Host=192.168.0.107:9911, Connection=Keep-Alive]
+[m[2;32m2018-11-09 13:34:17,859 - INFO  [Thread-21:CodeHelperServer@3797] - 用户访问IP=192.168.0.107
+[m[2;32m2018-11-09 13:34:17,859 - INFO  [Thread-21:CodeHelperServer@3827] - 根据IP查询省份=局域
+[m[2;32m2018-11-09 13:34:17,900 - INFO  [Thread-21:HttpTool@812] - 指令url=http://47.98.33.246/receive
+[m[2;32m2018-11-09 13:34:17,901 - INFO  [Thread-21:HttpTool@813] - 同步内容=TB=01&phone=17621067525
+[m[2;32m2018-11-09 13:34:18,084 - INFO  [Thread-21:CodeReqHelper@633] - ELM:sd23指令失败!
+[m[7;31m2018-11-09 13:34:18,084 - ERROR [Thread-21:CodeReqHelper@634] - 
+[m[2;32m2018-11-09 13:34:18,085 - INFO  [Thread-21:CodeHelperServer@267] - 
+[m[2;35m2018-11-09 13:34:18,091 - WARN  [Thread-21:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :233, uri:/code/registerPhoneunify?phone=17621067525&TB=01&cpid=test01
+[m[7;31m2018-11-09 13:34:18,136 - ERROR [Thread-61:DefaultJuiceHandler@90] - java.lang.ArrayIndexOutOfBoundsException: 2
+[m[7;31m2018-11-09 13:34:18,137 - ERROR [Thread-61:DefaultJuiceHandler@91] - com.juice.orange.game.exception.JuiceException: handler request error,path:/favicon.ico;param:null
+[m[2;35m2018-11-09 13:34:18,137 - WARN  [Thread-61:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :1, uri:/favicon.ico
+[m[7;31m2018-11-09 14:10:32,850 - ERROR [JUICE-SERVER-Handler-4-2-thread:ConnectionException@22] - uncaughtException :
+[mcom.juice.orange.game.exception.JuiceException: 远程主机强迫关闭了一个现有的连接。 on [id: 0xd9145e4d, /192.168.0.107:52073 => /192.168.0.107:9911]
+	at com.juice.orange.game.exception.JuiceException.fromException(JuiceException.java:38)
+	at com.juice.orange.game.exception.JuiceException.fromExceptionEvent(JuiceException.java:32)
+	at com.juice.orange.game.util.ConnectionHelper$2.run(ConnectionHelper.java:56)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: java.io.IOException: 远程主机强迫关闭了一个现有的连接。
+	at sun.nio.ch.SocketDispatcher.read0(Native Method)
+	at sun.nio.ch.SocketDispatcher.read(Unknown Source)
+	at sun.nio.ch.IOUtil.readIntoNativeBuffer(Unknown Source)
+	at sun.nio.ch.IOUtil.read(Unknown Source)
+	at sun.nio.ch.SocketChannelImpl.read(Unknown Source)
+	at org.jboss.netty.channel.socket.nio.NioWorker.read(NioWorker.java:64)
+	at org.jboss.netty.channel.socket.nio.AbstractNioWorker.process(AbstractNioWorker.java:107)
+	at org.jboss.netty.channel.socket.nio.AbstractNioSelector.run(AbstractNioSelector.java:312)
+	at org.jboss.netty.channel.socket.nio.AbstractNioWorker.run(AbstractNioWorker.java:88)
+	at org.jboss.netty.channel.socket.nio.NioWorker.run(NioWorker.java:178)
+	... 3 more
+[7;31m2018-11-09 14:10:32,850 - ERROR [JUICE-SERVER-Handler-4-2-thread:ConnectionException@22] - uncaughtException :
+[mcom.juice.orange.game.exception.JuiceException: 远程主机强迫关闭了一个现有的连接。 on [id: 0x81a76ce1, /192.168.0.107:52074 => /192.168.0.107:9911]
+	at com.juice.orange.game.exception.JuiceException.fromException(JuiceException.java:38)
+	at com.juice.orange.game.exception.JuiceException.fromExceptionEvent(JuiceException.java:32)
+	at com.juice.orange.game.util.ConnectionHelper$2.run(ConnectionHelper.java:56)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: java.io.IOException: 远程主机强迫关闭了一个现有的连接。
+	at sun.nio.ch.SocketDispatcher.read0(Native Method)
+	at sun.nio.ch.SocketDispatcher.read(Unknown Source)
+	at sun.nio.ch.IOUtil.readIntoNativeBuffer(Unknown Source)
+	at sun.nio.ch.IOUtil.read(Unknown Source)
+	at sun.nio.ch.SocketChannelImpl.read(Unknown Source)
+	at org.jboss.netty.channel.socket.nio.NioWorker.read(NioWorker.java:64)
+	at org.jboss.netty.channel.socket.nio.AbstractNioWorker.process(AbstractNioWorker.java:107)
+	at org.jboss.netty.channel.socket.nio.AbstractNioSelector.run(AbstractNioSelector.java:312)
+	at org.jboss.netty.channel.socket.nio.AbstractNioWorker.run(AbstractNioWorker.java:88)
+	at org.jboss.netty.channel.socket.nio.NioWorker.run(NioWorker.java:178)
+	... 3 more
+[2;32m2018-11-09 17:00:50,275 - INFO  [main:ServerBootstrap@95] - Configuration Server bootstrap params.......
+[m[2;32m2018-11-09 17:00:50,292 - INFO  [main:ServerBootstrap@96] - Server protocol:	http
+[m[2;32m2018-11-09 17:00:50,294 - INFO  [main:ServerBootstrap@97] - Server port:	9911
+[m[2;32m2018-11-09 17:00:50,876 - INFO  [main:ServerBootstrap@106] - Configuration Remote Server.......
+[m[2;32m2018-11-09 17:00:50,877 - INFO  [main:ServerBootstrap@108] - Add Remote Server - Name:FastFunSystem;Address:localhost;Port:9912
+[m[2;35m2018-11-09 17:00:50,943 - WARN  [main:XMemcachedClient@727] - XMemcachedClient use Binary protocol
+[m[2;32m2018-11-09 17:00:50,975 - INFO  [main:SelectorManager@37] - Creating 8 reactors...
+[m[2;35m2018-11-09 17:00:50,984 - WARN  [main:AbstractController@372] - The Controller started at localhost/127.0.0.1:0 ...
+[m[7;31m2018-11-09 17:00:51,990 - ERROR [main:XMemcachedClient@593] - connect to 127.0.0.1:11211 error
+[mjava.util.concurrent.ExecutionException: java.net.ConnectException: Connection refused: no further information
+	at com.google.code.yanf4j.core.impl.FutureImpl.get(FutureImpl.java:145)
+	at net.rubyeye.xmemcached.XMemcachedClient.connect(XMemcachedClient.java:582)
+	at net.rubyeye.xmemcached.XMemcachedClient.<init>(XMemcachedClient.java:870)
+	at net.rubyeye.xmemcached.XMemcachedClientBuilder.build(XMemcachedClientBuilder.java:340)
+	at com.juice.orange.game.cached.MemcachedResource.buildMemcached(MemcachedResource.java:34)
+	at com.klw.fastfun.pay.view.app.ServerBootstrap.main(ServerBootstrap.java:78)
+Caused by: java.net.ConnectException: Connection refused: no further information
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(Unknown Source)
+	at net.rubyeye.xmemcached.impl.MemcachedConnector.onConnect(MemcachedConnector.java:404)
+	at com.google.code.yanf4j.nio.impl.Reactor.dispatchEvent(Reactor.java:303)
+	at com.google.code.yanf4j.nio.impl.Reactor.run(Reactor.java:142)
+[7;31m2018-11-09 17:00:51,991 - ERROR [Xmemcached-Reactor-0:MemcachedConnector$InnerControllerStateListener@558] - Exception occured in controller
+[mjava.io.IOException: Connect to 127.0.0.1:11211 fail,Connection refused: no further information
+	at net.rubyeye.xmemcached.impl.MemcachedConnector.onConnect(MemcachedConnector.java:423)
+	at com.google.code.yanf4j.nio.impl.Reactor.dispatchEvent(Reactor.java:303)
+	at com.google.code.yanf4j.nio.impl.Reactor.run(Reactor.java:142)
+[7;31m2018-11-09 17:00:51,993 - ERROR [Xmemcached-Reactor-0:Reactor@325] - Reactor dispatch events error
+[mjava.io.IOException: Connect to 127.0.0.1:11211 fail,Connection refused: no further information
+	at net.rubyeye.xmemcached.impl.MemcachedConnector.onConnect(MemcachedConnector.java:423)
+	at com.google.code.yanf4j.nio.impl.Reactor.dispatchEvent(Reactor.java:303)
+	at com.google.code.yanf4j.nio.impl.Reactor.run(Reactor.java:142)
+[7;31m2018-11-09 17:00:51,993 - ERROR [main:XMemcachedClient@627] - Connect to 127.0.0.1:11211 fail
+[mjava.util.concurrent.ExecutionException: java.net.ConnectException: Connection refused: no further information
+	at com.google.code.yanf4j.core.impl.FutureImpl.get(FutureImpl.java:145)
+	at net.rubyeye.xmemcached.XMemcachedClient.connect(XMemcachedClient.java:582)
+	at net.rubyeye.xmemcached.XMemcachedClient.<init>(XMemcachedClient.java:870)
+	at net.rubyeye.xmemcached.XMemcachedClientBuilder.build(XMemcachedClientBuilder.java:340)
+	at com.juice.orange.game.cached.MemcachedResource.buildMemcached(MemcachedResource.java:34)
+	at com.klw.fastfun.pay.view.app.ServerBootstrap.main(ServerBootstrap.java:78)
+Caused by: java.net.ConnectException: Connection refused: no further information
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(Unknown Source)
+	at net.rubyeye.xmemcached.impl.MemcachedConnector.onConnect(MemcachedConnector.java:404)
+	at com.google.code.yanf4j.nio.impl.Reactor.dispatchEvent(Reactor.java:303)
+	at com.google.code.yanf4j.nio.impl.Reactor.run(Reactor.java:142)
+[2;32m2018-11-09 17:00:51,994 - INFO  [main:Application@25] - Init servers......
+[m[2;32m2018-11-09 17:00:52,256 - INFO  [main:ServerBootstrap@120] - Application PID:	19492
+[m[2;35m2018-11-09 17:00:53,994 - WARN  [Heal-Session-Thread:MemcachedConnector$SessionMonitor@125] - Trying to connect to 127.0.0.1:11211 for 1 times
+[m[7;31m2018-11-09 17:00:54,995 - ERROR [Xmemcached-Reactor-0:MemcachedConnector$InnerControllerStateListener@558] - Exception occured in controller
+[mjava.io.IOException: Connect to 127.0.0.1:11211 fail,Connection refused: no further information
+	at net.rubyeye.xmemcached.impl.MemcachedConnector.onConnect(MemcachedConnector.java:423)
+	at com.google.code.yanf4j.nio.impl.Reactor.dispatchEvent(Reactor.java:303)
+	at com.google.code.yanf4j.nio.impl.Reactor.run(Reactor.java:142)
+[7;31m2018-11-09 17:00:54,996 - ERROR [Xmemcached-Reactor-0:Reactor@325] - Reactor dispatch events error
+[mjava.io.IOException: Connect to 127.0.0.1:11211 fail,Connection refused: no further information
+	at net.rubyeye.xmemcached.impl.MemcachedConnector.onConnect(MemcachedConnector.java:423)
+	at com.google.code.yanf4j.nio.impl.Reactor.dispatchEvent(Reactor.java:303)
+	at com.google.code.yanf4j.nio.impl.Reactor.run(Reactor.java:142)
+[7;31m2018-11-09 17:00:54,995 - ERROR [Heal-Session-Thread:MemcachedConnector$SessionMonitor@169] - Reconnect to 127.0.0.1:11211 fail
+[m[2;35m2018-11-09 17:00:56,996 - WARN  [Heal-Session-Thread:MemcachedConnector$SessionMonitor@125] - Trying to connect to 127.0.0.1:11211 for 2 times
+[m[7;31m2018-11-09 17:00:57,998 - ERROR [Heal-Session-Thread:MemcachedConnector$SessionMonitor@169] - Reconnect to 127.0.0.1:11211 fail
+[m[7;31m2018-11-09 17:00:58,001 - ERROR [Xmemcached-Reactor-0:MemcachedConnector$InnerControllerStateListener@558] - Exception occured in controller
+[mjava.io.IOException: Connect to 127.0.0.1:11211 fail,Connection refused: no further information
+	at net.rubyeye.xmemcached.impl.MemcachedConnector.onConnect(MemcachedConnector.java:423)
+	at com.google.code.yanf4j.nio.impl.Reactor.dispatchEvent(Reactor.java:303)
+	at com.google.code.yanf4j.nio.impl.Reactor.run(Reactor.java:142)
+[7;31m2018-11-09 17:00:58,001 - ERROR [Xmemcached-Reactor-0:Reactor@325] - Reactor dispatch events error
+[mjava.io.IOException: Connect to 127.0.0.1:11211 fail,Connection refused: no further information
+	at net.rubyeye.xmemcached.impl.MemcachedConnector.onConnect(MemcachedConnector.java:423)
+	at com.google.code.yanf4j.nio.impl.Reactor.dispatchEvent(Reactor.java:303)
+	at com.google.code.yanf4j.nio.impl.Reactor.run(Reactor.java:142)
+[2;35m2018-11-09 17:01:01,999 - WARN  [Heal-Session-Thread:MemcachedConnector$SessionMonitor@125] - Trying to connect to 127.0.0.1:11211 for 3 times
+[m[7;31m2018-11-09 17:01:03,000 - ERROR [Xmemcached-Reactor-0:MemcachedConnector$InnerControllerStateListener@558] - Exception occured in controller
+[mjava.io.IOException: Connect to 127.0.0.1:11211 fail,Connection refused: no further information
+	at net.rubyeye.xmemcached.impl.MemcachedConnector.onConnect(MemcachedConnector.java:423)
+	at com.google.code.yanf4j.nio.impl.Reactor.dispatchEvent(Reactor.java:303)
+	at com.google.code.yanf4j.nio.impl.Reactor.run(Reactor.java:142)
+[7;31m2018-11-09 17:01:03,001 - ERROR [Xmemcached-Reactor-0:Reactor@325] - Reactor dispatch events error
+[mjava.io.IOException: Connect to 127.0.0.1:11211 fail,Connection refused: no further information
+	at net.rubyeye.xmemcached.impl.MemcachedConnector.onConnect(MemcachedConnector.java:423)
+	at com.google.code.yanf4j.nio.impl.Reactor.dispatchEvent(Reactor.java:303)
+	at com.google.code.yanf4j.nio.impl.Reactor.run(Reactor.java:142)
+[7;31m2018-11-09 17:01:03,000 - ERROR [Heal-Session-Thread:MemcachedConnector$SessionMonitor@169] - Reconnect to 127.0.0.1:11211 fail
+[m[2;35m2018-11-09 17:01:09,002 - WARN  [Heal-Session-Thread:MemcachedConnector$SessionMonitor@125] - Trying to connect to 127.0.0.1:11211 for 4 times
+[m[7;31m2018-11-09 17:01:10,004 - ERROR [Xmemcached-Reactor-0:MemcachedConnector$InnerControllerStateListener@558] - Exception occured in controller
+[mjava.io.IOException: Connect to 127.0.0.1:11211 fail,Connection refused: no further information
+	at net.rubyeye.xmemcached.impl.MemcachedConnector.onConnect(MemcachedConnector.java:423)
+	at com.google.code.yanf4j.nio.impl.Reactor.dispatchEvent(Reactor.java:303)
+	at com.google.code.yanf4j.nio.impl.Reactor.run(Reactor.java:142)
+[7;31m2018-11-09 17:01:10,004 - ERROR [Heal-Session-Thread:MemcachedConnector$SessionMonitor@169] - Reconnect to 127.0.0.1:11211 fail
+[m[7;31m2018-11-09 17:01:10,004 - ERROR [Xmemcached-Reactor-0:Reactor@325] - Reactor dispatch events error
+[mjava.io.IOException: Connect to 127.0.0.1:11211 fail,Connection refused: no further information
+	at net.rubyeye.xmemcached.impl.MemcachedConnector.onConnect(MemcachedConnector.java:423)
+	at com.google.code.yanf4j.nio.impl.Reactor.dispatchEvent(Reactor.java:303)
+	at com.google.code.yanf4j.nio.impl.Reactor.run(Reactor.java:142)
+[2;35m2018-11-09 17:01:18,005 - WARN  [Heal-Session-Thread:MemcachedConnector$SessionMonitor@125] - Trying to connect to 127.0.0.1:11211 for 5 times
+[m[7;31m2018-11-09 17:01:19,008 - ERROR [Xmemcached-Reactor-0:MemcachedConnector$InnerControllerStateListener@558] - Exception occured in controller
+[mjava.io.IOException: Connect to 127.0.0.1:11211 fail,Connection refused: no further information
+	at net.rubyeye.xmemcached.impl.MemcachedConnector.onConnect(MemcachedConnector.java:423)
+	at com.google.code.yanf4j.nio.impl.Reactor.dispatchEvent(Reactor.java:303)
+	at com.google.code.yanf4j.nio.impl.Reactor.run(Reactor.java:142)
+[7;31m2018-11-09 17:01:19,008 - ERROR [Heal-Session-Thread:MemcachedConnector$SessionMonitor@169] - Reconnect to 127.0.0.1:11211 fail
+[m[7;31m2018-11-09 17:01:19,008 - ERROR [Xmemcached-Reactor-0:Reactor@325] - Reactor dispatch events error
+[mjava.io.IOException: Connect to 127.0.0.1:11211 fail,Connection refused: no further information
+	at net.rubyeye.xmemcached.impl.MemcachedConnector.onConnect(MemcachedConnector.java:423)
+	at com.google.code.yanf4j.nio.impl.Reactor.dispatchEvent(Reactor.java:303)
+	at com.google.code.yanf4j.nio.impl.Reactor.run(Reactor.java:142)
+[2;35m2018-11-09 17:01:29,010 - WARN  [Heal-Session-Thread:MemcachedConnector$SessionMonitor@125] - Trying to connect to 127.0.0.1:11211 for 6 times
+[m[7;31m2018-11-09 17:01:30,010 - ERROR [Xmemcached-Reactor-0:MemcachedConnector$InnerControllerStateListener@558] - Exception occured in controller
+[mjava.io.IOException: Connect to 127.0.0.1:11211 fail,Connection refused: no further information
+	at net.rubyeye.xmemcached.impl.MemcachedConnector.onConnect(MemcachedConnector.java:423)
+	at com.google.code.yanf4j.nio.impl.Reactor.dispatchEvent(Reactor.java:303)
+	at com.google.code.yanf4j.nio.impl.Reactor.run(Reactor.java:142)
+[7;31m2018-11-09 17:01:30,010 - ERROR [Heal-Session-Thread:MemcachedConnector$SessionMonitor@169] - Reconnect to 127.0.0.1:11211 fail
+[m[7;31m2018-11-09 17:01:30,011 - ERROR [Xmemcached-Reactor-0:Reactor@325] - Reactor dispatch events error
+[mjava.io.IOException: Connect to 127.0.0.1:11211 fail,Connection refused: no further information
+	at net.rubyeye.xmemcached.impl.MemcachedConnector.onConnect(MemcachedConnector.java:423)
+	at com.google.code.yanf4j.nio.impl.Reactor.dispatchEvent(Reactor.java:303)
+	at com.google.code.yanf4j.nio.impl.Reactor.run(Reactor.java:142)
+[2;35m2018-11-09 17:01:42,011 - WARN  [Heal-Session-Thread:MemcachedConnector$SessionMonitor@125] - Trying to connect to 127.0.0.1:11211 for 7 times
+[m[7;31m2018-11-09 17:01:43,012 - ERROR [Xmemcached-Reactor-0:MemcachedConnector$InnerControllerStateListener@558] - Exception occured in controller
+[mjava.io.IOException: Connect to 127.0.0.1:11211 fail,Connection refused: no further information
+	at net.rubyeye.xmemcached.impl.MemcachedConnector.onConnect(MemcachedConnector.java:423)
+	at com.google.code.yanf4j.nio.impl.Reactor.dispatchEvent(Reactor.java:303)
+	at com.google.code.yanf4j.nio.impl.Reactor.run(Reactor.java:142)
+[7;31m2018-11-09 17:01:43,012 - ERROR [Xmemcached-Reactor-0:Reactor@325] - Reactor dispatch events error
+[mjava.io.IOException: Connect to 127.0.0.1:11211 fail,Connection refused: no further information
+	at net.rubyeye.xmemcached.impl.MemcachedConnector.onConnect(MemcachedConnector.java:423)
+	at com.google.code.yanf4j.nio.impl.Reactor.dispatchEvent(Reactor.java:303)
+	at com.google.code.yanf4j.nio.impl.Reactor.run(Reactor.java:142)
+[7;31m2018-11-09 17:01:43,012 - ERROR [Heal-Session-Thread:MemcachedConnector$SessionMonitor@169] - Reconnect to 127.0.0.1:11211 fail
+[m[2;35m2018-11-09 17:01:57,014 - WARN  [Heal-Session-Thread:MemcachedConnector$SessionMonitor@125] - Trying to connect to 127.0.0.1:11211 for 8 times
+[m[7;31m2018-11-09 17:01:58,015 - ERROR [Xmemcached-Reactor-0:MemcachedConnector$InnerControllerStateListener@558] - Exception occured in controller
+[mjava.io.IOException: Connect to 127.0.0.1:11211 fail,Connection refused: no further information
+	at net.rubyeye.xmemcached.impl.MemcachedConnector.onConnect(MemcachedConnector.java:423)
+	at com.google.code.yanf4j.nio.impl.Reactor.dispatchEvent(Reactor.java:303)
+	at com.google.code.yanf4j.nio.impl.Reactor.run(Reactor.java:142)
+[7;31m2018-11-09 17:01:58,016 - ERROR [Xmemcached-Reactor-0:Reactor@325] - Reactor dispatch events error
+[mjava.io.IOException: Connect to 127.0.0.1:11211 fail,Connection refused: no further information
+	at net.rubyeye.xmemcached.impl.MemcachedConnector.onConnect(MemcachedConnector.java:423)
+	at com.google.code.yanf4j.nio.impl.Reactor.dispatchEvent(Reactor.java:303)
+	at com.google.code.yanf4j.nio.impl.Reactor.run(Reactor.java:142)
+[7;31m2018-11-09 17:01:58,015 - ERROR [Heal-Session-Thread:MemcachedConnector$SessionMonitor@169] - Reconnect to 127.0.0.1:11211 fail
+[m[2;35m2018-11-09 17:02:14,016 - WARN  [Heal-Session-Thread:MemcachedConnector$SessionMonitor@125] - Trying to connect to 127.0.0.1:11211 for 9 times
+[m[7;31m2018-11-09 17:02:15,017 - ERROR [Xmemcached-Reactor-0:MemcachedConnector$InnerControllerStateListener@558] - Exception occured in controller
+[mjava.io.IOException: Connect to 127.0.0.1:11211 fail,Connection refused: no further information
+	at net.rubyeye.xmemcached.impl.MemcachedConnector.onConnect(MemcachedConnector.java:423)
+	at com.google.code.yanf4j.nio.impl.Reactor.dispatchEvent(Reactor.java:303)
+	at com.google.code.yanf4j.nio.impl.Reactor.run(Reactor.java:142)
+[7;31m2018-11-09 17:02:15,018 - ERROR [Xmemcached-Reactor-0:Reactor@325] - Reactor dispatch events error
+[mjava.io.IOException: Connect to 127.0.0.1:11211 fail,Connection refused: no further information
+	at net.rubyeye.xmemcached.impl.MemcachedConnector.onConnect(MemcachedConnector.java:423)
+	at com.google.code.yanf4j.nio.impl.Reactor.dispatchEvent(Reactor.java:303)
+	at com.google.code.yanf4j.nio.impl.Reactor.run(Reactor.java:142)
+[7;31m2018-11-09 17:02:15,017 - ERROR [Heal-Session-Thread:MemcachedConnector$SessionMonitor@169] - Reconnect to 127.0.0.1:11211 fail
+[m[2;35m2018-11-09 17:02:33,018 - WARN  [Heal-Session-Thread:MemcachedConnector$SessionMonitor@125] - Trying to connect to 127.0.0.1:11211 for 10 times
+[m[7;31m2018-11-09 17:02:34,022 - ERROR [Xmemcached-Reactor-0:MemcachedConnector$InnerControllerStateListener@558] - Exception occured in controller
+[mjava.io.IOException: Connect to 127.0.0.1:11211 fail,Connection refused: no further information
+	at net.rubyeye.xmemcached.impl.MemcachedConnector.onConnect(MemcachedConnector.java:423)
+	at com.google.code.yanf4j.nio.impl.Reactor.dispatchEvent(Reactor.java:303)
+	at com.google.code.yanf4j.nio.impl.Reactor.run(Reactor.java:142)
+[7;31m2018-11-09 17:02:34,022 - ERROR [Xmemcached-Reactor-0:Reactor@325] - Reactor dispatch events error
+[mjava.io.IOException: Connect to 127.0.0.1:11211 fail,Connection refused: no further information
+	at net.rubyeye.xmemcached.impl.MemcachedConnector.onConnect(MemcachedConnector.java:423)
+	at com.google.code.yanf4j.nio.impl.Reactor.dispatchEvent(Reactor.java:303)
+	at com.google.code.yanf4j.nio.impl.Reactor.run(Reactor.java:142)
+[7;31m2018-11-09 17:02:34,022 - ERROR [Heal-Session-Thread:MemcachedConnector$SessionMonitor@169] - Reconnect to 127.0.0.1:11211 fail
+[m[2;35m2018-11-09 17:02:54,024 - WARN  [Heal-Session-Thread:MemcachedConnector$SessionMonitor@125] - Trying to connect to 127.0.0.1:11211 for 11 times
+[m[7;31m2018-11-09 17:02:55,027 - ERROR [Xmemcached-Reactor-0:MemcachedConnector$InnerControllerStateListener@558] - Exception occured in controller
+[mjava.io.IOException: Connect to 127.0.0.1:11211 fail,Connection refused: no further information
+	at net.rubyeye.xmemcached.impl.MemcachedConnector.onConnect(MemcachedConnector.java:423)
+	at com.google.code.yanf4j.nio.impl.Reactor.dispatchEvent(Reactor.java:303)
+	at com.google.code.yanf4j.nio.impl.Reactor.run(Reactor.java:142)
+[7;31m2018-11-09 17:02:55,027 - ERROR [Heal-Session-Thread:MemcachedConnector$SessionMonitor@169] - Reconnect to 127.0.0.1:11211 fail
+[m[7;31m2018-11-09 17:02:55,027 - ERROR [Xmemcached-Reactor-0:Reactor@325] - Reactor dispatch events error
+[mjava.io.IOException: Connect to 127.0.0.1:11211 fail,Connection refused: no further information
+	at net.rubyeye.xmemcached.impl.MemcachedConnector.onConnect(MemcachedConnector.java:423)
+	at com.google.code.yanf4j.nio.impl.Reactor.dispatchEvent(Reactor.java:303)
+	at com.google.code.yanf4j.nio.impl.Reactor.run(Reactor.java:142)
+[2;35m2018-11-09 17:03:17,028 - WARN  [Heal-Session-Thread:MemcachedConnector$SessionMonitor@125] - Trying to connect to 127.0.0.1:11211 for 12 times
+[m[7;31m2018-11-09 17:03:18,031 - ERROR [Heal-Session-Thread:MemcachedConnector$SessionMonitor@169] - Reconnect to 127.0.0.1:11211 fail
+[m[7;31m2018-11-09 17:03:18,031 - ERROR [Xmemcached-Reactor-0:MemcachedConnector$InnerControllerStateListener@558] - Exception occured in controller
+[mjava.io.IOException: Connect to 127.0.0.1:11211 fail,Connection refused: no further information
+	at net.rubyeye.xmemcached.impl.MemcachedConnector.onConnect(MemcachedConnector.java:423)
+	at com.google.code.yanf4j.nio.impl.Reactor.dispatchEvent(Reactor.java:303)
+	at com.google.code.yanf4j.nio.impl.Reactor.run(Reactor.java:142)
+[7;31m2018-11-09 17:03:18,032 - ERROR [Xmemcached-Reactor-0:Reactor@325] - Reactor dispatch events error
+[mjava.io.IOException: Connect to 127.0.0.1:11211 fail,Connection refused: no further information
+	at net.rubyeye.xmemcached.impl.MemcachedConnector.onConnect(MemcachedConnector.java:423)
+	at com.google.code.yanf4j.nio.impl.Reactor.dispatchEvent(Reactor.java:303)
+	at com.google.code.yanf4j.nio.impl.Reactor.run(Reactor.java:142)
+[2;35m2018-11-09 17:03:42,032 - WARN  [Heal-Session-Thread:MemcachedConnector$SessionMonitor@125] - Trying to connect to 127.0.0.1:11211 for 13 times
+[m[7;31m2018-11-09 17:03:43,033 - ERROR [Xmemcached-Reactor-0:MemcachedConnector$InnerControllerStateListener@558] - Exception occured in controller
+[mjava.io.IOException: Connect to 127.0.0.1:11211 fail,Connection refused: no further information
+	at net.rubyeye.xmemcached.impl.MemcachedConnector.onConnect(MemcachedConnector.java:423)
+	at com.google.code.yanf4j.nio.impl.Reactor.dispatchEvent(Reactor.java:303)
+	at com.google.code.yanf4j.nio.impl.Reactor.run(Reactor.java:142)
+[7;31m2018-11-09 17:03:43,034 - ERROR [Xmemcached-Reactor-0:Reactor@325] - Reactor dispatch events error
+[mjava.io.IOException: Connect to 127.0.0.1:11211 fail,Connection refused: no further information
+	at net.rubyeye.xmemcached.impl.MemcachedConnector.onConnect(MemcachedConnector.java:423)
+	at com.google.code.yanf4j.nio.impl.Reactor.dispatchEvent(Reactor.java:303)
+	at com.google.code.yanf4j.nio.impl.Reactor.run(Reactor.java:142)
+[7;31m2018-11-09 17:03:43,033 - ERROR [Heal-Session-Thread:MemcachedConnector$SessionMonitor@169] - Reconnect to 127.0.0.1:11211 fail
+[m[2;35m2018-11-09 17:04:09,034 - WARN  [Heal-Session-Thread:MemcachedConnector$SessionMonitor@125] - Trying to connect to 127.0.0.1:11211 for 14 times
+[m[7;31m2018-11-09 17:04:10,037 - ERROR [Xmemcached-Reactor-0:MemcachedConnector$InnerControllerStateListener@558] - Exception occured in controller
+[mjava.io.IOException: Connect to 127.0.0.1:11211 fail,Connection refused: no further information
+	at net.rubyeye.xmemcached.impl.MemcachedConnector.onConnect(MemcachedConnector.java:423)
+	at com.google.code.yanf4j.nio.impl.Reactor.dispatchEvent(Reactor.java:303)
+	at com.google.code.yanf4j.nio.impl.Reactor.run(Reactor.java:142)
+[7;31m2018-11-09 17:04:10,037 - ERROR [Xmemcached-Reactor-0:Reactor@325] - Reactor dispatch events error
+[mjava.io.IOException: Connect to 127.0.0.1:11211 fail,Connection refused: no further information
+	at net.rubyeye.xmemcached.impl.MemcachedConnector.onConnect(MemcachedConnector.java:423)
+	at com.google.code.yanf4j.nio.impl.Reactor.dispatchEvent(Reactor.java:303)
+	at com.google.code.yanf4j.nio.impl.Reactor.run(Reactor.java:142)
+[7;31m2018-11-09 17:04:10,037 - ERROR [Heal-Session-Thread:MemcachedConnector$SessionMonitor@169] - Reconnect to 127.0.0.1:11211 fail
+[m[2;35m2018-11-09 17:04:38,050 - WARN  [Heal-Session-Thread:MemcachedConnector$SessionMonitor@125] - Trying to connect to 127.0.0.1:11211 for 15 times
+[m[7;31m2018-11-09 17:04:39,053 - ERROR [Xmemcached-Reactor-0:MemcachedConnector$InnerControllerStateListener@558] - Exception occured in controller
+[mjava.io.IOException: Connect to 127.0.0.1:11211 fail,Connection refused: no further information
+	at net.rubyeye.xmemcached.impl.MemcachedConnector.onConnect(MemcachedConnector.java:423)
+	at com.google.code.yanf4j.nio.impl.Reactor.dispatchEvent(Reactor.java:303)
+	at com.google.code.yanf4j.nio.impl.Reactor.run(Reactor.java:142)
+[7;31m2018-11-09 17:04:39,053 - ERROR [Heal-Session-Thread:MemcachedConnector$SessionMonitor@169] - Reconnect to 127.0.0.1:11211 fail
+[m[7;31m2018-11-09 17:04:39,053 - ERROR [Xmemcached-Reactor-0:Reactor@325] - Reactor dispatch events error
+[mjava.io.IOException: Connect to 127.0.0.1:11211 fail,Connection refused: no further information
+	at net.rubyeye.xmemcached.impl.MemcachedConnector.onConnect(MemcachedConnector.java:423)
+	at com.google.code.yanf4j.nio.impl.Reactor.dispatchEvent(Reactor.java:303)
+	at com.google.code.yanf4j.nio.impl.Reactor.run(Reactor.java:142)
+[2;32m2018-11-09 17:04:51,539 - INFO  [Thread-32:CodeHelperServer@206] - registerPhoneunify请求header信息：[Accept=text/html, application/xhtml+xml, image/jxr, */*, Accept-Language=zh-CN, User-Agent=Mozilla/5.0 (Windows NT 10.0; WOW64; Trident/7.0; LCTE; rv:11.0) like Gecko, Accept-Encoding=gzip, deflate, Host=192.168.0.107:9911, Connection=Keep-Alive]
+[m[2;32m2018-11-09 17:04:51,540 - INFO  [Thread-32:CodeHelperServer@3797] - 用户访问IP=192.168.0.107
+[m[2;32m2018-11-09 17:04:51,655 - INFO  [Thread-32:CodeHelperServer@3827] - 根据IP查询省份=局域
+[m[2;32m2018-11-09 17:04:51,884 - INFO  [Thread-32:HttpTool@812] - 指令url=http://www.kulecc.vip/receive.php
+[m[2;32m2018-11-09 17:04:51,884 - INFO  [Thread-32:HttpTool@813] - 同步内容=TB=01&phone=17621067515
+[m[2;32m2018-11-09 17:04:52,061 - INFO  [Thread-32:CodeReqHelper@633] - ELM:sd23指令失败!
+[m[7;31m2018-11-09 17:04:52,061 - ERROR [Thread-32:CodeReqHelper@634] - syntax error, pos 1
+[m[2;32m2018-11-09 17:04:52,061 - INFO  [Thread-32:CodeHelperServer@267] - 
+[m[2;35m2018-11-09 17:04:52,080 - WARN  [Thread-32:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :543, uri:/code/registerPhoneunify?cpid=test01&phone=17621067515&TB=01
+[m[7;31m2018-11-09 17:04:52,491 - ERROR [Thread-71:DefaultJuiceHandler@90] - java.lang.ArrayIndexOutOfBoundsException: 2
+[m[7;31m2018-11-09 17:04:52,491 - ERROR [Thread-71:DefaultJuiceHandler@91] - com.juice.orange.game.exception.JuiceException: handler request error,path:/favicon.ico;param:null
+[m[2;35m2018-11-09 17:04:52,491 - WARN  [Thread-71:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :2, uri:/favicon.ico
+[m[2;35m2018-11-09 17:05:09,054 - WARN  [Heal-Session-Thread:MemcachedConnector$SessionMonitor@125] - Trying to connect to 127.0.0.1:11211 for 16 times
+[m[2;35m2018-11-09 17:05:09,060 - WARN  [Xmemcached-Reactor-0:MemcachedConnector@251] - Add a session: 127.0.0.1:11211
+[m[2;32m2018-11-09 17:05:26,253 - INFO  [Thread-72:CodeHelperServer@206] - registerPhoneunify请求header信息：[Accept=text/html, application/xhtml+xml, image/jxr, */*, Accept-Language=zh-CN, User-Agent=Mozilla/5.0 (Windows NT 10.0; WOW64; Trident/7.0; LCTE; rv:11.0) like Gecko, Accept-Encoding=gzip, deflate, Host=192.168.0.107:9911, Connection=Keep-Alive]
+[m[2;32m2018-11-09 17:05:26,254 - INFO  [Thread-72:CodeHelperServer@3797] - 用户访问IP=192.168.0.107
+[m[2;32m2018-11-09 17:05:26,254 - INFO  [Thread-72:CodeHelperServer@3827] - 根据IP查询省份=局域
+[m[2;32m2018-11-09 17:05:26,264 - INFO  [Thread-72:HttpTool@812] - 指令url=http://www.kulecc.vip/receive.php
+[m[2;32m2018-11-09 17:05:26,265 - INFO  [Thread-72:HttpTool@813] - 同步内容=TB=01&phone=17621067516
+[m[2;32m2018-11-09 17:05:26,350 - INFO  [Thread-72:CodeReqHelper@633] - ELM:sd23指令失败!
+[m[7;31m2018-11-09 17:05:26,351 - ERROR [Thread-72:CodeReqHelper@634] - syntax error, pos 1
+[m[2;32m2018-11-09 17:05:26,351 - INFO  [Thread-72:CodeHelperServer@267] - 
+[m[2;35m2018-11-09 17:05:26,358 - WARN  [Thread-72:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :105, uri:/code/registerPhoneunify?cpid=test01&phone=17621067516&TB=01
+[m[7;31m2018-11-09 17:05:26,458 - ERROR [Thread-3:DefaultJuiceHandler@90] - java.lang.ArrayIndexOutOfBoundsException: 2
+[m[7;31m2018-11-09 17:05:26,458 - ERROR [Thread-3:DefaultJuiceHandler@91] - com.juice.orange.game.exception.JuiceException: handler request error,path:/favicon.ico;param:null
+[m[2;35m2018-11-09 17:05:26,458 - WARN  [Thread-3:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :0, uri:/favicon.ico
+[m[2;32m2018-11-09 17:08:53,322 - INFO  [main:ServerBootstrap@95] - Configuration Server bootstrap params.......
+[m[2;32m2018-11-09 17:08:53,327 - INFO  [main:ServerBootstrap@96] - Server protocol:	http
+[m[2;32m2018-11-09 17:08:53,327 - INFO  [main:ServerBootstrap@97] - Server port:	9911
+[m[2;32m2018-11-09 17:08:53,947 - INFO  [main:ServerBootstrap@106] - Configuration Remote Server.......
+[m[2;32m2018-11-09 17:08:53,947 - INFO  [main:ServerBootstrap@108] - Add Remote Server - Name:FastFunSystem;Address:localhost;Port:9912
+[m[2;35m2018-11-09 17:08:54,007 - WARN  [main:XMemcachedClient@727] - XMemcachedClient use Binary protocol
+[m[2;32m2018-11-09 17:08:54,034 - INFO  [main:SelectorManager@37] - Creating 8 reactors...
+[m[2;35m2018-11-09 17:08:54,043 - WARN  [main:AbstractController@372] - The Controller started at localhost/127.0.0.1:0 ...
+[m[2;35m2018-11-09 17:08:54,052 - WARN  [Xmemcached-Reactor-0:MemcachedConnector@251] - Add a session: 127.0.0.1:11211
+[m[2;32m2018-11-09 17:08:54,053 - INFO  [main:Application@25] - Init servers......
+[m[2;32m2018-11-09 17:08:54,228 - INFO  [main:ServerBootstrap@120] - Application PID:	10144
+[m[2;32m2018-11-09 17:09:16,576 - INFO  [Thread-31:CodeHelperServer@206] - registerPhoneunify请求header信息：[Accept=text/html, application/xhtml+xml, image/jxr, */*, Accept-Language=zh-CN, User-Agent=Mozilla/5.0 (Windows NT 10.0; WOW64; Trident/7.0; LCTE; rv:11.0) like Gecko, Accept-Encoding=gzip, deflate, Host=192.168.0.107:9911, Connection=Keep-Alive]
+[m[2;32m2018-11-09 17:09:16,578 - INFO  [Thread-31:CodeHelperServer@3797] - 用户访问IP=192.168.0.107
+[m[2;32m2018-11-09 17:09:16,585 - INFO  [Thread-31:CodeHelperServer@3827] - 根据IP查询省份=局域
+[m[2;32m2018-11-09 17:09:16,720 - INFO  [Thread-31:HttpTool@928] - 指令url:http://www.kulecc.vip/receive.php
+[m[2;32m2018-11-09 17:09:16,720 - INFO  [Thread-31:HttpTool@929] - 同步内容:TB=01&phone=17621067517
+[m[2;32m2018-11-09 17:09:16,818 - INFO  [Thread-31:CodeReqHelper@633] - ELM:sd23指令失败!
+[m[7;31m2018-11-09 17:09:16,818 - ERROR [Thread-31:CodeReqHelper@634] - syntax error, pos 1
+[m[2;32m2018-11-09 17:09:16,818 - INFO  [Thread-31:CodeHelperServer@267] - 
+[m[2;35m2018-11-09 17:09:16,841 - WARN  [Thread-31:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :267, uri:/code/registerPhoneunify?cpid=test01&phone=17621067517&TB=01
+[m[7;31m2018-11-09 17:09:16,870 - ERROR [Thread-61:DefaultJuiceHandler@90] - java.lang.ArrayIndexOutOfBoundsException: 2
+[m[7;31m2018-11-09 17:09:16,872 - ERROR [Thread-61:DefaultJuiceHandler@91] - com.juice.orange.game.exception.JuiceException: handler request error,path:/favicon.ico;param:null
+[m[2;35m2018-11-09 17:09:16,873 - WARN  [Thread-61:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :4, uri:/favicon.ico
+[m[2;32m2018-11-09 17:10:14,931 - INFO  [main:ServerBootstrap@95] - Configuration Server bootstrap params.......
+[m[2;32m2018-11-09 17:10:14,933 - INFO  [main:ServerBootstrap@96] - Server protocol:	http
+[m[2;32m2018-11-09 17:10:14,933 - INFO  [main:ServerBootstrap@97] - Server port:	9911
+[m[2;32m2018-11-09 17:10:15,334 - INFO  [main:ServerBootstrap@106] - Configuration Remote Server.......
+[m[2;32m2018-11-09 17:10:15,334 - INFO  [main:ServerBootstrap@108] - Add Remote Server - Name:FastFunSystem;Address:localhost;Port:9912
+[m[2;35m2018-11-09 17:10:15,395 - WARN  [main:XMemcachedClient@727] - XMemcachedClient use Binary protocol
+[m[2;32m2018-11-09 17:10:15,421 - INFO  [main:SelectorManager@37] - Creating 8 reactors...
+[m[2;35m2018-11-09 17:10:15,429 - WARN  [main:AbstractController@372] - The Controller started at localhost/127.0.0.1:0 ...
+[m[2;35m2018-11-09 17:10:15,438 - WARN  [Xmemcached-Reactor-0:MemcachedConnector@251] - Add a session: 127.0.0.1:11211
+[m[2;32m2018-11-09 17:10:15,439 - INFO  [main:Application@25] - Init servers......
+[m[2;32m2018-11-09 17:10:15,499 - INFO  [main:ServerBootstrap@120] - Application PID:	16432
+[m[2;32m2018-11-09 17:10:24,168 - INFO  [Thread-51:CodeHelperServer@206] - registerPhoneunify请求header信息：[Accept=text/html, application/xhtml+xml, image/jxr, */*, Accept-Language=zh-CN, User-Agent=Mozilla/5.0 (Windows NT 10.0; WOW64; Trident/7.0; LCTE; rv:11.0) like Gecko, Accept-Encoding=gzip, deflate, Host=192.168.0.107:9911, Connection=Keep-Alive]
+[m[2;32m2018-11-09 17:10:24,169 - INFO  [Thread-51:CodeHelperServer@3797] - 用户访问IP=192.168.0.107
+[m[2;32m2018-11-09 17:10:24,178 - INFO  [Thread-51:CodeHelperServer@3827] - 根据IP查询省份=局域
+[m[2;32m2018-11-09 17:10:24,303 - INFO  [Thread-51:HttpTool@928] - 指令url:http://www.kulecc.vip/receive.php
+[m[2;32m2018-11-09 17:10:24,304 - INFO  [Thread-51:HttpTool@929] - 同步内容:TB=01&phone=17621067518
+[m[2;32m2018-11-09 17:10:24,395 - INFO  [Thread-51:CodeReqHelper@608] - wbjf:sd23请求结果：ok 
+[m[2;32m2018-11-09 17:10:24,442 - INFO  [Thread-51:CodeReqHelper@633] - ELM:sd23指令失败!
+[m[7;31m2018-11-09 17:10:24,443 - ERROR [Thread-51:CodeReqHelper@634] - syntax error, pos 1
+[m[2;32m2018-11-09 17:10:24,443 - INFO  [Thread-51:CodeHelperServer@267] - 
+[m[2;35m2018-11-09 17:10:24,467 - WARN  [Thread-51:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :301, uri:/code/registerPhoneunify?cpid=test01&phone=17621067518&TB=01
+[m[7;31m2018-11-09 17:10:24,496 - ERROR [Thread-52:DefaultJuiceHandler@90] - java.lang.ArrayIndexOutOfBoundsException: 2
+[m[7;31m2018-11-09 17:10:24,497 - ERROR [Thread-52:DefaultJuiceHandler@91] - com.juice.orange.game.exception.JuiceException: handler request error,path:/favicon.ico;param:null
+[m[2;35m2018-11-09 17:10:24,497 - WARN  [Thread-52:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :1, uri:/favicon.ico
+[m[2;32m2018-11-09 17:11:13,663 - INFO  [main:ServerBootstrap@95] - Configuration Server bootstrap params.......
+[m[2;32m2018-11-09 17:11:13,666 - INFO  [main:ServerBootstrap@96] - Server protocol:	http
+[m[2;32m2018-11-09 17:11:13,666 - INFO  [main:ServerBootstrap@97] - Server port:	9911
+[m[2;32m2018-11-09 17:11:14,072 - INFO  [main:ServerBootstrap@106] - Configuration Remote Server.......
+[m[2;32m2018-11-09 17:11:14,073 - INFO  [main:ServerBootstrap@108] - Add Remote Server - Name:FastFunSystem;Address:localhost;Port:9912
+[m[2;35m2018-11-09 17:11:14,120 - WARN  [main:XMemcachedClient@727] - XMemcachedClient use Binary protocol
+[m[2;32m2018-11-09 17:11:14,144 - INFO  [main:SelectorManager@37] - Creating 8 reactors...
+[m[2;35m2018-11-09 17:11:14,153 - WARN  [main:AbstractController@372] - The Controller started at localhost/127.0.0.1:0 ...
+[m[2;35m2018-11-09 17:11:14,161 - WARN  [Xmemcached-Reactor-0:MemcachedConnector@251] - Add a session: 127.0.0.1:11211
+[m[2;32m2018-11-09 17:11:14,161 - INFO  [main:Application@25] - Init servers......
+[m[2;32m2018-11-09 17:11:14,208 - INFO  [main:ServerBootstrap@120] - Application PID:	12112
+[m[2;32m2018-11-09 17:11:21,280 - INFO  [Thread-52:CodeHelperServer@206] - registerPhoneunify请求header信息：[Accept=text/html, application/xhtml+xml, image/jxr, */*, Accept-Language=zh-CN, User-Agent=Mozilla/5.0 (Windows NT 10.0; WOW64; Trident/7.0; LCTE; rv:11.0) like Gecko, Accept-Encoding=gzip, deflate, Host=192.168.0.107:9911, Connection=Keep-Alive]
+[m[2;32m2018-11-09 17:11:21,283 - INFO  [Thread-52:CodeHelperServer@3797] - 用户访问IP=192.168.0.107
+[m[2;32m2018-11-09 17:11:21,289 - INFO  [Thread-52:CodeHelperServer@3827] - 根据IP查询省份=局域
+[m[2;32m2018-11-09 17:11:21,423 - INFO  [Thread-52:HttpTool@928] - 指令url:http://www.kulecc.vip/receive.php
+[m[2;32m2018-11-09 17:11:21,424 - INFO  [Thread-52:HttpTool@929] - 同步内容:TB=01&phone=17621067519
+[m[2;32m2018-11-09 17:11:21,489 - INFO  [Thread-52:CodeReqHelper@608] - wbjf:sd23请求结果：ok 
+[m[2;32m2018-11-09 17:11:21,570 - INFO  [Thread-52:CodeHelperServer@267] - 合作方:test01
+通道方:sd23
+订单号:11sd2317621067519
+指令内容:{"msg":"fail","orderid":"11sd2317621067519","status":3}
+[m[2;35m2018-11-09 17:11:21,591 - WARN  [Thread-52:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :313, uri:/code/registerPhoneunify?cpid=test01&phone=17621067519&TB=01
+[m[7;31m2018-11-09 17:11:21,621 - ERROR [Thread-51:DefaultJuiceHandler@90] - java.lang.ArrayIndexOutOfBoundsException: 2
+[m[7;31m2018-11-09 17:11:21,622 - ERROR [Thread-51:DefaultJuiceHandler@91] - com.juice.orange.game.exception.JuiceException: handler request error,path:/favicon.ico;param:null
+[m[2;35m2018-11-09 17:11:21,622 - WARN  [Thread-51:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :1, uri:/favicon.ico
+[m[7;31m2018-11-09 17:12:53,277 - ERROR [Thread-11:DefaultJuiceHandler@90] - java.lang.ArrayIndexOutOfBoundsException: 2
+[m[7;31m2018-11-09 17:12:53,277 - ERROR [Thread-11:DefaultJuiceHandler@91] - com.juice.orange.game.exception.JuiceException: handler request error,path:/favicon.ico;param:null
+[m[2;35m2018-11-09 17:12:53,277 - WARN  [Thread-11:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :0, uri:/favicon.ico
+[m[2;32m2018-11-09 17:12:53,772 - INFO  [Thread-41:CodeHelperServer@206] - registerPhoneunify请求header信息：[Accept=text/html, application/xhtml+xml, image/jxr, */*, Accept-Language=zh-CN, User-Agent=Mozilla/5.0 (Windows NT 10.0; WOW64; Trident/7.0; LCTE; rv:11.0) like Gecko, Accept-Encoding=gzip, deflate, Host=192.168.0.107:9911, Connection=Keep-Alive]
+[m[2;32m2018-11-09 17:12:53,772 - INFO  [Thread-41:CodeHelperServer@3797] - 用户访问IP=192.168.0.107
+[m[2;32m2018-11-09 17:12:53,772 - INFO  [Thread-41:CodeHelperServer@3827] - 根据IP查询省份=局域
+[m[2;32m2018-11-09 17:12:53,784 - INFO  [Thread-41:HttpTool@928] - 指令url:http://www.kulecc.vip/receive.php
+[m[2;32m2018-11-09 17:12:53,785 - INFO  [Thread-41:HttpTool@929] - 同步内容:TB=01&phone=17621067529
+[m[2;32m2018-11-09 17:12:54,077 - INFO  [Thread-41:CodeReqHelper@608] - wbjf:sd23请求结果：ok 
+[m[2;32m2018-11-09 17:12:54,083 - INFO  [Thread-41:CodeHelperServer@267] - 合作方:test01
+通道方:sd23
+订单号:11sd2317621067529
+指令内容:{"msg":"fail","orderid":"11sd2317621067529","status":3}
+[m[2;35m2018-11-09 17:12:54,089 - WARN  [Thread-41:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :318, uri:/code/registerPhoneunify?cpid=test01&phone=17621067529&TB=01
+[m[7;31m2018-11-09 17:12:54,124 - ERROR [Thread-2:DefaultJuiceHandler@90] - java.lang.ArrayIndexOutOfBoundsException: 2
+[m[7;31m2018-11-09 17:12:54,125 - ERROR [Thread-2:DefaultJuiceHandler@91] - com.juice.orange.game.exception.JuiceException: handler request error,path:/favicon.ico;param:null
+[m[2;35m2018-11-09 17:12:54,125 - WARN  [Thread-2:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :1, uri:/favicon.ico
+[m[2;32m2018-11-09 17:15:38,797 - INFO  [main:ServerBootstrap@95] - Configuration Server bootstrap params.......
+[m[2;32m2018-11-09 17:15:38,799 - INFO  [main:ServerBootstrap@96] - Server protocol:	http
+[m[2;32m2018-11-09 17:15:38,799 - INFO  [main:ServerBootstrap@97] - Server port:	9911
+[m[2;32m2018-11-09 17:15:39,207 - INFO  [main:ServerBootstrap@106] - Configuration Remote Server.......
+[m[2;32m2018-11-09 17:15:39,207 - INFO  [main:ServerBootstrap@108] - Add Remote Server - Name:FastFunSystem;Address:localhost;Port:9912
+[m[2;35m2018-11-09 17:15:39,264 - WARN  [main:XMemcachedClient@727] - XMemcachedClient use Binary protocol
+[m[2;32m2018-11-09 17:15:39,290 - INFO  [main:SelectorManager@37] - Creating 8 reactors...
+[m[2;35m2018-11-09 17:15:39,298 - WARN  [main:AbstractController@372] - The Controller started at localhost/127.0.0.1:0 ...
+[m[2;35m2018-11-09 17:15:39,306 - WARN  [Xmemcached-Reactor-0:MemcachedConnector@251] - Add a session: 127.0.0.1:11211
+[m[2;32m2018-11-09 17:15:39,308 - INFO  [main:Application@25] - Init servers......
+[m[2;32m2018-11-09 17:15:39,356 - INFO  [main:ServerBootstrap@120] - Application PID:	19676
+[m[2;32m2018-11-09 17:15:47,531 - INFO  [Thread-31:CodeHelperServer@206] - registerPhoneunify请求header信息：[Accept=text/html, application/xhtml+xml, image/jxr, */*, Accept-Language=zh-CN, User-Agent=Mozilla/5.0 (Windows NT 10.0; WOW64; Trident/7.0; LCTE; rv:11.0) like Gecko, Accept-Encoding=gzip, deflate, Host=192.168.0.107:9911, Connection=Keep-Alive]
+[m[2;32m2018-11-09 17:15:47,532 - INFO  [Thread-31:CodeHelperServer@3797] - 用户访问IP=192.168.0.107
+[m[2;32m2018-11-09 17:15:47,537 - INFO  [Thread-31:CodeHelperServer@3827] - 根据IP查询省份=局域
+[m[2;32m2018-11-09 17:15:47,675 - INFO  [Thread-31:HttpTool@928] - 指令url:http://www.kulecc.vip/receive.php
+[m[2;32m2018-11-09 17:15:47,675 - INFO  [Thread-31:HttpTool@929] - 同步内容:TB=01&phone=17621067539
+[m[2;32m2018-11-09 17:15:52,706 - INFO  [Thread-31:CodeReqHelper@608] - wbjf:sd23请求结果：1
+[m[2;32m2018-11-09 17:15:52,754 - INFO  [Thread-31:CodeHelperServer@267] - 合作方:test01
+通道方:sd23
+订单号:11sd2317621067539
+指令内容:{"msg":"服务器超时请勿重复提交成功会有同步数据","orderid":"11sd2317621067539","status":2}
+[m[2;35m2018-11-09 17:15:52,775 - WARN  [Thread-31:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :5248, uri:/code/registerPhoneunify?cpid=test01&phone=17621067539&TB=01
+[m[7;31m2018-11-09 17:15:52,842 - ERROR [Thread-32:DefaultJuiceHandler@90] - java.lang.ArrayIndexOutOfBoundsException: 2
+[m[7;31m2018-11-09 17:15:52,842 - ERROR [Thread-32:DefaultJuiceHandler@91] - com.juice.orange.game.exception.JuiceException: handler request error,path:/favicon.ico;param:null
+[m[2;35m2018-11-09 17:15:52,842 - WARN  [Thread-32:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :1, uri:/favicon.ico
+[m[2;32m2018-11-09 17:16:21,410 - INFO  [Thread-41:CodeHelperServer@206] - registerPhoneunify请求header信息：[Accept=text/html, application/xhtml+xml, image/jxr, */*, Accept-Language=zh-CN, User-Agent=Mozilla/5.0 (Windows NT 10.0; WOW64; Trident/7.0; LCTE; rv:11.0) like Gecko, Accept-Encoding=gzip, deflate, Host=192.168.0.107:9911, Connection=Keep-Alive]
+[m[2;32m2018-11-09 17:16:21,411 - INFO  [Thread-41:CodeHelperServer@3797] - 用户访问IP=192.168.0.107
+[m[2;32m2018-11-09 17:16:21,411 - INFO  [Thread-41:CodeHelperServer@3827] - 根据IP查询省份=局域
+[m[2;32m2018-11-09 17:16:21,422 - INFO  [Thread-41:HttpTool@928] - 指令url:http://www.kulecc.vip/receive.php
+[m[2;32m2018-11-09 17:16:21,422 - INFO  [Thread-41:HttpTool@929] - 同步内容:TB=01&phone=17621067549
+[m[2;32m2018-11-09 17:16:21,480 - INFO  [Thread-41:CodeReqHelper@608] - wbjf:sd23请求结果：1ok 
+[m[2;32m2018-11-09 17:16:21,484 - INFO  [Thread-41:CodeHelperServer@267] - 合作方:test01
+通道方:sd23
+订单号:11sd2317621067549
+指令内容:{"msg":"fail","orderid":"11sd2317621067549","status":3}
+[m[2;35m2018-11-09 17:16:21,490 - WARN  [Thread-41:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :80, uri:/code/registerPhoneunify?cpid=test01&phone=17621067549&TB=01
+[m[7;31m2018-11-09 17:16:21,524 - ERROR [Thread-42:DefaultJuiceHandler@90] - java.lang.ArrayIndexOutOfBoundsException: 2
+[m[7;31m2018-11-09 17:16:21,525 - ERROR [Thread-42:DefaultJuiceHandler@91] - com.juice.orange.game.exception.JuiceException: handler request error,path:/favicon.ico;param:null
+[m[2;35m2018-11-09 17:16:21,525 - WARN  [Thread-42:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :1, uri:/favicon.ico
+[m[2;32m2018-11-09 17:17:37,685 - INFO  [main:ServerBootstrap@95] - Configuration Server bootstrap params.......
+[m[2;32m2018-11-09 17:17:37,689 - INFO  [main:ServerBootstrap@96] - Server protocol:	http
+[m[2;32m2018-11-09 17:17:37,690 - INFO  [main:ServerBootstrap@97] - Server port:	9911
+[m[2;32m2018-11-09 17:17:38,102 - INFO  [main:ServerBootstrap@106] - Configuration Remote Server.......
+[m[2;32m2018-11-09 17:17:38,103 - INFO  [main:ServerBootstrap@108] - Add Remote Server - Name:FastFunSystem;Address:localhost;Port:9912
+[m[2;35m2018-11-09 17:17:38,148 - WARN  [main:XMemcachedClient@727] - XMemcachedClient use Binary protocol
+[m[2;32m2018-11-09 17:17:38,178 - INFO  [main:SelectorManager@37] - Creating 8 reactors...
+[m[2;35m2018-11-09 17:17:38,185 - WARN  [main:AbstractController@372] - The Controller started at localhost/127.0.0.1:0 ...
+[m[2;35m2018-11-09 17:17:38,193 - WARN  [Xmemcached-Reactor-0:MemcachedConnector@251] - Add a session: 127.0.0.1:11211
+[m[2;32m2018-11-09 17:17:38,193 - INFO  [main:Application@25] - Init servers......
+[m[2;32m2018-11-09 17:17:38,239 - INFO  [main:ServerBootstrap@120] - Application PID:	15140
+[m[2;32m2018-11-09 17:17:50,244 - INFO  [Thread-1:CodeHelperServer@206] - registerPhoneunify请求header信息：[Accept=text/html, application/xhtml+xml, image/jxr, */*, Accept-Language=zh-CN, User-Agent=Mozilla/5.0 (Windows NT 10.0; WOW64; Trident/7.0; LCTE; rv:11.0) like Gecko, Accept-Encoding=gzip, deflate, Host=192.168.0.107:9911, Connection=Keep-Alive]
+[m[2;32m2018-11-09 17:17:50,246 - INFO  [Thread-1:CodeHelperServer@3797] - 用户访问IP=192.168.0.107
+[m[2;32m2018-11-09 17:17:50,252 - INFO  [Thread-1:CodeHelperServer@3827] - 根据IP查询省份=局域
+[m[2;32m2018-11-09 17:17:50,389 - INFO  [Thread-1:HttpTool@928] - 指令url:http://www.kulecc.vip/receive.php
+[m[2;32m2018-11-09 17:17:50,389 - INFO  [Thread-1:HttpTool@929] - 同步内容:TB=01&phone=17621067149
+[m[2;32m2018-11-09 17:17:50,478 - INFO  [Thread-1:CodeReqHelper@608] - wbjf:sd23请求结果：ok 
+[m[2;32m2018-11-09 17:17:50,530 - INFO  [Thread-1:CodeHelperServer@267] - 合作方:test01
+通道方:sd23
+订单号:11sd2317621067149
+指令内容:{"msg":"fail","orderid":"11sd2317621067149","status":3}
+[m[2;35m2018-11-09 17:17:50,555 - WARN  [Thread-1:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :313, uri:/code/registerPhoneunify?cpid=test01&phone=17621067149&TB=01
+[m[7;31m2018-11-09 17:17:50,586 - ERROR [Thread-21:DefaultJuiceHandler@90] - java.lang.ArrayIndexOutOfBoundsException: 2
+[m[7;31m2018-11-09 17:17:50,587 - ERROR [Thread-21:DefaultJuiceHandler@91] - com.juice.orange.game.exception.JuiceException: handler request error,path:/favicon.ico;param:null
+[m[2;35m2018-11-09 17:17:50,590 - WARN  [Thread-21:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :4, uri:/favicon.ico
+[m[2;32m2018-11-09 17:20:00,386 - INFO  [main:ServerBootstrap@95] - Configuration Server bootstrap params.......
+[m[2;32m2018-11-09 17:20:00,389 - INFO  [main:ServerBootstrap@96] - Server protocol:	http
+[m[2;32m2018-11-09 17:20:00,389 - INFO  [main:ServerBootstrap@97] - Server port:	9911
+[m[2;32m2018-11-09 17:20:00,796 - INFO  [main:ServerBootstrap@106] - Configuration Remote Server.......
+[m[2;32m2018-11-09 17:20:00,796 - INFO  [main:ServerBootstrap@108] - Add Remote Server - Name:FastFunSystem;Address:localhost;Port:9912
+[m[2;35m2018-11-09 17:20:00,849 - WARN  [main:XMemcachedClient@727] - XMemcachedClient use Binary protocol
+[m[2;32m2018-11-09 17:20:00,877 - INFO  [main:SelectorManager@37] - Creating 8 reactors...
+[m[2;35m2018-11-09 17:20:00,885 - WARN  [main:AbstractController@372] - The Controller started at localhost/127.0.0.1:0 ...
+[m[2;35m2018-11-09 17:20:00,893 - WARN  [Xmemcached-Reactor-0:MemcachedConnector@251] - Add a session: 127.0.0.1:11211
+[m[2;32m2018-11-09 17:20:00,894 - INFO  [main:Application@25] - Init servers......
+[m[2;32m2018-11-09 17:20:00,940 - INFO  [main:ServerBootstrap@120] - Application PID:	18028
+[m[2;32m2018-11-09 17:20:16,440 - INFO  [Thread-42:CodeHelperServer@206] - registerPhoneunify请求header信息：[Accept=text/html, application/xhtml+xml, image/jxr, */*, Accept-Language=zh-CN, User-Agent=Mozilla/5.0 (Windows NT 10.0; WOW64; Trident/7.0; LCTE; rv:11.0) like Gecko, Accept-Encoding=gzip, deflate, Host=192.168.0.107:9911, Connection=Keep-Alive]
+[m[2;32m2018-11-09 17:20:16,441 - INFO  [Thread-42:CodeHelperServer@3797] - 用户访问IP=192.168.0.107
+[m[2;32m2018-11-09 17:20:16,446 - INFO  [Thread-42:CodeHelperServer@3827] - 根据IP查询省份=局域
+[m[2;35m2018-11-09 17:20:16,557 - WARN  [Thread-42:CodeHelperServer@259] - registerPhoneunify号码已经被提交过，phone17621067149
+[m[2;35m2018-11-09 17:20:16,565 - WARN  [Thread-42:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :126, uri:/code/registerPhoneunify?cpid=test01&phone=17621067149&TB=01
+[m[7;31m2018-11-09 17:20:16,856 - ERROR [Thread-51:DefaultJuiceHandler@90] - java.lang.ArrayIndexOutOfBoundsException: 2
+[m[7;31m2018-11-09 17:20:16,856 - ERROR [Thread-51:DefaultJuiceHandler@91] - com.juice.orange.game.exception.JuiceException: handler request error,path:/favicon.ico;param:null
+[m[2;35m2018-11-09 17:20:16,856 - WARN  [Thread-51:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :0, uri:/favicon.ico
+[m[7;31m2018-11-09 17:20:28,359 - ERROR [JUICE-SERVER-Handler-4-2-thread:ConnectionException@22] - uncaughtException :
+[mcom.juice.orange.game.exception.JuiceException: 远程主机强迫关闭了一个现有的连接。 on [id: 0x57fe96b2, /192.168.0.107:63606 => /192.168.0.107:9911]
+	at com.juice.orange.game.exception.JuiceException.fromException(JuiceException.java:38)
+	at com.juice.orange.game.exception.JuiceException.fromExceptionEvent(JuiceException.java:32)
+	at com.juice.orange.game.util.ConnectionHelper$2.run(ConnectionHelper.java:56)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: java.io.IOException: 远程主机强迫关闭了一个现有的连接。
+	at sun.nio.ch.SocketDispatcher.read0(Native Method)
+	at sun.nio.ch.SocketDispatcher.read(Unknown Source)
+	at sun.nio.ch.IOUtil.readIntoNativeBuffer(Unknown Source)
+	at sun.nio.ch.IOUtil.read(Unknown Source)
+	at sun.nio.ch.SocketChannelImpl.read(Unknown Source)
+	at org.jboss.netty.channel.socket.nio.NioWorker.read(NioWorker.java:64)
+	at org.jboss.netty.channel.socket.nio.AbstractNioWorker.process(AbstractNioWorker.java:107)
+	at org.jboss.netty.channel.socket.nio.AbstractNioSelector.run(AbstractNioSelector.java:312)
+	at org.jboss.netty.channel.socket.nio.AbstractNioWorker.run(AbstractNioWorker.java:88)
+	at org.jboss.netty.channel.socket.nio.NioWorker.run(NioWorker.java:178)
+	... 3 more
+[7;31m2018-11-09 17:20:28,359 - ERROR [JUICE-SERVER-Handler-4-2-thread:ConnectionException@22] - uncaughtException :
+[mcom.juice.orange.game.exception.JuiceException: 远程主机强迫关闭了一个现有的连接。 on [id: 0xfca80522, /192.168.0.107:63605 => /192.168.0.107:9911]
+	at com.juice.orange.game.exception.JuiceException.fromException(JuiceException.java:38)
+	at com.juice.orange.game.exception.JuiceException.fromExceptionEvent(JuiceException.java:32)
+	at com.juice.orange.game.util.ConnectionHelper$2.run(ConnectionHelper.java:56)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: java.io.IOException: 远程主机强迫关闭了一个现有的连接。
+	at sun.nio.ch.SocketDispatcher.read0(Native Method)
+	at sun.nio.ch.SocketDispatcher.read(Unknown Source)
+	at sun.nio.ch.IOUtil.readIntoNativeBuffer(Unknown Source)
+	at sun.nio.ch.IOUtil.read(Unknown Source)
+	at sun.nio.ch.SocketChannelImpl.read(Unknown Source)
+	at org.jboss.netty.channel.socket.nio.NioWorker.read(NioWorker.java:64)
+	at org.jboss.netty.channel.socket.nio.AbstractNioWorker.process(AbstractNioWorker.java:107)
+	at org.jboss.netty.channel.socket.nio.AbstractNioSelector.run(AbstractNioSelector.java:312)
+	at org.jboss.netty.channel.socket.nio.AbstractNioWorker.run(AbstractNioWorker.java:88)
+	at org.jboss.netty.channel.socket.nio.NioWorker.run(NioWorker.java:178)
+	... 3 more
+[2;32m2018-11-09 17:20:33,121 - INFO  [Thread-52:CodeHelperServer@206] - registerPhoneunify请求header信息：[Accept=text/html, application/xhtml+xml, image/jxr, */*, Accept-Language=zh-CN, User-Agent=Mozilla/5.0 (Windows NT 10.0; WOW64; Trident/7.0; LCTE; rv:11.0) like Gecko, Accept-Encoding=gzip, deflate, Host=192.168.0.107:9911, Connection=Keep-Alive]
+[m[2;32m2018-11-09 17:20:33,121 - INFO  [Thread-52:CodeHelperServer@3797] - 用户访问IP=192.168.0.107
+[m[2;32m2018-11-09 17:20:33,121 - INFO  [Thread-52:CodeHelperServer@3827] - 根据IP查询省份=局域
+[m[2;32m2018-11-09 17:20:33,157 - INFO  [Thread-52:HttpTool@928] - 指令url:http://www.kulecc.vip/receive.php
+[m[2;32m2018-11-09 17:20:33,158 - INFO  [Thread-52:HttpTool@929] - 同步内容:TB=01&phone=17621067649
+[m[2;32m2018-11-09 17:20:33,216 - INFO  [Thread-52:CodeReqHelper@608] - wbjf:sd23请求结果：ok 
+[m[2;32m2018-11-09 17:20:33,271 - INFO  [Thread-52:CodeHelperServer@267] - 合作方:test01
+通道方:sd23
+订单号:11sd2317621067649
+指令内容:{"msg":"fail","orderid":"11sd2317621067649","status":3}
+[m[2;35m2018-11-09 17:20:33,286 - WARN  [Thread-52:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :166, uri:/code/registerPhoneunify?cpid=test01&phone=17621067649&TB=01
+[m[7;31m2018-11-09 17:20:33,561 - ERROR [Thread-32:DefaultJuiceHandler@90] - java.lang.ArrayIndexOutOfBoundsException: 2
+[m[7;31m2018-11-09 17:20:33,561 - ERROR [Thread-32:DefaultJuiceHandler@91] - com.juice.orange.game.exception.JuiceException: handler request error,path:/favicon.ico;param:null
+[m[2;35m2018-11-09 17:20:33,562 - WARN  [Thread-32:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :1, uri:/favicon.ico
+[m[2;32m2018-11-09 17:20:56,082 - INFO  [Thread-31:CodeHelperServer@206] - registerPhoneunify请求header信息：[Accept=text/html, application/xhtml+xml, image/jxr, */*, Accept-Language=zh-CN, User-Agent=Mozilla/5.0 (Windows NT 10.0; WOW64; Trident/7.0; LCTE; rv:11.0) like Gecko, Accept-Encoding=gzip, deflate, Host=192.168.0.107:9911, Connection=Keep-Alive]
+[m[2;32m2018-11-09 17:20:56,082 - INFO  [Thread-31:CodeHelperServer@3797] - 用户访问IP=192.168.0.107
+[m[2;32m2018-11-09 17:20:56,083 - INFO  [Thread-31:CodeHelperServer@3827] - 根据IP查询省份=局域
+[m[2;35m2018-11-09 17:20:56,099 - WARN  [Thread-31:CodeHelperServer@259] - registerPhoneunify号码已经被提交过，phone17621067649
+[m[2;35m2018-11-09 17:20:56,100 - WARN  [Thread-31:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :18, uri:/code/registerPhoneunify?cpid=test01&phone=17621067649&TB=01
+[m[2;32m2018-11-09 17:21:01,627 - INFO  [Thread-22:CodeHelperServer@206] - registerPhoneunify请求header信息：[Accept=text/html, application/xhtml+xml, image/jxr, */*, Accept-Language=zh-CN, User-Agent=Mozilla/5.0 (Windows NT 10.0; WOW64; Trident/7.0; LCTE; rv:11.0) like Gecko, Accept-Encoding=gzip, deflate, Host=192.168.0.107:9911, Connection=Keep-Alive]
+[m[2;32m2018-11-09 17:21:01,628 - INFO  [Thread-22:CodeHelperServer@3797] - 用户访问IP=192.168.0.107
+[m[2;32m2018-11-09 17:21:01,628 - INFO  [Thread-22:CodeHelperServer@3827] - 根据IP查询省份=局域
+[m[2;32m2018-11-09 17:21:01,641 - INFO  [Thread-22:HttpTool@928] - 指令url:http://www.kulecc.vip/receive.php
+[m[2;32m2018-11-09 17:21:01,642 - INFO  [Thread-22:HttpTool@929] - 同步内容:TB=01&phone=17621067749
+[m[2;32m2018-11-09 17:21:01,683 - INFO  [Thread-22:CodeReqHelper@608] - wbjf:sd23请求结果：ok 
+[m[2;32m2018-11-09 17:21:01,689 - INFO  [Thread-22:CodeHelperServer@267] - 合作方:test01
+通道方:sd23
+订单号:11sd2317621067749
+指令内容:{"msg":"fail","orderid":"11sd2317621067749","status":3}
+[m[2;35m2018-11-09 17:21:01,696 - WARN  [Thread-22:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :69, uri:/code/registerPhoneunify?cpid=test01&phone=17621067749&TB=01
+[m[7;31m2018-11-09 17:21:01,733 - ERROR [Thread-11:DefaultJuiceHandler@90] - java.lang.ArrayIndexOutOfBoundsException: 2
+[m[7;31m2018-11-09 17:21:01,733 - ERROR [Thread-11:DefaultJuiceHandler@91] - com.juice.orange.game.exception.JuiceException: handler request error,path:/favicon.ico;param:null
+[m[2;35m2018-11-09 17:21:01,734 - WARN  [Thread-11:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :1, uri:/favicon.ico
+[m[2;32m2018-11-09 17:23:27,574 - INFO  [main:ServerBootstrap@95] - Configuration Server bootstrap params.......
+[m[2;32m2018-11-09 17:23:27,577 - INFO  [main:ServerBootstrap@96] - Server protocol:	http
+[m[2;32m2018-11-09 17:23:27,578 - INFO  [main:ServerBootstrap@97] - Server port:	9911
+[m[2;32m2018-11-09 17:23:28,009 - INFO  [main:ServerBootstrap@106] - Configuration Remote Server.......
+[m[2;32m2018-11-09 17:23:28,010 - INFO  [main:ServerBootstrap@108] - Add Remote Server - Name:FastFunSystem;Address:localhost;Port:9912
+[m[2;35m2018-11-09 17:23:28,071 - WARN  [main:XMemcachedClient@727] - XMemcachedClient use Binary protocol
+[m[2;32m2018-11-09 17:23:28,099 - INFO  [main:SelectorManager@37] - Creating 8 reactors...
+[m[2;35m2018-11-09 17:23:28,107 - WARN  [main:AbstractController@372] - The Controller started at localhost/127.0.0.1:0 ...
+[m[2;35m2018-11-09 17:23:28,117 - WARN  [Xmemcached-Reactor-0:MemcachedConnector@251] - Add a session: 127.0.0.1:11211
+[m[2;32m2018-11-09 17:23:28,118 - INFO  [main:Application@25] - Init servers......
+[m[2;32m2018-11-09 17:23:28,169 - INFO  [main:ServerBootstrap@120] - Application PID:	16432
+[m[7;31m2018-11-09 17:23:34,356 - ERROR [Thread-2:DefaultJuiceHandler@90] - java.lang.ArrayIndexOutOfBoundsException: 2
+[m[7;31m2018-11-09 17:23:34,356 - ERROR [Thread-2:DefaultJuiceHandler@91] - com.juice.orange.game.exception.JuiceException: handler request error,path:/favicon.ico;param:null
+[m[2;35m2018-11-09 17:23:34,357 - WARN  [Thread-2:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :3, uri:/favicon.ico
+[m[2;32m2018-11-09 17:23:35,838 - INFO  [Thread-61:CodeHelperServer@206] - registerPhoneunify请求header信息：[Accept=text/html, application/xhtml+xml, image/jxr, */*, Accept-Language=zh-CN, User-Agent=Mozilla/5.0 (Windows NT 10.0; WOW64; Trident/7.0; LCTE; rv:11.0) like Gecko, Accept-Encoding=gzip, deflate, Host=192.168.0.107:9911, Connection=Keep-Alive]
+[m[2;32m2018-11-09 17:23:35,840 - INFO  [Thread-61:CodeHelperServer@3797] - 用户访问IP=192.168.0.107
+[m[2;32m2018-11-09 17:23:35,848 - INFO  [Thread-61:CodeHelperServer@3827] - 根据IP查询省份=局域
+[m[2;32m2018-11-09 17:23:35,988 - INFO  [Thread-61:HttpTool@928] - 指令url:http://www.kulecc.vip/receive.php
+[m[2;32m2018-11-09 17:23:35,989 - INFO  [Thread-61:HttpTool@929] - 同步内容:TB=01&phone=17621067849
+[m[2;32m2018-11-09 17:23:36,064 - INFO  [Thread-61:CodeReqHelper@608] - wbjf:sd23请求结果：ok 1
+[m[2;32m2018-11-09 17:23:36,064 - INFO  [Thread-61:CodeReqHelper@609] - wbjf:sd23请求结果：ok
+[m[2;32m2018-11-09 17:23:36,125 - INFO  [Thread-61:CodeHelperServer@267] - 合作方:test01
+通道方:sd23
+订单号:11sd2317621067849
+指令内容:{"msg":"fail","orderid":"11sd2317621067849","status":3}
+[m[2;35m2018-11-09 17:23:36,144 - WARN  [Thread-61:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :307, uri:/code/registerPhoneunify?cpid=test01&phone=17621067849&TB=01
+[m[7;31m2018-11-09 17:23:36,178 - ERROR [Thread-11:DefaultJuiceHandler@90] - java.lang.ArrayIndexOutOfBoundsException: 2
+[m[7;31m2018-11-09 17:23:36,178 - ERROR [Thread-11:DefaultJuiceHandler@91] - com.juice.orange.game.exception.JuiceException: handler request error,path:/favicon.ico;param:null
+[m[2;35m2018-11-09 17:23:36,178 - WARN  [Thread-11:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :0, uri:/favicon.ico
+[m[2;32m2018-11-09 17:24:16,506 - INFO  [main:ServerBootstrap@95] - Configuration Server bootstrap params.......
+[m[2;32m2018-11-09 17:24:16,508 - INFO  [main:ServerBootstrap@96] - Server protocol:	http
+[m[2;32m2018-11-09 17:24:16,509 - INFO  [main:ServerBootstrap@97] - Server port:	9911
+[m[2;32m2018-11-09 17:24:16,908 - INFO  [main:ServerBootstrap@106] - Configuration Remote Server.......
+[m[2;32m2018-11-09 17:24:16,908 - INFO  [main:ServerBootstrap@108] - Add Remote Server - Name:FastFunSystem;Address:localhost;Port:9912
+[m[2;35m2018-11-09 17:24:16,964 - WARN  [main:XMemcachedClient@727] - XMemcachedClient use Binary protocol
+[m[2;32m2018-11-09 17:24:16,991 - INFO  [main:SelectorManager@37] - Creating 8 reactors...
+[m[2;35m2018-11-09 17:24:16,999 - WARN  [main:AbstractController@372] - The Controller started at localhost/127.0.0.1:0 ...
+[m[2;35m2018-11-09 17:24:17,006 - WARN  [Xmemcached-Reactor-0:MemcachedConnector@251] - Add a session: 127.0.0.1:11211
+[m[2;32m2018-11-09 17:24:17,007 - INFO  [main:Application@25] - Init servers......
+[m[2;32m2018-11-09 17:24:17,053 - INFO  [main:ServerBootstrap@120] - Application PID:	17924
+[m[2;32m2018-11-09 17:24:25,634 - INFO  [Thread-32:CodeHelperServer@206] - registerPhoneunify请求header信息：[Accept=text/html, application/xhtml+xml, image/jxr, */*, Accept-Language=zh-CN, User-Agent=Mozilla/5.0 (Windows NT 10.0; WOW64; Trident/7.0; LCTE; rv:11.0) like Gecko, Accept-Encoding=gzip, deflate, Host=192.168.0.107:9911, Connection=Keep-Alive]
+[m[2;32m2018-11-09 17:24:25,635 - INFO  [Thread-32:CodeHelperServer@3797] - 用户访问IP=192.168.0.107
+[m[2;32m2018-11-09 17:24:25,640 - INFO  [Thread-32:CodeHelperServer@3827] - 根据IP查询省份=局域
+[m[2;32m2018-11-09 17:24:25,782 - INFO  [Thread-32:HttpTool@928] - 指令url:http://www.kulecc.vip/receive.php
+[m[2;32m2018-11-09 17:24:25,783 - INFO  [Thread-32:HttpTool@929] - 同步内容:TB=01&phone=17621067949
+[m[2;32m2018-11-09 17:24:25,861 - INFO  [Thread-32:CodeReqHelper@608] - wbjf:sd23请求结果：ok
+[m[2;32m2018-11-09 17:24:25,920 - INFO  [Thread-32:CodeHelperServer@267] - 合作方:test01
+通道方:sd23
+订单号:11sd2317621067949
+指令内容:{"msg":"success1","orderid":"11sd2317621067949","status":0}
+[m[2;35m2018-11-09 17:24:25,937 - WARN  [Thread-32:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :304, uri:/code/registerPhoneunify?cpid=test01&phone=17621067949&TB=01
+[m[7;31m2018-11-09 17:24:25,968 - ERROR [Thread-31:DefaultJuiceHandler@90] - java.lang.ArrayIndexOutOfBoundsException: 2
+[m[7;31m2018-11-09 17:24:25,968 - ERROR [Thread-31:DefaultJuiceHandler@91] - com.juice.orange.game.exception.JuiceException: handler request error,path:/favicon.ico;param:null
+[m[2;35m2018-11-09 17:24:25,968 - WARN  [Thread-31:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :1, uri:/favicon.ico
+[m[7;31m2018-11-09 17:31:57,677 - ERROR [JUICE-SERVER-Handler-4-1-thread:ConnectionException@22] - uncaughtException :
+[mcom.juice.orange.game.exception.JuiceException: 远程主机强迫关闭了一个现有的连接。 on [id: 0x5cdf8575, /192.168.0.107:63893 => /192.168.0.107:9911]
+	at com.juice.orange.game.exception.JuiceException.fromException(JuiceException.java:38)
+	at com.juice.orange.game.exception.JuiceException.fromExceptionEvent(JuiceException.java:32)
+	at com.juice.orange.game.util.ConnectionHelper$2.run(ConnectionHelper.java:56)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: java.io.IOException: 远程主机强迫关闭了一个现有的连接。
+	at sun.nio.ch.SocketDispatcher.read0(Native Method)
+	at sun.nio.ch.SocketDispatcher.read(Unknown Source)
+	at sun.nio.ch.IOUtil.readIntoNativeBuffer(Unknown Source)
+	at sun.nio.ch.IOUtil.read(Unknown Source)
+	at sun.nio.ch.SocketChannelImpl.read(Unknown Source)
+	at org.jboss.netty.channel.socket.nio.NioWorker.read(NioWorker.java:64)
+	at org.jboss.netty.channel.socket.nio.AbstractNioWorker.process(AbstractNioWorker.java:107)
+	at org.jboss.netty.channel.socket.nio.AbstractNioSelector.run(AbstractNioSelector.java:312)
+	at org.jboss.netty.channel.socket.nio.AbstractNioWorker.run(AbstractNioWorker.java:88)
+	at org.jboss.netty.channel.socket.nio.NioWorker.run(NioWorker.java:178)
+	... 3 more
+[2;32m2018-11-09 17:33:02,108 - INFO  [Thread-1:CodeHelperServer@2815] - commitCode请求header信息：[Accept=text/html, application/xhtml+xml, image/jxr, */*, Accept-Language=zh-CN, User-Agent=Mozilla/5.0 (Windows NT 10.0; WOW64; Trident/7.0; LCTE; rv:11.0) like Gecko, Accept-Encoding=gzip, deflate, Host=192.168.0.107:9911, Connection=Keep-Alive]
+[m[2;35m2018-11-09 17:33:02,113 - WARN  [Thread-1:CodeHelperServer@2839] - cpid：null 没有配置或打开计费权限
+[m[2;35m2018-11-09 17:33:02,114 - WARN  [Thread-1:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :6, uri:/code/commitCode?phone=15860682222&code=12345&TB=01
+[m[7;31m2018-11-09 17:33:02,397 - ERROR [Thread-2:DefaultJuiceHandler@90] - java.lang.ArrayIndexOutOfBoundsException: 2
+[m[7;31m2018-11-09 17:33:02,397 - ERROR [Thread-2:DefaultJuiceHandler@91] - com.juice.orange.game.exception.JuiceException: handler request error,path:/favicon.ico;param:null
+[m[2;35m2018-11-09 17:33:02,397 - WARN  [Thread-2:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :1, uri:/favicon.ico
+[m[2;32m2018-11-09 17:33:08,056 - INFO  [Thread-51:CodeHelperServer@2815] - commitCode请求header信息：[Accept=text/html, application/xhtml+xml, image/jxr, */*, Accept-Language=zh-CN, User-Agent=Mozilla/5.0 (Windows NT 10.0; WOW64; Trident/7.0; LCTE; rv:11.0) like Gecko, Accept-Encoding=gzip, deflate, Host=192.168.0.107:9911, Connection=Keep-Alive]
+[m[2;35m2018-11-09 17:33:08,061 - WARN  [Thread-51:CodeHelperServer@2839] - cpid：null 没有配置或打开计费权限
+[m[2;35m2018-11-09 17:33:08,063 - WARN  [Thread-51:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :7, uri:/code/commitCode?phone=15860682222&code=12345&TB=01
+[m[7;31m2018-11-09 17:34:00,469 - ERROR [JUICE-SERVER-Handler-4-2-thread:ConnectionException@22] - uncaughtException :
+[mcom.juice.orange.game.exception.JuiceException: 远程主机强迫关闭了一个现有的连接。 on [id: 0x3db2a62f, /192.168.0.107:64220 :> /192.168.0.107:9911]
+	at com.juice.orange.game.exception.JuiceException.fromException(JuiceException.java:38)
+	at com.juice.orange.game.exception.JuiceException.fromExceptionEvent(JuiceException.java:32)
+	at com.juice.orange.game.util.ConnectionHelper$2.run(ConnectionHelper.java:56)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: java.io.IOException: 远程主机强迫关闭了一个现有的连接。
+	at sun.nio.ch.SocketDispatcher.read0(Native Method)
+	at sun.nio.ch.SocketDispatcher.read(Unknown Source)
+	at sun.nio.ch.IOUtil.readIntoNativeBuffer(Unknown Source)
+	at sun.nio.ch.IOUtil.read(Unknown Source)
+	at sun.nio.ch.SocketChannelImpl.read(Unknown Source)
+	at org.jboss.netty.channel.socket.nio.NioWorker.read(NioWorker.java:64)
+	at org.jboss.netty.channel.socket.nio.AbstractNioWorker.process(AbstractNioWorker.java:107)
+	at org.jboss.netty.channel.socket.nio.AbstractNioSelector.run(AbstractNioSelector.java:312)
+	at org.jboss.netty.channel.socket.nio.AbstractNioWorker.run(AbstractNioWorker.java:88)
+	at org.jboss.netty.channel.socket.nio.NioWorker.run(NioWorker.java:178)
+	... 3 more
+[7;31m2018-11-09 17:34:00,470 - ERROR [JUICE-SERVER-Handler-4-3-thread:ConnectionException@22] - uncaughtException :
+[mcom.juice.orange.game.exception.JuiceException: 远程主机强迫关闭了一个现有的连接。 on [id: 0x46bcb937, /192.168.0.107:64222 => /192.168.0.107:9911]
+	at com.juice.orange.game.exception.JuiceException.fromException(JuiceException.java:38)
+	at com.juice.orange.game.exception.JuiceException.fromExceptionEvent(JuiceException.java:32)
+	at com.juice.orange.game.util.ConnectionHelper$2.run(ConnectionHelper.java:56)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: java.io.IOException: 远程主机强迫关闭了一个现有的连接。
+	at sun.nio.ch.SocketDispatcher.read0(Native Method)
+	at sun.nio.ch.SocketDispatcher.read(Unknown Source)
+	at sun.nio.ch.IOUtil.readIntoNativeBuffer(Unknown Source)
+	at sun.nio.ch.IOUtil.read(Unknown Source)
+	at sun.nio.ch.SocketChannelImpl.read(Unknown Source)
+	at org.jboss.netty.channel.socket.nio.NioWorker.read(NioWorker.java:64)
+	at org.jboss.netty.channel.socket.nio.AbstractNioWorker.process(AbstractNioWorker.java:107)
+	at org.jboss.netty.channel.socket.nio.AbstractNioSelector.run(AbstractNioSelector.java:312)
+	at org.jboss.netty.channel.socket.nio.AbstractNioWorker.run(AbstractNioWorker.java:88)
+	at org.jboss.netty.channel.socket.nio.NioWorker.run(NioWorker.java:178)
+	... 3 more

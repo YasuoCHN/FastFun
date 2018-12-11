@@ -1,0 +1,421 @@
+[2;32m2017-04-01 11:11:10,071 - INFO  [main:ServerBootstrap@67] - Configuration Server bootstrap params.......
+[m[2;32m2017-04-01 11:11:10,071 - INFO  [main:ServerBootstrap@68] - Server protocol:	http
+[m[2;32m2017-04-01 11:11:10,071 - INFO  [main:ServerBootstrap@69] - Server port:	9911
+[m[2;32m2017-04-01 11:11:10,539 - INFO  [main:ServerBootstrap@78] - Configuration Remote Server.......
+[m[2;32m2017-04-01 11:11:10,539 - INFO  [main:ServerBootstrap@80] - Add Remote Server - Name:FastFunSystem;Address:localhost;Port:9912
+[m[2;32m2017-04-01 11:11:10,539 - INFO  [main:Application@25] - Init servers......
+[m[2;32m2017-04-01 11:11:10,726 - INFO  [main:ServerBootstrap@92] - Application PID:	4044
+[m[2;32m2017-04-01 16:42:39,278 - INFO  [main:ServerBootstrap@67] - Configuration Server bootstrap params.......
+[m[2;32m2017-04-01 16:42:39,299 - INFO  [main:ServerBootstrap@68] - Server protocol:	http
+[m[2;32m2017-04-01 16:42:39,299 - INFO  [main:ServerBootstrap@69] - Server port:	9911
+[m[2;32m2017-04-01 16:42:39,668 - INFO  [main:ServerBootstrap@78] - Configuration Remote Server.......
+[m[2;32m2017-04-01 16:42:39,668 - INFO  [main:ServerBootstrap@80] - Add Remote Server - Name:FastFunSystem;Address:localhost;Port:9912
+[m[2;32m2017-04-01 16:42:39,679 - INFO  [main:Application@25] - Init servers......
+[m[2;32m2017-04-01 16:42:39,730 - INFO  [main:ServerBootstrap@92] - Application PID:	5876
+[m[2;32m2017-04-01 16:43:11,991 - INFO  [Thread-1:CodeHelperServer@2030] - reqSpecialMixCode5请求header信息：[Host=127.0.0.1:9911, Connection=keep-alive, Accept=text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8, User-Agent=Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.71 Safari/537.36, Accept-Encoding=gzip, deflate, sdch, Accept-Language=zh-CN,zh;q=0.8]
+[m[2;32m2017-04-01 16:43:11,993 - INFO  [Thread-1:CodeHelperServer@2044] - 用户访问iccid=89860316250299058694
+[m[2;32m2017-04-01 16:43:11,993 - INFO  [Thread-1:CodeHelperServer@2046] - 用户省份=西藏
+[m[2;32m2017-04-01 16:43:11,993 - INFO  [Thread-1:CodeHelperServer@2051] - 用户访问IP=192.168.1.103
+[m[2;35m2017-04-01 16:43:12,270 - WARN  [Thread-1:CodeHelperServer@2075] - CPID=tes03 匹配不到合适省份=西藏 计费点=1500 的指令！
+[m[2;35m2017-04-01 16:43:12,285 - WARN  [Thread-1:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :296, uri:/code/reqSpecialMixCode5?cpparam=123953&iccid=89860316250299058694&imei=99000782814744&mobile=15353612628&fee=1500&cpid=tes03&ip=192.168.1.103&imsi=460031692471183
+[m[7;31m2017-04-01 16:43:12,288 - ERROR [JUICE-SERVER-Handler-4-1-thread:ConnectionException@22] - uncaughtException :
+[mcom.juice.orange.game.exception.JuiceException: cannot send more responses than requests on [id: 0x283edf12, /127.0.0.1:50732 => /127.0.0.1:9911]
+	at com.juice.orange.game.exception.JuiceException.fromException(JuiceException.java:38)
+	at com.juice.orange.game.exception.JuiceException.fromExceptionEvent(JuiceException.java:32)
+	at com.juice.orange.game.util.ConnectionHelper$2.run(ConnectionHelper.java:56)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: java.lang.IllegalStateException: cannot send more responses than requests
+	at org.jboss.netty.handler.codec.http.HttpContentEncoder.writeRequested(HttpContentEncoder.java:100)
+	at org.jboss.netty.channel.Channels.write(Channels.java:704)
+	at org.jboss.netty.channel.Channels.write(Channels.java:671)
+	at org.jboss.netty.channel.AbstractChannel.write(AbstractChannel.java:248)
+	at com.juice.orange.game.handler.JuiceHttpResponse.write(JuiceHttpResponse.java:136)
+	at com.juice.orange.game.handler.JuiceHttpResponse.flushResponse(JuiceHttpResponse.java:169)
+	at com.juice.orange.game.handler.JuiceHttpResponse.end(JuiceHttpResponse.java:181)
+	at com.klw.fastfun.pay.view.app.service.CodeHelperServer.reqSpecialMixCode5(CodeHelperServer.java:2113)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at com.juice.orange.game.handler.DefaultJuiceHandler.handleHttpRequest(DefaultJuiceHandler.java:81)
+	at com.juice.orange.game.handler.DefaultJuiceHandler.handlerRequest(DefaultJuiceHandler.java:35)
+	at com.juice.orange.game.handler.JuiceHttpControl.nextHandler(JuiceHttpControl.java:84)
+	at com.juice.orange.game.handler.JuiceHttpControl.nextHandler(JuiceHttpControl.java:67)
+	at com.juice.orange.game.util.threadpool.JuiceThreadPool$JuiceWorkThread.run(JuiceThreadPool.java:70)
+[7;31m2017-04-01 16:43:12,299 - ERROR [Thread-2:DefaultJuiceHandler@90] - java.lang.ArrayIndexOutOfBoundsException: 2
+[m[7;31m2017-04-01 16:43:12,300 - ERROR [Thread-2:DefaultJuiceHandler@91] - com.juice.orange.game.exception.JuiceException: handler request error,path:/favicon.ico;param:null
+[m[2;35m2017-04-01 16:43:12,301 - WARN  [Thread-2:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :2, uri:/favicon.ico
+[m[2;32m2017-04-01 16:43:35,958 - INFO  [Thread-71:CodeHelperServer@2030] - reqSpecialMixCode5请求header信息：[Host=127.0.0.1:9911, Connection=keep-alive, Accept=text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8, User-Agent=Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.71 Safari/537.36, Accept-Encoding=gzip, deflate, sdch, Accept-Language=zh-CN,zh;q=0.8]
+[m[2;32m2017-04-01 16:43:35,958 - INFO  [Thread-71:CodeHelperServer@2044] - 用户访问iccid=89860316250299058694
+[m[2;32m2017-04-01 16:43:35,958 - INFO  [Thread-71:CodeHelperServer@2046] - 用户省份=西藏
+[m[2;32m2017-04-01 16:43:35,958 - INFO  [Thread-71:CodeHelperServer@2051] - 用户访问IP=192.168.1.103
+[m[2;35m2017-04-01 16:43:35,968 - WARN  [Thread-71:CodeHelperServer@2075] - CPID=tes03 匹配不到合适省份=西藏 计费点=1000 的指令！
+[m[2;35m2017-04-01 16:43:35,968 - WARN  [Thread-71:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :11, uri:/code/reqSpecialMixCode5?cpparam=123953&iccid=89860316250299058694&imei=99000782814744&mobile=15353612628&fee=1000&cpid=tes03&ip=192.168.1.103&imsi=460031692471183
+[m[7;31m2017-04-01 16:43:35,979 - ERROR [JUICE-SERVER-Handler-4-1-thread:ConnectionException@22] - uncaughtException :
+[mcom.juice.orange.game.exception.JuiceException: cannot send more responses than requests on [id: 0xe4099aa3, /127.0.0.1:50774 => /127.0.0.1:9911]
+	at com.juice.orange.game.exception.JuiceException.fromException(JuiceException.java:38)
+	at com.juice.orange.game.exception.JuiceException.fromExceptionEvent(JuiceException.java:32)
+	at com.juice.orange.game.util.ConnectionHelper$2.run(ConnectionHelper.java:56)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: java.lang.IllegalStateException: cannot send more responses than requests
+	at org.jboss.netty.handler.codec.http.HttpContentEncoder.writeRequested(HttpContentEncoder.java:100)
+	at org.jboss.netty.channel.Channels.write(Channels.java:704)
+	at org.jboss.netty.channel.Channels.write(Channels.java:671)
+	at org.jboss.netty.channel.AbstractChannel.write(AbstractChannel.java:248)
+	at com.juice.orange.game.handler.JuiceHttpResponse.write(JuiceHttpResponse.java:136)
+	at com.juice.orange.game.handler.JuiceHttpResponse.flushResponse(JuiceHttpResponse.java:169)
+	at com.juice.orange.game.handler.JuiceHttpResponse.end(JuiceHttpResponse.java:181)
+	at com.klw.fastfun.pay.view.app.service.CodeHelperServer.reqSpecialMixCode5(CodeHelperServer.java:2113)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at com.juice.orange.game.handler.DefaultJuiceHandler.handleHttpRequest(DefaultJuiceHandler.java:81)
+	at com.juice.orange.game.handler.DefaultJuiceHandler.handlerRequest(DefaultJuiceHandler.java:35)
+	at com.juice.orange.game.handler.JuiceHttpControl.nextHandler(JuiceHttpControl.java:84)
+	at com.juice.orange.game.handler.JuiceHttpControl.nextHandler(JuiceHttpControl.java:67)
+	at com.juice.orange.game.util.threadpool.JuiceThreadPool$JuiceWorkThread.run(JuiceThreadPool.java:70)
+[7;31m2017-04-01 16:43:56,004 - ERROR [Thread-31:DefaultJuiceHandler@90] - java.lang.ArrayIndexOutOfBoundsException: 2
+[m[7;31m2017-04-01 16:43:56,004 - ERROR [Thread-31:DefaultJuiceHandler@91] - com.juice.orange.game.exception.JuiceException: handler request error,path:/favicon.ico;param:null
+[m[2;35m2017-04-01 16:43:56,004 - WARN  [Thread-31:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :0, uri:/favicon.ico
+[m[2;32m2017-04-01 16:44:04,812 - INFO  [Thread-51:CodeHelperServer@2030] - reqSpecialMixCode5请求header信息：[Host=127.0.0.1:9911, Connection=keep-alive, Cache-Control=max-age=0, Accept=text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8, User-Agent=Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.71 Safari/537.36, Accept-Encoding=gzip, deflate, sdch, Accept-Language=zh-CN,zh;q=0.8]
+[m[2;32m2017-04-01 16:44:04,812 - INFO  [Thread-51:CodeHelperServer@2044] - 用户访问iccid=89860316250299058694
+[m[2;32m2017-04-01 16:44:04,812 - INFO  [Thread-51:CodeHelperServer@2046] - 用户省份=西藏
+[m[2;32m2017-04-01 16:44:04,812 - INFO  [Thread-51:CodeHelperServer@2051] - 用户访问IP=192.168.1.103
+[m[2;35m2017-04-01 16:44:04,833 - WARN  [Thread-51:CodeHelperServer@2075] - CPID=tes03 匹配不到合适省份=西藏 计费点=1000 的指令！
+[m[2;35m2017-04-01 16:44:04,834 - WARN  [Thread-51:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :22, uri:/code/reqSpecialMixCode5?cpparam=123953&iccid=89860316250299058694&imei=99000782814744&mobile=15353612628&fee=1000&cpid=tes03&ip=192.168.1.103&imsi=460031692471183
+[m[7;31m2017-04-01 16:44:04,839 - ERROR [JUICE-SERVER-Handler-4-1-thread:ConnectionException@22] - uncaughtException :
+[mcom.juice.orange.game.exception.JuiceException: cannot send more responses than requests on [id: 0x3b072539, /127.0.0.1:50835 => /127.0.0.1:9911]
+	at com.juice.orange.game.exception.JuiceException.fromException(JuiceException.java:38)
+	at com.juice.orange.game.exception.JuiceException.fromExceptionEvent(JuiceException.java:32)
+	at com.juice.orange.game.util.ConnectionHelper$2.run(ConnectionHelper.java:56)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: java.lang.IllegalStateException: cannot send more responses than requests
+	at org.jboss.netty.handler.codec.http.HttpContentEncoder.writeRequested(HttpContentEncoder.java:100)
+	at org.jboss.netty.channel.Channels.write(Channels.java:704)
+	at org.jboss.netty.channel.Channels.write(Channels.java:671)
+	at org.jboss.netty.channel.AbstractChannel.write(AbstractChannel.java:248)
+	at com.juice.orange.game.handler.JuiceHttpResponse.write(JuiceHttpResponse.java:136)
+	at com.juice.orange.game.handler.JuiceHttpResponse.flushResponse(JuiceHttpResponse.java:169)
+	at com.juice.orange.game.handler.JuiceHttpResponse.end(JuiceHttpResponse.java:181)
+	at com.klw.fastfun.pay.view.app.service.CodeHelperServer.reqSpecialMixCode5(CodeHelperServer.java:2113)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at com.juice.orange.game.handler.DefaultJuiceHandler.handleHttpRequest(DefaultJuiceHandler.java:81)
+	at com.juice.orange.game.handler.DefaultJuiceHandler.handlerRequest(DefaultJuiceHandler.java:35)
+	at com.juice.orange.game.handler.JuiceHttpControl.nextHandler(JuiceHttpControl.java:84)
+	at com.juice.orange.game.handler.JuiceHttpControl.nextHandler(JuiceHttpControl.java:67)
+	at com.juice.orange.game.util.threadpool.JuiceThreadPool$JuiceWorkThread.run(JuiceThreadPool.java:70)
+[7;31m2017-04-01 16:44:24,859 - ERROR [Thread-19:DefaultJuiceHandler@90] - java.lang.ArrayIndexOutOfBoundsException: 2
+[m[7;31m2017-04-01 16:44:24,859 - ERROR [Thread-19:DefaultJuiceHandler@91] - com.juice.orange.game.exception.JuiceException: handler request error,path:/favicon.ico;param:null
+[m[2;35m2017-04-01 16:44:24,859 - WARN  [Thread-19:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :0, uri:/favicon.ico
+[m[2;32m2017-04-01 16:44:37,659 - INFO  [main:ServerBootstrap@67] - Configuration Server bootstrap params.......
+[m[2;32m2017-04-01 16:44:37,659 - INFO  [main:ServerBootstrap@68] - Server protocol:	http
+[m[2;32m2017-04-01 16:44:37,659 - INFO  [main:ServerBootstrap@69] - Server port:	9911
+[m[2;32m2017-04-01 16:44:37,930 - INFO  [main:ServerBootstrap@78] - Configuration Remote Server.......
+[m[2;32m2017-04-01 16:44:37,930 - INFO  [main:ServerBootstrap@80] - Add Remote Server - Name:FastFunSystem;Address:localhost;Port:9912
+[m[2;32m2017-04-01 16:44:37,940 - INFO  [main:Application@25] - Init servers......
+[m[2;32m2017-04-01 16:44:37,991 - INFO  [main:ServerBootstrap@92] - Application PID:	7840
+[m[2;32m2017-04-01 16:44:53,176 - INFO  [Thread-92:CodeHelperServer@2030] - reqSpecialMixCode5请求header信息：[Host=127.0.0.1:9911, Connection=keep-alive, Cache-Control=max-age=0, Accept=text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8, User-Agent=Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.71 Safari/537.36, Accept-Encoding=gzip, deflate, sdch, Accept-Language=zh-CN,zh;q=0.8]
+[m[2;32m2017-04-01 16:44:53,178 - INFO  [Thread-92:CodeHelperServer@2044] - 用户访问iccid=89860316250299058694
+[m[2;32m2017-04-01 16:44:53,178 - INFO  [Thread-92:CodeHelperServer@2046] - 用户省份=西藏
+[m[2;32m2017-04-01 16:44:53,178 - INFO  [Thread-92:CodeHelperServer@2051] - 用户访问IP=192.168.1.103
+[m[2;35m2017-04-01 16:44:53,331 - WARN  [Thread-92:CodeHelperServer@2075] - CPID=tes03 匹配不到合适省份=西藏 计费点=1000 的指令！
+[m[2;35m2017-04-01 16:44:53,441 - WARN  [Thread-92:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :266, uri:/code/reqSpecialMixCode5?cpparam=123953&iccid=89860316250299058694&imei=99000782814744&mobile=15353612628&fee=1000&cpid=tes03&ip=192.168.1.103&imsi=460031692471183
+[m[7;31m2017-04-01 16:44:53,443 - ERROR [JUICE-SERVER-Handler-4-1-thread:ConnectionException@22] - uncaughtException :
+[mcom.juice.orange.game.exception.JuiceException: cannot send more responses than requests on [id: 0x7c162db0, /127.0.0.1:51010 => /127.0.0.1:9911]
+	at com.juice.orange.game.exception.JuiceException.fromException(JuiceException.java:38)
+	at com.juice.orange.game.exception.JuiceException.fromExceptionEvent(JuiceException.java:32)
+	at com.juice.orange.game.util.ConnectionHelper$2.run(ConnectionHelper.java:56)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: java.lang.IllegalStateException: cannot send more responses than requests
+	at org.jboss.netty.handler.codec.http.HttpContentEncoder.writeRequested(HttpContentEncoder.java:100)
+	at org.jboss.netty.channel.Channels.write(Channels.java:704)
+	at org.jboss.netty.channel.Channels.write(Channels.java:671)
+	at org.jboss.netty.channel.AbstractChannel.write(AbstractChannel.java:248)
+	at com.juice.orange.game.handler.JuiceHttpResponse.write(JuiceHttpResponse.java:136)
+	at com.juice.orange.game.handler.JuiceHttpResponse.flushResponse(JuiceHttpResponse.java:169)
+	at com.juice.orange.game.handler.JuiceHttpResponse.end(JuiceHttpResponse.java:181)
+	at com.klw.fastfun.pay.view.app.service.CodeHelperServer.reqSpecialMixCode5(CodeHelperServer.java:2113)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at com.juice.orange.game.handler.DefaultJuiceHandler.handleHttpRequest(DefaultJuiceHandler.java:81)
+	at com.juice.orange.game.handler.DefaultJuiceHandler.handlerRequest(DefaultJuiceHandler.java:35)
+	at com.juice.orange.game.handler.JuiceHttpControl.nextHandler(JuiceHttpControl.java:84)
+	at com.juice.orange.game.handler.JuiceHttpControl.nextHandler(JuiceHttpControl.java:67)
+	at com.juice.orange.game.util.threadpool.JuiceThreadPool$JuiceWorkThread.run(JuiceThreadPool.java:70)
+[7;31m2017-04-01 16:44:53,463 - ERROR [Thread-93:DefaultJuiceHandler@90] - java.lang.ArrayIndexOutOfBoundsException: 2
+[m[7;31m2017-04-01 16:44:53,463 - ERROR [Thread-93:DefaultJuiceHandler@91] - com.juice.orange.game.exception.JuiceException: handler request error,path:/favicon.ico;param:null
+[m[2;35m2017-04-01 16:44:53,466 - WARN  [Thread-93:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :4, uri:/favicon.ico
+[m[2;32m2017-04-01 16:46:13,818 - INFO  [main:ServerBootstrap@67] - Configuration Server bootstrap params.......
+[m[2;32m2017-04-01 16:46:13,818 - INFO  [main:ServerBootstrap@68] - Server protocol:	http
+[m[2;32m2017-04-01 16:46:13,818 - INFO  [main:ServerBootstrap@69] - Server port:	9911
+[m[2;32m2017-04-01 16:46:14,024 - INFO  [main:ServerBootstrap@78] - Configuration Remote Server.......
+[m[2;32m2017-04-01 16:46:14,024 - INFO  [main:ServerBootstrap@80] - Add Remote Server - Name:FastFunSystem;Address:localhost;Port:9912
+[m[2;32m2017-04-01 16:46:14,024 - INFO  [main:Application@25] - Init servers......
+[m[2;32m2017-04-01 16:46:14,055 - INFO  [main:ServerBootstrap@92] - Application PID:	7676
+[m[2;32m2017-04-01 16:46:20,467 - INFO  [Thread-41:CodeHelperServer@2030] - reqSpecialMixCode5请求header信息：[Host=127.0.0.1:9911, Connection=keep-alive, Cache-Control=max-age=0, Accept=text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8, User-Agent=Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.71 Safari/537.36, Accept-Encoding=gzip, deflate, sdch, Accept-Language=zh-CN,zh;q=0.8]
+[m[2;32m2017-04-01 16:46:20,468 - INFO  [Thread-41:CodeHelperServer@2044] - 用户访问iccid=89860316250299058694
+[m[2;32m2017-04-01 16:46:20,468 - INFO  [Thread-41:CodeHelperServer@2046] - 用户省份=西藏
+[m[2;32m2017-04-01 16:46:20,468 - INFO  [Thread-41:CodeHelperServer@2051] - 用户访问IP=192.168.1.103
+[m[2;35m2017-04-01 16:46:20,600 - WARN  [Thread-41:CodeHelperServer@2075] - CPID=tes03 匹配不到合适省份=西藏 计费点=1000 的指令！
+[m[2;35m2017-04-01 16:46:20,778 - WARN  [Thread-41:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :313, uri:/code/reqSpecialMixCode5?cpparam=123953&iccid=89860316250299058694&imei=99000782814744&mobile=15353612628&fee=1000&cpid=tes03&ip=192.168.1.103&imsi=460031692471183
+[m[7;31m2017-04-01 16:46:20,789 - ERROR [Thread-11:DefaultJuiceHandler@90] - java.lang.ArrayIndexOutOfBoundsException: 2
+[m[7;31m2017-04-01 16:46:20,789 - ERROR [Thread-11:DefaultJuiceHandler@91] - com.juice.orange.game.exception.JuiceException: handler request error,path:/favicon.ico;param:null
+[m[2;35m2017-04-01 16:46:20,789 - WARN  [Thread-11:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :0, uri:/favicon.ico
+[m[2;32m2017-04-01 16:48:06,458 - INFO  [main:ServerBootstrap@67] - Configuration Server bootstrap params.......
+[m[2;32m2017-04-01 16:48:06,458 - INFO  [main:ServerBootstrap@68] - Server protocol:	http
+[m[2;32m2017-04-01 16:48:06,458 - INFO  [main:ServerBootstrap@69] - Server port:	9911
+[m[2;32m2017-04-01 16:48:06,695 - INFO  [main:ServerBootstrap@78] - Configuration Remote Server.......
+[m[2;32m2017-04-01 16:48:06,695 - INFO  [main:ServerBootstrap@80] - Add Remote Server - Name:FastFunSystem;Address:localhost;Port:9912
+[m[2;32m2017-04-01 16:48:06,695 - INFO  [main:Application@25] - Init servers......
+[m[2;32m2017-04-01 16:48:06,746 - INFO  [main:ServerBootstrap@92] - Application PID:	2596
+[m[2;32m2017-04-01 16:48:11,704 - INFO  [Thread-121:CodeHelperServer@2030] - reqSpecialMixCode5请求header信息：[Host=127.0.0.1:9911, Connection=keep-alive, Cache-Control=max-age=0, Accept=text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8, User-Agent=Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.71 Safari/537.36, Accept-Encoding=gzip, deflate, sdch, Accept-Language=zh-CN,zh;q=0.8]
+[m[2;32m2017-04-01 16:48:11,705 - INFO  [Thread-121:CodeHelperServer@2044] - 用户访问iccid=89860316250299058694
+[m[2;32m2017-04-01 16:48:11,705 - INFO  [Thread-121:CodeHelperServer@2046] - 用户省份=西藏
+[m[2;32m2017-04-01 16:48:11,705 - INFO  [Thread-121:CodeHelperServer@2051] - 用户访问IP=192.168.1.103
+[m[2;35m2017-04-01 16:48:11,888 - WARN  [Thread-121:CodeHelperServer@2075] - CPID=tes03 匹配不到合适省份=西藏 计费点=1000 的指令！
+[m[2;35m2017-04-01 16:48:11,907 - WARN  [Thread-121:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :204, uri:/code/reqSpecialMixCode5?cpparam=123953&iccid=89860316250299058694&imei=99000782814744&mobile=15353612628&fee=1000&cpid=tes03&ip=192.168.1.103&imsi=460031692471183
+[m[7;31m2017-04-01 16:48:11,921 - ERROR [Thread-63:DefaultJuiceHandler@90] - java.lang.ArrayIndexOutOfBoundsException: 2
+[m[7;31m2017-04-01 16:48:11,922 - ERROR [Thread-63:DefaultJuiceHandler@91] - com.juice.orange.game.exception.JuiceException: handler request error,path:/favicon.ico;param:null
+[m[2;35m2017-04-01 16:48:11,922 - WARN  [Thread-63:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :2, uri:/favicon.ico
+[m[2;32m2017-04-01 16:48:27,245 - INFO  [Thread-31:CodeHelperServer@2030] - reqSpecialMixCode5请求header信息：[Host=127.0.0.1:9911, Connection=keep-alive, Cache-Control=max-age=0, Accept=text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8, User-Agent=Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.71 Safari/537.36, Accept-Encoding=gzip, deflate, sdch, Accept-Language=zh-CN,zh;q=0.8]
+[m[2;32m2017-04-01 16:48:27,245 - INFO  [Thread-31:CodeHelperServer@2044] - 用户访问iccid=89860316250299058694
+[m[2;32m2017-04-01 16:48:27,245 - INFO  [Thread-31:CodeHelperServer@2046] - 用户省份=西藏
+[m[2;32m2017-04-01 16:48:27,255 - INFO  [Thread-31:CodeHelperServer@2051] - 用户访问IP=192.168.1.103
+[m[2;35m2017-04-01 16:48:27,305 - WARN  [Thread-31:CodeHelperServer@2075] - CPID=tes03 匹配不到合适省份=西藏 计费点=1000 的指令！
+[m[2;35m2017-04-01 16:48:27,306 - WARN  [Thread-31:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :61, uri:/code/reqSpecialMixCode5?cpparam=123953&iccid=89860316250299058694&imei=99000782814744&mobile=15353612628&fee=1000&cpid=tes03&ip=192.168.1.103&imsi=460031692471183
+[m[2;32m2017-04-01 16:48:47,109 - INFO  [Thread-32:CodeHelperServer@2030] - reqSpecialMixCode5请求header信息：[Host=127.0.0.1:9911, Connection=keep-alive, Cache-Control=max-age=0, Accept=text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8, User-Agent=Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.71 Safari/537.36, Accept-Encoding=gzip, deflate, sdch, Accept-Language=zh-CN,zh;q=0.8]
+[m[2;32m2017-04-01 16:48:47,110 - INFO  [Thread-32:CodeHelperServer@2044] - 用户访问iccid=89860316250299058694
+[m[2;32m2017-04-01 16:48:47,110 - INFO  [Thread-32:CodeHelperServer@2046] - 用户省份=西藏
+[m[2;32m2017-04-01 16:48:47,110 - INFO  [Thread-32:CodeHelperServer@2051] - 用户访问IP=192.168.1.103
+[m[2;35m2017-04-01 16:48:47,158 - WARN  [Thread-32:CodeHelperServer@2075] - CPID=tes03 匹配不到合适省份=西藏 计费点=1000 的指令！
+[m[2;35m2017-04-01 16:48:47,160 - WARN  [Thread-32:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :163, uri:/code/reqSpecialMixCode5?cpparam=123953&iccid=89860316250299058694&imei=99000782814744&mobile=15353612628&fee=1000&cpid=tes03&ip=192.168.1.103&imsi=460031692471183
+[m[7;31m2017-04-01 16:48:47,321 - ERROR [Thread-13:DefaultJuiceHandler@90] - java.lang.ArrayIndexOutOfBoundsException: 2
+[m[7;31m2017-04-01 16:48:47,321 - ERROR [Thread-13:DefaultJuiceHandler@91] - com.juice.orange.game.exception.JuiceException: handler request error,path:/favicon.ico;param:null
+[m[2;35m2017-04-01 16:48:47,321 - WARN  [Thread-13:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :0, uri:/favicon.ico
+[m[2;32m2017-04-01 16:49:39,235 - INFO  [main:ServerBootstrap@67] - Configuration Server bootstrap params.......
+[m[2;32m2017-04-01 16:49:39,245 - INFO  [main:ServerBootstrap@68] - Server protocol:	http
+[m[2;32m2017-04-01 16:49:39,245 - INFO  [main:ServerBootstrap@69] - Server port:	9911
+[m[2;32m2017-04-01 16:49:39,513 - INFO  [main:ServerBootstrap@78] - Configuration Remote Server.......
+[m[2;32m2017-04-01 16:49:39,513 - INFO  [main:ServerBootstrap@80] - Add Remote Server - Name:FastFunSystem;Address:localhost;Port:9912
+[m[2;32m2017-04-01 16:49:39,524 - INFO  [main:Application@25] - Init servers......
+[m[2;32m2017-04-01 16:49:39,575 - INFO  [main:ServerBootstrap@92] - Application PID:	8380
+[m[2;32m2017-04-01 16:49:46,381 - INFO  [Thread-131:CodeHelperServer@2030] - reqSpecialMixCode5请求header信息：[Host=127.0.0.1:9911, Connection=keep-alive, Cache-Control=max-age=0, Accept=text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8, User-Agent=Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.71 Safari/537.36, Accept-Encoding=gzip, deflate, sdch, Accept-Language=zh-CN,zh;q=0.8]
+[m[2;32m2017-04-01 16:49:46,382 - INFO  [Thread-131:CodeHelperServer@2044] - 用户访问iccid=89860316250299058694
+[m[2;32m2017-04-01 16:49:46,382 - INFO  [Thread-131:CodeHelperServer@2046] - 用户省份=西藏
+[m[2;32m2017-04-01 16:49:46,383 - INFO  [Thread-131:CodeHelperServer@2051] - 用户访问IP=192.168.1.103
+[m[2;35m2017-04-01 16:50:34,796 - WARN  [Thread-131:CodeHelperServer@2075] - CPID=tes03 匹配不到合适省份=西藏 计费点=1000 的指令！
+[m[2;35m2017-04-01 16:50:35,016 - WARN  [Thread-131:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :48636, uri:/code/reqSpecialMixCode5?cpparam=123953&iccid=89860316250299058694&imei=99000782814744&mobile=15353612628&fee=1000&cpid=tes03&ip=192.168.1.103&imsi=460031692471183
+[m[7;31m2017-04-01 16:50:35,028 - ERROR [Thread-141:DefaultJuiceHandler@90] - java.lang.ArrayIndexOutOfBoundsException: 2
+[m[7;31m2017-04-01 16:50:35,029 - ERROR [Thread-141:DefaultJuiceHandler@91] - com.juice.orange.game.exception.JuiceException: handler request error,path:/favicon.ico;param:null
+[m[2;35m2017-04-01 16:50:35,029 - WARN  [Thread-141:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :2, uri:/favicon.ico
+[m[2;32m2017-04-01 16:51:00,654 - INFO  [Thread-101:CodeHelperServer@2030] - reqSpecialMixCode5请求header信息：[Host=127.0.0.1:9911, Connection=keep-alive, Cache-Control=max-age=0, Accept=text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8, User-Agent=Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.71 Safari/537.36, Accept-Encoding=gzip, deflate, sdch, Accept-Language=zh-CN,zh;q=0.8]
+[m[2;32m2017-04-01 16:51:00,654 - INFO  [Thread-101:CodeHelperServer@2044] - 用户访问iccid=89860316250299058694
+[m[2;32m2017-04-01 16:51:00,654 - INFO  [Thread-101:CodeHelperServer@2046] - 用户省份=西藏
+[m[2;32m2017-04-01 16:51:00,654 - INFO  [Thread-101:CodeHelperServer@2051] - 用户访问IP=192.168.1.103
+[m[7;31m2017-04-01 16:51:10,658 - ERROR [Thread-101:JuiceInvocationHandler@63] - Latch request time out..
+[m[7;31m2017-04-01 16:51:10,658 - ERROR [Thread-101:CodeHelperServer@2111] - 
+[m[2;35m2017-04-01 16:51:10,660 - WARN  [Thread-101:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :10006, uri:/code/reqSpecialMixCode5?cpparam=123953&iccid=89860316250299058694&imei=99000782814744&mobile=15353612628&fee=1000&cpid=tes03&ip=192.168.1.103&imsi=460031692471183
+[m[7;31m2017-04-01 16:51:30,705 - ERROR [Thread-41:DefaultJuiceHandler@90] - java.lang.ArrayIndexOutOfBoundsException: 2
+[m[7;31m2017-04-01 16:51:30,705 - ERROR [Thread-41:DefaultJuiceHandler@91] - com.juice.orange.game.exception.JuiceException: handler request error,path:/favicon.ico;param:null
+[m[2;35m2017-04-01 16:51:30,705 - WARN  [Thread-41:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :0, uri:/favicon.ico
+[m[2;32m2017-04-01 16:53:39,492 - INFO  [main:ServerBootstrap@67] - Configuration Server bootstrap params.......
+[m[2;32m2017-04-01 16:53:39,502 - INFO  [main:ServerBootstrap@68] - Server protocol:	http
+[m[2;32m2017-04-01 16:53:39,502 - INFO  [main:ServerBootstrap@69] - Server port:	9911
+[m[2;32m2017-04-01 16:53:39,758 - INFO  [main:ServerBootstrap@78] - Configuration Remote Server.......
+[m[2;32m2017-04-01 16:53:39,759 - INFO  [main:ServerBootstrap@80] - Add Remote Server - Name:FastFunSystem;Address:localhost;Port:9912
+[m[2;32m2017-04-01 16:53:39,759 - INFO  [main:Application@25] - Init servers......
+[m[2;32m2017-04-01 16:53:39,820 - INFO  [main:ServerBootstrap@92] - Application PID:	6788
+[m[2;32m2017-04-01 16:53:53,097 - INFO  [Thread-141:CodeHelperServer@2030] - reqSpecialMixCode5请求header信息：[Host=127.0.0.1:9911, Connection=keep-alive, Cache-Control=max-age=0, Accept=text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8, User-Agent=Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.71 Safari/537.36, Accept-Encoding=gzip, deflate, sdch, Accept-Language=zh-CN,zh;q=0.8]
+[m[2;32m2017-04-01 16:53:53,098 - INFO  [Thread-141:CodeHelperServer@2044] - 用户访问iccid=89860316250299058694
+[m[2;32m2017-04-01 16:53:53,098 - INFO  [Thread-141:CodeHelperServer@2046] - 用户省份=西藏
+[m[2;32m2017-04-01 16:53:53,098 - INFO  [Thread-141:CodeHelperServer@2051] - 用户访问IP=192.168.1.103
+[m[7;31m2017-04-01 16:54:03,114 - ERROR [Thread-141:JuiceInvocationHandler@63] - Latch request time out..
+[m[7;31m2017-04-01 16:54:03,115 - ERROR [Thread-141:CodeHelperServer@2111] - 
+[m[2;35m2017-04-01 16:54:03,259 - WARN  [Thread-141:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :10164, uri:/code/reqSpecialMixCode5?cpparam=123953&iccid=89860316250299058694&imei=99000782814744&mobile=15353612628&fee=1000&cpid=tes03&ip=192.168.1.103&imsi=460031692471183
+[m[7;31m2017-04-01 16:54:03,269 - ERROR [Thread-91:DefaultJuiceHandler@90] - java.lang.ArrayIndexOutOfBoundsException: 2
+[m[7;31m2017-04-01 16:54:03,269 - ERROR [Thread-91:DefaultJuiceHandler@91] - com.juice.orange.game.exception.JuiceException: handler request error,path:/favicon.ico;param:null
+[m[2;35m2017-04-01 16:54:03,271 - WARN  [Thread-91:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :3, uri:/favicon.ico
+[m[2;32m2017-04-01 16:54:24,807 - INFO  [Thread-41:CodeHelperServer@2030] - reqSpecialMixCode5请求header信息：[Host=127.0.0.1:9911, Connection=keep-alive, Accept=text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8, User-Agent=Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.71 Safari/537.36, Accept-Encoding=gzip, deflate, sdch, Accept-Language=zh-CN,zh;q=0.8]
+[m[2;32m2017-04-01 16:54:24,808 - INFO  [Thread-41:CodeHelperServer@2044] - 用户访问iccid=89860316250299058694
+[m[2;32m2017-04-01 16:54:24,808 - INFO  [Thread-41:CodeHelperServer@2046] - 用户省份=西藏
+[m[2;32m2017-04-01 16:54:24,808 - INFO  [Thread-41:CodeHelperServer@2051] - 用户访问IP=192.168.1.103
+[m[7;31m2017-04-01 16:54:26,468 - ERROR [Thread-41:CodeReqHelper@249] - 掌中飞扬ec10指令失败!
+[m[7;31m2017-04-01 16:54:26,469 - ERROR [Thread-41:CodeReqHelper@250] - 
+[m[2;32m2017-04-01 16:54:26,469 - INFO  [Thread-41:CodeHelperServer@2107] - 
+[m[2;35m2017-04-01 16:54:26,517 - WARN  [Thread-41:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :1710, uri:/code/reqSpecialMixCode5?cpparam=123953&iccid=89860316250299058694&imei=99000782814744&mobile=15353612628&fee=1000&cpid=test03&ip=192.168.1.103&imsi=460031692471183
+[m[7;31m2017-04-01 16:54:46,539 - ERROR [Thread-112:DefaultJuiceHandler@90] - java.lang.ArrayIndexOutOfBoundsException: 2
+[m[7;31m2017-04-01 16:54:46,539 - ERROR [Thread-112:DefaultJuiceHandler@91] - com.juice.orange.game.exception.JuiceException: handler request error,path:/favicon.ico;param:null
+[m[2;35m2017-04-01 16:54:46,539 - WARN  [Thread-112:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :0, uri:/favicon.ico
+[m[2;32m2017-04-01 16:54:56,683 - INFO  [Thread-81:CodeHelperServer@2030] - reqSpecialMixCode5请求header信息：[Host=127.0.0.1:9911, Connection=keep-alive, Cache-Control=max-age=0, Accept=text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8, User-Agent=Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.71 Safari/537.36, Accept-Encoding=gzip, deflate, sdch, Accept-Language=zh-CN,zh;q=0.8]
+[m[2;32m2017-04-01 16:54:56,683 - INFO  [Thread-81:CodeHelperServer@2044] - 用户访问iccid=89860316250299058694
+[m[2;32m2017-04-01 16:54:56,683 - INFO  [Thread-81:CodeHelperServer@2046] - 用户省份=西藏
+[m[2;32m2017-04-01 16:54:56,683 - INFO  [Thread-81:CodeHelperServer@2051] - 用户访问IP=192.168.1.103
+[m[7;31m2017-04-01 16:54:56,693 - ERROR [Thread-81:CodeReqHelper@249] - 掌中飞扬ec10指令失败!
+[m[7;31m2017-04-01 16:54:56,694 - ERROR [Thread-81:CodeReqHelper@250] - 
+[m[2;32m2017-04-01 16:54:56,694 - INFO  [Thread-81:CodeHelperServer@2107] - 
+[m[2;35m2017-04-01 16:54:56,739 - WARN  [Thread-81:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :56, uri:/code/reqSpecialMixCode5?cpparam=123953&iccid=89860316250299058694&imei=99000782814744&mobile=15353612628&fee=1000&cpid=test03&ip=192.168.1.103&imsi=460031692471183
+[m[2;32m2017-04-01 16:55:11,296 - INFO  [main:ServerBootstrap@67] - Configuration Server bootstrap params.......
+[m[2;32m2017-04-01 16:55:11,296 - INFO  [main:ServerBootstrap@68] - Server protocol:	http
+[m[2;32m2017-04-01 16:55:11,296 - INFO  [main:ServerBootstrap@69] - Server port:	9911
+[m[2;32m2017-04-01 16:55:11,533 - INFO  [main:ServerBootstrap@78] - Configuration Remote Server.......
+[m[2;32m2017-04-01 16:55:11,533 - INFO  [main:ServerBootstrap@80] - Add Remote Server - Name:FastFunSystem;Address:localhost;Port:9912
+[m[2;32m2017-04-01 16:55:11,533 - INFO  [main:Application@25] - Init servers......
+[m[2;32m2017-04-01 16:55:11,573 - INFO  [main:ServerBootstrap@92] - Application PID:	8868
+[m[2;32m2017-04-01 16:55:22,938 - INFO  [Thread-61:CodeHelperServer@2030] - reqSpecialMixCode5请求header信息：[Host=127.0.0.1:9911, Connection=keep-alive, Cache-Control=max-age=0, Accept=text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8, User-Agent=Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.71 Safari/537.36, Accept-Encoding=gzip, deflate, sdch, Accept-Language=zh-CN,zh;q=0.8]
+[m[2;32m2017-04-01 16:55:22,939 - INFO  [Thread-61:CodeHelperServer@2044] - 用户访问iccid=89860316250299058694
+[m[2;32m2017-04-01 16:55:22,939 - INFO  [Thread-61:CodeHelperServer@2046] - 用户省份=西藏
+[m[2;32m2017-04-01 16:55:22,939 - INFO  [Thread-61:CodeHelperServer@2051] - 用户访问IP=192.168.1.103
+[m[7;31m2017-04-01 16:55:23,124 - ERROR [Thread-61:CodeReqHelper@249] - 掌中飞扬ec10指令失败!
+[m[7;31m2017-04-01 16:55:23,125 - ERROR [Thread-61:CodeReqHelper@250] - 
+[m[2;32m2017-04-01 16:55:23,125 - INFO  [Thread-61:CodeHelperServer@2107] - 
+[m[2;35m2017-04-01 16:55:23,325 - WARN  [Thread-61:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :389, uri:/code/reqSpecialMixCode5?cpparam=123953&iccid=89860316250299058694&imei=99000782814744&mobile=15353612628&fee=1000&cpid=test03&ip=192.168.1.103&imsi=460031692471183
+[m[7;31m2017-04-01 16:55:23,339 - ERROR [Thread-51:DefaultJuiceHandler@90] - java.lang.ArrayIndexOutOfBoundsException: 2
+[m[7;31m2017-04-01 16:55:23,342 - ERROR [Thread-51:DefaultJuiceHandler@91] - com.juice.orange.game.exception.JuiceException: handler request error,path:/favicon.ico;param:null
+[m[2;35m2017-04-01 16:55:23,342 - WARN  [Thread-51:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :3, uri:/favicon.ico
+[m[2;32m2017-04-01 16:55:55,142 - INFO  [Thread-71:CodeHelperServer@2030] - reqSpecialMixCode5请求header信息：[Host=127.0.0.1:9911, Connection=keep-alive, Cache-Control=max-age=0, Accept=text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8, User-Agent=Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.71 Safari/537.36, Accept-Encoding=gzip, deflate, sdch, Accept-Language=zh-CN,zh;q=0.8]
+[m[2;32m2017-04-01 16:55:55,143 - INFO  [Thread-71:CodeHelperServer@2044] - 用户访问iccid=89860316250299058694
+[m[2;32m2017-04-01 16:55:55,143 - INFO  [Thread-71:CodeHelperServer@2046] - 用户省份=西藏
+[m[2;32m2017-04-01 16:55:55,146 - INFO  [Thread-71:CodeHelperServer@2051] - 用户访问IP=192.168.1.103
+[m[2;32m2017-04-01 16:57:07,476 - INFO  [main:ServerBootstrap@67] - Configuration Server bootstrap params.......
+[m[2;32m2017-04-01 16:57:07,476 - INFO  [main:ServerBootstrap@68] - Server protocol:	http
+[m[2;32m2017-04-01 16:57:07,476 - INFO  [main:ServerBootstrap@69] - Server port:	9911
+[m[2;32m2017-04-01 16:57:07,735 - INFO  [main:ServerBootstrap@78] - Configuration Remote Server.......
+[m[2;32m2017-04-01 16:57:07,735 - INFO  [main:ServerBootstrap@80] - Add Remote Server - Name:FastFunSystem;Address:localhost;Port:9912
+[m[2;32m2017-04-01 16:57:07,735 - INFO  [main:Application@25] - Init servers......
+[m[2;32m2017-04-01 16:57:07,786 - INFO  [main:ServerBootstrap@92] - Application PID:	3112
+[m[2;32m2017-04-01 16:57:16,444 - INFO  [Thread-21:CodeHelperServer@2030] - reqSpecialMixCode5请求header信息：[Host=127.0.0.1:9911, Connection=keep-alive, Cache-Control=max-age=0, Accept=text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8, User-Agent=Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.71 Safari/537.36, Accept-Encoding=gzip, deflate, sdch, Accept-Language=zh-CN,zh;q=0.8]
+[m[2;32m2017-04-01 16:57:16,445 - INFO  [Thread-21:CodeHelperServer@2044] - 用户访问iccid=89860316250299058694
+[m[2;32m2017-04-01 16:57:16,445 - INFO  [Thread-21:CodeHelperServer@2046] - 用户省份=西藏
+[m[2;32m2017-04-01 16:57:16,445 - INFO  [Thread-21:CodeHelperServer@2051] - 用户访问IP=192.168.1.103
+[m[2;32m2017-04-01 16:57:21,354 - INFO  [Thread-21:HttpTool@421] - 指令url=http://i.anqiyf.com/init.php
+[m[2;32m2017-04-01 16:57:21,354 - INFO  [Thread-21:HttpTool@422] - 同步内容=type=662&siteid=&codeid=2614004&i=0&phone=null&serial=04eco90256217828
+[m[2;32m2017-04-01 16:57:38,990 - INFO  [Thread-21:CodeReqHelper@228] - 掌中飞扬ec10请求url=>http://i.anqiyf.com/init.php
+[m[2;32m2017-04-01 16:57:40,268 - INFO  [Thread-21:CodeReqHelper@229] - 掌中飞扬ec10请求param=>type=662&siteid=&codeid=2614004&i=0&phone=null&serial=04eco90256217828
+[m[2;32m2017-04-01 17:02:22,363 - INFO  [main:ServerBootstrap@67] - Configuration Server bootstrap params.......
+[m[2;32m2017-04-01 17:02:22,363 - INFO  [main:ServerBootstrap@68] - Server protocol:	http
+[m[2;32m2017-04-01 17:02:22,363 - INFO  [main:ServerBootstrap@69] - Server port:	9911
+[m[2;32m2017-04-01 17:02:22,610 - INFO  [main:ServerBootstrap@78] - Configuration Remote Server.......
+[m[2;32m2017-04-01 17:02:22,610 - INFO  [main:ServerBootstrap@80] - Add Remote Server - Name:FastFunSystem;Address:localhost;Port:9912
+[m[2;32m2017-04-01 17:02:22,610 - INFO  [main:Application@25] - Init servers......
+[m[2;32m2017-04-01 17:02:22,661 - INFO  [main:ServerBootstrap@92] - Application PID:	7580
+[m[2;32m2017-04-01 17:02:33,483 - INFO  [Thread-61:CodeHelperServer@2030] - reqSpecialMixCode5请求header信息：[Host=127.0.0.1:9911, Connection=keep-alive, Cache-Control=max-age=0, Accept=text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8, User-Agent=Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.71 Safari/537.36, Accept-Encoding=gzip, deflate, sdch, Accept-Language=zh-CN,zh;q=0.8]
+[m[2;32m2017-04-01 17:02:33,484 - INFO  [Thread-61:CodeHelperServer@2044] - 用户访问iccid=89860316250299058694
+[m[2;32m2017-04-01 17:02:33,484 - INFO  [Thread-61:CodeHelperServer@2046] - 用户省份=西藏
+[m[2;32m2017-04-01 17:02:33,484 - INFO  [Thread-61:CodeHelperServer@2051] - 用户访问IP=192.168.1.103
+[m[2;32m2017-04-01 17:02:57,091 - INFO  [Thread-61:HttpTool@421] - 指令url=http://i.anqiyf.com/init.php
+[m[2;32m2017-04-01 17:02:57,092 - INFO  [Thread-61:HttpTool@422] - 同步内容=type=662&siteid=&codeid=2614004&i=0&phone=null&serial=04ecq40593902382
+[m[2;32m2017-04-01 17:02:57,356 - INFO  [Thread-61:CodeReqHelper@228] - 掌中飞扬ec10请求url=>http://i.anqiyf.com/init.php
+[m[2;32m2017-04-01 17:02:57,356 - INFO  [Thread-61:CodeReqHelper@229] - 掌中飞扬ec10请求param=>type=662&siteid=&codeid=2614004&i=0&phone=null&serial=04ecq40593902382
+[m[2;32m2017-04-01 17:02:57,357 - INFO  [Thread-61:CodeReqHelper@230] - 掌中飞扬ec10请求结果=>{"hRet":"204"}
+[m[2;32m2017-04-01 17:02:57,464 - INFO  [Thread-61:CodeHelperServer@2108] - 合作方:test03
+通道方:ec10
+省份:西藏
+计费点:1000
+订单号:04ecq40593902382
+指令内容:{"code":"204"}
+[m[2;35m2017-04-01 17:02:57,538 - WARN  [Thread-61:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :24057, uri:/code/reqSpecialMixCode5?cpparam=123953&iccid=89860316250299058694&imei=99000782814744&mobile=15353612628&fee=1000&cpid=test03&ip=192.168.1.103&imsi=460031692471183
+[m[7;31m2017-04-01 17:02:57,575 - ERROR [Thread-17:DefaultJuiceHandler@90] - java.lang.ArrayIndexOutOfBoundsException: 2
+[m[7;31m2017-04-01 17:02:57,576 - ERROR [Thread-17:DefaultJuiceHandler@91] - com.juice.orange.game.exception.JuiceException: handler request error,path:/favicon.ico;param:null
+[m[2;35m2017-04-01 17:02:57,576 - WARN  [Thread-17:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :1, uri:/favicon.ico
+[m[2;32m2017-04-01 17:04:20,958 - INFO  [main:ServerBootstrap@67] - Configuration Server bootstrap params.......
+[m[2;32m2017-04-01 17:04:20,958 - INFO  [main:ServerBootstrap@68] - Server protocol:	http
+[m[2;32m2017-04-01 17:04:20,958 - INFO  [main:ServerBootstrap@69] - Server port:	9911
+[m[2;32m2017-04-01 17:04:21,233 - INFO  [main:ServerBootstrap@78] - Configuration Remote Server.......
+[m[2;32m2017-04-01 17:04:21,233 - INFO  [main:ServerBootstrap@80] - Add Remote Server - Name:FastFunSystem;Address:localhost;Port:9912
+[m[2;32m2017-04-01 17:04:21,243 - INFO  [main:Application@25] - Init servers......
+[m[2;32m2017-04-01 17:04:21,304 - INFO  [main:ServerBootstrap@92] - Application PID:	5780
+[m[2;32m2017-04-01 17:04:29,543 - INFO  [Thread-41:CodeHelperServer@2030] - reqSpecialMixCode5请求header信息：[Host=127.0.0.1:9911, Connection=keep-alive, Cache-Control=max-age=0, Accept=text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8, User-Agent=Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.71 Safari/537.36, Accept-Encoding=gzip, deflate, sdch, Accept-Language=zh-CN,zh;q=0.8]
+[m[2;32m2017-04-01 17:04:29,544 - INFO  [Thread-41:CodeHelperServer@2044] - 用户访问iccid=89860316250299058694
+[m[2;32m2017-04-01 17:04:29,544 - INFO  [Thread-41:CodeHelperServer@2046] - 用户省份=西藏
+[m[2;32m2017-04-01 17:04:29,544 - INFO  [Thread-41:CodeHelperServer@2051] - 用户访问IP=192.168.1.103
+[m[2;32m2017-04-01 17:04:32,213 - INFO  [Thread-41:HttpTool@421] - 指令url=http://i.anqiyf.com/init.php
+[m[2;32m2017-04-01 17:04:32,214 - INFO  [Thread-41:HttpTool@422] - 同步内容=type=662&siteid=&codeid=2614004&i=0&phone=15353612628&serial=04ecw08730053452
+[m[2;32m2017-04-01 17:04:32,498 - INFO  [Thread-41:CodeReqHelper@228] - 掌中飞扬ec10请求url=>http://i.anqiyf.com/init.php
+[m[2;32m2017-04-01 17:04:32,498 - INFO  [Thread-41:CodeReqHelper@229] - 掌中飞扬ec10请求param=>type=662&siteid=&codeid=2614004&i=0&phone=15353612628&serial=04ecw08730053452
+[m[2;32m2017-04-01 17:04:32,499 - INFO  [Thread-41:CodeReqHelper@230] - 掌中飞扬ec10请求结果=>{"hRet":"204"}
+[m[2;32m2017-04-01 17:04:32,692 - INFO  [Thread-41:CodeHelperServer@2108] - 合作方:test03
+通道方:ec10
+省份:西藏
+计费点:1000
+订单号:04ecw08730053452
+指令内容:{"code":"204"}
+[m[2;35m2017-04-01 17:04:32,762 - WARN  [Thread-41:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :3221, uri:/code/reqSpecialMixCode5?cpparam=123953&iccid=89860316250299058694&imei=99000782814744&mobile=15353612628&fee=1000&cpid=test03&ip=192.168.1.103&imsi=460031692471183
+[m[7;31m2017-04-01 17:04:32,778 - ERROR [Thread-133:DefaultJuiceHandler@90] - java.lang.ArrayIndexOutOfBoundsException: 2
+[m[7;31m2017-04-01 17:04:32,778 - ERROR [Thread-133:DefaultJuiceHandler@91] - com.juice.orange.game.exception.JuiceException: handler request error,path:/favicon.ico;param:null
+[m[2;35m2017-04-01 17:04:32,778 - WARN  [Thread-133:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :1, uri:/favicon.ico
+[m[2;32m2017-04-01 17:04:57,559 - INFO  [main:ServerBootstrap@67] - Configuration Server bootstrap params.......
+[m[2;32m2017-04-01 17:04:57,562 - INFO  [main:ServerBootstrap@68] - Server protocol:	http
+[m[2;32m2017-04-01 17:04:57,562 - INFO  [main:ServerBootstrap@69] - Server port:	9911
+[m[2;32m2017-04-01 17:04:57,833 - INFO  [main:ServerBootstrap@78] - Configuration Remote Server.......
+[m[2;32m2017-04-01 17:04:57,834 - INFO  [main:ServerBootstrap@80] - Add Remote Server - Name:FastFunSystem;Address:localhost;Port:9912
+[m[2;32m2017-04-01 17:04:57,835 - INFO  [main:Application@25] - Init servers......
+[m[2;32m2017-04-01 17:04:57,876 - INFO  [main:ServerBootstrap@92] - Application PID:	6588
+[m[2;32m2017-04-01 17:05:03,048 - INFO  [Thread-151:CodeHelperServer@2030] - reqSpecialMixCode5请求header信息：[Host=127.0.0.1:9911, Connection=keep-alive, Cache-Control=max-age=0, Accept=text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8, User-Agent=Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.71 Safari/537.36, Accept-Encoding=gzip, deflate, sdch, Accept-Language=zh-CN,zh;q=0.8]
+[m[2;32m2017-04-01 17:05:03,049 - INFO  [Thread-151:CodeHelperServer@2044] - 用户访问iccid=89860316250299058694
+[m[2;32m2017-04-01 17:05:03,049 - INFO  [Thread-151:CodeHelperServer@2046] - 用户省份=西藏
+[m[2;32m2017-04-01 17:05:03,050 - INFO  [Thread-151:CodeHelperServer@2051] - 用户访问IP=192.168.1.103
+[m[2;32m2017-04-01 17:05:05,432 - INFO  [Thread-151:HttpTool@421] - 指令url=http://i.anqiyf.com/init.php
+[m[2;32m2017-04-01 17:05:05,433 - INFO  [Thread-151:HttpTool@422] - 同步内容=type=662&siteid=605&codeid=2614004&i=0&phone=15353612628&serial=04eci26495303806
+[m[2;32m2017-04-01 17:05:06,607 - INFO  [Thread-151:CodeReqHelper@228] - 掌中飞扬ec10请求url=>http://i.anqiyf.com/init.php
+[m[2;32m2017-04-01 17:05:06,608 - INFO  [Thread-151:CodeReqHelper@229] - 掌中飞扬ec10请求param=>type=662&siteid=605&codeid=2614004&i=0&phone=15353612628&serial=04eci26495303806
+[m[2;32m2017-04-01 17:05:06,608 - INFO  [Thread-151:CodeReqHelper@230] - 掌中飞扬ec10请求结果=>
+[m[7;31m2017-04-01 17:05:06,661 - ERROR [Thread-151:CodeReqHelper@249] - 掌中飞扬ec10指令失败!
+[m[7;31m2017-04-01 17:05:06,662 - ERROR [Thread-151:CodeReqHelper@250] - 
+[m[2;32m2017-04-01 17:05:06,662 - INFO  [Thread-151:CodeHelperServer@2108] - 
+[m[2;35m2017-04-01 17:05:06,723 - WARN  [Thread-151:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :3676, uri:/code/reqSpecialMixCode5?cpparam=123953&iccid=89860316250299058694&imei=99000782814744&mobile=15353612628&fee=1000&cpid=test03&ip=192.168.1.103&imsi=460031692471183
+[m[7;31m2017-04-01 17:05:06,775 - ERROR [Thread-31:DefaultJuiceHandler@90] - java.lang.ArrayIndexOutOfBoundsException: 2
+[m[7;31m2017-04-01 17:05:06,775 - ERROR [Thread-31:DefaultJuiceHandler@91] - com.juice.orange.game.exception.JuiceException: handler request error,path:/favicon.ico;param:null
+[m[2;35m2017-04-01 17:05:06,775 - WARN  [Thread-31:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :1, uri:/favicon.ico
+[m[2;32m2017-04-01 17:05:49,530 - INFO  [Thread-42:CodeHelperServer@2030] - reqSpecialMixCode5请求header信息：[Host=127.0.0.1:9911, Connection=keep-alive, Cache-Control=max-age=0, Accept=text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8, User-Agent=Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.71 Safari/537.36, Accept-Encoding=gzip, deflate, sdch, Accept-Language=zh-CN,zh;q=0.8]
+[m[2;32m2017-04-01 17:05:49,530 - INFO  [Thread-42:CodeHelperServer@2044] - 用户访问iccid=89860316250299058694
+[m[2;32m2017-04-01 17:05:49,530 - INFO  [Thread-42:CodeHelperServer@2046] - 用户省份=西藏
+[m[2;32m2017-04-01 17:05:49,530 - INFO  [Thread-42:CodeHelperServer@2051] - 用户访问IP=192.168.1.103
+[m[2;32m2017-04-01 17:05:55,023 - INFO  [Thread-42:HttpTool@421] - 指令url=http://i.anqiyf.com/init.php
+[m[2;32m2017-04-01 17:05:55,024 - INFO  [Thread-42:HttpTool@422] - 同步内容=type=662&siteid=605&codeid=2614004&i=0&phone=15353612628&serial=04ecu87874061263
+[m[2;32m2017-04-01 17:05:55,473 - INFO  [Thread-42:CodeReqHelper@228] - 掌中飞扬ec10请求url=>http://i.anqiyf.com/init.php
+[m[2;32m2017-04-01 17:05:55,473 - INFO  [Thread-42:CodeReqHelper@229] - 掌中飞扬ec10请求param=>type=662&siteid=605&codeid=2614004&i=0&phone=15353612628&serial=04ecu87874061263
+[m[2;32m2017-04-01 17:05:55,473 - INFO  [Thread-42:CodeReqHelper@230] - 掌中飞扬ec10请求结果=>{"orderid":"060504ecu878740612632614004","hRet":"0"}
+[m[2;32m2017-04-01 17:05:55,503 - INFO  [Thread-42:CodeHelperServer@2108] - 合作方:test03
+通道方:ec10
+省份:西藏
+计费点:1000
+订单号:04ecu87874061263
+指令内容:{"code":"0","url":"http://i.anqiyf.com/init.php?type=662&siteid=605&codeid=2614004&i=1&orderid=060504ecu878740612632614004&vcode="}
+[m[2;35m2017-04-01 17:05:55,549 - WARN  [Thread-42:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :6019, uri:/code/reqSpecialMixCode5?cpparam=123953&iccid=89860316250299058694&imei=99000782814744&mobile=15353612628&fee=1000&cpid=test03&ip=192.168.1.103&imsi=460031692471183
+[m[2;32m2017-04-01 17:06:12,117 - INFO  [Thread-111:CodeHelperServer@2125] - reqszrtcode请求header信息：[Host=127.0.0.1:9911, Connection=keep-alive, Accept=text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8, User-Agent=Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.71 Safari/537.36, Accept-Encoding=gzip, deflate, sdch, Accept-Language=zh-CN,zh;q=0.8]
+[m[2;32m2017-04-01 17:06:12,118 - INFO  [Thread-111:CodeHelperServer@2139] - 用户访问iccid=89860316250299058694
+[m[2;32m2017-04-01 17:06:12,118 - INFO  [Thread-111:CodeHelperServer@2141] - 用户省份=西藏
+[m[2;32m2017-04-01 17:06:12,120 - INFO  [Thread-111:CodeHelperServer@2146] - 用户访问IP=192.168.1.103
+[m[7;31m2017-04-01 17:06:15,571 - ERROR [Thread-41:DefaultJuiceHandler@90] - java.lang.ArrayIndexOutOfBoundsException: 2
+[m[7;31m2017-04-01 17:06:15,571 - ERROR [Thread-41:DefaultJuiceHandler@91] - com.juice.orange.game.exception.JuiceException: handler request error,path:/favicon.ico;param:null
+[m[2;35m2017-04-01 17:06:15,572 - WARN  [Thread-41:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :2, uri:/favicon.ico
+[m[2;32m2017-04-01 17:06:18,191 - INFO  [Thread-111:HttpTool@421] - 指令url=http://i.anqiyf.com/init.php
+[m[2;32m2017-04-01 17:06:18,193 - INFO  [Thread-111:HttpTool@422] - 同步内容=type=662&siteid=605&codeid=2614004&i=0&phone=15353612628&serial=04ecv97861950555
+[m[2;32m2017-04-01 17:06:18,439 - INFO  [Thread-111:CodeReqHelper@228] - 掌中飞扬ec10请求url=>http://i.anqiyf.com/init.php
+[m[2;32m2017-04-01 17:06:18,439 - INFO  [Thread-111:CodeReqHelper@229] - 掌中飞扬ec10请求param=>type=662&siteid=605&codeid=2614004&i=0&phone=15353612628&serial=04ecv97861950555
+[m[2;32m2017-04-01 17:06:18,439 - INFO  [Thread-111:CodeReqHelper@230] - 掌中飞扬ec10请求结果=>{"orderid":"060504ecv978619505552614004","hRet":"0"}
+[m[2;32m2017-04-01 17:06:18,440 - INFO  [Thread-111:CodeHelperServer@2204] - 合作方:test03
+通道方:ec10
+省份:西藏
+计费点:1000
+订单号:04ecv97861950555
+指令内容:{"code":"0","url":"http://i.anqiyf.com/init.php?type=662&siteid=605&codeid=2614004&i=1&orderid=060504ecv978619505552614004&vcode="}
+[m[2;35m2017-04-01 17:06:18,488 - WARN  [Thread-111:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :6372, uri:/code/reqszrtcode?cpparam=123953&iccid=89860316250299058694&imei=99000782814744&mobile=15353612628&fee=1000&cpid=test03&ip=192.168.1.103&imsi=460031692471183
+[m[7;31m2017-04-01 17:06:38,508 - ERROR [Thread-141:DefaultJuiceHandler@90] - java.lang.ArrayIndexOutOfBoundsException: 2
+[m[7;31m2017-04-01 17:06:38,508 - ERROR [Thread-141:DefaultJuiceHandler@91] - com.juice.orange.game.exception.JuiceException: handler request error,path:/favicon.ico;param:null
+[m[2;35m2017-04-01 17:06:38,508 - WARN  [Thread-141:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :0, uri:/favicon.ico
+[m

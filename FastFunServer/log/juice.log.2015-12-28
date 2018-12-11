@@ -1,0 +1,163 @@
+[2;32m2015-12-28 11:22:19,369 - INFO  [main:ServerBootstrap@67] - Configuration Server bootstrap params.......
+[m[2;32m2015-12-28 11:22:19,369 - INFO  [main:ServerBootstrap@68] - Server protocol:	http
+[m[2;32m2015-12-28 11:22:19,369 - INFO  [main:ServerBootstrap@69] - Server port:	9911
+[m[2;32m2015-12-28 11:22:19,697 - INFO  [main:ServerBootstrap@78] - Configuration Remote Server.......
+[m[2;32m2015-12-28 11:22:19,697 - INFO  [main:ServerBootstrap@80] - Add Remote Server - Name:FastFunSystem;Address:localhost;Port:9912
+[m[2;32m2015-12-28 11:22:19,712 - INFO  [main:Application@23] - Init servers......
+[m[2;32m2015-12-28 11:22:19,729 - INFO  [main:ServerBootstrap@92] - Application PID:	4548
+[m[2;32m2015-12-28 16:54:03,506 - INFO  [main:ServerBootstrap@67] - Configuration Server bootstrap params.......
+[m[2;32m2015-12-28 16:54:03,506 - INFO  [main:ServerBootstrap@68] - Server protocol:	http
+[m[2;32m2015-12-28 16:54:03,506 - INFO  [main:ServerBootstrap@69] - Server port:	9911
+[m[2;32m2015-12-28 16:54:03,892 - INFO  [main:ServerBootstrap@78] - Configuration Remote Server.......
+[m[2;32m2015-12-28 16:54:03,892 - INFO  [main:ServerBootstrap@80] - Add Remote Server - Name:FastFunSystem;Address:localhost;Port:9912
+[m[2;32m2015-12-28 16:54:03,892 - INFO  [main:Application@23] - Init servers......
+[m[2;32m2015-12-28 16:54:03,977 - INFO  [main:ServerBootstrap@92] - Application PID:	4452
+[m[2;32m2015-12-28 16:54:37,532 - INFO  [Thread-12:FeeBack@433] - 请求header信息：[Charsert=utf8, Content-Type=text/plain, Cache-Control=no-cache, Pragma=no-cache, User-Agent=Java/1.8.0_25, Host=127.0.0.1:9911, Accept=text/html, image/gif, image/jpeg, *; q=.2, */*; q=.2, Connection=keep-alive, Content-Length=159]
+[m[2;32m2015-12-28 16:54:47,459 - INFO  [Thread-12:FeeBack@437] - 短信服务信息：MessageId=CD2F530079BB9E42&SmsMessage=460006805313370#0#89860070031500231060&Mobile=13903102035&SrcNumber=12114000496718&PortType=中国移动&Pre=&City=邯郸
+[m[2;35m2015-12-28 16:56:25,708 - WARN  [Thread-12:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :108176, uri:/fee/getCustomInfo
+[m[2;32m2015-12-28 16:57:16,080 - INFO  [main:ServerBootstrap@67] - Configuration Server bootstrap params.......
+[m[2;32m2015-12-28 16:57:16,080 - INFO  [main:ServerBootstrap@68] - Server protocol:	http
+[m[2;32m2015-12-28 16:57:16,080 - INFO  [main:ServerBootstrap@69] - Server port:	9911
+[m[2;32m2015-12-28 16:57:16,408 - INFO  [main:ServerBootstrap@78] - Configuration Remote Server.......
+[m[2;32m2015-12-28 16:57:16,408 - INFO  [main:ServerBootstrap@80] - Add Remote Server - Name:FastFunSystem;Address:localhost;Port:9912
+[m[2;32m2015-12-28 16:57:16,408 - INFO  [main:Application@23] - Init servers......
+[m[2;32m2015-12-28 16:57:16,442 - INFO  [main:ServerBootstrap@92] - Application PID:	4124
+[m[2;32m2015-12-28 16:58:28,136 - INFO  [Thread-21:FeeBack@433] - 请求header信息：[Charsert=utf8, Content-Type=text/plain, Cache-Control=no-cache, Pragma=no-cache, User-Agent=Java/1.8.0_25, Host=127.0.0.1:9911, Accept=text/html, image/gif, image/jpeg, *; q=.2, */*; q=.2, Connection=keep-alive, Content-Length=159]
+[m[2;32m2015-12-28 16:58:28,136 - INFO  [Thread-21:FeeBack@437] - 短信服务信息：MessageId=CD2F530079BB9E42&SmsMessage=460006805313370#0#89860070031500231060&Mobile=13903102035&SrcNumber=12114000496718&PortType=中国移动&Pre=&City=邯郸
+[m[2;35m2015-12-28 16:58:28,377 - WARN  [Thread-21:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :241, uri:/fee/getCustomInfo
+[m[7;31m2015-12-28 16:58:28,392 - ERROR [JUICE-SERVER-Handler-4-1-thread:ConnectionException@22] - uncaughtException :
+[mcom.juice.orange.game.exception.JuiceException: 远程主机强迫关闭了一个现有的连接。 on [id: 0x22411c84, /127.0.0.1:57214 :> /127.0.0.1:9911]
+	at com.juice.orange.game.exception.JuiceException.fromException(JuiceException.java:38)
+	at com.juice.orange.game.exception.JuiceException.fromExceptionEvent(JuiceException.java:32)
+	at com.juice.orange.game.util.ConnectionHelper$2.run(ConnectionHelper.java:56)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: java.io.IOException: 远程主机强迫关闭了一个现有的连接。
+	at sun.nio.ch.SocketDispatcher.read0(Native Method)
+	at sun.nio.ch.SocketDispatcher.read(Unknown Source)
+	at sun.nio.ch.IOUtil.readIntoNativeBuffer(Unknown Source)
+	at sun.nio.ch.IOUtil.read(Unknown Source)
+	at sun.nio.ch.SocketChannelImpl.read(Unknown Source)
+	at org.jboss.netty.channel.socket.nio.NioWorker.read(NioWorker.java:64)
+	at org.jboss.netty.channel.socket.nio.AbstractNioWorker.process(AbstractNioWorker.java:107)
+	at org.jboss.netty.channel.socket.nio.AbstractNioSelector.run(AbstractNioSelector.java:312)
+	at org.jboss.netty.channel.socket.nio.AbstractNioWorker.run(AbstractNioWorker.java:88)
+	at org.jboss.netty.channel.socket.nio.NioWorker.run(NioWorker.java:178)
+	... 3 more
+[2;32m2015-12-28 16:58:45,150 - INFO  [main:ServerBootstrap@67] - Configuration Server bootstrap params.......
+[m[2;32m2015-12-28 16:58:45,150 - INFO  [main:ServerBootstrap@68] - Server protocol:	http
+[m[2;32m2015-12-28 16:58:45,150 - INFO  [main:ServerBootstrap@69] - Server port:	9911
+[m[2;32m2015-12-28 16:58:45,520 - INFO  [main:ServerBootstrap@78] - Configuration Remote Server.......
+[m[2;32m2015-12-28 16:58:45,520 - INFO  [main:ServerBootstrap@80] - Add Remote Server - Name:FastFunSystem;Address:localhost;Port:9912
+[m[2;32m2015-12-28 16:58:45,520 - INFO  [main:Application@23] - Init servers......
+[m[2;32m2015-12-28 16:58:45,552 - INFO  [main:ServerBootstrap@92] - Application PID:	5740
+[m[2;32m2015-12-28 16:58:55,870 - INFO  [Thread-31:FeeBack@433] - 请求header信息：[Charsert=utf8, Content-Type=text/plain, Cache-Control=no-cache, Pragma=no-cache, User-Agent=Java/1.8.0_25, Host=127.0.0.1:9911, Accept=text/html, image/gif, image/jpeg, *; q=.2, */*; q=.2, Connection=keep-alive, Content-Length=159]
+[m[2;32m2015-12-28 16:58:55,871 - INFO  [Thread-31:FeeBack@437] - 短信服务信息：MessageId=CD2F530079BB9E42&SmsMessage=460006805313370#0#89860070031500231060&Mobile=13903102035&SrcNumber=12114000496718&PortType=中国移动&Pre=&City=邯郸
+[m[2;35m2015-12-28 16:58:56,108 - WARN  [Thread-31:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :241, uri:/fee/getCustomInfo
+[m[7;31m2015-12-28 16:58:56,124 - ERROR [JUICE-SERVER-Handler-4-1-thread:ConnectionException@22] - uncaughtException :
+[mcom.juice.orange.game.exception.JuiceException: 远程主机强迫关闭了一个现有的连接。 on [id: 0xbc7c8bcb, /127.0.0.1:57314 :> /127.0.0.1:9911]
+	at com.juice.orange.game.exception.JuiceException.fromException(JuiceException.java:38)
+	at com.juice.orange.game.exception.JuiceException.fromExceptionEvent(JuiceException.java:32)
+	at com.juice.orange.game.util.ConnectionHelper$2.run(ConnectionHelper.java:56)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: java.io.IOException: 远程主机强迫关闭了一个现有的连接。
+	at sun.nio.ch.SocketDispatcher.read0(Native Method)
+	at sun.nio.ch.SocketDispatcher.read(Unknown Source)
+	at sun.nio.ch.IOUtil.readIntoNativeBuffer(Unknown Source)
+	at sun.nio.ch.IOUtil.read(Unknown Source)
+	at sun.nio.ch.SocketChannelImpl.read(Unknown Source)
+	at org.jboss.netty.channel.socket.nio.NioWorker.read(NioWorker.java:64)
+	at org.jboss.netty.channel.socket.nio.AbstractNioWorker.process(AbstractNioWorker.java:107)
+	at org.jboss.netty.channel.socket.nio.AbstractNioSelector.run(AbstractNioSelector.java:312)
+	at org.jboss.netty.channel.socket.nio.AbstractNioWorker.run(AbstractNioWorker.java:88)
+	at org.jboss.netty.channel.socket.nio.NioWorker.run(NioWorker.java:178)
+	... 3 more
+[2;32m2015-12-28 16:59:14,432 - INFO  [main:ServerBootstrap@67] - Configuration Server bootstrap params.......
+[m[2;32m2015-12-28 16:59:14,437 - INFO  [main:ServerBootstrap@68] - Server protocol:	http
+[m[2;32m2015-12-28 16:59:14,438 - INFO  [main:ServerBootstrap@69] - Server port:	9911
+[m[2;32m2015-12-28 16:59:15,157 - INFO  [main:ServerBootstrap@78] - Configuration Remote Server.......
+[m[2;32m2015-12-28 16:59:15,157 - INFO  [main:ServerBootstrap@80] - Add Remote Server - Name:FastFunSystem;Address:localhost;Port:9912
+[m[2;32m2015-12-28 16:59:15,157 - INFO  [main:Application@23] - Init servers......
+[m[2;32m2015-12-28 16:59:15,474 - INFO  [main:ServerBootstrap@92] - Application PID:	4452
+[m[2;32m2015-12-28 16:59:27,908 - INFO  [Thread-9:FeeBack@433] - 请求header信息：[Charsert=utf8, Content-Type=text/plain, Cache-Control=no-cache, Pragma=no-cache, User-Agent=Java/1.8.0_25, Host=127.0.0.1:9911, Accept=text/html, image/gif, image/jpeg, *; q=.2, */*; q=.2, Connection=keep-alive, Content-Length=159]
+[m[2;32m2015-12-28 16:59:31,602 - INFO  [Thread-9:FeeBack@437] - 短信服务信息：MessageId=CD2F530079BB9E42&SmsMessage=460006805313370#0#89860070031500231060&Mobile=13903102035&SrcNumber=12114000496718&PortType=中国移动&Pre=&City=邯郸
+[m[2;35m2015-12-28 17:00:03,210 - WARN  [Thread-9:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :35306, uri:/fee/getCustomInfo
+[m[7;31m2015-12-28 17:00:03,242 - ERROR [JUICE-SERVER-Handler-4-1-thread:ConnectionException@22] - uncaughtException :
+[mcom.juice.orange.game.exception.JuiceException: 远程主机强迫关闭了一个现有的连接。 on [id: 0x11133bb4, /127.0.0.1:57427 => /127.0.0.1:9911]
+	at com.juice.orange.game.exception.JuiceException.fromException(JuiceException.java:38)
+	at com.juice.orange.game.exception.JuiceException.fromExceptionEvent(JuiceException.java:32)
+	at com.juice.orange.game.util.ConnectionHelper$2.run(ConnectionHelper.java:56)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: java.io.IOException: 远程主机强迫关闭了一个现有的连接。
+	at sun.nio.ch.SocketDispatcher.read0(Native Method)
+	at sun.nio.ch.SocketDispatcher.read(Unknown Source)
+	at sun.nio.ch.IOUtil.readIntoNativeBuffer(Unknown Source)
+	at sun.nio.ch.IOUtil.read(Unknown Source)
+	at sun.nio.ch.SocketChannelImpl.read(Unknown Source)
+	at org.jboss.netty.channel.socket.nio.NioWorker.read(NioWorker.java:64)
+	at org.jboss.netty.channel.socket.nio.AbstractNioWorker.process(AbstractNioWorker.java:107)
+	at org.jboss.netty.channel.socket.nio.AbstractNioSelector.run(AbstractNioSelector.java:312)
+	at org.jboss.netty.channel.socket.nio.AbstractNioWorker.run(AbstractNioWorker.java:88)
+	at org.jboss.netty.channel.socket.nio.NioWorker.run(NioWorker.java:178)
+	... 3 more
+[2;32m2015-12-28 17:00:15,177 - INFO  [Thread-31:FeeBack@433] - 请求header信息：[Charsert=utf8, Content-Type=text/plain, Cache-Control=no-cache, Pragma=no-cache, User-Agent=Java/1.8.0_25, Host=127.0.0.1:9911, Accept=text/html, image/gif, image/jpeg, *; q=.2, */*; q=.2, Connection=keep-alive, Content-Length=159]
+[m[2;32m2015-12-28 17:00:18,594 - INFO  [Thread-31:FeeBack@437] - 短信服务信息：MessageId=CD2F530079BB9E42&SmsMessage=460006805313370#0#89860070031500231060&Mobile=13903102035&SrcNumber=12114000496718&PortType=中国移动&Pre=&City=邯郸
+[m[2;35m2015-12-28 17:00:41,172 - WARN  [Thread-31:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :25995, uri:/fee/getCustomInfo
+[m[7;31m2015-12-28 17:00:41,205 - ERROR [JUICE-SERVER-Handler-4-1-thread:ConnectionException@22] - uncaughtException :
+[mcom.juice.orange.game.exception.JuiceException: 远程主机强迫关闭了一个现有的连接。 on [id: 0x69eea4b6, /127.0.0.1:57534 => /127.0.0.1:9911]
+	at com.juice.orange.game.exception.JuiceException.fromException(JuiceException.java:38)
+	at com.juice.orange.game.exception.JuiceException.fromExceptionEvent(JuiceException.java:32)
+	at com.juice.orange.game.util.ConnectionHelper$2.run(ConnectionHelper.java:56)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: java.io.IOException: 远程主机强迫关闭了一个现有的连接。
+	at sun.nio.ch.SocketDispatcher.read0(Native Method)
+	at sun.nio.ch.SocketDispatcher.read(Unknown Source)
+	at sun.nio.ch.IOUtil.readIntoNativeBuffer(Unknown Source)
+	at sun.nio.ch.IOUtil.read(Unknown Source)
+	at sun.nio.ch.SocketChannelImpl.read(Unknown Source)
+	at org.jboss.netty.channel.socket.nio.NioWorker.read(NioWorker.java:64)
+	at org.jboss.netty.channel.socket.nio.AbstractNioWorker.process(AbstractNioWorker.java:107)
+	at org.jboss.netty.channel.socket.nio.AbstractNioSelector.run(AbstractNioSelector.java:312)
+	at org.jboss.netty.channel.socket.nio.AbstractNioWorker.run(AbstractNioWorker.java:88)
+	at org.jboss.netty.channel.socket.nio.NioWorker.run(NioWorker.java:178)
+	... 3 more
+[2;32m2015-12-28 17:19:57,560 - INFO  [main:ServerBootstrap@67] - Configuration Server bootstrap params.......
+[m[2;32m2015-12-28 17:19:57,560 - INFO  [main:ServerBootstrap@68] - Server protocol:	http
+[m[2;32m2015-12-28 17:19:57,560 - INFO  [main:ServerBootstrap@69] - Server port:	9911
+[m[2;32m2015-12-28 17:19:57,985 - INFO  [main:ServerBootstrap@78] - Configuration Remote Server.......
+[m[2;32m2015-12-28 17:19:57,985 - INFO  [main:ServerBootstrap@80] - Add Remote Server - Name:FastFunSystem;Address:localhost;Port:9912
+[m[2;32m2015-12-28 17:19:58,000 - INFO  [main:Application@23] - Init servers......
+[m[2;32m2015-12-28 17:19:58,155 - INFO  [main:ServerBootstrap@92] - Application PID:	4172
+[m[2;32m2015-12-28 17:20:14,230 - INFO  [Thread-31:CodeHelperServer@466] - 请求header信息：[Host=127.0.0.1:9911, Connection=keep-alive, Accept=text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8, User-Agent=Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.71 Safari/537.36, Accept-Encoding=gzip, deflate, sdch, Accept-Language=zh-CN,zh;q=0.8]
+[m[2;32m2015-12-28 17:20:14,238 - INFO  [Thread-31:CodeHelperServer@502] - 用户访问iccid=89860040191493382415
+[m[2;32m2015-12-28 17:20:14,239 - INFO  [Thread-31:CodeHelperServer@504] - 用户省份=广东
+[m[2;32m2015-12-28 17:20:14,239 - INFO  [Thread-31:CodeHelperServer@509] - 用户访问IP=127.0.0.1
+[m[2;35m2015-12-28 17:20:55,187 - WARN  [Thread-31:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :40963, uri:/code/init?app=%E8%BF%85%E4%B9%90%E6%94%AF%E4%BB%98&lon=113.923628&count=1&imei=867064013202658&iccid=89860040191493382415&nwtype=WIFI&ctech=WIFI&aimsi=1&cpid=klw01&cid=4063&osversion=4.1.1&pck=com.fastfun.sdk.example&lac=9763&pmodel=MI+2&aimei=1&imsi=460024754274611&sdkVer=1.3.0.0&lat=22.543209
+[m[7;31m2015-12-28 17:20:55,245 - ERROR [Thread-33:DefaultJuiceHandler@90] - java.lang.ArrayIndexOutOfBoundsException: 2
+[m[7;31m2015-12-28 17:20:55,245 - ERROR [Thread-33:DefaultJuiceHandler@91] - com.juice.orange.game.exception.JuiceException: handler request error,path:/favicon.ico;param:null
+[m[2;35m2015-12-28 17:20:55,275 - WARN  [Thread-33:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :31, uri:/favicon.ico
+[m[2;32m2015-12-28 17:22:15,907 - INFO  [main:ServerBootstrap@67] - Configuration Server bootstrap params.......
+[m[2;32m2015-12-28 17:22:15,907 - INFO  [main:ServerBootstrap@68] - Server protocol:	http
+[m[2;32m2015-12-28 17:22:15,907 - INFO  [main:ServerBootstrap@69] - Server port:	9911
+[m[2;32m2015-12-28 17:22:16,366 - INFO  [main:ServerBootstrap@78] - Configuration Remote Server.......
+[m[2;32m2015-12-28 17:22:16,366 - INFO  [main:ServerBootstrap@80] - Add Remote Server - Name:FastFunSystem;Address:localhost;Port:9912
+[m[2;32m2015-12-28 17:22:16,373 - INFO  [main:Application@23] - Init servers......
+[m[2;32m2015-12-28 17:22:16,421 - INFO  [main:ServerBootstrap@92] - Application PID:	6052
+[m[2;32m2015-12-28 17:22:22,642 - INFO  [Thread-22:CodeHelperServer@466] - 请求header信息：[Host=127.0.0.1:9911, Connection=keep-alive, Cache-Control=max-age=0, Accept=text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8, User-Agent=Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.71 Safari/537.36, Accept-Encoding=gzip, deflate, sdch, Accept-Language=zh-CN,zh;q=0.8]
+[m[2;32m2015-12-28 17:22:22,647 - INFO  [Thread-22:CodeHelperServer@502] - 用户访问iccid=89860040191493382415
+[m[2;32m2015-12-28 17:22:22,647 - INFO  [Thread-22:CodeHelperServer@504] - 用户省份=广东
+[m[2;32m2015-12-28 17:22:22,647 - INFO  [Thread-22:CodeHelperServer@509] - 用户访问IP=127.0.0.1
+[m[2;32m2015-12-28 17:22:23,046 - INFO  [Thread-22:HttpTool@37] - 指令url=http://120.24.88.90/mmcode/reqNetMixMMCode3?serVer=4&imsi=460024754274611&imei=867064013202658&iccid=89860040191493382415&fee=1000&pmodel=MI+2&osversion=4.1.1&nwtype=WIFI&ffid=null&province=%E5%B9%BF%E4%B8%9C
+[m[2;32m2015-12-28 17:22:23,238 - INFO  [Thread-22:HttpTool@75] - 指令结果={"port":"0","send_type":"1","sms":"4ltMi3wOQTHiE0m1EkE0pWx4JN6QRy1OOVRCk0qatDmjKYe5aLBZxQWT0mMwdmTi08/VM3w9Etdi8dGMvN3od6SbhgzHZLDxunhjz2TNcBH9uobdsHD6fJSqy6snXcYOzu9NYjBGjqmV1Wiv566z2QA=","sms_number":"1065842455"}
+[m[2;35m2015-12-28 17:22:23,516 - WARN  [Thread-22:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :879, uri:/code/init?app=%E8%BF%85%E4%B9%90%E6%94%AF%E4%BB%98&lon=113.923628&count=1&imei=867064013202658&iccid=89860040191493382415&nwtype=WIFI&ctech=WIFI&aimsi=1&cpid=klw01&cid=4063&osversion=4.1.1&pck=com.fastfun.sdk.example&lac=9763&pmodel=MI+2&aimei=1&imsi=460024754274611&sdkVer=1.3.0.0&lat=22.543209
+[m[7;31m2015-12-28 17:22:23,541 - ERROR [Thread-11:DefaultJuiceHandler@90] - java.lang.ArrayIndexOutOfBoundsException: 2
+[m[7;31m2015-12-28 17:22:23,542 - ERROR [Thread-11:DefaultJuiceHandler@91] - com.juice.orange.game.exception.JuiceException: handler request error,path:/favicon.ico;param:null
+[m[2;35m2015-12-28 17:22:23,548 - WARN  [Thread-11:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :8, uri:/favicon.ico
+[m

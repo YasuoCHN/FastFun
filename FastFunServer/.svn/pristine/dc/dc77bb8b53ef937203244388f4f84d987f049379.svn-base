@@ -1,0 +1,109 @@
+[2;32m2015-12-08 16:54:00,740 - INFO  [main:ServerBootstrap@67] - Configuration Server bootstrap params.......
+[m[2;32m2015-12-08 16:54:00,756 - INFO  [main:ServerBootstrap@68] - Server protocol:	http
+[m[2;32m2015-12-08 16:54:00,756 - INFO  [main:ServerBootstrap@69] - Server port:	9911
+[m[2;32m2015-12-08 16:54:01,193 - INFO  [main:ServerBootstrap@78] - Configuration Remote Server.......
+[m[2;32m2015-12-08 16:54:01,193 - INFO  [main:ServerBootstrap@80] - Add Remote Server - Name:FastFunSystem;Address:localhost;Port:9912
+[m[2;32m2015-12-08 16:54:01,193 - INFO  [main:Application@23] - Init servers......
+[m[2;32m2015-12-08 16:54:01,365 - INFO  [main:ServerBootstrap@92] - Application PID:	9956
+[m[2;32m2015-12-08 16:54:27,211 - INFO  [Thread-1:CodeHelperServer@177] - 请求header信息：[Host=127.0.0.1:9911, Connection=keep-alive, Accept=text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8, User-Agent=Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.71 Safari/537.36, Accept-Encoding=gzip, deflate, sdch, Accept-Language=zh-CN,zh;q=0.8]
+[m[2;32m2015-12-08 16:55:44,938 - INFO  [Thread-1:CodeHelperServer@209] - 用户访问IP=127.0.0.1
+[m[2;32m2015-12-08 16:55:47,297 - INFO  [Thread-1:CodeHelperServer@212] - 根据IP查询省份=IA
+[m[2;35m2015-12-08 16:56:45,082 - WARN  [Thread-1:CodeHelperServer@246] - CPID=sz01 省份=IA 计费点=200 没有匹配到计费通道！
+[m[2;35m2015-12-08 16:56:45,796 - WARN  [Thread-1:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :138593, uri:/code/pay?cpid=sz01&fee=200&cpparam=38-2015120816485473023800&imei=862974021822864&imsi=460078472020893&aimei=1&aimsi=1&iccid=&pmodel=Lenovo+A828t&osversion=4.2.1&nwtype=WIFI&ctech=WIFI&cid=180186895&lac=42366&lat=0.0&lon=0.0&pck=com.jasmine.kkapp&app=kkapp&count=1&enMethod=
+[m[7;31m2015-12-08 16:56:45,824 - ERROR [Thread-3:DefaultJuiceHandler@90] - java.lang.ArrayIndexOutOfBoundsException: 2
+[m[7;31m2015-12-08 16:56:45,825 - ERROR [Thread-3:DefaultJuiceHandler@91] - com.juice.orange.game.exception.JuiceException: handler request error,path:/favicon.ico;param:null
+[m[2;35m2015-12-08 16:56:45,827 - WARN  [Thread-3:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :4, uri:/favicon.ico
+[m[2;32m2015-12-08 16:56:50,503 - INFO  [Thread-2:CodeHelperServer@177] - 请求header信息：[Host=127.0.0.1:9911, Connection=keep-alive, Cache-Control=max-age=0, Accept=text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8, User-Agent=Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.71 Safari/537.36, Accept-Encoding=gzip, deflate, sdch, Accept-Language=zh-CN,zh;q=0.8]
+[m[2;32m2015-12-08 16:56:53,513 - INFO  [Thread-2:CodeHelperServer@209] - 用户访问IP=127.0.0.1
+[m[2;32m2015-12-08 16:56:53,514 - INFO  [Thread-2:CodeHelperServer@212] - 根据IP查询省份=IA
+[m[7;31m2015-12-08 16:57:03,674 - ERROR [Thread-2:JuiceInvocationHandler@63] - Latch request time out..
+[m[7;31m2015-12-08 16:57:03,674 - ERROR [Thread-2:CodeHelperServer@347] - 
+[m[7;31m2015-12-08 16:57:03,676 - ERROR [Thread-2:DefaultJuiceHandler@84] - string
+[mjava.lang.NullPointerException: string
+	at org.jboss.netty.buffer.ChannelBuffers.copiedBuffer(ChannelBuffers.java:734)
+	at org.jboss.netty.buffer.ChannelBuffers.copiedBuffer(ChannelBuffers.java:711)
+	at com.juice.orange.game.handler.JuiceHttpResponse.content(JuiceHttpResponse.java:110)
+	at com.juice.orange.game.handler.JuiceHttpResponse.content(JuiceHttpResponse.java:33)
+	at com.klw.fastfun.pay.view.app.service.CodeHelperServer.pay(CodeHelperServer.java:349)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at com.juice.orange.game.handler.DefaultJuiceHandler.handleHttpRequest(DefaultJuiceHandler.java:81)
+	at com.juice.orange.game.handler.DefaultJuiceHandler.handlerRequest(DefaultJuiceHandler.java:35)
+	at com.juice.orange.game.handler.JuiceHttpControl.nextHandler(JuiceHttpControl.java:84)
+	at com.juice.orange.game.handler.JuiceHttpControl.nextHandler(JuiceHttpControl.java:67)
+	at com.juice.orange.game.util.threadpool.JuiceThreadPool$JuiceWorkThread.run(JuiceThreadPool.java:70)
+[2;35m2015-12-08 16:57:03,799 - WARN  [Thread-2:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :13296, uri:/code/pay?cpid=sz01&fee=200&cpparam=38-2015120816485473023800&imei=862974021822864&imsi=460078472020893&aimei=1&aimsi=1&iccid=&pmodel=Lenovo+A828t&osversion=4.2.1&nwtype=WIFI&ctech=WIFI&cid=180186895&lac=42366&lat=0.0&lon=0.0&pck=com.jasmine.kkapp&app=kkapp&count=1&enMethod=
+[m[2;32m2015-12-08 17:03:50,176 - INFO  [Thread-12:CodeHelperServer@177] - 请求header信息：[Host=127.0.0.1:9911, Connection=keep-alive, Accept=text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8, User-Agent=Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.71 Safari/537.36, Accept-Encoding=gzip, deflate, sdch, Accept-Language=zh-CN,zh;q=0.8]
+[m[7;31m2015-12-08 17:04:00,873 - ERROR [Thread-22:DefaultJuiceHandler@90] - java.lang.ArrayIndexOutOfBoundsException: 2
+[m[7;31m2015-12-08 17:04:00,873 - ERROR [Thread-22:DefaultJuiceHandler@91] - com.juice.orange.game.exception.JuiceException: handler request error,path:/favicon.ico;param:null
+[m[2;35m2015-12-08 17:04:00,888 - WARN  [Thread-22:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :15, uri:/favicon.ico
+[m[2;32m2015-12-08 17:04:02,683 - INFO  [Thread-14:CodeHelperServer@177] - 请求header信息：[Host=127.0.0.1:9911, Connection=keep-alive, Accept=text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8, User-Agent=Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.71 Safari/537.36, Accept-Encoding=gzip, deflate, sdch, Accept-Language=zh-CN,zh;q=0.8]
+[m[2;32m2015-12-08 17:04:05,169 - INFO  [Thread-14:CodeHelperServer@209] - 用户访问IP=127.0.0.1
+[m[2;32m2015-12-08 17:04:05,169 - INFO  [Thread-14:CodeHelperServer@212] - 根据IP查询省份=IA
+[m[2;32m2015-12-08 17:04:08,133 - INFO  [Thread-12:CodeHelperServer@209] - 用户访问IP=127.0.0.1
+[m[2;32m2015-12-08 17:04:08,134 - INFO  [Thread-12:CodeHelperServer@212] - 根据IP查询省份=IA
+[m[7;31m2015-12-08 17:04:15,171 - ERROR [Thread-14:JuiceInvocationHandler@63] - Latch request time out..
+[m[7;31m2015-12-08 17:04:15,172 - ERROR [Thread-14:CodeHelperServer@347] - 
+[m[7;31m2015-12-08 17:04:15,172 - ERROR [Thread-14:DefaultJuiceHandler@84] - string
+[mjava.lang.NullPointerException: string
+	at org.jboss.netty.buffer.ChannelBuffers.copiedBuffer(ChannelBuffers.java:734)
+	at org.jboss.netty.buffer.ChannelBuffers.copiedBuffer(ChannelBuffers.java:711)
+	at com.juice.orange.game.handler.JuiceHttpResponse.content(JuiceHttpResponse.java:110)
+	at com.juice.orange.game.handler.JuiceHttpResponse.content(JuiceHttpResponse.java:33)
+	at com.klw.fastfun.pay.view.app.service.CodeHelperServer.pay(CodeHelperServer.java:349)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at com.juice.orange.game.handler.DefaultJuiceHandler.handleHttpRequest(DefaultJuiceHandler.java:81)
+	at com.juice.orange.game.handler.DefaultJuiceHandler.handlerRequest(DefaultJuiceHandler.java:35)
+	at com.juice.orange.game.handler.JuiceHttpControl.nextHandler(JuiceHttpControl.java:84)
+	at com.juice.orange.game.handler.JuiceHttpControl.nextHandler(JuiceHttpControl.java:67)
+	at com.juice.orange.game.util.threadpool.JuiceThreadPool$JuiceWorkThread.run(JuiceThreadPool.java:70)
+[2;35m2015-12-08 17:04:15,174 - WARN  [Thread-14:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :12491, uri:/code/pay?cpid=sz01&fee=1&cpparam=38-2015120816485473023800&imei=862974021822864&imsi=460078472020893&aimei=1&aimsi=1&iccid=&pmodel=Lenovo+A828t&osversion=4.2.1&nwtype=WIFI&ctech=WIFI&cid=180186895&lac=42366&lat=0.0&lon=0.0&pck=com.jasmine.kkapp&app=kkapp&count=1&enMethod=
+[m[7;31m2015-12-08 17:04:18,136 - ERROR [Thread-12:JuiceInvocationHandler@63] - Latch request time out..
+[m[7;31m2015-12-08 17:04:18,137 - ERROR [Thread-12:CodeHelperServer@347] - 
+[m[7;31m2015-12-08 17:04:18,137 - ERROR [Thread-12:DefaultJuiceHandler@84] - string
+[mjava.lang.NullPointerException: string
+	at org.jboss.netty.buffer.ChannelBuffers.copiedBuffer(ChannelBuffers.java:734)
+	at org.jboss.netty.buffer.ChannelBuffers.copiedBuffer(ChannelBuffers.java:711)
+	at com.juice.orange.game.handler.JuiceHttpResponse.content(JuiceHttpResponse.java:110)
+	at com.juice.orange.game.handler.JuiceHttpResponse.content(JuiceHttpResponse.java:33)
+	at com.klw.fastfun.pay.view.app.service.CodeHelperServer.pay(CodeHelperServer.java:349)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at com.juice.orange.game.handler.DefaultJuiceHandler.handleHttpRequest(DefaultJuiceHandler.java:81)
+	at com.juice.orange.game.handler.DefaultJuiceHandler.handlerRequest(DefaultJuiceHandler.java:35)
+	at com.juice.orange.game.handler.JuiceHttpControl.nextHandler(JuiceHttpControl.java:84)
+	at com.juice.orange.game.handler.JuiceHttpControl.nextHandler(JuiceHttpControl.java:67)
+	at com.juice.orange.game.util.threadpool.JuiceThreadPool$JuiceWorkThread.run(JuiceThreadPool.java:70)
+[2;35m2015-12-08 17:04:18,139 - WARN  [Thread-12:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :27964, uri:/code/pay?cpid=sz01&fee=1&cpparam=38-2015120816485473023800&imei=862974021822864&imsi=460078472020893&aimei=1&aimsi=1&iccid=&pmodel=Lenovo+A828t&osversion=4.2.1&nwtype=WIFI&ctech=WIFI&cid=180186895&lac=42366&lat=0.0&lon=0.0&pck=com.jasmine.kkapp&app=kkapp&count=1&enMethod=
+[m[2;32m2015-12-08 17:04:52,316 - INFO  [main:ServerBootstrap@67] - Configuration Server bootstrap params.......
+[m[2;32m2015-12-08 17:04:52,316 - INFO  [main:ServerBootstrap@68] - Server protocol:	http
+[m[2;32m2015-12-08 17:04:52,316 - INFO  [main:ServerBootstrap@69] - Server port:	9911
+[m[2;32m2015-12-08 17:04:52,690 - INFO  [main:ServerBootstrap@78] - Configuration Remote Server.......
+[m[2;32m2015-12-08 17:04:52,706 - INFO  [main:ServerBootstrap@80] - Add Remote Server - Name:FastFunSystem;Address:localhost;Port:9912
+[m[2;32m2015-12-08 17:04:52,706 - INFO  [main:Application@23] - Init servers......
+[m[2;32m2015-12-08 17:04:52,832 - INFO  [main:ServerBootstrap@92] - Application PID:	10424
+[m[2;32m2015-12-08 17:05:03,636 - INFO  [Thread-31:CodeHelperServer@177] - 请求header信息：[Host=127.0.0.1:9911, Connection=keep-alive, Accept=text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8, User-Agent=Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.71 Safari/537.36, Accept-Encoding=gzip, deflate, sdch, Accept-Language=zh-CN,zh;q=0.8]
+[m[2;32m2015-12-08 17:05:07,776 - INFO  [Thread-31:CodeHelperServer@209] - 用户访问IP=127.0.0.1
+[m[2;32m2015-12-08 17:05:07,787 - INFO  [Thread-31:CodeHelperServer@212] - 根据IP查询省份=IA
+[m[2;32m2015-12-08 17:05:09,582 - INFO  [Thread-31:CodeHelperServer@342] - 合作方:十指
+通道方:广州力聚sdk
+通道spId:sd01
+省份:IA
+计费点:1
+订单号:12sdf88882589790
+指令内容:{"code":"0","code_explain":"%E8%8E%B7%E5%8F%96%E6%8C%87%E4%BB%A4%E6%88%90%E5%8A%9F","content":[{"delayed":"0","filterrsp":[],"order_id":"12sdf88882589790","pay_content":{"channelid":"klwlj01","cpid":"5093","cpkey":"b12d8ff65a34c061","pay_code":"006"},"pay_type":"3001"}],"dialog":0}
+[m[2;35m2015-12-08 17:05:09,651 - WARN  [Thread-31:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :6021, uri:/code/pay?cpid=sz01&fee=1&cpparam=38-2015120816485473023800&imei=862974021822864&imsi=460078472020893&aimei=1&aimsi=1&iccid=&pmodel=Lenovo+A828t&osversion=4.2.1&nwtype=WIFI&ctech=WIFI&cid=180186895&lac=42366&lat=0.0&lon=0.0&pck=com.jasmine.kkapp&app=kkapp&count=1&enMethod=
+[m[7;31m2015-12-08 17:05:09,673 - ERROR [Thread-1:DefaultJuiceHandler@90] - java.lang.ArrayIndexOutOfBoundsException: 2
+[m[7;31m2015-12-08 17:05:09,674 - ERROR [Thread-1:DefaultJuiceHandler@91] - com.juice.orange.game.exception.JuiceException: handler request error,path:/favicon.ico;param:null
+[m[2;35m2015-12-08 17:05:09,674 - WARN  [Thread-1:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :1, uri:/favicon.ico
+[m[7;31m2015-12-08 17:12:22,488 - ERROR [Thread-11:DefaultJuiceHandler@90] - java.lang.ArrayIndexOutOfBoundsException: 2
+[m[7;31m2015-12-08 17:12:22,488 - ERROR [Thread-11:DefaultJuiceHandler@91] - com.juice.orange.game.exception.JuiceException: handler request error,path:/favicon.ico;param:null
+[m[2;35m2015-12-08 17:12:22,488 - WARN  [Thread-11:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :16, uri:/favicon.ico
+[m

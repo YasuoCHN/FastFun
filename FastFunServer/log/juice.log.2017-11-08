@@ -1,0 +1,333 @@
+[2;32m2017-11-08 14:10:10,103 - INFO  [main:ServerBootstrap@95] - Configuration Server bootstrap params.......
+[m[2;32m2017-11-08 14:10:10,107 - INFO  [main:ServerBootstrap@96] - Server protocol:	http
+[m[2;32m2017-11-08 14:10:10,107 - INFO  [main:ServerBootstrap@97] - Server port:	9911
+[m[2;32m2017-11-08 14:10:10,326 - INFO  [main:ServerBootstrap@106] - Configuration Remote Server.......
+[m[2;32m2017-11-08 14:10:10,326 - INFO  [main:ServerBootstrap@108] - Add Remote Server - Name:FastFunSystem;Address:localhost;Port:9912
+[m[2;35m2017-11-08 14:10:10,374 - WARN  [main:XMemcachedClient@727] - XMemcachedClient use Binary protocol
+[m[2;32m2017-11-08 14:10:10,401 - INFO  [main:SelectorManager@37] - Creating 16 reactors...
+[m[2;35m2017-11-08 14:10:10,411 - WARN  [main:AbstractController@372] - The Controller started at localhost/127.0.0.1:0 ...
+[m[7;31m2017-11-08 14:10:11,423 - ERROR [main:XMemcachedClient@593] - connect to 127.0.0.1:11211 error
+[mjava.util.concurrent.ExecutionException: java.net.ConnectException: Connection refused: no further information
+	at com.google.code.yanf4j.core.impl.FutureImpl.get(FutureImpl.java:145)
+	at net.rubyeye.xmemcached.XMemcachedClient.connect(XMemcachedClient.java:582)
+	at net.rubyeye.xmemcached.XMemcachedClient.<init>(XMemcachedClient.java:870)
+	at net.rubyeye.xmemcached.XMemcachedClientBuilder.build(XMemcachedClientBuilder.java:340)
+	at com.juice.orange.game.cached.MemcachedResource.buildMemcached(MemcachedResource.java:34)
+	at com.klw.fastfun.pay.view.app.ServerBootstrap.main(ServerBootstrap.java:78)
+Caused by: java.net.ConnectException: Connection refused: no further information
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(Unknown Source)
+	at net.rubyeye.xmemcached.impl.MemcachedConnector.onConnect(MemcachedConnector.java:404)
+	at com.google.code.yanf4j.nio.impl.Reactor.dispatchEvent(Reactor.java:303)
+	at com.google.code.yanf4j.nio.impl.Reactor.run(Reactor.java:142)
+[7;31m2017-11-08 14:10:11,425 - ERROR [Xmemcached-Reactor-0:MemcachedConnector$InnerControllerStateListener@558] - Exception occured in controller
+[mjava.io.IOException: Connect to 127.0.0.1:11211 fail,Connection refused: no further information
+	at net.rubyeye.xmemcached.impl.MemcachedConnector.onConnect(MemcachedConnector.java:423)
+	at com.google.code.yanf4j.nio.impl.Reactor.dispatchEvent(Reactor.java:303)
+	at com.google.code.yanf4j.nio.impl.Reactor.run(Reactor.java:142)
+[7;31m2017-11-08 14:10:11,432 - ERROR [Xmemcached-Reactor-0:Reactor@325] - Reactor dispatch events error
+[mjava.io.IOException: Connect to 127.0.0.1:11211 fail,Connection refused: no further information
+	at net.rubyeye.xmemcached.impl.MemcachedConnector.onConnect(MemcachedConnector.java:423)
+	at com.google.code.yanf4j.nio.impl.Reactor.dispatchEvent(Reactor.java:303)
+	at com.google.code.yanf4j.nio.impl.Reactor.run(Reactor.java:142)
+[7;31m2017-11-08 14:10:11,433 - ERROR [main:XMemcachedClient@627] - Connect to 127.0.0.1:11211 fail
+[mjava.util.concurrent.ExecutionException: java.net.ConnectException: Connection refused: no further information
+	at com.google.code.yanf4j.core.impl.FutureImpl.get(FutureImpl.java:145)
+	at net.rubyeye.xmemcached.XMemcachedClient.connect(XMemcachedClient.java:582)
+	at net.rubyeye.xmemcached.XMemcachedClient.<init>(XMemcachedClient.java:870)
+	at net.rubyeye.xmemcached.XMemcachedClientBuilder.build(XMemcachedClientBuilder.java:340)
+	at com.juice.orange.game.cached.MemcachedResource.buildMemcached(MemcachedResource.java:34)
+	at com.klw.fastfun.pay.view.app.ServerBootstrap.main(ServerBootstrap.java:78)
+Caused by: java.net.ConnectException: Connection refused: no further information
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(Unknown Source)
+	at net.rubyeye.xmemcached.impl.MemcachedConnector.onConnect(MemcachedConnector.java:404)
+	at com.google.code.yanf4j.nio.impl.Reactor.dispatchEvent(Reactor.java:303)
+	at com.google.code.yanf4j.nio.impl.Reactor.run(Reactor.java:142)
+[2;32m2017-11-08 14:10:11,435 - INFO  [main:Application@25] - Init servers......
+[m[2;32m2017-11-08 14:10:11,522 - INFO  [main:ServerBootstrap@120] - Application PID:	15532
+[m[2;35m2017-11-08 14:10:13,434 - WARN  [Heal-Session-Thread:MemcachedConnector$SessionMonitor@125] - Trying to connect to 127.0.0.1:11211 for 1 times
+[m[2;35m2017-11-08 14:10:13,443 - WARN  [Xmemcached-Reactor-0:MemcachedConnector@251] - Add a session: 127.0.0.1:11211
+[m[2;32m2017-11-08 14:14:29,925 - INFO  [Thread-81:CodeHelperServer@2678] - reqPayOtherWY请求header信息：[Host=127.0.0.1:9911, Connection=keep-alive, User-Agent=Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36, Upgrade-Insecure-Requests=1, Accept=text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8, Accept-Encoding=gzip, deflate, br, Accept-Language=zh-CN,zh;q=0.8,en;q=0.6]
+[m[2;32m2017-11-08 14:14:29,926 - INFO  [Thread-81:CodeHelperServer@2716] - 用户访问IP=112.124.10.89
+[m[7;31m2017-11-08 14:14:40,011 - ERROR [Thread-81:JuiceInvocationHandler@61] - Latch request time out..
+[m[7;31m2017-11-08 14:14:40,011 - ERROR [Thread-81:CodeHelperServer@2801] - 
+[m[2;35m2017-11-08 14:14:40,025 - WARN  [Thread-81:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :10102, uri:/code/reqPayOtherWY?cpid=test03&imei=357806046192158&cpparam=klwtest&fee=1&ip=112.124.10.89&goodsname=%E6%B5%8B%E8%AF%95&app=%e6%b5%8b%e8%af%95app&playerid=abc123
+[m[7;31m2017-11-08 14:14:40,047 - ERROR [Thread-51:DefaultJuiceHandler@90] - java.lang.ArrayIndexOutOfBoundsException: 2
+[m[7;31m2017-11-08 14:14:40,049 - ERROR [Thread-51:DefaultJuiceHandler@91] - com.juice.orange.game.exception.JuiceException: handler request error,path:/favicon.ico;param:null
+[m[2;35m2017-11-08 14:14:40,049 - WARN  [Thread-51:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :2, uri:/favicon.ico
+[m[2;32m2017-11-08 14:15:55,214 - INFO  [Thread-14:CodeHelperServer@2678] - reqPayOtherWY请求header信息：[Host=127.0.0.1:9911, Connection=keep-alive, User-Agent=Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36, Upgrade-Insecure-Requests=1, Accept=text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8, Accept-Encoding=gzip, deflate, br, Accept-Language=zh-CN,zh;q=0.8,en;q=0.6]
+[m[2;32m2017-11-08 14:15:55,215 - INFO  [Thread-14:CodeHelperServer@2716] - 用户访问IP=112.124.10.89
+[m[7;31m2017-11-08 14:16:05,217 - ERROR [Thread-14:JuiceInvocationHandler@61] - Latch request time out..
+[m[7;31m2017-11-08 14:16:05,217 - ERROR [Thread-14:CodeHelperServer@2801] - 
+[m[2;35m2017-11-08 14:16:05,219 - WARN  [Thread-14:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :10005, uri:/code/reqPayOtherWY?cpid=test03&imei=357806046192158&cpparam=klwtest&fee=1&ip=112.124.10.89&goodsname=%E6%B5%8B%E8%AF%95&app=%E6%B5%8B%E8%AF%95app&playerid=abc123
+[m[7;31m2017-11-08 14:16:05,242 - ERROR [Thread-91:DefaultJuiceHandler@90] - java.lang.ArrayIndexOutOfBoundsException: 2
+[m[7;31m2017-11-08 14:16:05,242 - ERROR [Thread-91:DefaultJuiceHandler@91] - com.juice.orange.game.exception.JuiceException: handler request error,path:/favicon.ico;param:null
+[m[2;35m2017-11-08 14:16:05,242 - WARN  [Thread-91:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :1, uri:/favicon.ico
+[m[2;32m2017-11-08 14:17:40,002 - INFO  [main:ServerBootstrap@95] - Configuration Server bootstrap params.......
+[m[2;32m2017-11-08 14:17:40,004 - INFO  [main:ServerBootstrap@96] - Server protocol:	http
+[m[2;32m2017-11-08 14:17:40,004 - INFO  [main:ServerBootstrap@97] - Server port:	9911
+[m[2;32m2017-11-08 14:17:40,168 - INFO  [main:ServerBootstrap@106] - Configuration Remote Server.......
+[m[2;32m2017-11-08 14:17:40,168 - INFO  [main:ServerBootstrap@108] - Add Remote Server - Name:FastFunSystem;Address:localhost;Port:9912
+[m[2;35m2017-11-08 14:17:40,206 - WARN  [main:XMemcachedClient@727] - XMemcachedClient use Binary protocol
+[m[2;32m2017-11-08 14:17:40,228 - INFO  [main:SelectorManager@37] - Creating 16 reactors...
+[m[2;35m2017-11-08 14:17:40,238 - WARN  [main:AbstractController@372] - The Controller started at localhost/127.0.0.1:0 ...
+[m[2;35m2017-11-08 14:17:40,246 - WARN  [Xmemcached-Reactor-0:MemcachedConnector@251] - Add a session: 127.0.0.1:11211
+[m[2;32m2017-11-08 14:17:40,246 - INFO  [main:Application@25] - Init servers......
+[m[2;32m2017-11-08 14:17:40,301 - INFO  [main:ServerBootstrap@120] - Application PID:	16552
+[m[2;32m2017-11-08 14:17:44,346 - INFO  [Thread-21:CodeHelperServer@2678] - reqPayOtherWY请求header信息：[Host=127.0.0.1:9911, Connection=keep-alive, Cache-Control=max-age=0, User-Agent=Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36, Upgrade-Insecure-Requests=1, Accept=text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8, Accept-Encoding=gzip, deflate, br, Accept-Language=zh-CN,zh;q=0.8,en;q=0.6]
+[m[2;32m2017-11-08 14:17:44,347 - INFO  [Thread-21:CodeHelperServer@2716] - 用户访问IP=112.124.10.89
+[m[7;31m2017-11-08 14:17:54,431 - ERROR [Thread-21:JuiceInvocationHandler@61] - Latch request time out..
+[m[7;31m2017-11-08 14:17:54,432 - ERROR [Thread-21:CodeHelperServer@2801] - 
+[m[2;35m2017-11-08 14:17:54,468 - WARN  [Thread-21:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :10124, uri:/code/reqPayOtherWY?cpid=test03&imei=357806046192158&cpparam=klwtest&fee=1&ip=112.124.10.89&goodsname=%E6%B5%8B%E8%AF%95&app=%E6%B5%8B%E8%AF%95app&playerid=abc123
+[m[7;31m2017-11-08 14:17:54,489 - ERROR [Thread-12:DefaultJuiceHandler@90] - java.lang.ArrayIndexOutOfBoundsException: 2
+[m[7;31m2017-11-08 14:17:54,490 - ERROR [Thread-12:DefaultJuiceHandler@91] - com.juice.orange.game.exception.JuiceException: handler request error,path:/favicon.ico;param:null
+[m[2;35m2017-11-08 14:17:54,490 - WARN  [Thread-12:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :1, uri:/favicon.ico
+[m[2;32m2017-11-08 15:21:19,349 - INFO  [main:ServerBootstrap@95] - Configuration Server bootstrap params.......
+[m[2;32m2017-11-08 15:21:19,351 - INFO  [main:ServerBootstrap@96] - Server protocol:	http
+[m[2;32m2017-11-08 15:21:19,351 - INFO  [main:ServerBootstrap@97] - Server port:	9911
+[m[2;32m2017-11-08 15:21:19,527 - INFO  [main:ServerBootstrap@106] - Configuration Remote Server.......
+[m[2;32m2017-11-08 15:21:19,528 - INFO  [main:ServerBootstrap@108] - Add Remote Server - Name:FastFunSystem;Address:localhost;Port:9912
+[m[2;35m2017-11-08 15:21:19,572 - WARN  [main:XMemcachedClient@727] - XMemcachedClient use Binary protocol
+[m[2;32m2017-11-08 15:21:19,593 - INFO  [main:SelectorManager@37] - Creating 16 reactors...
+[m[2;35m2017-11-08 15:21:19,603 - WARN  [main:AbstractController@372] - The Controller started at localhost/127.0.0.1:0 ...
+[m[2;35m2017-11-08 15:21:19,611 - WARN  [Xmemcached-Reactor-0:MemcachedConnector@251] - Add a session: 127.0.0.1:11211
+[m[2;32m2017-11-08 15:21:19,611 - INFO  [main:Application@25] - Init servers......
+[m[2;32m2017-11-08 15:21:19,665 - INFO  [main:ServerBootstrap@120] - Application PID:	11184
+[m[2;32m2017-11-08 15:21:28,642 - INFO  [Thread-21:CodeHelperServer@2678] - reqPayOtherWY请求header信息：[Host=127.0.0.1:9911, Connection=keep-alive, Cache-Control=max-age=0, User-Agent=Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36, Upgrade-Insecure-Requests=1, Accept=text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8, Accept-Encoding=gzip, deflate, br, Accept-Language=zh-CN,zh;q=0.8,en;q=0.6]
+[m[2;32m2017-11-08 15:21:28,643 - INFO  [Thread-21:CodeHelperServer@2716] - 用户访问IP=112.124.10.89
+[m[7;31m2017-11-08 15:21:30,222 - ERROR [Thread-21:CodeHelperServer@2800] - / by zero
+[m[2;35m2017-11-08 15:21:30,232 - WARN  [Thread-21:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :1592, uri:/code/reqPayOtherWY?cpid=test03&imei=357806046192158&cpparam=klwtest&fee=1&ip=112.124.10.89&goodsname=%E6%B5%8B%E8%AF%95&app=%E6%B5%8B%E8%AF%95app&playerid=abc123
+[m[7;31m2017-11-08 15:21:30,239 - ERROR [Thread-61:DefaultJuiceHandler@90] - java.lang.ArrayIndexOutOfBoundsException: 2
+[m[7;31m2017-11-08 15:21:30,240 - ERROR [Thread-61:DefaultJuiceHandler@91] - com.juice.orange.game.exception.JuiceException: handler request error,path:/favicon.ico;param:null
+[m[2;35m2017-11-08 15:21:30,240 - WARN  [Thread-61:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :1, uri:/favicon.ico
+[m[2;32m2017-11-08 15:22:07,753 - INFO  [Thread-131:CodeHelperServer@2678] - reqPayOtherWY请求header信息：[Host=127.0.0.1:9911, Connection=keep-alive, Cache-Control=max-age=0, User-Agent=Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36, Upgrade-Insecure-Requests=1, Accept=text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8, Accept-Encoding=gzip, deflate, br, Accept-Language=zh-CN,zh;q=0.8,en;q=0.6]
+[m[2;32m2017-11-08 15:22:07,754 - INFO  [Thread-131:CodeHelperServer@2716] - 用户访问IP=112.124.10.89
+[m[7;31m2017-11-08 15:22:12,580 - ERROR [Thread-131:CodeHelperServer@2800] - / by zero
+[m[2;35m2017-11-08 15:22:12,583 - WARN  [Thread-131:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :4831, uri:/code/reqPayOtherWY?cpid=test03&imei=357806046192158&cpparam=klwtest&fee=1&ip=112.124.10.89&goodsname=%E6%B5%8B%E8%AF%95&app=%E6%B5%8B%E8%AF%95app&playerid=abc123
+[m[7;31m2017-11-08 15:22:12,614 - ERROR [Thread-101:DefaultJuiceHandler@90] - java.lang.ArrayIndexOutOfBoundsException: 2
+[m[7;31m2017-11-08 15:22:12,616 - ERROR [Thread-101:DefaultJuiceHandler@91] - com.juice.orange.game.exception.JuiceException: handler request error,path:/favicon.ico;param:null
+[m[2;35m2017-11-08 15:22:12,616 - WARN  [Thread-101:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :3, uri:/favicon.ico
+[m[2;32m2017-11-08 15:22:27,405 - INFO  [Thread-62:CodeHelperServer@2678] - reqPayOtherWY请求header信息：[Host=127.0.0.1:9911, Connection=keep-alive, Cache-Control=max-age=0, User-Agent=Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36, Upgrade-Insecure-Requests=1, Accept=text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8, Accept-Encoding=gzip, deflate, br, Accept-Language=zh-CN,zh;q=0.8,en;q=0.6]
+[m[2;32m2017-11-08 15:22:27,406 - INFO  [Thread-62:CodeHelperServer@2716] - 用户访问IP=112.124.10.89
+[m[7;31m2017-11-08 15:22:39,721 - ERROR [Thread-62:JuiceInvocationHandler@61] - Latch request time out..
+[m[7;31m2017-11-08 15:22:42,285 - ERROR [Thread-62:CodeHelperServer@2800] - 
+[m[7;31m2017-11-08 15:22:43,759 - ERROR [Thread-133:DefaultJuiceHandler@90] - java.lang.ArrayIndexOutOfBoundsException: 2
+[m[7;31m2017-11-08 15:22:43,759 - ERROR [Thread-133:DefaultJuiceHandler@91] - com.juice.orange.game.exception.JuiceException: handler request error,path:/favicon.ico;param:null
+[m[2;35m2017-11-08 15:22:43,759 - WARN  [Thread-133:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :1, uri:/favicon.ico
+[m[2;35m2017-11-08 15:22:47,100 - WARN  [Thread-62:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :19697, uri:/code/reqPayOtherWY?cpid=test03&imei=357806046192158&cpparam=klwtest&fee=1&ip=112.124.10.89&goodsname=%E6%B5%8B%E8%AF%95&app=%E6%B5%8B%E8%AF%95app&playerid=abc123
+[m[2;32m2017-11-08 15:23:05,373 - INFO  [Thread-1:CodeHelperServer@2678] - reqPayOtherWY请求header信息：[Host=127.0.0.1:9911, Connection=keep-alive, Cache-Control=max-age=0, User-Agent=Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36, Upgrade-Insecure-Requests=1, Accept=text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8, Accept-Encoding=gzip, deflate, br, Accept-Language=zh-CN,zh;q=0.8,en;q=0.6]
+[m[2;32m2017-11-08 15:23:05,375 - INFO  [Thread-1:CodeHelperServer@2716] - 用户访问IP=112.124.10.89
+[m[7;31m2017-11-08 15:23:15,377 - ERROR [Thread-1:JuiceInvocationHandler@61] - Latch request time out..
+[m[7;31m2017-11-08 15:23:15,377 - ERROR [Thread-1:CodeHelperServer@2800] - 
+[m[2;35m2017-11-08 15:23:15,378 - WARN  [Thread-1:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :10005, uri:/code/reqPayOtherWY?cpid=test03&imei=357806046192158&cpparam=klwtest&fee=1&ip=112.124.10.89&goodsname=%E6%B5%8B%E8%AF%95&app=%E6%B5%8B%E8%AF%95app&playerid=abc123
+[m[7;31m2017-11-08 15:23:15,396 - ERROR [Thread-24:DefaultJuiceHandler@90] - java.lang.ArrayIndexOutOfBoundsException: 2
+[m[7;31m2017-11-08 15:23:15,397 - ERROR [Thread-24:DefaultJuiceHandler@91] - com.juice.orange.game.exception.JuiceException: handler request error,path:/favicon.ico;param:null
+[m[2;35m2017-11-08 15:23:15,397 - WARN  [Thread-24:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :1, uri:/favicon.ico
+[m[2;32m2017-11-08 15:32:10,908 - INFO  [main:ServerBootstrap@95] - Configuration Server bootstrap params.......
+[m[2;32m2017-11-08 15:32:10,910 - INFO  [main:ServerBootstrap@96] - Server protocol:	http
+[m[2;32m2017-11-08 15:32:10,910 - INFO  [main:ServerBootstrap@97] - Server port:	9911
+[m[2;32m2017-11-08 15:32:11,073 - INFO  [main:ServerBootstrap@106] - Configuration Remote Server.......
+[m[2;32m2017-11-08 15:32:11,073 - INFO  [main:ServerBootstrap@108] - Add Remote Server - Name:FastFunSystem;Address:localhost;Port:9912
+[m[2;35m2017-11-08 15:32:11,112 - WARN  [main:XMemcachedClient@727] - XMemcachedClient use Binary protocol
+[m[2;32m2017-11-08 15:32:11,136 - INFO  [main:SelectorManager@37] - Creating 16 reactors...
+[m[2;35m2017-11-08 15:32:11,146 - WARN  [main:AbstractController@372] - The Controller started at localhost/127.0.0.1:0 ...
+[m[2;35m2017-11-08 15:32:11,154 - WARN  [Xmemcached-Reactor-0:MemcachedConnector@251] - Add a session: 127.0.0.1:11211
+[m[2;32m2017-11-08 15:32:11,154 - INFO  [main:Application@25] - Init servers......
+[m[2;32m2017-11-08 15:32:11,211 - INFO  [main:ServerBootstrap@120] - Application PID:	18236
+[m[2;32m2017-11-08 15:36:15,700 - INFO  [Thread-121:CodeHelperServer@2678] - reqPayOtherWY请求header信息：[Host=127.0.0.1:9911, Connection=keep-alive, Cache-Control=max-age=0, User-Agent=Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36, Upgrade-Insecure-Requests=1, Accept=text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8, Accept-Encoding=gzip, deflate, br, Accept-Language=zh-CN,zh;q=0.8,en;q=0.6]
+[m[2;32m2017-11-08 15:36:15,701 - INFO  [Thread-121:CodeHelperServer@2716] - 用户访问IP=112.124.10.89
+[m[7;31m2017-11-08 15:36:25,789 - ERROR [Thread-121:JuiceInvocationHandler@61] - Latch request time out..
+[m[7;31m2017-11-08 15:36:25,790 - ERROR [Thread-121:CodeHelperServer@2800] - 
+[m[2;35m2017-11-08 15:36:25,823 - WARN  [Thread-121:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :10125, uri:/code/reqPayOtherWY?cpid=test03&imei=357806046192158&cpparam=klwtest&fee=1&ip=112.124.10.89&goodsname=%E6%B5%8B%E8%AF%95&app=%E6%B5%8B%E8%AF%95app&playerid=abc123
+[m[7;31m2017-11-08 15:36:25,840 - ERROR [Thread-82:DefaultJuiceHandler@90] - java.lang.ArrayIndexOutOfBoundsException: 2
+[m[7;31m2017-11-08 15:36:25,840 - ERROR [Thread-82:DefaultJuiceHandler@91] - com.juice.orange.game.exception.JuiceException: handler request error,path:/favicon.ico;param:null
+[m[2;35m2017-11-08 15:36:25,841 - WARN  [Thread-82:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :2, uri:/favicon.ico
+[m[2;32m2017-11-08 15:43:16,293 - INFO  [main:ServerBootstrap@95] - Configuration Server bootstrap params.......
+[m[2;32m2017-11-08 15:43:16,295 - INFO  [main:ServerBootstrap@96] - Server protocol:	http
+[m[2;32m2017-11-08 15:43:16,295 - INFO  [main:ServerBootstrap@97] - Server port:	9911
+[m[2;32m2017-11-08 15:43:16,430 - INFO  [main:ServerBootstrap@106] - Configuration Remote Server.......
+[m[2;32m2017-11-08 15:43:16,431 - INFO  [main:ServerBootstrap@108] - Add Remote Server - Name:FastFunSystem;Address:localhost;Port:9912
+[m[2;35m2017-11-08 15:43:16,459 - WARN  [main:XMemcachedClient@727] - XMemcachedClient use Binary protocol
+[m[2;32m2017-11-08 15:43:16,476 - INFO  [main:SelectorManager@37] - Creating 16 reactors...
+[m[2;35m2017-11-08 15:43:16,485 - WARN  [main:AbstractController@372] - The Controller started at localhost/127.0.0.1:0 ...
+[m[2;35m2017-11-08 15:43:16,491 - WARN  [Xmemcached-Reactor-0:MemcachedConnector@251] - Add a session: 127.0.0.1:11211
+[m[2;32m2017-11-08 15:43:16,492 - INFO  [main:Application@25] - Init servers......
+[m[2;32m2017-11-08 15:43:16,515 - INFO  [main:ServerBootstrap@120] - Application PID:	3088
+[m[2;32m2017-11-08 15:43:19,661 - INFO  [Thread-41:CodeHelperServer@2678] - reqPayOtherWY请求header信息：[Host=127.0.0.1:9911, Connection=keep-alive, Cache-Control=max-age=0, User-Agent=Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36, Upgrade-Insecure-Requests=1, Accept=text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8, Accept-Encoding=gzip, deflate, br, Accept-Language=zh-CN,zh;q=0.8,en;q=0.6]
+[m[2;32m2017-11-08 15:43:19,662 - INFO  [Thread-41:CodeHelperServer@2716] - 用户访问IP=112.124.10.89
+[m[2;32m2017-11-08 15:43:19,827 - INFO  [Thread-41:HttpTool@388] - 指令url=https://pay.swiftpass.cn/pay/gateway
+[m[2;32m2017-11-08 15:43:19,827 - INFO  [Thread-41:HttpTool@389] - 同步内容=<xml><nonce_str>LP3miSs53ZlteoNQXQOZcNf7K3FPXulC</nonce_str><sign>123856DAA80CBF5793C907FB06D2A72A</sign><mch_id>101500214060</mch_id><body>测试app-测试</body><notify_url>http://otherpay.xushihudong.com/fee/feexszfbsmback</notify_url><mch_create_ip>112.124.10.89</mch_create_ip><mch_app_id>http://huizhibt.com/</mch_app_id><out_trade_no>11sdt01717280197</out_trade_no><device_info>AND_WAP</device_info><service>pay.weixin.wappay</service><total_fee>1</total_fee><attach>sd72</attach><mch_app_name>喵喵咪呀</mch_app_name></xml>
+[m[2;32m2017-11-08 15:43:21,482 - INFO  [Thread-41:CodeReqHelper@1392] - 微信H5sd52请求结果:<xml><charset><![CDATA[UTF-8]]></charset><mch_id><![CDATA[101500214060]]></mch_id><nonce_str><![CDATA[LP3miSs53ZlteoNQXQOZcNf7K3FPXulC]]></nonce_str><pay_info><![CDATA[https://statecheck.swiftpass.cn/pay/wappay?token_id=2da9a79fa2440bedf6acdb27c46491301&service=pay.weixin.wappayv2]]></pay_info><result_code><![CDATA[0]]></result_code><sign><![CDATA[78923319C24CDFB215A5C25138A803B7]]></sign><sign_type><![CDATA[MD5]]></sign_type><status><![CDATA[0]]></status><version><![CDATA[2.0]]></version></xml>
+[m[2;32m2017-11-08 15:43:21,560 - INFO  [Thread-41:CodeReqHelper@1416] - 微信H5sd52生成json:{"orderid":"11sdt01717280197","spid":"sd72","status":"0","url":"https://statecheck.swiftpass.cn/pay/wappay?token_id=2da9a79fa2440bedf6acdb27c46491301&service=pay.weixin.wappayv2"}
+[m[2;32m2017-11-08 15:43:21,578 - INFO  [Thread-41:CodeHelperServer@2796] - 合作方:test03
+通道方:sd72
+省份:
+计费点:1
+订单号:11sdt01717280197
+指令内容:{"orderid":"11sdt01717280197","spid":"sd72","status":"0","url":"https://statecheck.swiftpass.cn/pay/wappay?token_id=2da9a79fa2440bedf6acdb27c46491301&service=pay.weixin.wappayv2"}
+[m[2;35m2017-11-08 15:43:21,595 - WARN  [Thread-41:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :1936, uri:/code/reqPayOtherWY?cpid=test03&imei=357806046192158&cpparam=klwtest&fee=1&ip=112.124.10.89&goodsname=%E6%B5%8B%E8%AF%95&app=%E6%B5%8B%E8%AF%95app&playerid=abc123
+[m[7;31m2017-11-08 15:43:21,606 - ERROR [Thread-151:DefaultJuiceHandler@90] - java.lang.ArrayIndexOutOfBoundsException: 2
+[m[7;31m2017-11-08 15:43:21,607 - ERROR [Thread-151:DefaultJuiceHandler@91] - com.juice.orange.game.exception.JuiceException: handler request error,path:/favicon.ico;param:null
+[m[2;35m2017-11-08 15:43:21,608 - WARN  [Thread-151:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :2, uri:/favicon.ico
+[m[2;32m2017-11-08 15:43:23,755 - INFO  [Thread-21:CodeHelperServer@2678] - reqPayOtherWY请求header信息：[Host=127.0.0.1:9911, Connection=keep-alive, Cache-Control=max-age=0, User-Agent=Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36, Upgrade-Insecure-Requests=1, Accept=text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8, Accept-Encoding=gzip, deflate, br, Accept-Language=zh-CN,zh;q=0.8,en;q=0.6]
+[m[2;32m2017-11-08 15:43:23,756 - INFO  [Thread-21:CodeHelperServer@2716] - 用户访问IP=112.124.10.89
+[m[2;32m2017-11-08 15:43:23,777 - INFO  [Thread-21:HttpTool@388] - 指令url=https://pay.swiftpass.cn/pay/gateway
+[m[2;32m2017-11-08 15:43:23,777 - INFO  [Thread-21:HttpTool@389] - 同步内容=<xml><nonce_str>trT92kr0F4aE5Xk127rUzFw6abmUk45u</nonce_str><sign>7E7BA6911D96D41072AC8E09273BA028</sign><mch_id>101500214060</mch_id><body>测试app-测试</body><notify_url>http://otherpay.xushihudong.com/fee/feexszfbsmback</notify_url><mch_create_ip>112.124.10.89</mch_create_ip><mch_app_id>http://huizhibt.com/</mch_app_id><out_trade_no>11sde67895373631</out_trade_no><device_info>AND_WAP</device_info><service>pay.weixin.wappay</service><total_fee>1</total_fee><attach>sd72</attach><mch_app_name>喵喵咪呀</mch_app_name></xml>
+[m[2;32m2017-11-08 15:43:23,842 - INFO  [Thread-21:CodeReqHelper@1392] - 微信H5sd52请求结果:<xml><charset><![CDATA[UTF-8]]></charset><mch_id><![CDATA[101500214060]]></mch_id><nonce_str><![CDATA[trT92kr0F4aE5Xk127rUzFw6abmUk45u]]></nonce_str><pay_info><![CDATA[https://statecheck.swiftpass.cn/pay/wappay?token_id=134306d0562e229bfa12e7c3a046723d0&service=pay.weixin.wappayv2]]></pay_info><result_code><![CDATA[0]]></result_code><sign><![CDATA[67B7C782F721DF9674B19B1047D0F06E]]></sign><sign_type><![CDATA[MD5]]></sign_type><status><![CDATA[0]]></status><version><![CDATA[2.0]]></version></xml>
+[m[2;32m2017-11-08 15:43:23,848 - INFO  [Thread-21:CodeReqHelper@1416] - 微信H5sd52生成json:{"orderid":"11sde67895373631","spid":"sd72","status":"0","url":"https://statecheck.swiftpass.cn/pay/wappay?token_id=134306d0562e229bfa12e7c3a046723d0&service=pay.weixin.wappayv2"}
+[m[2;32m2017-11-08 15:43:23,849 - INFO  [Thread-21:CodeHelperServer@2796] - 合作方:test03
+通道方:sd72
+省份:
+计费点:1
+订单号:11sde67895373631
+指令内容:{"orderid":"11sde67895373631","spid":"sd72","status":"0","url":"https://statecheck.swiftpass.cn/pay/wappay?token_id=134306d0562e229bfa12e7c3a046723d0&service=pay.weixin.wappayv2"}
+[m[2;35m2017-11-08 15:43:23,869 - WARN  [Thread-21:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :115, uri:/code/reqPayOtherWY?cpid=test03&imei=357806046192158&cpparam=klwtest&fee=1&ip=112.124.10.89&goodsname=%E6%B5%8B%E8%AF%95&app=%E6%B5%8B%E8%AF%95app&playerid=abc123
+[m[7;31m2017-11-08 15:43:23,879 - ERROR [Thread-11:DefaultJuiceHandler@90] - java.lang.ArrayIndexOutOfBoundsException: 2
+[m[7;31m2017-11-08 15:43:23,881 - ERROR [Thread-11:DefaultJuiceHandler@91] - com.juice.orange.game.exception.JuiceException: handler request error,path:/favicon.ico;param:null
+[m[2;35m2017-11-08 15:43:23,881 - WARN  [Thread-11:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :2, uri:/favicon.ico
+[m[2;32m2017-11-08 15:43:24,809 - INFO  [Thread-91:CodeHelperServer@2678] - reqPayOtherWY请求header信息：[Host=127.0.0.1:9911, Connection=keep-alive, Cache-Control=max-age=0, User-Agent=Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36, Upgrade-Insecure-Requests=1, Accept=text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8, Accept-Encoding=gzip, deflate, br, Accept-Language=zh-CN,zh;q=0.8,en;q=0.6]
+[m[2;32m2017-11-08 15:43:24,810 - INFO  [Thread-91:CodeHelperServer@2716] - 用户访问IP=112.124.10.89
+[m[2;32m2017-11-08 15:43:24,835 - INFO  [Thread-91:HttpTool@388] - 指令url=https://pay.swiftpass.cn/pay/gateway
+[m[2;32m2017-11-08 15:43:24,835 - INFO  [Thread-91:HttpTool@389] - 同步内容=<xml><nonce_str>xpfixHC5vmR8dBJN6ZwC3DW6WQ7ARkay</nonce_str><sign>F7C00C6A61B5CA97438F7475839226B6</sign><mch_id>101500214060</mch_id><body>测试app-测试</body><notify_url>http://otherpay.xushihudong.com/fee/feexszfbsmback</notify_url><mch_create_ip>112.124.10.89</mch_create_ip><mch_app_id>http://huizhibt.com/</mch_app_id><out_trade_no>11sda74829873857</out_trade_no><device_info>AND_WAP</device_info><service>pay.weixin.wappay</service><total_fee>1</total_fee><attach>sd72</attach><mch_app_name>喵喵咪呀</mch_app_name></xml>
+[m[2;32m2017-11-08 15:43:24,884 - INFO  [Thread-91:CodeReqHelper@1392] - 微信H5sd52请求结果:<xml><charset><![CDATA[UTF-8]]></charset><mch_id><![CDATA[101500214060]]></mch_id><nonce_str><![CDATA[xpfixHC5vmR8dBJN6ZwC3DW6WQ7ARkay]]></nonce_str><pay_info><![CDATA[https://statecheck.swiftpass.cn/pay/wappay?token_id=2dc2f71f9734b9fa26777869d3e35eb1f&service=pay.weixin.wappayv2]]></pay_info><result_code><![CDATA[0]]></result_code><sign><![CDATA[B3CA60CFBD0139553C8D7D5161554837]]></sign><sign_type><![CDATA[MD5]]></sign_type><status><![CDATA[0]]></status><version><![CDATA[2.0]]></version></xml>
+[m[2;32m2017-11-08 15:43:24,885 - INFO  [Thread-91:CodeReqHelper@1416] - 微信H5sd52生成json:{"orderid":"11sda74829873857","spid":"sd72","status":"0","url":"https://statecheck.swiftpass.cn/pay/wappay?token_id=2dc2f71f9734b9fa26777869d3e35eb1f&service=pay.weixin.wappayv2"}
+[m[2;32m2017-11-08 15:43:24,885 - INFO  [Thread-91:CodeHelperServer@2796] - 合作方:test03
+通道方:sd72
+省份:
+计费点:1
+订单号:11sda74829873857
+指令内容:{"orderid":"11sda74829873857","spid":"sd72","status":"0","url":"https://statecheck.swiftpass.cn/pay/wappay?token_id=2dc2f71f9734b9fa26777869d3e35eb1f&service=pay.weixin.wappayv2"}
+[m[2;35m2017-11-08 15:43:24,896 - WARN  [Thread-91:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :87, uri:/code/reqPayOtherWY?cpid=test03&imei=357806046192158&cpparam=klwtest&fee=1&ip=112.124.10.89&goodsname=%E6%B5%8B%E8%AF%95&app=%E6%B5%8B%E8%AF%95app&playerid=abc123
+[m[7;31m2017-11-08 15:43:24,905 - ERROR [Thread-131:DefaultJuiceHandler@90] - java.lang.ArrayIndexOutOfBoundsException: 2
+[m[7;31m2017-11-08 15:43:24,906 - ERROR [Thread-131:DefaultJuiceHandler@91] - com.juice.orange.game.exception.JuiceException: handler request error,path:/favicon.ico;param:null
+[m[2;35m2017-11-08 15:43:24,906 - WARN  [Thread-131:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :2, uri:/favicon.ico
+[m[2;32m2017-11-08 15:43:25,658 - INFO  [Thread-101:CodeHelperServer@2678] - reqPayOtherWY请求header信息：[Host=127.0.0.1:9911, Connection=keep-alive, Cache-Control=max-age=0, User-Agent=Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36, Upgrade-Insecure-Requests=1, Accept=text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8, Accept-Encoding=gzip, deflate, br, Accept-Language=zh-CN,zh;q=0.8,en;q=0.6]
+[m[2;32m2017-11-08 15:43:25,659 - INFO  [Thread-101:CodeHelperServer@2716] - 用户访问IP=112.124.10.89
+[m[2;32m2017-11-08 15:43:25,682 - INFO  [Thread-101:HttpTool@388] - 指令url=https://pay.swiftpass.cn/pay/gateway
+[m[2;32m2017-11-08 15:43:25,683 - INFO  [Thread-101:HttpTool@389] - 同步内容=<xml><nonce_str>Q3LFpTKQV7TR8z7jFfdsuGt3IYySlHDA</nonce_str><sign>A58146B059074E42B54173F3D0E15486</sign><mch_id>101500214060</mch_id><body>测试app-测试</body><notify_url>http://otherpay.xushihudong.com/fee/feexszfbsmback</notify_url><mch_create_ip>112.124.10.89</mch_create_ip><mch_app_id>http://huizhibt.com/</mch_app_id><out_trade_no>11sdz79723812973</out_trade_no><device_info>AND_WAP</device_info><service>pay.weixin.wappay</service><total_fee>1</total_fee><attach>sd72</attach><mch_app_name>喵喵咪呀</mch_app_name></xml>
+[m[2;32m2017-11-08 15:43:25,739 - INFO  [Thread-101:CodeReqHelper@1392] - 微信H5sd52请求结果:<xml><charset><![CDATA[UTF-8]]></charset><mch_id><![CDATA[101500214060]]></mch_id><nonce_str><![CDATA[Q3LFpTKQV7TR8z7jFfdsuGt3IYySlHDA]]></nonce_str><pay_info><![CDATA[https://statecheck.swiftpass.cn/pay/wappay?token_id=1d2ab360433fa30fe8eece4232a3a7b9f&service=pay.weixin.wappayv2]]></pay_info><result_code><![CDATA[0]]></result_code><sign><![CDATA[EC9E011100B7586A0B8D1A02F374E63F]]></sign><sign_type><![CDATA[MD5]]></sign_type><status><![CDATA[0]]></status><version><![CDATA[2.0]]></version></xml>
+[m[2;32m2017-11-08 15:43:25,742 - INFO  [Thread-101:CodeReqHelper@1416] - 微信H5sd52生成json:{"orderid":"11sdz79723812973","spid":"sd72","status":"0","url":"https://statecheck.swiftpass.cn/pay/wappay?token_id=1d2ab360433fa30fe8eece4232a3a7b9f&service=pay.weixin.wappayv2"}
+[m[2;32m2017-11-08 15:43:25,742 - INFO  [Thread-101:CodeHelperServer@2796] - 合作方:test03
+通道方:sd72
+省份:
+计费点:1
+订单号:11sdz79723812973
+指令内容:{"orderid":"11sdz79723812973","spid":"sd72","status":"0","url":"https://statecheck.swiftpass.cn/pay/wappay?token_id=1d2ab360433fa30fe8eece4232a3a7b9f&service=pay.weixin.wappayv2"}
+[m[2;35m2017-11-08 15:43:25,761 - WARN  [Thread-101:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :104, uri:/code/reqPayOtherWY?cpid=test03&imei=357806046192158&cpparam=klwtest&fee=1&ip=112.124.10.89&goodsname=%E6%B5%8B%E8%AF%95&app=%E6%B5%8B%E8%AF%95app&playerid=abc123
+[m[7;31m2017-11-08 15:43:25,773 - ERROR [Thread-81:DefaultJuiceHandler@90] - java.lang.ArrayIndexOutOfBoundsException: 2
+[m[7;31m2017-11-08 15:43:25,775 - ERROR [Thread-81:DefaultJuiceHandler@91] - com.juice.orange.game.exception.JuiceException: handler request error,path:/favicon.ico;param:null
+[m[2;35m2017-11-08 15:43:25,775 - WARN  [Thread-81:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :2, uri:/favicon.ico
+[m[2;32m2017-11-08 15:43:26,392 - INFO  [Thread-71:CodeHelperServer@2678] - reqPayOtherWY请求header信息：[Host=127.0.0.1:9911, Connection=keep-alive, Cache-Control=max-age=0, User-Agent=Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36, Upgrade-Insecure-Requests=1, Accept=text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8, Accept-Encoding=gzip, deflate, br, Accept-Language=zh-CN,zh;q=0.8,en;q=0.6]
+[m[2;32m2017-11-08 15:43:26,392 - INFO  [Thread-71:CodeHelperServer@2716] - 用户访问IP=112.124.10.89
+[m[2;32m2017-11-08 15:43:26,417 - INFO  [Thread-71:HttpTool@388] - 指令url=https://pay.swiftpass.cn/pay/gateway
+[m[2;32m2017-11-08 15:43:26,417 - INFO  [Thread-71:HttpTool@389] - 同步内容=<xml><nonce_str>aHSnW7bgIVHszkGg7KB5J43mtBRsqEJo</nonce_str><sign>A5AFBD6A5C7CB00EE9C62068190F7ED9</sign><mch_id>101500214060</mch_id><body>测试app-测试</body><notify_url>http://otherpay.xushihudong.com/fee/feexszfbsmback</notify_url><mch_create_ip>112.124.10.89</mch_create_ip><mch_app_id>http://huizhibt.com/</mch_app_id><out_trade_no>11sdl10904096662</out_trade_no><device_info>AND_WAP</device_info><service>pay.weixin.wappay</service><total_fee>1</total_fee><attach>sd72</attach><mch_app_name>喵喵咪呀</mch_app_name></xml>
+[m[2;32m2017-11-08 15:43:26,466 - INFO  [Thread-71:CodeReqHelper@1392] - 微信H5sd52请求结果:<xml><charset><![CDATA[UTF-8]]></charset><mch_id><![CDATA[101500214060]]></mch_id><nonce_str><![CDATA[aHSnW7bgIVHszkGg7KB5J43mtBRsqEJo]]></nonce_str><pay_info><![CDATA[https://statecheck.swiftpass.cn/pay/wappay?token_id=27e8e661ab6a266339e4a1533d3706565&service=pay.weixin.wappayv2]]></pay_info><result_code><![CDATA[0]]></result_code><sign><![CDATA[E1E45DEDB0700E87DEE60B9C28A8B113]]></sign><sign_type><![CDATA[MD5]]></sign_type><status><![CDATA[0]]></status><version><![CDATA[2.0]]></version></xml>
+[m[2;32m2017-11-08 15:43:26,467 - INFO  [Thread-71:CodeReqHelper@1416] - 微信H5sd52生成json:{"orderid":"11sdl10904096662","spid":"sd72","status":"0","url":"https://statecheck.swiftpass.cn/pay/wappay?token_id=27e8e661ab6a266339e4a1533d3706565&service=pay.weixin.wappayv2"}
+[m[2;32m2017-11-08 15:43:26,467 - INFO  [Thread-71:CodeHelperServer@2796] - 合作方:test03
+通道方:sd72
+省份:
+计费点:1
+订单号:11sdl10904096662
+指令内容:{"orderid":"11sdl10904096662","spid":"sd72","status":"0","url":"https://statecheck.swiftpass.cn/pay/wappay?token_id=27e8e661ab6a266339e4a1533d3706565&service=pay.weixin.wappayv2"}
+[m[2;35m2017-11-08 15:43:26,477 - WARN  [Thread-71:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :86, uri:/code/reqPayOtherWY?cpid=test03&imei=357806046192158&cpparam=klwtest&fee=1&ip=112.124.10.89&goodsname=%E6%B5%8B%E8%AF%95&app=%E6%B5%8B%E8%AF%95app&playerid=abc123
+[m[7;31m2017-11-08 15:43:26,485 - ERROR [Thread-92:DefaultJuiceHandler@90] - java.lang.ArrayIndexOutOfBoundsException: 2
+[m[7;31m2017-11-08 15:43:26,487 - ERROR [Thread-92:DefaultJuiceHandler@91] - com.juice.orange.game.exception.JuiceException: handler request error,path:/favicon.ico;param:null
+[m[2;35m2017-11-08 15:43:26,487 - WARN  [Thread-92:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :2, uri:/favicon.ico
+[m[2;32m2017-11-08 15:43:27,096 - INFO  [Thread-111:CodeHelperServer@2678] - reqPayOtherWY请求header信息：[Host=127.0.0.1:9911, Connection=keep-alive, Cache-Control=max-age=0, User-Agent=Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36, Upgrade-Insecure-Requests=1, Accept=text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8, Accept-Encoding=gzip, deflate, br, Accept-Language=zh-CN,zh;q=0.8,en;q=0.6]
+[m[2;32m2017-11-08 15:43:27,097 - INFO  [Thread-111:CodeHelperServer@2716] - 用户访问IP=112.124.10.89
+[m[2;32m2017-11-08 15:43:27,118 - INFO  [Thread-111:HttpTool@388] - 指令url=https://pay.swiftpass.cn/pay/gateway
+[m[2;32m2017-11-08 15:43:27,118 - INFO  [Thread-111:HttpTool@389] - 同步内容=<xml><nonce_str>5XB1JmcqiiaCbCbgtyomNvurmu9fdZbr</nonce_str><sign>22817E2598A712404F45591D83C1ACFC</sign><mch_id>101500214060</mch_id><body>测试app-测试</body><notify_url>http://otherpay.xushihudong.com/fee/feexszfbsmback</notify_url><mch_create_ip>112.124.10.89</mch_create_ip><mch_app_id>http://huizhibt.com/</mch_app_id><out_trade_no>11sdk67960253765</out_trade_no><device_info>AND_WAP</device_info><service>pay.weixin.wappay</service><total_fee>1</total_fee><attach>sd72</attach><mch_app_name>喵喵咪呀</mch_app_name></xml>
+[m[2;32m2017-11-08 15:43:27,178 - INFO  [Thread-111:CodeReqHelper@1392] - 微信H5sd52请求结果:<xml><charset><![CDATA[UTF-8]]></charset><mch_id><![CDATA[101500214060]]></mch_id><nonce_str><![CDATA[5XB1JmcqiiaCbCbgtyomNvurmu9fdZbr]]></nonce_str><pay_info><![CDATA[https://statecheck.swiftpass.cn/pay/wappay?token_id=29b926b8b4767fd94da30fba2d0648bc4&service=pay.weixin.wappayv2]]></pay_info><result_code><![CDATA[0]]></result_code><sign><![CDATA[37F2E49CBED0A843064047A69FB732EC]]></sign><sign_type><![CDATA[MD5]]></sign_type><status><![CDATA[0]]></status><version><![CDATA[2.0]]></version></xml>
+[m[2;32m2017-11-08 15:43:27,181 - INFO  [Thread-111:CodeReqHelper@1416] - 微信H5sd52生成json:{"orderid":"11sdk67960253765","spid":"sd72","status":"0","url":"https://statecheck.swiftpass.cn/pay/wappay?token_id=29b926b8b4767fd94da30fba2d0648bc4&service=pay.weixin.wappayv2"}
+[m[2;32m2017-11-08 15:43:27,182 - INFO  [Thread-111:CodeHelperServer@2796] - 合作方:test03
+通道方:sd72
+省份:
+计费点:1
+订单号:11sdk67960253765
+指令内容:{"orderid":"11sdk67960253765","spid":"sd72","status":"0","url":"https://statecheck.swiftpass.cn/pay/wappay?token_id=29b926b8b4767fd94da30fba2d0648bc4&service=pay.weixin.wappayv2"}
+[m[2;35m2017-11-08 15:43:27,202 - WARN  [Thread-111:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :106, uri:/code/reqPayOtherWY?cpid=test03&imei=357806046192158&cpparam=klwtest&fee=1&ip=112.124.10.89&goodsname=%E6%B5%8B%E8%AF%95&app=%E6%B5%8B%E8%AF%95app&playerid=abc123
+[m[7;31m2017-11-08 15:43:27,220 - ERROR [Thread-112:DefaultJuiceHandler@90] - java.lang.ArrayIndexOutOfBoundsException: 2
+[m[7;31m2017-11-08 15:43:27,221 - ERROR [Thread-112:DefaultJuiceHandler@91] - com.juice.orange.game.exception.JuiceException: handler request error,path:/favicon.ico;param:null
+[m[2;35m2017-11-08 15:43:27,221 - WARN  [Thread-112:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :2, uri:/favicon.ico
+[m[2;32m2017-11-08 15:43:27,687 - INFO  [Thread-93:CodeHelperServer@2678] - reqPayOtherWY请求header信息：[Host=127.0.0.1:9911, Connection=keep-alive, Cache-Control=max-age=0, User-Agent=Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36, Upgrade-Insecure-Requests=1, Accept=text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8, Accept-Encoding=gzip, deflate, br, Accept-Language=zh-CN,zh;q=0.8,en;q=0.6]
+[m[2;32m2017-11-08 15:43:27,688 - INFO  [Thread-93:CodeHelperServer@2716] - 用户访问IP=112.124.10.89
+[m[2;32m2017-11-08 15:43:27,714 - INFO  [Thread-93:HttpTool@388] - 指令url=https://pay.swiftpass.cn/pay/gateway
+[m[2;32m2017-11-08 15:43:27,714 - INFO  [Thread-93:HttpTool@389] - 同步内容=<xml><nonce_str>O0FrL8F8wTMM0JlqtscZ1jdtvozHKcSi</nonce_str><sign>21248E606D034584F29774FD21E67B9A</sign><mch_id>101500214060</mch_id><body>测试app-测试</body><notify_url>http://otherpay.xushihudong.com/fee/feexszfbsmback</notify_url><mch_create_ip>112.124.10.89</mch_create_ip><mch_app_id>http://huizhibt.com/</mch_app_id><out_trade_no>11sdz94248739736</out_trade_no><device_info>AND_WAP</device_info><service>pay.weixin.wappay</service><total_fee>1</total_fee><attach>sd72</attach><mch_app_name>喵喵咪呀</mch_app_name></xml>
+[m[2;32m2017-11-08 15:43:27,767 - INFO  [Thread-93:CodeReqHelper@1392] - 微信H5sd52请求结果:<xml><charset><![CDATA[UTF-8]]></charset><mch_id><![CDATA[101500214060]]></mch_id><nonce_str><![CDATA[O0FrL8F8wTMM0JlqtscZ1jdtvozHKcSi]]></nonce_str><pay_info><![CDATA[https://statecheck.swiftpass.cn/pay/wappay?token_id=1ec2e2e02e4bf23d7ada4ea8981d9b16d&service=pay.weixin.wappayv2]]></pay_info><result_code><![CDATA[0]]></result_code><sign><![CDATA[27F9F681E0A07FD8E20AE4B26F3AFB1A]]></sign><sign_type><![CDATA[MD5]]></sign_type><status><![CDATA[0]]></status><version><![CDATA[2.0]]></version></xml>
+[m[2;32m2017-11-08 15:43:27,770 - INFO  [Thread-93:CodeReqHelper@1416] - 微信H5sd52生成json:{"orderid":"11sdz94248739736","spid":"sd72","status":"0","url":"https://statecheck.swiftpass.cn/pay/wappay?token_id=1ec2e2e02e4bf23d7ada4ea8981d9b16d&service=pay.weixin.wappayv2"}
+[m[2;32m2017-11-08 15:43:27,770 - INFO  [Thread-93:CodeHelperServer@2796] - 合作方:test03
+通道方:sd72
+省份:
+计费点:1
+订单号:11sdz94248739736
+指令内容:{"orderid":"11sdz94248739736","spid":"sd72","status":"0","url":"https://statecheck.swiftpass.cn/pay/wappay?token_id=1ec2e2e02e4bf23d7ada4ea8981d9b16d&service=pay.weixin.wappayv2"}
+[m[2;35m2017-11-08 15:43:27,790 - WARN  [Thread-93:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :103, uri:/code/reqPayOtherWY?cpid=test03&imei=357806046192158&cpparam=klwtest&fee=1&ip=112.124.10.89&goodsname=%E6%B5%8B%E8%AF%95&app=%E6%B5%8B%E8%AF%95app&playerid=abc123
+[m[7;31m2017-11-08 15:43:27,803 - ERROR [Thread-51:DefaultJuiceHandler@90] - java.lang.ArrayIndexOutOfBoundsException: 2
+[m[7;31m2017-11-08 15:43:27,804 - ERROR [Thread-51:DefaultJuiceHandler@91] - com.juice.orange.game.exception.JuiceException: handler request error,path:/favicon.ico;param:null
+[m[2;35m2017-11-08 15:43:27,804 - WARN  [Thread-51:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :1, uri:/favicon.ico
+[m[2;32m2017-11-08 15:43:28,232 - INFO  [Thread-61:CodeHelperServer@2678] - reqPayOtherWY请求header信息：[Host=127.0.0.1:9911, Connection=keep-alive, Cache-Control=max-age=0, User-Agent=Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36, Upgrade-Insecure-Requests=1, Accept=text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8, Accept-Encoding=gzip, deflate, br, Accept-Language=zh-CN,zh;q=0.8,en;q=0.6]
+[m[2;32m2017-11-08 15:43:28,233 - INFO  [Thread-61:CodeHelperServer@2716] - 用户访问IP=112.124.10.89
+[m[2;32m2017-11-08 15:43:28,252 - INFO  [Thread-61:HttpTool@388] - 指令url=https://pay.swiftpass.cn/pay/gateway
+[m[2;32m2017-11-08 15:43:28,252 - INFO  [Thread-61:HttpTool@389] - 同步内容=<xml><nonce_str>WVCxPSvApSJFcWlcsYxwSdPMIxJa66gp</nonce_str><sign>2595EC8EC3444697572BEBADE5517AAA</sign><mch_id>101500214060</mch_id><body>测试app-测试</body><notify_url>http://otherpay.xushihudong.com/fee/feexszfbsmback</notify_url><mch_create_ip>112.124.10.89</mch_create_ip><mch_app_id>http://huizhibt.com/</mch_app_id><out_trade_no>11sdd29721852621</out_trade_no><device_info>AND_WAP</device_info><service>pay.weixin.wappay</service><total_fee>1</total_fee><attach>sd72</attach><mch_app_name>喵喵咪呀</mch_app_name></xml>
+[m[2;32m2017-11-08 15:43:28,314 - INFO  [Thread-61:CodeReqHelper@1392] - 微信H5sd52请求结果:<xml><charset><![CDATA[UTF-8]]></charset><mch_id><![CDATA[101500214060]]></mch_id><nonce_str><![CDATA[WVCxPSvApSJFcWlcsYxwSdPMIxJa66gp]]></nonce_str><pay_info><![CDATA[https://statecheck.swiftpass.cn/pay/wappay?token_id=1648ede0564ee76372f2a2b7c4b0baef3&service=pay.weixin.wappayv2]]></pay_info><result_code><![CDATA[0]]></result_code><sign><![CDATA[A4DB4FBE15D560F39B12DD4CE2AB4CCE]]></sign><sign_type><![CDATA[MD5]]></sign_type><status><![CDATA[0]]></status><version><![CDATA[2.0]]></version></xml>
+[m[2;32m2017-11-08 15:43:28,318 - INFO  [Thread-61:CodeReqHelper@1416] - 微信H5sd52生成json:{"orderid":"11sdd29721852621","spid":"sd72","status":"0","url":"https://statecheck.swiftpass.cn/pay/wappay?token_id=1648ede0564ee76372f2a2b7c4b0baef3&service=pay.weixin.wappayv2"}
+[m[2;32m2017-11-08 15:43:28,319 - INFO  [Thread-61:CodeHelperServer@2796] - 合作方:test03
+通道方:sd72
+省份:
+计费点:1
+订单号:11sdd29721852621
+指令内容:{"orderid":"11sdd29721852621","spid":"sd72","status":"0","url":"https://statecheck.swiftpass.cn/pay/wappay?token_id=1648ede0564ee76372f2a2b7c4b0baef3&service=pay.weixin.wappayv2"}
+[m[2;35m2017-11-08 15:43:28,338 - WARN  [Thread-61:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :106, uri:/code/reqPayOtherWY?cpid=test03&imei=357806046192158&cpparam=klwtest&fee=1&ip=112.124.10.89&goodsname=%E6%B5%8B%E8%AF%95&app=%E6%B5%8B%E8%AF%95app&playerid=abc123
+[m[7;31m2017-11-08 15:43:28,350 - ERROR [Thread-1:DefaultJuiceHandler@90] - java.lang.ArrayIndexOutOfBoundsException: 2
+[m[7;31m2017-11-08 15:43:28,351 - ERROR [Thread-1:DefaultJuiceHandler@91] - com.juice.orange.game.exception.JuiceException: handler request error,path:/favicon.ico;param:null
+[m[2;35m2017-11-08 15:43:28,351 - WARN  [Thread-1:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :1, uri:/favicon.ico
+[m[2;32m2017-11-08 15:43:28,743 - INFO  [Thread-152:CodeHelperServer@2678] - reqPayOtherWY请求header信息：[Host=127.0.0.1:9911, Connection=keep-alive, Cache-Control=max-age=0, User-Agent=Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36, Upgrade-Insecure-Requests=1, Accept=text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8, Accept-Encoding=gzip, deflate, br, Accept-Language=zh-CN,zh;q=0.8,en;q=0.6]
+[m[2;32m2017-11-08 15:43:28,745 - INFO  [Thread-152:CodeHelperServer@2716] - 用户访问IP=112.124.10.89
+[m[2;32m2017-11-08 15:43:28,765 - INFO  [Thread-152:HttpTool@388] - 指令url=https://pay.swiftpass.cn/pay/gateway
+[m[2;32m2017-11-08 15:43:28,765 - INFO  [Thread-152:HttpTool@389] - 同步内容=<xml><nonce_str>qIvN6coF0rzdIyqhV2ARQeKJsRhHzxDl</nonce_str><sign>E3FFB2402050E658CCAF2491EA4A3F90</sign><mch_id>101500214060</mch_id><body>测试app-测试</body><notify_url>http://otherpay.xushihudong.com/fee/feexszfbsmback</notify_url><mch_create_ip>112.124.10.89</mch_create_ip><mch_app_id>http://huizhibt.com/</mch_app_id><out_trade_no>11sdz75012117490</out_trade_no><device_info>AND_WAP</device_info><service>pay.weixin.wappay</service><total_fee>1</total_fee><attach>sd72</attach><mch_app_name>喵喵咪呀</mch_app_name></xml>
+[m[2;32m2017-11-08 15:43:28,814 - INFO  [Thread-152:CodeReqHelper@1392] - 微信H5sd52请求结果:<xml><charset><![CDATA[UTF-8]]></charset><mch_id><![CDATA[101500214060]]></mch_id><nonce_str><![CDATA[qIvN6coF0rzdIyqhV2ARQeKJsRhHzxDl]]></nonce_str><pay_info><![CDATA[https://statecheck.swiftpass.cn/pay/wappay?token_id=16b4d666a6e85b7314ac7dae9983c668c&service=pay.weixin.wappayv2]]></pay_info><result_code><![CDATA[0]]></result_code><sign><![CDATA[91EE3F4EEEBCC818116C8641A5D518F2]]></sign><sign_type><![CDATA[MD5]]></sign_type><status><![CDATA[0]]></status><version><![CDATA[2.0]]></version></xml>
+[m[2;32m2017-11-08 15:43:28,815 - INFO  [Thread-152:CodeReqHelper@1416] - 微信H5sd52生成json:{"orderid":"11sdz75012117490","spid":"sd72","status":"0","url":"https://statecheck.swiftpass.cn/pay/wappay?token_id=16b4d666a6e85b7314ac7dae9983c668c&service=pay.weixin.wappayv2"}
+[m[2;32m2017-11-08 15:43:28,815 - INFO  [Thread-152:CodeHelperServer@2796] - 合作方:test03
+通道方:sd72
+省份:
+计费点:1
+订单号:11sdz75012117490
+指令内容:{"orderid":"11sdz75012117490","spid":"sd72","status":"0","url":"https://statecheck.swiftpass.cn/pay/wappay?token_id=16b4d666a6e85b7314ac7dae9983c668c&service=pay.weixin.wappayv2"}
+[m[2;35m2017-11-08 15:43:28,829 - WARN  [Thread-152:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :86, uri:/code/reqPayOtherWY?cpid=test03&imei=357806046192158&cpparam=klwtest&fee=1&ip=112.124.10.89&goodsname=%E6%B5%8B%E8%AF%95&app=%E6%B5%8B%E8%AF%95app&playerid=abc123
+[m[7;31m2017-11-08 15:43:28,843 - ERROR [Thread-22:DefaultJuiceHandler@90] - java.lang.ArrayIndexOutOfBoundsException: 2
+[m[7;31m2017-11-08 15:43:28,845 - ERROR [Thread-22:DefaultJuiceHandler@91] - com.juice.orange.game.exception.JuiceException: handler request error,path:/favicon.ico;param:null
+[m[2;35m2017-11-08 15:43:28,845 - WARN  [Thread-22:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :2, uri:/favicon.ico
+[m[2;32m2017-11-08 15:43:29,253 - INFO  [Thread-72:CodeHelperServer@2678] - reqPayOtherWY请求header信息：[Host=127.0.0.1:9911, Connection=keep-alive, Cache-Control=max-age=0, User-Agent=Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36, Upgrade-Insecure-Requests=1, Accept=text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8, Accept-Encoding=gzip, deflate, br, Accept-Language=zh-CN,zh;q=0.8,en;q=0.6]
+[m[2;32m2017-11-08 15:43:29,253 - INFO  [Thread-72:CodeHelperServer@2716] - 用户访问IP=112.124.10.89
+[m[2;32m2017-11-08 15:43:29,272 - INFO  [Thread-72:HttpTool@388] - 指令url=https://pay.swiftpass.cn/pay/gateway
+[m[2;32m2017-11-08 15:43:29,272 - INFO  [Thread-72:HttpTool@389] - 同步内容=<xml><nonce_str>oqtwtmcRJ0ZaDr4AHjjHQWTr2CaexVwj</nonce_str><sign>D7C86BCA584CBA8203FAAA4B95124106</sign><mch_id>101500214060</mch_id><body>测试app-测试</body><notify_url>http://otherpay.xushihudong.com/fee/feexszfbsmback</notify_url><mch_create_ip>112.124.10.89</mch_create_ip><mch_app_id>http://huizhibt.com/</mch_app_id><out_trade_no>11sdi66572027223</out_trade_no><device_info>AND_WAP</device_info><service>pay.weixin.wappay</service><total_fee>1</total_fee><attach>sd72</attach><mch_app_name>喵喵咪呀</mch_app_name></xml>
+[m[2;32m2017-11-08 15:43:29,318 - INFO  [Thread-72:CodeReqHelper@1392] - 微信H5sd52请求结果:<xml><charset><![CDATA[UTF-8]]></charset><mch_id><![CDATA[101500214060]]></mch_id><nonce_str><![CDATA[oqtwtmcRJ0ZaDr4AHjjHQWTr2CaexVwj]]></nonce_str><pay_info><![CDATA[https://statecheck.swiftpass.cn/pay/wappay?token_id=2694f0f7fa6f18e7dba6d40bd1d7e71ad&service=pay.weixin.wappayv2]]></pay_info><result_code><![CDATA[0]]></result_code><sign><![CDATA[909F05E0843112C8C65C8A5F3F432634]]></sign><sign_type><![CDATA[MD5]]></sign_type><status><![CDATA[0]]></status><version><![CDATA[2.0]]></version></xml>
+[m[2;32m2017-11-08 15:43:29,320 - INFO  [Thread-72:CodeReqHelper@1416] - 微信H5sd52生成json:{"orderid":"11sdi66572027223","spid":"sd72","status":"0","url":"https://statecheck.swiftpass.cn/pay/wappay?token_id=2694f0f7fa6f18e7dba6d40bd1d7e71ad&service=pay.weixin.wappayv2"}
+[m[2;32m2017-11-08 15:43:29,321 - INFO  [Thread-72:CodeHelperServer@2796] - 合作方:test03
+通道方:sd72
+省份:
+计费点:1
+订单号:11sdi66572027223
+指令内容:{"orderid":"11sdi66572027223","spid":"sd72","status":"0","url":"https://statecheck.swiftpass.cn/pay/wappay?token_id=2694f0f7fa6f18e7dba6d40bd1d7e71ad&service=pay.weixin.wappayv2"}
+[m[2;35m2017-11-08 15:43:29,335 - WARN  [Thread-72:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :83, uri:/code/reqPayOtherWY?cpid=test03&imei=357806046192158&cpparam=klwtest&fee=1&ip=112.124.10.89&goodsname=%E6%B5%8B%E8%AF%95&app=%E6%B5%8B%E8%AF%95app&playerid=abc123
+[m[7;31m2017-11-08 15:43:29,351 - ERROR [Thread-12:DefaultJuiceHandler@90] - java.lang.ArrayIndexOutOfBoundsException: 2
+[m[7;31m2017-11-08 15:43:29,353 - ERROR [Thread-12:DefaultJuiceHandler@91] - com.juice.orange.game.exception.JuiceException: handler request error,path:/favicon.ico;param:null
+[m[2;35m2017-11-08 15:43:29,354 - WARN  [Thread-12:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :3, uri:/favicon.ico
+[m[2;32m2017-11-08 15:43:29,799 - INFO  [Thread-102:CodeHelperServer@2678] - reqPayOtherWY请求header信息：[Host=127.0.0.1:9911, Connection=keep-alive, Cache-Control=max-age=0, User-Agent=Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36, Upgrade-Insecure-Requests=1, Accept=text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8, Accept-Encoding=gzip, deflate, br, Accept-Language=zh-CN,zh;q=0.8,en;q=0.6]
+[m[2;32m2017-11-08 15:43:29,801 - INFO  [Thread-102:CodeHelperServer@2716] - 用户访问IP=112.124.10.89
+[m[2;32m2017-11-08 15:43:29,819 - INFO  [Thread-102:HttpTool@388] - 指令url=https://pay.swiftpass.cn/pay/gateway
+[m[2;32m2017-11-08 15:43:29,819 - INFO  [Thread-102:HttpTool@389] - 同步内容=<xml><nonce_str>8VXTPdATA7wvQidSO7jUA1YjKyOZpnt4</nonce_str><sign>55A6A643882716924450178DA4804B5D</sign><mch_id>101500214060</mch_id><body>测试app-测试</body><notify_url>http://otherpay.xushihudong.com/fee/feexszfbsmback</notify_url><mch_create_ip>112.124.10.89</mch_create_ip><mch_app_id>http://huizhibt.com/</mch_app_id><out_trade_no>11sdw78196977741</out_trade_no><device_info>AND_WAP</device_info><service>pay.weixin.wappay</service><total_fee>1</total_fee><attach>sd72</attach><mch_app_name>喵喵咪呀</mch_app_name></xml>
+[m[2;32m2017-11-08 15:43:29,874 - INFO  [Thread-102:CodeReqHelper@1392] - 微信H5sd52请求结果:<xml><charset><![CDATA[UTF-8]]></charset><mch_id><![CDATA[101500214060]]></mch_id><nonce_str><![CDATA[8VXTPdATA7wvQidSO7jUA1YjKyOZpnt4]]></nonce_str><pay_info><![CDATA[https://statecheck.swiftpass.cn/pay/wappay?token_id=2f4127557e09ab3b7cb3cb81ed685aebb&service=pay.weixin.wappayv2]]></pay_info><result_code><![CDATA[0]]></result_code><sign><![CDATA[277DB73621937F4719AB65CD3B16C715]]></sign><sign_type><![CDATA[MD5]]></sign_type><status><![CDATA[0]]></status><version><![CDATA[2.0]]></version></xml>
+[m[2;32m2017-11-08 15:43:29,876 - INFO  [Thread-102:CodeReqHelper@1416] - 微信H5sd52生成json:{"orderid":"11sdw78196977741","spid":"sd72","status":"0","url":"https://statecheck.swiftpass.cn/pay/wappay?token_id=2f4127557e09ab3b7cb3cb81ed685aebb&service=pay.weixin.wappayv2"}
+[m[2;32m2017-11-08 15:43:29,877 - INFO  [Thread-102:CodeHelperServer@2796] - 合作方:test03
+通道方:sd72
+省份:
+计费点:1
+订单号:11sdw78196977741
+指令内容:{"orderid":"11sdw78196977741","spid":"sd72","status":"0","url":"https://statecheck.swiftpass.cn/pay/wappay?token_id=2f4127557e09ab3b7cb3cb81ed685aebb&service=pay.weixin.wappayv2"}
+[m[2;35m2017-11-08 15:43:29,896 - WARN  [Thread-102:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :97, uri:/code/reqPayOtherWY?cpid=test03&imei=357806046192158&cpparam=klwtest&fee=1&ip=112.124.10.89&goodsname=%E6%B5%8B%E8%AF%95&app=%E6%B5%8B%E8%AF%95app&playerid=abc123
+[m[7;31m2017-11-08 15:43:29,906 - ERROR [Thread-2:DefaultJuiceHandler@90] - java.lang.ArrayIndexOutOfBoundsException: 2
+[m[7;31m2017-11-08 15:43:29,907 - ERROR [Thread-2:DefaultJuiceHandler@91] - com.juice.orange.game.exception.JuiceException: handler request error,path:/favicon.ico;param:null
+[m[2;35m2017-11-08 15:43:29,907 - WARN  [Thread-2:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :1, uri:/favicon.ico
+[m

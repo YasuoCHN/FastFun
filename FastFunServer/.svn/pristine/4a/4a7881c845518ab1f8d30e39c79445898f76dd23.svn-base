@@ -1,0 +1,95 @@
+[2;32m2017-03-23 18:24:43,546 - INFO  [main:ServerBootstrap@67] - Configuration Server bootstrap params.......
+[m[2;32m2017-03-23 18:24:43,556 - INFO  [main:ServerBootstrap@68] - Server protocol:	http
+[m[2;32m2017-03-23 18:24:43,556 - INFO  [main:ServerBootstrap@69] - Server port:	9911
+[m[2;32m2017-03-23 18:24:44,377 - INFO  [main:ServerBootstrap@78] - Configuration Remote Server.......
+[m[2;32m2017-03-23 18:24:44,377 - INFO  [main:ServerBootstrap@80] - Add Remote Server - Name:FastFunSystem;Address:localhost;Port:9912
+[m[2;32m2017-03-23 18:24:44,381 - INFO  [main:Application@25] - Init servers......
+[m[2;32m2017-03-23 18:24:44,435 - INFO  [main:ServerBootstrap@92] - Application PID:	4448
+[m[2;32m2017-03-23 18:24:56,660 - INFO  [main:ServerBootstrap@67] - Configuration Server bootstrap params.......
+[m[2;32m2017-03-23 18:24:56,664 - INFO  [main:ServerBootstrap@68] - Server protocol:	http
+[m[2;32m2017-03-23 18:24:56,665 - INFO  [main:ServerBootstrap@69] - Server port:	9911
+[m[2;32m2017-03-23 18:24:57,298 - INFO  [main:ServerBootstrap@78] - Configuration Remote Server.......
+[m[2;32m2017-03-23 18:24:57,299 - INFO  [main:ServerBootstrap@80] - Add Remote Server - Name:FastFunSystem;Address:localhost;Port:9912
+[m[2;32m2017-03-23 18:24:57,318 - INFO  [main:Application@25] - Init servers......
+[m[2;32m2017-03-23 18:24:57,938 - INFO  [main:ServerBootstrap@92] - Application PID:	6296
+[m[2;32m2017-03-23 18:25:28,372 - INFO  [Thread-22:FeeBack@601] - feebjylback请求header信息：[Host=127.0.0.1:9911, Connection=keep-alive, Accept=text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8, User-Agent=Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.71 Safari/537.36, Accept-Encoding=gzip, deflate, sdch, Accept-Language=zh-CN,zh;q=0.8, Cookie=Hm_lvt_2fb6850c2dc8b36d451b5a97886724b7=1459320534; Hm_lvt_babfd903cf7f9b8cdbdc317eba1cb1af=1490240584; Hm_lpvt_babfd903cf7f9b8cdbdc317eba1cb1af=1490241333]
+[m[7;31m2017-03-23 18:26:27,423 - ERROR [Thread-22:FeeBack@642] - class: java.lang.String; method: substring; line: -1;  Exception: 
+class: com.klw.fastfun.pay.view.app.service.FeeBack; method: feebjylback; line: 623;  Exception: 
+class: sun.reflect.NativeMethodAccessorImpl; method: invoke0; line: -2;  Exception: 
+class: sun.reflect.NativeMethodAccessorImpl; method: invoke; line: -1;  Exception: 
+class: sun.reflect.DelegatingMethodAccessorImpl; method: invoke; line: -1;  Exception: 
+class: java.lang.reflect.Method; method: invoke; line: -1;  Exception: 
+class: com.juice.orange.game.handler.DefaultJuiceHandler; method: handleHttpRequest; line: 81;  Exception: 
+class: com.juice.orange.game.handler.DefaultJuiceHandler; method: handlerRequest; line: 35;  Exception: 
+class: com.juice.orange.game.handler.JuiceHttpControl; method: nextHandler; line: 84;  Exception: 
+class: com.juice.orange.game.handler.JuiceHttpControl; method: nextHandler; line: 67;  Exception: 
+class: com.juice.orange.game.util.threadpool.JuiceThreadPool$JuiceWorkThread; method: run; line: 70;  Exception: 
+java.lang.StringIndexOutOfBoundsException: String index out of range
+[m[2;35m2017-03-23 18:26:27,591 - WARN  [Thread-22:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :59221, uri:/fee/feebjylback?cpid=shaojie&amount=1200&productid=135000000000000247145&phone=18184695086&status=0&ordertime=2017/3/23%200:38:01&spnum=106613559&spcmd=jyfsjklbw
+[m[7;31m2017-03-23 18:26:27,680 - ERROR [Thread-12:DefaultJuiceHandler@90] - java.lang.ArrayIndexOutOfBoundsException: 2
+[m[7;31m2017-03-23 18:26:27,682 - ERROR [Thread-12:DefaultJuiceHandler@91] - com.juice.orange.game.exception.JuiceException: handler request error,path:/favicon.ico;param:null
+[m[2;35m2017-03-23 18:26:27,683 - WARN  [Thread-12:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :4, uri:/favicon.ico
+[m[2;32m2017-03-23 18:26:36,044 - INFO  [Thread-14:FeeBack@601] - feebjylback请求header信息：[Host=127.0.0.1:9911, Connection=keep-alive, Accept=text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8, User-Agent=Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.71 Safari/537.36, Accept-Encoding=gzip, deflate, sdch, Accept-Language=zh-CN,zh;q=0.8, Cookie=Hm_lvt_2fb6850c2dc8b36d451b5a97886724b7=1459320534; Hm_lvt_babfd903cf7f9b8cdbdc317eba1cb1af=1490240584; Hm_lpvt_babfd903cf7f9b8cdbdc317eba1cb1af=1490241333]
+[m[7;31m2017-03-23 18:26:50,333 - ERROR [Thread-50:RPCThreadPool$RPCWorkThread@57] - SEND
+[mjava.util.concurrent.ExecutionException: java.lang.Exception: Create connection to localhost:9912 error
+	at java.util.concurrent.FutureTask.report(Unknown Source)
+	at java.util.concurrent.FutureTask.get(Unknown Source)
+	at com.juice.orange.game.rmi.RemoteChannelFactory.get(RemoteChannelFactory.java:87)
+	at com.juice.orange.game.rmi.RemoteChannelFactory.get(RemoteChannelFactory.java:48)
+	at com.juice.orange.game.rmi.thread.RPCThreadPool$RPCWorkThread.sendObject(RPCThreadPool.java:64)
+	at com.juice.orange.game.rmi.thread.RPCThreadPool$RPCWorkThread.run(RPCThreadPool.java:55)
+Caused by: java.lang.Exception: Create connection to localhost:9912 error
+	at com.juice.orange.game.rmi.RemoteChannelFactory.createChannel(RemoteChannelFactory.java:122)
+	at com.juice.orange.game.rmi.RemoteChannelFactory$1.call(RemoteChannelFactory.java:71)
+	at com.juice.orange.game.rmi.RemoteChannelFactory$1.call(RemoteChannelFactory.java:66)
+	at java.util.concurrent.FutureTask.run(Unknown Source)
+	at com.juice.orange.game.rmi.RemoteChannelFactory.get(RemoteChannelFactory.java:80)
+	... 3 more
+Caused by: java.net.ConnectException: Connection refused: no further information
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(Unknown Source)
+	at org.jboss.netty.channel.socket.nio.NioClientBoss.connect(NioClientBoss.java:148)
+	at org.jboss.netty.channel.socket.nio.NioClientBoss.processSelectedKeys(NioClientBoss.java:104)
+	at org.jboss.netty.channel.socket.nio.NioClientBoss.process(NioClientBoss.java:78)
+	at org.jboss.netty.channel.socket.nio.AbstractNioSelector.run(AbstractNioSelector.java:312)
+	at org.jboss.netty.channel.socket.nio.NioClientBoss.run(NioClientBoss.java:41)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+[7;31m2017-03-23 18:26:59,026 - ERROR [Thread-14:JuiceInvocationHandler@63] - Latch request time out..
+[m[7;31m2017-03-23 18:26:59,038 - ERROR [Thread-14:FeeBack@?] - class: com.juice.orange.game.rmi.JuiceInvocationHandler; method: invoke; line: 69;  Exception: 
+class: com.sun.proxy.$Proxy0; method: queryOrderT; line: -1;  Exception: 
+class: com.klw.fastfun.pay.view.app.service.FeeBack; method: processBYOrder; line: -1;  Exception: 
+class: com.klw.fastfun.pay.view.app.service.FeeBack; method: null; line: -1;  Exception: 
+class: sun.reflect.NativeMethodAccessorImpl; method: invoke0; line: -2;  Exception: 
+class: sun.reflect.NativeMethodAccessorImpl; method: invoke; line: -1;  Exception: 
+class: sun.reflect.DelegatingMethodAccessorImpl; method: invoke; line: -1;  Exception: 
+class: java.lang.reflect.Method; method: invoke; line: -1;  Exception: 
+class: com.juice.orange.game.handler.DefaultJuiceHandler; method: handleHttpRequest; line: 81;  Exception: 
+class: com.juice.orange.game.handler.DefaultJuiceHandler; method: handlerRequest; line: 35;  Exception: 
+class: com.juice.orange.game.handler.JuiceHttpControl; method: nextHandler; line: 84;  Exception: 
+class: com.juice.orange.game.handler.JuiceHttpControl; method: nextHandler; line: 67;  Exception: 
+class: com.juice.orange.game.util.threadpool.JuiceThreadPool$JuiceWorkThread; method: run; line: 70;  Exception: 
+java.lang.NullPointerException
+[m[2;35m2017-03-23 18:26:59,045 - WARN  [Thread-14:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :23001, uri:/fee/feebjylback?cpid=shaojie&amount=1200&productid=135000000000000247145&phone=18184695086&status=0&ordertime=2017/3/23%200:38:01&spnum=106613559&spcmd=jyfsjklbw@afq01@
+[m[2;32m2017-03-23 18:27:05,421 - INFO  [Thread-16:FeeBack@601] - feebjylback请求header信息：[Host=127.0.0.1:9911, Connection=keep-alive, Accept=text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8, User-Agent=Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.71 Safari/537.36, Accept-Encoding=gzip, deflate, sdch, Accept-Language=zh-CN,zh;q=0.8, Cookie=Hm_lvt_2fb6850c2dc8b36d451b5a97886724b7=1459320534; Hm_lvt_babfd903cf7f9b8cdbdc317eba1cb1af=1490240584; Hm_lpvt_babfd903cf7f9b8cdbdc317eba1cb1af=1490241333]
+[m[7;31m2017-03-23 18:27:11,018 - ERROR [Thread-16:FeeBack@642] - class: java.lang.String; method: substring; line: -1;  Exception: 
+class: com.klw.fastfun.pay.view.app.service.FeeBack; method: feebjylback; line: 623;  Exception: 
+class: sun.reflect.NativeMethodAccessorImpl; method: invoke0; line: -2;  Exception: 
+class: sun.reflect.NativeMethodAccessorImpl; method: invoke; line: -1;  Exception: 
+class: sun.reflect.DelegatingMethodAccessorImpl; method: invoke; line: -1;  Exception: 
+class: java.lang.reflect.Method; method: invoke; line: -1;  Exception: 
+class: com.juice.orange.game.handler.DefaultJuiceHandler; method: handleHttpRequest; line: 81;  Exception: 
+class: com.juice.orange.game.handler.DefaultJuiceHandler; method: handlerRequest; line: 35;  Exception: 
+class: com.juice.orange.game.handler.JuiceHttpControl; method: nextHandler; line: 84;  Exception: 
+class: com.juice.orange.game.handler.JuiceHttpControl; method: nextHandler; line: 67;  Exception: 
+class: com.juice.orange.game.util.threadpool.JuiceThreadPool$JuiceWorkThread; method: run; line: 70;  Exception: 
+java.lang.StringIndexOutOfBoundsException: String index out of range
+[m[2;35m2017-03-23 18:27:11,035 - WARN  [Thread-16:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :5614, uri:/fee/feebjylback?cpid=shaojie&amount=1200&productid=135000000000000247145&phone=18184695086&status=0&ordertime=2017/3/23%200:38:01&spnum=106613559&spcmd=jyfsjklbw
+[m[7;31m2017-03-23 18:27:19,095 - ERROR [Thread-24:DefaultJuiceHandler@90] - java.lang.ArrayIndexOutOfBoundsException: 2
+[m[7;31m2017-03-23 18:27:19,098 - ERROR [Thread-24:DefaultJuiceHandler@91] - com.juice.orange.game.exception.JuiceException: handler request error,path:/favicon.ico;param:null
+[m[2;35m2017-03-23 18:27:19,098 - WARN  [Thread-24:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :4, uri:/favicon.ico
+[m[7;31m2017-03-23 18:27:31,066 - ERROR [Thread-18:DefaultJuiceHandler@90] - java.lang.ArrayIndexOutOfBoundsException: 2
+[m[7;31m2017-03-23 18:27:31,066 - ERROR [Thread-18:DefaultJuiceHandler@91] - com.juice.orange.game.exception.JuiceException: handler request error,path:/favicon.ico;param:null
+[m[2;35m2017-03-23 18:27:31,066 - WARN  [Thread-18:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :1, uri:/favicon.ico
+[m

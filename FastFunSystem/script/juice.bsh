@@ -1,0 +1,34 @@
+import com.juice.orange.game.bootstrap.*;
+import com.juice.orange.game.rmi.RemoteConfig;
+
+
+// loading database resource
+DataBaseProperties database = new DataBaseProperties();
+database.url="jdbc:mysql://118.190.90.1:3306/fastfun?useUnicode=true&characterEncoding=UTF-8";
+database.userName="fastfun";
+database.password="fastfun.com.sql";
+
+
+//DataBaseProperties database = new DataBaseProperties();
+//database.url="jdbc:mysql://localhost:3306/fastfun?useUnicode=true&characterEncoding=UTF-8";
+//database.userName="root";
+//database.password="1234";
+
+
+
+
+// loading bootstrap configuration
+BootstrapProperties bootstrap = new BootstrapProperties();
+bootstrap.protocol="socket"; // http or socket
+bootstrap.port=9912;
+
+// build memcached
+//CachedProperties cached = new CachedProperties();
+//cached.memcachedUrl="127.0.0.1:11211";
+cacheds = new CachedProperties[]{
+	new CachedProperties("memcache", "127.0.0.1", 11211),
+//	new CachedProperties("memcache", "127.0.0.1", 11211),
+//	new CachedProperties("redis", "120.76.84.138", 6379),
+};
+
+

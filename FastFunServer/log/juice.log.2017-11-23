@@ -1,0 +1,320 @@
+[2;32m2017-11-23 01:40:24,616 - INFO  [main:ServerBootstrap@95] - Configuration Server bootstrap params.......
+[m[2;32m2017-11-23 01:40:24,620 - INFO  [main:ServerBootstrap@96] - Server protocol:	http
+[m[2;32m2017-11-23 01:40:24,620 - INFO  [main:ServerBootstrap@97] - Server port:	9911
+[m[2;32m2017-11-23 01:40:24,858 - INFO  [main:ServerBootstrap@106] - Configuration Remote Server.......
+[m[2;32m2017-11-23 01:40:24,859 - INFO  [main:ServerBootstrap@108] - Add Remote Server - Name:FastFunSystem;Address:localhost;Port:9912
+[m[2;35m2017-11-23 01:40:24,907 - WARN  [main:XMemcachedClient@727] - XMemcachedClient use Binary protocol
+[m[2;32m2017-11-23 01:40:24,933 - INFO  [main:SelectorManager@37] - Creating 16 reactors...
+[m[2;35m2017-11-23 01:40:24,942 - WARN  [main:AbstractController@372] - The Controller started at localhost/127.0.0.1:0 ...
+[m[2;35m2017-11-23 01:40:24,951 - WARN  [Xmemcached-Reactor-0:MemcachedConnector@251] - Add a session: 127.0.0.1:11211
+[m[2;32m2017-11-23 01:40:24,951 - INFO  [main:Application@25] - Init servers......
+[m[2;32m2017-11-23 01:40:25,009 - INFO  [main:ServerBootstrap@120] - Application PID:	4728
+[m[7;31m2017-11-23 01:40:45,427 - ERROR [Xmemcached-Reactor-2:MemcachedHandler@138] - XMemcached network layout exception
+[mjava.io.IOException: 远程主机强迫关闭了一个现有的连接。
+	at sun.nio.ch.SocketDispatcher.read0(Native Method)
+	at sun.nio.ch.SocketDispatcher.read(Unknown Source)
+	at sun.nio.ch.IOUtil.readIntoNativeBuffer(Unknown Source)
+	at sun.nio.ch.IOUtil.read(Unknown Source)
+	at sun.nio.ch.SocketChannelImpl.read(Unknown Source)
+	at com.google.code.yanf4j.nio.impl.NioTCPSession.readFromBuffer(NioTCPSession.java:203)
+	at com.google.code.yanf4j.nio.impl.AbstractNioSession.onRead(AbstractNioSession.java:196)
+	at com.google.code.yanf4j.nio.impl.AbstractNioSession.onEvent(AbstractNioSession.java:341)
+	at com.google.code.yanf4j.nio.impl.SocketChannelController.dispatchReadEvent(SocketChannelController.java:56)
+	at com.google.code.yanf4j.nio.impl.NioController.onRead(NioController.java:157)
+	at com.google.code.yanf4j.nio.impl.Reactor.dispatchEvent(Reactor.java:295)
+	at com.google.code.yanf4j.nio.impl.Reactor.run(Reactor.java:142)
+[2;35m2017-11-23 01:40:45,442 - WARN  [Xmemcached-Reactor-2:MemcachedConnector@365] - Remove a session: 127.0.0.1:11211
+[m[2;35m2017-11-23 01:40:47,444 - WARN  [Heal-Session-Thread:MemcachedConnector$SessionMonitor@125] - Trying to connect to 127.0.0.1:11211 for 1 times
+[m[2;35m2017-11-23 01:40:47,444 - WARN  [Xmemcached-Reactor-0:MemcachedConnector@251] - Add a session: 127.0.0.1:11211
+[m[2;32m2017-11-23 01:41:39,074 - INFO  [Thread-21:CodeHelperServer@2677] - reqPayOtherWY请求header信息：[Host=127.0.0.1:9911, Connection=keep-alive, Cache-Control=max-age=0, User-Agent=Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36, Upgrade-Insecure-Requests=1, Accept=text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8, Accept-Encoding=gzip, deflate, br, Accept-Language=zh-CN,zh;q=0.8,en;q=0.6]
+[m[2;32m2017-11-23 01:41:39,077 - INFO  [Thread-21:CodeHelperServer@2715] - 用户访问IP=112.124.10.89
+[m[2;32m2017-11-23 01:41:39,316 - INFO  [Thread-21:HttpTool@388] - 指令url=http://www.jhpay.com/wechat/wechatpay.jsp
+[m[2;32m2017-11-23 01:41:39,316 - INFO  [Thread-21:HttpTool@389] - 同步内容=extra=sd80&md5=F76E6C0DD7B93C66682454ABEBFBD8A1&merid=26200021&mername=6&merorderid=11sdi32754508731&paymoney=0.01&productname=测试&userid=11sdi32754508731&version=1.0
+[m[2;32m2017-11-23 01:45:04,502 - INFO  [Thread-21:CodeReqHelper@458] - 聚合富支付宝sd80请求结果:<!DOCTYPE html><html>	<head>	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">	<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=0">    <meta name="apple-mobile-web-app-status-bar-style" content="black">    <meta name="format-detection" content="telephone=no">    <meta name="format-detection" content="email=no">    <meta name="apple-mobile-web-app-capable" content="yes">	<title>聚合富</title>	<style type="text/css">		body{font-family:"Microsoft Yahei"; }	</style>	</head>	<body style="background-color:#F5F5F5;">		<div style="text-align:center;margin:0 auto; padding-top:50px;width:200px; height:200px;line-height:21px;">		<div style="background:url(images/jhf_failure.jpg) no-repeat center; margin:0 auto; width:200px; height:130px;"></div>			签名验证失败    	</div>	</body></html>
+[m[2;32m2017-11-23 01:45:04,582 - INFO  [Thread-21:CodeReqHelper@468] - 聚合富支付宝sd80生成json:{"orderid":"11sdi32754508731","spid":"sd80","status":"0","url":"<!DOCTYPE html><html>\t<head>\t<meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\t<meta name=\"viewport\" content=\"initial-scale=1.0, maximum-scale=1.0, user-scalable=0\">    <meta name=\"apple-mobile-web-app-status-bar-style\" content=\"black\">    <meta name=\"format-detection\" content=\"telephone=no\">    <meta name=\"format-detection\" content=\"email=no\">    <meta name=\"apple-mobile-web-app-capable\" content=\"yes\">\t<title>聚合富</title>\t<style type=\"text/css\">\t\tbody{font-family:\"Microsoft Yahei\"; }\t</style>\t</head>\t<body style=\"background-color:#F5F5F5;\">\t\t<div style=\"text-align:center;margin:0 auto; padding-top:50px;width:200px; height:200px;line-height:21px;\">\t\t<div style=\"background:url(images/jhf_failure.jpg) no-repeat center; margin:0 auto; width:200px; height:130px;\"></div>\t\t\t签名验证失败    \t</div>\t</body></html>"}
+[m[2;32m2017-11-23 01:45:04,611 - INFO  [Thread-21:CodeHelperServer@2788] - 合作方:test03
+通道方:sd80
+省份:
+计费点:1
+订单号:11sdi32754508731
+指令内容:{"orderid":"11sdi32754508731","spid":"sd80","status":"0","url":"<!DOCTYPE html><html>\t<head>\t<meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\t<meta name=\"viewport\" content=\"initial-scale=1.0, maximum-scale=1.0, user-scalable=0\">    <meta name=\"apple-mobile-web-app-status-bar-style\" content=\"black\">    <meta name=\"format-detection\" content=\"telephone=no\">    <meta name=\"format-detection\" content=\"email=no\">    <meta name=\"apple-mobile-web-app-capable\" content=\"yes\">\t<title>聚合富</title>\t<style type=\"text/css\">\t\tbody{font-family:\"Microsoft Yahei\"; }\t</style>\t</head>\t<body style=\"background-color:#F5F5F5;\">\t\t<div style=\"text-align:center;margin:0 auto; padding-top:50px;width:200px; height:200px;line-height:21px;\">\t\t<div style=\"background:url(images/jhf_failure.jpg) no-repeat center; margin:0 auto; width:200px; height:130px;\"></div>\t\t\t签名验证失败    \t</div>\t</body></html>"}
+[m[2;35m2017-11-23 01:45:04,636 - WARN  [Thread-21:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :205564, uri:/code/reqPayOtherWY?cpid=test03&imei=357806046192158&cpparam=klwtest&fee=1&ip=112.124.10.89&goodsname=%E6%B5%8B%E8%AF%95&app=%E6%B5%8B%E8%AF%95app&playerid=abc123
+[m[7;31m2017-11-23 01:45:04,654 - ERROR [Thread-141:DefaultJuiceHandler@90] - java.lang.ArrayIndexOutOfBoundsException: 2
+[m[7;31m2017-11-23 01:45:04,655 - ERROR [Thread-141:DefaultJuiceHandler@91] - com.juice.orange.game.exception.JuiceException: handler request error,path:/favicon.ico;param:null
+[m[2;35m2017-11-23 01:45:04,655 - WARN  [Thread-141:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :1, uri:/favicon.ico
+[m[2;32m2017-11-23 01:55:38,665 - INFO  [main:ServerBootstrap@95] - Configuration Server bootstrap params.......
+[m[2;32m2017-11-23 01:55:38,667 - INFO  [main:ServerBootstrap@96] - Server protocol:	http
+[m[2;32m2017-11-23 01:55:38,667 - INFO  [main:ServerBootstrap@97] - Server port:	9911
+[m[2;32m2017-11-23 01:55:38,873 - INFO  [main:ServerBootstrap@106] - Configuration Remote Server.......
+[m[2;32m2017-11-23 01:55:38,874 - INFO  [main:ServerBootstrap@108] - Add Remote Server - Name:FastFunSystem;Address:localhost;Port:9912
+[m[2;35m2017-11-23 01:55:38,918 - WARN  [main:XMemcachedClient@727] - XMemcachedClient use Binary protocol
+[m[2;32m2017-11-23 01:55:38,943 - INFO  [main:SelectorManager@37] - Creating 16 reactors...
+[m[2;35m2017-11-23 01:55:38,955 - WARN  [main:AbstractController@372] - The Controller started at localhost/127.0.0.1:0 ...
+[m[2;35m2017-11-23 01:55:38,967 - WARN  [Xmemcached-Reactor-0:MemcachedConnector@251] - Add a session: 127.0.0.1:11211
+[m[2;32m2017-11-23 01:55:38,968 - INFO  [main:Application@25] - Init servers......
+[m[2;32m2017-11-23 01:55:39,017 - INFO  [main:ServerBootstrap@120] - Application PID:	18664
+[m[2;32m2017-11-23 01:55:47,638 - INFO  [Thread-71:CodeHelperServer@2677] - reqPayOtherWY请求header信息：[Host=127.0.0.1:9911, Connection=keep-alive, Cache-Control=max-age=0, User-Agent=Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36, Upgrade-Insecure-Requests=1, Accept=text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8, Accept-Encoding=gzip, deflate, br, Accept-Language=zh-CN,zh;q=0.8,en;q=0.6]
+[m[2;32m2017-11-23 01:55:47,640 - INFO  [Thread-71:CodeHelperServer@2715] - 用户访问IP=112.124.10.89
+[m[2;32m2017-11-23 01:55:47,887 - INFO  [Thread-71:HttpTool@388] - 指令url=http://www.jhpay.com/wechat/wechatpay.jsp
+[m[2;32m2017-11-23 01:55:47,887 - INFO  [Thread-71:HttpTool@389] - 同步内容=version=1.0&merid=26200021&mername=6&merorderid=11sdr38272623740&paymoney=0.01&productname=测试app&productdesc=测试&userid=11sdr38272623740&username=&email=&phone=&extra=sd80&custom=&redirecturl=&md5=e4fc78d7bfd7aba311fe082725d58ecc
+[m[2;32m2017-11-23 01:56:14,379 - INFO  [Thread-71:CodeReqHelper@461] - 聚合富支付宝sd80请求结果:<!DOCTYPE html><html>	<head>	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">	<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=0">    <meta name="apple-mobile-web-app-status-bar-style" content="black">    <meta name="format-detection" content="telephone=no">    <meta name="format-detection" content="email=no">    <meta name="apple-mobile-web-app-capable" content="yes"> 	<title>聚合富</title>	<link rel="stylesheet" href="css/payreset.css" type="text/css">	<script type="text/javascript" src="js/jquery-1.7.1.min.js"></script>	<script type="text/javascript">			function payformsubmit() {			//alert('商户无权限');			document.getElementById('payform').submit(); 		}		</script></head><body class="redpockit">	<div class="container">					<header>			<h1>您在<span>6</span>消费</h1>		</header>			<p class="dollor"><span>0.01</span> 元</p>					<ul class="chose">						<li class="noRedpockit">			<div class="payment"><img class="payments" src="images/jhf_money_icon.png"></div>			</li>					</ul>		<div class="footer">												<form name="payform" id="payform" method="post" action="alipayapi.jsp">			  			<input type="hidden" name="orderid" value=20171123015526452653><br>			  			<input type="hidden" name="productname" value=测试app><br>			  			<input type="hidden" name="paymoney" value=0.01><br>			 			</form>						<div class="fotcon">							<div class="fotcondet2" id="getpayformsubmit" onclick="payformsubmit()">								<span class="fotlef">支付宝支付</span><span id="payAmount">0.01</span>元							</div>						</div>											<br/>												</div>	</div>	</body></html>
+[m[2;32m2017-11-23 01:56:14,423 - INFO  [Thread-71:CodeReqHelper@471] - 聚合富支付宝sd80生成json:{"orderid":"11sdr38272623740","spid":"sd80","status":"0","url":"<!DOCTYPE html><html>\t<head>\t<meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\t<meta name=\"viewport\" content=\"initial-scale=1.0, maximum-scale=1.0, user-scalable=0\">    <meta name=\"apple-mobile-web-app-status-bar-style\" content=\"black\">    <meta name=\"format-detection\" content=\"telephone=no\">    <meta name=\"format-detection\" content=\"email=no\">    <meta name=\"apple-mobile-web-app-capable\" content=\"yes\"> \t<title>聚合富</title>\t<link rel=\"stylesheet\" href=\"css/payreset.css\" type=\"text/css\">\t<script type=\"text/javascript\" src=\"js/jquery-1.7.1.min.js\"></script>\t<script type=\"text/javascript\">\t\t\tfunction payformsubmit() {\t\t\t//alert('商户无权限');\t\t\tdocument.getElementById('payform').submit(); \t\t}\t\t</script></head><body class=\"redpockit\">\t<div class=\"container\">\t\t\t\t\t<header>\t\t\t<h1>您在<span>6</span>消费</h1>\t\t</header>\t\t\t<p class=\"dollor\"><span>0.01</span> 元</p>\t\t\t\t\t<ul class=\"chose\">\t\t\t\t\t\t<li class=\"noRedpockit\">\t\t\t<div class=\"payment\"><img class=\"payments\" src=\"images/jhf_money_icon.png\"></div>\t\t\t</li>\t\t\t\t\t</ul>\t\t<div class=\"footer\">\t\t\t\t\t\t\t\t\t\t\t\t<form name=\"payform\" id=\"payform\" method=\"post\" action=\"alipayapi.jsp\">\t\t\t  \t\t\t<input type=\"hidden\" name=\"orderid\" value=20171123015526452653><br>\t\t\t  \t\t\t<input type=\"hidden\" name=\"productname\" value=测试app><br>\t\t\t  \t\t\t<input type=\"hidden\" name=\"paymoney\" value=0.01><br>\t\t\t \t\t\t</form>\t\t\t\t\t\t<div class=\"fotcon\">\t\t\t\t\t\t\t<div class=\"fotcondet2\" id=\"getpayformsubmit\" onclick=\"payformsubmit()\">\t\t\t\t\t\t\t\t<span class=\"fotlef\">支付宝支付</span><span id=\"payAmount\">0.01</span>元\t\t\t\t\t\t\t</div>\t\t\t\t\t\t</div>\t\t\t\t\t\t\t\t\t\t\t<br/>\t\t\t\t\t\t\t\t\t\t\t\t</div>\t</div>\t</body></html>"}
+[m[2;32m2017-11-23 01:56:14,446 - INFO  [Thread-71:CodeHelperServer@2788] - 合作方:test03
+通道方:sd80
+省份:
+计费点:1
+订单号:11sdr38272623740
+指令内容:{"orderid":"11sdr38272623740","spid":"sd80","status":"0","url":"<!DOCTYPE html><html>\t<head>\t<meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\t<meta name=\"viewport\" content=\"initial-scale=1.0, maximum-scale=1.0, user-scalable=0\">    <meta name=\"apple-mobile-web-app-status-bar-style\" content=\"black\">    <meta name=\"format-detection\" content=\"telephone=no\">    <meta name=\"format-detection\" content=\"email=no\">    <meta name=\"apple-mobile-web-app-capable\" content=\"yes\"> \t<title>聚合富</title>\t<link rel=\"stylesheet\" href=\"css/payreset.css\" type=\"text/css\">\t<script type=\"text/javascript\" src=\"js/jquery-1.7.1.min.js\"></script>\t<script type=\"text/javascript\">\t\t\tfunction payformsubmit() {\t\t\t//alert('商户无权限');\t\t\tdocument.getElementById('payform').submit(); \t\t}\t\t</script></head><body class=\"redpockit\">\t<div class=\"container\">\t\t\t\t\t<header>\t\t\t<h1>您在<span>6</span>消费</h1>\t\t</header>\t\t\t<p class=\"dollor\"><span>0.01</span> 元</p>\t\t\t\t\t<ul class=\"chose\">\t\t\t\t\t\t<li class=\"noRedpockit\">\t\t\t<div class=\"payment\"><img class=\"payments\" src=\"images/jhf_money_icon.png\"></div>\t\t\t</li>\t\t\t\t\t</ul>\t\t<div class=\"footer\">\t\t\t\t\t\t\t\t\t\t\t\t<form name=\"payform\" id=\"payform\" method=\"post\" action=\"alipayapi.jsp\">\t\t\t  \t\t\t<input type=\"hidden\" name=\"orderid\" value=20171123015526452653><br>\t\t\t  \t\t\t<input type=\"hidden\" name=\"productname\" value=测试app><br>\t\t\t  \t\t\t<input type=\"hidden\" name=\"paymoney\" value=0.01><br>\t\t\t \t\t\t</form>\t\t\t\t\t\t<div class=\"fotcon\">\t\t\t\t\t\t\t<div class=\"fotcondet2\" id=\"getpayformsubmit\" onclick=\"payformsubmit()\">\t\t\t\t\t\t\t\t<span class=\"fotlef\">支付宝支付</span><span id=\"payAmount\">0.01</span>元\t\t\t\t\t\t\t</div>\t\t\t\t\t\t</div>\t\t\t\t\t\t\t\t\t\t\t<br/>\t\t\t\t\t\t\t\t\t\t\t\t</div>\t</div>\t</body></html>"}
+[m[2;35m2017-11-23 01:56:14,482 - WARN  [Thread-71:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :26845, uri:/code/reqPayOtherWY?cpid=test03&imei=357806046192158&cpparam=klwtest&fee=1&ip=112.124.10.89&goodsname=%E6%B5%8B%E8%AF%95&app=%E6%B5%8B%E8%AF%95app&playerid=abc123
+[m[7;31m2017-11-23 01:56:14,496 - ERROR [Thread-152:DefaultJuiceHandler@90] - java.lang.ArrayIndexOutOfBoundsException: 2
+[m[7;31m2017-11-23 01:56:14,497 - ERROR [Thread-152:DefaultJuiceHandler@91] - com.juice.orange.game.exception.JuiceException: handler request error,path:/favicon.ico;param:null
+[m[2;35m2017-11-23 01:56:14,497 - WARN  [Thread-152:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :2, uri:/favicon.ico
+[m[2;32m2017-11-23 11:31:41,659 - INFO  [main:ServerBootstrap@95] - Configuration Server bootstrap params.......
+[m[2;32m2017-11-23 11:31:41,661 - INFO  [main:ServerBootstrap@96] - Server protocol:	http
+[m[2;32m2017-11-23 11:31:41,661 - INFO  [main:ServerBootstrap@97] - Server port:	9911
+[m[2;32m2017-11-23 11:31:41,811 - INFO  [main:ServerBootstrap@106] - Configuration Remote Server.......
+[m[2;32m2017-11-23 11:31:41,811 - INFO  [main:ServerBootstrap@108] - Add Remote Server - Name:FastFunSystem;Address:localhost;Port:9912
+[m[2;35m2017-11-23 11:31:41,848 - WARN  [main:XMemcachedClient@727] - XMemcachedClient use Binary protocol
+[m[2;32m2017-11-23 11:31:41,871 - INFO  [main:SelectorManager@37] - Creating 16 reactors...
+[m[2;35m2017-11-23 11:31:41,880 - WARN  [main:AbstractController@372] - The Controller started at localhost/127.0.0.1:0 ...
+[m[2;35m2017-11-23 11:31:41,887 - WARN  [Xmemcached-Reactor-0:MemcachedConnector@251] - Add a session: 127.0.0.1:11211
+[m[2;32m2017-11-23 11:31:41,888 - INFO  [main:Application@25] - Init servers......
+[m[2;32m2017-11-23 11:31:41,929 - INFO  [main:ServerBootstrap@120] - Application PID:	27128
+[m[2;32m2017-11-23 11:31:55,416 - INFO  [Thread-121:FeeBack@1484] - feexsfyback请求header信息：[Accept=*/*, Host=127.0.0.1:9911, Content-Length=229, Connection=Keep-Alive, Cache-Control=no-cache]
+[m[2;32m2017-11-23 11:31:55,417 - INFO  [Thread-121:FeeBack@1486] - feexsfyback请求body信息：{"msg":"�ɹ�","platform_order_no":"20171123110418-6008723020","pay_status":1,"code":"0000","additional_info":"sd77","sign":"5341BFCF097FE1E598799570B4E47793","order_amt":1,"sign_type":"MD5","merchant_order_no":"11sdh85742210714"}
+[m[2;32m2017-11-23 11:51:48,861 - INFO  [main:ServerBootstrap@95] - Configuration Server bootstrap params.......
+[m[2;32m2017-11-23 11:51:48,863 - INFO  [main:ServerBootstrap@96] - Server protocol:	http
+[m[2;32m2017-11-23 11:51:48,863 - INFO  [main:ServerBootstrap@97] - Server port:	9911
+[m[2;32m2017-11-23 11:51:49,051 - INFO  [main:ServerBootstrap@106] - Configuration Remote Server.......
+[m[2;32m2017-11-23 11:51:49,051 - INFO  [main:ServerBootstrap@108] - Add Remote Server - Name:FastFunSystem;Address:localhost;Port:9912
+[m[2;35m2017-11-23 11:51:49,106 - WARN  [main:XMemcachedClient@727] - XMemcachedClient use Binary protocol
+[m[2;32m2017-11-23 11:51:49,129 - INFO  [main:SelectorManager@37] - Creating 16 reactors...
+[m[2;35m2017-11-23 11:51:49,140 - WARN  [main:AbstractController@372] - The Controller started at localhost/127.0.0.1:0 ...
+[m[2;35m2017-11-23 11:51:49,149 - WARN  [Xmemcached-Reactor-0:MemcachedConnector@251] - Add a session: 127.0.0.1:11211
+[m[2;32m2017-11-23 11:51:49,150 - INFO  [main:Application@25] - Init servers......
+[m[2;32m2017-11-23 11:51:49,210 - INFO  [main:ServerBootstrap@120] - Application PID:	21232
+[m[2;32m2017-11-23 11:52:13,813 - INFO  [Thread-103:FeeBack@1484] - feexsfyback请求header信息：[Accept=*/*, Host=127.0.0.1:9911, Content-Length=229, Connection=Keep-Alive, Cache-Control=no-cache]
+[m[2;32m2017-11-23 11:52:13,814 - INFO  [Thread-103:FeeBack@1486] - feexsfyback请求body信息：{"msg":"�ɹ�","platform_order_no":"20171123110418-6008723020","pay_status":1,"code":"0000","additional_info":"sd77","sign":"5341BFCF097FE1E598799570B4E47793","order_amt":1,"sign_type":"MD5","merchant_order_no":"11sdh85742210714"}
+[m[7;31m2017-11-23 11:52:13,848 - ERROR [Thread-103:FeeBack@1517] - class: com.klw.fastfun.pay.view.app.service.FeeBack; method: feexsfyback; line: 1490;  Exception: 
+class: sun.reflect.NativeMethodAccessorImpl; method: invoke0; line: -2;  Exception: 
+class: sun.reflect.NativeMethodAccessorImpl; method: invoke; line: -1;  Exception: 
+class: sun.reflect.DelegatingMethodAccessorImpl; method: invoke; line: -1;  Exception: 
+class: java.lang.reflect.Method; method: invoke; line: -1;  Exception: 
+class: com.juice.orange.game.handler.DefaultJuiceHandler; method: handleHttpRequest; line: 81;  Exception: 
+class: com.juice.orange.game.handler.DefaultJuiceHandler; method: handlerRequest; line: 35;  Exception: 
+class: com.juice.orange.game.handler.JuiceHttpControl; method: nextHandler; line: 84;  Exception: 
+class: com.juice.orange.game.handler.JuiceHttpControl; method: nextHandler; line: 67;  Exception: 
+class: com.juice.orange.game.util.threadpool.JuiceThreadPool$JuiceWorkThread; method: run; line: 70;  Exception: 
+java.lang.ClassCastException
+[m[2;35m2017-11-23 11:52:13,852 - WARN  [Thread-103:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :40, uri:/fee/feexsfyback
+[m[2;32m2017-11-23 11:52:33,137 - INFO  [Thread-73:FeeBack@1484] - feexsfyback请求header信息：[Accept=*/*, Host=127.0.0.1:9911, Content-Length=229, Connection=Keep-Alive, Cache-Control=no-cache]
+[m[2;32m2017-11-23 11:52:33,143 - INFO  [Thread-73:FeeBack@1486] - feexsfyback请求body信息：{"msg":"�ɹ�","platform_order_no":"20171123110418-6008723020","pay_status":1,"code":"0000","additional_info":"sd77","sign":"5341BFCF097FE1E598799570B4E47793","order_amt":1,"sign_type":"MD5","merchant_order_no":"11sdh85742210714"}
+[m[7;31m2017-11-23 11:52:56,498 - ERROR [Thread-73:FeeBack@1517] - class: com.klw.fastfun.pay.view.app.service.FeeBack; method: feexsfyback; line: 1490;  Exception: 
+class: sun.reflect.NativeMethodAccessorImpl; method: invoke0; line: -2;  Exception: 
+class: sun.reflect.NativeMethodAccessorImpl; method: invoke; line: -1;  Exception: 
+class: sun.reflect.DelegatingMethodAccessorImpl; method: invoke; line: -1;  Exception: 
+class: java.lang.reflect.Method; method: invoke; line: -1;  Exception: 
+class: com.juice.orange.game.handler.DefaultJuiceHandler; method: handleHttpRequest; line: 81;  Exception: 
+class: com.juice.orange.game.handler.DefaultJuiceHandler; method: handlerRequest; line: 35;  Exception: 
+class: com.juice.orange.game.handler.JuiceHttpControl; method: nextHandler; line: 84;  Exception: 
+class: com.juice.orange.game.handler.JuiceHttpControl; method: nextHandler; line: 67;  Exception: 
+class: com.juice.orange.game.util.threadpool.JuiceThreadPool$JuiceWorkThread; method: run; line: 70;  Exception: 
+java.lang.ClassCastException
+[m[2;35m2017-11-23 11:52:56,500 - WARN  [Thread-73:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :23363, uri:/fee/feexsfyback
+[m[2;32m2017-11-23 11:53:02,944 - INFO  [Thread-92:FeeBack@1484] - feexsfyback请求header信息：[Accept=*/*, Host=127.0.0.1:9911, Content-Length=229, Connection=Keep-Alive, Cache-Control=no-cache]
+[m[2;32m2017-11-23 11:53:02,946 - INFO  [Thread-92:FeeBack@1486] - feexsfyback请求body信息：{"msg":"�ɹ�","platform_order_no":"20171123110418-6008723020","pay_status":1,"code":"0000","additional_info":"sd77","sign":"5341BFCF097FE1E598799570B4E47793","order_amt":1,"sign_type":"MD5","merchant_order_no":"11sdh85742210714"}
+[m[7;31m2017-11-23 11:57:29,299 - ERROR [Thread-92:FeeBack@1517] - class: com.klw.fastfun.pay.view.app.service.FeeBack; method: feexsfyback; line: 1490;  Exception: 
+class: sun.reflect.NativeMethodAccessorImpl; method: invoke0; line: -2;  Exception: 
+class: sun.reflect.NativeMethodAccessorImpl; method: invoke; line: -1;  Exception: 
+class: sun.reflect.DelegatingMethodAccessorImpl; method: invoke; line: -1;  Exception: 
+class: java.lang.reflect.Method; method: invoke; line: -1;  Exception: 
+class: com.juice.orange.game.handler.DefaultJuiceHandler; method: handleHttpRequest; line: 81;  Exception: 
+class: com.juice.orange.game.handler.DefaultJuiceHandler; method: handlerRequest; line: 35;  Exception: 
+class: com.juice.orange.game.handler.JuiceHttpControl; method: nextHandler; line: 84;  Exception: 
+class: com.juice.orange.game.handler.JuiceHttpControl; method: nextHandler; line: 67;  Exception: 
+class: com.juice.orange.game.util.threadpool.JuiceThreadPool$JuiceWorkThread; method: run; line: 70;  Exception: 
+java.lang.ClassCastException
+[m[2;35m2017-11-23 11:57:29,304 - WARN  [Thread-92:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :266360, uri:/fee/feexsfyback
+[m[2;32m2017-11-23 11:58:48,921 - INFO  [main:ServerBootstrap@95] - Configuration Server bootstrap params.......
+[m[2;32m2017-11-23 11:58:48,923 - INFO  [main:ServerBootstrap@96] - Server protocol:	http
+[m[2;32m2017-11-23 11:58:48,923 - INFO  [main:ServerBootstrap@97] - Server port:	9911
+[m[2;32m2017-11-23 11:58:49,106 - INFO  [main:ServerBootstrap@106] - Configuration Remote Server.......
+[m[2;32m2017-11-23 11:58:49,106 - INFO  [main:ServerBootstrap@108] - Add Remote Server - Name:FastFunSystem;Address:localhost;Port:9912
+[m[2;35m2017-11-23 11:58:49,144 - WARN  [main:XMemcachedClient@727] - XMemcachedClient use Binary protocol
+[m[2;32m2017-11-23 11:58:49,169 - INFO  [main:SelectorManager@37] - Creating 16 reactors...
+[m[2;35m2017-11-23 11:58:49,180 - WARN  [main:AbstractController@372] - The Controller started at localhost/127.0.0.1:0 ...
+[m[2;35m2017-11-23 11:58:49,190 - WARN  [Xmemcached-Reactor-0:MemcachedConnector@251] - Add a session: 127.0.0.1:11211
+[m[2;32m2017-11-23 11:58:49,190 - INFO  [main:Application@25] - Init servers......
+[m[2;32m2017-11-23 11:58:49,241 - INFO  [main:ServerBootstrap@120] - Application PID:	22456
+[m[2;32m2017-11-23 12:01:08,098 - INFO  [Thread-51:FeeBack@1484] - feexsfyback请求header信息：[Accept=*/*, Host=127.0.0.1:9911, Content-Length=229, Connection=Keep-Alive, Cache-Control=no-cache]
+[m[2;32m2017-11-23 12:01:08,099 - INFO  [Thread-51:FeeBack@1486] - feexsfyback请求body信息：{"msg":"�ɹ�","platform_order_no":"20171123110418-6008723020","pay_status":1,"code":"0000","additional_info":"sd77","sign":"5341BFCF097FE1E598799570B4E47793","order_amt":1,"sign_type":"MD5","merchant_order_no":"11sdh85742210714"}
+[m[7;31m2017-11-23 12:05:00,677 - ERROR [Thread-51:FeeBack@1518] - class: com.klw.fastfun.pay.view.app.wxpay.utils.PayUtil; method: createSignByObj; line: 110;  Exception: 
+class: com.klw.fastfun.pay.view.app.wxpay.utils.PayUtil; method: getSignByObj; line: 88;  Exception: 
+class: com.klw.fastfun.pay.view.app.service.FeeBack; method: feexsfyback; line: 1506;  Exception: 
+class: sun.reflect.NativeMethodAccessorImpl; method: invoke0; line: -2;  Exception: 
+class: sun.reflect.NativeMethodAccessorImpl; method: invoke; line: -1;  Exception: 
+class: sun.reflect.DelegatingMethodAccessorImpl; method: invoke; line: -1;  Exception: 
+class: java.lang.reflect.Method; method: invoke; line: -1;  Exception: 
+class: com.juice.orange.game.handler.DefaultJuiceHandler; method: handleHttpRequest; line: 81;  Exception: 
+class: com.juice.orange.game.handler.DefaultJuiceHandler; method: handlerRequest; line: 35;  Exception: 
+class: com.juice.orange.game.handler.JuiceHttpControl; method: nextHandler; line: 84;  Exception: 
+class: com.juice.orange.game.handler.JuiceHttpControl; method: nextHandler; line: 67;  Exception: 
+class: com.juice.orange.game.util.threadpool.JuiceThreadPool$JuiceWorkThread; method: run; line: 70;  Exception: 
+java.lang.ClassCastException
+[m[2;35m2017-11-23 12:05:00,698 - WARN  [Thread-51:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :232601, uri:/fee/feexsfyback
+[m[2;32m2017-11-23 12:10:18,893 - INFO  [main:ServerBootstrap@95] - Configuration Server bootstrap params.......
+[m[2;32m2017-11-23 12:10:18,895 - INFO  [main:ServerBootstrap@96] - Server protocol:	http
+[m[2;32m2017-11-23 12:10:18,895 - INFO  [main:ServerBootstrap@97] - Server port:	9911
+[m[2;32m2017-11-23 12:10:19,075 - INFO  [main:ServerBootstrap@106] - Configuration Remote Server.......
+[m[2;32m2017-11-23 12:10:19,076 - INFO  [main:ServerBootstrap@108] - Add Remote Server - Name:FastFunSystem;Address:localhost;Port:9912
+[m[2;35m2017-11-23 12:10:19,114 - WARN  [main:XMemcachedClient@727] - XMemcachedClient use Binary protocol
+[m[2;32m2017-11-23 12:10:19,143 - INFO  [main:SelectorManager@37] - Creating 16 reactors...
+[m[2;35m2017-11-23 12:10:19,154 - WARN  [main:AbstractController@372] - The Controller started at localhost/127.0.0.1:0 ...
+[m[2;35m2017-11-23 12:10:19,163 - WARN  [Xmemcached-Reactor-0:MemcachedConnector@251] - Add a session: 127.0.0.1:11211
+[m[2;32m2017-11-23 12:10:19,164 - INFO  [main:Application@25] - Init servers......
+[m[2;32m2017-11-23 12:10:19,216 - INFO  [main:ServerBootstrap@120] - Application PID:	13128
+[m[2;32m2017-11-23 12:10:25,781 - INFO  [Thread-121:FeeBack@1484] - feexsfyback请求header信息：[Accept=*/*, Host=127.0.0.1:9911, Content-Length=229, Connection=Keep-Alive, Cache-Control=no-cache]
+[m[2;32m2017-11-23 12:10:25,781 - INFO  [Thread-121:FeeBack@1486] - feexsfyback请求body信息：{"msg":"�ɹ�","platform_order_no":"20171123110418-6008723020","pay_status":1,"code":"0000","additional_info":"sd77","sign":"5341BFCF097FE1E598799570B4E47793","order_amt":1,"sign_type":"MD5","merchant_order_no":"11sdh85742210714"}
+[m[2;32m2017-11-23 12:10:36,612 - INFO  [Thread-121:FeeBack@1509] - feexsfyback验签结果：false
+[m[2;32m2017-11-23 12:10:36,715 - INFO  [Thread-121:HttpTool@83] - sendKLWPost指令url:http://smspay.xushihudong.com/mmcode/test
+[m[2;32m2017-11-23 12:10:36,715 - INFO  [Thread-121:HttpTool@84] - sendKLWPost指令param:{"cpid":"test03","cpparam":"klwtest","fee":1,"ffid":"11sdh85742210714","imei":"357806046192158","ip":"119.122.35.198","sign":"8c6c5feb037945dfe5d39130cc378dd1","status":"0"}
+[m[2;32m2017-11-23 12:10:37,036 - INFO  [Thread-121:HttpTool@122] - 指令结果=ok
+[m[2;32m2017-11-23 12:10:37,036 - INFO  [Thread-121:FeeBack@3041] - 给CP的同步结果：ok
+[m[2;35m2017-11-23 12:10:37,054 - WARN  [Thread-121:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :11274, uri:/fee/feexsfyback
+[m[2;32m2017-11-23 23:36:02,513 - INFO  [main:ServerBootstrap@95] - Configuration Server bootstrap params.......
+[m[2;32m2017-11-23 23:36:02,515 - INFO  [main:ServerBootstrap@96] - Server protocol:	http
+[m[2;32m2017-11-23 23:36:02,515 - INFO  [main:ServerBootstrap@97] - Server port:	9911
+[m[2;32m2017-11-23 23:36:02,676 - INFO  [main:ServerBootstrap@106] - Configuration Remote Server.......
+[m[2;32m2017-11-23 23:36:02,676 - INFO  [main:ServerBootstrap@108] - Add Remote Server - Name:FastFunSystem;Address:localhost;Port:9912
+[m[2;35m2017-11-23 23:36:02,718 - WARN  [main:XMemcachedClient@727] - XMemcachedClient use Binary protocol
+[m[2;32m2017-11-23 23:36:02,743 - INFO  [main:SelectorManager@37] - Creating 16 reactors...
+[m[2;35m2017-11-23 23:36:02,754 - WARN  [main:AbstractController@372] - The Controller started at localhost/127.0.0.1:0 ...
+[m[2;35m2017-11-23 23:36:02,763 - WARN  [Xmemcached-Reactor-0:MemcachedConnector@251] - Add a session: 127.0.0.1:11211
+[m[2;32m2017-11-23 23:36:02,764 - INFO  [main:Application@25] - Init servers......
+[m[2;32m2017-11-23 23:36:02,812 - INFO  [main:ServerBootstrap@120] - Application PID:	24048
+[m[2;32m2017-11-23 23:36:16,384 - INFO  [Thread-81:CodeHelperServer@3848] - reqSpecialMixCode5请求header信息：[Host=127.0.0.1:9911, Connection=keep-alive, User-Agent=Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36, Upgrade-Insecure-Requests=1, Accept=text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8, Accept-Encoding=gzip, deflate, br, Accept-Language=zh-CN,zh;q=0.8,en;q=0.6]
+[m[2;32m2017-11-23 23:36:32,293 - INFO  [Thread-81:CodeHelperServer@5196] - 用户访问phone=null
+[m[2;32m2017-11-23 23:36:32,302 - INFO  [Thread-81:CodeHelperServer@5199] - 用户访问imsi:460008412212087,反推手机号前面7位：1372841
+[m[2;32m2017-11-23 23:36:32,496 - INFO  [Thread-81:CodeHelperServer@5209] - 移动用户phone：1372841
+[m[2;32m2017-11-23 23:36:32,497 - INFO  [Thread-81:CodeHelperServer@5217] - 根据phone查询省份地市：广东_东莞
+[m[2;32m2017-11-23 23:36:32,500 - INFO  [Thread-81:CodeHelperServer@5241] - 用户访问IP=120.197.142.77
+[m[2;35m2017-11-23 23:38:24,221 - WARN  [Thread-81:CodeHelperServer@3895] - CPID=xshd01 匹配不到合适省份=广东 计费点=2000 的指令！
+[m[7;31m2017-11-23 23:38:25,384 - ERROR [Thread-111:DefaultJuiceHandler@90] - java.lang.ArrayIndexOutOfBoundsException: 2
+[m[7;31m2017-11-23 23:38:25,385 - ERROR [Thread-111:DefaultJuiceHandler@91] - com.juice.orange.game.exception.JuiceException: handler request error,path:/favicon.ico;param:null
+[m[2;35m2017-11-23 23:38:25,386 - WARN  [Thread-111:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :2, uri:/favicon.ico
+[m[7;31m2017-11-23 23:38:44,115 - ERROR [Xmemcached-Reactor-2:MemcachedHandler@138] - XMemcached network layout exception
+[mjava.io.IOException: 远程主机强迫关闭了一个现有的连接。
+	at sun.nio.ch.SocketDispatcher.read0(Native Method)
+	at sun.nio.ch.SocketDispatcher.read(Unknown Source)
+	at sun.nio.ch.IOUtil.readIntoNativeBuffer(Unknown Source)
+	at sun.nio.ch.IOUtil.read(Unknown Source)
+	at sun.nio.ch.SocketChannelImpl.read(Unknown Source)
+	at com.google.code.yanf4j.nio.impl.NioTCPSession.readFromBuffer(NioTCPSession.java:203)
+	at com.google.code.yanf4j.nio.impl.AbstractNioSession.onRead(AbstractNioSession.java:196)
+	at com.google.code.yanf4j.nio.impl.AbstractNioSession.onEvent(AbstractNioSession.java:341)
+	at com.google.code.yanf4j.nio.impl.SocketChannelController.dispatchReadEvent(SocketChannelController.java:56)
+	at com.google.code.yanf4j.nio.impl.NioController.onRead(NioController.java:157)
+	at com.google.code.yanf4j.nio.impl.Reactor.dispatchEvent(Reactor.java:295)
+	at com.google.code.yanf4j.nio.impl.Reactor.run(Reactor.java:142)
+[2;35m2017-11-23 23:38:44,126 - WARN  [Xmemcached-Reactor-2:MemcachedConnector@365] - Remove a session: 127.0.0.1:11211
+[m[2;35m2017-11-23 23:38:46,129 - WARN  [Heal-Session-Thread:MemcachedConnector$SessionMonitor@125] - Trying to connect to 127.0.0.1:11211 for 1 times
+[m[2;35m2017-11-23 23:38:46,131 - WARN  [Xmemcached-Reactor-0:MemcachedConnector@251] - Add a session: 127.0.0.1:11211
+[m[2;32m2017-11-23 23:38:54,700 - INFO  [main:ServerBootstrap@95] - Configuration Server bootstrap params.......
+[m[2;32m2017-11-23 23:38:54,702 - INFO  [main:ServerBootstrap@96] - Server protocol:	http
+[m[2;32m2017-11-23 23:38:54,702 - INFO  [main:ServerBootstrap@97] - Server port:	9911
+[m[2;32m2017-11-23 23:38:54,872 - INFO  [main:ServerBootstrap@106] - Configuration Remote Server.......
+[m[2;32m2017-11-23 23:38:54,872 - INFO  [main:ServerBootstrap@108] - Add Remote Server - Name:FastFunSystem;Address:localhost;Port:9912
+[m[2;35m2017-11-23 23:38:54,908 - WARN  [main:XMemcachedClient@727] - XMemcachedClient use Binary protocol
+[m[2;32m2017-11-23 23:38:54,931 - INFO  [main:SelectorManager@37] - Creating 16 reactors...
+[m[2;35m2017-11-23 23:38:54,940 - WARN  [main:AbstractController@372] - The Controller started at localhost/127.0.0.1:0 ...
+[m[2;35m2017-11-23 23:38:54,949 - WARN  [Xmemcached-Reactor-0:MemcachedConnector@251] - Add a session: 127.0.0.1:11211
+[m[2;32m2017-11-23 23:38:54,950 - INFO  [main:Application@25] - Init servers......
+[m[2;32m2017-11-23 23:38:55,018 - INFO  [main:ServerBootstrap@120] - Application PID:	19340
+[m[2;32m2017-11-23 23:39:01,087 - INFO  [Thread-151:CodeHelperServer@3848] - reqSpecialMixCode5请求header信息：[Host=127.0.0.1:9911, Connection=keep-alive, Cache-Control=max-age=0, User-Agent=Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36, Upgrade-Insecure-Requests=1, Accept=text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8, Accept-Encoding=gzip, deflate, br, Accept-Language=zh-CN,zh;q=0.8,en;q=0.6]
+[m[2;32m2017-11-23 23:39:57,461 - INFO  [Thread-151:CodeHelperServer@5196] - 用户访问phone=null
+[m[2;32m2017-11-23 23:39:57,471 - INFO  [Thread-151:CodeHelperServer@5199] - 用户访问imsi:460008412212087,反推手机号前面7位：1372841
+[m[2;32m2017-11-23 23:39:57,699 - INFO  [Thread-151:CodeHelperServer@5209] - 移动用户phone：1372841
+[m[2;32m2017-11-23 23:39:57,699 - INFO  [Thread-151:CodeHelperServer@5217] - 根据phone查询省份地市：广东_东莞
+[m[2;32m2017-11-23 23:39:57,703 - INFO  [Thread-151:CodeHelperServer@5241] - 用户访问IP=120.197.142.77
+[m[2;35m2017-11-23 23:40:18,509 - WARN  [Thread-151:CodeHelperServer@3895] - CPID=xshd01 匹配不到合适省份=广东 计费点=2000 的指令！
+[m[7;31m2017-11-23 23:42:14,733 - ERROR [Xmemcached-Reactor-2:MemcachedHandler@138] - XMemcached network layout exception
+[mjava.io.IOException: 远程主机强迫关闭了一个现有的连接。
+	at sun.nio.ch.SocketDispatcher.read0(Native Method)
+	at sun.nio.ch.SocketDispatcher.read(Unknown Source)
+	at sun.nio.ch.IOUtil.readIntoNativeBuffer(Unknown Source)
+	at sun.nio.ch.IOUtil.read(Unknown Source)
+	at sun.nio.ch.SocketChannelImpl.read(Unknown Source)
+	at com.google.code.yanf4j.nio.impl.NioTCPSession.readFromBuffer(NioTCPSession.java:203)
+	at com.google.code.yanf4j.nio.impl.AbstractNioSession.onRead(AbstractNioSession.java:196)
+	at com.google.code.yanf4j.nio.impl.AbstractNioSession.onEvent(AbstractNioSession.java:341)
+	at com.google.code.yanf4j.nio.impl.SocketChannelController.dispatchReadEvent(SocketChannelController.java:56)
+	at com.google.code.yanf4j.nio.impl.NioController.onRead(NioController.java:157)
+	at com.google.code.yanf4j.nio.impl.Reactor.dispatchEvent(Reactor.java:295)
+	at com.google.code.yanf4j.nio.impl.Reactor.run(Reactor.java:142)
+[2;35m2017-11-23 23:42:14,750 - WARN  [Xmemcached-Reactor-2:MemcachedConnector@365] - Remove a session: 127.0.0.1:11211
+[m[2;35m2017-11-23 23:42:16,753 - WARN  [Heal-Session-Thread:MemcachedConnector$SessionMonitor@125] - Trying to connect to 127.0.0.1:11211 for 1 times
+[m[2;35m2017-11-23 23:42:16,754 - WARN  [Xmemcached-Reactor-0:MemcachedConnector@251] - Add a session: 127.0.0.1:11211
+[m[2;32m2017-11-23 23:42:29,139 - INFO  [main:ServerBootstrap@95] - Configuration Server bootstrap params.......
+[m[2;32m2017-11-23 23:42:29,141 - INFO  [main:ServerBootstrap@96] - Server protocol:	http
+[m[2;32m2017-11-23 23:42:29,141 - INFO  [main:ServerBootstrap@97] - Server port:	9911
+[m[2;32m2017-11-23 23:42:29,315 - INFO  [main:ServerBootstrap@106] - Configuration Remote Server.......
+[m[2;32m2017-11-23 23:42:29,315 - INFO  [main:ServerBootstrap@108] - Add Remote Server - Name:FastFunSystem;Address:localhost;Port:9912
+[m[2;35m2017-11-23 23:42:29,355 - WARN  [main:XMemcachedClient@727] - XMemcachedClient use Binary protocol
+[m[2;32m2017-11-23 23:42:29,379 - INFO  [main:SelectorManager@37] - Creating 16 reactors...
+[m[2;35m2017-11-23 23:42:29,390 - WARN  [main:AbstractController@372] - The Controller started at localhost/127.0.0.1:0 ...
+[m[2;35m2017-11-23 23:42:29,398 - WARN  [Xmemcached-Reactor-0:MemcachedConnector@251] - Add a session: 127.0.0.1:11211
+[m[2;32m2017-11-23 23:42:29,399 - INFO  [main:Application@25] - Init servers......
+[m[2;32m2017-11-23 23:42:29,448 - INFO  [main:ServerBootstrap@120] - Application PID:	23824
+[m[2;32m2017-11-23 23:42:53,119 - INFO  [Thread-41:CodeHelperServer@3848] - reqSpecialMixCode5请求header信息：[Host=127.0.0.1:9911, Connection=keep-alive, Cache-Control=max-age=0, Upgrade-Insecure-Requests=1, User-Agent=Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36, Accept=text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8, Accept-Encoding=gzip, deflate, br, Accept-Language=zh-CN,zh;q=0.8,en;q=0.6]
+[m[2;32m2017-11-23 23:42:53,122 - INFO  [Thread-41:CodeHelperServer@5196] - 用户访问phone=null
+[m[2;32m2017-11-23 23:42:53,127 - INFO  [Thread-41:CodeHelperServer@5199] - 用户访问imsi:460008412212087,反推手机号前面7位：1372841
+[m[2;32m2017-11-23 23:42:53,321 - INFO  [Thread-41:CodeHelperServer@5209] - 移动用户phone：1372841
+[m[2;32m2017-11-23 23:42:53,321 - INFO  [Thread-41:CodeHelperServer@5217] - 根据phone查询省份地市：广东_东莞
+[m[2;32m2017-11-23 23:42:53,322 - INFO  [Thread-41:CodeHelperServer@5241] - 用户访问IP=120.197.142.77
+[m[7;31m2017-11-23 23:43:03,324 - ERROR [Thread-41:JuiceInvocationHandler@61] - Latch request time out..
+[m[7;31m2017-11-23 23:43:03,325 - ERROR [Thread-41:CodeHelperServer@3940] - 
+[m[2;35m2017-11-23 23:43:03,355 - WARN  [Thread-41:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :10238, uri:/code/reqSpecialMixCode5?cpid=xshd01&imsi=460008412212087&imei=862606030036496&iccid=89860042191673715293&fee=2000&ip=120.197.142.77
+[m[7;31m2017-11-23 23:43:03,379 - ERROR [Thread-83:DefaultJuiceHandler@90] - java.lang.ArrayIndexOutOfBoundsException: 2
+[m[7;31m2017-11-23 23:43:03,379 - ERROR [Thread-83:DefaultJuiceHandler@91] - com.juice.orange.game.exception.JuiceException: handler request error,path:/favicon.ico;param:null
+[m[2;35m2017-11-23 23:43:03,379 - WARN  [Thread-83:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :0, uri:/favicon.ico
+[m[7;31m2017-11-23 23:44:10,810 - ERROR [Xmemcached-Reactor-2:MemcachedHandler@138] - XMemcached network layout exception
+[mjava.io.IOException: 远程主机强迫关闭了一个现有的连接。
+	at sun.nio.ch.SocketDispatcher.read0(Native Method)
+	at sun.nio.ch.SocketDispatcher.read(Unknown Source)
+	at sun.nio.ch.IOUtil.readIntoNativeBuffer(Unknown Source)
+	at sun.nio.ch.IOUtil.read(Unknown Source)
+	at sun.nio.ch.SocketChannelImpl.read(Unknown Source)
+	at com.google.code.yanf4j.nio.impl.NioTCPSession.readFromBuffer(NioTCPSession.java:203)
+	at com.google.code.yanf4j.nio.impl.AbstractNioSession.onRead(AbstractNioSession.java:196)
+	at com.google.code.yanf4j.nio.impl.AbstractNioSession.onEvent(AbstractNioSession.java:341)
+	at com.google.code.yanf4j.nio.impl.SocketChannelController.dispatchReadEvent(SocketChannelController.java:56)
+	at com.google.code.yanf4j.nio.impl.NioController.onRead(NioController.java:157)
+	at com.google.code.yanf4j.nio.impl.Reactor.dispatchEvent(Reactor.java:295)
+	at com.google.code.yanf4j.nio.impl.Reactor.run(Reactor.java:142)
+[2;35m2017-11-23 23:44:10,829 - WARN  [Xmemcached-Reactor-2:MemcachedConnector@365] - Remove a session: 127.0.0.1:11211
+[m[2;35m2017-11-23 23:44:12,831 - WARN  [Heal-Session-Thread:MemcachedConnector$SessionMonitor@125] - Trying to connect to 127.0.0.1:11211 for 1 times
+[m[2;35m2017-11-23 23:44:12,832 - WARN  [Xmemcached-Reactor-0:MemcachedConnector@251] - Add a session: 127.0.0.1:11211
+[m[2;32m2017-11-23 23:45:12,435 - INFO  [main:ServerBootstrap@95] - Configuration Server bootstrap params.......
+[m[2;32m2017-11-23 23:45:12,437 - INFO  [main:ServerBootstrap@96] - Server protocol:	http
+[m[2;32m2017-11-23 23:45:12,437 - INFO  [main:ServerBootstrap@97] - Server port:	9911
+[m[2;32m2017-11-23 23:45:12,621 - INFO  [main:ServerBootstrap@106] - Configuration Remote Server.......
+[m[2;32m2017-11-23 23:45:12,621 - INFO  [main:ServerBootstrap@108] - Add Remote Server - Name:FastFunSystem;Address:localhost;Port:9912
+[m[2;35m2017-11-23 23:45:12,658 - WARN  [main:XMemcachedClient@727] - XMemcachedClient use Binary protocol
+[m[2;32m2017-11-23 23:45:12,681 - INFO  [main:SelectorManager@37] - Creating 16 reactors...
+[m[2;35m2017-11-23 23:45:12,691 - WARN  [main:AbstractController@372] - The Controller started at localhost/127.0.0.1:0 ...
+[m[2;35m2017-11-23 23:45:12,699 - WARN  [Xmemcached-Reactor-0:MemcachedConnector@251] - Add a session: 127.0.0.1:11211
+[m[2;32m2017-11-23 23:45:12,700 - INFO  [main:Application@25] - Init servers......
+[m[2;32m2017-11-23 23:45:12,750 - INFO  [main:ServerBootstrap@120] - Application PID:	27084
+[m[2;32m2017-11-23 23:58:10,852 - INFO  [Thread-91:CodeHelperServer@3848] - reqSpecialMixCode5请求header信息：[Host=127.0.0.1:9911, Connection=keep-alive, Cache-Control=max-age=0, User-Agent=Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36, Upgrade-Insecure-Requests=1, Accept=text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8, Accept-Encoding=gzip, deflate, br, Accept-Language=zh-CN,zh;q=0.8,en;q=0.6]
+[m[2;32m2017-11-23 23:58:10,853 - INFO  [Thread-91:CodeHelperServer@5196] - 用户访问phone=null
+[m[2;32m2017-11-23 23:58:10,854 - INFO  [Thread-91:CodeHelperServer@5199] - 用户访问imsi:460008412212087,反推手机号前面7位：1372841
+[m[2;32m2017-11-23 23:58:11,037 - INFO  [Thread-91:CodeHelperServer@5209] - 移动用户phone：1372841
+[m[2;32m2017-11-23 23:58:11,037 - INFO  [Thread-91:CodeHelperServer@5217] - 根据phone查询省份地市：广东_东莞
+[m[2;32m2017-11-23 23:58:11,038 - INFO  [Thread-91:CodeHelperServer@5241] - 用户访问IP=120.197.142.77
+[m[7;31m2017-11-23 23:58:21,039 - ERROR [Thread-91:JuiceInvocationHandler@61] - Latch request time out..
+[m[7;31m2017-11-23 23:58:21,040 - ERROR [Thread-91:CodeHelperServer@3940] - 
+[m[2;35m2017-11-23 23:58:21,074 - WARN  [Thread-91:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :10224, uri:/code/reqSpecialMixCode5?cpid=xshd01&imsi=460008412212087&imei=862606030036496&iccid=89860042191673715293&fee=2000&ip=120.197.142.77
+[m[7;31m2017-11-23 23:58:21,090 - ERROR [Thread-41:DefaultJuiceHandler@90] - java.lang.ArrayIndexOutOfBoundsException: 2
+[m[7;31m2017-11-23 23:58:21,090 - ERROR [Thread-41:DefaultJuiceHandler@91] - com.juice.orange.game.exception.JuiceException: handler request error,path:/favicon.ico;param:null
+[m[2;35m2017-11-23 23:58:21,090 - WARN  [Thread-41:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :1, uri:/favicon.ico
+[m

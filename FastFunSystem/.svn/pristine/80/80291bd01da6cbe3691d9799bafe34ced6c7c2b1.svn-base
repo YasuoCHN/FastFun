@@ -1,0 +1,45 @@
+[2;32m2015-07-10 15:07:06,329 - INFO  [main:ServerBootstrap@78] - connect to database:jdbc:mysql://120.24.88.90:3306/fastfun?useUnicode=true&characterEncoding=UTF-8
+[m[2;32m2015-07-10 15:07:09,061 - INFO  [main:ServerBootstrap@104] - Configuration Server bootstrap params.......
+[m[2;32m2015-07-10 15:07:09,061 - INFO  [main:ServerBootstrap@105] - Server protocol:	socket
+[m[2;32m2015-07-10 15:07:09,062 - INFO  [main:ServerBootstrap@106] - Server port:	9912
+[m[2;35m2015-07-10 15:07:09,532 - WARN  [main:XMemcachedClient@727] - XMemcachedClient use Binary protocol
+[m[2;32m2015-07-10 15:07:09,661 - INFO  [main:SelectorManager@37] - Creating 4 reactors...
+[m[2;35m2015-07-10 15:07:09,679 - WARN  [main:AbstractController@372] - The Controller started at localhost/127.0.0.1:0 ...
+[m[2;35m2015-07-10 15:07:09,703 - WARN  [Xmemcached-Reactor-0:MemcachedConnector@251] - Add a session: 127.0.0.1:11211
+[m[2;32m2015-07-10 15:07:09,707 - INFO  [main:Application@25] - 初始化AO...
+[m[2;32m2015-07-10 15:07:09,742 - INFO  [main:ServerBootstrap@129] - Application PID:	3628
+[m[2;35m2015-07-10 15:09:04,584 - WARN  [Thread-2:JuiceThreadPool$JuiceWorkThread@108] - RPC method start time :83363, action:com.klw.fastfun.pay.common.action.CommonAction, method:getCode
+[m[2;35m2015-07-10 15:09:14,512 - WARN  [Thread-4:JuiceThreadPool$JuiceWorkThread@108] - RPC method start time :4786, action:com.klw.fastfun.pay.common.action.CommonAction, method:getCode
+[m[2;35m2015-07-10 15:10:10,666 - WARN  [Thread-6:JuiceThreadPool$JuiceWorkThread@108] - RPC method start time :3971, action:com.klw.fastfun.pay.common.action.CommonAction, method:getCode
+[m[2;35m2015-07-10 15:10:51,938 - WARN  [Thread-3:JuiceThreadPool$JuiceWorkThread@108] - RPC method start time :4561, action:com.klw.fastfun.pay.common.action.CommonAction, method:getCode
+[m[2;35m2015-07-10 15:14:13,119 - WARN  [Thread-33:JuiceThreadPool$JuiceWorkThread@108] - RPC method start time :36, action:com.klw.fastfun.pay.common.action.CommonAction, method:getCode
+[m[7;31m2015-07-10 18:25:07,611 - ERROR [Xmemcached-Reactor-2:MemcachedHandler@138] - XMemcached network layout exception
+[mjava.io.IOException: 远程主机强迫关闭了一个现有的连接。
+	at sun.nio.ch.SocketDispatcher.read0(Native Method)
+	at sun.nio.ch.SocketDispatcher.read(Unknown Source)
+	at sun.nio.ch.IOUtil.readIntoNativeBuffer(Unknown Source)
+	at sun.nio.ch.IOUtil.read(Unknown Source)
+	at sun.nio.ch.SocketChannelImpl.read(Unknown Source)
+	at com.google.code.yanf4j.nio.impl.NioTCPSession.readFromBuffer(NioTCPSession.java:203)
+	at com.google.code.yanf4j.nio.impl.AbstractNioSession.onRead(AbstractNioSession.java:196)
+	at com.google.code.yanf4j.nio.impl.AbstractNioSession.onEvent(AbstractNioSession.java:341)
+	at com.google.code.yanf4j.nio.impl.SocketChannelController.dispatchReadEvent(SocketChannelController.java:56)
+	at com.google.code.yanf4j.nio.impl.NioController.onRead(NioController.java:157)
+	at com.google.code.yanf4j.nio.impl.Reactor.dispatchEvent(Reactor.java:295)
+	at com.google.code.yanf4j.nio.impl.Reactor.run(Reactor.java:142)
+[2;35m2015-07-10 18:25:07,659 - WARN  [Xmemcached-Reactor-2:MemcachedConnector@365] - Remove a session: 127.0.0.1:11211
+[m[2;35m2015-07-10 18:25:09,673 - WARN  [Heal-Session-Thread:MemcachedConnector$SessionMonitor@125] - Trying to connect to 127.0.0.1:11211 for 1 times
+[m[7;31m2015-07-10 18:25:10,704 - ERROR [Xmemcached-Reactor-0:MemcachedConnector$InnerControllerStateListener@558] - Exception occured in controller
+[mjava.io.IOException: Connect to 127.0.0.1:11211 fail,Connection refused: no further information
+	at net.rubyeye.xmemcached.impl.MemcachedConnector.onConnect(MemcachedConnector.java:423)
+	at com.google.code.yanf4j.nio.impl.Reactor.dispatchEvent(Reactor.java:303)
+	at com.google.code.yanf4j.nio.impl.Reactor.run(Reactor.java:142)
+[7;31m2015-07-10 18:25:10,704 - ERROR [Xmemcached-Reactor-0:Reactor@325] - Reactor dispatch events error
+[mjava.io.IOException: Connect to 127.0.0.1:11211 fail,Connection refused: no further information
+	at net.rubyeye.xmemcached.impl.MemcachedConnector.onConnect(MemcachedConnector.java:423)
+	at com.google.code.yanf4j.nio.impl.Reactor.dispatchEvent(Reactor.java:303)
+	at com.google.code.yanf4j.nio.impl.Reactor.run(Reactor.java:142)
+[7;31m2015-07-10 18:25:10,704 - ERROR [Heal-Session-Thread:MemcachedConnector$SessionMonitor@169] - Reconnect to 127.0.0.1:11211 fail
+[m[2;35m2015-07-10 18:25:12,721 - WARN  [Heal-Session-Thread:MemcachedConnector$SessionMonitor@125] - Trying to connect to 127.0.0.1:11211 for 2 times
+[m[2;35m2015-07-10 18:25:13,723 - WARN  [Xmemcached-Reactor-0:MemcachedConnector@251] - Add a session: 127.0.0.1:11211
+[m

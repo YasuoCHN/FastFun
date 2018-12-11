@@ -1,0 +1,111 @@
+[2;32m2017-09-08 17:15:38,948 - INFO  [main:ServerBootstrap@74] - Configuration Server bootstrap params.......
+[m[2;32m2017-09-08 17:15:38,952 - INFO  [main:ServerBootstrap@75] - Server protocol:	http
+[m[2;32m2017-09-08 17:15:38,953 - INFO  [main:ServerBootstrap@76] - Server port:	9911
+[m[2;32m2017-09-08 17:15:39,124 - INFO  [main:ServerBootstrap@85] - Configuration Remote Server.......
+[m[2;32m2017-09-08 17:15:39,125 - INFO  [main:ServerBootstrap@87] - Add Remote Server - Name:FastFunSystem;Address:localhost;Port:9912
+[m[2;35m2017-09-08 17:15:39,162 - WARN  [main:XMemcachedClient@727] - XMemcachedClient use Binary protocol
+[m[2;32m2017-09-08 17:15:39,182 - INFO  [main:SelectorManager@37] - Creating 16 reactors...
+[m[2;35m2017-09-08 17:15:39,191 - WARN  [main:AbstractController@372] - The Controller started at localhost/127.0.0.1:0 ...
+[m[2;35m2017-09-08 17:15:39,199 - WARN  [Xmemcached-Reactor-0:MemcachedConnector@251] - Add a session: 127.0.0.1:11211
+[m[2;32m2017-09-08 17:15:39,200 - INFO  [main:Application@25] - Init servers......
+[m[2;32m2017-09-08 17:15:39,242 - INFO  [main:ServerBootstrap@99] - Application PID:	6768
+[m[2;32m2017-09-08 17:17:58,358 - INFO  [Thread-151:CodeHelperServer@2471] - reqPayOtherWY请求header信息：[Host=127.0.0.1:9911, Connection=keep-alive, Upgrade-Insecure-Requests=1, User-Agent=Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.113 Safari/537.36, Accept=text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8, Accept-Encoding=gzip, deflate, br, Accept-Language=zh-CN,zh;q=0.8,en;q=0.6]
+[m[2;32m2017-09-08 17:17:58,359 - INFO  [Thread-151:CodeHelperServer@2503] - 用户访问IP=112.124.10.89
+[m[2;32m2017-09-08 17:17:58,569 - INFO  [Thread-151:HttpTool@388] - 指令url=http://114.215.129.247:8484/payservice/YYAlipayWap/checkAppid.do
+[m[2;32m2017-09-08 17:17:58,569 - INFO  [Thread-151:HttpTool@389] - 同步内容=appid=
+[m[2;32m2017-09-08 17:17:58,705 - INFO  [Thread-151:CodeReqHelper@391] - 微信H5支付sd49,sticker请求结果:{"result":"1","msg":"appid is not exists"}
+[m[2;32m2017-09-08 17:17:58,739 - INFO  [Thread-151:CodeReqHelper@438] - 微信H5支付sd49生成json:error
+[m[2;32m2017-09-08 17:17:58,739 - INFO  [Thread-151:CodeHelperServer@2567] - 
+[m[2;35m2017-09-08 17:17:58,765 - WARN  [Thread-151:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :409, uri:/code/reqPayOtherWY?cpid=test03&imsi=460000000462781&imei=357806046192158&cpparam=klwtest&fee=1&ip=112.124.10.89&goodsname=%E6%B5%8B%E8%AF%95&app=%e6%b5%8b%e8%af%95app
+[m[7;31m2017-09-08 17:17:58,792 - ERROR [Thread-52:DefaultJuiceHandler@90] - java.lang.ArrayIndexOutOfBoundsException: 2
+[m[7;31m2017-09-08 17:17:58,794 - ERROR [Thread-52:DefaultJuiceHandler@91] - com.juice.orange.game.exception.JuiceException: handler request error,path:/favicon.ico;param:null
+[m[2;35m2017-09-08 17:17:58,794 - WARN  [Thread-52:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :3, uri:/favicon.ico
+[m[7;31m2017-09-08 17:19:42,637 - ERROR [Xmemcached-Reactor-2:MemcachedHandler@138] - XMemcached network layout exception
+[mjava.io.IOException: 远程主机强迫关闭了一个现有的连接。
+	at sun.nio.ch.SocketDispatcher.read0(Native Method)
+	at sun.nio.ch.SocketDispatcher.read(Unknown Source)
+	at sun.nio.ch.IOUtil.readIntoNativeBuffer(Unknown Source)
+	at sun.nio.ch.IOUtil.read(Unknown Source)
+	at sun.nio.ch.SocketChannelImpl.read(Unknown Source)
+	at com.google.code.yanf4j.nio.impl.NioTCPSession.readFromBuffer(NioTCPSession.java:203)
+	at com.google.code.yanf4j.nio.impl.AbstractNioSession.onRead(AbstractNioSession.java:196)
+	at com.google.code.yanf4j.nio.impl.AbstractNioSession.onEvent(AbstractNioSession.java:341)
+	at com.google.code.yanf4j.nio.impl.SocketChannelController.dispatchReadEvent(SocketChannelController.java:56)
+	at com.google.code.yanf4j.nio.impl.NioController.onRead(NioController.java:157)
+	at com.google.code.yanf4j.nio.impl.Reactor.dispatchEvent(Reactor.java:295)
+	at com.google.code.yanf4j.nio.impl.Reactor.run(Reactor.java:142)
+[2;35m2017-09-08 17:19:42,661 - WARN  [Xmemcached-Reactor-2:MemcachedConnector@365] - Remove a session: 127.0.0.1:11211
+[m[2;35m2017-09-08 17:19:44,662 - WARN  [Heal-Session-Thread:MemcachedConnector$SessionMonitor@125] - Trying to connect to 127.0.0.1:11211 for 1 times
+[m[2;35m2017-09-08 17:19:44,663 - WARN  [Xmemcached-Reactor-0:MemcachedConnector@251] - Add a session: 127.0.0.1:11211
+[m[2;32m2017-09-08 17:19:47,779 - INFO  [Thread-42:CodeHelperServer@2471] - reqPayOtherWY请求header信息：[Host=127.0.0.1:9911, Connection=keep-alive, Upgrade-Insecure-Requests=1, User-Agent=Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.113 Safari/537.36, Accept=text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8, Accept-Encoding=gzip, deflate, br, Accept-Language=zh-CN,zh;q=0.8,en;q=0.6]
+[m[2;32m2017-09-08 17:19:47,780 - INFO  [Thread-42:CodeHelperServer@2503] - 用户访问IP=112.124.10.89
+[m[2;32m2017-09-08 17:19:47,811 - INFO  [Thread-42:HttpTool@388] - 指令url=http://114.215.129.247:8484/payservice/YYAlipayWap/checkAppid.do
+[m[2;32m2017-09-08 17:19:47,812 - INFO  [Thread-42:HttpTool@389] - 同步内容=appid=1011
+[m[2;32m2017-09-08 17:19:48,038 - INFO  [Thread-42:CodeReqHelper@391] - 微信H5支付sd49,sticker请求结果:{"alipay":1,"wxpay":0,"result":"0","msg":"success","sticker":"10111hccf9yr4c00"}
+[m[2;32m2017-09-08 17:19:48,183 - INFO  [Thread-42:HttpTool@388] - 指令url=http://114.215.129.247:8484/payservice/wxpay/geturl.do##
+[m[2;32m2017-09-08 17:19:48,183 - INFO  [Thread-42:HttpTool@389] - 同步内容=data=CuHLempq20nF3Jb7JitYhTZDcLZv+AvKWIh7PuWwHkbojVxibK4Z1KDCoczLtULFe0GqRe0yedZlhU63UJv++OqJXljiUdSosJRWvV6qMn9GwaR9zkcmZKUi4ggUVkrovxKpoXi8785WTVXmqVGyRIFHHtilr0NMt5zcr4FqEe5rHRfXuv+4rYe0Mi570XDFQHwty/Li9oL3CBfcKoXYWrBf+CwBgJDqWufLFJJq2Zw=&token=f5554b8dc151b5a39f5aff68870b8f7b
+[m[2;32m2017-09-08 17:19:57,486 - INFO  [Thread-42:CodeReqHelper@418] - 微信H5支付sd49请求结果:wsABsW1oX+Ypf/RQgTU/Anx3lbATXav2wD9GShqlU+tmH/A1b3erTgl1HsQzgv0/lLGGBGKlVurGSZjtI2InFMkCQhY1j/fQ5oY32gLvef2mQ6ei2QCRbX40kke6+gcv4g3BIHGP1R51He64REPU9rXZu1xcJAVypkklBfPGjKAyowJJyhpRczzGyt9zcLZOZolfSYe2AJfmVlTXLtI3D4bDqybEpbnCib2XQeOzfZuTk8/ZzJ+WzHDwS/h+f4GaAQZecKniBvrZ+0SKrDFtXHXXJJUrHyPhL8dNB1+8+eA5/wAzCBcxk1Fe/uje3CVs
+[m[2;32m2017-09-08 17:21:20,954 - INFO  [main:ServerBootstrap@74] - Configuration Server bootstrap params.......
+[m[2;32m2017-09-08 17:21:20,955 - INFO  [main:ServerBootstrap@75] - Server protocol:	http
+[m[2;32m2017-09-08 17:21:20,955 - INFO  [main:ServerBootstrap@76] - Server port:	9911
+[m[2;32m2017-09-08 17:21:21,126 - INFO  [main:ServerBootstrap@85] - Configuration Remote Server.......
+[m[2;32m2017-09-08 17:21:21,126 - INFO  [main:ServerBootstrap@87] - Add Remote Server - Name:FastFunSystem;Address:localhost;Port:9912
+[m[2;35m2017-09-08 17:21:21,164 - WARN  [main:XMemcachedClient@727] - XMemcachedClient use Binary protocol
+[m[2;32m2017-09-08 17:21:21,184 - INFO  [main:SelectorManager@37] - Creating 16 reactors...
+[m[2;35m2017-09-08 17:21:21,194 - WARN  [main:AbstractController@372] - The Controller started at localhost/127.0.0.1:0 ...
+[m[2;35m2017-09-08 17:21:21,203 - WARN  [Xmemcached-Reactor-0:MemcachedConnector@251] - Add a session: 127.0.0.1:11211
+[m[2;32m2017-09-08 17:21:21,203 - INFO  [main:Application@25] - Init servers......
+[m[2;32m2017-09-08 17:21:21,244 - INFO  [main:ServerBootstrap@99] - Application PID:	9068
+[m[2;32m2017-09-08 17:21:31,001 - INFO  [Thread-12:CodeHelperServer@2471] - reqPayOtherWY请求header信息：[Host=127.0.0.1:9911, Connection=keep-alive, Cache-Control=max-age=0, Upgrade-Insecure-Requests=1, User-Agent=Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.113 Safari/537.36, Accept=text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8, Accept-Encoding=gzip, deflate, br, Accept-Language=zh-CN,zh;q=0.8,en;q=0.6]
+[m[2;32m2017-09-08 17:21:31,001 - INFO  [Thread-12:CodeHelperServer@2503] - 用户访问IP=112.124.10.89
+[m[2;32m2017-09-08 17:21:31,240 - INFO  [Thread-12:HttpTool@388] - 指令url=http://114.215.129.247:8484/payservice/YYAlipayWap/checkAppid.do
+[m[2;32m2017-09-08 17:21:31,240 - INFO  [Thread-12:HttpTool@389] - 同步内容=appid=1011
+[m[2;32m2017-09-08 17:21:31,521 - INFO  [Thread-12:CodeReqHelper@391] - 微信H5支付sd49,sticker请求结果:{"alipay":1,"wxpay":0,"result":"0","msg":"success","sticker":"10111hccfg4ga600"}
+[m[2;32m2017-09-08 17:21:31,702 - INFO  [Thread-12:HttpTool@388] - 指令url=http://114.215.129.247:8484/payservice/wxpay/geturl.do##
+[m[2;32m2017-09-08 17:21:31,702 - INFO  [Thread-12:HttpTool@389] - 同步内容=data=GoJ/g1CatyD60GsepW+UjjL4coYuOYUZI1WFgJz6mCHz1qbJLrMpvp5Ojkbr83kgiVoWlbtoS//5FWZU3pDXVSKLhVkf1lnZwQiX5z0Xj24HoAdMvD2A0dFBOH81vcS1ZiBxAOTSJKDkxTOzcr1F8vMHPab0HjjicTxcIDfWdrHSu9hmnU943pGpP7yVf4i1T2S4oI7kYRqmRz0jEXcN+THjPgdJjcI85QQEUnLIDIw=&token=27e81384e74388e531ceaeec2ff2708c
+[m[2;32m2017-09-08 17:21:41,725 - INFO  [Thread-12:CodeReqHelper@418] - 微信H5支付sd49请求结果:sk7+Bc/3YyQRa/R4nV8i82iCNI84v2kfIax4VNWMoGqk+0tqz4YY+i+B5KCRXvaYVc/FS15eEE7PjltF8JxCgtk3hKRmIsuiISriO49urxbsrPcgdHosnFTLsPtlQ7q5N9Th2bQ7icTte722UusHlYejE9fibrCsVQB3ORNcmeKFztSFojZ1WzTSko80Zz9lQggiHtOf/uqlnN5vl6nFiT+LPOHJX1wsdzy3JRTka71CXbdK5DVM8H0nYqPLTaJFd37tIlBKh67TFtXFnpAQeM0FFkflSxbTEm2If1pnyB/4MvQl1IKswQO5cPuf+TnX
+[m[2;32m2017-09-08 17:21:57,508 - INFO  [Thread-12:CodeReqHelper@439] - 微信H5支付sd49生成json:error
+[m[2;32m2017-09-08 17:21:57,510 - INFO  [Thread-12:CodeHelperServer@2567] - 
+[m[2;35m2017-09-08 17:21:57,563 - WARN  [Thread-12:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :26564, uri:/code/reqPayOtherWY?cpid=test03&imsi=460000000462781&imei=357806046192158&cpparam=klwtest&fee=1&ip=112.124.10.89&goodsname=%E6%B5%8B%E8%AF%95&app=%E6%B5%8B%E8%AF%95app
+[m[7;31m2017-09-08 17:21:57,583 - ERROR [Thread-101:DefaultJuiceHandler@90] - java.lang.ArrayIndexOutOfBoundsException: 2
+[m[7;31m2017-09-08 17:21:57,584 - ERROR [Thread-101:DefaultJuiceHandler@91] - com.juice.orange.game.exception.JuiceException: handler request error,path:/favicon.ico;param:null
+[m[2;35m2017-09-08 17:21:57,584 - WARN  [Thread-101:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :1, uri:/favicon.ico
+[m[2;32m2017-09-08 17:22:00,987 - INFO  [Thread-61:CodeHelperServer@2471] - reqPayOtherWY请求header信息：[Host=127.0.0.1:9911, Connection=keep-alive, Cache-Control=max-age=0, Upgrade-Insecure-Requests=1, User-Agent=Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.113 Safari/537.36, Accept=text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8, Accept-Encoding=gzip, deflate, br, Accept-Language=zh-CN,zh;q=0.8,en;q=0.6]
+[m[2;32m2017-09-08 17:22:00,988 - INFO  [Thread-61:CodeHelperServer@2503] - 用户访问IP=112.124.10.89
+[m[2;32m2017-09-08 17:22:01,004 - INFO  [Thread-61:HttpTool@388] - 指令url=http://114.215.129.247:8484/payservice/YYAlipayWap/checkAppid.do
+[m[2;32m2017-09-08 17:22:01,005 - INFO  [Thread-61:HttpTool@389] - 同步内容=appid=1011
+[m[2;32m2017-09-08 17:22:01,250 - INFO  [Thread-61:CodeReqHelper@391] - 微信H5支付sd49,sticker请求结果:{"alipay":1,"wxpay":0,"result":"0","msg":"success","sticker":"10111hccfhw7kw00"}
+[m[2;32m2017-09-08 17:22:01,256 - INFO  [Thread-61:HttpTool@388] - 指令url=http://114.215.129.247:8484/payservice/wxpay/geturl.do##
+[m[2;32m2017-09-08 17:22:01,256 - INFO  [Thread-61:HttpTool@389] - 同步内容=data=Fp0/Lcj1WgZTKUqlXuZCqcz13Cn6h9RtlfWhU1Hw4AthCsLygb0RdpRdeg8pfZPoeQmik0izYh/IQcJwydmygNSGWNfKgbyA4NRoPzIEpqQV10EWqlzLvP/EBJ6eZOcEc0+JKSVGBQ44BVDlejCaO8SxY2monnxgZGGIRButSq6lHC02VwkIA9xvC6XefjtsyJgWirFVFKiggjU+Woz160Hw5GWoJxOQwC9UalTj0qE=&token=084e1fc556a6859436e607f57d587b4d
+[m[2;32m2017-09-08 17:22:41,222 - INFO  [Thread-61:CodeReqHelper@418] - 微信H5支付sd49请求结果:XpemUPnzNTWxjVJY1DaHRgW5EVqqpbYXO/n/CfZMDmiFNz7my9a9YbTWVvKRRB+QkTMBpI4O4HWBrHVuJDY4b8u1BzfIuvxjtmShAMR/V+fWq30BvxrG2w9O/unh0uRVbNNwSBJ5FNSs0PqftILGLI6alfNzbiozhTlij4e44RZ2vDkR1kB2uVs/IfRlVLW0tFtl0MtPDhSU+epUIsaJvWLaY9qnJmuRxNYRmj1P4Xw3BJrEIbqghUr1QIrmTiOatSTQSYYio+sYd/bLQLGzdnXq5ScFOpYUDedX1wBLCnRuCtSWqXQY9Jw2IyxqZycC
+[m[2;32m2017-09-08 17:23:28,815 - INFO  [main:ServerBootstrap@74] - Configuration Server bootstrap params.......
+[m[2;32m2017-09-08 17:23:28,817 - INFO  [main:ServerBootstrap@75] - Server protocol:	http
+[m[2;32m2017-09-08 17:23:28,817 - INFO  [main:ServerBootstrap@76] - Server port:	9911
+[m[2;32m2017-09-08 17:23:28,991 - INFO  [main:ServerBootstrap@85] - Configuration Remote Server.......
+[m[2;32m2017-09-08 17:23:28,991 - INFO  [main:ServerBootstrap@87] - Add Remote Server - Name:FastFunSystem;Address:localhost;Port:9912
+[m[2;35m2017-09-08 17:23:29,030 - WARN  [main:XMemcachedClient@727] - XMemcachedClient use Binary protocol
+[m[2;32m2017-09-08 17:23:29,050 - INFO  [main:SelectorManager@37] - Creating 16 reactors...
+[m[2;35m2017-09-08 17:23:29,059 - WARN  [main:AbstractController@372] - The Controller started at localhost/127.0.0.1:0 ...
+[m[2;35m2017-09-08 17:23:29,066 - WARN  [Xmemcached-Reactor-0:MemcachedConnector@251] - Add a session: 127.0.0.1:11211
+[m[2;32m2017-09-08 17:23:29,067 - INFO  [main:Application@25] - Init servers......
+[m[2;32m2017-09-08 17:23:29,107 - INFO  [main:ServerBootstrap@99] - Application PID:	3352
+[m[2;32m2017-09-08 17:23:37,508 - INFO  [Thread-131:CodeHelperServer@2471] - reqPayOtherWY请求header信息：[Host=127.0.0.1:9911, Connection=keep-alive, Cache-Control=max-age=0, Upgrade-Insecure-Requests=1, User-Agent=Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.113 Safari/537.36, Accept=text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8, Accept-Encoding=gzip, deflate, br, Accept-Language=zh-CN,zh;q=0.8,en;q=0.6]
+[m[2;32m2017-09-08 17:23:37,509 - INFO  [Thread-131:CodeHelperServer@2503] - 用户访问IP=112.124.10.89
+[m[2;32m2017-09-08 17:23:37,707 - INFO  [Thread-131:HttpTool@388] - 指令url=http://114.215.129.247:8484/payservice/YYAlipayWap/checkAppid.do
+[m[2;32m2017-09-08 17:23:37,707 - INFO  [Thread-131:HttpTool@389] - 同步内容=appid=1011
+[m[2;32m2017-09-08 17:23:38,009 - INFO  [Thread-131:CodeReqHelper@391] - 微信H5支付sd49,sticker请求结果:{"alipay":1,"wxpay":0,"result":"0","msg":"success","sticker":"10111hccfnnhp100"}
+[m[2;32m2017-09-08 17:23:38,172 - INFO  [Thread-131:HttpTool@388] - 指令url=http://114.215.129.247:8484/payservice/wxpay/geturl.do##
+[m[2;32m2017-09-08 17:23:38,173 - INFO  [Thread-131:HttpTool@389] - 同步内容=data=tv/rJQxqXgzQ4PRllJHZ87a/E8pM8/LokHl7VVnvgcOZPrW4inDC4CpGOq5ir/MuhDEDVtA3f35uTMp/J2ZdxhgxS38HXFtoMJDgGP2QkBOsvklRrjhipdeBKnt2nKRjPPb9FusUp/V86dr/mw9OdN8qpZmYpzjybg0uJJjhd1DbECDe9+8src+grOP/ViP4Yq3HT9Pc9Ej3WjrcW04hq+q2n5b3XC3L2/E9ux1/2RU=&token=decc4ed3b9c19b187c066ce90b0c39ae
+[m[2;32m2017-09-08 17:27:03,173 - INFO  [Thread-131:CodeReqHelper@418] - 微信H5支付sd49请求结果:TG4L+3TSV4WsRfy28/Dy7y4Wh0bmRItNoT5/iEu1aRmWXwCcMG5UGFZpLN0wC5btwv+b3fvPGdM/i73JDSsffNX8TtLUbHl4hUGUdwvRZn2sKyQiOPdr44vGhZ08aL1db0/sXKNyVmRToyZ3T4pS+yhHO2zQ+IoN9D4MS2KXN3krfcDxuNylYkM+yi3APYOCaOHX71Rb2N1s6bhPVupCmb1DVyWensDYJKAXE6lZq9ixmTdIqCZ6pLe8er4zKw3cVcys8kGaoHKavMGhF4iPg1o2v+fly2WVDIPYeDkh1HbEN0hWFwTlDAG/305zLZYP
+[m[2;32m2017-09-08 17:27:28,829 - INFO  [Thread-131:CodeReqHelper@439] - 微信H5支付sd49生成json:{"orderid":"09sdf90960113409","spid":"sd49","status":"0","traid":"10111504862632644playerId","url":"https://statecheck.swiftpass.cn/pay/wappay?token_id=1a6c80c9dcc27dc20a49420289a10c54a&service=pay.weixin.wappayv2"}
+[m[2;32m2017-09-08 17:27:30,902 - INFO  [Thread-131:CodeHelperServer@2567] - 合作方:test03
+通道方:sd49
+省份:
+计费点:1
+订单号:09sdf90960113409
+指令内容:{"orderid":"09sdf90960113409","spid":"sd49","status":"0","traid":"10111504862632644playerId","url":"https://statecheck.swiftpass.cn/pay/wappay?token_id=1a6c80c9dcc27dc20a49420289a10c54a&service=pay.weixin.wappayv2"}
+[m[2;35m2017-09-08 17:27:30,952 - WARN  [Thread-131:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :233445, uri:/code/reqPayOtherWY?cpid=test03&imsi=460000000462781&imei=357806046192158&cpparam=klwtest&fee=1&ip=112.124.10.89&goodsname=%E6%B5%8B%E8%AF%95&app=%E6%B5%8B%E8%AF%95app
+[m[7;31m2017-09-08 17:27:30,964 - ERROR [Thread-92:DefaultJuiceHandler@90] - java.lang.ArrayIndexOutOfBoundsException: 2
+[m[7;31m2017-09-08 17:27:30,965 - ERROR [Thread-92:DefaultJuiceHandler@91] - com.juice.orange.game.exception.JuiceException: handler request error,path:/favicon.ico;param:null
+[m[2;35m2017-09-08 17:27:30,965 - WARN  [Thread-92:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :1, uri:/favicon.ico
+[m

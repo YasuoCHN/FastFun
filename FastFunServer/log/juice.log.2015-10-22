@@ -1,0 +1,35 @@
+[2;32m2015-10-22 11:45:49,264 - INFO  [main:ServerBootstrap@67] - Configuration Server bootstrap params.......
+[m[2;32m2015-10-22 11:45:49,264 - INFO  [main:ServerBootstrap@68] - Server protocol:	http
+[m[2;32m2015-10-22 11:45:49,264 - INFO  [main:ServerBootstrap@69] - Server port:	9911
+[m[2;32m2015-10-22 11:45:49,674 - INFO  [main:ServerBootstrap@78] - Configuration Remote Server.......
+[m[2;32m2015-10-22 11:45:49,674 - INFO  [main:ServerBootstrap@80] - Add Remote Server - Name:FastFunSystem;Address:localhost;Port:9912
+[m[2;32m2015-10-22 11:45:49,674 - INFO  [main:Application@23] - Init servers......
+[m[2;32m2015-10-22 11:45:49,751 - INFO  [main:ServerBootstrap@92] - Application PID:	5324
+[m[2;32m2015-10-22 11:46:51,068 - INFO  [Thread-12:CodeHelperServer@819] - 请求header信息：[Host=127.0.0.1:9911, Connection=keep-alive, Accept=text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8, User-Agent=Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.71 Safari/537.36, Accept-Encoding=gzip, deflate, sdch, Accept-Language=zh-CN,zh;q=0.8]
+[m[2;35m2015-10-22 11:47:05,615 - WARN  [Thread-12:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :14553, uri:/code/checkCustomerInfo?imsi=460077210243134
+[m[7;31m2015-10-22 11:47:05,798 - ERROR [Thread-22:DefaultJuiceHandler@90] - java.lang.ArrayIndexOutOfBoundsException: 2
+[m[7;31m2015-10-22 11:47:05,804 - ERROR [Thread-22:DefaultJuiceHandler@91] - com.juice.orange.game.exception.JuiceException: handler request error,path:/favicon.ico;param:null
+[m[2;35m2015-10-22 11:47:05,805 - WARN  [Thread-22:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :7, uri:/favicon.ico
+[m[2;32m2015-10-22 11:47:10,740 - INFO  [Thread-32:CodeHelperServer@819] - 请求header信息：[Host=127.0.0.1:9911, Connection=keep-alive, Cache-Control=max-age=0, Accept=text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8, User-Agent=Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.71 Safari/537.36, Accept-Encoding=gzip, deflate, sdch, Accept-Language=zh-CN,zh;q=0.8]
+[m[2;35m2015-10-22 11:47:47,749 - WARN  [Thread-32:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :37025, uri:/code/checkCustomerInfo?imsi=460077210243134
+[m[2;32m2015-10-22 11:47:50,581 - INFO  [Thread-34:CodeHelperServer@819] - 请求header信息：[Host=127.0.0.1:9911, Connection=keep-alive, Cache-Control=max-age=0, Accept=text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8, User-Agent=Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.71 Safari/537.36, Accept-Encoding=gzip, deflate, sdch, Accept-Language=zh-CN,zh;q=0.8]
+[m[7;31m2015-10-22 11:48:03,670 - ERROR [Thread-34:JuiceInvocationHandler@63] - Latch request time out..
+[m[7;31m2015-10-22 11:48:03,675 - ERROR [Thread-34:DefaultJuiceHandler@84] - 
+[mjava.lang.NullPointerException
+	at com.juice.orange.game.rmi.JuiceInvocationHandler.invoke(JuiceInvocationHandler.java:69)
+	at com.sun.proxy.$Proxy0.checkCustomerInfo(Unknown Source)
+	at com.klw.fastfun.pay.view.app.service.CodeHelperServer.checkCustomerInfo(CodeHelperServer.java:823)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at com.juice.orange.game.handler.DefaultJuiceHandler.handleHttpRequest(DefaultJuiceHandler.java:81)
+	at com.juice.orange.game.handler.DefaultJuiceHandler.handlerRequest(DefaultJuiceHandler.java:35)
+	at com.juice.orange.game.handler.JuiceHttpControl.nextHandler(JuiceHttpControl.java:84)
+	at com.juice.orange.game.handler.JuiceHttpControl.nextHandler(JuiceHttpControl.java:67)
+	at com.juice.orange.game.util.threadpool.JuiceThreadPool$JuiceWorkThread.run(JuiceThreadPool.java:70)
+[2;35m2015-10-22 11:48:03,683 - WARN  [Thread-34:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :13102, uri:/code/checkCustomerInfo?imsi=460077210243134
+[m[7;31m2015-10-22 11:48:07,822 - ERROR [Thread-1:DefaultJuiceHandler@90] - java.lang.ArrayIndexOutOfBoundsException: 2
+[m[7;31m2015-10-22 11:48:07,822 - ERROR [Thread-1:DefaultJuiceHandler@91] - com.juice.orange.game.exception.JuiceException: handler request error,path:/favicon.ico;param:null
+[m[2;35m2015-10-22 11:48:07,823 - WARN  [Thread-1:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :1, uri:/favicon.ico
+[m

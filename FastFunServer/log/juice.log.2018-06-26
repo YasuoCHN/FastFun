@@ -1,0 +1,563 @@
+[2;32m2018-06-26 09:47:31,197 - INFO  [main:ServerBootstrap@95] - Configuration Server bootstrap params.......
+[m[2;32m2018-06-26 09:47:31,204 - INFO  [main:ServerBootstrap@96] - Server protocol:	http
+[m[2;32m2018-06-26 09:47:31,204 - INFO  [main:ServerBootstrap@97] - Server port:	9911
+[m[2;32m2018-06-26 09:47:31,501 - INFO  [main:ServerBootstrap@106] - Configuration Remote Server.......
+[m[2;32m2018-06-26 09:47:31,503 - INFO  [main:ServerBootstrap@108] - Add Remote Server - Name:FastFunSystem;Address:localhost;Port:9912
+[m[2;35m2018-06-26 09:47:31,573 - WARN  [main:XMemcachedClient@727] - XMemcachedClient use Binary protocol
+[m[2;32m2018-06-26 09:47:31,623 - INFO  [main:SelectorManager@37] - Creating 8 reactors...
+[m[2;35m2018-06-26 09:47:31,632 - WARN  [main:AbstractController@372] - The Controller started at localhost/127.0.0.1:0 ...
+[m[7;31m2018-06-26 09:47:32,648 - ERROR [main:XMemcachedClient@593] - connect to 127.0.0.1:11211 error
+[mjava.util.concurrent.ExecutionException: java.net.ConnectException: Connection refused: no further information
+	at com.google.code.yanf4j.core.impl.FutureImpl.get(FutureImpl.java:145)
+	at net.rubyeye.xmemcached.XMemcachedClient.connect(XMemcachedClient.java:582)
+	at net.rubyeye.xmemcached.XMemcachedClient.<init>(XMemcachedClient.java:870)
+	at net.rubyeye.xmemcached.XMemcachedClientBuilder.build(XMemcachedClientBuilder.java:340)
+	at com.juice.orange.game.cached.MemcachedResource.buildMemcached(MemcachedResource.java:34)
+	at com.klw.fastfun.pay.view.app.ServerBootstrap.main(ServerBootstrap.java:78)
+Caused by: java.net.ConnectException: Connection refused: no further information
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(Unknown Source)
+	at net.rubyeye.xmemcached.impl.MemcachedConnector.onConnect(MemcachedConnector.java:404)
+	at com.google.code.yanf4j.nio.impl.Reactor.dispatchEvent(Reactor.java:303)
+	at com.google.code.yanf4j.nio.impl.Reactor.run(Reactor.java:142)
+[7;31m2018-06-26 09:47:32,652 - ERROR [Xmemcached-Reactor-0:MemcachedConnector$InnerControllerStateListener@558] - Exception occured in controller
+[mjava.io.IOException: Connect to 127.0.0.1:11211 fail,Connection refused: no further information
+	at net.rubyeye.xmemcached.impl.MemcachedConnector.onConnect(MemcachedConnector.java:423)
+	at com.google.code.yanf4j.nio.impl.Reactor.dispatchEvent(Reactor.java:303)
+	at com.google.code.yanf4j.nio.impl.Reactor.run(Reactor.java:142)
+[7;31m2018-06-26 09:47:32,656 - ERROR [Xmemcached-Reactor-0:Reactor@325] - Reactor dispatch events error
+[mjava.io.IOException: Connect to 127.0.0.1:11211 fail,Connection refused: no further information
+	at net.rubyeye.xmemcached.impl.MemcachedConnector.onConnect(MemcachedConnector.java:423)
+	at com.google.code.yanf4j.nio.impl.Reactor.dispatchEvent(Reactor.java:303)
+	at com.google.code.yanf4j.nio.impl.Reactor.run(Reactor.java:142)
+[7;31m2018-06-26 09:47:32,656 - ERROR [main:XMemcachedClient@627] - Connect to 127.0.0.1:11211 fail
+[mjava.util.concurrent.ExecutionException: java.net.ConnectException: Connection refused: no further information
+	at com.google.code.yanf4j.core.impl.FutureImpl.get(FutureImpl.java:145)
+	at net.rubyeye.xmemcached.XMemcachedClient.connect(XMemcachedClient.java:582)
+	at net.rubyeye.xmemcached.XMemcachedClient.<init>(XMemcachedClient.java:870)
+	at net.rubyeye.xmemcached.XMemcachedClientBuilder.build(XMemcachedClientBuilder.java:340)
+	at com.juice.orange.game.cached.MemcachedResource.buildMemcached(MemcachedResource.java:34)
+	at com.klw.fastfun.pay.view.app.ServerBootstrap.main(ServerBootstrap.java:78)
+Caused by: java.net.ConnectException: Connection refused: no further information
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(Unknown Source)
+	at net.rubyeye.xmemcached.impl.MemcachedConnector.onConnect(MemcachedConnector.java:404)
+	at com.google.code.yanf4j.nio.impl.Reactor.dispatchEvent(Reactor.java:303)
+	at com.google.code.yanf4j.nio.impl.Reactor.run(Reactor.java:142)
+[2;32m2018-06-26 09:47:32,657 - INFO  [main:Application@25] - Init servers......
+[m[2;32m2018-06-26 09:47:32,953 - INFO  [main:ServerBootstrap@120] - Application PID:	6536
+[m[2;35m2018-06-26 09:47:34,656 - WARN  [Heal-Session-Thread:MemcachedConnector$SessionMonitor@125] - Trying to connect to 127.0.0.1:11211 for 1 times
+[m[7;31m2018-06-26 09:47:35,671 - ERROR [Xmemcached-Reactor-0:MemcachedConnector$InnerControllerStateListener@558] - Exception occured in controller
+[mjava.io.IOException: Connect to 127.0.0.1:11211 fail,Connection refused: no further information
+	at net.rubyeye.xmemcached.impl.MemcachedConnector.onConnect(MemcachedConnector.java:423)
+	at com.google.code.yanf4j.nio.impl.Reactor.dispatchEvent(Reactor.java:303)
+	at com.google.code.yanf4j.nio.impl.Reactor.run(Reactor.java:142)
+[7;31m2018-06-26 09:47:35,671 - ERROR [Heal-Session-Thread:MemcachedConnector$SessionMonitor@169] - Reconnect to 127.0.0.1:11211 fail
+[m[7;31m2018-06-26 09:47:35,673 - ERROR [Xmemcached-Reactor-0:Reactor@325] - Reactor dispatch events error
+[mjava.io.IOException: Connect to 127.0.0.1:11211 fail,Connection refused: no further information
+	at net.rubyeye.xmemcached.impl.MemcachedConnector.onConnect(MemcachedConnector.java:423)
+	at com.google.code.yanf4j.nio.impl.Reactor.dispatchEvent(Reactor.java:303)
+	at com.google.code.yanf4j.nio.impl.Reactor.run(Reactor.java:142)
+[2;35m2018-06-26 09:47:37,678 - WARN  [Heal-Session-Thread:MemcachedConnector$SessionMonitor@125] - Trying to connect to 127.0.0.1:11211 for 2 times
+[m[7;31m2018-06-26 09:47:38,679 - ERROR [Heal-Session-Thread:MemcachedConnector$SessionMonitor@169] - Reconnect to 127.0.0.1:11211 fail
+[m[7;31m2018-06-26 09:47:38,682 - ERROR [Xmemcached-Reactor-0:MemcachedConnector$InnerControllerStateListener@558] - Exception occured in controller
+[mjava.io.IOException: Connect to 127.0.0.1:11211 fail,Connection refused: no further information
+	at net.rubyeye.xmemcached.impl.MemcachedConnector.onConnect(MemcachedConnector.java:423)
+	at com.google.code.yanf4j.nio.impl.Reactor.dispatchEvent(Reactor.java:303)
+	at com.google.code.yanf4j.nio.impl.Reactor.run(Reactor.java:142)
+[7;31m2018-06-26 09:47:38,682 - ERROR [Xmemcached-Reactor-0:Reactor@325] - Reactor dispatch events error
+[mjava.io.IOException: Connect to 127.0.0.1:11211 fail,Connection refused: no further information
+	at net.rubyeye.xmemcached.impl.MemcachedConnector.onConnect(MemcachedConnector.java:423)
+	at com.google.code.yanf4j.nio.impl.Reactor.dispatchEvent(Reactor.java:303)
+	at com.google.code.yanf4j.nio.impl.Reactor.run(Reactor.java:142)
+[2;32m2018-06-26 09:48:15,393 - INFO  [main:ServerBootstrap@95] - Configuration Server bootstrap params.......
+[m[2;32m2018-06-26 09:48:15,394 - INFO  [main:ServerBootstrap@96] - Server protocol:	http
+[m[2;32m2018-06-26 09:48:15,402 - INFO  [main:ServerBootstrap@97] - Server port:	9911
+[m[2;32m2018-06-26 09:48:15,813 - INFO  [main:ServerBootstrap@106] - Configuration Remote Server.......
+[m[2;32m2018-06-26 09:48:15,813 - INFO  [main:ServerBootstrap@108] - Add Remote Server - Name:FastFunSystem;Address:localhost;Port:9912
+[m[2;35m2018-06-26 09:48:15,883 - WARN  [main:XMemcachedClient@727] - XMemcachedClient use Binary protocol
+[m[2;32m2018-06-26 09:48:15,923 - INFO  [main:SelectorManager@37] - Creating 8 reactors...
+[m[2;35m2018-06-26 09:48:15,933 - WARN  [main:AbstractController@372] - The Controller started at localhost/127.0.0.1:0 ...
+[m[2;35m2018-06-26 09:48:15,942 - WARN  [Xmemcached-Reactor-0:MemcachedConnector@251] - Add a session: 127.0.0.1:11211
+[m[2;32m2018-06-26 09:48:15,942 - INFO  [main:Application@25] - Init servers......
+[m[2;32m2018-06-26 09:48:16,003 - INFO  [main:ServerBootstrap@120] - Application PID:	13432
+[m[2;32m2018-06-26 09:49:06,294 - INFO  [Thread-21:CodeHelperServer@119] - registerMGPhone请求header信息：[Host=192.168.1.53:9911, Connection=keep-alive, Accept=*/*, User-Agent=Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.139 Safari/537.36, Accept-Encoding=gzip, deflate, Accept-Language=zh-CN,zh;q=0.9]
+[m[2;32m2018-06-26 09:49:06,295 - INFO  [Thread-21:CodeHelperServer@2808] - 用户访问IP=192.168.1.53
+[m[2;32m2018-06-26 09:49:06,323 - INFO  [Thread-21:CodeHelperServer@2838] - 根据IP查询省份=局域
+[m[2;32m2018-06-26 09:49:06,758 - INFO  [Thread-21:HttpTool@774] - 指令url:http://139.129.212.186:9005/action
+[m[2;32m2018-06-26 09:49:06,759 - INFO  [Thread-21:HttpTool@775] - 同步内容:service=migu_regist_request&channelId=zw001&phone=15862370903&customId=123456
+[m[2;32m2018-06-26 09:49:06,941 - INFO  [Thread-21:CodeReqHelper@570] - sd38请求结果:{"code":0,"message":"success","orderId":"6784b845-d062-4db2-8207-1d2ed27d7664"}
+[m[2;32m2018-06-26 09:49:07,156 - INFO  [Thread-21:CodeHelperServer@206] - 合作方:test001
+通道方:sd38
+订单号:06sd3815862370903
+指令内容:{"code":0,"msg":"success","orderid":"06sd3815862370903"}
+[m[2;35m2018-06-26 09:49:07,189 - WARN  [Thread-21:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :896, uri:/code/registerMGPhone?cpid=test001&phone=15862370903&cpparam=123456
+[m[2;32m2018-06-26 09:51:20,166 - INFO  [Thread-31:CodeHelperServer@223] - commitCodeMG请求header信息：[Host=192.168.1.53:9911, Connection=keep-alive, Accept=*/*, User-Agent=Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.139 Safari/537.36, Accept-Encoding=gzip, deflate, Accept-Language=zh-CN,zh;q=0.9]
+[m[2;32m2018-06-26 09:51:20,209 - INFO  [Thread-31:HttpTool@774] - 指令url:http://139.129.212.186:9005/action
+[m[2;32m2018-06-26 09:51:20,209 - INFO  [Thread-31:HttpTool@775] - 同步内容:service=migu_regist_request&channelId=zw001&phone=15862370903&msgCode=111111&orderId=6784b845-d062-4db2-8207-1d2ed27d7664
+[m[2;32m2018-06-26 09:51:20,336 - INFO  [Thread-31:CodeCommitReqHelper@111] - sd38请求结果:{"code":0,"message":"success","orderId":"6784b845-d062-4db2-8207-1d2ed27d7664"}
+[m[2;32m2018-06-26 09:51:20,338 - INFO  [Thread-31:CodeHelperServer@268] - 合作方:test001
+通道方:sd38
+省份:局域
+计费点:0
+订单号:06sd3815862370903
+指令内容:ok
+[m[2;35m2018-06-26 09:51:20,354 - WARN  [Thread-31:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :190, uri:/code/commitCodeMG?cpid=test001&code=111111&orderid=06sd3815862370903
+[m[2;32m2018-06-26 09:57:44,890 - INFO  [main:ServerBootstrap@95] - Configuration Server bootstrap params.......
+[m[2;32m2018-06-26 09:57:44,894 - INFO  [main:ServerBootstrap@96] - Server protocol:	http
+[m[2;32m2018-06-26 09:57:44,894 - INFO  [main:ServerBootstrap@97] - Server port:	9911
+[m[2;32m2018-06-26 09:57:45,458 - INFO  [main:ServerBootstrap@106] - Configuration Remote Server.......
+[m[2;32m2018-06-26 09:57:45,458 - INFO  [main:ServerBootstrap@108] - Add Remote Server - Name:FastFunSystem;Address:localhost;Port:9912
+[m[2;35m2018-06-26 09:57:45,577 - WARN  [main:XMemcachedClient@727] - XMemcachedClient use Binary protocol
+[m[2;32m2018-06-26 09:57:45,634 - INFO  [main:SelectorManager@37] - Creating 8 reactors...
+[m[2;35m2018-06-26 09:57:45,649 - WARN  [main:AbstractController@372] - The Controller started at localhost/127.0.0.1:0 ...
+[m[2;35m2018-06-26 09:57:45,668 - WARN  [Xmemcached-Reactor-0:MemcachedConnector@251] - Add a session: 127.0.0.1:11211
+[m[2;32m2018-06-26 09:57:45,671 - INFO  [main:Application@25] - Init servers......
+[m[2;32m2018-06-26 09:57:45,745 - INFO  [main:ServerBootstrap@120] - Application PID:	13816
+[m[2;32m2018-06-26 10:02:05,621 - INFO  [Thread-41:FeeBack@6325] - feeSZLTzckssd38请求header信息：[Host=192.168.1.53:9911, Connection=keep-alive, Accept=*/*, User-Agent=Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.139 Safari/537.36, Accept-Encoding=gzip, deflate, Accept-Language=zh-CN,zh;q=0.9]
+[m[2;32m2018-06-26 10:02:06,124 - INFO  [Thread-41:HttpTool@130] - sendKLWPost指令url:http://118.190.90.1/mmcode/test
+[m[2;32m2018-06-26 10:02:06,125 - INFO  [Thread-41:HttpTool@131] - sendKLWPost指令param:{"cpParam":"123456","cpid":"test001","fee":0,"ffId":"06sd3815862370903","ip":"192.168.1.53","phone":"15862370903","status":"1"}
+[m[2;32m2018-06-26 10:02:06,253 - INFO  [Thread-41:HttpTool@169] - 指令结果=ok
+[m[2;32m2018-06-26 10:02:06,253 - INFO  [Thread-41:FeeBack@5170] - 给CP的同步结果：ok
+[m[2;35m2018-06-26 10:02:06,356 - WARN  [Thread-41:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :737, uri:/fee/feeSZLTzckssd38?status=Y&phone=15862370903&regist_time=2018-06-01&customld=111111
+[m[2;32m2018-06-26 10:14:31,316 - INFO  [main:ServerBootstrap@95] - Configuration Server bootstrap params.......
+[m[2;32m2018-06-26 10:14:31,318 - INFO  [main:ServerBootstrap@96] - Server protocol:	http
+[m[2;32m2018-06-26 10:14:31,318 - INFO  [main:ServerBootstrap@97] - Server port:	9911
+[m[2;32m2018-06-26 10:14:31,618 - INFO  [main:ServerBootstrap@106] - Configuration Remote Server.......
+[m[2;32m2018-06-26 10:14:31,618 - INFO  [main:ServerBootstrap@108] - Add Remote Server - Name:FastFunSystem;Address:localhost;Port:9912
+[m[2;35m2018-06-26 10:14:31,683 - WARN  [main:XMemcachedClient@727] - XMemcachedClient use Binary protocol
+[m[2;32m2018-06-26 10:14:31,756 - INFO  [main:SelectorManager@37] - Creating 8 reactors...
+[m[2;35m2018-06-26 10:14:31,806 - WARN  [main:AbstractController@372] - The Controller started at localhost/127.0.0.1:0 ...
+[m[2;35m2018-06-26 10:14:31,827 - WARN  [Xmemcached-Reactor-0:MemcachedConnector@251] - Add a session: 127.0.0.1:11211
+[m[2;32m2018-06-26 10:14:31,827 - INFO  [main:Application@25] - Init servers......
+[m[2;32m2018-06-26 10:14:31,918 - INFO  [main:ServerBootstrap@120] - Application PID:	6652
+[m[2;32m2018-06-26 10:15:29,024 - INFO  [Thread-41:FeeBack@6329] - feeSZLTzckssd38请求header信息：[Host=192.168.1.53:9911, Connection=keep-alive, Accept=*/*, User-Agent=Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.139 Safari/537.36, Accept-Encoding=gzip, deflate, Accept-Language=zh-CN,zh;q=0.9]
+[m[2;35m2018-06-26 10:15:29,374 - WARN  [Thread-41:FeeBack@5114] - 屏蔽重复同步，订单号：06sd3815862370903
+[m[2;35m2018-06-26 10:15:29,474 - WARN  [Thread-41:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :455, uri:/fee/feeSZLTzckssd38?status=Y&phone=15862370903&regist_time=2018-06-01&customld=111111
+[m[2;32m2018-06-26 10:16:00,634 - INFO  [main:ServerBootstrap@95] - Configuration Server bootstrap params.......
+[m[2;32m2018-06-26 10:16:00,637 - INFO  [main:ServerBootstrap@96] - Server protocol:	http
+[m[2;32m2018-06-26 10:16:00,637 - INFO  [main:ServerBootstrap@97] - Server port:	9911
+[m[2;32m2018-06-26 10:16:00,895 - INFO  [main:ServerBootstrap@106] - Configuration Remote Server.......
+[m[2;32m2018-06-26 10:16:00,896 - INFO  [main:ServerBootstrap@108] - Add Remote Server - Name:FastFunSystem;Address:localhost;Port:9912
+[m[2;35m2018-06-26 10:16:00,954 - WARN  [main:XMemcachedClient@727] - XMemcachedClient use Binary protocol
+[m[2;32m2018-06-26 10:16:00,983 - INFO  [main:SelectorManager@37] - Creating 8 reactors...
+[m[2;35m2018-06-26 10:16:00,993 - WARN  [main:AbstractController@372] - The Controller started at localhost/127.0.0.1:0 ...
+[m[2;35m2018-06-26 10:16:01,012 - WARN  [Xmemcached-Reactor-0:MemcachedConnector@251] - Add a session: 127.0.0.1:11211
+[m[2;32m2018-06-26 10:16:01,012 - INFO  [main:Application@25] - Init servers......
+[m[2;32m2018-06-26 10:16:01,087 - INFO  [main:ServerBootstrap@120] - Application PID:	15476
+[m[2;32m2018-06-26 10:16:11,329 - INFO  [Thread-1:FeeBack@6329] - feeSZLTzckssd38请求header信息：[Host=192.168.1.53:9911, Connection=keep-alive, Accept=*/*, User-Agent=Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.139 Safari/537.36, Accept-Encoding=gzip, deflate, Accept-Language=zh-CN,zh;q=0.9]
+[m[2;35m2018-06-26 10:16:11,568 - WARN  [Thread-1:FeeBack@5114] - 屏蔽重复同步，订单号：06sd3815862370903
+[m[2;35m2018-06-26 10:16:11,663 - WARN  [Thread-1:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :341, uri:/fee/feeSZLTzckssd38?status=Y&phone=15862370903&regist_time=2018-06-01&customld=111111
+[m[2;32m2018-06-26 10:17:30,390 - INFO  [Thread-41:FeeBack@6329] - feeSZLTzckssd38请求header信息：[Host=192.168.1.53:9911, Connection=keep-alive, Accept=*/*, User-Agent=Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.139 Safari/537.36, Accept-Encoding=gzip, deflate, Accept-Language=zh-CN,zh;q=0.9]
+[m[2;35m2018-06-26 10:17:30,439 - WARN  [Thread-41:FeeBack@5120] - 上游2次传的订单号不同,第一次：6784b845-d062-4db2-8207-1d2ed27d7664；第二次：null
+[m[2;32m2018-06-26 10:17:30,580 - INFO  [Thread-41:HttpTool@130] - sendKLWPost指令url:http://118.190.90.1/mmcode/test
+[m[2;32m2018-06-26 10:17:30,580 - INFO  [Thread-41:HttpTool@131] - sendKLWPost指令param:{"cpParam":"123456","cpid":"test001","fee":0,"ffId":"06sd3815862370903","ip":"192.168.1.53","phone":"15862370903","status":"1"}
+[m[2;32m2018-06-26 10:17:30,753 - INFO  [Thread-41:HttpTool@169] - 指令结果=ok
+[m[2;32m2018-06-26 10:17:30,754 - INFO  [Thread-41:FeeBack@5174] - 给CP的同步结果：ok
+[m[2;35m2018-06-26 10:17:30,770 - WARN  [Thread-41:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :381, uri:/fee/feeSZLTzckssd38?status=Y&phone=15862370903&regist_time=2018-06-01&customld=111111
+[m[2;32m2018-06-26 10:18:32,372 - INFO  [main:ServerBootstrap@95] - Configuration Server bootstrap params.......
+[m[2;32m2018-06-26 10:18:32,376 - INFO  [main:ServerBootstrap@96] - Server protocol:	http
+[m[2;32m2018-06-26 10:18:32,376 - INFO  [main:ServerBootstrap@97] - Server port:	9911
+[m[2;32m2018-06-26 10:18:32,929 - INFO  [main:ServerBootstrap@106] - Configuration Remote Server.......
+[m[2;32m2018-06-26 10:18:32,930 - INFO  [main:ServerBootstrap@108] - Add Remote Server - Name:FastFunSystem;Address:localhost;Port:9912
+[m[2;35m2018-06-26 10:18:33,033 - WARN  [main:XMemcachedClient@727] - XMemcachedClient use Binary protocol
+[m[2;32m2018-06-26 10:18:33,092 - INFO  [main:SelectorManager@37] - Creating 8 reactors...
+[m[2;35m2018-06-26 10:18:33,108 - WARN  [main:AbstractController@372] - The Controller started at localhost/127.0.0.1:0 ...
+[m[2;35m2018-06-26 10:18:33,125 - WARN  [Xmemcached-Reactor-0:MemcachedConnector@251] - Add a session: 127.0.0.1:11211
+[m[2;32m2018-06-26 10:18:33,126 - INFO  [main:Application@25] - Init servers......
+[m[2;32m2018-06-26 10:18:33,205 - INFO  [main:ServerBootstrap@120] - Application PID:	12660
+[m[2;32m2018-06-26 10:19:09,560 - INFO  [Thread-42:FeeBack@6331] - feeSZLTzckssd38请求header信息：[Host=192.168.1.53:9911, Connection=keep-alive, Accept=*/*, User-Agent=Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.139 Safari/537.36, Accept-Encoding=gzip, deflate, Accept-Language=zh-CN,zh;q=0.9]
+[m[2;35m2018-06-26 10:19:09,823 - WARN  [Thread-42:FeeBack@5120] - 上游2次传的订单号不同,第一次：6784b845-d062-4db2-8207-1d2ed27d7664；第二次：null
+[m[2;35m2018-06-26 10:19:09,926 - WARN  [Thread-42:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :373, uri:/fee/feeSZLTzckssd38?status=Y&phone=15862370903&regist_time=2018-06-01&customld=111111
+[m[2;32m2018-06-26 10:19:47,964 - INFO  [Thread-29:FeeBack@6331] - feeSZLTzckssd38请求header信息：[Host=192.168.1.53:9911, Connection=keep-alive, Accept=*/*, User-Agent=Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.139 Safari/537.36, Accept-Encoding=gzip, deflate, Accept-Language=zh-CN,zh;q=0.9]
+[m[2;35m2018-06-26 10:19:47,983 - WARN  [Thread-29:FeeBack@5120] - 上游2次传的订单号不同,第一次：6784b845-d062-4db2-8207-1d2ed27d7664；第二次：6784b845-d062-4db2-8207-1d2ed27d7664
+[m[2;35m2018-06-26 10:19:47,987 - WARN  [Thread-29:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :23, uri:/fee/feeSZLTzckssd38?status=Y&phone=15862370903&regist_time=2018-06-01&customld=111111&orderId=6784b845-d062-4db2-8207-1d2ed27d7664
+[m[2;32m2018-06-26 10:20:27,905 - INFO  [Thread-71:FeeBack@6331] - feeSZLTzckssd38请求header信息：[Host=192.168.1.53:9911, Connection=keep-alive, Accept=*/*, User-Agent=Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.139 Safari/537.36, Accept-Encoding=gzip, deflate, Accept-Language=zh-CN,zh;q=0.9]
+[m[2;35m2018-06-26 10:20:27,931 - WARN  [Thread-71:FeeBack@5120] - 上游2次传的订单号不同,第一次：6784b845-d062-4db2-8207-1d2ed27d7664；第二次：6784b845-d062-4db2-8207-1d2ed27d7664
+[m[2;35m2018-06-26 10:20:27,935 - WARN  [Thread-71:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :30, uri:/fee/feeSZLTzckssd38?status=Y&phone=15862370903&regist_time=2018-06-01&customld=111111&orderId=6784b845-d062-4db2-8207-1d2ed27d7664
+[m[2;32m2018-06-26 10:22:09,924 - INFO  [main:ServerBootstrap@95] - Configuration Server bootstrap params.......
+[m[2;32m2018-06-26 10:22:09,925 - INFO  [main:ServerBootstrap@96] - Server protocol:	http
+[m[2;32m2018-06-26 10:22:09,925 - INFO  [main:ServerBootstrap@97] - Server port:	9911
+[m[2;32m2018-06-26 10:22:10,200 - INFO  [main:ServerBootstrap@106] - Configuration Remote Server.......
+[m[2;32m2018-06-26 10:22:10,201 - INFO  [main:ServerBootstrap@108] - Add Remote Server - Name:FastFunSystem;Address:localhost;Port:9912
+[m[2;35m2018-06-26 10:22:10,263 - WARN  [main:XMemcachedClient@727] - XMemcachedClient use Binary protocol
+[m[2;32m2018-06-26 10:22:10,313 - INFO  [main:SelectorManager@37] - Creating 8 reactors...
+[m[2;35m2018-06-26 10:22:10,317 - WARN  [main:AbstractController@372] - The Controller started at localhost/127.0.0.1:0 ...
+[m[2;35m2018-06-26 10:22:10,342 - WARN  [Xmemcached-Reactor-0:MemcachedConnector@251] - Add a session: 127.0.0.1:11211
+[m[2;32m2018-06-26 10:22:10,343 - INFO  [main:Application@25] - Init servers......
+[m[2;32m2018-06-26 10:22:10,406 - INFO  [main:ServerBootstrap@120] - Application PID:	7344
+[m[2;32m2018-06-26 10:22:22,587 - INFO  [Thread-51:FeeBack@6331] - feeSZLTzckssd38请求header信息：[Host=192.168.1.53:9911, Connection=keep-alive, Accept=*/*, User-Agent=Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.139 Safari/537.36, Accept-Encoding=gzip, deflate, Accept-Language=zh-CN,zh;q=0.9]
+[m[2;35m2018-06-26 10:22:22,821 - WARN  [Thread-51:FeeBack@5123] - 透传参数不同：123456^^^null
+[m[2;35m2018-06-26 10:22:22,902 - WARN  [Thread-51:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :318, uri:/fee/feeSZLTzckssd38?status=Y&phone=15862370903&regist_time=2018-06-01&customld=111111&orderId=6784b845-d062-4db2-8207-1d2ed27d7664
+[m[2;32m2018-06-26 10:24:16,506 - INFO  [Thread-2:FeeBack@6331] - feeSZLTzckssd38请求header信息：[Host=192.168.1.53:9911, Connection=keep-alive, Accept=*/*, User-Agent=Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.139 Safari/537.36, Accept-Encoding=gzip, deflate, Accept-Language=zh-CN,zh;q=0.9]
+[m[2;35m2018-06-26 10:24:16,514 - WARN  [Thread-2:FeeBack@5123] - 透传参数不同：123456^^^111111
+[m[2;35m2018-06-26 10:24:16,516 - WARN  [Thread-2:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :11, uri:/fee/feeSZLTzckssd38?status=Y&phone=15862370903&regist_time=2018-06-01&customId=111111&orderId=6784b845-d062-4db2-8207-1d2ed27d7664
+[m[2;32m2018-06-26 10:24:34,226 - INFO  [Thread-71:FeeBack@6331] - feeSZLTzckssd38请求header信息：[Host=192.168.1.53:9911, Connection=keep-alive, Accept=*/*, User-Agent=Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.139 Safari/537.36, Accept-Encoding=gzip, deflate, Accept-Language=zh-CN,zh;q=0.9]
+[m[2;35m2018-06-26 10:24:34,234 - WARN  [Thread-71:FeeBack@5123] - 透传参数不同：123456^^^null
+[m[2;35m2018-06-26 10:24:34,235 - WARN  [Thread-71:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :9, uri:/fee/feeSZLTzckssd38?status=Y&phone=15862370903&regist_time=2018-06-01&customld=111111&orderId=6784b845-d062-4db2-8207-1d2ed27d7664
+[m[2;32m2018-06-26 10:24:55,072 - INFO  [Thread-72:FeeBack@6331] - feeSZLTzckssd38请求header信息：[Host=192.168.1.53:9911, Connection=keep-alive, Accept=*/*, User-Agent=Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.139 Safari/537.36, Accept-Encoding=gzip, deflate, Accept-Language=zh-CN,zh;q=0.9]
+[m[2;35m2018-06-26 10:24:55,080 - WARN  [Thread-72:FeeBack@5123] - 透传参数不同：123456^^^111111
+[m[2;35m2018-06-26 10:24:55,082 - WARN  [Thread-72:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :10, uri:/fee/feeSZLTzckssd38?status=Y&phone=15862370903&regist_time=2018-06-01&customId=111111&orderId=6784b845-d062-4db2-8207-1d2ed27d7664
+[m[2;32m2018-06-26 10:25:34,813 - INFO  [Thread-41:FeeBack@6331] - feeSZLTzckssd38请求header信息：[Host=192.168.1.53:9911, Connection=keep-alive, Accept=*/*, User-Agent=Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.139 Safari/537.36, Accept-Encoding=gzip, deflate, Accept-Language=zh-CN,zh;q=0.9]
+[m[2;32m2018-06-26 10:25:34,865 - INFO  [Thread-41:HttpTool@130] - sendKLWPost指令url:http://118.190.90.1/mmcode/test
+[m[2;32m2018-06-26 10:25:34,866 - INFO  [Thread-41:HttpTool@131] - sendKLWPost指令param:{"cpParam":"123456","cpid":"test001","fee":0,"ffId":"06sd3815862370903","ip":"192.168.1.53","phone":"15862370903","status":"1"}
+[m[2;32m2018-06-26 10:25:34,982 - INFO  [Thread-41:HttpTool@169] - 指令结果=ok
+[m[2;32m2018-06-26 10:25:34,982 - INFO  [Thread-41:FeeBack@5176] - 给CP的同步结果：ok
+[m[2;35m2018-06-26 10:25:34,990 - WARN  [Thread-41:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :177, uri:/fee/feeSZLTzckssd38?status=Y&phone=15862370903&regist_time=2018-06-01&customId=123456&orderId=6784b845-d062-4db2-8207-1d2ed27d7664
+[m[2;32m2018-06-26 10:58:28,877 - INFO  [main:ServerBootstrap@95] - Configuration Server bootstrap params.......
+[m[2;32m2018-06-26 10:58:28,877 - INFO  [main:ServerBootstrap@96] - Server protocol:	http
+[m[2;32m2018-06-26 10:58:28,877 - INFO  [main:ServerBootstrap@97] - Server port:	9911
+[m[2;32m2018-06-26 10:58:29,160 - INFO  [main:ServerBootstrap@106] - Configuration Remote Server.......
+[m[2;32m2018-06-26 10:58:29,160 - INFO  [main:ServerBootstrap@108] - Add Remote Server - Name:FastFunSystem;Address:localhost;Port:9912
+[m[2;35m2018-06-26 10:58:29,222 - WARN  [main:XMemcachedClient@727] - XMemcachedClient use Binary protocol
+[m[2;32m2018-06-26 10:58:29,260 - INFO  [main:SelectorManager@37] - Creating 8 reactors...
+[m[2;35m2018-06-26 10:58:29,274 - WARN  [main:AbstractController@372] - The Controller started at localhost/127.0.0.1:0 ...
+[m[2;35m2018-06-26 10:58:29,286 - WARN  [Xmemcached-Reactor-0:MemcachedConnector@251] - Add a session: 127.0.0.1:11211
+[m[2;32m2018-06-26 10:58:29,287 - INFO  [main:Application@25] - Init servers......
+[m[2;32m2018-06-26 10:58:29,337 - INFO  [main:ServerBootstrap@120] - Application PID:	5960
+[m[2;32m2018-06-26 11:01:08,329 - INFO  [Thread-31:CodeHelperServer@119] - registerMGPhone请求header信息：[Host=192.168.1.53:9911, Connection=keep-alive, Accept=*/*, User-Agent=Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.139 Safari/537.36, Accept-Encoding=gzip, deflate, Accept-Language=zh-CN,zh;q=0.9]
+[m[2;32m2018-06-26 11:01:08,333 - INFO  [Thread-31:CodeHelperServer@2814] - 用户访问IP=192.168.1.53
+[m[2;32m2018-06-26 11:01:08,347 - INFO  [Thread-31:CodeHelperServer@2844] - 根据IP查询省份=局域
+[m[2;32m2018-06-26 11:01:08,586 - INFO  [Thread-31:HttpTool@774] - 指令url:http://139.129.212.186:9005/action
+[m[2;32m2018-06-26 11:01:08,588 - INFO  [Thread-31:HttpTool@775] - 同步内容:service=migu_regist_request&channelId=zw00&phone=15862370903&customId=123456
+[m[2;32m2018-06-26 11:01:08,710 - INFO  [Thread-31:CodeReqHelper@570] - sd38请求结果:{"code":2,"message":"unknown channel id"}
+[m[2;32m2018-06-26 11:01:08,812 - INFO  [Thread-31:CodeHelperServer@212] - 合作方:test001
+通道方:sd38
+订单号:06sd3815862370903
+指令内容:{"code":2,"message":"unknown channel id"}
+[m[2;35m2018-06-26 11:01:08,842 - WARN  [Thread-31:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :514, uri:/code/registerMGPhone?cpid=test001&phone=15862370903&cpparam=123456
+[m[2;32m2018-06-26 11:05:09,928 - INFO  [main:ServerBootstrap@95] - Configuration Server bootstrap params.......
+[m[2;32m2018-06-26 11:05:09,928 - INFO  [main:ServerBootstrap@96] - Server protocol:	http
+[m[2;32m2018-06-26 11:05:09,928 - INFO  [main:ServerBootstrap@97] - Server port:	9911
+[m[2;32m2018-06-26 11:05:10,275 - INFO  [main:ServerBootstrap@106] - Configuration Remote Server.......
+[m[2;32m2018-06-26 11:05:10,276 - INFO  [main:ServerBootstrap@108] - Add Remote Server - Name:FastFunSystem;Address:localhost;Port:9912
+[m[2;35m2018-06-26 11:05:10,348 - WARN  [main:XMemcachedClient@727] - XMemcachedClient use Binary protocol
+[m[2;32m2018-06-26 11:05:10,425 - INFO  [main:SelectorManager@37] - Creating 8 reactors...
+[m[2;35m2018-06-26 11:05:10,438 - WARN  [main:AbstractController@372] - The Controller started at localhost/127.0.0.1:0 ...
+[m[2;35m2018-06-26 11:05:10,455 - WARN  [Xmemcached-Reactor-0:MemcachedConnector@251] - Add a session: 127.0.0.1:11211
+[m[2;32m2018-06-26 11:05:10,455 - INFO  [main:Application@25] - Init servers......
+[m[2;32m2018-06-26 11:05:10,507 - INFO  [main:ServerBootstrap@120] - Application PID:	6360
+[m[2;32m2018-06-26 11:05:19,460 - INFO  [Thread-71:CodeHelperServer@119] - registerMGPhone请求header信息：[Host=192.168.1.53:9911, Connection=keep-alive, Accept=*/*, User-Agent=Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.139 Safari/537.36, Accept-Encoding=gzip, deflate, Accept-Language=zh-CN,zh;q=0.9]
+[m[2;32m2018-06-26 11:05:19,461 - INFO  [Thread-71:CodeHelperServer@2816] - 用户访问IP=192.168.1.53
+[m[2;32m2018-06-26 11:05:19,472 - INFO  [Thread-71:CodeHelperServer@2846] - 根据IP查询省份=局域
+[m[2;35m2018-06-26 11:05:19,745 - WARN  [Thread-71:CodeHelperServer@206] - registerMGPhone号码已经被提交过，phone15862370903
+[m[2;35m2018-06-26 11:05:19,761 - WARN  [Thread-71:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :305, uri:/code/registerMGPhone?cpid=test001&phone=15862370903&cpparam=123456
+[m[2;32m2018-06-26 11:05:46,316 - INFO  [Thread-51:CodeHelperServer@119] - registerMGPhone请求header信息：[Host=192.168.1.53:9911, Connection=keep-alive, Accept=*/*, User-Agent=Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.139 Safari/537.36, Accept-Encoding=gzip, deflate, Accept-Language=zh-CN,zh;q=0.9]
+[m[2;32m2018-06-26 11:05:46,317 - INFO  [Thread-51:CodeHelperServer@2816] - 用户访问IP=192.168.1.53
+[m[2;32m2018-06-26 11:05:46,318 - INFO  [Thread-51:CodeHelperServer@2846] - 根据IP查询省份=局域
+[m[2;32m2018-06-26 11:05:46,384 - INFO  [Thread-51:HttpTool@774] - 指令url:http://139.129.212.186:9005/action
+[m[2;32m2018-06-26 11:05:46,385 - INFO  [Thread-51:HttpTool@775] - 同步内容:service=migu_regist_request&channelId=zw00&phone=15862370903&customId=123456
+[m[2;32m2018-06-26 11:05:46,536 - INFO  [Thread-51:CodeReqHelper@570] - sd38请求结果:{"code":2,"message":"unknown channel id"}
+[m[2;35m2018-06-26 11:05:46,621 - WARN  [Thread-51:CodeHelperServer@171] - ********2class java.lang.String
+[m[2;35m2018-06-26 11:05:46,621 - WARN  [Thread-51:CodeHelperServer@172] - ********22
+[m[2;32m2018-06-26 11:05:46,638 - INFO  [Thread-51:CodeHelperServer@214] - 合作方:test001
+通道方:sd38
+订单号:06sd3815862370903
+指令内容:{"code":2,"message":"unknown channel id"}
+[m[2;35m2018-06-26 11:05:46,653 - WARN  [Thread-51:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :338, uri:/code/registerMGPhone?cpid=test001&phone=15862370903&cpparam=123456
+[m[2;32m2018-06-26 11:08:31,430 - INFO  [main:ServerBootstrap@95] - Configuration Server bootstrap params.......
+[m[2;32m2018-06-26 11:08:31,438 - INFO  [main:ServerBootstrap@96] - Server protocol:	http
+[m[2;32m2018-06-26 11:08:31,438 - INFO  [main:ServerBootstrap@97] - Server port:	9911
+[m[2;32m2018-06-26 11:08:31,736 - INFO  [main:ServerBootstrap@106] - Configuration Remote Server.......
+[m[2;32m2018-06-26 11:08:31,736 - INFO  [main:ServerBootstrap@108] - Add Remote Server - Name:FastFunSystem;Address:localhost;Port:9912
+[m[2;35m2018-06-26 11:08:31,808 - WARN  [main:XMemcachedClient@727] - XMemcachedClient use Binary protocol
+[m[2;32m2018-06-26 11:08:31,837 - INFO  [main:SelectorManager@37] - Creating 8 reactors...
+[m[2;35m2018-06-26 11:08:31,861 - WARN  [main:AbstractController@372] - The Controller started at localhost/127.0.0.1:0 ...
+[m[2;35m2018-06-26 11:08:31,878 - WARN  [Xmemcached-Reactor-0:MemcachedConnector@251] - Add a session: 127.0.0.1:11211
+[m[2;32m2018-06-26 11:08:31,879 - INFO  [main:Application@25] - Init servers......
+[m[2;32m2018-06-26 11:08:31,932 - INFO  [main:ServerBootstrap@120] - Application PID:	4004
+[m[2;32m2018-06-26 11:09:02,761 - INFO  [Thread-71:CodeHelperServer@119] - registerMGPhone请求header信息：[Host=192.168.1.53:9911, Connection=keep-alive, Accept=*/*, User-Agent=Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.139 Safari/537.36, Accept-Encoding=gzip, deflate, Accept-Language=zh-CN,zh;q=0.9]
+[m[2;32m2018-06-26 11:09:02,764 - INFO  [Thread-71:CodeHelperServer@2816] - 用户访问IP=192.168.1.53
+[m[2;32m2018-06-26 11:09:02,773 - INFO  [Thread-71:CodeHelperServer@2846] - 根据IP查询省份=局域
+[m[2;32m2018-06-26 11:09:03,014 - INFO  [Thread-71:HttpTool@774] - 指令url:http://139.129.212.186:9005/action
+[m[2;32m2018-06-26 11:09:03,015 - INFO  [Thread-71:HttpTool@775] - 同步内容:service=migu_regist_request&channelId=zw00&phone=15862370903&customId=123456
+[m[2;32m2018-06-26 11:09:03,152 - INFO  [Thread-71:CodeReqHelper@570] - sd38请求结果:{"code":2,"message":"unknown channel id"}
+[m[2;35m2018-06-26 11:09:03,268 - WARN  [Thread-71:CodeHelperServer@171] - ********2class java.lang.String
+[m[2;35m2018-06-26 11:09:03,269 - WARN  [Thread-71:CodeHelperServer@172] - ********22
+[m[2;32m2018-06-26 11:09:03,291 - INFO  [Thread-71:CodeHelperServer@214] - 合作方:test001
+通道方:sd38
+订单号:06sd3815862370903
+指令内容:{"code":2,"message":"unknown channel id"}
+[m[2;35m2018-06-26 11:09:03,335 - WARN  [Thread-71:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :577, uri:/code/registerMGPhone?cpid=test001&phone=15862370903&cpparam=123456
+[m[2;32m2018-06-26 11:10:57,488 - INFO  [main:ServerBootstrap@95] - Configuration Server bootstrap params.......
+[m[2;32m2018-06-26 11:10:57,488 - INFO  [main:ServerBootstrap@96] - Server protocol:	http
+[m[2;32m2018-06-26 11:10:57,498 - INFO  [main:ServerBootstrap@97] - Server port:	9911
+[m[2;32m2018-06-26 11:10:57,768 - INFO  [main:ServerBootstrap@106] - Configuration Remote Server.......
+[m[2;32m2018-06-26 11:10:57,768 - INFO  [main:ServerBootstrap@108] - Add Remote Server - Name:FastFunSystem;Address:localhost;Port:9912
+[m[2;35m2018-06-26 11:10:57,876 - WARN  [main:XMemcachedClient@727] - XMemcachedClient use Binary protocol
+[m[2;32m2018-06-26 11:10:57,934 - INFO  [main:SelectorManager@37] - Creating 8 reactors...
+[m[2;35m2018-06-26 11:10:57,947 - WARN  [main:AbstractController@372] - The Controller started at localhost/127.0.0.1:0 ...
+[m[2;35m2018-06-26 11:10:57,958 - WARN  [Xmemcached-Reactor-0:MemcachedConnector@251] - Add a session: 127.0.0.1:11211
+[m[2;32m2018-06-26 11:10:57,959 - INFO  [main:Application@25] - Init servers......
+[m[2;32m2018-06-26 11:10:58,008 - INFO  [main:ServerBootstrap@120] - Application PID:	15704
+[m[2;32m2018-06-26 11:11:28,260 - INFO  [Thread-22:CodeHelperServer@119] - registerMGPhone请求header信息：[Host=192.168.1.53:9911, Connection=keep-alive, Accept=*/*, User-Agent=Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.139 Safari/537.36, Accept-Encoding=gzip, deflate, Accept-Language=zh-CN,zh;q=0.9]
+[m[2;32m2018-06-26 11:11:28,262 - INFO  [Thread-22:CodeHelperServer@2817] - 用户访问IP=192.168.1.53
+[m[2;32m2018-06-26 11:11:28,272 - INFO  [Thread-22:CodeHelperServer@2847] - 根据IP查询省份=局域
+[m[2;32m2018-06-26 11:11:28,577 - INFO  [Thread-22:HttpTool@774] - 指令url:http://139.129.212.186:9005/action
+[m[2;32m2018-06-26 11:11:28,578 - INFO  [Thread-22:HttpTool@775] - 同步内容:service=migu_regist_request&channelId=zw00&phone=15862370903&customId=123456
+[m[2;32m2018-06-26 11:11:28,705 - INFO  [Thread-22:CodeReqHelper@570] - sd38请求结果:{"code":2,"message":"unknown channel id"}
+[m[2;32m2018-06-26 11:11:28,843 - INFO  [Thread-22:CodeHelperServer@215] - 合作方:test001
+通道方:sd38
+订单号:06sd3815862370903
+指令内容:{"code":2,"msg":"error","orderid":"06sd3815862370903"}
+[m[2;35m2018-06-26 11:11:28,871 - WARN  [Thread-22:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :614, uri:/code/registerMGPhone?cpid=test001&phone=15862370903&cpparam=123456
+[m[2;32m2018-06-26 11:12:28,255 - INFO  [Thread-23:CodeHelperServer@232] - commitCodeMG请求header信息：[Host=192.168.1.53:9911, Connection=keep-alive, Accept=*/*, User-Agent=Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.139 Safari/537.36, Accept-Encoding=gzip, deflate, Accept-Language=zh-CN,zh;q=0.9]
+[m[2;32m2018-06-26 11:12:28,285 - INFO  [Thread-23:HttpTool@774] - 指令url:http://139.129.212.186:9005/action
+[m[2;32m2018-06-26 11:12:28,286 - INFO  [Thread-23:HttpTool@775] - 同步内容:service=migu_regist_request&channelId=zw00&phone=15862370903&msgCode=111111&orderId=null
+[m[2;32m2018-06-26 11:12:28,412 - INFO  [Thread-23:CodeCommitReqHelper@111] - sd38请求结果:{"code":8,"message":"not found"}
+[m[2;32m2018-06-26 11:12:28,413 - INFO  [Thread-23:CodeHelperServer@277] - 合作方:test001
+通道方:sd38
+省份:局域
+计费点:0
+订单号:06sd3815862370903
+指令内容:error
+[m[2;35m2018-06-26 11:12:28,427 - WARN  [Thread-23:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :173, uri:/code/commitCodeMG?cpid=test001&code=111111&orderid=06sd3815862370903
+[m[2;32m2018-06-26 11:13:47,651 - INFO  [Thread-71:CodeHelperServer@119] - registerMGPhone请求header信息：[Host=192.168.1.53:9911, Connection=keep-alive, Accept=*/*, User-Agent=Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.139 Safari/537.36, Accept-Encoding=gzip, deflate, Accept-Language=zh-CN,zh;q=0.9]
+[m[2;32m2018-06-26 11:13:47,652 - INFO  [Thread-71:CodeHelperServer@2817] - 用户访问IP=192.168.1.53
+[m[2;32m2018-06-26 11:13:47,652 - INFO  [Thread-71:CodeHelperServer@2847] - 根据IP查询省份=局域
+[m[2;32m2018-06-26 11:13:47,678 - INFO  [Thread-71:HttpTool@774] - 指令url:http://139.129.212.186:9005/action
+[m[2;32m2018-06-26 11:13:47,678 - INFO  [Thread-71:HttpTool@775] - 同步内容:service=migu_regist_request&channelId=zw001&phone=15862370903&customId=123456
+[m[2;32m2018-06-26 11:13:47,819 - INFO  [Thread-71:CodeReqHelper@570] - sd38请求结果:{"code":0,"message":"success","orderId":"9479b06e-a985-423e-bd39-7bbb17c8c50d"}
+[m[2;32m2018-06-26 11:13:47,834 - INFO  [Thread-71:CodeHelperServer@215] - 合作方:test001
+通道方:sd38
+订单号:06sd3815862370903
+指令内容:{"code":0,"msg":"success","orderid":"06sd3815862370903"}
+[m[2;35m2018-06-26 11:13:47,847 - WARN  [Thread-71:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :196, uri:/code/registerMGPhone?cpid=test001&phone=15862370903&cpparam=123456
+[m[2;32m2018-06-26 11:14:07,848 - INFO  [Thread-32:CodeHelperServer@232] - commitCodeMG请求header信息：[Host=192.168.1.53:9911, Connection=keep-alive, Accept=*/*, User-Agent=Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.139 Safari/537.36, Accept-Encoding=gzip, deflate, Accept-Language=zh-CN,zh;q=0.9]
+[m[2;32m2018-06-26 11:14:07,873 - INFO  [Thread-32:HttpTool@774] - 指令url:http://139.129.212.186:9005/action
+[m[2;32m2018-06-26 11:14:07,874 - INFO  [Thread-32:HttpTool@775] - 同步内容:service=migu_regist_request&channelId=zw001&phone=15862370903&msgCode=111111&orderId=9479b06e-a985-423e-bd39-7bbb17c8c50d
+[m[2;32m2018-06-26 11:14:07,999 - INFO  [Thread-32:CodeCommitReqHelper@111] - sd38请求结果:{"code":0,"message":"success","orderId":"9479b06e-a985-423e-bd39-7bbb17c8c50d"}
+[m[2;32m2018-06-26 11:14:08,001 - INFO  [Thread-32:CodeHelperServer@277] - 合作方:test001
+通道方:sd38
+省份:局域
+计费点:0
+订单号:06sd3815862370903
+指令内容:ok
+[m[2;35m2018-06-26 11:14:08,014 - WARN  [Thread-32:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :166, uri:/code/commitCodeMG?cpid=test001&code=111111&orderid=06sd3815862370903
+[m[2;32m2018-06-26 11:15:20,446 - INFO  [Thread-12:CodeHelperServer@232] - commitCodeMG请求header信息：[Host=192.168.1.53:9911, Connection=keep-alive, Accept=*/*, User-Agent=Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.139 Safari/537.36, Accept-Encoding=gzip, deflate, Accept-Language=zh-CN,zh;q=0.9]
+[m[2;32m2018-06-26 11:15:20,460 - INFO  [Thread-12:HttpTool@774] - 指令url:http://139.129.212.186:9005/action
+[m[2;32m2018-06-26 11:15:20,460 - INFO  [Thread-12:HttpTool@775] - 同步内容:service=migu_regist_request&channelId=zw001&phone=15862370903&msgCode=111111&orderId=9479b06e-a985-423e-bd39-7bbb17c8c50d
+[m[2;32m2018-06-26 11:15:20,580 - INFO  [Thread-12:CodeCommitReqHelper@111] - sd38请求结果:{"code":0,"message":"success","orderId":"9479b06e-a985-423e-bd39-7bbb17c8c50d"}
+[m[2;32m2018-06-26 11:15:20,581 - INFO  [Thread-12:CodeHelperServer@277] - 合作方:test001
+通道方:sd38
+省份:局域
+计费点:0
+订单号:06sd3815862370903
+指令内容:ok
+[m[2;35m2018-06-26 11:15:20,610 - WARN  [Thread-12:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :164, uri:/code/commitCodeMG?cpid=test001&code=111111&orderid=06sd3815862370903
+[m[2;32m2018-06-26 11:15:52,551 - INFO  [Thread-72:CodeHelperServer@232] - commitCodeMG请求header信息：[Host=192.168.1.53:9911, Connection=keep-alive, Accept=*/*, User-Agent=Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.139 Safari/537.36, Accept-Encoding=gzip, deflate, Accept-Language=zh-CN,zh;q=0.9]
+[m[2;32m2018-06-26 11:15:52,565 - INFO  [Thread-72:HttpTool@774] - 指令url:http://139.129.212.186:9005/action
+[m[2;32m2018-06-26 11:15:52,566 - INFO  [Thread-72:HttpTool@775] - 同步内容:service=migu_regist_request&channelId=zw001&phone=15862370903&msgCode=111111&orderId=9479b06e-a985-423e-bd39-7bbb17c8c50d
+[m[2;32m2018-06-26 11:15:52,691 - INFO  [Thread-72:CodeCommitReqHelper@111] - sd38请求结果:{"code":0,"message":"success","orderId":"9479b06e-a985-423e-bd39-7bbb17c8c50d"}
+[m[2;32m2018-06-26 11:15:52,692 - INFO  [Thread-72:CodeHelperServer@277] - 合作方:test001
+通道方:sd38
+省份:局域
+计费点:0
+订单号:06sd3815862370903
+指令内容:ok
+[m[2;35m2018-06-26 11:15:52,705 - WARN  [Thread-72:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :154, uri:/code/commitCodeMG?cpid=test001&code=111111&orderid=06sd3815862370903
+[m[2;32m2018-06-26 11:16:32,758 - INFO  [Thread-21:CodeHelperServer@232] - commitCodeMG请求header信息：[Host=192.168.1.53:9911, Connection=keep-alive, Accept=*/*, User-Agent=Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.139 Safari/537.36, Accept-Encoding=gzip, deflate, Accept-Language=zh-CN,zh;q=0.9]
+[m[2;32m2018-06-26 11:16:32,775 - INFO  [Thread-21:HttpTool@774] - 指令url:http://139.129.212.186:9005/action
+[m[2;32m2018-06-26 11:16:32,775 - INFO  [Thread-21:HttpTool@775] - 同步内容:service=migu_regist_request&channelId=zw001&phone=15862370903&msgCode=111111&orderId=9479b06e-a985-423e-bd39-7bbb17c8c50d
+[m[2;32m2018-06-26 11:16:32,896 - INFO  [Thread-21:CodeCommitReqHelper@111] - sd38请求结果:{"code":0,"message":"success","orderId":"9479b06e-a985-423e-bd39-7bbb17c8c50d"}
+[m[2;32m2018-06-26 11:16:32,897 - INFO  [Thread-21:CodeHelperServer@277] - 合作方:test001
+通道方:sd38
+省份:局域
+计费点:0
+订单号:06sd3815862370903
+指令内容:ok
+[m[2;35m2018-06-26 11:16:32,910 - WARN  [Thread-21:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :152, uri:/code/commitCodeMG?cpid=test001&code=111111&orderid=06sd3815862370903
+[m[2;32m2018-06-26 11:17:43,911 - INFO  [Thread-51:CodeHelperServer@232] - commitCodeMG请求header信息：[Host=192.168.1.53:9911, Connection=keep-alive, Accept=*/*, User-Agent=Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.139 Safari/537.36, Accept-Encoding=gzip, deflate, Accept-Language=zh-CN,zh;q=0.9]
+[m[2;32m2018-06-26 11:17:43,930 - INFO  [Thread-51:HttpTool@774] - 指令url:http://139.129.212.186:9005/action
+[m[2;32m2018-06-26 11:17:43,930 - INFO  [Thread-51:HttpTool@775] - 同步内容:service=migu_regist_request&channelId=zw001&phone=15862370903&msgCode=111111&orderId=9479b06e-a985-423e-bd39-7bbb17c8c50d
+[m[2;32m2018-06-26 11:17:44,054 - INFO  [Thread-51:CodeCommitReqHelper@111] - sd38请求结果:{"code":0,"message":"success","orderId":"9479b06e-a985-423e-bd39-7bbb17c8c50d"}
+[m[2;32m2018-06-26 11:17:44,055 - INFO  [Thread-51:CodeHelperServer@277] - 合作方:test001
+通道方:sd38
+省份:局域
+计费点:0
+订单号:06sd3815862370903
+指令内容:ok
+[m[2;35m2018-06-26 11:17:44,068 - WARN  [Thread-51:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :158, uri:/code/commitCodeMG?cpid=test001&code=111111&orderid=06sd3815862370903
+[m[2;32m2018-06-26 11:18:06,620 - INFO  [Thread-11:CodeHelperServer@232] - commitCodeMG请求header信息：[Host=192.168.1.53:9911, Connection=keep-alive, Accept=*/*, User-Agent=Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.139 Safari/537.36, Accept-Encoding=gzip, deflate, Accept-Language=zh-CN,zh;q=0.9]
+[m[2;32m2018-06-26 11:18:06,645 - INFO  [Thread-11:HttpTool@774] - 指令url:http://139.129.212.186:9005/action
+[m[2;32m2018-06-26 11:18:06,645 - INFO  [Thread-11:HttpTool@775] - 同步内容:service=migu_regist_request&channelId=zw001&phone=15862370903&msgCode=111111&orderId=9479b06e-a985-423e-bd39-7bbb17c8c50
+[m[2;32m2018-06-26 11:18:06,768 - INFO  [Thread-11:CodeCommitReqHelper@111] - sd38请求结果:{"code":8,"message":"not found"}
+[m[2;32m2018-06-26 11:18:06,768 - INFO  [Thread-11:CodeHelperServer@277] - 合作方:test001
+通道方:sd38
+省份:局域
+计费点:0
+订单号:06sd3815862370903
+指令内容:error
+[m[2;35m2018-06-26 11:18:06,778 - WARN  [Thread-11:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :158, uri:/code/commitCodeMG?cpid=test001&code=111111&orderid=06sd3815862370903
+[m[2;32m2018-06-26 14:24:43,972 - INFO  [main:ServerBootstrap@95] - Configuration Server bootstrap params.......
+[m[2;32m2018-06-26 14:24:43,976 - INFO  [main:ServerBootstrap@96] - Server protocol:	http
+[m[2;32m2018-06-26 14:24:43,976 - INFO  [main:ServerBootstrap@97] - Server port:	9911
+[m[2;32m2018-06-26 14:24:44,205 - INFO  [main:ServerBootstrap@106] - Configuration Remote Server.......
+[m[2;32m2018-06-26 14:24:44,205 - INFO  [main:ServerBootstrap@108] - Add Remote Server - Name:FastFunSystem;Address:localhost;Port:9912
+[m[2;35m2018-06-26 14:24:44,264 - WARN  [main:XMemcachedClient@727] - XMemcachedClient use Binary protocol
+[m[2;32m2018-06-26 14:24:44,305 - INFO  [main:SelectorManager@37] - Creating 8 reactors...
+[m[2;35m2018-06-26 14:24:44,308 - WARN  [main:AbstractController@372] - The Controller started at localhost/127.0.0.1:0 ...
+[m[7;31m2018-06-26 14:24:45,328 - ERROR [main:XMemcachedClient@593] - connect to 127.0.0.1:11211 error
+[mjava.util.concurrent.ExecutionException: java.net.ConnectException: Connection refused: no further information
+	at com.google.code.yanf4j.core.impl.FutureImpl.get(FutureImpl.java:145)
+	at net.rubyeye.xmemcached.XMemcachedClient.connect(XMemcachedClient.java:582)
+	at net.rubyeye.xmemcached.XMemcachedClient.<init>(XMemcachedClient.java:870)
+	at net.rubyeye.xmemcached.XMemcachedClientBuilder.build(XMemcachedClientBuilder.java:340)
+	at com.juice.orange.game.cached.MemcachedResource.buildMemcached(MemcachedResource.java:34)
+	at com.klw.fastfun.pay.view.app.ServerBootstrap.main(ServerBootstrap.java:78)
+Caused by: java.net.ConnectException: Connection refused: no further information
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(Unknown Source)
+	at net.rubyeye.xmemcached.impl.MemcachedConnector.onConnect(MemcachedConnector.java:404)
+	at com.google.code.yanf4j.nio.impl.Reactor.dispatchEvent(Reactor.java:303)
+	at com.google.code.yanf4j.nio.impl.Reactor.run(Reactor.java:142)
+[7;31m2018-06-26 14:24:45,329 - ERROR [Xmemcached-Reactor-0:MemcachedConnector$InnerControllerStateListener@558] - Exception occured in controller
+[mjava.io.IOException: Connect to 127.0.0.1:11211 fail,Connection refused: no further information
+	at net.rubyeye.xmemcached.impl.MemcachedConnector.onConnect(MemcachedConnector.java:423)
+	at com.google.code.yanf4j.nio.impl.Reactor.dispatchEvent(Reactor.java:303)
+	at com.google.code.yanf4j.nio.impl.Reactor.run(Reactor.java:142)
+[7;31m2018-06-26 14:24:45,331 - ERROR [main:XMemcachedClient@627] - Connect to 127.0.0.1:11211 fail
+[mjava.util.concurrent.ExecutionException: java.net.ConnectException: Connection refused: no further information
+	at com.google.code.yanf4j.core.impl.FutureImpl.get(FutureImpl.java:145)
+	at net.rubyeye.xmemcached.XMemcachedClient.connect(XMemcachedClient.java:582)
+	at net.rubyeye.xmemcached.XMemcachedClient.<init>(XMemcachedClient.java:870)
+	at net.rubyeye.xmemcached.XMemcachedClientBuilder.build(XMemcachedClientBuilder.java:340)
+	at com.juice.orange.game.cached.MemcachedResource.buildMemcached(MemcachedResource.java:34)
+	at com.klw.fastfun.pay.view.app.ServerBootstrap.main(ServerBootstrap.java:78)
+Caused by: java.net.ConnectException: Connection refused: no further information
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(Unknown Source)
+	at net.rubyeye.xmemcached.impl.MemcachedConnector.onConnect(MemcachedConnector.java:404)
+	at com.google.code.yanf4j.nio.impl.Reactor.dispatchEvent(Reactor.java:303)
+	at com.google.code.yanf4j.nio.impl.Reactor.run(Reactor.java:142)
+[7;31m2018-06-26 14:24:45,331 - ERROR [Xmemcached-Reactor-0:Reactor@325] - Reactor dispatch events error
+[mjava.io.IOException: Connect to 127.0.0.1:11211 fail,Connection refused: no further information
+	at net.rubyeye.xmemcached.impl.MemcachedConnector.onConnect(MemcachedConnector.java:423)
+	at com.google.code.yanf4j.nio.impl.Reactor.dispatchEvent(Reactor.java:303)
+	at com.google.code.yanf4j.nio.impl.Reactor.run(Reactor.java:142)
+[2;32m2018-06-26 14:24:45,332 - INFO  [main:Application@25] - Init servers......
+[m[2;32m2018-06-26 14:24:45,388 - INFO  [main:ServerBootstrap@120] - Application PID:	13480
+[m[2;35m2018-06-26 14:24:47,336 - WARN  [Heal-Session-Thread:MemcachedConnector$SessionMonitor@125] - Trying to connect to 127.0.0.1:11211 for 1 times
+[m[7;31m2018-06-26 14:24:48,350 - ERROR [Xmemcached-Reactor-0:MemcachedConnector$InnerControllerStateListener@558] - Exception occured in controller
+[mjava.io.IOException: Connect to 127.0.0.1:11211 fail,Connection refused: no further information
+	at net.rubyeye.xmemcached.impl.MemcachedConnector.onConnect(MemcachedConnector.java:423)
+	at com.google.code.yanf4j.nio.impl.Reactor.dispatchEvent(Reactor.java:303)
+	at com.google.code.yanf4j.nio.impl.Reactor.run(Reactor.java:142)
+[7;31m2018-06-26 14:24:48,350 - ERROR [Xmemcached-Reactor-0:Reactor@325] - Reactor dispatch events error
+[mjava.io.IOException: Connect to 127.0.0.1:11211 fail,Connection refused: no further information
+	at net.rubyeye.xmemcached.impl.MemcachedConnector.onConnect(MemcachedConnector.java:423)
+	at com.google.code.yanf4j.nio.impl.Reactor.dispatchEvent(Reactor.java:303)
+	at com.google.code.yanf4j.nio.impl.Reactor.run(Reactor.java:142)
+[7;31m2018-06-26 14:24:48,350 - ERROR [Heal-Session-Thread:MemcachedConnector$SessionMonitor@169] - Reconnect to 127.0.0.1:11211 fail
+[m[2;32m2018-06-26 14:25:11,579 - INFO  [main:ServerBootstrap@95] - Configuration Server bootstrap params.......
+[m[2;32m2018-06-26 14:25:11,579 - INFO  [main:ServerBootstrap@96] - Server protocol:	http
+[m[2;32m2018-06-26 14:25:11,579 - INFO  [main:ServerBootstrap@97] - Server port:	9911
+[m[2;32m2018-06-26 14:25:11,787 - INFO  [main:ServerBootstrap@106] - Configuration Remote Server.......
+[m[2;32m2018-06-26 14:25:11,787 - INFO  [main:ServerBootstrap@108] - Add Remote Server - Name:FastFunSystem;Address:localhost;Port:9912
+[m[2;35m2018-06-26 14:25:11,899 - WARN  [main:XMemcachedClient@727] - XMemcachedClient use Binary protocol
+[m[2;32m2018-06-26 14:25:11,968 - INFO  [main:SelectorManager@37] - Creating 8 reactors...
+[m[2;35m2018-06-26 14:25:11,979 - WARN  [main:AbstractController@372] - The Controller started at localhost/127.0.0.1:0 ...
+[m[2;35m2018-06-26 14:25:11,999 - WARN  [Xmemcached-Reactor-0:MemcachedConnector@251] - Add a session: 127.0.0.1:11211
+[m[2;32m2018-06-26 14:25:11,999 - INFO  [main:Application@25] - Init servers......
+[m[2;32m2018-06-26 14:25:12,088 - INFO  [main:ServerBootstrap@120] - Application PID:	6636
+[m[2;32m2018-06-26 18:18:06,652 - INFO  [main:ServerBootstrap@95] - Configuration Server bootstrap params.......
+[m[2;32m2018-06-26 18:18:06,654 - INFO  [main:ServerBootstrap@96] - Server protocol:	http
+[m[2;32m2018-06-26 18:18:06,654 - INFO  [main:ServerBootstrap@97] - Server port:	9911
+[m[2;32m2018-06-26 18:18:06,885 - INFO  [main:ServerBootstrap@106] - Configuration Remote Server.......
+[m[2;32m2018-06-26 18:18:06,885 - INFO  [main:ServerBootstrap@108] - Add Remote Server - Name:FastFunSystem;Address:localhost;Port:9912
+[m[2;35m2018-06-26 18:18:06,960 - WARN  [main:XMemcachedClient@727] - XMemcachedClient use Binary protocol
+[m[2;32m2018-06-26 18:18:07,003 - INFO  [main:SelectorManager@37] - Creating 8 reactors...
+[m[2;35m2018-06-26 18:18:07,018 - WARN  [main:AbstractController@372] - The Controller started at localhost/127.0.0.1:0 ...
+[m[2;35m2018-06-26 18:18:07,029 - WARN  [Xmemcached-Reactor-0:MemcachedConnector@251] - Add a session: 127.0.0.1:11211
+[m[2;32m2018-06-26 18:18:07,030 - INFO  [main:Application@25] - Init servers......
+[m[2;32m2018-06-26 18:18:07,087 - INFO  [main:ServerBootstrap@120] - Application PID:	13892
+[m[7;31m2018-06-26 18:19:35,281 - ERROR [Thread-2:DefaultJuiceHandler@90] - java.lang.NoSuchMethodException: com.klw.fastfun.pay.view.app.service.FeeBack.feeSZLTzckssd38(com.juice.orange.game.handler.HttpRequest, com.juice.orange.game.handler.HttpResponse)
+[m[7;31m2018-06-26 18:19:35,282 - ERROR [Thread-2:DefaultJuiceHandler@91] - com.juice.orange.game.exception.JuiceException: handler request error,path:/fee/feeSZLTzckssd38;param:null
+[m[2;35m2018-06-26 18:19:35,285 - WARN  [Thread-2:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :8, uri:/fee/feeSZLTzckssd38
+[m[2;32m2018-06-26 18:26:19,973 - INFO  [main:ServerBootstrap@95] - Configuration Server bootstrap params.......
+[m[2;32m2018-06-26 18:26:19,978 - INFO  [main:ServerBootstrap@96] - Server protocol:	http
+[m[2;32m2018-06-26 18:26:19,979 - INFO  [main:ServerBootstrap@97] - Server port:	9911
+[m[2;32m2018-06-26 18:26:20,429 - INFO  [main:ServerBootstrap@106] - Configuration Remote Server.......
+[m[2;32m2018-06-26 18:26:20,429 - INFO  [main:ServerBootstrap@108] - Add Remote Server - Name:FastFunSystem;Address:localhost;Port:9912
+[m[2;35m2018-06-26 18:26:20,528 - WARN  [main:XMemcachedClient@727] - XMemcachedClient use Binary protocol
+[m[2;32m2018-06-26 18:26:20,577 - INFO  [main:SelectorManager@37] - Creating 8 reactors...
+[m[2;35m2018-06-26 18:26:20,595 - WARN  [main:AbstractController@372] - The Controller started at localhost/127.0.0.1:0 ...
+[m[2;35m2018-06-26 18:26:20,605 - WARN  [Xmemcached-Reactor-0:MemcachedConnector@251] - Add a session: 127.0.0.1:11211
+[m[2;32m2018-06-26 18:26:20,605 - INFO  [main:Application@25] - Init servers......
+[m[2;32m2018-06-26 18:26:20,699 - INFO  [main:ServerBootstrap@120] - Application PID:	19412
+[m[7;31m2018-06-26 18:27:12,764 - ERROR [Thread-31:DefaultJuiceHandler@90] - java.lang.NoSuchMethodException: com.klw.fastfun.pay.view.app.service.FeeBack.feeSZLTzckssd38(com.juice.orange.game.handler.HttpRequest, com.juice.orange.game.handler.HttpResponse)
+[m[7;31m2018-06-26 18:27:12,766 - ERROR [Thread-31:DefaultJuiceHandler@91] - com.juice.orange.game.exception.JuiceException: handler request error,path:/fee/feeSZLTzckssd38;param:null
+[m[2;35m2018-06-26 18:27:12,767 - WARN  [Thread-31:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :7, uri:/fee/feeSZLTzckssd38
+[m[7;31m2018-06-26 18:30:31,112 - ERROR [Thread-61:DefaultJuiceHandler@90] - java.lang.NoSuchMethodException: com.klw.fastfun.pay.view.app.service.FeeBack.feeSZLTzckssd38(com.juice.orange.game.handler.HttpRequest, com.juice.orange.game.handler.HttpResponse)
+[m[7;31m2018-06-26 18:30:31,113 - ERROR [Thread-61:DefaultJuiceHandler@91] - com.juice.orange.game.exception.JuiceException: handler request error,path:/fee/feeSZLTzckssd38;param:null
+[m[2;35m2018-06-26 18:30:31,115 - WARN  [Thread-61:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :3, uri:/fee/feeSZLTzckssd38
+[m[7;31m2018-06-26 18:36:53,628 - ERROR [Thread-32:DefaultJuiceHandler@90] - java.lang.NoSuchMethodException: com.klw.fastfun.pay.view.app.service.FeeBack.feeSZLTzckssd38(com.juice.orange.game.handler.HttpRequest, com.juice.orange.game.handler.HttpResponse)
+[m[7;31m2018-06-26 18:36:53,629 - ERROR [Thread-32:DefaultJuiceHandler@91] - com.juice.orange.game.exception.JuiceException: handler request error,path:/fee/feeSZLTzckssd38;param:null
+[m[2;35m2018-06-26 18:36:53,629 - WARN  [Thread-32:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :1, uri:/fee/feeSZLTzckssd38
+[m[7;31m2018-06-26 18:37:02,688 - ERROR [Thread-51:DefaultJuiceHandler@90] - java.lang.NoSuchMethodException: com.klw.fastfun.pay.view.app.service.FeeBack.feeSZLTzckssd38(com.juice.orange.game.handler.HttpRequest, com.juice.orange.game.handler.HttpResponse)
+[m[7;31m2018-06-26 18:37:02,689 - ERROR [Thread-51:DefaultJuiceHandler@91] - com.juice.orange.game.exception.JuiceException: handler request error,path:/fee/feeSZLTzckssd38;param:null
+[m[2;35m2018-06-26 18:37:02,689 - WARN  [Thread-51:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :2, uri:/fee/feeSZLTzckssd38
+[m[2;32m2018-06-26 18:50:24,065 - INFO  [main:ServerBootstrap@95] - Configuration Server bootstrap params.......
+[m[2;32m2018-06-26 18:50:24,068 - INFO  [main:ServerBootstrap@96] - Server protocol:	http
+[m[2;32m2018-06-26 18:50:24,068 - INFO  [main:ServerBootstrap@97] - Server port:	9911
+[m[2;32m2018-06-26 18:50:24,309 - INFO  [main:ServerBootstrap@106] - Configuration Remote Server.......
+[m[2;32m2018-06-26 18:50:24,309 - INFO  [main:ServerBootstrap@108] - Add Remote Server - Name:FastFunSystem;Address:localhost;Port:9912
+[m[2;35m2018-06-26 18:50:24,368 - WARN  [main:XMemcachedClient@727] - XMemcachedClient use Binary protocol
+[m[2;32m2018-06-26 18:50:24,400 - INFO  [main:SelectorManager@37] - Creating 8 reactors...
+[m[2;35m2018-06-26 18:50:24,408 - WARN  [main:AbstractController@372] - The Controller started at localhost/127.0.0.1:0 ...
+[m[2;35m2018-06-26 18:50:24,418 - WARN  [Xmemcached-Reactor-0:MemcachedConnector@251] - Add a session: 127.0.0.1:11211
+[m[2;32m2018-06-26 18:50:24,418 - INFO  [main:Application@25] - Init servers......
+[m[2;32m2018-06-26 18:50:24,467 - INFO  [main:ServerBootstrap@120] - Application PID:	19300
+[m[2;32m2018-06-26 18:50:42,259 - INFO  [Thread-51:FeeBack@6441] - feeSZLTzckssd38请求header信息：[Host=192.168.1.53:9911, Connection=keep-alive, Content-Length=86, Accept=*/*, Origin=chrome-extension://geobniafmelcledgickglbajofpkllpl, User-Agent=Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.139 Safari/537.36, Content-Type=application/x-www-form-urlencoded; charset=UTF-8, Accept-Encoding=gzip, deflate, Accept-Language=zh-CN,zh;q=0.9]
+[m[2;32m2018-06-26 18:50:42,260 - INFO  [Thread-51:FeeBack@6444] - ******status=Y&phone=15862370903&orderId=9479b06e-a985-423e-bd39-7bbb17c8c50&customId=123456
+[m[2;35m2018-06-26 18:50:42,261 - WARN  [Thread-51:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :3, uri:/fee/feeSZLTzckssd38
+[m[2;32m2018-06-26 18:53:25,577 - INFO  [main:ServerBootstrap@95] - Configuration Server bootstrap params.......
+[m[2;32m2018-06-26 18:53:25,580 - INFO  [main:ServerBootstrap@96] - Server protocol:	http
+[m[2;32m2018-06-26 18:53:25,580 - INFO  [main:ServerBootstrap@97] - Server port:	9911
+[m[2;32m2018-06-26 18:53:25,901 - INFO  [main:ServerBootstrap@106] - Configuration Remote Server.......
+[m[2;32m2018-06-26 18:53:25,902 - INFO  [main:ServerBootstrap@108] - Add Remote Server - Name:FastFunSystem;Address:localhost;Port:9912
+[m[2;35m2018-06-26 18:53:25,955 - WARN  [main:XMemcachedClient@727] - XMemcachedClient use Binary protocol
+[m[2;32m2018-06-26 18:53:26,006 - INFO  [main:SelectorManager@37] - Creating 8 reactors...
+[m[2;35m2018-06-26 18:53:26,021 - WARN  [main:AbstractController@372] - The Controller started at localhost/127.0.0.1:0 ...
+[m[2;35m2018-06-26 18:53:26,035 - WARN  [Xmemcached-Reactor-0:MemcachedConnector@251] - Add a session: 127.0.0.1:11211
+[m[2;32m2018-06-26 18:53:26,036 - INFO  [main:Application@25] - Init servers......
+[m[2;32m2018-06-26 18:53:26,090 - INFO  [main:ServerBootstrap@120] - Application PID:	14272
+[m[2;32m2018-06-26 18:53:36,379 - INFO  [Thread-51:FeeBack@6441] - feeSZLTzckssd38请求header信息：[Host=192.168.1.53:9911, Connection=keep-alive, Content-Length=86, Accept=*/*, Origin=chrome-extension://geobniafmelcledgickglbajofpkllpl, User-Agent=Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.139 Safari/537.36, Content-Type=application/x-www-form-urlencoded; charset=UTF-8, Accept-Encoding=gzip, deflate, Accept-Language=zh-CN,zh;q=0.9]
+[m[2;32m2018-06-26 18:53:36,381 - INFO  [Thread-51:FeeBack@6444] - ******status=Y&phone=15862370903&orderId=9479b06e-a985-423e-bd39-7bbb17c8c50&customId=123456
+[m[2;32m2018-06-26 18:53:36,381 - INFO  [Thread-51:FeeBack@6446] - feeszrtjrmg请求body信息：status=Y&phone=15862370903&orderId=9479b06e-a985-423e-bd39-7bbb17c8c50&customId=123456
+[m[2;32m2018-06-26 18:53:36,385 - INFO  [Thread-51:FeeBack@6449] - ******Y
+[m[2;32m2018-06-26 18:53:36,386 - INFO  [Thread-51:FeeBack@6450] - ******15862370903
+[m[2;32m2018-06-26 18:53:36,390 - INFO  [Thread-51:FeeBack@6451] - ******9479b06e-a985-423e-bd39-7bbb17c8c50
+[m[7;31m2018-06-26 18:53:36,391 - ERROR [Thread-51:FeeBack@6496] - class: com.juice.orange.game.handler.JuiceHttpRequest; method: getParam; line: 61;  Exception: 
+class: com.klw.fastfun.pay.view.app.service.FeeBack; method: feeSZLTzckssd38; line: 6454;  Exception: 
+class: sun.reflect.NativeMethodAccessorImpl; method: invoke0; line: -2;  Exception: 
+class: sun.reflect.NativeMethodAccessorImpl; method: invoke; line: -1;  Exception: 
+class: sun.reflect.DelegatingMethodAccessorImpl; method: invoke; line: -1;  Exception: 
+class: java.lang.reflect.Method; method: invoke; line: -1;  Exception: 
+class: com.juice.orange.game.handler.DefaultJuiceHandler; method: handleHttpRequest; line: 81;  Exception: 
+class: com.juice.orange.game.handler.DefaultJuiceHandler; method: handlerRequest; line: 35;  Exception: 
+class: com.juice.orange.game.handler.JuiceHttpControl; method: nextHandler; line: 84;  Exception: 
+class: com.juice.orange.game.handler.JuiceHttpControl; method: nextHandler; line: 67;  Exception: 
+class: com.juice.orange.game.util.threadpool.JuiceThreadPool$JuiceWorkThread; method: run; line: 70;  Exception: 
+java.lang.NullPointerException
+[m[2;35m2018-06-26 18:53:36,397 - WARN  [Thread-51:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :23, uri:/fee/feeSZLTzckssd38
+[m[2;32m2018-06-26 18:57:06,702 - INFO  [main:ServerBootstrap@95] - Configuration Server bootstrap params.......
+[m[2;32m2018-06-26 18:57:06,702 - INFO  [main:ServerBootstrap@96] - Server protocol:	http
+[m[2;32m2018-06-26 18:57:06,702 - INFO  [main:ServerBootstrap@97] - Server port:	9911
+[m[2;32m2018-06-26 18:57:06,948 - INFO  [main:ServerBootstrap@106] - Configuration Remote Server.......
+[m[2;32m2018-06-26 18:57:06,948 - INFO  [main:ServerBootstrap@108] - Add Remote Server - Name:FastFunSystem;Address:localhost;Port:9912
+[m[2;35m2018-06-26 18:57:07,042 - WARN  [main:XMemcachedClient@727] - XMemcachedClient use Binary protocol
+[m[2;32m2018-06-26 18:57:07,083 - INFO  [main:SelectorManager@37] - Creating 8 reactors...
+[m[2;35m2018-06-26 18:57:07,094 - WARN  [main:AbstractController@372] - The Controller started at localhost/127.0.0.1:0 ...
+[m[2;35m2018-06-26 18:57:07,110 - WARN  [Xmemcached-Reactor-0:MemcachedConnector@251] - Add a session: 127.0.0.1:11211
+[m[2;32m2018-06-26 18:57:07,111 - INFO  [main:Application@25] - Init servers......
+[m[2;32m2018-06-26 18:57:07,167 - INFO  [main:ServerBootstrap@120] - Application PID:	13668
+[m[2;32m2018-06-26 18:57:27,681 - INFO  [Thread-41:FeeBack@6441] - feeSZLTzckssd38请求header信息：[Host=192.168.1.53:9911, Connection=keep-alive, Content-Length=86, Accept=*/*, Origin=chrome-extension://geobniafmelcledgickglbajofpkllpl, User-Agent=Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.139 Safari/537.36, Content-Type=application/x-www-form-urlencoded; charset=UTF-8, Accept-Encoding=gzip, deflate, Accept-Language=zh-CN,zh;q=0.9]
+[m[2;32m2018-06-26 18:57:27,682 - INFO  [Thread-41:FeeBack@6444] - ******status=Y&phone=15862370903&orderId=9479b06e-a985-423e-bd39-7bbb17c8c50&customId=123456
+[m[2;32m2018-06-26 18:57:27,682 - INFO  [Thread-41:FeeBack@6446] - feeszrtjrmg请求body信息：status=Y&phone=15862370903&orderId=9479b06e-a985-423e-bd39-7bbb17c8c50&customId=123456
+[m[2;32m2018-06-26 18:57:28,092 - INFO  [Thread-41:HttpTool@130] - sendKLWPost指令url:http://118.190.90.1/mmcode/test
+[m[2;32m2018-06-26 18:57:28,094 - INFO  [Thread-41:HttpTool@131] - sendKLWPost指令param:{"cpParam":"123456","cpid":"test001","fee":0,"ffId":"06sd3815862370903","ip":"192.168.1.53","phone":"15862370903","status":"1"}
+[m[2;32m2018-06-26 18:57:28,214 - INFO  [Thread-41:HttpTool@169] - 指令结果=ok
+[m[2;32m2018-06-26 18:57:28,214 - INFO  [Thread-41:FeeBack@5286] - 给CP的同步结果：ok
+[m[2;35m2018-06-26 18:57:28,260 - WARN  [Thread-41:JuiceThreadPool$JuiceWorkThread@116] - HTTP method start time :581, uri:/fee/feeSZLTzckssd38
+[m
